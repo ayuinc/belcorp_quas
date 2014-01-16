@@ -47,7 +47,7 @@
                 </li>
                 <li>
                   <span data-tooltip class="has-tip tip-right" title="RECURSOS">
-                    <a href="lecturas.html">
+                    <a href="resources.html">
                       <span class="icon-book"></span>
                     </a>
                   </span>
@@ -67,7 +67,7 @@
         <section id="courses">
           <div class="row">
 
-            <div class="medium-12 large-12 columns">
+            <div class="total_padding medium-12 large-12 columns">
 
               <div id="catalogo_content" class="row">
                 <div class="large-9 columns">
@@ -277,7 +277,7 @@
                   </div>
                   </div>
                 </div>
-                <div class="large-3 columns show-for-large fixed_menu">
+                <div class="large-3 columns hide-for-small hide-for-medium fixed_menu right_padding">
                   <form action="#" id="form_search">
                     <input type="search" placeholder="BUSCAR">
                     <span class="icon-search"></span>
@@ -291,7 +291,7 @@
                       <div id="school_panel" class="activex">
                         <dl class="accordion" data-accordion>
                           <dd>
-                            <a href="#">TODAS</a>
+                            <a class="selected" href="#">TODAS</a>
                           </dd>
                           <dd class="liderazgo">
                             <a href="#">LIDERAZGO</a>
@@ -331,7 +331,7 @@
           </div>
           <div id="footer">
             <div class="row">
-              <div class="medium-12 large-12 columns">    
+              <div class="total_padding medium-12 large-12 columns">    
                 <div class="row">
                   <div class="medium-12 large-5 columns">
                     <p>© Derechos Reservados por BELCORP</p>
@@ -366,7 +366,7 @@
           </li>
           <li>
             <span data-tooltip class="has-tip tip-right" title="RECURSOS">
-              <a href="lecturas.html">
+              <a href="resources.html">
                 <span class="icon-book"></span>
               </a>
             </span>
@@ -394,6 +394,12 @@
       $("#more_courses").on("click", function(){
         $("#courses_hidden").css("display","block");
         $(this).css("display","none");
+      });
+
+
+      $("#school_panel dd a").on("click", function(){
+        $("#school_panel dd a").removeClass("selected");
+        $(this).addClass("selected");
       });
 
 

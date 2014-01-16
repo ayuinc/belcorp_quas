@@ -13,7 +13,7 @@ html, body {
 }
 
 .row{
-	max-width: 90.5em;
+	max-width: 120em;
 }
 
 p{
@@ -208,6 +208,7 @@ input[type="search"]:focus + .icon-search{
 	-webkit-transition: background-color 0.5s ease;
 	-moz-transition: background-color 0.5s ease;
 	transition: background-color 0.5s ease;
+	margin: 0 0 1.9em;
 }
 
 .explore:hover, .explore:focus{
@@ -252,7 +253,7 @@ input[type="search"]:focus + .icon-search{
 	background-size: cover;
 	position: relative;
 	background-position: center center;
-	padding: 2.5em 0;
+	padding: 50px 0 2.5em 0;
 	h1,h2,h3,h4,h5,p,a{
 		color: #FFFFFF;
 		font-family: "museo-sans",sans-serif;
@@ -260,7 +261,7 @@ input[type="search"]:focus + .icon-search{
 	}
 	h1{
 		font-weight: 900;
-		margin-top: 7em;
+		margin-top: 6em;
 		text-shadow: 0 2px 4px rgba(0,0,0,.2);
 	}
 	h5{
@@ -433,7 +434,7 @@ input[type="search"]:focus + .icon-search{
 
 	#create_course{
 		padding: 1em;
-		margin-top: 1em;
+		margin-top: 1.9em;
 	}
 	#footer{
 		background-color: transparent;
@@ -466,6 +467,11 @@ input[type="search"]:focus + .icon-search{
 		font-size: 2.8em;
 	}
 	.icon-bubbles{
+		color: #596c79;
+		font-size: 4em;
+		line-height: 1.2em;
+	}
+	.icon-book{
 		color: #596c79;
 		font-size: 4em;
 		line-height: 1.2em;
@@ -547,6 +553,13 @@ input[type="search"]:focus + .icon-search{
 		a{
 			background: #9E79B8;
 			border-bottom: 1px solid #AC89C5;
+			-webkit-transition-duration: 0.2s;
+			-moz-transition-duration: 0.2s;
+			-o-transition-duration: 0.2s;
+			transition-duration: 0.2s;
+			&:hover{
+				background: #AC89C5;
+			}
 		}
 		.icon-school{
 			position: absolute;
@@ -790,6 +803,52 @@ z-index: 1002;
 	display: none;
 }
 
+.resources_list{
+	background-color: #FFFFFF;
+
+	h5{
+		font-weight: 400;
+	}
+	span{
+		color: #929FAA;
+	}
+	img{
+		border-radius: 50%;
+	}
+}
+
+.resources_item{
+		padding: 1em 25px;
+	border-top: 1px solid #EEEEEE;
+	border-bottom: 1px solid #EEEEEE;
+	h5{
+		font-weight: 400;
+	}
+	span{
+		color: #929FAA;
+	}
+	img{
+		border-radius: 50%;
+	}
+}
+
+dd	a.selected:before {
+		content: "";
+		width: 5px;
+		background: #6B1F7E;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+}
+
+#myModal{
+	padding: 0;
+	// background-color: #596c79;
+	border: 2px solid #596c79;
+}
+
+
 @media only screen and (min-width: 40.063em) {
 
   	#cover {
@@ -831,7 +890,7 @@ z-index: 1002;
 
 	#forum_header, #details_header, #courses_header{
 		margin-top: 50px;
-		margin-bottom: 1.25em;
+		margin-bottom: 1.9em;
 		text-align: left;
 	}
 
@@ -864,9 +923,32 @@ z-index: 1002;
 
 	#form_search{
 		position: relative;
-		margin-bottom: 1.25em;
+		margin-bottom: 1.9em;
 		margin-top: 0;
 	}
+
+	.total_padding{
+		padding-left: 1.9em;
+		padding-right: 1.9em;
+	}
+
+	.index_padding{
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+
+	.right_padding{
+		padding-right: 1.9em;
+	}
+
+	.course{
+		margin-bottom: 1.9em;
+	}
+
+	#details_lesson {
+		margin: 1.9em auto;
+	}
+
 
 }
 
