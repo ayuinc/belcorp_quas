@@ -357,6 +357,10 @@ input[type="search"]:focus + .icon-search {
     color: #596c79;
     font-size: 4em;
     line-height: 1.2em; }
+  #forum_header .icon-book, #courses_header .icon-book {
+    color: #596c79;
+    font-size: 4em;
+    line-height: 1.2em; }
 
 #form_search {
   position: relative;
@@ -588,6 +592,26 @@ input[type="search"]:focus + .icon-search {
 
 #courses_hidden {
   display: none; }
+
+.resources_list {
+  background-color: #FFFFFF; }
+  .resources_list h5 {
+    font-weight: 400; }
+  .resources_list span {
+    color: #929FAA; }
+  .resources_list img {
+    border-radius: 50%; }
+
+.resources_item {
+  padding: 1em 25px;
+  border-top: 1px solid #EEEEEE;
+  border-bottom: 1px solid #EEEEEE; }
+  .resources_item h5 {
+    font-weight: 400; }
+  .resources_item span {
+    color: #929FAA; }
+  .resources_item img {
+    border-radius: 50%; }
 
 @media only screen and (min-width: 40.063em) {
   #cover h1 {
