@@ -209,7 +209,7 @@ input[type="search"]:focus + .icon-search {
     font-style: normal; }
   #cover h1 {
     font-weight: 900;
-    margin-top: 6em;
+    margin-top: 5em;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
   #cover h5 {
     font-weight: 300;
