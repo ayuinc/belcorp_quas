@@ -275,8 +275,8 @@ input[type="search"]:focus + .icon-search{
 	}
 	.play {
 		cursor: pointer;
-		width: 40px;
-		height: 40px;
+		width: 30px;
+		height: 30px;
 		-webkit-border-radius: 100%;
 		-moz-border-radius: 100%;
 		border-radius: 100%;
@@ -290,7 +290,7 @@ input[type="search"]:focus + .icon-search{
 		-o-transition: 0.4s;
 		transition: 0.4s;
 		.icon-play {
-			font-size: 20px;
+			font-size: 18px;
 			font-weight: normal;
 			color: #ffffff;
 			position: relative;
