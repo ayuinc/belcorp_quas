@@ -253,7 +253,7 @@ input[type="search"]:focus + .icon-search{
 	background-size: cover;
 	position: relative;
 	background-position: center center;
-	padding: 2.5em 0;
+	padding: 50px 0 2.5em 0;
 	h1,h2,h3,h4,h5,p,a{
 		color: #FFFFFF;
 		font-family: "museo-sans",sans-serif;
@@ -261,7 +261,7 @@ input[type="search"]:focus + .icon-search{
 	}
 	h1{
 		font-weight: 900;
-		margin-top: 7em;
+		margin-top: 6em;
 		text-shadow: 0 2px 4px rgba(0,0,0,.2);
 	}
 	h5{
@@ -840,7 +840,14 @@ dd	a.selected:before {
 		top: 0;
 		bottom: 0;
 		left: 0;
-			}
+}
+
+#myModal{
+	padding: 0;
+	// background-color: #596c79;
+	border: 2px solid #596c79;
+}
+
 
 @media only screen and (min-width: 40.063em) {
 
@@ -923,6 +930,11 @@ dd	a.selected:before {
 	.total_padding{
 		padding-left: 1.9em;
 		padding-right: 1.9em;
+	}
+
+	.index_padding{
+		padding-left: 50px;
+		padding-right: 50px;
 	}
 
 	.right_padding{
