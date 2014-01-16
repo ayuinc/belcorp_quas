@@ -208,6 +208,7 @@ input[type="search"]:focus + .icon-search{
 	-webkit-transition: background-color 0.5s ease;
 	-moz-transition: background-color 0.5s ease;
 	transition: background-color 0.5s ease;
+	margin: 0 0 1.9em;
 }
 
 .explore:hover, .explore:focus{
@@ -433,7 +434,7 @@ input[type="search"]:focus + .icon-search{
 
 	#create_course{
 		padding: 1em;
-		margin-top: 1em;
+		margin-top: 1.9em;
 	}
 	#footer{
 		background-color: transparent;
@@ -552,6 +553,13 @@ input[type="search"]:focus + .icon-search{
 		a{
 			background: #9E79B8;
 			border-bottom: 1px solid #AC89C5;
+			-webkit-transition-duration: 0.2s;
+			-moz-transition-duration: 0.2s;
+			-o-transition-duration: 0.2s;
+			transition-duration: 0.2s;
+			&:hover{
+				background: #AC89C5;
+			}
 		}
 		.icon-school{
 			position: absolute;
@@ -824,6 +832,15 @@ z-index: 1002;
 	}
 }
 
+dd	a.selected:before {
+		content: "";
+		width: 5px;
+		background: #6B1F7E;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+			}
 
 @media only screen and (min-width: 40.063em) {
 
@@ -866,7 +883,7 @@ z-index: 1002;
 
 	#forum_header, #details_header, #courses_header{
 		margin-top: 50px;
-		margin-bottom: 1.25em;
+		margin-bottom: 1.9em;
 		text-align: left;
 	}
 
@@ -899,9 +916,27 @@ z-index: 1002;
 
 	#form_search{
 		position: relative;
-		margin-bottom: 1.25em;
+		margin-bottom: 1.9em;
 		margin-top: 0;
 	}
+
+	.total_padding{
+		padding-left: 1.9em;
+		padding-right: 1.9em;
+	}
+
+	.right_padding{
+		padding-right: 1.9em;
+	}
+
+	.course{
+		margin-bottom: 1.9em;
+	}
+
+	#details_lesson {
+		margin: 1.9em auto;
+	}
+
 
 }
 

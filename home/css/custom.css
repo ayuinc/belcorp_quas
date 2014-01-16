@@ -164,7 +164,8 @@ input[type="search"]:focus + .icon-search {
   box-shadow: 0 2px 0 #4B1658;
   -webkit-transition: background-color 0.5s ease;
   -moz-transition: background-color 0.5s ease;
-  transition: background-color 0.5s ease; }
+  transition: background-color 0.5s ease;
+  margin: 0 0 1.9em; }
 
 .explore:hover, .explore:focus {
   background-color: #79268D;
@@ -330,7 +331,7 @@ input[type="search"]:focus + .icon-search {
   padding-top: 8em; }
   #courses #create_course, #details #create_course {
     padding: 1em;
-    margin-top: 1em; }
+    margin-top: 1.9em; }
   #courses #footer, #details #footer {
     background-color: transparent; }
     #courses #footer p, #details #footer p {
@@ -418,7 +419,13 @@ input[type="search"]:focus + .icon-search {
   border: none; }
   #school_panel dd a {
     background: #9E79B8;
-    border-bottom: 1px solid #AC89C5; }
+    border-bottom: 1px solid #AC89C5;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-duration: 0.2s; }
+    #school_panel dd a:hover {
+      background: #AC89C5; }
   #school_panel dd .icon-school {
     position: absolute;
     top: 1em;
@@ -613,6 +620,15 @@ input[type="search"]:focus + .icon-search {
   .resources_item img {
     border-radius: 50%; }
 
+dd a.selected:before {
+  content: "";
+  width: 5px;
+  background: #6B1F7E;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0; }
+
 @media only screen and (min-width: 40.063em) {
   #cover h1 {
     line-height: 1;
@@ -639,7 +655,7 @@ input[type="search"]:focus + .icon-search {
 
   #forum_header, #details_header, #courses_header {
     margin-top: 50px;
-    margin-bottom: 1.25em;
+    margin-bottom: 1.9em;
     text-align: left; }
 
   #courses_header {
@@ -661,5 +677,18 @@ input[type="search"]:focus + .icon-search {
 
   #form_search {
     position: relative;
-    margin-bottom: 1.25em;
-    margin-top: 0; } }
+    margin-bottom: 1.9em;
+    margin-top: 0; }
+
+  .total_padding {
+    padding-left: 1.9em;
+    padding-right: 1.9em; }
+
+  .right_padding {
+    padding-right: 1.9em; }
+
+  .course {
+    margin-bottom: 1.9em; }
+
+  #details_lesson {
+    margin: 1.9em auto; } }
