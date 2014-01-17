@@ -209,7 +209,7 @@ input[type="search"]:focus + .icon-search {
     font-style: normal; }
   #cover h1 {
     font-weight: 900;
-    margin-top: 6em;
+    margin-top: 5em;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
   #cover h5 {
     font-weight: 300;
@@ -220,8 +220,8 @@ input[type="search"]:focus + .icon-search {
     padding: 1em 0; }
   #cover .play {
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
@@ -235,7 +235,7 @@ input[type="search"]:focus + .icon-search {
     -o-transition: 0.4s;
     transition: 0.4s; }
     #cover .play .icon-play {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: normal;
       color: #ffffff;
       position: relative;
