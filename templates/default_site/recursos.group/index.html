@@ -42,95 +42,26 @@
 
           <div class="row">
             <div class="large-12 columns">
+            
+            {exp:channel:entries channel="recursos" limit="10" paginate="bottom" dynamic="off"}
               <div class="resources_list">
                 <div class="resources_item">
                   <div class="row">
                     <div class="medium-1 large-1 columns">
-                      <img src="img/mit.png" alt="">
+                      {imagen-recurso}
+                      	<img src="{image:url:small}" alt="{title}">
+                      {/imagen-recurso}
                     </div>
                     <div class="medium-11 large-11 columns">
-                      <h5>Browse, download, and share patterns</h5>
-                      <span>thepatternlibrary.com</span>
+                      <h5><a href="{link-recurso}" target="_blank">{title}</a></h5>
+                      <span>{fuente-recurso}</span>
+                      <p>{descripcion-recurso}</p>
                     </div>
                   </div>
                 </div>
-                <div class="resources_item">
-                  <div class="row">
-                    <div class="medium-1 large-1 columns">
-                      <img src="img/mit.png" alt="">
-                    </div>
-                    <div class="medium-11 large-11 columns">
-                      <h5>Animating CSS Shapes with CSS Animations & Transitions</h5>
-                      <span>thepatternlibrary.com</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="resources_item">
-                  <div class="row">
-                    <div class="medium-1 large-1 columns">
-                      <img src="img/mit.png" alt="">
-                    </div>
-                    <div class="medium-11 large-11 columns">
-                      <h5>CSS Level 4 And More: What’s Coming In 2014</h5>
-                      <span>demosthenes.info</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="resources_item">
-                  <div class="row">
-                    <div class="medium-1 large-1 columns">
-                      <img src="img/mit.png" alt="">
-                    </div>
-                    <div class="medium-11 large-11 columns">
-                      <h5>Easily Build Code-Free iOS Prototypes With Flinto</h5>
-                      <span>demosthenes.info</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="resources_item">
-                  <div class="row">
-                    <div class="medium-1 large-1 columns">
-                      <img src="img/mit.png" alt="">
-                    </div>
-                    <div class="medium-11 large-11 columns">
-                      <h5>Browse, download, and share patterns</h5>
-                      <span>thepatternlibrary.com</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="resources_item">
-                  <div class="row">
-                    <div class="medium-1 large-1 columns">
-                      <img src="img/mit.png" alt="">
-                    </div>
-                    <div class="medium-11 large-11 columns">
-                      <h5>Animating CSS Shapes with CSS Animations & Transitions</h5>
-                      <span>thepatternlibrary.com</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="resources_item">
-                  <div class="row">
-                    <div class="medium-1 large-1 columns">
-                      <img src="img/mit.png" alt="">
-                    </div>
-                    <div class="medium-11 large-11 columns">
-                      <h5>CSS Level 4 And More: What’s Coming In 2014</h5>
-                      <span>demosthenes.info</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="resources_item">
-                  <div class="row">
-                    <div class="medium-1 large-1 columns">
-                      <img src="img/mit.png" alt="">
-                    </div>
-                    <div class="medium-11 large-11 columns">
-                      <h5>Easily Build Code-Free iOS Prototypes With Flinto</h5>
-                      <span>demosthenes.info</span>
-                    </div>
-                  </div>
-                </div>
+            {/exp:channel:entries}    
+
+
               </div>
 
               

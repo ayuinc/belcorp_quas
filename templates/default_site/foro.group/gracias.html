@@ -63,43 +63,29 @@
               </div>
 
               <div class="forum_comments">
+				{exp:channel:entries channel="foro" limit="10" paginate="bottom"}
                 <div class="row">
                   <div class="large-12 columns">
                     <div class="forum_comments_item"> 
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consectetur justo non sapien tincidunt dapibus. Maecenas blandit ipsum ac est rutrum pellentesque. Ut consectetur justo non sapien tincidunt dapibus. Maecenas blandit ipsum ac est rutrum pellentesque.</p>
+                     <p>{if nombre-foro}<b>{nombre-foro}</b><br>{/if}{mensaje-foro}</p>
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="large-12 columns">
-                    <div class="forum_comments_item"> 
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consectetur justo non sapien tincidunt dapibus. Maecenas blandit ipsum ac est rutrum pellentesque. Ut consectetur justo non sapien tincidunt dapibus. Maecenas blandit ipsum ac est rutrum pellentesque.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="large-12 columns">
-                    <div class="forum_comments_item"> 
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consectetur justo non sapien tincidunt dapibus. Maecenas blandit ipsum ac est rutrum pellentesque. Ut consectetur justo non sapien tincidunt dapibus. Maecenas blandit ipsum ac est rutrum pellentesque.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="large-12 columns">
-                    <div class="forum_comments_item"> 
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consectetur justo non sapien tincidunt dapibus. Maecenas blandit ipsum ac est rutrum pellentesque. Ut consectetur justo non sapien tincidunt dapibus. Maecenas blandit ipsum ac est rutrum pellentesque.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
               
-              <div class="row">
-                <div class="large-2 large-centered columns">
-                  <a href="#" class="more button expand">VER MÁS</a>
-                </div>
+              {paginate}  
+              	{pagination_links}
+		    		  <div class="row">
+		                <div class="large-2 large-centered columns">
+		                  {next_page}	
+		                  <a href="{pagination_url}" class="more button expand">VER MÁS</a>
+						  {/next_page}
+		                </div>
+		              </div>  
+              	{/pagination_links}   
+              {/paginate}       
+    
+				{/exp:channel:entries}
               </div>
-            </div>
-          </div>
 
         </div>
       </div>
