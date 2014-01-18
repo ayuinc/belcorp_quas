@@ -13,11 +13,11 @@
 
 $config['app_version'] = '273';
 $config['install_lock'] = "";
-$config['license_number'] = '5633-4696-2443-5683';
+$config['license_number'] = "5633-4696-2443-5683";
 $config['debug'] = '1';
 $config['cp_url'] = 'http://54.209.167.56/admin.php';
-$config['doc_url'] = 'http://ellislab.com/expressionengine/user-guide/';
-$config['is_system_on'] = 'y';
+$config['doc_url'] = "http://ellislab.com/expressionengine/user-guide/";
+$config['is_system_on'] = "y";
 $config['allow_extensions'] = 'y';
 $config['site_label'] = 'Belcorp';
 $config['cookie_prefix'] = '';
@@ -48,7 +48,7 @@ $config['base_url']	= '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = "index.php";
 
 /*
 |--------------------------------------------------------------------------

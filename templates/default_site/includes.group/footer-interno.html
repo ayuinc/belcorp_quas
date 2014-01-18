@@ -1,0 +1,56 @@
+
+       
+   {embed="includes/menu"}
+    
+    <script src="{site_url}js/jquery.js"></script>
+    <script src="{site_url}js/expanding.js"></script>
+    <script src="{site_url}js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    <script>
+    $(document).ready(function(){
+
+      $("#more_courses").on("click", function(){
+        $("#courses_hidden").css("display","block");
+        $(this).css("display","none");
+      });
+
+
+      $("#school_panel dd a").on("click", function(){
+        $("#school_panel dd a").removeClass("selected");
+        $(this).addClass("selected");
+      });
+
+
+      $("#school_panel_trigger").on("click", function () {
+        if($("#school_panel").hasClass("activex")){
+          $("#school_panel").slideUp();
+          $("#school_panel").removeClass("activex");
+          $(".icon-arrow-down").css('-webkit-transform','rotate(180deg)'); 
+        }
+        else {
+          $("#school_panel").slideDown();
+          $("#school_panel").addClass("activex");
+          $(".icon-arrow-down").css('-webkit-transform','rotate(0deg)'); 
+        }
+      });
+
+    });
+	</script>
+	
+	{if segment_2=='curso'}
+    <script>
+    /* * * DISQUS * * */
+    var disqus_shortname = 'belcorp'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>   
+    {/if} 
+  </body>
+</html>
+       
