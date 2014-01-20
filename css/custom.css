@@ -226,14 +226,14 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   position: relative;
   background-position: center center;
   text-align: center;
-  padding: 50px 0 2.5em 0; }
+  padding: 70px 0 2.5em 0; }
   #cover h1, #cover h2, #cover h3, #cover h4, #cover h5, #cover p, #cover a {
     color: #FFFFFF;
     font-family: "museo-sans",sans-serif;
     font-style: normal; }
   #cover h1 {
     font-weight: 900;
-    margin-top: 4em;
+    margin-top: 5em;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
   #cover h5 {
     font-weight: 300;
@@ -331,35 +331,48 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     font-weight: 700; }
   .course p {
     color: #929FAA; }
+    
+  .school-contenidos {
+    background-color: #EEEEEE;
+    width: 200px;
+    padding: 0.5em; }
+    .school-contenidos span {
+      color: #596C79;
+      font-size: 0.8rem;
+      font-weight: 500; }
+    .school-contenidos .icon-school {
+      position: relative;
+	  right: -5.5em; }
+  
 
 .liderazgo {
   border-right: 25px solid #00bced; }
-  .liderazgo .school .icon-school {
+  .liderazgo .school .icon-school, .liderazgo .school-contenidos .icon-school {
     color: #00bced; }
 
 .marcas {
   border-right: 25px solid red; }
-  .marcas .school .icon-school {
+  .marcas .school .icon-school, .marcas .school-contenidos .icon-school {
     color: red; }
 
 .planeamiento {
   border-right: 25px solid #72d100; }
-  .planeamiento .school .icon-school {
+  .planeamiento .school .icon-school, .planeamiento .school-contenidos .icon-school {
     color: #72d100; }
 
 .ventas {
   border-right: 25px solid #f8ff00; }
-  .ventas .school .icon-school {
+  .ventas .school .icon-school, .ventas .school-contenidos .icon-school {
     color: #f8ff00; }
 
 .innovacion {
   border-right: 25px solid #ff7500; }
-  .innovacion .school .icon-school {
+  .innovacion .school .icon-school, .innovacion .school-contenidos .icon-school {
     color: #ff7500; }
 
 .belcorp {
   border-right: 25px solid #ff00fe; }
-  .belcorp .school .icon-school {
+  .belcorp .school .icon-school, .belcorp .school-contenidos .icon-school {
     color: #ff00fe; }
 
 #footer {
@@ -398,7 +411,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     color: #929FAA; }
   #forum_header .icon-grid, #courses_header .icon-grid, #contact_header .icon-grid, #content_header .icon-grid {
     color: #596c79;
-    font-size: 2.8em; }
+    font-size: 3.55em;
+    line-height: 1.4em; }
   #forum_header .icon-bubbles, #courses_header .icon-bubbles, #contact_header .icon-bubbles, #content_header .icon-bubbles {
     color: #596c79;
     font-size: 4em;
@@ -472,7 +486,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     -webkit-transition-duration: 0.2s;
     -moz-transition-duration: 0.2s;
     -o-transition-duration: 0.2s;
-    transition-duration: 0.2s; }
+    transition-duration: 0.2s;
+    font-size: 0.9em; }
     #school_panel dd a:hover {
       background: #AC89C5; }
     #school_panel dd a.selected {
@@ -493,6 +508,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   color: #ff7500; }
 #school_panel .belcorp .icon-school {
   color: #ff00fe; }
+
+#school_panel_trigger {
+  font-weight: 500; }
 
 .details_info {
   background-color: #FFFFFF;
@@ -523,7 +541,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 #menu {
   background: #6B1F7E;
-  width: 50px;
+  width: 70px;
   position: fixed;
   top: 0;
   left: 0;
@@ -531,7 +549,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   z-index: 500; }
 
 .menu-nav {
-  padding: 8px; }
+  padding: 12px; }
 
 .nav, .social {
   display: block;
@@ -540,16 +558,17 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   list-style-position: inside; }
   .nav li, .social li {
     text-align: center;
-    height: 34px;
-    width: 34px;
+    height: 46px;
+    width: 46px;
     background-color: transparent;
     transition: background-color 0.2s;
     -webkit-transition: background-color ease-out 0.2s; }
     .nav li:hover, .social li:hover {
       background-color: #9E79B8; }
     .nav li a, .social li a {
-      line-height: 34px;
-      margin-bottom: 10px; }
+      line-height: 46px;
+      margin-bottom: 10px;
+      font-size: 1.25em; }
       .nav li a img, .social li a img {
         margin-top: -4px; }
 
@@ -588,14 +607,14 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
       margin: 0; }
 
 .move-right > .inner-wrap {
-  -webkit-transform: translate3d(50px, 0, 0);
-  -moz-transform: translate3d(50px, 0, 0);
-  -ms-transform: translate3d(50px, 0, 0);
-  -o-transform: translate3d(50px, 0, 0);
-  transform: translate3d(50px, 0, 0); }
+  -webkit-transform: translate3d(70px, 0, 0);
+  -moz-transform: translate3d(70px, 0, 0);
+  -ms-transform: translate3d(70px, 0, 0);
+  -o-transform: translate3d(70px, 0, 0);
+  transform: translate3d(70px, 0, 0); }
 
 .left-off-canvas-menu, .right-off-canvas-menu {
-  width: 50px;
+  width: 70px;
   top: 0;
   bottom: 0;
   height: 100%;
@@ -673,18 +692,29 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     border-radius: 50%; }
 
 .resources_item {
-  padding: 1em 25px;
+  padding: 2em 25px;
   border-top: 1px solid #EEEEEE;
   border-bottom: 1px solid #EEEEEE; }
   .resources_item h5 {
-    font-weight: 400; }
+    font-weight: 400;
+    text-transform: uppercase;
+     }
+  .resources_item p {
+	  margin-right: 2rem;
+  }  
   .resources_item span {
     color: #929FAA; }
+  .resources_item span a {
+	  font-style: italic;
+  }
   .resources_item img {
     border-radius: 50%; }
+	
 
 .resources_item a {
-  color: #596c79; }
+  color: #596c79;
+   }
+   
 
 #myModal {
   padding: 0;
@@ -700,7 +730,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   background: #edeff0;
   position: fixed;
   max-width: 1430px;
-  height: 50px;
+  height: 70px;
   top: 0;
   left: 0;
   right: 15px;
@@ -748,18 +778,21 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
   #courses, #details {
     padding-top: 0;
-    margin-left: 50px; }
+    margin-left: 70px; }
 
   #forum_header, #details_header, #courses_header, #contact_header, #content_header {
-    margin-top: 50px;
+    margin-top: 70px;
     margin-bottom: 1.9em;
     text-align: left; }
 
-  #courses_header, #content_header {
+  #forum_header, #courses_header, #content_header, #contact_header {
     margin-top: 0; }
 
-  #catalogo_content, #contenidos_content {
-    margin-top: 50px; }
+  #catalogo_content, #contenidos_content, #feedback_content, #contact_content {
+    margin-top: 70px; }
+
+  #feedback_content #create_course, #contact_content #create_course {
+    margin-top: 0; }
 
   .fixed_menu {
     position: fixed;
@@ -782,8 +815,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     padding-right: 1.9em; }
 
   .index_padding {
-    padding-left: 50px;
-    padding-right: 50px; }
+    padding-left: 70px;
+    padding-right: 70px; }
 
   .right_padding {
     padding-right: 1.9em; }

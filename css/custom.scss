@@ -283,7 +283,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	position: relative;
 	background-position: center center;
 	text-align: center;
-	padding: 50px 0 2.5em 0;
+	padding: 70px 0 2.5em 0;
 	h1,h2,h3,h4,h5,p,a{
 		color: #FFFFFF;
 		font-family: "museo-sans",sans-serif;
@@ -519,7 +519,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	}
 	.icon-grid{
 		color: #596c79;
-		font-size: 2.8em;
+		font-size: 3.55em;
+		line-height: 1.4em;
 	}
 	.icon-bubbles{
 		color: #596c79;
@@ -617,6 +618,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 			-moz-transition-duration: 0.2s;
 			-o-transition-duration: 0.2s;
 			transition-duration: 0.2s;
+			font-size: 0.9em;
 			&:hover{
 				background: #AC89C5;
 			}
@@ -660,6 +662,10 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 			color: $belcorp;
 		}
 	}
+}
+
+#school_panel_trigger{
+	font-weight: 500;
 }
 
 .details_info{
@@ -706,7 +712,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 
 #menu{
 	background: #6B1F7E;
-	width: 50px;
+	width: 70px;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -714,7 +720,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	z-index: 500;
 }
 .menu-nav{
-	padding: 8px;
+	padding: 12px;
 }
 .nav,.social{
 	display: block;
@@ -723,8 +729,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	list-style-position: inside;
 	li{
 		text-align: center;
-		height: 34px;
-		width: 34px;
+		height: 46px;
+		width: 46px;
 		background-color: transparent;
 		transition: background-color 0.2s;
   		-webkit-transition: background-color ease-out 0.2s;
@@ -732,8 +738,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 			background-color: #9E79B8;
 		}
 		a{
-			line-height: 34px;
+			line-height: 46px;
 			margin-bottom: 10px;
+			font-size: 1.25em;
 			img{
 				margin-top: -4px;
 			}
@@ -793,15 +800,15 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 //OFFCANVAS
 
 .move-right > .inner-wrap {
-	-webkit-transform: translate3d(50px, 0, 0);
-	-moz-transform: translate3d(50px, 0, 0);
-	-ms-transform: translate3d(50px, 0, 0);
-	-o-transform: translate3d(50px, 0, 0);
-	transform: translate3d(50px, 0, 0);
+	-webkit-transform: translate3d(70px, 0, 0);
+	-moz-transform: translate3d(70px, 0, 0);
+	-ms-transform: translate3d(70px, 0, 0);
+	-o-transform: translate3d(70px, 0, 0);
+	transform: translate3d(70px, 0, 0);
 }
 
 .left-off-canvas-menu, .right-off-canvas-menu {
-width: 50px;
+width: 70px;
 top: 0;
 bottom: 0;
 height: 100%;
@@ -938,7 +945,7 @@ z-index: 1002;
 	background: #edeff0;
 	position: fixed;
 	max-width: 1430px;
-	height: 50px;
+	height: 70px;
 	top: 0;
 	left: 0;
 	right: 15px;
@@ -1004,21 +1011,25 @@ box-shadow: -2px 0px 4px #edeff0;
 
 	#courses, #details{
 		padding-top: 0;
-		margin-left: 50px;
+		margin-left: 70px;
 	}
 
 	#forum_header, #details_header, #courses_header, #contact_header, #content_header{
-		margin-top: 50px;
+		margin-top: 70px;
 		margin-bottom: 1.9em;
 		text-align: left;
 	}
 
-	#courses_header, #content_header{
+	#forum_header, #courses_header, #content_header, #contact_header{
 		margin-top: 0;
 	}
 
-	#catalogo_content, #contenidos_content{
-		margin-top: 50px;
+	#catalogo_content, #contenidos_content, #feedback_content, #contact_content{
+		margin-top: 70px;
+	}
+
+	#feedback_content #create_course, 	#contact_content #create_course{
+		margin-top: 0;
 	}
 
 
@@ -1052,8 +1063,8 @@ box-shadow: -2px 0px 4px #edeff0;
 	}
 
 	.index_padding{
-		padding-left: 50px;
-		padding-right: 50px;
+		padding-left: 70px;
+		padding-right: 70px;
 	}
 
 	.right_padding{

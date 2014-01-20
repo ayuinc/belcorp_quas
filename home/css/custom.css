@@ -331,35 +331,48 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     font-weight: 700; }
   .course p {
     color: #929FAA; }
+    
+  .school-contenidos {
+    background-color: #EEEEEE;
+    width: 200px;
+    padding: 0.5em; }
+    .school-contenidos span {
+      color: #596C79;
+      font-size: 0.8rem;
+      font-weight: 500; }
+    .school-contenidos .icon-school {
+      position: relative;
+	  right: -5.5em; }
+  
 
 .liderazgo {
   border-right: 25px solid #00bced; }
-  .liderazgo .school .icon-school {
+  .liderazgo .school .icon-school, .liderazgo .school-contenidos .icon-school {
     color: #00bced; }
 
 .marcas {
   border-right: 25px solid red; }
-  .marcas .school .icon-school {
+  .marcas .school .icon-school, .marcas .school-contenidos .icon-school {
     color: red; }
 
 .planeamiento {
   border-right: 25px solid #72d100; }
-  .planeamiento .school .icon-school {
+  .planeamiento .school .icon-school, .planeamiento .school-contenidos .icon-school {
     color: #72d100; }
 
 .ventas {
   border-right: 25px solid #f8ff00; }
-  .ventas .school .icon-school {
+  .ventas .school .icon-school, .ventas .school-contenidos .icon-school {
     color: #f8ff00; }
 
 .innovacion {
   border-right: 25px solid #ff7500; }
-  .innovacion .school .icon-school {
+  .innovacion .school .icon-school, .innovacion .school-contenidos .icon-school {
     color: #ff7500; }
 
 .belcorp {
   border-right: 25px solid #ff00fe; }
-  .belcorp .school .icon-school {
+  .belcorp .school .icon-school, .belcorp .school-contenidos .icon-school {
     color: #ff00fe; }
 
 #footer {
@@ -679,18 +692,29 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     border-radius: 50%; }
 
 .resources_item {
-  padding: 1em 25px;
+  padding: 2em 25px;
   border-top: 1px solid #EEEEEE;
   border-bottom: 1px solid #EEEEEE; }
   .resources_item h5 {
-    font-weight: 400; }
+    font-weight: 400;
+    text-transform: uppercase;
+     }
+  .resources_item p {
+	  margin-right: 2rem;
+  }  
   .resources_item span {
     color: #929FAA; }
+  .resources_item span a {
+	  font-style: italic;
+  }
   .resources_item img {
     border-radius: 50%; }
+	
 
 .resources_item a {
-  color: #596c79; }
+  color: #596c79;
+   }
+   
 
 #myModal {
   padding: 0;
