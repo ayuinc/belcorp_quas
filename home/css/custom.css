@@ -50,7 +50,6 @@ input[type="search"]::-webkit-search-cancel-button {
   /* Will place small red box on the right of input (positioning carries over) */ }
 
 textarea {
-  border-radius: 3px;
   -webkit-box-shadow: none;
   box-shadow: none;
   background: #FDFDFD;
@@ -62,16 +61,16 @@ textarea:focus {
   background: #FFFFFF;
   border-color: #AFAFAF; }
 
-::-webkit-input-placeholder {
+input[type="search"]::-webkit-input-placeholder {
   color: #FFFFFF; }
 
-:-moz-placeholder {
+input[type="search"]::-moz-placeholder {
   color: #FFFFFF; }
 
-::-moz-placeholder {
+input[type="search"]::-moz-placeholder {
   color: #FFFFFF; }
 
-:-ms-input-placeholder {
+input[type="search"]:-ms-input-placeholder {
   color: #FFFFFF; }
 
 input[type="search"]:focus {
@@ -81,6 +80,18 @@ input[type="search"]:focus {
 
 input[type="search"]:focus + .icon-search {
   color: #CED2D6; }
+
+input[type="text"], input[type="email"], textarea {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: #FDFDFD;
+  font-family: "museo-sans",sans-serif !important;
+  font-weight: 300; }
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+  box-shadow: none;
+  background: #FFFFFF;
+  border-color: #AFAFAF; }
 
 @font-face {
   font-family: 'cplay';
@@ -131,6 +142,21 @@ input[type="search"]:focus + .icon-search {
 .icon-book:before {
   content: "\e608"; }
 
+.icon-mail:before {
+  content: "\e60a"; }
+
+.icon-thumbs-up:before {
+  content: "\e60b"; }
+
+.icon-thumbs-up2:before {
+  content: "\e60c"; }
+
+.icon-twitter:before {
+  content: "\e60d"; }
+
+.icon-facebook:before {
+  content: "\e60e"; }
+
 .icon-play {
   position: relative;
   top: 2px; }
@@ -146,7 +172,7 @@ input[type="search"]:focus + .icon-search {
   position: relative;
   top: 2px; }
 
-.icon-arrow-down {
+#menu_arrow {
   position: absolute;
   top: 0.5em;
   right: 0.35em;
@@ -156,10 +182,10 @@ input[type="search"]:focus + .icon-search {
   color: #94A0AA;
   font-size: 30px; }
 
-.icon-grid, .icon-book, .icon-bubbles {
+.icon-grid, .icon-book, .icon-bubbles, .icon-mail, .icon-facebook, .icon-twitter {
   color: #FFFFFF; }
 
-.publish, .explore, .video, .more {
+.publish, .explore, .video {
   background-color: #6b1f7e;
   box-shadow: 0 2px 0 #4B1658;
   -webkit-transition: background-color 0.5s ease;
@@ -175,23 +201,20 @@ input[type="search"]:focus + .icon-search {
   top: 2px;
   box-shadow: 0 -2px 0 #4B1658; }
 
-.video, .more {
+.video {
   background-color: #94A0A9;
   box-shadow: 0 2px 0 #5B6F7B; }
 
-.video:hover, .video:focus, .more:hover, .more:focus {
+.video:hover, .video:focus {
   background-color: #A0ADB6;
   box-shadow: 0 2px 0 #5B6F7B; }
 
-.video:active, .more:active {
+.video:active {
   top: 2px;
   box-shadow: 0 -2px 0 #5B6F7B; }
 
 .publish {
   margin: 0; }
-
-.more {
-  margin-top: 1em; }
 
 #cover {
   min-height: 100%;
@@ -202,6 +225,7 @@ input[type="search"]:focus + .icon-search {
   background-size: cover;
   position: relative;
   background-position: center center;
+  text-align: center;
   padding: 50px 0 2.5em 0; }
   #cover h1, #cover h2, #cover h3, #cover h4, #cover h5, #cover p, #cover a {
     color: #FFFFFF;
@@ -247,6 +271,27 @@ input[type="search"]:focus + .icon-search {
     #cover .play:hover .icon-play {
       color: #303336;
       top: 1px; }
+  #cover .down {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 6px; }
+    #cover .down #down {
+      background: url(../img/scroll_down.png) no-repeat;
+      color: #fff;
+      display: block;
+      height: 49px;
+      width: 49px;
+      margin: auto;
+      -webkit-transition: 0.4s;
+      -moz-transition: 0.4s;
+      -ms-transition: 0.4s;
+      -o-transition: 0.4s;
+      transition: 0.4s; }
+      #cover .down #down:hover {
+        background: url(../img/scroll_down_hover.png) no-repeat; }
 
 #destacados {
   padding: 2.5em 0 1.25em 0; }
@@ -312,9 +357,9 @@ input[type="search"]:focus + .icon-search {
   .innovacion .school .icon-school {
     color: #ff7500; }
 
-.induccion {
+.belcorp {
   border-right: 25px solid #ff00fe; }
-  .induccion .school .icon-school {
+  .belcorp .school .icon-school {
     color: #ff00fe; }
 
 #footer {
@@ -342,25 +387,29 @@ input[type="search"]:focus + .icon-search {
 #details {
   padding-top: 4.5em; }
 
-#forum_header, #courses_header {
+#forum_header, #courses_header, #contact_header, #content_header {
   background-color: #FFFFFF;
   box-shadow: 0 2px 0 #94A0AA;
   padding: 25px; }
-  #forum_header h3, #courses_header h3 {
+  #forum_header h3, #courses_header h3, #contact_header h3, #content_header h3 {
     font-weight: 700; }
-  #forum_header h5, #courses_header h5 {
+  #forum_header h5, #courses_header h5, #contact_header h5, #content_header h5 {
     font-weight: 100;
     color: #929FAA; }
-  #forum_header .icon-grid, #courses_header .icon-grid {
+  #forum_header .icon-grid, #courses_header .icon-grid, #contact_header .icon-grid, #content_header .icon-grid {
     color: #596c79;
     font-size: 2.8em; }
-  #forum_header .icon-bubbles, #courses_header .icon-bubbles {
+  #forum_header .icon-bubbles, #courses_header .icon-bubbles, #contact_header .icon-bubbles, #content_header .icon-bubbles {
     color: #596c79;
     font-size: 4em;
     line-height: 1.2em; }
-  #forum_header .icon-book, #courses_header .icon-book {
+  #forum_header .icon-book, #courses_header .icon-book, #contact_header .icon-book, #content_header .icon-book {
     color: #596c79;
     font-size: 4em;
+    line-height: 1.2em; }
+  #forum_header .icon-mail, #courses_header .icon-mail, #contact_header .icon-mail, #content_header .icon-mail {
+    color: #596c79;
+    font-size: 3.9em;
     line-height: 1.2em; }
 
 #form_search {
@@ -426,6 +475,8 @@ input[type="search"]:focus + .icon-search {
     transition-duration: 0.2s; }
     #school_panel dd a:hover {
       background: #AC89C5; }
+    #school_panel dd a.selected {
+      background: #AC89C5; }
   #school_panel dd .icon-school {
     position: absolute;
     top: 1em;
@@ -440,7 +491,7 @@ input[type="search"]:focus + .icon-search {
   color: #f8ff00; }
 #school_panel .innovacion .icon-school {
   color: #ff7500; }
-#school_panel .induccion .icon-school {
+#school_panel .belcorp .icon-school {
   color: #ff00fe; }
 
 .details_info {
@@ -467,7 +518,8 @@ input[type="search"]:focus + .icon-search {
   #details_header p {
     padding-bottom: 3em; }
   #details_header h3 {
-    padding-bottom: 2em; }
+    padding-bottom: 2em;
+    font-weight: 500; }
 
 #menu {
   background: #6B1F7E;
@@ -481,25 +533,29 @@ input[type="search"]:focus + .icon-search {
 .menu-nav {
   padding: 8px; }
 
-.nav {
+.nav, .social {
   display: block;
   margin: 0;
   list-style-type: none;
   list-style-position: inside; }
-  .nav li {
+  .nav li, .social li {
     text-align: center;
     height: 34px;
     width: 34px;
     background-color: transparent;
     transition: background-color 0.2s;
     -webkit-transition: background-color ease-out 0.2s; }
-    .nav li:hover {
+    .nav li:hover, .social li:hover {
       background-color: #9E79B8; }
-    .nav li a {
+    .nav li a, .social li a {
       line-height: 34px;
       margin-bottom: 10px; }
-      .nav li a img {
+      .nav li a img, .social li a img {
         margin-top: -4px; }
+
+.social {
+  position: absolute;
+  bottom: 8px; }
 
 .has-tip, .has-tip:hover {
   cursor: default;
@@ -514,9 +570,13 @@ input[type="search"]:focus + .icon-search {
   #forum_header span {
     font-size: 0.75em; }
 
-.forum_publish {
+.contact_form, .forum_publish {
   background: #FFFFFF;
   padding: 25px; }
+
+.contact_form {
+  box-shadow: 0 2px 0 #94A0AA;
+  margin-bottom: 5em; }
 
 .forum_comments {
   background-color: #F7F7F7; }
@@ -588,14 +648,17 @@ input[type="search"]:focus + .icon-search {
   -o-transition-duration: 0.2s;
   transition-duration: 0.2s; }
 
-#more_courses {
-  color: #3078ca;
+.more #more_courses {
+  color: #596c79;
   font-size: 1.4375rem;
   font-weight: 100; }
-
-#more_courses:hover {
-  color: #3078ca;
-  text-decoration: underline; }
+.more #more_icon {
+  font-size: 1.8em; }
+.more:hover {
+  cursor: pointer; }
+  .more:hover #more_courses {
+    color: #596c79;
+    text-decoration: underline; }
 
 #courses_hidden {
   display: none; }
@@ -620,25 +683,54 @@ input[type="search"]:focus + .icon-search {
   .resources_item img {
     border-radius: 50%; }
 
-dd a.selected:before {
-  content: "";
-  width: 5px;
-  background: #6B1F7E;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0; }
+.resources_item a {
+  color: #596c79; }
 
 #myModal {
   padding: 0;
   border: 2px solid #596c79; }
 
+.like {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  cursor: pointer; }
+
+.heading-pocket {
+  background: #edeff0;
+  position: fixed;
+  max-width: 1430px;
+  height: 50px;
+  top: 0;
+  left: 0;
+  right: 15px;
+  z-index: 100;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s; }
+
+.heading-pocket:before, .heading-pocket:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: -10px;
+  right: -8px;
+  width: 15px;
+  background: #edeff0;
+  z-index: 101;
+  -webkit-box-shadow: -2px 0px 4px #edeff0;
+  -moz-box-shadow: -2px 0px 4px #edeff0;
+  box-shadow: -2px 0px 4px #edeff0; }
+
 @media only screen and (min-width: 40.063em) {
   #cover h1 {
     line-height: 1;
-    font-size: 3rem; }
+    font-size: 3rem;
+    text-align: left; }
   #cover h5 {
-    font-size: 1.45rem; }
+    font-size: 1.45rem;
+    text-align: left; }
   #cover a {
     font-size: 1.5rem; }
   #cover #view_video {
@@ -646,7 +738,8 @@ dd a.selected:before {
     height: 75px; }
 
   #details_header h3 {
-    padding-bottom: 0; }
+    padding-bottom: 0;
+    font-weight: 700; }
 
   .details_info p {
     font-size: 0.92rem; }
@@ -657,15 +750,15 @@ dd a.selected:before {
     padding-top: 0;
     margin-left: 50px; }
 
-  #forum_header, #details_header, #courses_header {
+  #forum_header, #details_header, #courses_header, #contact_header, #content_header {
     margin-top: 50px;
     margin-bottom: 1.9em;
     text-align: left; }
 
-  #courses_header {
+  #courses_header, #content_header {
     margin-top: 0; }
 
-  #catalogo_content {
+  #catalogo_content, #contenidos_content {
     margin-top: 50px; }
 
   .fixed_menu {
@@ -677,7 +770,7 @@ dd a.selected:before {
     right: 0; }
 
   #footer p {
-    text-align: left; }
+    text-align: center; }
 
   #form_search {
     position: relative;
@@ -699,4 +792,7 @@ dd a.selected:before {
     margin-bottom: 1.9em; }
 
   #details_lesson {
-    margin: 1.9em auto; } }
+    margin: 1.9em auto; }
+
+  .contact_form {
+    margin-bottom: 20em; } }
