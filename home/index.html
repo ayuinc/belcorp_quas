@@ -45,6 +45,10 @@
           </div>
         </div>
       </div>
+      <div class="down">
+        <a href="#destacados" id="down">
+        </a>
+      </div>
     </section>
 
     <section id="destacados">
@@ -58,7 +62,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="medium-12 large-4 columns">
+            <div class="small-12 medium-8 medium-centered large-4 large-uncentered columns">
               <a href="details.html">
                 <div class="course liderazgo">
                   <h5>LIDERA</h5>
@@ -70,7 +74,7 @@
                 </div>
               </a>
             </div>
-            <div class="medium-12 large-4 columns">
+            <div class="small-12 medium-8 medium-centered large-4 large-uncentered columns">
               <a href="details.html">
                 <div class="course planeamiento">
                   <h5>RUTA DE APRENDIZAJE</h5>
@@ -82,7 +86,7 @@
                 </div>
               </a>
             </div>
-            <div class="medium-12 large-4 columns">
+            <div class="small-12 medium-8 medium-centered large-4 large-uncentered columns">
               <a href="details.html">
                 <div class="course marcas">
                   <h5>DESIGN THINKING</h5>
@@ -110,12 +114,12 @@
             </div>
           </div>
           <div class="hide-for-small row">
-            <div class="medium-5 large-5 columns">
+            <div class="large-12 columns">
               <p>© Derechos Reservados por BELCORP</p>
             </div>
-            <div class="hide-for-small hide-for-medium medium-7 large-7 columns">
+<!--             <div class="hide-for-small hide-for-medium medium-7 large-7 columns">
               <p class="text-right">Av. Canaval y Moreyra 480, San Isidro Central Telefónica: 211-3300</p>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -128,7 +132,13 @@
       $(document).foundation();
     </script>
     <script>
-    $(document).ready(function(){      
+    $(document).ready(function(){
+
+      $( "#down" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:$("#destacados").offset().top});
+      });
+
       $("#school_panel_trigger").on("click", function () {
         if($("#school_panel").hasClass("activex")){
           $("#school_panel").slideUp();
