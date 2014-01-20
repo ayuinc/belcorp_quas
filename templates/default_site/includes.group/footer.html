@@ -1,17 +1,21 @@
     <section id="footer">
       <div class="row">
-        <div class="large-12 columns">
-          <div class="text-center">
-            <img src="{site_url}img/logo_footer.png" alt="">
+        <div class="index_padding large-12 columns">
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="text-center">
+                <img src="{site_url}img/logo_footer.png" alt="">
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="hide-for-small row">
-        <div class="medium-5 large-5 columns">
-          <p>© Derechos Reservados por BELCORP</p>
-        </div>
-        <div class="hide-for-small hide-for-medium medium-7 large-7 columns">
-          <p class="text-right">Av. Canaval y Moreyra 480, San Isidro Central Telefónica: 211-3300</p>
+          <div class="hide-for-small row">
+            <div class="large-12 columns">
+              <p>© Derechos Reservados por BELCORP</p>
+            </div>
+<!--             <div class="hide-for-small hide-for-medium medium-7 large-7 columns">
+              <p class="text-right">Av. Canaval y Moreyra 480, San Isidro Central Telefónica: 211-3300</p>
+            </div> -->
+          </div>
         </div>
       </div>
     </section>
@@ -23,7 +27,13 @@
       $(document).foundation();
     </script>
     <script>
-    $(document).ready(function(){      
+    $(document).ready(function(){
+
+      $( "#down" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:$("#destacados").offset().top});
+      });
+
       $("#school_panel_trigger").on("click", function () {
         if($("#school_panel").hasClass("activex")){
           $("#school_panel").slideUp();

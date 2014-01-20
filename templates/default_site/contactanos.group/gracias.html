@@ -1,0 +1,80 @@
+{embed="includes/header"}
+
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+        <div id="courses_menu" class="hide-for-medium-up">
+          <div class="row">
+            <div class="large-12 columns">
+              <a class="left-off-canvas-toggle" ><span class="icon-list"></span></a>
+              <h3 id="menu_title">FEEDBACK</h3>
+            </div>
+          </div>
+        </div>
+
+	{embed="inbcludes/menu-offcanvas"}
+
+    <section id="courses">
+      <div class="row">
+
+        <div class="total_padding medium-12 large-12 columns">  
+
+          <div class="row">
+            <div class="large-12 columns">
+              <div id="contact_header">
+                <div class="row">
+                  <div class="medium-2 large-1 columns">
+                    <span class="icon-mail"></span>
+                  </div>
+                  <div class="medium-10 large-11 columns"> 
+                    <h3>GRACIAS</h3>
+                    <h5>Nos comunicaremos contigo de inmediato</h5>
+                  </div>
+<!--                   <div class="hide-for-small medium-2 large-2 columns">
+                    <div class="text-center">
+                      <h3 id="comment_number">30</h3>
+                      <span>COMENTARIOS</span>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+
+              <div class="contact_form">
+                
+                {exp:channel:form channel="contactos" return="contacto/gracias" }
+                  <input name="title" type="hidden" value="Contacto">
+                  <div class="row">
+                    <div class="large-6 columns">
+                      <input name="nombre-foro" type="text" placeholder="Ingresa tu nombre" required>
+                    </div>
+                    <div class="large-6 columns">
+                      <input type="email" name="correo-electronico-foro" placeholder="Ingresa tu correo electrónico" required>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="large-12 columns">
+                      <textarea name="mensaje-foro" id="comment" class="expanding" placeholder="Escribe tu mensaje" required></textarea>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="large-offset-10 large-2 columns"> 
+                    <button class="publish button expand">ENVIAR</button>
+                    </div>
+                  </div>                
+                {/exp:channel:form}
+                
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+{embed="includes/footer-interno"}

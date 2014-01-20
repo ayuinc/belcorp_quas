@@ -1,0 +1,111 @@
+{embed="includes/header"}
+
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+        <div id="courses_menu" class="hide-for-medium-up">
+          <div class="row">
+            <div class="large-12 columns">
+              <a class="left-off-canvas-toggle" ><span class="icon-list"></span></a>
+              <h3 id="menu_title">FEEDBACK</h3>
+            </div>
+          </div>
+        </div>
+
+        {embed="inbcludes/menu-offcanvas"}
+
+    <section id="courses">
+      <div class="row">
+
+        <div class="total_padding medium-12 large-12 columns">  
+
+          <div class="row">
+            <div class="large-12 columns">
+              <div id="forum_header">
+                <div class="row">
+                  <div class="medium-2 large-1 columns">
+                    <span class="icon-bubbles"></span>
+                  </div>
+                  <div class="medium-10 large-11 columns"> 
+                    <h3>¿COMO SE PUEDE MEJORAR LA UCB?</h3>
+                    <h5>Comparte tus comentarios sobre la UCB y entérate de lo que piensa la comunidad BELCORP</h5>
+                  </div>
+<!--                   <div class="hide-for-small medium-2 large-2 columns">
+                    <div class="text-center">
+                      <h3 id="comment_number">30</h3>
+                      <span>COMENTARIOS</span>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+
+              <div class="forum_publish">
+                
+                {exp:channel:form channel="feedback" return="feedback/gracias" }
+                  <input name="title" type="hidden" value="Feedback">
+                  <div class="row">
+                    <div class="large-6 columns">
+                      <input name="nombre-foro" type="text" placeholder="Ingresa tu nombre" required>
+                    </div>
+                    <div class="large-6 columns">
+                      <input type="email" name="correo-electronico-foro" placeholder="Ingresa tu correo electrónico" required>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="large-12 columns">
+                      <textarea name="mensaje-foro" id="comment" class="expanding" placeholder="Escribe tu mensaje" required></textarea>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="large-offset-10 large-2 columns"> 
+                    <button class="publish button expand">ENVIAR</button>
+                    </div>
+                  </div>                
+                {/exp:channel:form}
+              
+              </div>
+
+              <div class="forum_comments">
+				{exp:channel:entries channel="feedback" limit="10" paginate="bottom"}
+                <div class="row">
+                  <div class="large-12 columns">
+                    <div class="forum_comments_item"> 
+                     <p>{if nombre-foro}<b>{nombre-foro}</b><br>{/if}{mensaje-foro}</p>
+                    </div>
+                  </div>
+                </div>
+              
+              {paginate}  
+              	{pagination_links}
+		    		  <div class="row">
+		                <div class="large-2 large-centered columns">
+		                  {next_page}	
+		                  <a href="{pagination_url}" class="more button expand">VER MÁS</a>
+						  {/next_page}
+		                </div>
+		              </div>  
+              	{/pagination_links}   
+              {/paginate}       
+    
+				{/exp:channel:entries}
+              </div>
+              
+              <div class="row">
+                <div class="large-2 large-centered columns">
+                  <a href="#" class="more button expand">VER MÁS</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      {embed="includes/footer-direccion"} 
+    </section>
+    
+    {embed="includes/footer-interno"}

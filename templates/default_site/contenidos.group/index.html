@@ -1,0 +1,81 @@
+{embed="includes/header"}
+
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+        <div id="courses_menu" class="hide-for-medium-up">
+          <div class="row">
+            <div class="large-12 columns">
+              <a class="left-off-canvas-toggle" ><span class="icon-list"></span></a>
+              <h3 id="menu_title">Recursos</h3>
+            </div>
+          </div>
+        </div>
+
+        {embed="inbcludes/menu-offcanvas"}
+
+    <section id="courses">
+      <div class="row">
+
+        <div class="total_padding medium-12 large-12 columns">  
+
+          <div class="row">
+            <div class="large-12 columns">
+              <div id="forum_header">
+                <div class="row">
+                  <div class="medium-2 large-1 columns">
+                    <span class="icon-book"></span>
+                  </div>
+                  <div class="medium-10 large-11 columns"> 
+                    <h3>LISTA DE RECURSOS</h3>
+                    <h5>Usa estos recursos para complementar tu formación académica.</h5>
+                  </div>
+<!--                   <div class="hide-for-small medium-2 large-2 columns">
+                    <div class="text-center">
+                      <h3 id="comment_number">30</h3>
+                      <span>COMENTARIOS</span>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+            
+            {exp:channel:entries channel="recursos" limit="10" paginate="bottom" dynamic="off"}
+              <div class="resources_list">
+                <div class="resources_item">
+                  <div class="row">
+                    <div class="medium-1 large-1 columns">
+                      {imagen-recurso}
+                      	<img src="{image:url:small}" alt="{title}">
+                      {/imagen-recurso}
+                    </div>
+                    <div class="medium-11 large-11 columns">
+                      <h5><a href="{link-recurso}" target="_blank">{title}</a></h5>
+                      <span>{fuente-recurso}</span>
+                      <p>{descripcion-recurso}</p>
+                    </div>
+                  </div>
+                </div>
+            {/exp:channel:entries}    
+
+
+              </div>
+
+              
+              <div class="row">
+                <div class="large-2 large-centered columns">
+                  <a href="#" class="more button expand">VER MÁS</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      {embed="includes/footer-direccion"} 
+    </section>
+
+    {embed="includes/footer-interno"}
