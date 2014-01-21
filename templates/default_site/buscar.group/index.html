@@ -1,0 +1,93 @@
+{embed="includes/header"}
+
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+        <div id="courses_menu" class="hide-for-medium-up">
+          <div class="row">
+            <div class="large-12 columns">
+              <a class="left-off-canvas-toggle" ><span class="icon-list"></span></a>
+              <h3 id="menu_title">Contenidos</h3>
+            </div>
+          </div>
+        </div>
+
+        {embed="inbcludes/menu-offcanvas"}
+
+    <section id="courses">
+      <div class="heading-pocket"></div>
+      <div class="row">
+
+        <div class="total_padding medium-12 large-12 columns">  
+
+        <div id="contenidos_content" class="row">
+          <div class="large-9 columns">
+
+          <div class="row">
+            <div class="large-12 columns">
+              <div id="content_header">
+                <div class="row">
+                  <div class="medium-2 large-1 columns">
+                    <span class="icon-book"></span>
+                  </div>
+                  <div class="medium-10 large-11 columns"> 
+                    <h3>RESULTADOS DE LA BUSQUEDA</h3>
+                  </div>
+<!--                   <div class="hide-for-small medium-2 large-2 columns">
+                    <div class="text-center">
+                      <h3 id="comment_number">30</h3>
+                      <span>COMENTARIOS</span>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="resources_list">
+              
+               {exp:super_search:results channel="contenidos|cursos" limit="10" orderby="entry_date+desc+title+asc" paginate="bottom" status="open" where="all"}
+                <div class="resources_item">
+                  <div class="row">
+                    <div class="medium-12 large-12 columns">  
+                      <h5>
+                        <a href="{auto_path}" target="_blank">{title}</a>
+                      </h5>
+                      <span>Keyword(s): {super_search_keywords}</span>
+                      <!--<span><a href="{link-recurso}" target="_blank">{fuente-recurso}</a></span>-->
+                      <!--<div class="like">
+                        <span class="icon-thumbs-up"> 32</span>
+                      </div>-->
+                    </div>
+                  </div>
+                </div>
+               {/exp:super_search:results}
+                
+              </div>
+
+              <div class="row">
+                <div class="large-3 large-centered columns vermas">
+                  <div class="more">                      
+                    <div class="text-center">
+                      <span id="more_courses">Ver más</span>
+                    </div>
+                    <div class="text-center">
+                      <span id="more_icon" class="icon-arrow-down"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          </div>
+          
+          {embed="includes/sidebar-categorias-contenidos"}
+
+        </div>
+      </div>
+    </section>
+
+{embed="includes/footer-interno"}

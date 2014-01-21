@@ -292,6 +292,10 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
       transition: 0.4s; }
       #cover .down #down:hover {
         background: url(../img/scroll_down_hover.png) no-repeat; }
+        
+.vermas {
+	margin-top:1rem !important;
+}        
 
 #destacados {
   padding: 2.5em 0 1.25em 0; }
@@ -323,12 +327,14 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     .course .school span {
       color: #596C79;
       font-size: 0.8rem;
-      font-weight: 500; }
+      font-weight: 500;
+      text-transform: uppercase; }
     .course .school .icon-school {
       position: absolute;
       right: 0.5em; }
   .course h5 {
-    font-weight: 700; }
+    font-weight: 700;
+    text-transform: uppercase; }
   .course p {
     color: #929FAA; }
     
@@ -339,7 +345,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     .school-contenidos span {
       color: #596C79;
       font-size: 0.8rem;
-      font-weight: 500; }
+      font-weight: 500;
+      text-transform: uppercase;
+       }
     .school-contenidos .icon-school {
       position: relative;
 	  right: -5.5em; }
@@ -430,6 +438,18 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   position: relative;
   margin-top: 0.5em; }
 
+.icon-arrow-down {
+	position: absolute;
+	right: 0.5rem;
+	top: 0.7rem;
+	font-size: 2rem;
+}
+
+.accordion h4 {
+	font-weight: 500;
+	margin-bottom:0px;
+}
+
 .accordion dd > a {
   background: #6B1F7E;
   color: #FFFFFF;
@@ -447,7 +467,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   box-shadow: 0 2px 0 #94A0AA;
   margin: 1.25em auto; }
   #details_lesson dd > a {
-    background: #FFFFFF;
+    background: #f7f7f7;;
     color: #5D6C7D;
     font-weight: 700; }
 
@@ -537,7 +557,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     padding-bottom: 3em; }
   #details_header h3 {
     padding-bottom: 2em;
-    font-weight: 500; }
+    font-weight: 500;
+    text-transform: uppercase;
+     }
 
 #menu {
   background: #6B1F7E;

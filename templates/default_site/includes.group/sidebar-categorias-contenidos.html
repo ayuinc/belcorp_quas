@@ -1,8 +1,13 @@
           <div class="large-3 columns hide-for-small hide-for-medium fixed_menu right_padding">
-            <form action="#" id="form_search">
-              <input type="search" placeholder="BUSCAR">
-              <span class="icon-search"></span>
-            </form>
+          
+          <form action="{path='buscar/index'}/" method="post" id="form_search">
+		    <input type="hidden" name="XID" value="{XID_HASH}" /> <!-- Important! -->
+		    <input type="search" name="keywords" id="keywords" placeholder="BUSCAR">
+		    <span class="icon-search"></span>
+		 </form>
+          
+          
+          	{if segment_1!='buscar'}
             <dl class="accordion" data-accordion>
               <dd>
                 <a id="school_panel_trigger" href="#school_panel">
@@ -12,36 +17,39 @@
                 <div id="school_panel" class="activex">
                   <dl class="accordion" data-accordion>
                     <dd>
-                      <a class="selected" href="#">TODAS</a>
+                      <a class="selected" href="{site_url}contenidos/">TODAS</a>
                     </dd>
                     <dd class="liderazgo">
-                      <a href="#">LIDERAZGO</a>
+                      <a href="{site_url}contenidos/liderazgo">LIDERAZGO</a>
                       <span class="icon-school"></span>
                     </dd>
                     <dd class="marcas">
-                      <a href="#">MARCAS</a>
+                      <a href="{site_url}contenidos/marcas">MARCAS</a>
                       <span class="icon-school"></span>
                     </dd>
                     <dd class="planeamiento">
-                      <a href="#">PLANEAMIENTO</a>
+                      <a href="{site_url}contenidos/planeamiento">PLANEAMIENTO</a>
                       <span class="icon-school"></span>
                     </dd>
                     <dd class="ventas">
-                      <a href="#">VENTAS</a>
+                      <a href="{site_url}contenidos/ventas">VENTAS</a>
                       <span class="icon-school"></span>
                     </dd>
                     <dd class="innovacion">
-                      <a href="#">INNOVACIÓN</a>
+                      <a href="{site_url}contenidos/innovacion">INNOVACIÓN</a>
                       <span class="icon-school"></span>
                     </dd>                      
                     <dd class="belcorp">
-                      <a href="#">BELCORP</a>
+                      <a href="{site_url}contenidos/belcorp">BELCORP</a>
                       <span class="icon-school"></span>
                     </dd>
                   </dl>
                 </div>
               </dd>
             </dl>
+            
             <a href="#" id="create_course" class="publish button expand">¿QUIERES CREAR UN CURSO?</a>
+            {/if}
+            
           </div>
         </div>

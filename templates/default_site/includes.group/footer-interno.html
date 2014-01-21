@@ -20,6 +20,8 @@
       $("#school_panel dd a").on("click", function(){
         $("#school_panel dd a").removeClass("selected");
         $(this).addClass("selected");
+        var redireccion = $(this).attr('href');
+        window.location.replace(redireccion);
       });
 
 
@@ -35,6 +37,24 @@
           $(".icon-arrow-down").css('-webkit-transform','rotate(0deg)'); 
         }
       });
+
+      $("#lesson_panel_trigger").on("click", function () {
+        if($("#lesson_panel").hasClass("activex")){
+          $("#lesson_panel").slideUp();
+          $("#lesson_panel").removeClass("activex");
+          $("#menu_arrow").css('-webkit-transform','rotate(180deg)'); 
+        }
+        else {
+          $("#lesson_panel").slideDown();
+          $("#lesson_panel").addClass("activex");
+          $("#menu_arrow").css('-webkit-transform','rotate(0deg)'); 
+        }
+      });
+      
+      $("#lesson_panel dd a").on("click", function(){
+        var redireccionaurl = $(this).attr('href');
+		window.location.replace(redireccionaurl);
+      }); 
 
     });
 	</script>

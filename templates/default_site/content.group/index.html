@@ -56,42 +56,24 @@
             </div>
           </div>
           <div class="row">
+            {exp:low_reorder:entries set="1" limit="3"}
             <div class="small-12 medium-8 medium-centered large-4 large-uncentered columns">
-              <a href="details.html">
-                <div class="course liderazgo">
-                  <h5>LIDERA</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, illo.</p>
-                  <div class="school">
-                    <span>LIDERAZGO</span>
-                    <span class="icon-school"></span>
-                  </div>
-                </div>
-              </a>
+                      <a href="{site_url}/catalogo/curso/{url_title}">
+                        {categories}
+                        <div class="course {category_url_title}">
+                        {/categories}
+                          <h5>{title}</h5>
+                          <p>{descripcion-curso}</p>
+                          {categories}
+                          <div class="school">
+                            <span>{category_name}</span>
+                            <span class="icon-school"></span>
+                          </div>
+                          {/categories}
+                        </div>
+                      </a>
             </div>
-            <div class="small-12 medium-8 medium-centered large-4 large-uncentered columns">
-              <a href="details.html">
-                <div class="course planeamiento">
-                  <h5>RUTA DE APRENDIZAJE</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, illo.</p>
-                  <div class="school">
-                    <span>PLANEAMIENTO</span>
-                    <span class="icon-school"></span>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="small-12 medium-8 medium-centered large-4 large-uncentered columns">
-              <a href="details.html">
-                <div class="course marcas">
-                  <h5>DESIGN THINKING</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, illo.</p>
-                  <div class="school">
-                    <span>MARCAS</span>
-                    <span class="icon-school"></span>
-                  </div>
-                </div>
-              </a>
-            </div>
+            {/exp:low_reorder:entries }
           </div>
         </div>
       </div>

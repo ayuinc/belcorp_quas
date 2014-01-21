@@ -1,3 +1,4 @@
+{exp:channel:entries channel="cursos" limit="1" disable="pagination|member_data"}
 {embed="includes/header"}
 
     <div class="off-canvas-wrap">
@@ -20,73 +21,264 @@
 
           <div class="row">
             <div class="large-12 columns">
-              <div id="details_header" class="course liderazgo">
-                <h3>COACHING PARA EL LIDERAZGO</h3>
-                <p class="hide-for-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, est, adipisci, itaque, necessitatibus accusamus quasi quia voluptatibus similique dolorum ratione facere corrupti ut cumque eligendi doloribus vitae impedit amet quos.</p>
+            {categories}
+              <div id="details_header" class="course {category_url_title}">
+            {/categories}  
+                <h3>{title}</h3>
+                <p class="hide-for-small">{introduccin-curso}</p>
+                {categories}
                 <div class="school">
-                  <span>LIDERAZGO</span>
+                  <span>{category_name}</span>
                   <span class="icon-school"></span>
                 </div>
+                {/categories}
               </div>
             </div>
           </div>
+          
+          
 
           <div class="row">
             <div class="large-9 columns">
               <div class="row">
-                <div class="large-12 columns">             
-                  <img src="{site_url}img/details_video.jpg" width="100%" alt="">
+                <div class="large-12 columns">
+                  
+                  {if archivo-video-curso}
+                             
+	                  	<iframe width="100%" height="500" src="{archivo-video-curso}" frameborder="0" allowfullscreen></iframe>
+					  	
+				  {if:else}
+				  
+	                  {if proveedor-video-curso=='Youtube'}             
+	                  	<iframe width="100%" height="500" src="//www.youtube.com/embed/{video-introductorio-curso}" frameborder="0" allowfullscreen></iframe>
+					  {/if}	
+					  
+	                  {if proveedor-video-curso=='Vimeo'}             
+	                  	<iframe width="100%" height="500" src="//www.youtube.com/embed/{video-introductorio-curso}" frameborder="0" allowfullscreen></iframe>
+					  {/if}		
+					  
+	                  {if proveedor-video-curso=='Amazon'}             
+	                  	<iframe width="100%" height="500" src="//www.youtube.com/embed/{video-introductorio-curso}" frameborder="0" allowfullscreen></iframe>
+					  {/if}						  				  			  
+				  
+				  {/if}
+				  
+				  
+                
+				  
+				  {if nombre-modulo-1-curso}
                   <dl id="details_lesson" class="accordion" data-accordion>
                     <dd>
                       <a id="lesson_panel_trigger" href="#lesson_panel">
-                        LECCIONES
+                        <h5>MÓDULO #1: {nombre-modulo-1-curso}</h5>
                         <span class="icon-arrow-down"></span>
                       </a>
                       <div id="lesson_panel" class="activex">
                         <dl class="accordion" data-accordion>
+                          {material-modulo-1}
                           <dd>
-                            <a href="#">Primera lección</a>
-                            <span>4:23</span>
+                          	{if material-modulo-1:archivo-material!=''}
+	                            <a href="{material-modulo-1:archivo-material}" id="archivo-url">       
+	                            {material-modulo-1:title} - {material-modulo-1:tipo-material}
+	                            </a>
+	                            <span>{material-modulo-1:tiempo-consumo-material} min</span>
+                            {/if}
+                            
+                          	{if material-modulo-1:cdigo-material!=''}
+	                            <a href="{material-modulo-1:cdigo-material}" id="embed-url">
+	                            {material-modulo-1:title} - {material-modulo-1:tipo-embed-material}
+	                            </a>
+	                            <span>{material-modulo-1:tiempo-consumo-embed-material} min</span>
+                            {/if}                            
                           </dd>
-                          <dd>
-                            <a href="#">Segunda lección</a>
-                            <span>1:20</span>
-                          </dd>
-                          <dd>
-                            <a href="#">Tercera lección</a>
-                            <span>2:30</span>
-                          </dd>
-                          <dd>
-                            <a href="#">Cuarta lección</a>
-                            <span>5:00</span>
-                          </dd>
+                          {/material-modulo-1}
                         </dl>
                       </div>
                     </dd>
                   </dl>
+                  {/if}
+                  
+				  {if nombre-modulo-2-curso}
+                  <dl id="details_lesson" class="accordion" data-accordion>
+                    <dd>
+                      <a id="lesson_panel_trigger" href="#lesson_panel">
+                        <h5>MÓDULO #2: {nombre-modulo-2-curso}</h5>
+                        <span class="icon-arrow-down"></span>
+                      </a>
+                      <div id="lesson_panel" class="activex">
+                        <dl class="accordion" data-accordion>
+                          {material-modulo-2}
+                          <dd>
+                          	{if material-modulo-2:archivo-material!=''}
+	                            <a href="{material-modulo-1:archivo-material}">       
+	                            {material-modulo-2:title} - {material-modulo-2:tipo-material}
+	                            </a>
+	                            <span>{material-modulo-2:tiempo-consumo-material} min</span>
+                            {/if}
+                            
+                          	{if material-modulo-2:cdigo-material!=''}
+                          		{if material-modulo-2:tipo-embed-material=="Youtube"}
+	                            	<a href="http://www.youtube.com/watch?v={material-modulo-2:cdigo-material}">
+	                            {/if}
+                          		{if material-modulo-2:tipo-embed-material=="Vimeo"}
+	                            	<a href="http://vimeo.com/{material-modulo-2:cdigo-material}">
+	                            {/if}	
+                          		{if material-modulo-2:tipo-embed-material=="Amazon"}
+	                            	<a href="http://vimeo.com/{material-modulo-2:cdigo-material}">
+	                            {/if}		                                                        
+	                            {material-modulo-2:title} - {material-modulo-2:tipo-embed-material}
+	                            </a>
+	                            <span>{material-modulo-2:tiempo-consumo-embed-material} min</span>
+                            {/if}                            
+                          </dd>
+                          {/material-modulo-2}
+                        </dl>
+                      </div>
+                    </dd>
+                  </dl>
+                  {/if}   
+                  
+				  {if nombre-modulo-3-curso}
+                  <dl id="details_lesson" class="accordion" data-accordion>
+                    <dd>
+                      <a id="lesson_panel_trigger" href="#lesson_panel">
+                        <h5>MÓDULO #3: {nombre-modulo-3-curso}</h5>
+                        <span class="icon-arrow-down"></span>
+                      </a>
+                      <div id="lesson_panel" class="activex">
+                        <dl class="accordion" data-accordion>
+                          {material-modulo-3}
+                          <dd>
+                          	{if material-modulo-3:archivo-material!=''}
+	                            <a href="{material-modulo-1:archivo-material}">       
+	                            {material-modulo-3:title} - {material-modulo-3:tipo-material}
+	                            </a>
+	                            <span>{material-modulo-3:tiempo-consumo-material} min</span>
+                            {/if}
+                            
+                          	{if material-modulo-3:cdigo-material!=''}
+                          		{if material-modulo-3:tipo-embed-material=="Youtube"}
+	                            	<a href="http://www.youtube.com/watch?v={material-modulo-3:cdigo-material}">
+	                            {/if}
+                          		{if material-modulo-3:tipo-embed-material=="Vimeo"}
+	                            	<a href="http://vimeo.com/{material-modulo-3:cdigo-material}">
+	                            {/if}	
+                          		{if material-modulo-3:tipo-embed-material=="Amazon"}
+	                            	<a href="http://vimeo.com/{material-modulo-3:cdigo-material}">
+	                            {/if}	
+	                            {material-modulo-2:title} - {material-modulo-2:tipo-embed-material}
+	                            </a>
+	                            <span>{material-modulo-3:tiempo-consumo-embed-material} min</span>
+                            {/if}                            
+                          </dd>
+                          {/material-modulo-3}
+                        </dl>
+                      </div>
+                    </dd>
+                  </dl>
+                  {/if} 
+                  
+				  {if nombre-modulo-4-curso}
+                  <dl id="details_lesson" class="accordion" data-accordion>
+                    <dd>
+                      <a id="lesson_panel_trigger" href="#lesson_panel">
+                        <h5>MÓDULO #4: {nombre-modulo-4-curso}</h5>
+                        <span class="icon-arrow-down"></span>
+                      </a>
+                      <div id="lesson_panel" class="activex">
+                        <dl class="accordion" data-accordion>
+                          {material-modulo-4}
+                          <dd>
+                          	{if material-modulo-4:archivo-material!=''}
+	                            <a href="{material-modulo-1:archivo-material}">       
+	                            {material-modulo-4:title} - {material-modulo-4:tipo-material}
+	                            </a>
+	                            <span>{material-modulo-4:tiempo-consumo-material} min</span>
+                            {/if}
+                            
+                          	{if material-modulo-4:cdigo-material!=''}
+                          		{if material-modulo-4:tipo-embed-material=="Youtube"}
+	                            	<a href="http://www.youtube.com/watch?v={material-modulo-4:cdigo-material}">
+	                            {/if}
+                          		{if material-modulo-4:tipo-embed-material=="Vimeo"}
+	                            	<a href="http://vimeo.com/{material-modulo-4:cdigo-material}">
+	                            {/if}	
+                          		{if material-modulo-4:tipo-embed-material=="Amazon"}
+	                            	<a href="http://vimeo.com/{material-modulo-4:cdigo-material}">
+	                            {/if}	
+	                            {material-modulo-2:title} - {material-modulo-2:tipo-embed-material}
+	                            </a>
+	                            <span>{material-modulo-4:tiempo-consumo-embed-material} min</span>
+                            {/if}                            
+                          </dd>
+                          {/material-modulo-4}
+                        </dl>
+                      </div>
+                    </dd>
+                  </dl>
+                  {/if} 
+                  
+                  
+				  {if nombre-modulo-5-curso}
+                  <dl id="details_lesson" class="accordion" data-accordion>
+                    <dd>
+                      <a id="lesson_panel_trigger" href="#lesson_panel">
+                        <h5>MÓDULO #5: {nombre-modulo-5-curso}</h5>
+                        <span class="icon-arrow-down"></span>
+                      </a>
+                      <div id="lesson_panel" class="activex">
+                        <dl class="accordion" data-accordion>
+                          {material-modulo-5}
+                          <dd>
+                          	{if material-modulo-5:archivo-material!=''}
+	                            <a href="{material-modulo-1:archivo-material}">       
+	                            {material-modulo-5:title} - {material-modulo-5:tipo-material}
+	                            </a>
+	                            <span>{material-modulo-5:tiempo-consumo-material} min</span>
+                            {/if}
+                            
+                          	{if material-modulo-5:cdigo-material!=''}
+                          		{if material-modulo-5:tipo-embed-material=="Youtube"}
+	                            	<a href="http://www.youtube.com/watch?v={material-modulo-5:cdigo-material}">
+	                            {/if}
+                          		{if material-modulo-5:tipo-embed-material=="Vimeo"}
+	                            	<a href="http://vimeo.com/{material-modulo-5:cdigo-material}">
+	                            {/if}	
+                          		{if material-modulo-5:tipo-embed-material=="Amazon"}
+	                            	<a href="http://vimeo.com/{material-modulo-5:cdigo-material}">
+	                            {/if}	
+	                            {material-modulo-2:title} - {material-modulo-2:tipo-embed-material}
+	                            </a>
+	                            <span>{material-modulo-5:tiempo-consumo-embed-material} min</span>
+                            {/if}                            
+                          </dd>
+                          {/material-modulo-5}
+                        </dl>
+                      </div>
+                    </dd>
+                  </dl>
+                  {/if}                                     
+                                                     
+                  
                 </div>
+                
+                
+                
                 <div class="medium-12 columns hide-for-large">
                   <div class="details_info">
                     <h6>DETALLES</h6>
                     <hr>
                     <div class="details_info_item">
-                      <p>Tiempo de duración:</p>
-                      <span>1:30 min</span>
+                      <p>Tiempo de duración: <span>{tiempo-duracion-curso} min</span></p>
                     </div>
                     <div class="details_info_item">
-                      <p>Lecciones:</p>
-                      <span>4</span>
+                      <p>Lecciones: <span>{cantidad-lecciones-curso}</span></p>
                     </div>
                     <div class="details_info_item">
-                      <p>Videos:</p>
-                      <span>2</span>
-                    </div>
-                    <div class="details_info_item">
-                      <p>Quiz:</p>
-                      <span>1</span>
+                      <p>Videos:<span>{cantidad-video-curso}</span></p>
                     </div>
                   </div>
-                  <a href="#" id="start_course" class="explore button expand">COMENZAR</a>
+                  <a href="{link-curso}" target="_blank" id="start_course" class="explore button expand">COMENZAR</a>
                 </div>
 
                 <div class="large-12 columns">
@@ -94,11 +286,13 @@
                 </div>
               </div>
             </div>
-            {embed="includes/curso-detalles"}
+            {embed="includes/curso-detalles" tiempo-duracion-curso="{tiempo-duracion-curso}" cantidad-lecciones-curso="{cantidad-lecciones-curso}" cantidad-video-curso="{cantidad-video-curso}" link-curso="{link-curso}"}
           </div>
         </div>
       </div>
-      {embed="includes/footer-direccion"}
+
     </section>
+{/exp:channel:entries}
 
 	{embed="includes/footer-interno"}
+	

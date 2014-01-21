@@ -35,208 +35,77 @@
                           </div>
                           <div class="medium-11 large-11 columns">
                             <h3>EXPLORA EL CATÁLOGO DE CURSOS</h3>
+                            <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h5>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+
                   <div class="row">
+                  {exp:channel:entries channel="cursos" limit="10" disable="member_data" category="{last_segment_category_id}"}
                     <div class="medium-6 large-6 columns">
-                      <a href="details.html">
-                        <div class="course marcas">
-                          <h5>DISEÑO DE MARCAS</h5>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, illo.</p>
+                      <a href="{site_url}/catalogo/curso/{url_title}">
+                        {categories}
+                        <div class="course {category_url_title}">
+                        {/categories}
+                          <h5>{title}</h5>
+                          <p>{descripcion-curso}</p>
+                          {categories}
                           <div class="school">
-                            <span>MARCAS</span>
+                            <span>{category_name}</span>
                             <span class="icon-school"></span>
                           </div>
+                          {/categories}
                         </div>
                       </a>
                     </div>
-                    <div class="medium-6 large-6 columns">
-                      <a href="details.html">
-                        <div class="course ventas">
-                          <h5>PLAN DE CAPACITACIÓN FUERZA DE VENTAS</h5>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, illo.</p>
-                          <div class="school">
-                            <span>VENTAS</span>
-                            <span class="icon-school"></span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
+                    
+		              {paginate}  
+		              	{pagination_links}
+				    		  <div class="row">
+				                <div class="large-2 large-centered columns">
+				                  {next_page}	
+				                  <a href="{pagination_url}" class="more button expand">VER MÁS</a>
+								  {/next_page}
+				                </div>
+				              </div>  
+		              	{/pagination_links}   
+		              {/paginate} 
+                    
+                  {/exp:channel:entries}
                   </div>
-                  <div class="row">
-                    <div class="medium-6 large-6 columns">
-                      <a href="details.html">
-                        <div class="course innovacion">
-                          <h5>DESIGN THINKING FOR BUSINESS INNOVATION</h5>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, illo.</p>
-                          <div class="school">
-                            <span>INNOVACIÓN</span>
-                            <span class="icon-school"></span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="medium-6 large-6 columns">
-                      <a href="details.html">
-                        <div class="course marcas">
-                          <h5>GESTIÓN DE CATEGORÍAS</h5>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, illo.</p>
-                          <div class="school">
-                            <span>MARCAS</span>
-                            <span class="icon-school"></span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="medium-6 large-6 columns">
-                      <a href="details.html">
-                        <div class="course innovacion">
-                          <h5>INSIGHT PODEROSOS</h5>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, illo.</p>
-                          <div class="school">
-                            <span>INNOVACIÓN</span>
-                            <span class="icon-school"></span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="medium-6 large-6 columns">
-                      <a href="details.html">
-                        <div class="course planeamiento">
-                          <h5>PLANIFICACIÓN ESTRATÉGICA 1.0</h5>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, illo.</p>
-                          <div class="school">
-                            <span>PLANEAMIENTO</span>
-                            <span class="icon-school"></span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="medium-6 large-6 columns">
-                      <a href="details.html">
-                        <div class="course planeamiento">
-                          <h5>CASOS DE ESTUDIO GERENCIA GENERAL</h5>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, illo.</p>
-                          <div class="school">
-                            <span>PLANEAMIENTO</span>
-                            <span class="icon-school"></span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="medium-6 large-6 columns">
-                      <a href="details.html">
-                        <div class="course liderazgo">
-                          <h5>LIDERA</h5>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, illo.</p>
-                          <div class="school">
-                            <span>LIDERAZGO</span>
-                            <span class="icon-school"></span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="medium-6 large-6 columns">
-                      <a href="details.html">
-                        <div class="course marcas">
-                          <h5>COMUNICACIÓN ESTRATÉGICA</h5>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, illo.</p>
-                          <div class="school">
-                            <span>MARCAS</span>
-                            <span class="icon-school"></span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="medium-6 large-6 columns">
-                      <a href="details.html">
-                        <div class="course liderazgo">
-                          <h5>COACHING PARA LIDERAZGO</h5>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, illo.</p>
-                          <div class="school">
-                            <span>LIDERAZGO</span>
-                            <span class="icon-school"></span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="large-12 columns">
-                      <div class="text-center">
-                        <span id="more_courses" class"more_1">Ver más</span>
-                      </div>
-                    </div>
-                  </div>
+                  
                   <div id="courses_hidden">
-                    <div class="row">
-                      <div class="medium-6 large-6 columns">
-                        <a href="details.html">
-                          <div class="course marcas">
-                            <h5>DISEÑO DE MARCAS</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, illo.</p>
-                            <div class="school">
-                              <span>MARCAS</span>
-                              <span class="icon-school"></span>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                      <div class="medium-6 large-6 columns">
-                        <a href="details.html">
-                          <div class="course ventas">
-                            <h5>PLAN DE CAPACITACIÓN FUERZA DE VENTAS</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, illo.</p>
-                            <div class="school">
-                              <span>VENTAS</span>
-                              <span class="icon-school"></span>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  <div class="row">
-                    <div class="medium-6 large-6 columns">
-                      <a href="details.html">
-                        <div class="course innovacion">
-                          <h5>DESIGN THINKING FOR BUSINESS INNOVATION</h5>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, illo.</p>
-                          <div class="school">
-                            <span>INNOVACIÓN</span>
-                            <span class="icon-school"></span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="medium-6 large-6 columns">
-                      <a href="details.html">
-                        <div class="course marcas">
-                          <h5>GESTIÓN DE CATEGORÍAS</h5>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, illo.</p>
-                          <div class="school">
-                            <span>MARCAS</span>
-                            <span class="icon-school"></span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
+	                  <div class="row">
+	                  {exp:channel:entries channel="cursos" limit="10" disable="member_data" offset="10" category="{last_segment_category_id}"}
+	                    <div class="medium-6 large-6 columns">
+	                      <a href="{site_url}/catalogo/curso/{url_title}">
+	                        {categories}
+	                        <div class="course {category_url_title}">
+	                        {/categories}
+	                          <h5>{title}</h5>
+	                          <p>{descripcion-curso}</p>
+	                          {categories}
+	                          <div class="school">
+	                            <span>{category_name}</span>
+	                            <span class="icon-school"></span>
+	                          </div>
+	                          {/categories}
+	                        </div>
+	                      </a>
+	                    </div>
+	                  {/exp:channel:entries}
+	                  </div>
                   </div>
-                  </div>
+                  
+                  
                 </div>
                 {embed="includes/sidebar-categorias-catalogo"}
               </div>
             </div>
           </div>
-		  {embed="includes/footer-direccion"}  
+		   
 		</section>
 
 		{embed="includes/footer-interno"}

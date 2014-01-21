@@ -71,7 +71,7 @@
               </div>
 
               <div class="forum_comments">
-				{exp:channel:entries channel="feedback" limit="10" paginate="bottom" disable="pagination|categories|member_data" }
+				{exp:channel:entries channel="feedback" limit="10" paginate="bottom" disable="categories|member_data" }
                 <div class="row">
                   <div class="large-12 columns">
                     <div class="forum_comments_item"> 
@@ -83,7 +83,7 @@
               {paginate}  
               	{pagination_links}
 		    		  <div class="row">
-		                <div class="large-2 large-centered columns">
+		                <div class="large-2 large-centered columns vermas">
 		                  {next_page}	
 		                  <a href="{pagination_url}" class="more button expand">VER MÁS</a>
 						  {/next_page}
@@ -96,7 +96,7 @@
               </div>
               
               <div class="row">
-                <div class="large-2 large-centered columns">
+                <div class="large-2 large-centered columns vermas">
                   <a href="#" class="more button expand">VER MÁS</a>
                 </div>
               </div>
@@ -105,7 +105,7 @@
 
         </div>
       </div>
-      {embed="includes/footer-direccion"} 
+      
     </section>
     
     {embed="includes/footer-interno"}
