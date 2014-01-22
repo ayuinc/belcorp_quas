@@ -72,6 +72,15 @@ input[type="search"]::-webkit-search-cancel-button {
 
 }
 
+.contact_form{
+	label{
+		margin: 0;
+		line-height: 0.8em;
+		text-transform: uppercase;
+		color: #596c79;
+	}
+}
+
 textarea{
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -86,6 +95,10 @@ textarea:focus{
   border-color: #AFAFAF;
 }
 
+input[name="captcha"]{
+	display: inline;
+	margin-left: 1em;
+}
 
 input[type="search"]::-webkit-input-placeholder {
    color: #FFFFFF;
@@ -1001,6 +1014,7 @@ box-shadow: -2px 0px 4px #edeff0;
 		    font-size: 1.3rem;
 		    height: 75px;
 		    font-weight: 100;
+		    color: #F1F1F1;
 		}
 
   		.explore{
