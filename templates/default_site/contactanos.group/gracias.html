@@ -14,20 +14,24 @@
 	{embed="inbcludes/menu-offcanvas"}
 
     <section id="courses">
+      <div class="heading-pocket"></div>
       <div class="row">
 
         <div class="total_padding medium-12 large-12 columns">  
+
+        <div id="contenidos_content" class="row">
+          <div class="large-9 columns">
 
           <div class="row">
             <div class="large-12 columns">
               <div id="contact_header">
                 <div class="row">
-                  <div class="medium-2 large-1 columns">
+                  <div class="medium-2 large-2 columns">
                     <span class="icon-mail"></span>
                   </div>
-                  <div class="medium-10 large-11 columns"> 
-                    <h3>GRACIAS</h3>
-                    <h5>Nos comunicaremos contigo de inmediato</h5>
+                  <div class="medium-10 large-10 columns"> 
+                    <h3>GRACIAS POR CONTACTARNOS</h3>
+                    <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, dignissimos, pariatur, maxime accusantium totam nesciunt fugit dicta itaque numquam facere accusamus enim tenetur mollitia. Sed voluptates hic quos veritatis est.</h5>
                   </div>
 <!--                   <div class="hide-for-small medium-2 large-2 columns">
                     <div class="text-center">
@@ -45,31 +49,38 @@
 
               <div class="contact_form">
                 
-                {exp:channel:form channel="contactos" return="contacto/gracias" }
-                  <input name="title" type="hidden" value="Contacto">
-                  <div class="row">
-                    <div class="large-6 columns">
-                      <input name="nombre-foro" type="text" placeholder="Ingresa tu nombre" required>
-                    </div>
-                    <div class="large-6 columns">
-                      <input type="email" name="correo-electronico-foro" placeholder="Ingresa tu correo electrónico" required>
-                    </div>
-                  </div>
 
-                  <div class="row">
-                    <div class="large-12 columns">
-                      <textarea name="mensaje-foro" id="comment" class="expanding" placeholder="Escribe tu mensaje" required></textarea>
-                    </div>
-                  </div>
-                  <div class="row">
+				{exp:freeform:form form_name="contactenos" return="contactanos/gracias" }
+				    <dl>
+				    {freeform:all_form_fields}
+				        <dt><label>{freeform:field_label}</label></dt>
+				        <dd>{freeform:field_output}</dd>
+				    {/freeform:all_form_fields}
+				    </dl>
+				    {if freeform:captcha}
+				        <p>Please enter the word you see in the image below:</p>
+				        <p>{freeform:captcha}<br />
+				        <input type="text" name="captcha" style="width:140px;" /></p>
+				    {/if}
+				  <div class="row">
                     <div class="large-offset-10 large-2 columns"> 
                     <button class="publish button expand">ENVIAR</button>
                     </div>
-                  </div>                
-                {/exp:channel:form}
-                
+                  </div>    
+				{/exp:freeform:form}                  
+
               </div>
             </div>
+          </div>
+
+</div>
+
+          <div class="large-3 columns hide-for-small hide-for-medium fixed_menu right_padding">
+                  {exp:search:simple_form channel="cursos|contenidos" form_id="form_search" status="open"  search_in="titles" result_page="buscar/index"}
+                    <input type="search" name="keywords" id="keywords" placeholder="BUSCAR">
+                    <span class="icon-search"></span>
+                  {/exp:search:simple_form}
+              <a href="{site_url}quieres-crear-un-curso" id="create_course" class="publish button expand">¿QUIERES CREAR UN CURSO?</a>
           </div>
 
         </div>

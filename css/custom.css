@@ -4,6 +4,9 @@ html, body {
   font-style: normal;
   font-weight: 100; }
 
+body {
+  background-color: #EEEEEE; }
+
 .row {
   max-width: 120em; }
 
@@ -17,7 +20,9 @@ form {
 
 h1, h2, h3, h4, h5, h6, p {
   font-family: "museo-sans",sans-serif;
-  font-style: normal; }
+  font-style: normal;
+  text-transform: uppercase;
+   }
 
 a {
   font-family: "museo-sans",sans-serif !important;
@@ -184,6 +189,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 .icon-grid, .icon-book, .icon-bubbles, .icon-mail, .icon-facebook, .icon-twitter {
   color: #FFFFFF; }
+  
 
 .publish, .explore, .video {
   background-color: #6b1f7e;
@@ -233,7 +239,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     font-style: normal; }
   #cover h1 {
     font-weight: 900;
-    margin-top: 5em;
+    margin-top: 4em;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
   #cover h5 {
     font-weight: 300;
@@ -274,7 +280,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   #cover .down {
     position: absolute;
     left: 0;
-    bottom: 20px;
+    bottom: 5%;
     width: 100%;
     text-align: center;
     padding-bottom: 6px; }
@@ -292,13 +298,10 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
       transition: 0.4s; }
       #cover .down #down:hover {
         background: url(../img/scroll_down_hover.png) no-repeat; }
-        
-.vermas {
-	margin-top:1rem !important;
-}        
 
 #destacados {
-  padding: 2.5em 0 1.25em 0; }
+  padding: 2.5em 0 1.25em 0;
+  background: #FFFFFF; }
   #destacados h4 {
     margin: 0;
     line-height: 1;
@@ -307,7 +310,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   #destacados .course {
     background-color: #ECECEC; }
     #destacados .course .school {
-      background-color: #FFFFFF; }
+      background-color: #FFFFFF;
+      text-transform: uppercase; }
 
 .course {
   background-color: #FFFFFF;
@@ -318,6 +322,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   margin-bottom: 1.25em;
   position: relative; }
   .course .school {
+    text-transform: uppercase;
     background-color: #EEEEEE;
     position: absolute;
     left: 1.5em;
@@ -327,8 +332,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     .course .school span {
       color: #596C79;
       font-size: 0.8rem;
-      font-weight: 500;
-      text-transform: uppercase; }
+      font-weight: 500; }
     .course .school .icon-school {
       position: absolute;
       right: 0.5em; }
@@ -337,50 +341,35 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     text-transform: uppercase; }
   .course p {
     color: #929FAA; }
-    
-  .school-contenidos {
-    background-color: #EEEEEE;
-    width: 200px;
-    padding: 0.5em; }
-    .school-contenidos span {
-      color: #596C79;
-      font-size: 0.8rem;
-      font-weight: 500;
-      text-transform: uppercase;
-       }
-    .school-contenidos .icon-school {
-      position: relative;
-	  right: -5.5em; }
-  
 
 .liderazgo {
   border-right: 25px solid #00bced; }
-  .liderazgo .school .icon-school, .liderazgo .school-contenidos .icon-school {
+  .liderazgo .school .icon-school {
     color: #00bced; }
 
 .marcas {
   border-right: 25px solid red; }
-  .marcas .school .icon-school, .marcas .school-contenidos .icon-school {
+  .marcas .school .icon-school {
     color: red; }
 
 .planeamiento {
   border-right: 25px solid #72d100; }
-  .planeamiento .school .icon-school, .planeamiento .school-contenidos .icon-school {
+  .planeamiento .school .icon-school {
     color: #72d100; }
 
 .ventas {
   border-right: 25px solid #f8ff00; }
-  .ventas .school .icon-school, .ventas .school-contenidos .icon-school {
+  .ventas .school .icon-school {
     color: #f8ff00; }
 
 .innovacion {
   border-right: 25px solid #ff7500; }
-  .innovacion .school .icon-school, .innovacion .school-contenidos .icon-school {
+  .innovacion .school .icon-school {
     color: #ff7500; }
 
 .belcorp {
   border-right: 25px solid #ff00fe; }
-  .belcorp .school .icon-school, .belcorp .school-contenidos .icon-school {
+  .belcorp .school .icon-school {
     color: #ff00fe; }
 
 #footer {
@@ -438,18 +427,6 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   position: relative;
   margin-top: 0.5em; }
 
-.icon-arrow-down {
-	position: absolute;
-	right: 0.5rem;
-	top: 0.7rem;
-	font-size: 2rem;
-}
-
-.accordion h3 {
-	font-weight: 500;
-	margin-bottom:0px;
-}
-
 .accordion dd > a {
   background: #6B1F7E;
   color: #FFFFFF;
@@ -467,7 +444,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   box-shadow: 0 2px 0 #94A0AA;
   margin: 1.25em auto; }
   #details_lesson dd > a {
-    background: #f7f7f7;;
+    background: #FFFFFF;
     color: #5D6C7D;
     font-weight: 700; }
 
@@ -557,9 +534,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     padding-bottom: 3em; }
   #details_header h3 {
     padding-bottom: 2em;
-    font-weight: 500;
-    text-transform: uppercase;
-     }
+    font-weight: 500; }
 
 #menu {
   background: #6B1F7E;
@@ -714,29 +689,18 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     border-radius: 50%; }
 
 .resources_item {
-  padding: 2em 25px;
+  padding: 1em 25px;
   border-top: 1px solid #EEEEEE;
   border-bottom: 1px solid #EEEEEE; }
   .resources_item h5 {
-    font-weight: 400;
-    text-transform: uppercase;
-     }
-  .resources_item p {
-	  margin-right: 2rem;
-  }  
+    font-weight: 400; }
   .resources_item span {
     color: #929FAA; }
-  .resources_item span a {
-	  font-style: italic;
-  }
   .resources_item img {
     border-radius: 50%; }
-	
 
 .resources_item a {
-  color: #596c79;
-   }
-   
+  color: #596c79; }
 
 #myModal {
   padding: 0;
@@ -747,6 +711,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   top: 1em;
   right: 1em;
   cursor: pointer; }
+
+.vermas {
+  margin-top: 1rem !important; }
 
 .heading-pocket {
   background: #edeff0;
@@ -787,16 +754,25 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     font-size: 1.5rem; }
   #cover #view_video {
     font-size: 1.3rem;
-    height: 75px; }
+    height: 75px;
+    font-weight: 100; }
+  #cover .explore {
+    width: 175px;
+    float: left; }
 
   #details_header h3 {
     padding-bottom: 0;
-    font-weight: 700; }
+    font-weight: 700;
+    }
 
   .details_info p {
-    font-size: 0.92rem; }
+    font-size: 0.82rem; }
   .details_info span {
     font-size: 0.9rem; }
+    
+  .active-menu {
+	  opacity:0.4;
+  }  
 
   #courses, #details {
     padding-top: 0;
