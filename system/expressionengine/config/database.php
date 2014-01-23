@@ -3,7 +3,7 @@
 $active_group = 'expressionengine';
 $active_record = TRUE;
 
-$db['expressionengine']['hostname'] = 'localhost';
+$db['expressionengine']['hostname'] = '54.209.167.56';
 $db['expressionengine']['username'] = 'usrucb';
 $db['expressionengine']['password'] = 'B3lc0rp';
 $db['expressionengine']['database'] = 'dbucb';
@@ -16,7 +16,7 @@ $db['expressionengine']['cache_on'] = FALSE;
 $db['expressionengine']['autoinit'] = FALSE;
 $db['expressionengine']['char_set'] = 'utf8';
 $db['expressionengine']['dbcollat'] = 'utf8_general_ci';
-$db['expressionengine']['cachedir'] = '/var/www/html/system/expressionengine/cache/db_cache/';
+$db['expressionengine']['cachedir'] = '/mnt/disc2/html/system/expressionengine/cache/db_cache/';
 
 /* End of file database.php */
 /* Location: ./system/expressionengine/config/database.php */
