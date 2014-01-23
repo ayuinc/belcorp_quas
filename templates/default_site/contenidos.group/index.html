@@ -6,7 +6,7 @@
           <div class="row">
             <div class="large-12 columns">
               <a class="left-off-canvas-toggle" ><span class="icon-list"></span></a>
-              <h3 id="menu_title">Contenidos</h3>
+              <h3 id="menu_title">CONTENIDOS</h3>
             </div>
           </div>
         </div>
@@ -44,7 +44,7 @@
             </div>
           </div>
 
-          <div class="row">
+<!--           <div class="row">
             <div class="large-12 columns">
               <div class="resources_list">
               
@@ -65,9 +65,6 @@
                             <span class="icon-school"></span>
                             {/categories}
                       </div>
-                      <!--<div class="like">
-                        <span class="icon-thumbs-up"> 32</span>
-                      </div>-->
                     </div>
                   </div>
                 </div>
@@ -88,6 +85,44 @@
                 </div>
               </div>
 
+            </div>
+          </div> -->
+
+          <div class="row">
+          {exp:channel:entries channel="contenidos" disable="pagination|member_data" limit="10" category="{last_segment_category_id}"}
+            <div class="medium-12 large-12 columns">
+              <a href="{link-recurso}">
+                {categories}
+                <div class="course {category_url_title}">
+                {/categories}
+                  <h5>
+                    <a href="{link-recurso}" target="_blank">{title}</a>
+                  </h5>
+                  <span><a href="{link-recurso}" target="_blank">{fuente-recurso}</a></span>
+                  <p>{descripcion-recurso}</p>
+                  {categories}
+                  <div class="school">
+                    <span>{category_name}</span>
+                    <span class="icon-school"></span>
+                  </div>
+                  {/categories}
+                </div>
+              </a>
+            </div>
+            
+          {/exp:channel:entries}
+          </div>
+
+          <div class="row">
+            <div class="large-3 large-centered columns vermas">
+              <div class="more">                      
+                <div class="text-center">
+                  <span id="more_courses">Ver más</span>
+                </div>
+                <div class="text-center">
+                  <span id="more_icon" class="icon-arrow-down"></span>
+                </div>
+              </div>
             </div>
           </div>
 
