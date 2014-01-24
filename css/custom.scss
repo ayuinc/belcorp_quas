@@ -767,6 +767,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
   		-webkit-transition: background-color ease-out 0.2s;
 		&:hover{
 			background-color: #9E79B8;
+			span{
+				opacity: 1;
+			}
 		}
 		a{
 			line-height: 46px;
