@@ -576,6 +576,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     -webkit-transition: background-color ease-out 0.2s; }
     .nav li:hover, .social li:hover {
       background-color: #9E79B8; }
+      .nav li:hover span, .social li:hover span {
+        opacity: 1; }
     .nav li a, .social li a {
       line-height: 46px;
       margin-bottom: 10px;
