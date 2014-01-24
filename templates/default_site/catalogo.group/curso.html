@@ -43,11 +43,6 @@
               <div class="row">
                 <div class="large-12 columns">
                   
-                  {if archivo-video-curso}
-                             
-	                  	<iframe width="100%" height="500" src="{archivo-video-curso}" frameborder="0" allowfullscreen></iframe>
-					  	
-				  {if:else}
 				  
 	                  {if proveedor-video-curso=='Youtube'}             
 	                  	<iframe width="100%" height="500" src="//www.youtube.com/embed/{video-introductorio-curso}" frameborder="0" allowfullscreen></iframe>
@@ -60,11 +55,9 @@
 	                  {if proveedor-video-curso=='Amazon'}             
 	                  	<iframe width="100%" height="500" src="//www.youtube.com/embed/{video-introductorio-curso}" frameborder="0" allowfullscreen></iframe>
 					  {/if}						  				  			  
-				  
-				  {/if}
-				  
-				  
-                
+
+
+				  <?php $contador = 1;  ?>				  
 				  
 				  {if nombre-modulo-1-curso}
                   <dl id="details_lesson" class="accordion" data-accordion>
@@ -79,14 +72,30 @@
                           <dd>
                           	{if material-modulo-1:archivo-material!=''}
 	                            <a href="{material-modulo-1:archivo-material}" id="archivo-url">       
-	                            {material-modulo-1:title}
+	                            Lección #<?php echo $contador;  ?>: {material-modulo-1:title}
+	                            <?php $controlador ='{material-modulo-1:archivo-material}'; ?>
+	                            <?php if ($controlador!='') { ?>
+	                            	<?php $contador++;  ?>
+	                            <?php } ?>	
 	                            </a>
 	                            <span>{material-modulo-1:tipo-material} - {material-modulo-1:tiempo-consumo-material} min</span>
                             {/if}
                             
                           	{if material-modulo-1:cdigo-material!=''}
-	                            <a href="{material-modulo-1:cdigo-material}" id="embed-url">
-	                            {material-modulo-1:title}
+                          		{if material-modulo-2:tipo-embed-material=="Youtube"}
+	                            	<a href="http://www.youtube.com/watch?v={material-modulo-1:cdigo-material}">
+	                            {/if}
+                          		{if material-modulo-2:tipo-embed-material=="Vimeo"}
+	                            	<a href="http://vimeo.com/{material-modulo-1:cdigo-material}">
+	                            {/if}	
+                          		{if material-modulo-2:tipo-embed-material=="Amazon"}
+	                            	<a href="http://vimeo.com/{material-modulo-1:cdigo-material}">
+	                            {/if}	
+	                            Lección #<?php echo $contador;  ?>: {material-modulo-1:title}
+	                            <?php $controlador ='{material-modulo-1:cdigo-material}'; ?>
+	                            <?php if ($controlador!='') { ?>
+	                            	<?php $contador++;  ?>
+	                            <?php } ?>	
 	                            </a>
 	                            <span>{material-modulo-1:tipo-embed-material} - {material-modulo-1:tiempo-consumo-embed-material} min</span>
                             {/if}                            
@@ -97,6 +106,8 @@
                     </dd>
                   </dl>
                   {/if}
+
+                  
                   
 				  {if nombre-modulo-2-curso}
                   <dl id="details_lesson" class="accordion" data-accordion>
@@ -111,7 +122,11 @@
                           <dd>
                           	{if material-modulo-2:archivo-material!=''}
 	                            <a href="{material-modulo-1:archivo-material}">       
-	                            {material-modulo-2:title}
+	                            Lección #<?php echo $contador;  ?>: {material-modulo-2:title}
+	                            <?php $controlador ='{material-modulo-2:archivo-material}'; ?>
+	                            <?php if ($controlador!='') { ?>
+	                            	<?php $contador++;  ?>
+	                            <?php } ?>	
 	                            </a>
 	                            <span>{material-modulo-2:tipo-material} - {material-modulo-2:tiempo-consumo-material} min</span>
                             {/if}
@@ -126,7 +141,11 @@
                           		{if material-modulo-2:tipo-embed-material=="Amazon"}
 	                            	<a href="http://vimeo.com/{material-modulo-2:cdigo-material}">
 	                            {/if}		                                                        
-	                            {material-modulo-2:title}
+	                            Lección #<?php echo $contador;  ?>: {material-modulo-2:title}
+	                            <?php $controlador ='{material-modulo-2:cdigo-material}'; ?>
+	                            <?php if ($controlador!='') { ?>
+	                            	<?php $contador++;  ?>
+	                            <?php } ?>	
 	                            </a>
 	                            <span>{material-modulo-2:tipo-embed-material} - {material-modulo-2:tiempo-consumo-embed-material} min</span>
                             {/if}                            
@@ -151,7 +170,11 @@
                           <dd>
                           	{if material-modulo-3:archivo-material!=''}
 	                            <a href="{material-modulo-1:archivo-material}">       
-	                            {material-modulo-3:title}
+	                            Lección #<?php echo $contador;  ?>: {material-modulo-3:title}
+	                            <?php $controlador ='{material-modulo-3:archivo-material}'; ?>
+	                            <?php if ($controlador!='') { ?>
+	                            	<?php $contador++;  ?>
+	                            <?php } ?>	
 	                            </a>
 	                            <span>{material-modulo-3:tipo-material} - {material-modulo-3:tiempo-consumo-material} min</span>
                             {/if}
@@ -166,7 +189,11 @@
                           		{if material-modulo-3:tipo-embed-material=="Amazon"}
 	                            	<a href="http://vimeo.com/{material-modulo-3:cdigo-material}">
 	                            {/if}	
-	                            {material-modulo-3:title}
+	                            Lección #<?php echo $contador;  ?>: {material-modulo-3:title}
+	                            <?php $controlador ='{material-modulo-3:cdigo-material}'; ?>
+	                            <?php if ($controlador!='') { ?>
+	                            	<?php $contador++;  ?>
+	                            <?php } ?>	
 	                            </a>
 	                            <span>{material-modulo-3:tipo-embed-material} - {material-modulo-3:tiempo-consumo-embed-material} min</span>
                             {/if}                            
@@ -191,7 +218,11 @@
                           <dd>
                           	{if material-modulo-4:archivo-material!=''}
 	                            <a href="{material-modulo-1:archivo-material}">       
-	                            {material-modulo-4:title}
+	                            Lección #<?php echo $contador;  ?>: {material-modulo-4:title}
+	                            <?php $controlador ='{material-modulo-4:archivo-material}'; ?>
+	                            <?php if ($controlador!='') { ?>
+	                            	<?php $contador++;  ?>
+	                            <?php } ?>	
 	                            </a>
 	                            <span>{material-modulo-4:tipo-material} - {material-modulo-4:tiempo-consumo-material} min</span>
                             {/if}
@@ -206,7 +237,11 @@
                           		{if material-modulo-4:tipo-embed-material=="Amazon"}
 	                            	<a href="http://vimeo.com/{material-modulo-4:cdigo-material}">
 	                            {/if}	
-	                            {material-modulo-4:title}
+	                            Lección #<?php echo $contador;  ?>: {material-modulo-4:title}
+	                            <?php $controlador ='{material-modulo-4:cdigo-material}'; ?>
+	                            <?php if ($controlador!='') { ?>
+	                            	<?php $contador++;  ?>
+	                            <?php } ?>	
 	                            </a>
 	                            <span>{material-modulo-4:tipo-embed-material} - {material-modulo-4:tiempo-consumo-embed-material} min</span>
                             {/if}                            
@@ -232,7 +267,11 @@
                           <dd>
                           	{if material-modulo-5:archivo-material!=''}
 	                            <a href="{material-modulo-1:archivo-material}">       
-	                            {material-modulo-5:title}
+	                            Lección #<?php echo $contador;  ?>: {material-modulo5:title}
+	                            <?php $controlador ='{material-modulo-5:archivo-material}'; ?>
+	                            <?php if ($controlador!='') { ?>
+	                            	<?php $contador++;  ?>
+	                            <?php } ?>	
 	                            </a>
 	                            <span>{material-modulo-5:tipo-material} - {material-modulo-5:tiempo-consumo-material} min</span>
                             {/if}
@@ -247,7 +286,11 @@
                           		{if material-modulo-5:tipo-embed-material=="Amazon"}
 	                            	<a href="http://vimeo.com/{material-modulo-5:cdigo-material}">
 	                            {/if}	
-	                            {material-modulo-5:title}
+	                            Lección #<?php echo $contador;  ?>: {material-modulo-5:title}
+	                            <?php $controlador ='{material-modulo-5:cdigo-material}'; ?>
+	                            <?php if ($controlador!='') { ?>
+	                            	<?php $contador++;  ?>
+	                            <?php } ?>	
 	                            </a>
 	                            <span>{material-modulo-5:tipo-embed-material} - {material-modulo-5:tiempo-consumo-embed-material} min</span>
                             {/if}                            
@@ -265,28 +308,23 @@
                 
                 
                 <div class="medium-12 columns hide-for-large">
-                  <div class="details_info">
-                    <h6>DETALLES</h6>
-                    <hr>
-                    <div class="details_info_item">
-                      <p>Tiempo de duración: <span>{tiempo-duracion-curso} min</span></p>
-                    </div>
-                    <div class="details_info_item">
-                      <p>Lecciones: <span>{cantidad-lecciones-curso}</span></p>
-                    </div>
-                    <div class="details_info_item">
-                      <p>Videos:<span>{cantidad-video-curso}</span></p>
-                    </div>
-                  </div>
+                  {embed="includes/curso-detalles" tiempo-duracion-curso="{tiempo-duracion-curso}" cantidad-lecciones-curso="{cantidad-lecciones-curso}" cantidad-video-curso="{cantidad-video-curso}" link-curso="{link-curso}" cantidad-modulos-cursos="{cantidad-modulos-cursos}"}
                   <a href="{link-curso}" target="_blank" id="start_course" class="explore button expand">COMENZAR</a>
                 </div>
 
                 <div class="large-12 columns">
                       <div id="disqus_thread"></div>
                 </div>
+                
               </div>
             </div>
-            {embed="includes/curso-detalles" tiempo-duracion-curso="{tiempo-duracion-curso}" cantidad-lecciones-curso="{cantidad-lecciones-curso}" cantidad-video-curso="{cantidad-video-curso}" link-curso="{link-curso}"}
+            <div class="fixed_menu_details large-3 columns hide-for-small hide-for-medium right_padding">
+              <a href="{embed:link-curso}" target="_blank" id="start_course" class="explore button expand">COMENZAR</a>
+              {embed="includes/curso-detalles" tiempo-duracion-curso="{tiempo-duracion-curso}" cantidad-lecciones-curso="{cantidad-lecciones-curso}" cantidad-video-curso="{cantidad-video-curso}" link-curso="{link-curso}" cantidad-modulos-cursos="{cantidad-modulos-cursos}"}
+            </div>
+            
+            
+            
           </div>
         </div>
       </div>
