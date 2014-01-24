@@ -298,7 +298,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
-	background: url("../img/bg_cover.jpg");
+	background: url("../img/bg_cover_small.jpg");
 	-webkit-background-size: cover;
 	background-size: cover;
 	position: relative;
@@ -1013,6 +1013,9 @@ box-shadow: -2px 0px 4px #edeff0;
 @media only screen and (min-width: 40.063em) {
 
   	#cover {
+
+		background: url("../img/bg_cover.jpg");
+
   		h1 {
   			line-height: 1;
     		font-size: 3rem;

@@ -236,7 +236,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  background: url("../img/bg_cover.jpg");
+  background: url("../img/bg_cover_small.jpg");
   -webkit-background-size: cover;
   background-size: cover;
   position: relative;
@@ -761,25 +761,27 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   box-shadow: -2px 0px 4px #edeff0; }
 
 @media only screen and (min-width: 40.063em) {
-  #cover h1 {
-    line-height: 1;
-    font-size: 3rem;
-    text-align: left; }
-  #cover h5 {
-    font-size: 1.45rem;
-    text-align: left; }
-  #cover a {
-    font-size: 1.5rem; }
-  #cover #view_video {
-    font-size: 1.3rem;
-    height: 75px;
-    font-weight: 100;
-    color: #F1F1F1; }
-  #cover .explore {
-    width: 175px;
-    float: left; }
-  #cover .down {
-    display: block; }
+  #cover {
+    background: url("../img/bg_cover.jpg"); }
+    #cover h1 {
+      line-height: 1;
+      font-size: 3rem;
+      text-align: left; }
+    #cover h5 {
+      font-size: 1.45rem;
+      text-align: left; }
+    #cover a {
+      font-size: 1.5rem; }
+    #cover #view_video {
+      font-size: 1.3rem;
+      height: 75px;
+      font-weight: 100;
+      color: #F1F1F1; }
+    #cover .explore {
+      width: 175px;
+      float: left; }
+    #cover .down {
+      display: block; }
 
   #details_header h3 {
     padding-bottom: 0;
