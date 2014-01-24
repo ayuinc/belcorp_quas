@@ -1013,7 +1013,14 @@ box-shadow: -2px 0px 4px #edeff0;
 @media only screen and (min-width: 40.063em) {
 
   	#cover {
-
+		min-height: 100%;
+		height: auto !important;
+		height: 100%;
+		-webkit-background-size: cover;
+		background-size: cover;
+		position: relative;
+		background-position: center center;
+		text-align: center;
 		background: url("../img/bg_cover.jpg");
 
   		h1 {
