@@ -11,37 +11,37 @@
                         ESCUELAS
                         <span id="menu_arrow" class="icon-arrow-down"></span>
                       </a>
-                      <div id="school_panel" class="activex">
+                                      <div id="school_panel" class="activex">
                         <dl class="accordion" data-accordion>
                           <dd>
-                            <a class="selected" href="{site_url}catalogo">TODAS</a>
+                            <a class="{if last_segment=='catalogo'}selected{/if}" href="{site_url}catalogo">TODAS</a>
                           </dd>
                           <dd class="belcorp">
-                            <a href="{site_url}catalogo/belcorp">BELCORP</a>
+                            <a href="{site_url}catalogo/belcorp" {if last_segment=='belcorp'}class="selected"{/if}>BELCORP</a>
                             <span class="icon-school"></span>
                           </dd>
                           <dd class="liderazgo">
-                            <a href="{site_url}catalogo/liderazgo">LIDERAZGO</a>
+                            <a href="{site_url}catalogo/liderazgo" {if last_segment=='liderazgo'}class="selected"{/if}>LIDERAZGO</a>
                             <span class="icon-school"></span>
                           </dd>
                           <dd class="ventas">
-                            <a href="{site_url}catalogo/ventas">VENTAS</a>
+                            <a href="{site_url}catalogo/ventas" {if last_segment=='ventas'}class="selected"{/if}>VENTAS</a>
                             <span class="icon-school"></span>
                           </dd>
                           <dd class="marcas">
-                            <a href="{site_url}catalogo/marcas">MARCAS</a>
+                            <a href="{site_url}catalogo/marcas" {if last_segment=='marcas'}class="selected"{/if}>MARCAS</a>
                             <span class="icon-school"></span>
                           </dd>
                           <dd class="planeamiento">
-                            <a href="{site_url}catalogo/planeamiento">PLANEAMIENTO</a>
+                            <a href="{site_url}catalogo/planeamiento" {if last_segment=='planeamiento'}class="selected"{/if}>PLANEAMIENTO</a>
                             <span class="icon-school"></span>
                           </dd>
                           <dd class="innovacion">
-                            <a href="{site_url}catalogo/innovacion">INNOVACIÓN</a>
+                            <a href="{site_url}catalogo/innovacion" {if last_segment=='innovacion'}class="selected"{/if}>INNOVACIÓN</a>
                             <span class="icon-school"></span>
                           </dd>                      
                         </dl>
-                      </div>
+                 </div>
                     </dd>
                   </dl>
                  
