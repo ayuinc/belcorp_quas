@@ -287,6 +287,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
       color: #303336;
       top: 1px; }
   #cover .down {
+    display: none;
     position: absolute;
     left: 0;
     bottom: 5%;
@@ -773,6 +774,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   #cover .explore {
     width: 175px;
     float: left; }
+  #cover .down {
+    display: block; }
 
   #details_header h3 {
     padding-bottom: 0;

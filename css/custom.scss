@@ -357,6 +357,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		}
 	}
 	.down{
+		display: none;
 		position: absolute;
 		left: 0;
 		bottom: 5%;
@@ -1030,7 +1031,9 @@ box-shadow: -2px 0px 4px #edeff0;
     		width: 175px;
     		float: left;
   		}
-
+  		.down{
+			display: block;
+		}
 	}
 
 	#details_header{
