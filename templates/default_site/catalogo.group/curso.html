@@ -83,13 +83,13 @@
                             {/if}
                             
                           	{if material-modulo-1:cdigo-material!=''}
-                          		{if material-modulo-2:tipo-embed-material=="Youtube"}
+                          		{if material-modulo-1:tipo-embed-material=="Youtube"}
 	                            	<a href="http://www.youtube.com/watch?v={material-modulo-1:cdigo-material}">
 	                            {/if}
-                          		{if material-modulo-2:tipo-embed-material=="Vimeo"}
+                          		{if material-modulo-1:tipo-embed-material=="Vimeo"}
 	                            	<a href="http://vimeo.com/{material-modulo-1:cdigo-material}">
 	                            {/if}	
-                          		{if material-modulo-2:tipo-embed-material=="Amazon"}
+                          		{if material-modulo-1:tipo-embed-material=="Amazon"}
 	                            	<a href="http://vimeo.com/{material-modulo-1:cdigo-material}">
 	                            {/if}	
 	                            Lección #<?php echo $contador;  ?>: {material-modulo-1:title}
