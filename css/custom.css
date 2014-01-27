@@ -858,7 +858,10 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     margin-bottom: 1.9em; }
 
   #details_lesson {
-    margin: 1.9em auto; }
+    margin: 0 auto 1.9em; }
 
   .contact_form {
-    margin-bottom: 20em; } }
+    margin-bottom: 20em; }
+
+  .video_curso {
+    margin-bottom: 1.9em; } }
