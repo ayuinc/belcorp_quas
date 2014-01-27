@@ -26,7 +26,7 @@
               <div id="details_header" class="course {category_url_title}">
             {/categories}  
                 <h3>{title}</h3>
-                <p class="hide-for-small">{introduccin-curso}</p>
+                <p>{introduccin-curso}</p>
                 {categories}
                 <div class="school">
                   <span>{category_name}</span>
@@ -42,6 +42,11 @@
           <div class="row">
             <div class="large-9 columns">
               <div class="row">
+
+                <div class="medium-12 columns hide-for-large">
+                  <a href="{link-curso}" target="_blank" id="start_course" class="explore button expand">COMENZAR</a>
+                </div>
+
                 <div class="large-12 columns">
                   
 				        <div class="video_curso">
@@ -307,13 +312,6 @@
                   {/if}                                     
                                                      
                   
-                </div>
-                
-                
-                
-                <div class="medium-12 columns hide-for-large">
-                  {embed="includes/curso-detalles" tiempo-duracion-curso="{tiempo-duracion-curso}" cantidad-lecciones-curso="{cantidad-lecciones-curso}" cantidad-video-curso="{cantidad-video-curso}" link-curso="{link-curso}" cantidad-modulos-cursos="{cantidad-modulos-cursos}"}
-                  <a href="{link-curso}" target="_blank" id="start_course" class="explore button expand">COMENZAR</a>
                 </div>
 
                 <div class="large-12 columns">
