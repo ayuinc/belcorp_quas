@@ -91,10 +91,10 @@
           <div class="row">
           {exp:channel:entries channel="contenidos" disable="pagination|member_data" limit="10" category="{last_segment_category_id}"}
             <div class="medium-12 large-12 columns">
+              <a style="display:block" href="{link-recurso}">
                 {categories}
                 <div class="course {category_url_title}">
                 {/categories}
-              <a href="{link-recurso}">
                   <h5>
                     <a href="{link-recurso}" target="_blank">{title}</a>
                   </h5>
@@ -105,9 +105,9 @@
                     <span>{category_name}</span>
                     <span class="icon-school"></span>
                   </div>
-              </a>
                   {/categories}
                 </div>
+              </a>
             </div>
             
           {/exp:channel:entries}
