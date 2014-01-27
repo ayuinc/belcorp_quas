@@ -433,6 +433,13 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	h5{
 		font-weight: 700;
 		text-transform:uppercase;
+		color: #596c79;
+		a{
+			color: #596c79;
+			&:hover{
+				color: #596c79;
+			}
+		}
 	}
 	p{
 		color: #929FAA;
