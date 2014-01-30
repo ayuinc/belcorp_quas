@@ -441,6 +441,11 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	padding: 2.5em 0;
 	background: #FAFAFA;
 	text-align: center;
+	background: url("../img/bg_prev_escuelas.jpg");
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
 	.title{
 		margin: 0;
 		line-height: 1;
