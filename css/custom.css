@@ -342,7 +342,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 #metodologia {
   padding: 2.5em 0;
-  background: #EEEEEE;
+  background: #ECECEC;
   text-align: center; }
   #metodologia .title {
     margin: 0;
@@ -933,7 +933,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
   .fixed_menu_details {
     position: fixed;
-    right: 0; }
+    right: 0;
+    top: 4.4rem; }
 
   #footer p {
     text-align: center; }
