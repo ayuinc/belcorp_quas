@@ -45,19 +45,23 @@
                   </div>
 
 {/exp:channel:entries}
+                  
+                  {if segment_2=='ventas'}
                   <div class="row">
                     <div class="large-12 columns">
                       <div class="filtro-interno">
                         <ul class="inline-list">
-                          <li><a href="#">RETAIL</a></li>
-                          <li><a href="#">LEAN</a></li>
-                          <li><a href="#">CERTIFICACIÓN</a></li>
+                          <li><a href="{site_url}catalogo/{segment_2}/retail" {if last_segment=='retail'}class="selected"{/if}>RETAIL</a></li>
+                          <li><a href="{site_url}catalogo/{segment_2}/lean" {if last_segment=='lean'}class="selected"{/if}>LEAN</a></li>
+                          <li><a href="{site_url}catalogo/{segment_2}/lean" {if last_segment=='certificacion'}class="selected"{/if}>CERTIFICACIÓN</a></li>
                         </ul>
                       </div>
                     </div>
                   </div>
+                  {/if}
+                  
                   <div class="row">
-                  {exp:channel:entries channel="cursos" limit="10" disable="member_data" category="{last_segment_category_id}"}
+                  {exp:channel:entries channel="cursos" limit="10" disable="member_data" category="{segment_2_category_id}"}
                     <div class="medium-12 large-6 columns">
                       <a href="{site_url}/catalogo/curso/{url_title}">
                         {categories}
