@@ -1,5 +1,5 @@
 {exp:channel:entries channel="cursos" limit="1" disable="pagination|member_data"}
-{embed="includes/header"}
+{embed="includes/header" titulo="Curso | {title}"}
 
     <div class="off-canvas-wrap">
       <div class="inner-wrap">
@@ -107,7 +107,19 @@
 	                            <?php } ?>	
 	                            </a>
 	                            <span>{material-modulo-1:tipo-embed-material} - {material-modulo-1:tiempo-consumo-embed-material} min</span>
-                            {/if}                            
+                            {/if}      
+                            
+                            {if material-modulo-1:link-material}
+                            	<a href="{material-modulo-1:link-material}" target="_blank">
+                            	Lección #<?php echo $contador;  ?>: {material-modulo-1:title}
+                            	<?php $controlador ='{material-modulo-1:link-material}'; ?>
+	                            <?php if ($controlador!='') { ?>
+	                            <?php $contador++;  ?>
+	                            <?php } ?>	
+	                            </a>
+	                            <span>Link - {material-modulo-1:tiempo-material} min</span>
+                            {/if}
+            
                           </dd>
                           {/material-modulo-1}
                         </dl>
@@ -321,7 +333,7 @@
               </div>
             </div>
             <div class="fixed_menu_details large-3 columns hide-for-small hide-for-medium right_padding">
-              <a href="{embed:link-curso}" target="_blank" id="start_course" class="explore button expand">COMENZAR</a>
+              <a href="{link-curso}" target="_blank" id="start_course" class="explore button expand">COMENZAR</a>
               {embed="includes/curso-detalles" tiempo-duracion-curso="{tiempo-duracion-curso}" cantidad-lecciones-curso="{cantidad-lecciones-curso}" cantidad-video-curso="{cantidad-video-curso}" link-curso="{link-curso}" cantidad-modulos-cursos="{cantidad-modulos-cursos}"}
             </div>
             

@@ -1,4 +1,5 @@
-{embed="includes/header"}
+{exp:channel:entries channel="secciones" limit="1" disable="member_data|pagination|categories" entry_id="82"}
+{embed="includes/header"  titulo="{title}"}
 
     <div class="off-canvas-wrap">
       <div class="inner-wrap">
@@ -6,7 +7,7 @@
           <div class="row">
             <div class="large-12 columns">
               <a class="left-off-canvas-toggle" ><span class="icon-list"></span></a>
-              <h3 id="menu_title">FEEDBACK</h3>
+              <h3 id="menu_title">{title}</h3>
             </div>
           </div>
         </div>
@@ -30,8 +31,8 @@
                     <span class="icon-mail"></span>
                   </div>
                   <div class="medium-10 large-10 columns"> 
-                    <h3>GRACIAS POR CONTACTARNOS</h3>
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, dignissimos, pariatur, maxime accusantium totam nesciunt fugit dicta itaque numquam facere accusamus enim tenetur mollitia. Sed voluptates hic quos veritatis est.</h5>
+                    <h3>{title}</h3>
+                    <h5>{texto-descriptivo-seccion}</h5>
                   </div>
 <!--                   <div class="hide-for-small medium-2 large-2 columns">
                     <div class="text-center">
@@ -43,6 +44,8 @@
               </div>
             </div>
           </div>
+{/exp:channel:entries}
+
 
           <div class="row">
             <div class="large-12 columns">
