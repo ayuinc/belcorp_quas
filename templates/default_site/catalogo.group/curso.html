@@ -21,18 +21,18 @@
         <div class="total_padding medium-12 large-12 columns">  
 
           <div class="row">
-            <div class="large-12 columns">
+            <div class="large-9 columns">
             {categories}
               <div id="details_header" class="course {category_url_title}">
             {/categories}  
                 <h3>{title}</h3>
-                <p>{introduccin-curso}</p>
-                {categories}
+                <!--<p>{introduccin-curso}</p>-->
+                <!--{categories}
                 <div class="school">
                   <span>{category_name}</span>
                   <span class="icon-school"></span>
                 </div>
-                {/categories}
+                {/categories}-->
               </div>
             </div>
           </div>
@@ -332,6 +332,8 @@
                 
               </div>
             </div>
+            
+            
             <div class="fixed_menu_details large-3 columns hide-for-small hide-for-medium right_padding">
               <a href="{link-curso}" target="_blank" id="start_course" class="explore button expand">COMENZAR</a>
               {embed="includes/curso-detalles" tiempo-duracion-curso="{tiempo-duracion-curso}" cantidad-lecciones-curso="{cantidad-lecciones-curso}" cantidad-video-curso="{cantidad-video-curso}" link-curso="{link-curso}" cantidad-modulos-cursos="{cantidad-modulos-cursos}"}
