@@ -53,13 +53,59 @@
                       <div class="filtro-interno">
                         <ul class="inline-list">
                           <li><a href="{site_url}/catalogo/ventas/retail" {if last_segment=='retail'}class="selected"{/if}>RETAIL</a></li>
-                          <li><a href="{site_url}/catalogo/ventas/lean" {if last_segment=='lean'}class="selected"{/if}>LEAN</a></li>
                           <li><a href="{site_url}/catalogo/ventas/certificacion" {if last_segment=='certificacion'}class="selected"{/if}>CERTIFICACIÓN</a></li>
                         </ul>
                       </div>
                     </div>
                   </div>
                   {/if}
+                  
+                  
+                  {if segment_2=='belcorp'}
+                  <div class="row">
+                    <div class="large-12 columns">
+                      <div class="filtro-interno">
+                        <ul class="inline-list">
+                          <li><a href="{site_url}/catalogo/ventas/summa" {if last_segment=='summa'}class="selected"{/if}>SUMMA</a></li>
+
+                          <li><a href="{site_url}/catalogo/ventas/induccion" {if last_segment=='induccion'}class="selected"{/if}>INDUCCION</a></li>
+                          <li><a href="{site_url}/catalogo/ventas/lean" {if last_segment=='lean'}class="selected"{/if}>LEAN</a></li>
+                          <li><a href="{site_url}/catalogo/ventas/learning-coffees" {if last_segment=='learning-coffee'}class="selected"{/if}>LEARNING COFFEES</a></li>
+                          <li><a href="{site_url}/catalogo/ventas/micro-skills" {if last_segment=='micro-skills'}class="selected"{/if}>MICRO SKILLS</a></li>
+                          <li><a href="{site_url}/catalogo/ventas/innovacion" {if last_segment=='innovacion'}class="selected"{/if}>INOVACION</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  {/if} 
+                  
+                  {if segment_2=='comercial'}
+                  <div class="row">
+                    <div class="large-12 columns">
+                      <div class="filtro-interno">
+                        <ul class="inline-list">
+                          <li><a href="{site_url}/catalogo/ventas/planeamiento" {if last_segment=='planeamiento'}class="selected"{/if}>PLANEAMIENTO</a></li>
+
+                          <li><a href="{site_url}/catalogo/ventas/marcas" {if last_segment=='marcas'}class="selected"{/if}>MARCAS</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  {/if}   
+                  
+                  {if segment_2=='liderazgo'}
+                  <div class="row">
+                    <div class="large-12 columns">
+                      <div class="filtro-interno">
+                        <ul class="inline-list">
+                          <li><a href="{site_url}/catalogo/ventas/top-70" {if last_segment=='top-70'}class="selected"{/if}>TOP 70</a></li>
+
+                          <li><a href="{site_url}/catalogo/ventas/cultura" {if last_segment=='cultura'}class="selected"{/if}>CULTURA</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  {/if}                                                      
                   
                   
                   <div class="row">
@@ -77,7 +123,7 @@
 	                          <div class="school">
 	                            <!--<span>{if segment_2=='ventas'}{segment_2} | {/if}{category_name}</span>
 	                            <span class="icon-school"></span>-->
-	                            <span><a href="{site_url}/catalogo/curso/{url_title}">{!--category_name--}Ver Más »</a></span>
+	                            <span>{!--category_name--}Ver Más »</span>
 	                          </div>
 	                          {!--/categories--}
 	                        </div>
@@ -111,7 +157,7 @@
 	                          <p>{descripcion-curso}</p>
 			                  {!--categories--}
 			                  <div class="school">
-			                    <span><a href="{site_url}/catalogo/curso/{url_title}">{!--category_name--}Ver Más »</a></span>
+			                    <span>{!--category_name--}Ver Más »</span>
 			                    <!--<span class="icon-school"></span>-->
 			                  </div>
 			                  {!--/categories--}
