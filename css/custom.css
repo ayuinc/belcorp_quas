@@ -450,10 +450,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     position: absolute;
     left: 1.5em;
     bottom: 1.5em;
-    width: 200px;
-    padding: 0.5em; }
+    width: 200px; }
     .course .school span {
-      color: #596C79;
+      color: #6B1F7E;
       font-size: 0.8rem;
       font-weight: 500; }
     .course .school .icon-school {
