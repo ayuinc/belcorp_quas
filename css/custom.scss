@@ -457,7 +457,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 
 
 #metodologia{
-	padding: 2.5em 0;
+	padding: 3.5em 0 2.5em 0;
 	background: #ECECEC;
 	text-align: center;
 	.title{
@@ -466,6 +466,23 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		padding-bottom: 1.25em;
 		font-weight: 700;
 	}
+	h5{
+		margin-top: 1.5em;
+		font-weight: 300;
+	}
+	.icon-rocket{
+		font-size: 5em;
+		color: #6b1f7e;
+	}
+	.icon-shield{
+		font-size: 5em;
+		color: #6b1f7e;
+	}
+	.icon-trophy{
+		font-size: 5em;
+		color: #6b1f7e;	
+	}
+
 }
 
 #prev-escuelas{
