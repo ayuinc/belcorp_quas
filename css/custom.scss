@@ -92,6 +92,13 @@ textarea{
   font-weight: 300;
 }
 
+.stripe {
+	display: inline-block;
+	width: 20px;
+	height: 1px;
+	border-top: 2px solid #999;
+}
+
 textarea:focus{
   box-shadow: none;
   background: #FFFFFF;
