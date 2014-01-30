@@ -178,6 +178,15 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 .icon-facebook:before {
   content: "\e60e"; }
 
+.icon-rocket:before {
+  content: "\e611"; }
+
+.icon-shield:before {
+  content: "\e612"; }
+
+.icon-trophy:before {
+  content: "\e613"; }
+
 .icon-play {
   position: relative;
   top: 2px; }
@@ -343,6 +352,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   #la_ucb p {
     font-size: 1.1rem;
     margin-top: 1rem; }
+  #la_ucb h3 {
+    text-transform: uppercase;
+    font-weight: 400; }
   #la_ucb:after {
     content: "";
     position: absolute;
@@ -352,7 +364,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     height: 0;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-top: 20px solid #f2f2f2; }
+    border-top: 20px solid #FFFFFF; }
 
 #metodologia {
   padding: 2.5em 0;
