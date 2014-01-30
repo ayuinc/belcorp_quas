@@ -345,6 +345,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   background: #FAFAFA;
   text-align: center;
   background: url("../img/bg_prev_escuelas.jpg");
+  border-top: 7px solid rgba(0, 0, 0, 0.16);
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center center;
