@@ -45,49 +45,18 @@
             </div>
           </div>
 {/exp:channel:entries}
-<!--           <div class="row">
+
+          <div class="row">
             <div class="large-12 columns">
-              <div class="resources_list">
-              
-              {exp:channel:entries channel="contenidos" disable="pagination|member_data" limit="10" category="{last_segment_category_id}"}
-                <div class="resources_item">
-                  <div class="row">
-                  	{categories}
-                    <div class="medium-12 large-12 columns {category_url_title}">  
-                    {/categories}
-                      <h5>
-                        <a href="{link-recurso}" target="_blank">{title}</a>
-                      </h5>
-                      <span><a href="{link-recurso}" target="_blank">{fuente-recurso}</a></span>
-                      <p>{descripcion-recurso}</p>
-                      <div class="school">
-                      		{categories}
-                      		<span>{category_name}</span>
-                            <span class="icon-school"></span>
-                            {/categories}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-               {/exp:channel:entries}
-                
+              <div class="filtro-externo">
+                <ul class="inline-list">
+                  <li><a href="#">TED</a></li>
+                  <li><a href="#">ARTICULO</a></li>
+                  <li><a href="#">VIDEO</a></li>
+                </ul>
               </div>
-
-              <div class="row">
-                <div class="large-3 large-centered columns vermas">
-                  <div class="more">                      
-                    <div class="text-center">
-                      <span id="more_courses">Ver más</span>
-                    </div>
-                    <div class="text-center">
-                      <span id="more_icon" class="icon-arrow-down"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
             </div>
-          </div> -->
+          </div>
 
           <div class="row">
           {exp:channel:entries channel="contenidos" disable="pagination|member_data" limit="10" category="{last_segment_category_id}"}

@@ -404,6 +404,30 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	}
 }
 
+
+
+#la_ucb{
+	.bottom-rule {
+		display: inline-block;
+		width: 50%;
+		border-bottom: 1px solid #c5d0de;
+		top: -36px;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: -20px;
+		left: 48%;
+		width: 0;
+		height: 0;
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+		border-top: 20px solid #f2f2f2;
+	}
+}
+
+
+
 .course{
 	background-color: #FFFFFF;
 	height: 220px;
@@ -1031,7 +1055,28 @@ box-shadow: -2px 0px 4px #edeff0;
     filter: alpha(opacity=1); /* Fix to make div clickable in IE */
 }
 
-.filtro{
+.filtro-interno{
+	.inline-list{
+		float: right;
+		a{
+			font-weight: 400;
+			color: #596c79;
+			transition: border-bottom 0.4s;
+			-webkit-transition: border-bottom ease-out 0.4s;
+			border-bottom: 2px solid transparent;
+			&:hover{
+				color: #596c79;
+				border-bottom: 2px solid #6B1F7E;
+			}
+			&.selected{
+				color: #596c79;
+				border-bottom: 2px solid #6B1F7E;				
+			}
+		}
+	}
+}
+
+.filtro-externo{
 	.inline-list{
 		float: right;
 		a{
