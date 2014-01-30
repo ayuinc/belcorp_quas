@@ -783,18 +783,33 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   filter: alpha(opacity=1);
   /* Fix to make div clickable in IE */ }
 
-.filtro .inline-list {
+.filtro-interno .inline-list {
   float: right; }
-  .filtro .inline-list a {
+  .filtro-interno .inline-list a {
     font-weight: 400;
     color: #596c79;
     transition: border-bottom 0.4s;
     -webkit-transition: border-bottom ease-out 0.4s;
     border-bottom: 2px solid transparent; }
-    .filtro .inline-list a:hover {
+    .filtro-interno .inline-list a:hover {
       color: #596c79;
       border-bottom: 2px solid #6B1F7E; }
-    .filtro .inline-list a.selected {
+    .filtro-interno .inline-list a.selected {
+      color: #596c79;
+      border-bottom: 2px solid #6B1F7E; }
+
+.filtro-externo .inline-list {
+  float: right; }
+  .filtro-externo .inline-list a {
+    font-weight: 400;
+    color: #596c79;
+    transition: border-bottom 0.4s;
+    -webkit-transition: border-bottom ease-out 0.4s;
+    border-bottom: 2px solid transparent; }
+    .filtro-externo .inline-list a:hover {
+      color: #596c79;
+      border-bottom: 2px solid #6B1F7E; }
+    .filtro-externo .inline-list a.selected {
       color: #596c79;
       border-bottom: 2px solid #6B1F7E; }
 
