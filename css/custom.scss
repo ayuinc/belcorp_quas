@@ -1032,7 +1032,8 @@ box-shadow: -2px 0px 4px #edeff0;
 }
 
 .filtro{
-	li{
+	.inline-list{
+		float: right;
 		a{
 			font-weight: 400;
 			color: #596c79;
@@ -1042,6 +1043,10 @@ box-shadow: -2px 0px 4px #edeff0;
 			&:hover{
 				color: #596c79;
 				border-bottom: 2px solid #6B1F7E;
+			}
+			&.selected{
+				color: #596c79;
+				border-bottom: 2px solid #6B1F7E;				
 			}
 		}
 	}

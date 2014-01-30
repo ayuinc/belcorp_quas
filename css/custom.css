@@ -783,15 +783,20 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   filter: alpha(opacity=1);
   /* Fix to make div clickable in IE */ }
 
-.filtro li a {
-  font-weight: 400;
-  color: #596c79;
-  transition: border-bottom 0.4s;
-  -webkit-transition: border-bottom ease-out 0.4s;
-  border-bottom: 2px solid transparent; }
-  .filtro li a:hover {
+.filtro .inline-list {
+  float: right; }
+  .filtro .inline-list a {
+    font-weight: 400;
     color: #596c79;
-    border-bottom: 2px solid #6B1F7E; }
+    transition: border-bottom 0.4s;
+    -webkit-transition: border-bottom ease-out 0.4s;
+    border-bottom: 2px solid transparent; }
+    .filtro .inline-list a:hover {
+      color: #596c79;
+      border-bottom: 2px solid #6B1F7E; }
+    .filtro .inline-list a.selected {
+      color: #596c79;
+      border-bottom: 2px solid #6B1F7E; }
 
 @media only screen and (min-width: 40.063em) {
   #cover h1 {
