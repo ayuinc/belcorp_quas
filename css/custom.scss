@@ -427,18 +427,18 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		font-size: 1.1rem;
 		margin-top: 1rem;
 	}
-	// position: relative;
-	// &:after {
-	// 	content: "";
-	// 	position: absolute;
-	// 	bottom: -20px;
-	// 	left: 48%;
-	// 	width: 0;
-	// 	height: 0;
-	// 	border-left: 20px solid transparent;
-	// 	border-right: 20px solid transparent;
-	// 	border-top: 20px solid #f2f2f2;
-	// }
+	position: relative;
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: -20px;
+		left: 48%;
+		width: 0;
+		height: 0;
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+		border-top: 20px solid #f2f2f2;
+	}
 }
 
 
@@ -451,18 +451,6 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		line-height: 1;
 		padding-bottom: 1.25em;
 		font-weight: 700;
-	}
-	position: relative;
-	&:after {
-		content: "";
-		position: absolute;
-		bottom: -20px;
-		left: 48%;
-		width: 0;
-		height: 0;
-		border-left: 20px solid transparent;
-		border-right: 20px solid transparent;
-		border-top: 20px solid #ffffff;
 	}
 }
 
