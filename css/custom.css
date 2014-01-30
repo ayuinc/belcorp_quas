@@ -340,6 +340,16 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     padding-bottom: 1.25em;
     font-weight: 700; }
 
+#metodologia {
+  padding: 2.5em 0;
+  background: #EEEEEE;
+  text-align: center; }
+  #metodologia .title {
+    margin: 0;
+    line-height: 1;
+    padding-bottom: 1.25em;
+    font-weight: 700; }
+
 #prev-escuelas {
   padding: 10em 0;
   background: #FAFAFA;
