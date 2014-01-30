@@ -1,4 +1,5 @@
-{embed="includes/header"}
+{exp:channel:entries channel="secciones" limit="1" disable="member_data|pagination|categories" entry_id="76"}
+{embed="includes/header" titulo="{title}"}
 
     <div class="off-canvas-wrap">
       <div class="inner-wrap">
@@ -6,7 +7,7 @@
           <div class="row">
             <div class="large-12 columns">
               <a class="left-off-canvas-toggle" ><span class="icon-list"></span></a>
-              <h3 id="menu_title">CATÁLOGO</h3>
+              <h3 id="menu_title">{title}</h3>
             </div>
             <div class="small-12 columns">
               <form action="#" id="form_search">
@@ -35,13 +36,15 @@
                             <span class="icon-grid"></span>
                           </div>
                           <div class="medium-11 large-11 columns">
-                            <h3>EXPLORA EL CATÁLOGO DE CURSOS</h3>
-                            <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h5>
+                            <h3>{title}</h3>
+                            <h5>{texto-descriptivo-seccion}</h5>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+
+{/exp:channel:entries}
 
                   <div class="row">
                     <div class="large-12 columns">

@@ -1,4 +1,5 @@
-{embed="includes/header"}
+{exp:channel:entries channel="secciones" limit="1" disable="member_data|pagination|categories" entry_id="77"}
+{embed="includes/header" titulo="{title}"}
 
     <div class="off-canvas-wrap">
       <div class="inner-wrap">
@@ -6,7 +7,7 @@
           <div class="row">
             <div class="large-12 columns">
               <a class="left-off-canvas-toggle" ><span class="icon-list"></span></a>
-              <h3 id="menu_title">CONTENIDOS</h3>
+              <h3 id="menu_title">{title}</h3>
             </div>
           </div>
         </div>
@@ -30,8 +31,8 @@
                     <span class="icon-book"></span>
                   </div>
                   <div class="medium-10 large-11 columns"> 
-                    <h3>LISTA DE CONTENIDOS</h3>
-                    <h5>Usa estos contenidos para complementar tu formación académica.</h5>
+                    <h3>{title}</h3>
+                    <h5>{texto-descriptivo-seccion}</h5>
                   </div>
 <!--                   <div class="hide-for-small medium-2 large-2 columns">
                     <div class="text-center">
@@ -43,7 +44,7 @@
               </div>
             </div>
           </div>
-
+{/exp:channel:entries}
 <!--           <div class="row">
             <div class="large-12 columns">
               <div class="resources_list">

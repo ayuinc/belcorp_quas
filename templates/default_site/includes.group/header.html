@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Belcorp</title>
+    <title>{if embed:titulo}{embed:titulo} | {/if}UCB - Universidad Corporativa de Belcorp</title>
     <link rel="shortcut icon" href="{site_url}img/favicon.ico" />
     <link rel="stylesheet" href="{site_url}css/foundation.css" />
     <link rel="stylesheet" href="{site_url}css/custom.css">
@@ -19,10 +19,10 @@
     <meta name="keywords" content="educaci[on, belcorp, universidad, cursos, en l[inea, aprender" />
     <meta name="author" content="Universidad Coorporativa de Belcorp" />
     <meta name="copyright" content="Universidad Coorporativa de Belcorp" />
-    <meta name="application-name" content="UCB | Universidad Coorporativa de Belcorp" />
+    <meta name="application-name" content="{if embed:titulo}{embed:titulo} | {/if}UCB - Universidad Corporativa de Belcorp" />
     
     <!-- for Facebook -->
-    <meta property="og:title" content="UCB | Universidad Coorporativa de Belcorp" />
+    <meta property="og:title" content="{if embed:titulo}{embed:titulo} | {/if}UCB - Universidad Corporativa de Belcorp" />
 	<meta property="og:type" content="other" />
 	<meta property="og:image" content="{site_url}img/logo_header.png" />
 	<meta property="og:url" content="{site_url}" />
@@ -30,7 +30,7 @@
 	
     <!-- for Twitter -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="UCB | Universidad Coorporativa de Belcorp" />
+    <meta name="twitter:title" content="{if embed:titulo}{embed:titulo} | {/if}UCB - Universidad Corporativa de Belcorp" />
     <meta name="twitter:description" content="Somos una comunidad dedicada al desarrollo personal. @ubelcorp" />
     <meta name="twitter:image" content="{site_url}img/logo_header.png" />       
     
