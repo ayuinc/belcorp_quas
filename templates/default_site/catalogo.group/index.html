@@ -73,12 +73,13 @@
 	                          <h5>{title}</h5>
 	                          <p>{descripcion-curso}</p>
 	                          
-	                          {categories}
+	                          {!--categories--}
 	                          <div class="school">
-	                            <span>{if segment_2=='ventas'}{segment_2} | {/if}{category_name}</span>
-	                            <span class="icon-school"></span>
+	                            <!--<span>{if segment_2=='ventas'}{segment_2} | {/if}{category_name}</span>
+	                            <span class="icon-school"></span>-->
+	                            <span><a href="{site_url}/catalogo/curso/{url_title}">{!--category_name--}Ver Más »</a></span>
 	                          </div>
-	                          {/categories}
+	                          {!--/categories--}
 	                        </div>
 	                      </a>
 	                    </div>
@@ -108,12 +109,12 @@
 	                        {/categories}
 	                          <h5>{title}</h5>
 	                          <p>{descripcion-curso}</p>
-	                          {categories}
-	                          <div class="school">
-	                            <span>{category_name}</span>
-	                            <span class="icon-school"></span>
-	                          </div>
-	                          {/categories}
+			                  {!--categories--}
+			                  <div class="school">
+			                    <span><a href="{site_url}/catalogo/curso/{url_title}">{!--category_name--}Ver Más »</a></span>
+			                    <!--<span class="icon-school"></span>-->
+			                  </div>
+			                  {!--/categories--}
 	                        </div>
 	                      </a>
 	                    </div>

@@ -63,19 +63,19 @@
             <div class="medium-12 large-12 columns">
               <a id ="clickable_div" href="{link-recurso}" target="_blank">
                 {categories show='not 5'}
-                <div class="course {category_url_title}">
+                <div class="course {last_segment_category_id}">
                 {/categories}
                   <h5>
                     <a href="{link-recurso}" target="_blank">{title}</a>
                   </h5>
                   <span><a href="{link-recurso}" target="_blank">{fuente-recurso}</a></span>
                   <p>{descripcion-recurso}</p>
-                  {categories}
+                  {!--categories--}
                   <div class="school">
-                    <span>{category_name}</span>
-                    <span class="icon-school"></span>
+                    <span><a href="{link-recurso}">{!--category_name--}Ver Más »</a></span>
+                    <!--<span class="icon-school"></span>-->
                   </div>
-                  {/categories}
+                  {!--/categories--}
                 </div>
               </a>
             </div>
