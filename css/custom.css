@@ -341,7 +341,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     font-weight: 700; }
 
 #prev-escuelas {
-  padding: 2.5em 0;
+  padding: 10em 0;
   background: #FAFAFA;
   text-align: center;
   background: url("../img/bg_prev_escuelas.jpg");
@@ -354,6 +354,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     line-height: 1;
     padding-bottom: 1.25em;
     font-weight: 700; }
+  #prev-escuelas h4 {
+    color: #FFFFFF; }
 
 #escuelas {
   padding: 2.5em 0;
