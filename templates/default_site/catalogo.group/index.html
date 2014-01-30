@@ -46,52 +46,56 @@
 
 {/exp:channel:entries}
                   
+                  
                   {if segment_2=='ventas'}
                   <div class="row">
                     <div class="large-12 columns">
                       <div class="filtro-interno">
                         <ul class="inline-list">
-                          <li><a href="{site_url}catalogo/{segment_2}/retail" {if last_segment=='retail'}class="selected"{/if}>RETAIL</a></li>
-                          <li><a href="{site_url}catalogo/{segment_2}/lean" {if last_segment=='lean'}class="selected"{/if}>LEAN</a></li>
-                          <li><a href="{site_url}catalogo/{segment_2}/lean" {if last_segment=='certificacion'}class="selected"{/if}>CERTIFICACIÓN</a></li>
+                          <li><a href="{site_url}/catalogo/ventas/retail">RETAIL</a></li>
+                          <li><a href="{site_url}/catalogo/ventas/lean">LEAN</a></li>
+                          <li><a href="{site_url}/catalogo/ventas/certificacion">CERTIFICACIÓN</a></li>
                         </ul>
                       </div>
                     </div>
                   </div>
                   {/if}
                   
+                  
                   <div class="row">
-                  {exp:channel:entries channel="cursos" limit="10" disable="member_data" category="{last_segment_category_id}"}
-                    <div class="medium-12 large-6 columns">
-                      <a href="{site_url}/catalogo/curso/{url_title}">
-                        {categories}
-                        <div class="course {category_url_title}">
-                        {/categories}
-                          <h5>{title}</h5>
-                          <p>{descripcion-curso}</p>
-                          {categories}
-                          <div class="school">
-                            <span>{category_name}</span>
-                            <span class="icon-school"></span>
-                          </div>
-                          {/categories}
-                        </div>
-                      </a>
-                    </div>
-                    
-		              {paginate}  
-		              	{pagination_links}
-				    		  <div class="row">
-				                <div class="large-2 large-centered columns">
-				                  {next_page}	
-				                  <a href="{pagination_url}" class="more button expand">VER MÁS</a>
-								  {/next_page}
-				                </div>
-				              </div>  
-		              	{/pagination_links}   
-		              {/paginate} 
-                    
-                  {/exp:channel:entries}
+	              
+	                  {exp:channel:entries channel="cursos" limit="20" {if last_segment_category_id} category="{last_segment_category_id}" {/if}}
+	                    <div class="medium-12 large-6 columns">
+	                      <a href="{site_url}/catalogo/curso/{url_title}">
+	                        {categories show_group="not 4"}
+	                        <div class="course {category_url_title}">
+	                        {/categories}
+	                          <h5>{title}</h5>
+	                          <p>{descripcion-curso}</p>
+	                          
+	                          {categories}
+	                          <div class="school">
+	                            <span>{if segment_2=='ventas'}{segment_2} | {/if}{category_name}</span>
+	                            <span class="icon-school"></span>
+	                          </div>
+	                          {/categories}
+	                        </div>
+	                      </a>
+	                    </div>
+	                    
+			              {paginate}  
+			              	{pagination_links}
+					    		  <div class="row">
+					                <div class="large-2 large-centered columns">
+					                  {next_page}	
+					                  <a href="{pagination_url}" class="more button expand">VER MÁS</a>
+									  {/next_page}
+					                </div>
+					              </div>  
+			              	{/pagination_links}   
+			              {/paginate} 
+	                    
+	                  {/exp:channel:entries}
                   </div>
                   
                   <div id="courses_hidden">
