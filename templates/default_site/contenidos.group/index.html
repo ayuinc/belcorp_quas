@@ -50,9 +50,9 @@
             <div class="large-12 columns">
               <div class="filtro-externo">
                 <ul class="inline-list">
-                  <li><a href="#">TED</a></li>
-                  <li><a href="#">ARTICULO</a></li>
-                  <li><a href="#">VIDEO</a></li>
+                  <li><a href="{site_url}contenidos/{segment_2}/ted">TED</a></li>
+                  <li><a href="{site_url}contenidos/{segment_2}/articulo">ARTICULO</a></li>
+                  <li><a href="{site_url}contenidos/{segment_2}/video">VIDEO</a></li>
                 </ul>
               </div>
             </div>
@@ -62,7 +62,7 @@
           {exp:channel:entries channel="contenidos" disable="pagination|member_data" limit="10" category="{last_segment_category_id}"}
             <div class="medium-12 large-12 columns">
               <a id ="clickable_div" href="{link-recurso}" target="_blank">
-                {categories}
+                {categories show='not 5'}
                 <div class="course {category_url_title}">
                 {/categories}
                   <h5>
