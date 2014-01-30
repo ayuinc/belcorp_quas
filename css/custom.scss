@@ -452,6 +452,18 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		padding-bottom: 1.25em;
 		font-weight: 700;
 	}
+	position: relative;
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: -20px;
+		left: 48%;
+		width: 0;
+		height: 0;
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+		border-top: 20px solid #ffffff;
+	}
 }
 
 #prev-escuelas{

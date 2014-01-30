@@ -346,12 +346,23 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 #metodologia {
   padding: 2.5em 0;
   background: #ECECEC;
-  text-align: center; }
+  text-align: center;
+  position: relative; }
   #metodologia .title {
     margin: 0;
     line-height: 1;
     padding-bottom: 1.25em;
     font-weight: 700; }
+  #metodologia:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 48%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #ffffff; }
 
 #prev-escuelas {
   padding: 10em 0;
