@@ -59,7 +59,7 @@
           </div>
 
           <div class="row">
-          {exp:channel:entries channel="contenidos" disable="pagination|member_data" limit="10" category="{last_segment_category_id}"}
+          {exp:channel:entries channel="contenidos" disable="member_data" limit="20" category="{last_segment_category_id}"}
             <div class="medium-12 large-12 columns">
               <a id ="clickable_div" href="{link-recurso}" target="_blank">
                 {categories show='not 5'}
@@ -80,20 +80,19 @@
               </a>
             </div>
             
+			              {paginate}  
+			              	{pagination_links}
+					    		  <div class="row">
+					                <div class="large-2 large-centered columns">
+					                  {next_page}	
+					                  <a href="{pagination_url}" class="more button expand">VER MÁS</a>
+									  {/next_page}
+					                </div>
+					              </div>  
+			              	{/pagination_links}   
+			              {/paginate}             
+            
           {/exp:channel:entries}
-          </div>
-
-          <div class="row">
-            <div class="large-3 large-centered columns vermas">
-              <div class="more">                      
-                <div class="text-center">
-                  <span id="more_courses">Ver más</span>
-                </div>
-                <div class="text-center">
-                  <span id="more_icon" class="icon-arrow-down"></span>
-                </div>
-              </div>
-            </div>
           </div>
 
           </div>
