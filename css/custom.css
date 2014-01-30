@@ -328,6 +328,21 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   padding: 2.5em 0;
   background: #FFFFFF;
   text-align: center; }
+  #la_ucb .title {
+    margin: 0;
+    line-height: 1;
+    padding-bottom: 1.25em;
+    font-weight: 700; }
+
+#escuelas {
+  padding: 2.5em 0;
+  background: #FAFAFA;
+  text-align: center; }
+  #escuelas .title {
+    margin: 0;
+    line-height: 1;
+    padding-bottom: 1.25em;
+    font-weight: 700; }
 
 .course {
   background-color: #FFFFFF;

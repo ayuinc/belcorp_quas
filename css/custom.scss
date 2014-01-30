@@ -410,6 +410,12 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	padding: 2.5em 0;
 	background: #FFFFFF;
 	text-align: center;
+	.title{
+		margin: 0;
+		line-height: 1;
+		padding-bottom: 1.25em;
+		font-weight: 700;
+	}
 	// position: relative;
 	// &:after {
 	// 	content: "";
@@ -423,6 +429,19 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	// 	border-top: 20px solid #f2f2f2;
 	// }
 }
+
+#escuelas{
+	padding: 2.5em 0;
+	background: #FAFAFA;
+	text-align: center;
+	.title{
+		margin: 0;
+		line-height: 1;
+		padding-bottom: 1.25em;
+		font-weight: 700;
+	}
+}
+
 
 
 
