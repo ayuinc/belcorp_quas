@@ -426,6 +426,14 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     line-height: 1;
     padding-bottom: 1.25em;
     font-weight: 700; }
+  #contacto .escuelas_box {
+    border: 5px solid #ECECEC;
+    margin: 0 auto;
+    padding: 30px 8%;
+    color: #929FAA;
+    font-size: 12pt;
+    position: relative;
+    overflow: hidden; }
 
 .course {
   background-color: #FFFFFF;
