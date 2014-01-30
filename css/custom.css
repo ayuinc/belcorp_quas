@@ -647,16 +647,6 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   .details_info .details_info_item:last-child {
     margin-bottom: 0; }
 
-.instructor_info {
-  background-color: #FFFFFF;
-  box-shadow: 0 2px 0 #94A0AA;
-  padding: 25px;
-  margin-bottom: 1.25em; }
-  .instructor_info h6 {
-    color: #596C79;
-    text-align: center;
-    font-weight: 700; }
-
 #details_header {
   height: 100%; }
   #details_header p {
