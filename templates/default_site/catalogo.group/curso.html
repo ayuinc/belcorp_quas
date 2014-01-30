@@ -38,7 +38,11 @@
             
             <div class="fixed_menu_details large-3 columns hide-for-small hide-for-medium right_padding">
               <a href="{link-curso}" target="_blank" id="start_course" class="explore button expand">COMENZAR</a>
-              {embed="includes/curso-detalles" tiempo-duracion-curso="{tiempo-duracion-curso}" cantidad-lecciones-curso="{cantidad-lecciones-curso}" cantidad-video-curso="{cantidad-video-curso}" link-curso="{link-curso}" cantidad-modulos-cursos="{cantidad-modulos-cursos}"}
+              {instructores}
+              	{instructor-curso:foto-instructor}
+              	{embed="includes/curso-detalles" tiempo-duracion-curso="{tiempo-duracion-curso}" cantidad-lecciones-curso="{cantidad-lecciones-curso}" cantidad-video-curso="{cantidad-video-curso}" link-curso="{link-curso}" cantidad-modulos-cursos="{cantidad-modulos-cursos}" instructor="{instructor-curso:title}" imagen="{instructor-curso:image:url:small}" descripcion="{descripcin-instructor}"}
+              	{/instructor-curso:foto-instructor}
+              {/instructores}
             </div>
             
           </div>
