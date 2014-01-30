@@ -4,6 +4,7 @@ $planeamiento: #72D100;
 $ventas: #F8FF00;
 $innovacion: #FF7500;
 $belcorp: #FF00FE;
+$comercial: #FF0000;
 
 html, body {
   	height: 100%;
@@ -555,7 +556,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	position: relative;
 	.school{
 		text-transform: uppercase;
-		background-color: #EEEEEE;
+		// background-color: #EEEEEE;
 		position: absolute;
 		left: 1.5em;
 		bottom: 1.5em;
@@ -606,6 +607,16 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		}
 	}
 }
+
+.comercial{
+	border-right: 25px solid $comercial;
+	.school{
+		.icon-school{
+			color: $comercial;
+		}
+	}
+}
+
 
 .planeamiento{
 	border-right: 25px solid $planeamiento;	
@@ -814,6 +825,11 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	.marcas{
 		.icon-school{
 			color: $marcas;
+		}
+	}
+	.comercial{
+		.icon-school{
+			color: $comercial;
 		}
 	}
 	.planeamiento{
