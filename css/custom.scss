@@ -423,6 +423,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		padding-bottom: 1.25em;
 		font-weight: 700;
 	}
+	p{
+		font-size: 1.1rem;
+	}
 	// position: relative;
 	// &:after {
 	// 	content: "";
@@ -440,7 +443,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 
 #metodologia{
 	padding: 2.5em 0;
-	background: #EEEEEE;
+	background: #ECECEC;
 	text-align: center;
 	.title{
 		margin: 0;
@@ -475,6 +478,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	padding: 2.5em 0;
 	background: #FFFFFF;
 	text-align: center;
+	border-top: 8px solid #EEEEEE;
 	.title{
 		margin: 0;
 		line-height: 1;
@@ -803,9 +807,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	margin-bottom: 1.25em;
 	
 	h6{
-		color: #66198A;
+		color: #596C79;
 		text-align: center;
-		font-weight: 500;
+		font-weight: 700;
 	}
 
 	p,span {
@@ -1211,7 +1215,11 @@ box-shadow: -2px 0px 4px #edeff0;
 
 	.details_info{
 		p{
-			font-size: 0.92rem;
+			font-size: 2rem;
+			line-height: 1.25rem;
+			margin-top: 1rem;
+			color: #66198A;
+			font-weight: 500;
 		}
 		span{
 			font-size: 0.9rem;
@@ -1253,6 +1261,7 @@ box-shadow: -2px 0px 4px #edeff0;
 	.fixed_menu_details{
 		position: fixed;
 		right: 0;
+		top: 4.4rem;
 	}
 
 	#footer{

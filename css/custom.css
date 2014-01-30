@@ -339,10 +339,12 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     line-height: 1;
     padding-bottom: 1.25em;
     font-weight: 700; }
+  #la_ucb p {
+    font-size: 1.1rem; }
 
 #metodologia {
   padding: 2.5em 0;
-  background: #EEEEEE;
+  background: #ECECEC;
   text-align: center; }
   #metodologia .title {
     margin: 0;
@@ -371,7 +373,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 #escuelas {
   padding: 2.5em 0;
   background: #FFFFFF;
-  text-align: center; }
+  text-align: center;
+  border-top: 8px solid #EEEEEE; }
   #escuelas .title {
     margin: 0;
     line-height: 1;
@@ -595,9 +598,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   padding: 25px;
   margin-bottom: 1.25em; }
   .details_info h6 {
-    color: #66198A;
+    color: #596C79;
     text-align: center;
-    font-weight: 500; }
+    font-weight: 700; }
   .details_info p, .details_info span {
     color: #929FAA; }
   .details_info p {
@@ -904,7 +907,11 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     text-transform: uppercase; }
 
   .details_info p {
-    font-size: 0.92rem; }
+    font-size: 2rem;
+    line-height: 1.25rem;
+    margin-top: 1rem;
+    color: #66198A;
+    font-weight: 500; }
   .details_info span {
     font-size: 0.9rem;
     font-weight: 100; }
@@ -933,7 +940,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
   .fixed_menu_details {
     position: fixed;
-    right: 0; }
+    right: 0;
+    top: 4.4rem; }
 
   #footer p {
     text-align: center; }
