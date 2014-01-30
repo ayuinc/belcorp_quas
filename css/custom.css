@@ -324,21 +324,10 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
       background-color: #FFFFFF;
       text-transform: uppercase; }
 
-#la_ucb .bottom-rule {
-  display: inline-block;
-  width: 50%;
-  border-bottom: 1px solid #c5d0de;
-  top: -36px; }
-#la_ucb:after {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  left: 48%;
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 20px solid #f2f2f2; }
+#la_ucb {
+  padding: 2.5em 0;
+  background: #FFFFFF;
+  text-align: center; }
 
 .course {
   background-color: #FFFFFF;
