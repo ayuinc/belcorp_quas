@@ -1,12 +1,16 @@
 {embed="includes/header"} 
-    <section id="cover" style="background: url({site_url}/img/bg_cover.jpg); background-position: center center; -webkit-background-size: cover; background-size: cover">
+	{exp:channel:entries channel="secciones" limit="1" disable="member_data|pagination" dynamic="off" category='13'}
+	{imagenes-seccion}
+    <section id="cover" style="background: url({image:url:large}); background-position: center center; -webkit-background-size: cover; background-size: cover">
+    {/imagenes-seccion}
+    {/exp:channel:entries}
       <div class="row">
         <div class="index_padding large-12 columns">
           <div class="row">
             <div class="medium-3 large-3 columns">
               <div class="text-left">
                 <a href="index.html">
-                  <img src="img/logo_header.png" alt="">
+                  <img src="{site_url}img/logo_header.png" alt="">
                 </a>
               </div>
             </div>
