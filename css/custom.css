@@ -695,6 +695,12 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     text-transform: uppercase;
     font-weight: 300; }
 
+.requisitos_info {
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 0 #94A0AA;
+  padding: 25px;
+  margin-bottom: 1.25em; }
+
 #menu {
   background: #6B1F7E;
   width: 70px;
