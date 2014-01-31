@@ -436,8 +436,14 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   #escuelas .title {
     margin: 0;
     line-height: 1;
-    padding-bottom: 1.25em;
+    padding-bottom: 2em;
     font-weight: 700; }
+  #escuelas h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+    font-weight: 200; }
+  #escuelas h4 {
+    color: #929FAA; }
   #escuelas .escuelas_box {
     border: 5px solid #ECECEC;
     margin: 0 auto;
@@ -450,6 +456,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     margin-bottom: 2em; }
   #escuelas .author {
     border-radius: 50%;
+    border: 6px solid #e3e3e3;
     width: 100px;
     height: 100px; }
 
