@@ -112,7 +112,7 @@
 	              
 	                  {exp:channel:entries channel="cursos" limit="20" {if last_segment_category_id} category="{last_segment_category_id}" {/if}}
 	                    <div class="medium-12 large-6 columns">
-	                      <a href="{site_url}/catalogo/curso/{url_title}">
+	                      <a href="{site_url}catalogo/curso/{url_title}">
 	                        {categories show_group="not 4"}
 	                        <div class="course {category_url_title}">
 	                        {/categories}
@@ -149,7 +149,7 @@
 	                  <div class="row">
 	                  {exp:channel:entries channel="cursos" limit="10" disable="member_data" offset="10" category="{last_segment_category_id}"}
 	                    <div class="medium-6 large-6 columns">
-	                      <a href="{site_url}/catalogo/curso/{url_title}">
+	                      <a href="{site_url}catalogo/curso/{url_title}">
 	                        {categories}
 	                        <div class="course {category_url_title}">
 	                        {/categories}
