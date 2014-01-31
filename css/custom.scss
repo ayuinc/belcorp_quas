@@ -410,7 +410,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 
 #destacados {
 	padding: 2.5em 0 1.25em 0;
-	background: #FFFFFF;
+	background: #ECECEC;
 	.title{
 		margin: 0;
 		line-height: 1;
@@ -418,7 +418,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		font-weight: 700;
 	}
 	.course{
-		background-color: #ECECEC;
+		background-color: #FFFFFF;
 		.school{
 			text-transform: uppercase;
 		}
@@ -510,11 +510,26 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	}
 }
 
+#escuelas_title{
+	background-color: #ECECEC;
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: -20px;
+		left: 48%;
+		width: 0;
+		height: 0;
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+		border-top: 20px solid #ECECEC;
+	}
+}
+
 #escuelas{
 	padding: 2.5em 0;
 	background: #FFFFFF;
 	text-align: center;
-	border-top: 8px solid #EEEEEE;
+	border-top: 8px solid #DDDDDD;
 	.title{
 		margin: 0;
 		line-height: 1;
