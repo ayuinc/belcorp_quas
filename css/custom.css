@@ -409,7 +409,16 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     color: #FFFFFF; }
 
 #escuelas_title {
-  background-color: #ECECEC; }
+  padding: 2.5em 0;
+  background-color: #ECECEC;
+  text-align: center;
+  border-top: 8px solid #DDDDDD;
+  position: relative; }
+  #escuelas_title .title {
+    margin: 0;
+    line-height: 1;
+    padding-bottom: 1.25em;
+    font-weight: 700; }
   #escuelas_title:after {
     content: "";
     position: absolute;
@@ -424,8 +433,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 #escuelas {
   padding: 2.5em 0;
   background: #FFFFFF;
-  text-align: center;
-  border-top: 8px solid #DDDDDD; }
+  text-align: center; }
   #escuelas .title {
     margin: 0;
     line-height: 1;

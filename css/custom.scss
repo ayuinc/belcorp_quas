@@ -511,7 +511,17 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 }
 
 #escuelas_title{
+	padding: 2.5em 0;
 	background-color: #ECECEC;
+	text-align: center;
+	border-top: 8px solid #DDDDDD;
+	position: relative;
+	.title{
+		margin: 0;
+		line-height: 1;
+		padding-bottom: 1.25em;
+		font-weight: 700;
+	}
 	&:after {
 		content: "";
 		position: absolute;
@@ -529,7 +539,6 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	padding: 2.5em 0;
 	background: #FFFFFF;
 	text-align: center;
-	border-top: 8px solid #DDDDDD;
 	.title{
 		margin: 0;
 		line-height: 1;
