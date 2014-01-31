@@ -22,7 +22,7 @@
 
           <div class="row">
             <div class="large-9 columns">
-            {categories}
+            {categories show="not 4"}
               <div id="details_header" class="course {category_url_title}">
             {/categories}  
                 <h3>{title}</h3>
@@ -87,6 +87,15 @@
 						{/if}                               
 
                     </div>
+                    
+                  <h3>¿QUÉ DEBO SABER?</h3>
+                  <p>{que-debo-saber-curso}</p>
+                  
+                 
+                  <h3>¿QUÉ VOY A APRENDER?</h3>
+				  <p>{que-voy-aprender-curso}</p>
+                    
+                  <h3>SYLLABUS</h3>  
 
 				  <?php $contador = 1;  ?>				  
 				  
