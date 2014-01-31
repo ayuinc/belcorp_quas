@@ -336,7 +336,6 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   #destacados .course {
     background-color: #ECECEC; }
     #destacados .course .school {
-      background-color: #FFFFFF;
       text-transform: uppercase; }
 
 #la_ucb {
