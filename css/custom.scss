@@ -544,7 +544,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		padding-bottom: 2em;
 		font-weight: 700;
 	}
-	h3{
+	.quote{
 		margin-top: 1.5em;
 		margin-bottom: 0.75em;
 		font-weight: 200;
@@ -563,6 +563,10 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		min-height: 20em;
 		margin-bottom: 2em;
 	}
+	img{
+		display: block;
+		margin: auto;
+	}
 	.author{
 		border-radius: 50%;
 		border: 6px solid #e3e3e3;
@@ -570,6 +574,54 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		height: 100px;
 	}
 }
+
+
+
+.orbit-container .orbit-prev, .orbit-container .orbit-next {
+  background: none;
+}
+
+.orbit-container .orbit-prev:hover, .orbit-container .orbit-next:hover {
+  background: none;
+}
+
+.orbit-prev, .orbit-next{
+  background: none;
+}
+
+.orbit-prev:hover, .orbit-next:hover{
+  background: none;
+}
+
+.orbit-container .orbit-prev > span {
+  border-right-color: #ECECEC;
+}
+
+.orbit-container .orbit-prev:hover > span {
+  border-right-color: #ECECEC; 
+}
+
+.orbit-container .orbit-next > span {  
+  border-left-color: #ECECEC;
+}
+
+.orbit-container .orbit-next:hover > span {
+  border-left-color: #ECECEC; 
+}
+
+.orbit-container .orbit-timer {
+  display: none;
+}
+
+.orbit-container .orbit-slide-number {
+  display: none;
+}
+
+
+
+
+
+
 
 #contacto{
 	padding: 2.5em 0;
