@@ -682,6 +682,12 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     color: #596C79;
     text-align: center;
     font-weight: 700; }
+  .instructor_info h5 {
+    font-size: 0.8rem; }
+  .instructor_info p {
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    margin-top: 0.6rem; }
 
 #menu {
   background: #6B1F7E;
