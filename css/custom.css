@@ -684,7 +684,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     font-weight: 700; }
   .instructor_info h5 {
     font-size: 0.85rem;
-    font-weight: 900; }
+    font-weight: 700; }
   .instructor_info p {
     font-size: 0.8rem;
     line-height: 1.2rem;
@@ -692,7 +692,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   .instructor_info span {
     font-size: 0.7rem;
     font-style: italic;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    font-weight: 300; }
 
 #menu {
   background: #6B1F7E;
