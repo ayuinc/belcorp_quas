@@ -683,11 +683,16 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     text-align: center;
     font-weight: 700; }
   .instructor_info h5 {
-    font-size: 0.8rem; }
+    font-size: 0.85rem;
+    font-weight: 900; }
   .instructor_info p {
     font-size: 0.8rem;
     line-height: 1.2rem;
     margin-top: 0.6rem; }
+  .instructor_info span {
+    font-size: 0.7rem;
+    font-style: italic;
+    text-transform: uppercase; }
 
 #menu {
   background: #6B1F7E;
