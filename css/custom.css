@@ -448,7 +448,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     overflow: hidden;
     min-height: 20em;
     margin-bottom: 2em; }
-  #escuelas img {
+  #escuelas .author {
     border-radius: 50%;
     width: 100px;
     height: 100px; }
