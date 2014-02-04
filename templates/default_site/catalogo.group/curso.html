@@ -1,5 +1,5 @@
 {exp:channel:entries channel="cursos" limit="1" disable="pagination|member_data"}
-{embed="includes/header" titulo="Curso | {title}"}
+{embed="includes/header" titulo="{title} | Curso"}
 
     <div class="off-canvas-wrap">
       <div class="inner-wrap">
@@ -41,7 +41,8 @@
 
 
 	              {embed="includes/curso-detalles" 
-	              	tiempo-duracion-curso="{tiempo-duracion-curso}" 
+	              	tiempo-duracion-horas-curso="{tiempo-duracion-horas-curso}"
+	              	tiempo-duracion-minutos-curso="{tiempo-duracion-minutos-curso}" 
 	              	cantidad-lecciones-curso="{cantidad-lecciones-curso}" 
 	              	cantidad-video-curso="{cantidad-video-curso}" link-curso="{link-curso}" 
 	              	cantidad-modulos-cursos="{cantidad-modulos-cursos}" 
@@ -72,7 +73,13 @@
 
                 <div class="large-12 columns">
                   
-				    <div class="video_curso">                
+				    <div class="video_curso">
+				    
+				    	{if proveedor-video-curso=='No Hay Video'}
+				    		{foto-curso}
+				    			<img src="{image:url:large}" alt="{title}">
+				    		{/foto-curso}
+				    	{/if}                
 
 	                    {if proveedor-video-curso=='Youtube'}             
 	                      <iframe width="100%" height="500" src="//www.youtube.com/embed/{video-introductorio-curso}" frameborder="0" allowfullscreen></iframe>
@@ -108,13 +115,6 @@
               </div>
 
 				  <?php $contador = 1;  ?>	
-				  
-				  
-				  {exp:loop_plus start="5" end="10" increment="1"}
-					This loop has been executed {loop_count} times and is now on iteration number {index}.
-					{nombre-modulo-{loop_count}-curso}<br>
-				  {/exp:loop_plus}
-				  
 
 					  {if nombre-modulo-1-curso}
 	                  <dl id="details_lesson" class="accordion" data-accordion>
