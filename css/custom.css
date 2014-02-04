@@ -612,7 +612,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     line-height: 1.4em; }
   #forum_header .icon-bubbles, #courses_header .icon-bubbles, #contact_header .icon-bubbles, #content_header .icon-bubbles {
     color: #596c79;
-    font-size: 4em;
+    font-size: 3.4em;
     line-height: 1.2em; }
   #forum_header .icon-book, #courses_header .icon-book, #contact_header .icon-book, #content_header .icon-book {
     color: #596c79;
@@ -839,6 +839,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     border-bottom: 1px solid #EEEEEE; }
     .forum_comments .forum_comments_item p {
       margin: 0; }
+    .forum_comments .forum_comments_item span {
+      padding-left: 1em; }
 
 .move-right > .inner-wrap {
   -webkit-transform: translate3d(70px, 0, 0);
