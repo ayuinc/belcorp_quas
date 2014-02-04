@@ -1005,14 +1005,13 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     font-weight: 400;
     color: #FFFFFF;
     -webkit-transition: all ease-out 0.4s;
-    background: #6B1F7E;
+    background: #9E79B8;
     padding: 0.25em 0.8em; }
     .filtro-interno .inline-list a:hover {
-      color: #FFFFFF;
-      border-bottom: 2px solid #6B1F7E; }
+      color: #FFFFFF; }
     .filtro-interno .inline-list a.selected {
       color: #FFFFFF;
-      border-bottom: 2px solid #6B1F7E; }
+      background: #6B1F7E; }
 
 .filtro-externo .inline-list {
   float: right; }
@@ -1020,13 +1019,13 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     font-weight: 400;
     color: #FFFFFF;
     -webkit-transition: all ease-out 0.4s;
-    background: #6B1F7E;
+    background: #9E79B8;
     padding: 0.25em 0.8em; }
     .filtro-externo .inline-list a:hover {
       color: #FFFFFF; }
     .filtro-externo .inline-list a.selected {
       color: #FFFFFF;
-      border-bottom: 2px solid #6B1F7E; }
+      background: #6B1F7E; }
 
 @media only screen and (min-width: 40.063em) {
   #cover h1 {

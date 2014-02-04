@@ -1331,15 +1331,14 @@ box-shadow: -2px 0px 4px #edeff0;
 			font-weight: 400;
 			color: #FFFFFF;
 			-webkit-transition: all ease-out 0.4s;
-			background: #6B1F7E;
+			background: #9E79B8;
 			padding: 0.25em 0.8em;
 			&:hover{
 				color: #FFFFFF;
-				border-bottom: 2px solid #6B1F7E;
 			}
 			&.selected{
 				color: #FFFFFF;
-				border-bottom: 2px solid #6B1F7E;				
+				background: #6B1F7E;			
 			}
 		}
 	}
@@ -1352,14 +1351,14 @@ box-shadow: -2px 0px 4px #edeff0;
 			font-weight: 400;
 			color: #FFFFFF;
 			-webkit-transition: all ease-out 0.4s;
-			background: #6B1F7E;
+			background: #9E79B8;
 			padding: 0.25em 0.8em;
 			&:hover{
 				color: #FFFFFF;
 			}
 			&.selected{
 				color: #FFFFFF;
-				border-bottom: 2px solid #6B1F7E;				
+				background: #6B1F7E;				
 			}
 		}
 	}
