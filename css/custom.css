@@ -441,7 +441,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   #escuelas .quote {
     margin-top: 1.5em;
     margin-bottom: 0.75em;
-    font-weight: 200; }
+    font-family: "minion-pro",sans-serif;
+    font-style: italic;
+    font-weight: 400; }
   #escuelas h4 {
     color: #929FAA; }
   #escuelas .escuelas_box {
