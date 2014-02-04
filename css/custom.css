@@ -205,7 +205,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   position: relative;
   top: 2px; }
 
-#menu_arrow {
+#menu_arrow, #menu_arrow_1, #menu_arrow_2, #menu_arrow_3, #menu_arrow_4, #menu_arrow_5 {
   position: absolute;
   top: 0.5em;
   right: 0.35em;
