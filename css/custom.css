@@ -329,7 +329,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
         background: url(../img/scroll_down_hover.png) no-repeat; }
 
 #destacados {
-  padding: 2.5em 0 1.25em 0;
+  position: relative;
+  padding: 3.5em 0 2.5em 0;
   background: #ECECEC; }
   #destacados .title {
     margin: 0;
@@ -340,6 +341,16 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     background-color: #FFFFFF; }
     #destacados .course .school {
       text-transform: uppercase; }
+  #destacados:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 48%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #ECECEC; }
 
 #la_ucb {
   padding: 2.5em 0;
@@ -445,7 +456,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     font-style: italic;
     font-weight: 400; }
   #escuelas h4 {
-    color: #929FAA; }
+    color: #929FAA;
+    font-size: 1.2em; }
   #escuelas .escuelas_box {
     border: 5px solid #ECECEC;
     margin: 0 auto;
@@ -777,6 +789,12 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   padding: 25px;
   margin-bottom: 1.25em; }
 
+.syllabus {
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 0 #94A0AA;
+  padding: 25px;
+  margin-bottom: 1.25em; }
+
 #menu {
   background: #6B1F7E;
   width: 70px;
@@ -1070,7 +1088,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     line-height: 1.25rem;
     margin-top: 1rem;
     color: #66198A;
-    font-weight: 500; }
+    font-weight: 500;
+    text-align: center; }
   .details_info span {
     font-size: 0.9rem;
     font-weight: 100; }
