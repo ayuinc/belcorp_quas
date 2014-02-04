@@ -803,7 +803,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	}
 	.icon-bubbles{
 		color: #596c79;
-		font-size: 4em;
+		font-size: 3.4em;
 		line-height: 1.2em;
 	}
 	.icon-book{
@@ -1124,6 +1124,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		border-bottom: 1px solid #EEEEEE;
 		p{
 			margin: 0;
+		}
+		span{
+			padding-left: 1em;
 		}
 	}
 }
