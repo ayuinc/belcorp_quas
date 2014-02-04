@@ -585,8 +585,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   background-color: #EEEEEE;
   padding-top: 8em; }
   #courses #create_course, #details #create_course {
-    padding: 1em;
-    margin-top: 1.9em; }
+    margin-top: 1.9em;
+    padding: 1.2rem; }
   #courses #footer, #details #footer {
     background-color: transparent; }
     #courses #footer p, #details #footer p {
@@ -1097,7 +1097,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
   #form_search {
     position: relative;
-    margin-bottom: 1.9em;
+    margin-bottom: 1.5em;
     margin-top: 0; }
 
   .total_padding {
