@@ -1085,7 +1085,10 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     text-align: left; }
 
   #details_header {
-    padding: 0.15em 25px; }
+    padding: 0.6em 25px; }
+    #details_header h3 {
+      margin: 0;
+      font-size: 1.5em; }
 
   #forum_header, #courses_header, #content_header, #contact_header {
     margin-top: 0; }

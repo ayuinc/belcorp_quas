@@ -1449,7 +1449,11 @@ box-shadow: -2px 0px 4px #edeff0;
 	}
 
 	#details_header{
-		padding: 0.15em 25px;
+		padding: 0.6em 25px;
+		h3{
+			margin: 0;
+			font-size: 1.5em;
+		}
 	}
 
 	#forum_header, #courses_header, #content_header, #contact_header{
