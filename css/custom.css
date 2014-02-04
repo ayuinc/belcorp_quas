@@ -507,7 +507,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 .course {
   background-color: #FFFFFF;
-  height: 220px;
+  height: 230px;
   border-right: 25px solid transparent;
   box-shadow: 0 2px 0 #94A0AA;
   padding: 25px;
@@ -534,8 +534,16 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
       color: #596c79; }
       .course h5 a:hover {
         color: #596c79; }
+  .course h6 {
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #596c79;
+    font-size: 0.95rem; }
   .course p {
     color: #929FAA; }
+  .course #fuente a {
+    color: #596c79;
+    font-weight: 400; }
 
 .liderazgo {
   border-right: 25px solid #00bced; }
