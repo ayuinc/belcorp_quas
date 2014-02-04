@@ -642,7 +642,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 
 .course{
 	background-color: #FFFFFF;
-	height: 220px;
+	height: 230px;
 	border-right: 25px solid transparent;
 	box-shadow: 0 2px 0 #94A0AA;
 	padding: 25px;
@@ -677,8 +677,20 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 			}
 		}
 	}
+	h6{
+		font-weight: 400;
+		text-transform: uppercase;
+		color: #596c79;
+		font-size: 0.95rem;
+	}
 	p{
 		color: #929FAA;
+	}
+	#fuente{
+		a{
+			color: #596c79;
+			font-weight: 400;
+		}
 	}
 
 }
@@ -1347,18 +1359,21 @@ box-shadow: -2px 0px 4px #edeff0;
 .filtro-externo{
 	.inline-list{
 		float: right;
-		a{
-			font-weight: 400;
-			color: #FFFFFF;
-			-webkit-transition: all ease-out 0.4s;
-			background: #9E79B8;
-			padding: 0.25em 0.8em;
-			&:hover{
+		li{
+			margin-left: 0.8rem;
+			a{
+				font-weight: 400;
 				color: #FFFFFF;
-			}
-			&.selected{
-				color: #FFFFFF;
-				background: #6B1F7E;				
+				-webkit-transition: all ease-out 0.4s;
+				background: #9E79B8;
+				padding: 0.25em 0.8em;
+				&:hover{
+					color: #FFFFFF;
+				}
+				&.selected{
+					color: #FFFFFF;
+					background: #6B1F7E;				
+				}
 			}
 		}
 	}
