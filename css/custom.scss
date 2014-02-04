@@ -1329,16 +1329,16 @@ box-shadow: -2px 0px 4px #edeff0;
 		float: right;
 		a{
 			font-weight: 400;
-			color: #596c79;
-			transition: border-bottom 0.4s;
-			-webkit-transition: border-bottom ease-out 0.4s;
-			border-bottom: 2px solid transparent;
+			color: #FFFFFF;
+			-webkit-transition: all ease-out 0.4s;
+			background: #6B1F7E;
+			padding: 0.25em 0.8em;
 			&:hover{
-				color: #596c79;
+				color: #FFFFFF;
 				border-bottom: 2px solid #6B1F7E;
 			}
 			&.selected{
-				color: #596c79;
+				color: #FFFFFF;
 				border-bottom: 2px solid #6B1F7E;				
 			}
 		}
@@ -1350,16 +1350,15 @@ box-shadow: -2px 0px 4px #edeff0;
 		float: right;
 		a{
 			font-weight: 400;
-			color: #596c79;
-			transition: border-bottom 0.4s;
-			-webkit-transition: border-bottom ease-out 0.4s;
-			border-bottom: 2px solid transparent;
+			color: #FFFFFF;
+			-webkit-transition: all ease-out 0.4s;
+			background: #6B1F7E;
+			padding: 0.25em 0.8em;
 			&:hover{
-				color: #596c79;
-				border-bottom: 2px solid #6B1F7E;
+				color: #FFFFFF;
 			}
 			&.selected{
-				color: #596c79;
+				color: #FFFFFF;
 				border-bottom: 2px solid #6B1F7E;				
 			}
 		}
