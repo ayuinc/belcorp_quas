@@ -658,20 +658,20 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     color: #5D6C7D;
     font-weight: 700; }
 
-#lesson_panel dd {
+#lesson_panel_1 dd, #lesson_panel_2 dd, #lesson_panel_3 dd, #lesson_panel_4 dd, #lesson_panel_5 dd, #lesson_panel_6 dd {
   line-height: 1;
   position: relative;
   border: none; }
-  #lesson_panel dd a {
+  #lesson_panel_1 dd a, #lesson_panel_2 dd a, #lesson_panel_3 dd a, #lesson_panel_4 dd a, #lesson_panel_5 dd a, #lesson_panel_6 dd a {
     background: #FFFFFF;
     border-bottom: 1px solid #DDDDDD;
     font-weight: 300;
     color: #939FAA; }
-  #lesson_panel dd:first-child a {
+  #lesson_panel_1 dd:first-child a, #lesson_panel_2 dd:first-child a, #lesson_panel_3 dd:first-child a, #lesson_panel_4 dd:first-child a, #lesson_panel_5 dd:first-child a, #lesson_panel_6 dd:first-child a {
     border-top: 1px solid #DDDDDD; }
-  #lesson_panel dd:last-child a {
+  #lesson_panel_1 dd:last-child a, #lesson_panel_2 dd:last-child a, #lesson_panel_3 dd:last-child a, #lesson_panel_4 dd:last-child a, #lesson_panel_5 dd:last-child a, #lesson_panel_6 dd:last-child a {
     border-bottom: none; }
-  #lesson_panel dd span {
+  #lesson_panel_1 dd span, #lesson_panel_2 dd span, #lesson_panel_3 dd span, #lesson_panel_4 dd span, #lesson_panel_5 dd span, #lesson_panel_6 dd span {
     position: absolute;
     top: 1em;
     right: 1em;
@@ -1085,7 +1085,10 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     text-align: left; }
 
   #details_header {
-    padding: 0.15em 25px; }
+    padding: 0.6em 25px; }
+    #details_header h3 {
+      margin: 0;
+      font-size: 1.5em; }
 
   #forum_header, #courses_header, #content_header, #contact_header {
     margin-top: 0; }

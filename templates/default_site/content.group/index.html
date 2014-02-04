@@ -48,6 +48,42 @@
       </div>
     </section>
     
+    <section id="destacados">
+      <div class="row">
+        <div class="index_padding large-12 columns">      
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="text-center">  
+                <h3 class="title">LO DESTACADO</h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            {exp:low_reorder:entries set="1" limit="3"}
+            <div class="small-12 medium-8 medium-centered large-4 large-uncentered columns">
+                      <a href="{site_url}/catalogo/curso/{url_title}">
+                        {categories}
+                        <div class="course {category_url_title}">
+                        {/categories}
+                          <h5>{title}</h5>
+                          <p>{descripcion-curso}</p>
+                          {categories}
+                          <div class="school">
+                            <!--<span>{category_name}</span>
+                            <span class="icon-school"></span>-->
+                            <span>{!--category_name--}Ver Más »</span>
+                          </div>
+                          {/categories}
+                        </div>
+                      </a>
+            </div>
+            {/exp:low_reorder:entries }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
     <section id="la_ucb">
       <div class="row">
         <div class="index_padding large-12 columns">
@@ -191,40 +227,6 @@
       </div>
     </section>
 
-    <section id="destacados">
-      <div class="row">
-        <div class="index_padding large-12 columns">      
-          <div class="row">
-            <div class="large-12 columns">
-              <div class="text-center">  
-                <h3 class="title">LO DESTACADO</h3>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            {exp:low_reorder:entries set="1" limit="3"}
-            <div class="small-12 medium-8 medium-centered large-4 large-uncentered columns">
-                      <a href="{site_url}/catalogo/curso/{url_title}">
-                        {categories}
-                        <div class="course {category_url_title}">
-                        {/categories}
-                          <h5>{title}</h5>
-                          <p>{descripcion-curso}</p>
-                          {categories}
-                          <div class="school">
-                            <!--<span>{category_name}</span>
-                            <span class="icon-school"></span>-->
-                            <span>{!--category_name--}Ver Más »</span>
-                          </div>
-                          {/categories}
-                        </div>
-                      </a>
-            </div>
-            {/exp:low_reorder:entries }
-          </div>
-        </div>
-      </div>
-    </section>
 <!-- 
     <section id="contacto">
       <div class="row">
