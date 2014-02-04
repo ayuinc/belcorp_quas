@@ -1015,17 +1015,19 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 .filtro-externo .inline-list {
   float: right; }
-  .filtro-externo .inline-list a {
-    font-weight: 400;
-    color: #FFFFFF;
-    -webkit-transition: all ease-out 0.4s;
-    background: #9E79B8;
-    padding: 0.25em 0.8em; }
-    .filtro-externo .inline-list a:hover {
-      color: #FFFFFF; }
-    .filtro-externo .inline-list a.selected {
+  .filtro-externo .inline-list li {
+    margin-left: 0.8rem; }
+    .filtro-externo .inline-list li a {
+      font-weight: 400;
       color: #FFFFFF;
-      background: #6B1F7E; }
+      -webkit-transition: all ease-out 0.4s;
+      background: #9E79B8;
+      padding: 0.25em 0.8em; }
+      .filtro-externo .inline-list li a:hover {
+        color: #FFFFFF; }
+      .filtro-externo .inline-list li a.selected {
+        color: #FFFFFF;
+        background: #6B1F7E; }
 
 @media only screen and (min-width: 40.063em) {
   #cover h1 {

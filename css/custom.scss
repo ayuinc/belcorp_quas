@@ -1347,18 +1347,21 @@ box-shadow: -2px 0px 4px #edeff0;
 .filtro-externo{
 	.inline-list{
 		float: right;
-		a{
-			font-weight: 400;
-			color: #FFFFFF;
-			-webkit-transition: all ease-out 0.4s;
-			background: #9E79B8;
-			padding: 0.25em 0.8em;
-			&:hover{
+		li{
+			margin-left: 0.8rem;
+			a{
+				font-weight: 400;
 				color: #FFFFFF;
-			}
-			&.selected{
-				color: #FFFFFF;
-				background: #6B1F7E;				
+				-webkit-transition: all ease-out 0.4s;
+				background: #9E79B8;
+				padding: 0.25em 0.8em;
+				&:hover{
+					color: #FFFFFF;
+				}
+				&.selected{
+					color: #FFFFFF;
+					background: #6B1F7E;				
+				}
 			}
 		}
 	}
