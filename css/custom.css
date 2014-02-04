@@ -1030,11 +1030,12 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 .filtro-interno .inline-list {
   float: right; }
   .filtro-interno .inline-list a {
-    font-weight: 400;
+    font-weight: 200;
     color: #FFFFFF;
     -webkit-transition: all ease-out 0.4s;
     background: #9E79B8;
-    padding: 0.25em 0.8em; }
+    padding: 0.25em 0.8em;
+    font-size: 0.8rem; }
     .filtro-interno .inline-list a:hover {
       color: #FFFFFF; }
     .filtro-interno .inline-list a.selected {
@@ -1046,11 +1047,12 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   .filtro-externo .inline-list li {
     margin-left: 0.8rem; }
     .filtro-externo .inline-list li a {
-      font-weight: 400;
+      font-weight: 200;
       color: #FFFFFF;
       -webkit-transition: all ease-out 0.4s;
       background: #9E79B8;
-      padding: 0.25em 0.8em; }
+      padding: 0.25em 0.8em;
+      font-size: 0.8rem; }
       .filtro-externo .inline-list li a:hover {
         color: #FFFFFF; }
       .filtro-externo .inline-list li a.selected {
