@@ -116,7 +116,9 @@
 	                        <div class="course {category_url_title}">
 	                        {/categories}
 	                          <h5>{title}</h5>
-                            <h6>Subtitle</h6>
+	                          {if subttulo-curso}
+                              <h6>{subttulo-curso}</h6>
+                              {/if}
 	                          <p>{descripcion-curso}</p>
 	                          
 	                          {!--categories--}
