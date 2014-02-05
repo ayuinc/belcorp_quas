@@ -31,6 +31,11 @@
                   </div>
                   <div class="medium-10 large-11 columns"> 
                     <h3>RESULTADOS DE LA BUSQUEDA</h3>
+                    {if super_search_total_results}
+                    <span>Encontramos {super_search_total_results} resultado(s) de la palabra(s): {super_search_keywords}</span>
+                    {if:else}
+                    <span>No Encontramos ningún resultado para la(s) palabra(s): {super_search_keywords}</span>
+                    {/if}
                   </div>
 <!--                   <div class="hide-for-small medium-2 large-2 columns">
                     <div class="text-center">
@@ -47,37 +52,63 @@
             <div class="large-12 columns">
               <div class="resources_list">
               
-               {exp:super_search:results channel="contenidos|cursos" limit="10" orderby="entry_date+desc+title+asc" paginate="bottom" status="open" where="all"}
+
+              
+              
+               {exp:super_search:results channel="contenidos|cursos" limit="10" orderby="entry_date+desc+title+asc" search_in="title|subttulo-curso|descripcion-curso" paginate="bottom"}
                 <div class="resources_item">
                   <div class="row">
                     <div class="medium-12 large-12 columns">  
+                    
                       <h5>
                         <a href="{auto_path}" target="_blank">{title}</a>
                       </h5>
-                      <span>Keyword(s): {super_search_keywords}</span>
-                      <!--<span><a href="{link-recurso}" target="_blank">{fuente-recurso}</a></span>-->
-                      <!--<div class="like">
-                        <span class="icon-thumbs-up"> 32</span>
-                      </div>-->
+                      {if subtitulo-recurso}
+                      <h6>{subtitulo-recurso}</h6>
+                      {/if}
+                      
+                      {if descripcion-curso}
+                      <p>{descripcion-curso}</p>
+                      {/if}
+                      
+                      {if descripcion-recurso}
+                      <p>{descripcion-recurso}</p>
+                      {/if}                      
+                      
+                          <div class="school">
+                            <span><a href="{auto_path}">Ver Más »</a></span>
+                          </div>
+                      
+                      
                     </div>
                   </div>
                 </div>
+
+			              {paginate}  
+			              	{pagination_links}
+							  <div class="row">
+				                <div class="large-3 large-centered columns vermas">
+				                  <div class="more">                      
+				                    <div class="text-center">
+				                      {next_page}
+				                      <a href="{pagination_url}"><span id="more_courses">Ver más</span></a>
+				                      {/next_page}
+				                    </div>
+				                    <div class="text-center">
+				                      <span id="more_icon" class="icon-arrow-down"></span>
+				                    </div>
+				                  </div>
+				                </div>
+				              </div>
+			              	{/pagination_links}   
+			              {/paginate}                
+                
                {/exp:super_search:results}
+               
                 
               </div>
 
-              <div class="row">
-                <div class="large-3 large-centered columns vermas">
-                  <div class="more">                      
-                    <div class="text-center">
-                      <span id="more_courses">Ver más</span>
-                    </div>
-                    <div class="text-center">
-                      <span id="more_icon" class="icon-arrow-down"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
 
             </div>
           </div>

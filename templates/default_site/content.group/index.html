@@ -59,13 +59,16 @@
             </div>
           </div>
           <div class="row">
-            {exp:low_reorder:entries set="1" limit="3"}
+            {exp:low_reorder:entries set="1" limit="6"}
             <div class="small-12 medium-8 medium-centered large-4 large-uncentered columns">
                       <a href="{site_url}/catalogo/curso/{url_title}">
-                        {categories}
+                        {categories limit="1"}
                         <div class="course {category_url_title}">
                         {/categories}
                           <h5>{title}</h5>
+                          {if subttulo-curso}
+                              <h6>{subttulo-curso}</h6>
+                          {/if}
                           <p>{descripcion-curso}</p>
                           {categories}
                           <div class="school">
@@ -150,76 +153,22 @@
         <div class="index_padding large-12 columns">
           <div class="row">
             <ul class="example-orbit" data-orbit>
+              {exp:channel:entries channel="escuelas" limit="10" dynamic="off"}
               <li>
                 <div class="large-8 large-centered columns">
-                  <h3 class="title">ESCUELA BELCORP</h3>
+                  <h3 class="title">{title}</h3>
                   <img src="{site_url}img/quote.png" alt="">
                   <h3 class="quote">  
-                  La cultura es una herramienta utilizada por maestros para formar maestros, quienes, en su momento desarrollarán más maestros.
+                  	{texto-descriptivo-seccion}                  
                   </h3>
-                  <img class="author" src="{site_url}img/simone_weil.jpg" alt="">
-                  <h4>Simone Weil</h4>
+                  {imagenes-seccion}
+                  	<img class="author" src="{image:url:quote}" alt="{title}">
+                  {/imagenes-seccion}
+                  <h4>{autor-seccion}</h4>
                 </div>
               </li>
-              <li>
-                <div class="large-8 large-centered columns">
-                  <h3 class="title">ESCUELA DE VENTAS</h3>
-                  <img src="{site_url}img/quote.png" alt="">
-                  <h3 class="quote">  
-                  La mayoría de la gente piensa que vender es lo mismo que hablar. Pero los vendedores más eficientes saben que escuchar es la parte más importante de su trabajo.
-                  </h3>
-                  <img class="author" src="{site_url}img/roy_bartell.jpg" alt="">
-                  <h4>Roy Bartell</h4>
-                </div>
-              </li>
-              <li>
-                <div class="large-8 large-centered columns">
-                  <h3 class="title">ESCUELA DE PLANEAMIENTO</h3>
-                  <img src="{site_url}img/quote.png" alt="">
-                  <h3 class="quote">  
-                  La publicidad moviliza a la gente hacia los productos, la comercialización moviliza a los productos hacia la gente.
-                  </h3>
-                  <img class="author" src="{site_url}img/morris_hite.jpg" alt="">
-                  <h4>Morris Hite</h4>
-                </div>
-              </li>
-              <li>
-                <div class="large-8 large-centered columns">
-                  <h3 class="title">ESCUELA DE MARCAS</h3>
-                  <img src="{site_url}img/quote.png" alt="">
-                  <h3 class="quote">  
-                  Las marcas autenticas no emergen de oficinas de mercadeo o de agencias de publicidad. Emergen de todo lo que hace una compañía.
-                  </h3>
-                  <img class="author" src="{site_url}img/howard_schultz.jpg" alt="">
-                  <h4>Howard Schultz</h4>
-                </div>
-              </li>
-              <li>
-                <div class="large-8 large-centered columns">
-                  <h3 class="title">ESCUELA DE LIDERAZGO</h3>
-                  <img src="{site_url}img/quote.png" alt="">
-                  <h3 class="quote">  
-                  El liderazgo es la capacidad de transformar la visión en realidad.
-                  </h3>
-                  <img class="author" src="{site_url}img/warren_bennis.jpg" alt="">
-                  <h4>Warren Bennis</h4>
-                </div>
-              </li>
-              <li>
-                <div class="large-8 large-centered columns">
-                  <h3 class="title">ESCUELA DE INNOVACIÓN</h3>
-                  <img src="{site_url}img/quote.png" alt="">
-                  <h3 class="quote">  
-                  Hecho es mejor que perfecto.
-                  </h3>
-                  <img class="author" src="{site_url}img/mark_zuckerberg.jpg" alt="">
-                  <h4>Mark Zuckerberg</h4>
-                </div>
-              </li>
+              {/exp:channel:entries}
             </ul>
-
-
-
           </div>
 
 

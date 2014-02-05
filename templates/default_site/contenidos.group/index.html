@@ -50,9 +50,9 @@
             <div class="large-12 columns">
               <div class="filtro-externo">
                 <ul class="inline-list">
-                  <li><a href="{site_url}contenidos/{segment_2}/curso">CURSO</a></li>
-                  <li><a href="{site_url}contenidos/{segment_2}/articulo">ARTICULO</a></li>
-                  <li><a href="{site_url}contenidos/{segment_2}/video">VIDEO</a></li>
+                  <li><a href="{site_url}contenidos/{if segment_2}{segment_2}/{/if}curso" {if last_segment=='curso'}class="selected"{/if}>CURSO</a></li>
+                  <li><a href="{site_url}contenidos/{if segment_2}{segment_2}/{/if}articulo" {if last_segment=='articulo'}class="selected"{/if}>ARTICULO</a></li>
+                  <li><a href="{site_url}contenidos/{if segment_2}{segment_2}/{/if}video" {if last_segment=='video'}class="selected"{/if}>VIDEO</a></li>
                 </ul>
               </div>
             </div>
@@ -68,6 +68,9 @@
                   <h5>
                     <a href="{link-recurso}" target="_blank">{title}</a>
                   </h5>
+                  {if subtitulo-recurso}
+                  <h6>{subtitulo-recurso}</h6>
+                  {/if}
                   <span id="fuente"><a href="{link-recurso}" target="_blank">{fuente-recurso}</a></span>
                   <p>{descripcion-recurso}</p>
                   {!--categories--}
@@ -82,15 +85,22 @@
             
 			              {paginate}  
 			              	{pagination_links}
-					    		  <div class="row">
-					                <div class="large-2 large-centered columns">
-					                  {next_page}	
-					                  <a href="{pagination_url}" class="more button expand">VER MÁS</a>
-									  {/next_page}
-					                </div>
-					              </div>  
+							  <div class="row">
+				                <div class="large-3 large-centered columns vermas">
+				                  <div class="more">                      
+				                    <div class="text-center">
+				                      {next_page}
+				                      <a href="{pagination_url}"><span id="more_courses">Ver más</span></a>
+				                      {/next_page}
+				                    </div>
+				                    <div class="text-center">
+				                      <span id="more_icon" class="icon-arrow-down"></span>
+				                    </div>
+				                  </div>
+				                </div>
+				              </div>
 			              	{/pagination_links}   
-			              {/paginate}             
+			              {/paginate}           
             
           {/exp:channel:entries}
           </div>

@@ -54,6 +54,8 @@
                         <ul class="inline-list">
                           <li><a href="{site_url}/catalogo/ventas/retail" {if last_segment=='retail'}class="selected"{/if}>RETAIL</a></li>
                           <li><a href="{site_url}/catalogo/ventas/certificacion" {if last_segment=='certificacion'}class="selected"{/if}>CERTIFICACIÓN</a></li>
+                          <li><a href="{site_url}/catalogo/ventas/gerente-de-zonas" {if last_segment=='retail'}class="selected"{/if}>GERENTE DE ZONAS</a></li>
+                          <li><a href="{site_url}/catalogo/ventas/gerente-regional" {if last_segment=='certificacion'}class="selected"{/if}>GERENTE REGIONAL</a></li>
                         </ul>
                       </div>
                     </div>
@@ -70,7 +72,7 @@
 
                           <li><a href="{site_url}/catalogo/belcorp/induccion" {if last_segment=='induccion'}class="selected"{/if}>INDUCCION</a></li>
                           <li><a href="{site_url}/catalogo/belcorp/lean" {if last_segment=='lean'}class="selected"{/if}>LEAN</a></li>
-                          <li><a href="{site_url}/catalogo/belcorp/learning-coffees" {if last_segment=='learning-coffee'}class="selected"{/if}>LEARNING COFFEES</a></li>
+                          <li><a href="{site_url}/catalogo/belcorp/learning-coffee" {if last_segment=='learning-coffee'}class="selected"{/if}>LEARNING COFFEE</a></li>
                           <li><a href="{site_url}/catalogo/belcorp/micro-skills" {if last_segment=='micro-skills'}class="selected"{/if}>MICRO SKILLS</a></li>
                           <li><a href="{site_url}/catalogo/belcorp/innovacion" {if last_segment=='innovacion'}class="selected"{/if}>INNOVACION</a></li>
                         </ul>
@@ -134,13 +136,20 @@
 	                    
 			              {paginate}  
 			              	{pagination_links}
-					    		  <div class="row">
-					                <div class="large-2 large-centered columns">
-					                  {next_page}	
-					                  <a href="{pagination_url}" class="more button expand">VER MÁS</a>
-									  {/next_page}
-					                </div>
-					              </div>  
+							  <div class="row">
+				                <div class="large-3 large-centered columns vermas">
+				                  <div class="more">                      
+				                    <div class="text-center">
+				                      {next_page}
+				                      <a href="{pagination_url}"><span id="more_courses">Ver más</span></a>
+				                      {/next_page}
+				                    </div>
+				                    <div class="text-center">
+				                      <span id="more_icon" class="icon-arrow-down"></span>
+				                    </div>
+				                  </div>
+				                </div>
+				              </div>
 			              	{/pagination_links}   
 			              {/paginate} 
 	                    
