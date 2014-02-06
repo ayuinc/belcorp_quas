@@ -1,6 +1,6 @@
 html, body {
   height: 100%;
-  font-family: "museo-sans",sans-serif;
+  font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-style: normal;
   font-weight: 100; }
 
@@ -11,7 +11,7 @@ body {
   max-width: 120em; }
 
 p {
-  font-family: "museo-sans",sans-serif;
+  font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-style: normal;
   font-weight: 100; }
 
@@ -22,16 +22,16 @@ form {
   margin: 0; }
 
 h1, h2, h3, h4, h5, h6, p {
-  font-family: "museo-sans",sans-serif;
+  font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-style: normal; }
 
 a {
-  font-family: "museo-sans",sans-serif !important;
+  font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important;
   font-style: normal; }
 
 button {
   outline: none;
-  font-family: "museo-sans",sans-serif !important; }
+  font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important; }
 
 input[type="search"] {
   margin: 0;
@@ -40,7 +40,7 @@ input[type="search"] {
   box-shadow: none;
   background: #909DA8;
   height: 3.125rem;
-  font-family: "museo-sans",sans-serif !important;
+  font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important;
   font-weight: 500;
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
@@ -67,7 +67,7 @@ textarea {
   -webkit-box-shadow: none;
   box-shadow: none;
   background: #FDFDFD;
-  font-family: "museo-sans",sans-serif !important;
+  font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important;
   font-weight: 300; }
 
 .stripe {
@@ -109,7 +109,7 @@ input[type="text"], input[type="email"], textarea {
   -webkit-box-shadow: none;
   box-shadow: none;
   background: #FDFDFD;
-  font-family: "museo-sans",sans-serif !important;
+  font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important;
   font-weight: 300; }
 
 input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
@@ -263,7 +263,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   padding: 70px 0 2.5em 0; }
   #cover h1, #cover h2, #cover h3, #cover h4, #cover h5, #cover p, #cover a {
     color: #FFFFFF;
-    font-family: "museo-sans",sans-serif;
+    font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-style: normal; }
   #cover h1 {
     font-weight: 900;
@@ -561,9 +561,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     font-style: italic; }
 
 .liderazgo {
-  border-right: 25px solid #1e216b; }
+  border-right: 25px solid #72d100; }
   .liderazgo .school .icon-school {
-    color: #1e216b; }
+    color: #72d100; }
 
 .marcas {
   border-right: 25px solid red; }
@@ -653,7 +653,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 .accordion dd > a {
   background: #6C217F;
   color: #FFFFFF;
-  font-family: "museo-sans",sans-serif;
+  font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-style: normal;
   padding: 1rem;
   display: block;
@@ -717,7 +717,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     top: 1em;
     right: 1em; }
 #school_panel .liderazgo .icon-school {
-  color: #1e216b; }
+  color: #72d100; }
 #school_panel .marcas .icon-school {
   color: red; }
 #school_panel .comercial .icon-school {
