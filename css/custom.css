@@ -214,13 +214,13 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 .icon-list {
   color: #94A0AA;
   font-size: 30px;
-  color: #6B1F7E; }
+  color: #6C217F; }
 
 .icon-grid, .icon-book, .icon-bubbles, .icon-mail, .icon-facebook, .icon-twitter {
   color: #FFFFFF; }
 
 .publish, .explore, .video {
-  background-color: #6b1f7e;
+  background-color: #6C217F;
   box-shadow: 0 2px 0 #4B1658;
   -webkit-transition: background-color 0.5s ease;
   -moz-transition: background-color 0.5s ease;
@@ -393,13 +393,13 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     font-weight: 300; }
   #metodologia .icon-rocket {
     font-size: 5em;
-    color: #6b1f7e; }
+    color: #6C217F; }
   #metodologia .icon-shield {
     font-size: 5em;
-    color: #6b1f7e; }
+    color: #6C217F; }
   #metodologia .icon-trophy {
     font-size: 5em;
-    color: #6b1f7e; }
+    color: #6C217F; }
 
 #prev-escuelas {
   padding: 10em 0;
@@ -490,16 +490,16 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   background: none; }
 
 .orbit-container .orbit-prev > span {
-  border-right-color: #6b1f7e; }
+  border-right-color: #6C217F; }
 
 .orbit-container .orbit-prev:hover > span {
-  border-right-color: #6b1f7e; }
+  border-right-color: #6C217F; }
 
 .orbit-container .orbit-next > span {
-  border-left-color: #6b1f7e; }
+  border-left-color: #6C217F; }
 
 .orbit-container .orbit-next:hover > span {
-  border-left-color: #6b1f7e; }
+  border-left-color: #6C217F; }
 
 .orbit-container .orbit-timer {
   display: none; }
@@ -532,7 +532,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     bottom: 1.5em;
     width: 200px; }
     .course .school span {
-      color: #6B1F7E;
+      color: #6C217F;
       font-size: 0.8rem;
       font-weight: 500; }
     .course .school .icon-school {
@@ -561,9 +561,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     font-style: italic; }
 
 .liderazgo {
-  border-right: 25px solid #00bced; }
+  border-right: 25px solid #1e216b; }
   .liderazgo .school .icon-school {
-    color: #00bced; }
+    color: #1e216b; }
 
 .marcas {
   border-right: 25px solid red; }
@@ -581,9 +581,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     color: #72d100; }
 
 .ventas {
-  border-right: 25px solid #f8ff00; }
+  border-right: 25px solid #ff0066; }
   .ventas .school .icon-school {
-    color: #f8ff00; }
+    color: #ff0066; }
 
 .innovacion {
   border-right: 25px solid #ff7500; }
@@ -591,9 +591,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     color: #ff7500; }
 
 .belcorp {
-  border-right: 25px solid #ff00fe; }
+  border-right: 25px solid #6c217f; }
   .belcorp .school .icon-school {
-    color: #ff00fe; }
+    color: #6c217f; }
 
 #footer {
   background-color: #94A0AA;
@@ -651,7 +651,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   margin-top: 0.5em; }
 
 .accordion dd > a {
-  background: #6B1F7E;
+  background: #6C217F;
   color: #FFFFFF;
   font-family: "museo-sans",sans-serif;
   font-style: normal;
@@ -661,7 +661,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   position: relative; }
 
 .accordion dd > a:hover {
-  background: #6B1F7E; }
+  background: #6C217F; }
 
 #details_lesson {
   box-shadow: 0 2px 0 #94A0AA;
@@ -717,7 +717,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     top: 1em;
     right: 1em; }
 #school_panel .liderazgo .icon-school {
-  color: #00bced; }
+  color: #1e216b; }
 #school_panel .marcas .icon-school {
   color: red; }
 #school_panel .comercial .icon-school {
@@ -725,11 +725,11 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 #school_panel .planeamiento .icon-school {
   color: #72d100; }
 #school_panel .ventas .icon-school {
-  color: #f8ff00; }
+  color: #ff0066; }
 #school_panel .innovacion .icon-school {
   color: #ff7500; }
 #school_panel .belcorp .icon-school {
-  color: #ff00fe; }
+  color: #6c217f; }
 
 #school_panel_trigger {
   font-weight: 500; }
@@ -797,7 +797,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   margin-bottom: 1.25em; }
 
 #menu {
-  background: #6B1F7E;
+  background: #6C217F;
   width: 70px;
   position: fixed;
   top: 0;
@@ -885,7 +885,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   height: 100%;
   position: absolute;
   overflow-y: auto;
-  background: #6B1F7E;
+  background: #6C217F;
   z-index: 1001;
   box-sizing: content-box; }
 
@@ -912,7 +912,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   padding-left: 0.2em;
   position: relative;
   bottom: 5px;
-  color: #6B1F7E; }
+  color: #6C217F; }
 
 .left-off-canvas-toggle:hover {
   font-weight: 700;
@@ -1041,7 +1041,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
       color: #FFFFFF; }
     .filtro-interno .inline-list a.selected {
       color: #FFFFFF;
-      background: #6B1F7E; }
+      background: #6C217F; }
 
 .filtro-externo .inline-list {
   float: right; }
@@ -1058,7 +1058,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
         color: #FFFFFF; }
       .filtro-externo .inline-list li a.selected {
         color: #FFFFFF;
-        background: #6B1F7E; }
+        background: #6C217F; }
 
 @media only screen and (min-width: 40.063em) {
   #cover h1 {
