@@ -571,9 +571,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     color: red; }
 
 .comercial {
-  border-right: 25px solid red; }
+  border-right: 25px solid #00bced; }
   .comercial .school .icon-school {
-    color: red; }
+    color: #00bced; }
 
 .planeamiento {
   border-right: 25px solid #72d100; }
@@ -721,7 +721,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 #school_panel .marcas .icon-school {
   color: red; }
 #school_panel .comercial .icon-school {
-  color: red; }
+  color: #00bced; }
 #school_panel .planeamiento .icon-school {
   color: #72d100; }
 #school_panel .ventas .icon-school {
