@@ -561,9 +561,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     font-style: italic; }
 
 .liderazgo {
-  border-right: 25px solid #1e216b; }
+  border-right: 25px solid #72d100; }
   .liderazgo .school .icon-school {
-    color: #1e216b; }
+    color: #72d100; }
 
 .marcas {
   border-right: 25px solid red; }
@@ -717,7 +717,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     top: 1em;
     right: 1em; }
 #school_panel .liderazgo .icon-school {
-  color: #1e216b; }
+  color: #72d100; }
 #school_panel .marcas .icon-school {
   color: red; }
 #school_panel .comercial .icon-school {
