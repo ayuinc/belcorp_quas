@@ -46,17 +46,7 @@
           </div>
 {/exp:channel:entries}
 
-          <div class="row">
-            <div class="large-12 columns">
-              <div class="filtro-externo">
-                <ul class="inline-list">
-                  <li><a href="{site_url}contenidos/{if segment_2}{segment_2}/{/if}curso" {if last_segment=='curso'}class="selected"{/if}>CURSO</a></li>
-                  <li><a href="{site_url}contenidos/{if segment_2}{segment_2}/{/if}articulo" {if last_segment=='articulo'}class="selected"{/if}>ARTICULO</a></li>
-                  <li><a href="{site_url}contenidos/{if segment_2}{segment_2}/{/if}video" {if last_segment=='video'}class="selected"{/if}>VIDEO</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          {embed="includes/submenu-contenidos"}
 
           <div class="row">
           {exp:channel:entries channel="contenidos" disable="member_data" limit="20" category="{last_segment_category_id}"}
