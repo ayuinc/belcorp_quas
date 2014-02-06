@@ -86,25 +86,26 @@
                   </div>
                 </div>
               
-              {paginate}  
-              	{pagination_links}
-		    		  <div class="row">
-		                <div class="large-2 large-centered columns vermas">
-		                  {next_page}	
-		                  <a href="{pagination_url}" class="more button expand">VER MÁS</a>
-						  {/next_page}
-		                </div>
-		              </div>  
-              	{/pagination_links}   
-              {/paginate}       
+			              {paginate}  
+			              	{pagination_links}
+							  <div class="row">
+				                <div class="large-3 large-centered columns vermas">
+				                  <div class="more">                      
+				                    <div class="text-center">
+				                      {next_page}
+				                      <a href="{pagination_url}"><span id="more_courses">Ver más</span></a>
+				                      {/next_page}
+				                    </div>
+				                    <div class="text-center">
+				                      <span id="more_icon" class="icon-arrow-down"></span>
+				                    </div>
+				                  </div>
+				                </div>
+				              </div>
+			              	{/pagination_links}   
+			              {/paginate}      
     
 				{/exp:channel:entries}
-              </div>
-              
-              <div class="row">
-                <div class="large-2 large-centered columns vermas">
-                  <a href="#" class="more button expand">VER MÁS</a>
-                </div>
               </div>
             </div>
           </div>
@@ -115,7 +116,7 @@
                 <input type="search" placeholder="BUSCAR">
                 <span class="icon-search"></span>
               </form>
-              <a href="#" id="create_course" class="publish button expand">¿QUIERES CREAR UN CURSO?</a>
+              <a href="{site_url}quieres-crear-un-curso" id="create_course" class="publish button expand">¿QUIERES CREAR UN CURSO?</a>
           </div>
         </div>
 

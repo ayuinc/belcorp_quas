@@ -1,0 +1,61 @@
+                  {if segment_2=='ventas'}
+                  <div class="row">
+                    <div class="large-12 columns">
+                      <div class="filtro-interno">
+                        <ul class="inline-list">
+                          <li><a href="{site_url}/catalogo/ventas/retail" {if last_segment=='retail'}class="selected"{/if}>RETAIL</a></li>
+                          <li><a href="{site_url}/catalogo/ventas/certificacion" {if last_segment=='certificacion'}class="selected"{/if}>CERTIFICACIÓN</a></li>
+                          <li><a href="{site_url}/catalogo/ventas/gerente-de-zonas" {if last_segment=='retail'}class="selected"{/if}>GERENTE DE ZONAS</a></li>
+                          <li><a href="{site_url}/catalogo/ventas/gerente-regional" {if last_segment=='certificacion'}class="selected"{/if}>GERENTE REGIONAL</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  {/if}
+                  
+                  
+                  {if segment_2=='belcorp'}
+                  <div class="row">
+                    <div class="large-12 columns">
+                      <div class="filtro-interno">
+                        <ul class="inline-list">
+                          <li><a href="{site_url}/catalogo/belcorp/summa" {if last_segment=='summa'}class="selected"{/if}>Summa</a></li>
+
+                          <li><a href="{site_url}/catalogo/belcorp/induccion" {if last_segment=='induccion'}class="selected"{/if}>Inducción</a></li>
+                          <li><a href="{site_url}/catalogo/belcorp/lean" {if last_segment=='lean'}class="selected"{/if}>Lean</a></li>
+                          <li><a href="{site_url}/catalogo/belcorp/learning-coffee" {if last_segment=='learning-coffee'}class="selected"{/if}>Learning Coffee</a></li>
+                          <li><a href="{site_url}/catalogo/belcorp/micro-skills" {if last_segment=='micro-skills'}class="selected"{/if}>Micro Skills</a></li>
+                          <li><a href="{site_url}/catalogo/belcorp/innovacion" {if last_segment=='innovacion'}class="selected"{/if}>Innovación</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  {/if} 
+                  
+                  {if segment_2=='comercial'}
+                  <div class="row">
+                    <div class="large-12 columns">
+                      <div class="filtro-interno">
+                        <ul class="inline-list">
+                          <li><a href="{site_url}/catalogo/comercial/planeamiento" {if last_segment=='planeamiento'}class="selected"{/if}>PLANEAMIENTO</a></li>
+
+                          <li><a href="{site_url}/catalogo/comercial/marcas" {if last_segment=='marcas'}class="selected"{/if}>MARCAS</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  {/if}   
+                  
+                  {if segment_2=='liderazgo'}
+                  <div class="row">
+                    <div class="large-12 columns">
+                      <div class="filtro-interno">
+                        <ul class="inline-list">
+                          <li><a href="{site_url}/catalogo/liderazgo/top-70" {if last_segment=='top-70'}class="selected"{/if}>TOP 70</a></li>
+
+                          <li><a href="{site_url}/catalogo/liderazgo/cultura" {if last_segment=='cultura'}class="selected"{/if}>CULTURA</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  {/if}   
