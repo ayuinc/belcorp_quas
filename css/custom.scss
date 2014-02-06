@@ -1,9 +1,9 @@
-$liderazgo: #00BCED;
+$liderazgo: #1E216B;
 $marcas: #FF0000;
 $planeamiento: #72D100;
-$ventas: #F8FF00;
+$ventas: #FF0066;
 $innovacion: #FF7500;
-$belcorp: #FF00FE;
+$belcorp: #6C217F;
 $comercial: #FF0000;
 
 html, body {
@@ -266,7 +266,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 .icon-list{
 	color: #94A0AA;
 	font-size: 30px;
-	color: #6B1F7E;
+	color: #6C217F;
 }
 
 .icon-grid, .icon-book, .icon-bubbles, .icon-mail, .icon-facebook, .icon-twitter{
@@ -275,7 +275,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 
 
 .publish, .explore, .video{
-	background-color: #6b1f7e;
+	background-color: #6C217F;
 	box-shadow: 0 2px 0 #4B1658;
 	-webkit-transition: background-color 0.5s ease;
 	-moz-transition: background-color 0.5s ease;
@@ -488,15 +488,15 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	}
 	.icon-rocket{
 		font-size: 5em;
-		color: #6b1f7e;
+		color: #6C217F;
 	}
 	.icon-shield{
 		font-size: 5em;
-		color: #6b1f7e;
+		color: #6C217F;
 	}
 	.icon-trophy{
 		font-size: 5em;
-		color: #6b1f7e;	
+		color: #6C217F;	
 	}
 
 }
@@ -609,19 +609,19 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 }
 
 .orbit-container .orbit-prev > span {
-  border-right-color: #6b1f7e;
+  border-right-color: #6C217F;
 }
 
 .orbit-container .orbit-prev:hover > span {
-  border-right-color: #6b1f7e; 
+  border-right-color: #6C217F; 
 }
 
 .orbit-container .orbit-next > span {  
-  border-left-color: #6b1f7e;
+  border-left-color: #6C217F;
 }
 
 .orbit-container .orbit-next:hover > span {
-  border-left-color: #6b1f7e; 
+  border-left-color: #6C217F; 
 }
 
 .orbit-container .orbit-timer {
@@ -670,7 +670,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		width: 200px;
 		// padding: 0.5em;
 		span{
-			color: #6B1F7E;
+			color: #6C217F;
 			font-size: 0.8rem;
 			font-weight: 500;
 		}
@@ -854,7 +854,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 
 
 .accordion dd > a {
-	background: #6B1F7E;
+	background: #6C217F;
 	color: #FFFFFF;
 	font-family: "museo-sans",sans-serif;
 	font-style: normal;
@@ -865,7 +865,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 }
 
 .accordion dd > a:hover {
-	background: #6B1F7E;
+	background: #6C217F;
 }
 
 #details_lesson {
@@ -1070,7 +1070,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 
 
 #menu{
-	background: #6B1F7E;
+	background: #6C217F;
 	width: 70px;
 	position: fixed;
 	top: 0;
@@ -1185,7 +1185,7 @@ bottom: 0;
 height: 100%;
 position: absolute;
 overflow-y: auto;
-background: #6B1F7E;
+background: #6C217F;
 z-index: 1001;
 box-sizing: content-box;
 }
@@ -1216,7 +1216,7 @@ z-index: 1002;
 	padding-left: 0.2em;
 	position: relative;
 	bottom: 5px;
-	color: #6B1F7E;
+	color: #6C217F;
 }
 
 .left-off-canvas-toggle:hover{
@@ -1374,7 +1374,7 @@ box-shadow: -2px 0px 4px #edeff0;
 			}
 			&.selected{
 				color: #FFFFFF;
-				background: #6B1F7E;			
+				background: #6C217F;			
 			}
 		}
 	}
@@ -1397,7 +1397,7 @@ box-shadow: -2px 0px 4px #edeff0;
 				}
 				&.selected{
 					color: #FFFFFF;
-					background: #6B1F7E;				
+					background: #6C217F;				
 				}
 			}
 		}
