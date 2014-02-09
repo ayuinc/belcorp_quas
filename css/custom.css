@@ -278,6 +278,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     padding: 1em 0; }
   #cover #home_menu {
     float: right; }
+    #cover #home_menu li a {
+      color: #FFFFFF;
+      font-weight: 500; }
   #cover .play {
     cursor: pointer;
     width: 30px;
