@@ -348,6 +348,12 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	}
 	#home_menu{
 		float:right;
+		li{
+			a{
+				color: #FFFFFF;
+				font-weight: 500;
+			}
+		}
 	}
 	.play {
 		cursor: pointer;
