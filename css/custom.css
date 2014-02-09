@@ -972,8 +972,10 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   color: #596c79; }
 
 #myModal {
-  padding: 0;
-  border: 2px solid #596c79; }
+  padding: 1.8em;
+  border: none;
+  box-shadow: none;
+  background: white; }
 
 .like {
   position: absolute;
