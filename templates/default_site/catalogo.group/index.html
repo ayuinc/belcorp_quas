@@ -50,10 +50,11 @@
                   
                   
                   <div class="row">
-	                  {exp:channel:entries channel="cursos" limit="20"  category="{last_segment_category_id}"}
+	                  {exp:channel:entries channel="cursos" limit="20"  category="{last_segment_category_id}" dynamic="off}
+
 	                    <div class="medium-12 large-6 columns">
 	                      <a href="{site_url}catalogo/curso/{url_title}">
-	                        {categories show_group="not 4"}
+	                        {categories limit="1"}
 	                        <div class="course {category_url_title}">
 	                        {/categories}
 	                          <h5>{title}</h5>
