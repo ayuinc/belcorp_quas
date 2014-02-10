@@ -1056,36 +1056,44 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   /* Fix to make div clickable in IE */ }
 
 .filtro-interno .inline-list {
-  float: right; }
-  .filtro-interno .inline-list a {
-    font-weight: 200;
-    color: #FFFFFF;
-    -webkit-transition: all ease-out 0.4s;
-    background: #9E79B8;
-    padding: 0.25em 0.8em;
-    font-size: 0.8rem; }
-    .filtro-interno .inline-list a:hover {
-      color: #FFFFFF; }
-    .filtro-interno .inline-list a.selected {
+  margin-left: 0; }
+  .filtro-interno .inline-list li {
+    margin-left: 0.5rem; }
+    .filtro-interno .inline-list li a {
+      font-weight: 200;
       color: #FFFFFF;
-      background: #6C217F; }
+      -webkit-transition: all ease-out 0.4s;
+      background: #9E79B8;
+      padding: 0.25em 0.8em;
+      font-size: 0.8rem;
+      text-transform: capitalize; }
+      .filtro-interno .inline-list li a:hover {
+        color: #FFFFFF; }
+      .filtro-interno .inline-list li a.selected {
+        color: #FFFFFF;
+        background: #6C217F; }
+  .filtro-interno .inline-list li:first-child {
+    margin-left: 0; }
 
 .filtro-externo .inline-list {
-  float: right; }
+  margin-left: 0; }
   .filtro-externo .inline-list li {
-    margin-left: 0.8rem; }
+    margin-left: 0.5rem; }
     .filtro-externo .inline-list li a {
       font-weight: 200;
       color: #FFFFFF;
       -webkit-transition: all ease-out 0.4s;
       background: #9E79B8;
       padding: 0.25em 0.8em;
-      font-size: 0.8rem; }
+      font-size: 0.8rem;
+      text-transform: capitalize; }
       .filtro-externo .inline-list li a:hover {
         color: #FFFFFF; }
       .filtro-externo .inline-list li a.selected {
         color: #FFFFFF;
         background: #6C217F; }
+  .filtro-externo .inline-list li:first-child {
+    margin-left: 0; }
 
 @media only screen and (min-width: 40.063em) {
   #cover h1 {
