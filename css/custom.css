@@ -1191,4 +1191,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     margin-bottom: 20em; }
 
   .video_curso {
-    margin-bottom: 1.9em; } }
+    margin-bottom: 1.9em; }
+
+  .under_fixed_header {
+    margin-top: 150px; } }
