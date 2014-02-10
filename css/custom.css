@@ -367,6 +367,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     margin: 0;
     line-height: 1;
     padding-bottom: 1.25em;
+    padding-top: 1.25em;
     font-weight: 700; }
   #la_ucb p {
     font-size: 1.1rem;
