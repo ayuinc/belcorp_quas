@@ -280,7 +280,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     float: right; }
     #cover #home_menu li a {
       color: #FFFFFF;
-      font-weight: 500; }
+      font-weight: 500;
+      padding: 0; }
   #cover .play {
     cursor: pointer;
     width: 30px;
