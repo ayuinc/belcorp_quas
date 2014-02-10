@@ -352,6 +352,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 			a{
 				color: #FFFFFF;
 				font-weight: 500;
+				padding: 0;
 			}
 		}
 	}
@@ -477,6 +478,22 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		border-left: 20px solid transparent;
 		border-right: 20px solid transparent;
 		border-top: 20px solid #FFFFFF;
+	}
+	h5{
+		margin-top: 1.5em;
+		font-weight: 300;
+	}
+	.icon-rocket{
+		font-size: 5em;
+		color: #6C217F;
+	}
+	.icon-shield{
+		font-size: 5em;
+		color: #6C217F;
+	}
+	.icon-trophy{
+		font-size: 5em;
+		color: #6C217F;	
 	}
 }
 

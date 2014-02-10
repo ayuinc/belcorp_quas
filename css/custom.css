@@ -280,7 +280,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     float: right; }
     #cover #home_menu li a {
       color: #FFFFFF;
-      font-weight: 500; }
+      font-weight: 500;
+      padding: 0; }
   #cover .play {
     cursor: pointer;
     width: 30px;
@@ -383,6 +384,18 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     border-top: 20px solid #FFFFFF; }
+  #la_ucb h5 {
+    margin-top: 1.5em;
+    font-weight: 300; }
+  #la_ucb .icon-rocket {
+    font-size: 5em;
+    color: #6C217F; }
+  #la_ucb .icon-shield {
+    font-size: 5em;
+    color: #6C217F; }
+  #la_ucb .icon-trophy {
+    font-size: 5em;
+    color: #6C217F; }
 
 #metodologia {
   padding: 3.5em 0 2.5em 0;
