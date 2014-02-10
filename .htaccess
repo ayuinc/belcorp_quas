@@ -67,7 +67,7 @@ RewriteRule (.*) /index.php?/$1 [L]
 Options +FollowSymlinks
 
 # EE 404 page for missing pages
-ErrorDocument 404 /index.php/
+ErrorDocument 404 /index.php/404/index
 
 # Simple 404 for missing files
 <FilesMatch "(\.jpe?g|gif|png|bmp|css|js|flv)$">
@@ -107,7 +107,7 @@ RewriteCond %{QUERY_STRING} !^(ACT=.*)$ [NC]
 RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5})$
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} ^/(content|includes|catalogo|contenidos|foro|contactanos|buscar|quieres-crear-un-curso|members|P[0-9]{2,8}) [NC]
+RewriteCond %{REQUEST_URI} ^/(content|includes|catalogo|contenidos|foro|contactanos|buscar|quieres-crear-un-curso|404|members|P[0-9]{2,8}) [NC]
 RewriteRule (.*) /index.php?/$1 [L]
 
 # -- NSM .htaccess Generator End --
