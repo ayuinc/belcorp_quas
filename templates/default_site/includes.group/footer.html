@@ -34,6 +34,21 @@
           $("html, body").animate({scrollTop:$("#destacados").offset().top});
       });
 
+      $( "#destacados_menu" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:$("#destacados").offset().top});
+      });
+
+      $( "#la_ucb_menu" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:$("#la_ucb").offset().top});
+      });
+
+      $( "#escuelas_menu" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:$("#escuelas_title").offset().top});
+      });
+
       $("#school_panel_trigger").on("click", function () {
         if($("#school_panel").hasClass("activex")){
           $("#school_panel").slideUp();
