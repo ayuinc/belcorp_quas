@@ -459,6 +459,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		padding-bottom: 2.25em;
 		padding-top: 2.25em;
 		font-weight: 700;
+		font-size: 1.6em;
 	}
 	p{
 		font-size: 1.1rem;
@@ -467,6 +468,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	h3{
 		text-transform: uppercase;
 		font-weight: 400;
+		span{
+			font-weight: 500;
+		}
 	}
 	position: relative;
 	&:after {
@@ -559,6 +563,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		margin: 0;
 		line-height: 1;
 		font-weight: 700;
+		font-size: 1.6em;
 	}
 	&:after {
 		content: "";
@@ -581,7 +586,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		margin: 0;
 		line-height: 1;
 		padding-bottom: 2em;
-		font-weight: 700;
+		font-weight: 500;
 	}
 	.quote{
 		margin-top: 1.5em;
@@ -1454,7 +1459,7 @@ box-shadow: -2px 0px 4px #edeff0;
 			font-size: 1.2rem;
 		}
 		#view_video{
-		    font-size: 1.3rem;
+		    font-size: 1.2rem;
 		    height: 75px;
 		    font-weight: 100;
 		    color: #F1F1F1;
