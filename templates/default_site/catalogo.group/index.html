@@ -51,8 +51,8 @@
                   {embed="includes/submenu-catalogo"}                                 
                   
                   
-                  <div class="row">
-	                  {exp:channel:entries channel="cursos" limit="20"  category="{last_segment_category_id}" dynamic="off}
+                    {exp:channel:entries channel="cursos" limit="20"  category="{last_segment_category_id}" dynamic="off}
+                      <div class="row">
 
 	                    <div class="medium-12 large-6 columns">
 	                      <a href="{site_url}catalogo/curso/{url_title}">
@@ -85,11 +85,11 @@
 				                    </div>
 				                  </div>
 				                </div>
+                      
+                  </div>
                       {/pagination_links}   
                     {/paginate} 
-                      
                     {/exp:channel:entries}
-				          </div>
 
 
                 </div>
