@@ -1561,9 +1561,9 @@ box-shadow: -2px 0px 4px #edeff0;
 		margin-top: 0;
 		position: fixed;
 		z-index: 1;
-		width: -moz-calc(75% - 105px);
-		width: -webkit-calc(75% - 105px);
-		width: calc(75% - 105px);
+		width: -moz-calc(100% - 131px);
+		width: -webkit-calc(100% - 131px);
+		width: calc(100% - 131px);
 	}
 
 	#catalogo_content, #contenidos_content, #feedback_content, #contact_content{
@@ -1638,7 +1638,14 @@ box-shadow: -2px 0px 4px #edeff0;
 
 @media only screen and (min-width: 64.063em) { 
 
-
+	#forum_header, #courses_header, #content_header, #contact_header{
+		margin-top: 0;
+		position: fixed;
+		z-index: 1;
+		width: -moz-calc(75% - 105px);
+		width: -webkit-calc(75% - 105px);
+		width: calc(75% - 105px);
+	}
 
 }
 
