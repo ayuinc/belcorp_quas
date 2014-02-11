@@ -1020,7 +1020,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   transition-duration: 0.2s; }
 
 .back {
-  padding-top: 1em; }
+  padding-top: 1.5em; }
 
 .heading-pocket:before, .heading-pocket:after {
   content: "";
