@@ -709,7 +709,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   display: none;
   padding: 0; }
 
-.accordion {
+#padding_accordion {
   margin-bottom: 1.9em; }
 
 #school_panel dd {
