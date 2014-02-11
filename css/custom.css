@@ -956,7 +956,19 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   font-size: 1.4375rem;
   font-weight: 100; }
 .more #more_icon {
-  font-size: 1.8em; }
+  background: url(../img/scroll_down_interno.png) no-repeat;
+  color: #fff;
+  display: block;
+  height: 49px;
+  width: 49px;
+  margin: auto;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s; }
+  .more #more_icon:hover {
+    background: url(../img/scroll_down_interno_hover.png) no-repeat; }
 .more:hover {
   cursor: pointer; }
   .more:hover #more_courses {
