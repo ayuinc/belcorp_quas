@@ -1019,6 +1019,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   -o-transition-duration: 0.2s;
   transition-duration: 0.2s; }
 
+.back {
+  padding-top: 1em; }
+
 .heading-pocket:before, .heading-pocket:after {
   content: "";
   position: absolute;
