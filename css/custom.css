@@ -378,16 +378,6 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     font-weight: 400; }
     #la_ucb h3 span {
       font-weight: 700; }
-  #la_ucb:after {
-    content: "";
-    position: absolute;
-    bottom: -20px;
-    left: 48%;
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 20px solid #FFFFFF; }
   #la_ucb h5 {
     margin-top: 1.5em;
     font-weight: 300; }
@@ -424,7 +414,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     color: #6C217F; }
 
 #prev-escuelas {
-  padding: 15em 0;
+  padding: 12em 0;
   background: #FAFAFA;
   text-align: center;
   background: url("../img/bg_prev_escuelas.jpg");
