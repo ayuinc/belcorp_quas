@@ -1016,7 +1016,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   cursor: pointer; }
 
 .vermas {
-  margin-top: 1rem !important; }
+  margin-bottom: 1.5em; }
 
 .heading-pocket {
   background: #edeff0;
