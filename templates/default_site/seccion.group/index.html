@@ -19,7 +19,18 @@
         </div>
 
         <section id="courses">
-          <div class="heading-pocket"></div>
+	      <div class="heading-pocket">
+	        <div class="row">
+	          <div class="total_padding large-12 columns">
+	            <div class="back">
+	              <a href="javascript:history.go(-1)">  
+	                <span>&larr; Atrás</span>
+	              </a>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	      
           <div class="row">
             <div class="total_padding medium-12 large-12 columns">
               <div id="catalogo_content" class="row">
@@ -29,10 +40,7 @@
                     <div class="large-12 columns">
                       <div id="courses_header">
                         <div class="row">
-                          <div class="medium-1 large-1 columns">
-                            <span class="icon-grid"></span>
-                          </div>
-                          <div class="medium-11 large-11 columns">
+                          <div class="medium-12 large-12 columns">
                             <h3>{title}</h3>
                             <h5>{texto-descriptivo-seccion}</h5>
                           </div>
@@ -41,21 +49,25 @@
                     </div>
                   </div>
 
-{/exp:channel:entries}
+
                   
                   <div class="under_fixed_header">
                   
-	                  <div class="row">
-		  			      <div class="medium-12 large-12 columns">
-		
-		
-		
-		
-		
+				    <div class="video_curso">
+				    	<iframe width="100%" height="500" src="//www.youtube.com/embed/{video-seccion}" frameborder="0" allowfullscreen></iframe>                              
+                    </div>	                  
+	                  
+		              <div class="row">
+		                <div class="large-12 medium-12 small-12 columns">
+		                  <div class="requisitos_info"> 
+		                    {contenido-seccion}
 		                  </div>
-	                  </div>
+		                </div>
+		              </div>	                  
 
                   </div>
+                  
+{/exp:channel:entries}                  
                   
                 </div>
                 {embed="includes/sidebar-categorias-catalogo"}
