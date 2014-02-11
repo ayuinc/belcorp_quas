@@ -49,10 +49,12 @@
                     
 
                   {embed="includes/submenu-catalogo"}                                 
+
+
+
                   
-                  
+                  <div class="row">
                     {exp:channel:entries channel="cursos" limit="20"  category="{last_segment_category_id}" dynamic="off}
-                      <div class="row">
 
 	                    <div class="medium-12 large-6 columns">
 	                      <a href="{site_url}catalogo/curso/{url_title}">
@@ -70,29 +72,33 @@
 	                        </div>
 	                      </a>
 	                    </div>
-	               </div>
-			              {paginate}  
-			              	{pagination_links}
-							  <div class="row">
-				                <div class="large-3 large-centered columns vermas">
-				                  <div class="more">                      
-				                    <div class="text-center">
-				                      {next_page}
-				                      <a id="more_icon" href="{pagination_url}">
-                                <span id="more_courses"><img src="{site_url}img/scroll_down_interno.png" alt="ver más"></span>
-                              </a>
-				                      {/next_page}
-				                    </div>
-				                  </div>
-				                </div>
+
+  			              {paginate}  
+  			              	{pagination_links}
+  							        <div class="row">
+  				                <div class="large-3 large-centered columns vermas">
+  				                  <div class="more">                      
+  				                    <div class="text-center">
+  				                      {next_page}
+  				                      <a id="more_icon" href="{pagination_url}">
+                                  <span id="more_courses"><img src="{site_url}img/scroll_down_interno.png" alt="ver más"></span>
+                                </a>
+  				                      {/next_page}
+  				                    </div>
+  				                  </div>
+  				                </div>
+                        </div>
+                        {/pagination_links}   
+                      {/paginate} 
                       
-                  </div>
-                      {/pagination_links}   
-                    {/paginate} 
                     {/exp:channel:entries}
+                 </div>
 
 
-                </div>
+
+
+
+                  </div>
                   
                 </div>
                 {embed="includes/sidebar-categorias-catalogo"}
