@@ -71,6 +71,10 @@
 	                      </a>
 	                    </div>
 	                    
+                      
+                    {/exp:channel:entries}
+                  </div>
+
 			              {paginate}  
 			              	{pagination_links}
 							  <div class="row">
@@ -78,7 +82,7 @@
 				                  <div class="more">                      
 				                    <div class="text-center">
 				                      {next_page}
-				                      <a href="{pagination_url}">
+				                      <a id="more_icon" href="{pagination_url}">
                                 <span id="more_courses"><img src="{site_url}img/scroll_down_interno.png" alt="ver más"></span>
                               </a>
 				                      {/next_page}
@@ -88,10 +92,7 @@
 				              </div>
 			              	{/pagination_links}   
 			              {/paginate} 
-	                    
-	                  {/exp:channel:entries}
-                  </div>
-
+                    
                 </div>
                   
                 </div>
