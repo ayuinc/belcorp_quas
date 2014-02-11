@@ -621,7 +621,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   background-color: #EEEEEE;
   padding-top: 8em; }
   #courses #create_course, #details #create_course {
-    margin-top: 1.9em;
+    margin-top: 0;
     padding: 1.2rem; }
   #courses #footer, #details #footer {
     background-color: transparent; }
@@ -708,6 +708,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 .accordion .content {
   display: none;
   padding: 0; }
+
+.accordion {
+  margin-bottom: 1.9em; }
 
 #school_panel dd {
   line-height: 1;
@@ -1170,9 +1173,6 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
   #catalogo_content, #contenidos_content, #feedback_content, #contact_content {
     margin-top: 70px; }
-
-  #feedback_content #create_course, #contact_content #create_course {
-    margin-top: 0; }
 
   .fixed_menu {
     position: fixed;
