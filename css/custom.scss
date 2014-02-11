@@ -828,7 +828,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	padding-top: 8em;
 
 	#create_course{
-		margin-top: 1.9em;
+		margin-top: 0;
 		padding: 1.2rem;
 
 	}
@@ -945,6 +945,10 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 .accordion .content {
 	display: none;
 	padding: 0;
+}
+
+.accordion{
+	margin-bottom: 1.9em;
 }
 
 #school_panel{
@@ -1568,10 +1572,6 @@ box-shadow: -2px 0px 4px #edeff0;
 
 	#catalogo_content, #contenidos_content, #feedback_content, #contact_content{
 		margin-top: 70px;
-	}
-
-	#feedback_content #create_course, #contact_content #create_course{
-		margin-top: 0;
 	}
 
 
