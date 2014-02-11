@@ -13,7 +13,7 @@
                   
                   
                   
-                  {if segment_1!='buscar'}
+                  {if segment_1!='buscar' AND segment_1!='seccion'}
                   <dl class="accordion" data-accordion>
                     <dd>
                       <a id="school_panel_trigger" href="#school_panel">
@@ -54,12 +54,14 @@
                             <span class="icon-school"></span>
                           </dd>-->                      
                         </dl>
-                 </div>
+                  </div>
                     </dd>
                   </dl>
-                 
+                 {/if}
                   <a href="{site_url}quieres-crear-un-curso" id="create_course" class="publish button expand">¿QUIERES CREAR UN CURSO?</a>
-                  {/if}
+                  
+                  
+                  
                 </div>
                 <div class="large-3 columns hide-for-large">
                   <a href="{site_url}quieres-crear-un-curso" id="create_course" class="publish button expand">¿QUIERES CREAR UN CURSO?</a>              
