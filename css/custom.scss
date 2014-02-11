@@ -1044,7 +1044,13 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 }
 
 #details_header{
-	height: 100%;
+	height: auto;
+	margin-top: 0;
+	position: fixed;
+	z-index: 1;
+	width: -moz-calc(75% - 105px);
+	width: -webkit-calc(75% - 105px);
+	width: calc(75% - 105px);
 	p{
 		padding-bottom: 3em;
 	}
