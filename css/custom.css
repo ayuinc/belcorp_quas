@@ -767,7 +767,13 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     margin-bottom: 0; }
 
 #details_header {
-  height: 100%; }
+  height: auto;
+  margin-top: 0;
+  position: fixed;
+  z-index: 1;
+  width: -moz-calc(75% - 105px);
+  width: -webkit-calc(75% - 105px);
+  width: calc(75% - 105px); }
   #details_header p {
     padding-bottom: 3em; }
   #details_header h3 {
