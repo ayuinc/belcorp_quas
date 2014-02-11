@@ -1402,19 +1402,21 @@ box-shadow: -2px 0px 4px #edeff0;
 		li{
 			margin-left: 0.5rem;
 			a{
-				font-weight: 200;
-				color: #FFFFFF;
-				-webkit-transition: all ease-out 0.4s;
+				font-weight: 300;
+				-webkit-transition: all ease-out 0.2s;
 				background: #9E79B8;
+				background-color: transparent;
 				padding: 0.25em 0.8em;
 				font-size: 0.8rem;
 				text-transform: capitalize;
+				color: #596c79;
 				&:hover{
 					color: #FFFFFF;
+					background: #9E79B8;
 				}
 				&.selected{
 					color: #FFFFFF;
-					background: #6C217F;			
+					background: #9E79B8;			
 				}
 			}
 		}
@@ -1431,19 +1433,21 @@ box-shadow: -2px 0px 4px #edeff0;
 		li{
 			margin-left: 0.5rem;
 			a{
-				font-weight: 200;
-				color: #FFFFFF;
-				-webkit-transition: all ease-out 0.4s;
+				font-weight: 300;
+				-webkit-transition: all ease-out 0.2s;
 				background: #9E79B8;
+				background-color: transparent;
 				padding: 0.25em 0.8em;
 				font-size: 0.8rem;
 				text-transform: capitalize;
+				color: #596c79;
 				&:hover{
 					color: #FFFFFF;
+					background: #9E79B8;
 				}
 				&.selected{
 					color: #FFFFFF;
-					background: #6C217F;				
+					background: #9E79B8;			
 				}
 			}
 		}

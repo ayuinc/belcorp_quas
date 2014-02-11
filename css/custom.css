@@ -1060,18 +1060,20 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   .filtro-interno .inline-list li {
     margin-left: 0.5rem; }
     .filtro-interno .inline-list li a {
-      font-weight: 200;
-      color: #FFFFFF;
-      -webkit-transition: all ease-out 0.4s;
+      font-weight: 300;
+      -webkit-transition: all ease-out 0.2s;
       background: #9E79B8;
+      background-color: transparent;
       padding: 0.25em 0.8em;
       font-size: 0.8rem;
-      text-transform: capitalize; }
+      text-transform: capitalize;
+      color: #596c79; }
       .filtro-interno .inline-list li a:hover {
-        color: #FFFFFF; }
+        color: #FFFFFF;
+        background: #9E79B8; }
       .filtro-interno .inline-list li a.selected {
         color: #FFFFFF;
-        background: #6C217F; }
+        background: #9E79B8; }
   .filtro-interno .inline-list li:first-child {
     margin-left: 0; }
 
@@ -1080,18 +1082,20 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   .filtro-externo .inline-list li {
     margin-left: 0.5rem; }
     .filtro-externo .inline-list li a {
-      font-weight: 200;
-      color: #FFFFFF;
-      -webkit-transition: all ease-out 0.4s;
+      font-weight: 300;
+      -webkit-transition: all ease-out 0.2s;
       background: #9E79B8;
+      background-color: transparent;
       padding: 0.25em 0.8em;
       font-size: 0.8rem;
-      text-transform: capitalize; }
+      text-transform: capitalize;
+      color: #596c79; }
       .filtro-externo .inline-list li a:hover {
-        color: #FFFFFF; }
+        color: #FFFFFF;
+        background: #9E79B8; }
       .filtro-externo .inline-list li a.selected {
         color: #FFFFFF;
-        background: #6C217F; }
+        background: #9E79B8; }
   .filtro-externo .inline-list li:first-child {
     margin-left: 0; }
 
