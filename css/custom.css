@@ -1011,7 +1011,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   position: fixed;
   height: 70px;
   top: 0;
-  left: 0;
+  left: 70px;
   right: 0;
   z-index: 100;
   -webkit-transition-duration: 0.2s;
