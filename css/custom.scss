@@ -322,6 +322,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	height: 100%;
 	background: url("../img/bg_cover_small.jpg");
 	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
 	background-size: cover;
 	position: relative;
 	background-position: center center;
