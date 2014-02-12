@@ -1,3 +1,13 @@
+/*CODIGO HERMAN*/
+
+.confirmacion p {
+	color: #6C217F;
+	font-weight: 500;
+	font-style: italic;
+}
+
+
+
 /* line 9, custom.scss */
 html, body {
   height: 100%;
