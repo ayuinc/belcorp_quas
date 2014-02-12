@@ -1,5 +1,5 @@
-{exp:channel:entries channel="secciones" limit="1" disable="member_data|pagination|categories" entry_id="79"}
-{embed="includes/header"  titulo="{title}"}
+{exp:channel:entries channel="secciones" limit="1" disable="member_data|pagination|categories" entry_id="78"}
+{embed="includes/header" titulo="{title}"}
 
     <div class="off-canvas-wrap">
       <div class="inner-wrap">
@@ -12,16 +12,17 @@
           </div>
         </div>
 
-        {embed="inbcludes/menu-offcanvas"}
+        {embed="includes/menu-offcanvas"}
 
     <section id="courses">
       <div class="heading-pocket"></div>
       <div class="row">
 
-        <div class="total_padding medium-12 large-12 columns"> 
+        <div class="total_padding medium-12 large-12 columns">  
 
           <div id="feedback_content" class="row">
           <div class="large-9 columns">
+
 
           <div class="row">
             <div class="large-12 columns">
@@ -44,60 +45,84 @@
               </div>
             </div>
           </div>
+          
 {/exp:channel:entries}
         <div class="under_fixed_header">
+        
+          <div class="row">
+            <div class="large-12 columns confirmacion">
+                <p>Tu mensaje fue enviado correctamente.</p>
+            </div>
+          </div>        
+        
+
           <div class="row">
             <div class="large-12 columns">
 
-<!--               <div class="hide-for-small forum_publish">
+              <div class="forum_publish">
                 
-                {exp:channel:form channel="foro" return_X="foro/gracias" }
+                {exp:channel:form channel="foro" return="foro/gracias" }
+                  <input name="nombre-foro" type="hidden" value="Foro">
+                  <div class="row">
+                    <div class="large-6 columns">
+                      <input name="title" type="text" placeholder="Ingresa tu nombre" required>
+                    </div>
+                    <div class="large-6 columns">
+                      <input type="email" name="correo-electronico-foro" placeholder="Ingresa tu correo electrónico" required>
+                    </div>
+                  </div>
+
                   <div class="row">
                     <div class="large-12 columns">
-                      <input name="title" type="hidden" value="Mensaje del Foro">
-                      <input name="nombre-foro" type="text">	
-                      <textarea name="mensaje-foro" id="comment" class="expanding"></textarea>
+                      <textarea name="mensaje-foro" id="comment" class="expanding" placeholder="Escribe tu mensaje" required></textarea>
                     </div>
                   </div>
                   <div class="row">
                     <div class="large-offset-10 large-2 columns"> 
-                    <button class="publish button expand">PUBLICAR</button>
+                    <button class="publish button expand">ENVIAR</button>
                     </div>
-                  </div>
+                  </div>                
                 {/exp:channel:form}
               
-              </div> -->
+              </div>
 
               <div class="forum_comments">
-				{exp:channel:entries channel="foro" limit="5" paginate="bottom"}
+				{exp:channel:entries channel="foro" limit="10" paginate="bottom" disable="categories|member_data" }
                 <div class="row">
                   <div class="large-12 columns">
                     <div class="forum_comments_item"> 
-                     <p><b>{title}</b><br>{mensaje-foro}</p>
+                     <p><b>{title}</b><span>{mensaje-foro}</span></p>
                     </div>
                   </div>
                 </div>
               
-              {paginate}  
-              	{pagination_links}
-		    		  <div class="row">
-		                <div class="large-2 large-centered columns">
-		                  {next_page}	
-		                  <a href="{pagination_url}" class="more button expand">VER MÁS</a>
-						  {/next_page}
-		                </div>
-		              </div>  
-              	{/pagination_links}   
-              {/paginate}       
+			              {paginate}  
+			              	{pagination_links}
+							  <div class="row">
+				                <div class="large-3 large-centered columns vermas">
+				                  <div class="more">                      
+				                    <div class="text-center">
+				                      {next_page}
+				                      <a href="{pagination_url}"><span id="more_courses">Ver más</span></a>
+				                      {/next_page}
+				                    </div>
+				                    <div class="text-center">
+				                      <span id="more_icon" class="icon-arrow-down"></span>
+				                    </div>
+				                  </div>
+				                </div>
+				              </div>
+			              	{/pagination_links}   
+			              {/paginate}      
     
 				{/exp:channel:entries}
               </div>
+            </div>
+          </div>
 
         </div>
-      </div>
-    </div>
-      </div>
 
+          </div>
           <div class="large-3 columns hide-for-small hide-for-medium fixed_menu right_padding">
               <form action="#" id="form_search">
                 <input type="search" placeholder="BUSCAR">
@@ -106,8 +131,10 @@
               <a href="{site_url}quieres-crear-un-curso" id="create_course" class="publish button expand">¿QUIERES CREAR UN CURSO?</a>
           </div>
         </div>
+
         </div>
-        </div>
+      </div>
+      
     </section>
     
     {embed="includes/footer-interno"}
