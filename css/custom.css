@@ -553,7 +553,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   font-weight: 700;
 }
 /* line 495, custom.scss */
-#la_ucb h5 {
+#la_ucb h6 {
   margin-top: 1.5em;
   font-weight: 300;
 }
