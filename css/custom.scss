@@ -467,7 +467,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		padding-bottom: 2.25em;
 		padding-top: 2.25em;
 		font-weight: 700;
-		font-size: 1.6em;
+		font-size: 1.5em;
 	}
 	p{
 		font-size: 1.1rem;
@@ -572,7 +572,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		margin: 0;
 		line-height: 1;
 		font-weight: 700;
-		font-size: 1.6em;
+		font-size: 1.5em;
 	}
 	&:after {
 		content: "";
@@ -595,7 +595,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		margin: 0;
 		line-height: 1;
 		padding-bottom: 2em;
-		font-weight: 500;
+		font-weight: 300;
+		font-size: 1.4em;
 	}
 	.quote{
 		margin-top: 1.5em;
