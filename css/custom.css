@@ -587,7 +587,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   font-weight: 700;
 }
 /* line 524, custom.scss */
-#metodologia h5 {
+#metodologia h6 {
   margin-top: 1.5em;
   font-weight: 300;
 }
