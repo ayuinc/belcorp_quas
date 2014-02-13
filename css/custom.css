@@ -539,7 +539,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   font-size: 1.5em;
 }
 /* line 472, custom.scss */
-#la_ucb p:first-child {
+#la_ucb #sub_p {
   font-size: 1.1rem;
   margin-top: 1rem;
 }
