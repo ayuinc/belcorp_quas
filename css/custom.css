@@ -1824,8 +1824,13 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   .under_fixed_header {
     margin-top: 150px;
   }
+
+  /* line 1672, custom.scss */
+  #details .under_fixed_header {
+    margin-top: 152px;
+  }
 }
-/* line 1675, custom.scss */
+/* line 1679, custom.scss */
 .confirmacion p {
   color: #6C217F;
   font-weight: 500;
@@ -1833,7 +1838,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 }
 
 @media only screen and (min-width: 64.063em) {
-  /* line 1684, custom.scss */
+  /* line 1688, custom.scss */
   #forum_header, #courses_header, #content_header, #contact_header {
     margin-top: 0;
     position: fixed;
