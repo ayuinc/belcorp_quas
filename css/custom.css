@@ -1754,7 +1754,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   }
 
   /* line 1608, custom.scss */
-  #catalogo_content, #contenidos_content, #feedback_content, #contact_content {
+  #catalogo_content, #contenidos_content, #feedback_content, #contact_content, #details_content {
     margin-top: 70px;
   }
 
