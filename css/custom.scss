@@ -1668,6 +1668,11 @@ box-shadow: -2px 0px 4px #edeff0;
 	.under_fixed_header{
 		margin-top: 150px;
 	}
+	#feedback_content, #contact_content{
+		.under_fixed_header{
+			margin-top: 15px;
+		}
+	}
 	#details{
 		.under_fixed_header{
 			margin-top: 82px;
