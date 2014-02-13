@@ -1649,7 +1649,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 /* line 1505, custom.scss */
 .under_fixed_header {
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 @media only screen and (min-width: 40.063em) {
