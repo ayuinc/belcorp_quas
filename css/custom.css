@@ -1413,14 +1413,20 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   -o-transition-duration: 0.2s;
   transition-duration: 0.2s;
 }
+/* line 1296, custom.scss */
+#courses_menu select {
+  height: 3.125rem;
+  outline: none;
+  margin: 0.5em 0 0 0;
+}
 
-/* line 1299, custom.scss */
+/* line 1304, custom.scss */
 .more #more_courses {
   color: #596c79;
   font-size: 1.4375rem;
   font-weight: 100;
 }
-/* line 1305, custom.scss */
+/* line 1310, custom.scss */
 .more #more_icon {
   background: url(../img/scroll_down_interno.png) no-repeat;
   color: #fff;
@@ -1434,79 +1440,79 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   -o-transition: 0.4s;
   transition: 0.4s;
 }
-/* line 1317, custom.scss */
+/* line 1322, custom.scss */
 .more #more_icon:hover {
   background: url(../img/scroll_down_interno_hover.png) no-repeat;
 }
-/* line 1322, custom.scss */
+/* line 1327, custom.scss */
 .more:hover {
   cursor: pointer;
 }
-/* line 1323, custom.scss */
+/* line 1328, custom.scss */
 .more:hover #more_courses {
   color: #596c79;
   text-decoration: underline;
 }
 
-/* line 1331, custom.scss */
+/* line 1336, custom.scss */
 #courses_hidden {
   display: none;
 }
 
-/* line 1335, custom.scss */
+/* line 1340, custom.scss */
 .resources_list {
   background-color: #FFFFFF;
 }
-/* line 1338, custom.scss */
+/* line 1343, custom.scss */
 .resources_list h5 {
   font-weight: 400;
 }
-/* line 1341, custom.scss */
+/* line 1346, custom.scss */
 .resources_list span {
   color: #929FAA;
 }
-/* line 1344, custom.scss */
+/* line 1349, custom.scss */
 .resources_list img {
   border-radius: 50%;
 }
 
-/* line 1349, custom.scss */
+/* line 1354, custom.scss */
 .resources_item {
   padding: 1em 25px;
   border-top: 1px solid #EEEEEE;
   border-bottom: 1px solid #EEEEEE;
 }
-/* line 1353, custom.scss */
+/* line 1358, custom.scss */
 .resources_item h5 {
   font-weight: 400;
 }
-/* line 1356, custom.scss */
+/* line 1361, custom.scss */
 .resources_item span {
   color: #929FAA;
 }
-/* line 1359, custom.scss */
+/* line 1364, custom.scss */
 .resources_item img {
   border-radius: 50%;
 }
 
-/* line 1365, custom.scss */
+/* line 1370, custom.scss */
 .resources_item a {
   color: #596c79;
 }
 
-/* line 1371, custom.scss */
+/* line 1376, custom.scss */
 #myModal {
   padding: 1.8em;
   border: none;
   box-shadow: none;
   background: white;
 }
-/* line 1376, custom.scss */
+/* line 1381, custom.scss */
 #myModal .flex-video {
   margin-bottom: 0;
 }
 
-/* line 1381, custom.scss */
+/* line 1386, custom.scss */
 .like {
   position: absolute;
   top: 1em;
@@ -1514,12 +1520,12 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   cursor: pointer;
 }
 
-/* line 1388, custom.scss */
+/* line 1393, custom.scss */
 .vermas {
   margin-bottom: 1.5em;
 }
 
-/* line 1392, custom.scss */
+/* line 1397, custom.scss */
 .heading-pocket {
   background: #edeff0;
   position: fixed;
@@ -1534,12 +1540,12 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   transition-duration: 0.2s;
 }
 
-/* line 1407, custom.scss */
+/* line 1412, custom.scss */
 .back {
   padding-top: 1.5em;
 }
 
-/* line 1411, custom.scss */
+/* line 1416, custom.scss */
 .heading-pocket:before, .heading-pocket:after {
   content: "";
   position: absolute;
@@ -1554,7 +1560,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   box-shadow: -2px 0px 4px #edeff0;
 }
 
-/* line 1425, custom.scss */
+/* line 1430, custom.scss */
 #clickable_div {
   position: absolute;
   width: 100%;
@@ -1573,15 +1579,15 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   /* Fix to make div clickable in IE */
 }
 
-/* line 1439, custom.scss */
+/* line 1444, custom.scss */
 .filtro-interno .inline-list {
   margin-left: 0;
 }
-/* line 1442, custom.scss */
+/* line 1447, custom.scss */
 .filtro-interno .inline-list li {
   margin-left: 0.5rem;
 }
-/* line 1444, custom.scss */
+/* line 1449, custom.scss */
 .filtro-interno .inline-list li a {
   font-weight: 300;
   -webkit-transition: all ease-out 0.2s;
@@ -1592,30 +1598,30 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   text-transform: capitalize;
   color: #596c79;
 }
-/* line 1453, custom.scss */
+/* line 1458, custom.scss */
 .filtro-interno .inline-list li a:hover {
   color: #FFFFFF;
   background: #9E79B8;
 }
-/* line 1457, custom.scss */
+/* line 1462, custom.scss */
 .filtro-interno .inline-list li a.selected {
   color: #FFFFFF;
   background: #9E79B8;
 }
-/* line 1463, custom.scss */
+/* line 1468, custom.scss */
 .filtro-interno .inline-list li:first-child {
   margin-left: 0;
 }
 
-/* line 1470, custom.scss */
+/* line 1475, custom.scss */
 .filtro-externo .inline-list {
   margin-left: 0;
 }
-/* line 1473, custom.scss */
+/* line 1478, custom.scss */
 .filtro-externo .inline-list li {
   margin-left: 0.5rem;
 }
-/* line 1475, custom.scss */
+/* line 1480, custom.scss */
 .filtro-externo .inline-list li a {
   font-weight: 300;
   -webkit-transition: all ease-out 0.2s;
@@ -1626,71 +1632,76 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   text-transform: capitalize;
   color: #596c79;
 }
-/* line 1484, custom.scss */
+/* line 1489, custom.scss */
 .filtro-externo .inline-list li a:hover {
   color: #FFFFFF;
   background: #9E79B8;
 }
-/* line 1488, custom.scss */
+/* line 1493, custom.scss */
 .filtro-externo .inline-list li a.selected {
   color: #FFFFFF;
   background: #9E79B8;
 }
-/* line 1494, custom.scss */
+/* line 1499, custom.scss */
 .filtro-externo .inline-list li:first-child {
   margin-left: 0;
 }
 
+/* line 1505, custom.scss */
+.under_fixed_header {
+  margin-top: 150px;
+}
+
 @media only screen and (min-width: 40.063em) {
-  /* line 1506, custom.scss */
+  /* line 1514, custom.scss */
   #cover h1 {
     line-height: 1;
     font-size: 3rem;
     text-align: left;
   }
-  /* line 1511, custom.scss */
+  /* line 1519, custom.scss */
   #cover h5 {
     font-size: 1.45rem;
     text-align: left;
   }
-  /* line 1515, custom.scss */
+  /* line 1523, custom.scss */
   #cover a {
     font-size: 1.2rem;
   }
-  /* line 1518, custom.scss */
+  /* line 1526, custom.scss */
   #cover #view_video {
     font-size: 1.2rem;
     height: 75px;
     font-weight: 100;
     color: #F1F1F1;
   }
-  /* line 1525, custom.scss */
+  /* line 1533, custom.scss */
   #cover .explore {
     width: 175px;
     float: left;
   }
-  /* line 1529, custom.scss */
+  /* line 1537, custom.scss */
   #cover .down {
     display: block;
   }
-  /* line 1532, custom.scss */
+  /* line 1540, custom.scss */
   #cover #logo_index {
     float: left;
   }
 
-  /* line 1537, custom.scss */
+  /* line 1545, custom.scss */
   .course {
     height: 230px;
   }
 
-  /* line 1542, custom.scss */
+  /* line 1550, custom.scss */
   #details_header h3 {
     padding-bottom: 0;
     font-weight: 700;
     text-transform: uppercase;
   }
 
-  /* line 1550, custom.scss */
+  /* line 1558, custom.scss */
   .details_info p {
     font-size: 2rem;
     line-height: 1.25rem;
@@ -1699,36 +1710,36 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     font-weight: 500;
     text-align: center;
   }
-  /* line 1558, custom.scss */
+  /* line 1566, custom.scss */
   .details_info span {
     font-size: 0.9rem;
     font-weight: 100;
   }
 
-  /* line 1564, custom.scss */
+  /* line 1572, custom.scss */
   #courses, #details {
     padding-top: 0;
     margin-left: 70px;
   }
 
-  /* line 1569, custom.scss */
+  /* line 1577, custom.scss */
   #forum_header, #details_header, #courses_header, #contact_header, #content_header {
     margin-top: 70px;
     margin-bottom: 1.9em;
     text-align: left;
   }
 
-  /* line 1575, custom.scss */
+  /* line 1583, custom.scss */
   #details_header {
     padding: 0.6em 25px;
   }
-  /* line 1577, custom.scss */
+  /* line 1585, custom.scss */
   #details_header h3 {
     margin: 0;
     font-size: 1.5em;
   }
 
-  /* line 1583, custom.scss */
+  /* line 1591, custom.scss */
   #forum_header, #courses_header, #content_header, #contact_header {
     margin-top: 0;
     position: fixed;
@@ -1738,79 +1749,79 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     width: calc(100% - 131px);
   }
 
-  /* line 1592, custom.scss */
+  /* line 1600, custom.scss */
   #catalogo_content, #contenidos_content, #feedback_content, #contact_content {
     margin-top: 70px;
   }
 
-  /* line 1597, custom.scss */
+  /* line 1605, custom.scss */
   .fixed_menu {
     position: fixed;
     right: 0;
   }
 
-  /* line 1604, custom.scss */
+  /* line 1612, custom.scss */
   .fixed_menu_details {
     position: fixed;
     right: 0;
     top: 4.4rem;
   }
 
-  /* line 1611, custom.scss */
+  /* line 1619, custom.scss */
   #footer p {
     text-align: center;
   }
 
-  /* line 1616, custom.scss */
+  /* line 1624, custom.scss */
   #form_search {
     position: relative;
     margin-bottom: 1.5em;
     margin-top: 0;
   }
 
-  /* line 1622, custom.scss */
+  /* line 1630, custom.scss */
   .total_padding {
     padding-left: 1.9em;
     padding-right: 1.9em;
   }
 
-  /* line 1627, custom.scss */
+  /* line 1635, custom.scss */
   .index_padding {
     padding-left: 70px;
     padding-right: 70px;
   }
 
-  /* line 1632, custom.scss */
+  /* line 1640, custom.scss */
   .right_padding {
     padding-right: 1.9em;
   }
 
-  /* line 1636, custom.scss */
+  /* line 1644, custom.scss */
   .course {
     margin-bottom: 1.9em;
   }
 
-  /* line 1640, custom.scss */
+  /* line 1648, custom.scss */
   #details_lesson {
     margin: 0 auto 1.9em;
   }
 
-  /* line 1644, custom.scss */
+  /* line 1652, custom.scss */
   .contact_form {
     margin-bottom: 20em;
   }
 
-  /* line 1648, custom.scss */
+  /* line 1656, custom.scss */
   .video_curso {
     margin-bottom: 1.9em;
   }
 
-  /* line 1652, custom.scss */
+  /* line 1660, custom.scss */
   .under_fixed_header {
     margin-top: 150px;
   }
 }
-/* line 1659, custom.scss */
+/* line 1667, custom.scss */
 .confirmacion p {
   color: #6C217F;
   font-weight: 500;
@@ -1818,7 +1829,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 }
 
 @media only screen and (min-width: 64.063em) {
-  /* line 1668, custom.scss */
+  /* line 1676, custom.scss */
   #forum_header, #courses_header, #content_header, #contact_header {
     margin-top: 0;
     position: fixed;
