@@ -1703,14 +1703,19 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     height: 230px;
   }
 
-  /* line 1562, custom.scss */
+  /* line 1561, custom.scss */
+  .externo {
+    height: auto;
+  }
+
+  /* line 1566, custom.scss */
   #details_header h3 {
     padding-bottom: 0;
     font-weight: 700;
     text-transform: uppercase;
   }
 
-  /* line 1570, custom.scss */
+  /* line 1574, custom.scss */
   .details_info p {
     font-size: 2rem;
     line-height: 1.25rem;
@@ -1719,36 +1724,36 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     font-weight: 500;
     text-align: center;
   }
-  /* line 1578, custom.scss */
+  /* line 1582, custom.scss */
   .details_info span {
     font-size: 0.9rem;
     font-weight: 100;
   }
 
-  /* line 1584, custom.scss */
+  /* line 1588, custom.scss */
   #courses, #details {
     padding-top: 0;
     margin-left: 70px;
   }
 
-  /* line 1589, custom.scss */
+  /* line 1593, custom.scss */
   #forum_header, #details_header, #courses_header, #contact_header, #content_header {
     margin-top: 70px;
     margin-bottom: 1.9em;
     text-align: left;
   }
 
-  /* line 1595, custom.scss */
+  /* line 1599, custom.scss */
   #details_header {
     padding: 0.6em 25px;
   }
-  /* line 1597, custom.scss */
+  /* line 1601, custom.scss */
   #details_header h3 {
     margin: 0;
     font-size: 1.5em;
   }
 
-  /* line 1603, custom.scss */
+  /* line 1607, custom.scss */
   #forum_header, #courses_header, #content_header, #contact_header, #details_header {
     margin-top: 0;
     position: fixed;
@@ -1758,89 +1763,89 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     width: calc(100% - 131px);
   }
 
-  /* line 1612, custom.scss */
+  /* line 1616, custom.scss */
   #catalogo_content, #contenidos_content, #feedback_content, #contact_content, #details_content {
     margin-top: 70px;
   }
 
-  /* line 1617, custom.scss */
+  /* line 1621, custom.scss */
   .fixed_menu {
     position: fixed;
     right: 0;
   }
 
-  /* line 1624, custom.scss */
+  /* line 1628, custom.scss */
   .fixed_menu_details {
     position: fixed;
     right: 0;
     top: 4.4rem;
   }
 
-  /* line 1631, custom.scss */
+  /* line 1635, custom.scss */
   #footer p {
     text-align: center;
   }
 
-  /* line 1636, custom.scss */
+  /* line 1640, custom.scss */
   #form_search {
     position: relative;
     margin-bottom: 1.5em;
     margin-top: 0;
   }
 
-  /* line 1642, custom.scss */
+  /* line 1646, custom.scss */
   .total_padding {
     padding-left: 1.9em;
     padding-right: 1.9em;
   }
 
-  /* line 1647, custom.scss */
+  /* line 1651, custom.scss */
   .index_padding {
     padding-left: 70px;
     padding-right: 70px;
   }
 
-  /* line 1652, custom.scss */
+  /* line 1656, custom.scss */
   .right_padding {
     padding-right: 1.9em;
   }
 
-  /* line 1656, custom.scss */
+  /* line 1660, custom.scss */
   .course {
     margin-bottom: 1.9em;
   }
 
-  /* line 1660, custom.scss */
+  /* line 1664, custom.scss */
   #details_lesson {
     margin: 0 auto 1.9em;
   }
 
-  /* line 1664, custom.scss */
+  /* line 1668, custom.scss */
   .contact_form {
     margin-bottom: 20em;
   }
 
-  /* line 1668, custom.scss */
+  /* line 1672, custom.scss */
   .video_curso {
     margin-bottom: 1.9em;
   }
 
-  /* line 1672, custom.scss */
+  /* line 1676, custom.scss */
   .under_fixed_header {
     margin-top: 150px;
   }
 
-  /* line 1676, custom.scss */
+  /* line 1680, custom.scss */
   #feedback_content .under_fixed_header, #contact_content .under_fixed_header {
     margin-top: 150px;
   }
 
-  /* line 1681, custom.scss */
+  /* line 1685, custom.scss */
   #details .under_fixed_header {
     margin-top: 82px;
   }
 }
-/* line 1688, custom.scss */
+/* line 1692, custom.scss */
 .confirmacion p {
   color: #6C217F;
   font-weight: 500;
@@ -1848,7 +1853,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 }
 
 @media only screen and (min-width: 64.063em) {
-  /* line 1697, custom.scss */
+  /* line 1701, custom.scss */
   #forum_header, #courses_header, #content_header, #contact_header, #details_header {
     margin-top: 0;
     position: fixed;
