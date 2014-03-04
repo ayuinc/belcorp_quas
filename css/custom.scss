@@ -1576,11 +1576,12 @@ box-shadow: -2px 0px 4px #edeff0;
 		h1{
 			font-size: 4rem;
 			line-height: 1.1;
+			margin-bottom: 1.2rem;
 		}
 		a{
 			background: transparent;
 			border: 2px solid white;
-			margin-top: 4rem;
+			margin-top: 3rem;
 			&:hover{
 				background: #FFFFFF;
 				color: #6C217F;
@@ -1589,6 +1590,48 @@ box-shadow: -2px 0px 4px #edeff0;
 	}
 }
 
+#summa{
+	margin-top: 125px;
+	min-height: 600px;
+	height: auto !important;
+	height: 600px;
+	background: url("../img/new_bg_cover.jpg");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position: relative;
+	background-position: center center;
+	padding: 70px 0 2.5em 0;
+	.headline {
+		background: rgba(102, 0, 102, 0.45);
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		text-align: left;
+		padding: 1em 2em;
+		width: 35%;
+		h1,h2,h3,h4,h5,h6{
+			color: #FFFFFF;
+			font-weight: 100;
+		}
+		h1{
+			font-size: 4rem;
+			line-height: 1.1;
+			margin-bottom: 1.2rem;
+		}
+		a{
+			background: transparent;
+			border: 2px solid white;
+			margin-top: 3rem;
+			&:hover{
+				background: #FFFFFF;
+				color: #6C217F;
+			}
+		}
+	}
+}
 
 
 @media only screen and (min-width: 40.063em) {
