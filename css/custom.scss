@@ -1523,6 +1523,13 @@ box-shadow: -2px 0px 4px #edeff0;
 #navbar{
 	position: fixed;
 	background-color: #FFFFFF;
+	width: 100%;
+	z-index: 1;
+	a{
+		line-height: 75px;
+		font-weight: 300;
+		font-size: 1.2rem;
+	}
 }
 
 
