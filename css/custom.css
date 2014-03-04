@@ -1676,12 +1676,12 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 }
 
 /* line 1535, custom.scss */
-.sub_navbar {
+#sub_navbar {
   background-color: #ECECEC;
   position: fixed;
-  background-color: #FFFFFF;
   width: 100%;
   z-index: 1;
+  top: 75px;
 }
 
 @media only screen and (min-width: 40.063em) {
