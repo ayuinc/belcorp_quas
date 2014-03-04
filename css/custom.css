@@ -1721,19 +1721,18 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 /* line 1572, custom.scss */
 #new_homepage .headline h1, #new_homepage .headline h2, #new_homepage .headline h3, #new_homepage .headline h4, #new_homepage .headline h5, #new_homepage .headline h6 {
   color: #FFFFFF;
-}
-/* line 1575, custom.scss */
-#new_homepage .headline h1, #new_homepage .headline h3 {
   font-weight: 100;
 }
-/* line 1578, custom.scss */
+/* line 1576, custom.scss */
 #new_homepage .headline h1 {
   font-size: 4rem;
+  line-height: 1.1;
 }
-/* line 1581, custom.scss */
+/* line 1580, custom.scss */
 #new_homepage .headline a {
   background: transparent;
   border: 2px solid white;
+  margin-top: 4rem;
 }
 /* line 1584, custom.scss */
 #new_homepage .headline a:hover {

@@ -1571,16 +1571,16 @@ box-shadow: -2px 0px 4px #edeff0;
 		width: 35%;
 		h1,h2,h3,h4,h5,h6{
 			color: #FFFFFF;
-		}
-		h1, h3{
 			font-weight: 100;
 		}
 		h1{
 			font-size: 4rem;
+			line-height: 1.1;
 		}
 		a{
 			background: transparent;
 			border: 2px solid white;
+			margin-top: 4rem;
 			&:hover{
 				background: #FFFFFF;
 				color: #6C217F;
