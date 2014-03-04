@@ -1548,7 +1548,7 @@ box-shadow: -2px 0px 4px #edeff0;
 }
 
 #new_homepage{
-	margin-top: 70px;
+	margin-top: 125px;
 	min-height: 600px;
 	height: auto !important;
 	height: 600px;
@@ -1561,12 +1561,17 @@ box-shadow: -2px 0px 4px #edeff0;
 	background-position: center center;
 	padding: 70px 0 2.5em 0;
 	.headline {
-		background: rgba(108, 33, 127, 0.7);
+		background: rgba(108, 33, 127, 0.6);
 		position: absolute;
-		left: 0;
-		bottom: 5em;
+		top: 0;
+		bottom: 0;
+		right: 0;
 		text-align: left;
 		padding: 1em 2em;
+		width: 36%;
+		h1,h2,h3,h4,h5,h6{
+			color: #FFFFFF;
+		}
 	}
 }
 
