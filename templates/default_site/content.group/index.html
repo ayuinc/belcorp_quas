@@ -9,7 +9,7 @@
         </div>
         <div class="large-6 columns">
           <div class="text-right">
-            <a href="#">Ingresar</a>
+            <a href="{site_url}catalogo">Ingresar <span class="icon-arrow-right"></span>
           </div>
         </div>
       </div>
@@ -46,71 +46,10 @@
       <div class="headline">
         <h1>QUÉ HACEMOS POR TI</h1>
         <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, illum!</h3>
+        <a href="#" class="small button">Ver más</a>
       </div>
     </section>
 
-
-
-
-
-    <section id="cover" style="background: url({image:url:large}); background-position: center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover">
-    {/imagenes-seccion}
-    {/exp:channel:entries}
-      <div class="row">
-        <div class="index_padding large-12 columns">
-          <div class="row">
-            <div class="medium-3 large-3 columns">
-                <a id="logo_index" href="{site_url}">
-                  <img src="{site_url}img/logo_header.png" alt="">
-                </a>
-            </div>
-            <div class="show-for-large large-9 columns">
-                <ul id="home_menu" class="inline-list">
-                  <li>
-                    <a id="destacados_menu" href="#destacados">LOS DESTACADOS</a>
-                  </li>
-                  <li>
-                    <a id="la_ucb_menu" href="#la_ucb">LA UCB</a>
-                  </li>
-                  <li>
-                    <a id="escuelas_menu" href="#escuelas_title">LAS ESCUELAS</a>
-                  </li>
-                </ul>
-            </div>
-          </div>
-          {exp:channel:entries channel="secciones" limit="1" disable="member_data|pagination" dynamic="off" category='13'}
-          <div class="row">
-            <div class="large-12 columns">
-              <h1>{title}</h1>
-              <h5>{texto-descriptivo-seccion}</h5>
-              <h5 id="view_video">Ver Video <button data-reveal-id="myModal" class="play"><span class="icon-play"></span></button></h5>
-              <div id="myModal" class="reveal-modal small" data-reveal>
-                <div class="flex-video">
-                  {if video-seccion}
-                  	{if proveedor-video-seccion=="Youtube"}
-                  		<iframe width="640" height="360" src="http://www.youtube.com/embed/{video-seccion}" frameborder="0" allowfullscreen></iframe>
-                  	{/if}
-                  {/if}
-                </div>
-                  <a class="close-reveal-modal">×</a>
-              </div>
-            </div>
-          </div>
-          {/exp:channel:entries}
-          <div class="row">
-            <div class="small-6 small-centered medium-4 medium-uncentered large-2 large-uncentered columns">
-              <a href="{site_url}catalogo" class="explore button expand">INGRESAR <span class="icon-arrow-right"></span>
-              </a>
-            </div>
-            <div class="large-8 columns"></div>
-          </div>
-        </div>
-      </div>
-      <div class="down">
-        <a href="#destacados" id="down">
-        </a>
-      </div>
-    </section>
     
     <section id="destacados">
       <div class="row">

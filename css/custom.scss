@@ -1552,7 +1552,7 @@ box-shadow: -2px 0px 4px #edeff0;
 	min-height: 600px;
 	height: auto !important;
 	height: 600px;
-	background: url("../img/bg_cover_small.jpg");
+	background: url("../img/new_bg_cover.jpg");
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -1561,7 +1561,7 @@ box-shadow: -2px 0px 4px #edeff0;
 	background-position: center center;
 	padding: 70px 0 2.5em 0;
 	.headline {
-		background: rgba(108, 33, 127, 0.6);
+		background: rgba(102, 0, 102, 0.45);
 		position: absolute;
 		top: 0;
 		bottom: 0;
@@ -1571,6 +1571,9 @@ box-shadow: -2px 0px 4px #edeff0;
 		width: 36%;
 		h1,h2,h3,h4,h5,h6{
 			color: #FFFFFF;
+		}
+		h1, h3{
+			font-weight: 100;
 		}
 	}
 }
