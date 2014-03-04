@@ -1525,6 +1525,7 @@ box-shadow: -2px 0px 4px #edeff0;
 	background-color: #FFFFFF;
 	width: 100%;
 	z-index: 1;
+	top: 0;
 	a{
 		line-height: 75px;
 		font-weight: 300;
@@ -1540,10 +1541,34 @@ box-shadow: -2px 0px 4px #edeff0;
 	top: 75px;
 	.inline-list{
 		padding-left: 5rem;
+		margin-bottom: 0;
+		line-height: 50px;
 		margin-left: 0;
 	}
 }
 
+#new_homepage{
+	margin-top: 70px;
+	min-height: 600px;
+	height: auto !important;
+	height: 600px;
+	background: url("../img/bg_cover_small.jpg");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position: relative;
+	background-position: center center;
+	padding: 70px 0 2.5em 0;
+	.headline {
+		background: rgba(108, 33, 127, 0.7);
+		position: absolute;
+		left: 0;
+		bottom: 5em;
+		text-align: left;
+		padding: 1em 2em;
+	}
+}
 
 
 
