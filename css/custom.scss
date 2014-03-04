@@ -1568,16 +1568,23 @@ box-shadow: -2px 0px 4px #edeff0;
 		right: 0;
 		text-align: left;
 		padding: 1em 2em;
-		width: 36%;
+		width: 35%;
 		h1,h2,h3,h4,h5,h6{
 			color: #FFFFFF;
 		}
 		h1, h3{
 			font-weight: 100;
 		}
+		h1{
+			font-size: 4rem;
+		}
 		a{
 			background: transparent;
-			border: 3px solid white;
+			border: 2px solid white;
+			&:hover{
+				background: #FFFFFF;
+				color: #6C217F;
+			}
 		}
 	}
 }
