@@ -427,36 +427,6 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 
 }
 
-
-#destacados {
-	position: relative;
-	padding: 3.5em 0 2.5em 0;
-	background: #ECECEC;
-	.title{
-		margin: 0;
-		line-height: 1;
-		padding-bottom: 1.25em;
-		font-weight: 700;
-	}
-	.course{
-		background-color: #FFFFFF;
-		.school{
-			text-transform: uppercase;
-		}
-	}
-	&:after {
-		content: "";
-		position: absolute;
-		bottom: -20px;
-		left: 48%;
-		width: 0;
-		height: 0;
-		border-left: 20px solid transparent;
-		border-right: 20px solid transparent;
-		border-top: 20px solid #ECECEC;
-	}
-}
-
 #la_ucb{
 	padding: 2.5em 0;
 	background: #FFFFFF;
@@ -587,6 +557,32 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		border-left: 20px solid transparent;
 		border-right: 20px solid transparent;
 		border-top: 20px solid #ECECEC;
+	}
+}
+
+
+#destacados {
+	position: relative;
+	padding: 3.5em 0 2.5em 0;
+	background: #FFFFFF;
+	.title{
+		margin: 0;
+		line-height: 1;
+		padding-bottom: 0.5em;
+		font-weight: 100;
+		font-size: 2.8em;
+		color: #6C217F;
+	}
+	h5{
+		color: #94A0AA;
+		font-weight: 100;
+		padding-bottom: 3em;
+	}
+	.course{
+		background-color: #ECECEC;
+		.school{
+			text-transform: uppercase;
+		}
 	}
 }
 
