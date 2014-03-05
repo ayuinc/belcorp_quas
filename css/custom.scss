@@ -579,9 +579,18 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		padding-bottom: 3em;
 	}
 	.course{
+		text-align: left;
 		background-color: #ECECEC;
+		box-shadow: none;
 		.school{
 			text-transform: uppercase;
+		}
+		#enter{
+			position: absolute;
+			bottom: 25px;
+			right: 25px;
+			color: #6C217F;
+			font-weight: 300;
 		}
 	}
 }
