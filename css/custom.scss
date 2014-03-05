@@ -623,6 +623,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 			color: #6C217F;
 			font-weight: 300;
 		}
+		&:hover{
+			background-color: #DADFE1;
+		}
 	}
 	a{
 		background: transparent;
