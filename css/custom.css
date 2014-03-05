@@ -651,8 +651,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 }
 /* line 581, custom.scss */
 #destacados .large-4 {
-  padding-right: 2px;
-  padding-left: 2px;
+  padding-right: 1px;
+  padding-left: 1px;
 }
 /* line 585, custom.scss */
 #destacados .course {
