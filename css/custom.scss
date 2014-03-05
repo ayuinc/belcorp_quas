@@ -624,6 +624,21 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 			font-weight: 300;
 		}
 	}
+	a{
+		background: transparent;
+		border: 2px solid #94A0AA;
+		color: #94A0AA;
+		display: block;
+		width: 120px;
+		text-align: center;
+		float: center;
+		margin: 6rem auto;
+		padding: 0.5rem 0;
+		&:hover{
+			background: #94A0AA;
+			color: #FFFFFF;
+		}
+	}
 }
 
 #escuelas{
