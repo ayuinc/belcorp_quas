@@ -582,8 +582,17 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		text-align: left;
 		background-color: #ECECEC;
 		box-shadow: none;
+		border: none;
 		.school{
 			text-transform: uppercase;
+		}
+		p{
+			color: #6C217F;
+			font-weight: 300;
+			span{
+				color: #929FAA;
+				font-weight: 100;
+			}
 		}
 		#enter{
 			position: absolute;
