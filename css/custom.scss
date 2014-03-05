@@ -638,12 +638,12 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 
 #convenios{
 	padding: 3.5em 0 2.5em 0;
-	background: #FFFFFF;
+	background: #ECECEC;
 	text-align: center;
 	.title{
 		margin: 0;
 		line-height: 1;
-		padding-bottom: 2em;
+		padding-bottom: 0.5em;
 		font-weight: 100;
 		font-size: 2.8em;
 		color: #6C217F;
@@ -651,6 +651,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	h5{
 		color: #94A0AA;
 		font-weight: 100;
+		padding-bottom: 2em;
 	}
 	a{
 		background: transparent;
