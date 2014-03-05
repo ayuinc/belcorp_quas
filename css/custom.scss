@@ -274,6 +274,23 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 }
 
 
+#down{
+	background: url(../img/arrow_down.png) no-repeat;
+	color: #fff;
+	display: block;
+	height: 40px;
+	width: 40px;
+	margin: auto;
+	-webkit-transition: 0.4s;
+	-moz-transition: 0.4s;
+	-ms-transition: 0.4s;
+	-o-transition: 0.4s;
+	transition: 0.4s;
+	&:hover{
+		background: url(../img/arrow_down_hover.png) no-repeat;
+	}
+}
+
 .publish, .explore, .video{
 	background-color: #6C217F;
 	box-shadow: 0 2px 0 #4B1658;
