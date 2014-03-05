@@ -286,7 +286,6 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	-ms-transition: 0.4s;
 	-o-transition: 0.4s;
 	transition: 0.4s;
-	cursor: pointer;
 	&:hover{
 		background: url(../img/arrow_down_hover.png) no-repeat;
 	}
