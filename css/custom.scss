@@ -1746,9 +1746,9 @@ box-shadow: -2px 0px 4px #edeff0;
 
 
 #article_header{
-	min-height: 420px;
+	min-height: 450px;
 	height: auto !important;
-	height: 420px;
+	height: 450px;
 	background: url("../img/article_header.jpg");
 	-webkit-background-size: cover;
 	background-size: cover;
@@ -1756,7 +1756,7 @@ box-shadow: -2px 0px 4px #edeff0;
 	background-position: top center;
 	color: #FFFFFF;
 	width: 100%;
-	padding-top: 125px;
+	margin-top: 125px;
 	.overlay{
 		position: absolute;
 		top: 0;
@@ -1782,6 +1782,10 @@ box-shadow: -2px 0px 4px #edeff0;
 	}
 }
 
+
+#article_content{
+	background-color: #FFFFFF;
+}
 @media only screen and (min-width: 40.063em) {
 
   	#cover {
