@@ -1968,65 +1968,69 @@ footer p {
 /* line 1789, custom.scss */
 #article_content p {
   margin-bottom: 30px;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   color: #333332;
+}
+/* line 1794, custom.scss */
+#article_content img {
+  margin-bottom: 30px;
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 1799, custom.scss */
+  /* line 1802, custom.scss */
   #cover h1 {
     line-height: 1;
     font-size: 3rem;
     text-align: left;
   }
-  /* line 1804, custom.scss */
+  /* line 1807, custom.scss */
   #cover h5 {
     font-size: 1.45rem;
     text-align: left;
   }
-  /* line 1808, custom.scss */
+  /* line 1811, custom.scss */
   #cover a {
     font-size: 1.2rem;
   }
-  /* line 1811, custom.scss */
+  /* line 1814, custom.scss */
   #cover #view_video {
     font-size: 1.2rem;
     height: 75px;
     font-weight: 100;
     color: #F1F1F1;
   }
-  /* line 1818, custom.scss */
+  /* line 1821, custom.scss */
   #cover .explore {
     width: 175px;
     float: left;
   }
-  /* line 1822, custom.scss */
+  /* line 1825, custom.scss */
   #cover .down {
     display: block;
   }
-  /* line 1825, custom.scss */
+  /* line 1828, custom.scss */
   #cover #logo_index {
     float: left;
   }
 
-  /* line 1830, custom.scss */
+  /* line 1833, custom.scss */
   .course {
     height: 230px;
   }
 
-  /* line 1834, custom.scss */
+  /* line 1837, custom.scss */
   .externo {
     height: auto;
   }
 
-  /* line 1839, custom.scss */
+  /* line 1842, custom.scss */
   #details_header h3 {
     padding-bottom: 0;
     font-weight: 700;
     text-transform: uppercase;
   }
 
-  /* line 1847, custom.scss */
+  /* line 1850, custom.scss */
   .details_info p {
     font-size: 2rem;
     line-height: 1.25rem;
@@ -2035,36 +2039,36 @@ footer p {
     font-weight: 500;
     text-align: center;
   }
-  /* line 1855, custom.scss */
+  /* line 1858, custom.scss */
   .details_info span {
     font-size: 0.9rem;
     font-weight: 100;
   }
 
-  /* line 1861, custom.scss */
+  /* line 1864, custom.scss */
   #courses, #details {
     padding-top: 0;
     margin-left: 70px;
   }
 
-  /* line 1866, custom.scss */
+  /* line 1869, custom.scss */
   #forum_header, #details_header, #courses_header, #contact_header, #content_header {
     margin-top: 70px;
     margin-bottom: 1.9em;
     text-align: left;
   }
 
-  /* line 1872, custom.scss */
+  /* line 1875, custom.scss */
   #details_header {
     padding: 0.6em 25px;
   }
-  /* line 1874, custom.scss */
+  /* line 1877, custom.scss */
   #details_header h3 {
     margin: 0;
     font-size: 1.5em;
   }
 
-  /* line 1880, custom.scss */
+  /* line 1883, custom.scss */
   #forum_header, #courses_header, #content_header, #contact_header, #details_header {
     margin-top: 0;
     position: fixed;
@@ -2074,89 +2078,89 @@ footer p {
     width: calc(100% - 131px);
   }
 
-  /* line 1889, custom.scss */
+  /* line 1892, custom.scss */
   #catalogo_content, #contenidos_content, #feedback_content, #contact_content, #details_content {
     margin-top: 70px;
   }
 
-  /* line 1894, custom.scss */
+  /* line 1897, custom.scss */
   .fixed_menu {
     position: fixed;
     right: 0;
   }
 
-  /* line 1901, custom.scss */
+  /* line 1904, custom.scss */
   .fixed_menu_details {
     position: fixed;
     right: 0;
     top: 4.4rem;
   }
 
-  /* line 1908, custom.scss */
+  /* line 1911, custom.scss */
   #footer p {
     text-align: center;
   }
 
-  /* line 1913, custom.scss */
+  /* line 1916, custom.scss */
   #form_search {
     position: relative;
     margin-bottom: 1.5em;
     margin-top: 0;
   }
 
-  /* line 1919, custom.scss */
+  /* line 1922, custom.scss */
   .total_padding {
     padding-left: 1.9em;
     padding-right: 1.9em;
   }
 
-  /* line 1924, custom.scss */
+  /* line 1927, custom.scss */
   .index_padding {
     padding-left: 70px;
     padding-right: 70px;
   }
 
-  /* line 1929, custom.scss */
+  /* line 1932, custom.scss */
   .right_padding {
     padding-right: 1.9em;
   }
 
-  /* line 1933, custom.scss */
+  /* line 1936, custom.scss */
   .course {
     margin-bottom: 1.9em;
   }
 
-  /* line 1937, custom.scss */
+  /* line 1940, custom.scss */
   #details_lesson {
     margin: 0 auto 1.9em;
   }
 
-  /* line 1941, custom.scss */
+  /* line 1944, custom.scss */
   .contact_form {
     margin-bottom: 20em;
   }
 
-  /* line 1945, custom.scss */
+  /* line 1948, custom.scss */
   .video_curso {
     margin-bottom: 1.9em;
   }
 
-  /* line 1949, custom.scss */
+  /* line 1952, custom.scss */
   .under_fixed_header {
     margin-top: 150px;
   }
 
-  /* line 1953, custom.scss */
+  /* line 1956, custom.scss */
   #feedback_content .under_fixed_header, #contact_content .under_fixed_header {
     margin-top: 150px;
   }
 
-  /* line 1958, custom.scss */
+  /* line 1961, custom.scss */
   #details .under_fixed_header {
     margin-top: 82px;
   }
 }
-/* line 1965, custom.scss */
+/* line 1968, custom.scss */
 .confirmacion p {
   color: #6C217F;
   font-weight: 500;
@@ -2164,7 +2168,7 @@ footer p {
 }
 
 @media only screen and (min-width: 64.063em) {
-  /* line 1974, custom.scss */
+  /* line 1977, custom.scss */
   #forum_header, #courses_header, #content_header, #contact_header, #details_header {
     margin-top: 0;
     position: fixed;
