@@ -1067,40 +1067,40 @@ footer p {
 }
 
 /* line 968, custom.scss */
-#forum_header, #courses_header, #contact_header, #content_header {
+#forum_header, #courses_header, #contact_header, #content_header, #new_header {
   background-color: #FFFFFF;
   box-shadow: 0 2px 0 #94A0AA;
   padding: 25px;
 }
 /* line 972, custom.scss */
-#forum_header h3, #courses_header h3, #contact_header h3, #content_header h3 {
+#forum_header h3, #courses_header h3, #contact_header h3, #content_header h3, #new_header h3 {
   font-weight: 700;
 }
 /* line 975, custom.scss */
-#forum_header h5, #courses_header h5, #contact_header h5, #content_header h5 {
+#forum_header h5, #courses_header h5, #contact_header h5, #content_header h5, #new_header h5 {
   font-weight: 100;
   color: #929FAA;
 }
 /* line 979, custom.scss */
-#forum_header .icon-grid, #courses_header .icon-grid, #contact_header .icon-grid, #content_header .icon-grid {
+#forum_header .icon-grid, #courses_header .icon-grid, #contact_header .icon-grid, #content_header .icon-grid, #new_header .icon-grid {
   color: #596c79;
   font-size: 3.55em;
   line-height: 1.4em;
 }
 /* line 984, custom.scss */
-#forum_header .icon-bubbles, #courses_header .icon-bubbles, #contact_header .icon-bubbles, #content_header .icon-bubbles {
+#forum_header .icon-bubbles, #courses_header .icon-bubbles, #contact_header .icon-bubbles, #content_header .icon-bubbles, #new_header .icon-bubbles {
   color: #596c79;
   font-size: 3.4em;
   line-height: 1.2em;
 }
 /* line 989, custom.scss */
-#forum_header .icon-book, #courses_header .icon-book, #contact_header .icon-book, #content_header .icon-book {
+#forum_header .icon-book, #courses_header .icon-book, #contact_header .icon-book, #content_header .icon-book, #new_header .icon-book {
   color: #596c79;
   font-size: 4em;
   line-height: 1.2em;
 }
 /* line 994, custom.scss */
-#forum_header .icon-mail, #courses_header .icon-mail, #contact_header .icon-mail, #content_header .icon-mail {
+#forum_header .icon-mail, #courses_header .icon-mail, #contact_header .icon-mail, #content_header .icon-mail, #new_header .icon-mail {
   color: #596c79;
   font-size: 3.9em;
   line-height: 1.2em;
@@ -2135,7 +2135,7 @@ footer p {
   }
 
   /* line 1944, custom.scss */
-  #forum_header, #details_header, #courses_header, #contact_header, #content_header {
+  #forum_header, #details_header, #courses_header, #contact_header, #content_header, #new_header {
     margin-top: 70px;
     margin-bottom: 1.9em;
     text-align: left;
@@ -2152,7 +2152,7 @@ footer p {
   }
 
   /* line 1958, custom.scss */
-  #forum_header, #courses_header, #content_header, #contact_header, #details_header {
+  #forum_header, #courses_header, #content_header, #contact_header, #details_header, #new_header {
     margin-top: 0;
     position: fixed;
     z-index: 1;
