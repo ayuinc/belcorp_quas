@@ -1954,7 +1954,7 @@ footer p {
   font-weight: 400;
 }
 /* line 1778, custom.scss */
-#article_header span {
+#article_header #sub_header {
   opacity: 0.65;
   font-size: 1.35rem;
   font-weight: 100;
