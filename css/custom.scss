@@ -1828,11 +1828,17 @@ box-shadow: -2px 0px 4px #edeff0;
 		background: rgba(0, 0, 0, 0.2);
 	}
 	.next_title{
-		border-top: 1px solid #FFFFFF;
 		color: #FFFFFF;
 		opacity: 0.65;
+		position: absolute;
 		top: 50px;
 		width: 100%;
+		h6{
+			border-top: 1px solid #FFFFFF;
+			color: #FFFFFF;
+			opacity: 0.65;
+			width: 100%;
+		}
 	}
 	.article_title{
 		position: absolute;
