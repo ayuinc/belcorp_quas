@@ -1765,6 +1765,20 @@ box-shadow: -2px 0px 4px #edeff0;
 		opacity: 1;
 		background: rgba(0, 0, 0, 0.5);
 	}
+	.article_title{
+		position: absolute;
+		width: 100%;
+		bottom: 50px;
+	}
+	h1{
+		color: #FFFFFF;
+		font-weight: 400;
+	}
+	span{
+		opacity: 0.65;
+		font-size: 1.35rem;
+		font-weight: 100;
+	}
 }
 
 @media only screen and (min-width: 40.063em) {
