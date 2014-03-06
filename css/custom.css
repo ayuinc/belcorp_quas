@@ -2152,7 +2152,7 @@ footer p {
   }
 
   /* line 1958, custom.scss */
-  #forum_header, #courses_header, #content_header, #contact_header, #details_header, #new_header {
+  #forum_header, #courses_header, #content_header, #contact_header, #details_header {
     margin-top: 0;
     position: fixed;
     z-index: 1;
