@@ -1745,6 +1745,28 @@ box-shadow: -2px 0px 4px #edeff0;
 }
 
 
+#article_header{
+	min-height: 420px;
+	height: auto !important;
+	height: 420px;
+	background: url("../img/article_header.jpg");
+	-webkit-background-size: cover;
+	background-size: cover;
+	position: relative;
+	background-position: top center;
+	color: #FFFFFF;
+	width: 100%;
+	.overlay{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 1;
+		background: rgba(0, 0, 0, 0.5);
+	}
+}
+
 @media only screen and (min-width: 40.063em) {
 
   	#cover {
