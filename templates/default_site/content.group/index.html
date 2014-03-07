@@ -46,13 +46,17 @@
           
           
           <div class="row">
-          {exp:channel:entries channel="cursos|contenidos" limit="6" dynamic="off"} 
+          {exp:channel:entries channel="cursos|tendencias" limit="6" dynamic="off" orderby="random"} 
             <div class="large-4 columns">
               <div class="course">
-                <p>CURSO <span>//ESCUELA DE VENTAS</span></p>
+                <p>{channel} <span>// Escuela de {categories show_group="1"}{category_name} {/categories}</span></p>
                 <!--<p>TENDENCIAS <span>//CULTURA</span></p>-->
                 <h3>{title}</h3>
+                {if channel=='Tendencias'} 
+                <a href="{site_url}seccion/{url_title}">
+                {if:else}
                 <a href="{site_url}catalogo/curso/{url_title}">
+                {/if}
                   <span id="enter">Entrar <img src="{site_url}img/enter_arrow.png" alt=""></span>
                 </a>
               </div>
@@ -73,19 +77,19 @@
           <h5>La columna vertebral de la UCB está compuesta por cuatro escuelas. Exploralas y aprende sobre todos los temás clave de nuestro negocio.</h5>
           <div class="row">
             <div class="large-3 columns">
-                <div class="course ventas">
+                <div class="course belcorp">
                   <h5>ESCUELA DE VENTAS</h5>
                 </div>
                 <a href="#" class="small button">ENTRAR</a>
             </div>
             <div class="large-3 columns">
-                <div class="course negocios">
+                <div class="course ventas">
                   <h5>ESCUELA DE NEGOCIOS</h5>
                 </div>
                 <a href="#" class="small button">ENTRAR</a>
             </div>
             <div class="large-3 columns">
-                <div class="course liderazgo">
+                <div class="course comercial">
                   <h5>ESCUELA DE LIDERAZGO Y CULTURA</h5>
                 </div>
                 <a href="#" class="small button">ENTRAR</a>
