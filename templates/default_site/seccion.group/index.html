@@ -17,9 +17,16 @@
     </section>
     
     {embed="includes/menu-homepage"}
-    {imagenes-seccion}
-    <section id="article_header" style="background: url('{image:url:large}') no-repeat; background-size: cover;background-position: center center;">
-    {/imagenes-seccion}
+    {if channel=='Tendenciasecciones'}
+	    {imagen-recurso}
+	    <section id="article_header" style="background: url('{image:url:large}') no-repeat; background-size: cover;background-position: center center;">
+	    {/imagen-recurso}
+    {if:else}
+	    {imagenes-seccion}
+	    <section id="article_header" style="background: url('{image:url:large}') no-repeat; background-size: cover;background-position: center center;">
+	    {/imagenes-seccion}
+    {/if}
+    
       <div class="overlay"></div>
       <div class="article_title">
         <div class="row">
