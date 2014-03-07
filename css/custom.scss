@@ -1699,7 +1699,17 @@ box-shadow: -2px 0px 4px #edeff0;
 		padding-left: 5rem;
 		margin-bottom: 0;
 		line-height: 50px;
-		margin-left: 0;
+		margin: auto;
+		width: 560px;
+		li{
+			a{
+				color: #596c79;
+				font-weight: 300;
+				&:hover{
+					color: #6C217F;
+				}
+			}
+		}
 	}
 }
 
