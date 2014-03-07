@@ -1527,8 +1527,9 @@ z-index: 1002;
 				-o-transition-duration: 0.2s;
 				transition-duration: 0.2s;
 				&:hover{
-					border-bottom: 2px solid #596C79;
+				font-weight: 600;
 				}
+
 			}
 		}
 	}
