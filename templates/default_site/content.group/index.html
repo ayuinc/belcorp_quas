@@ -46,12 +46,12 @@
           
           
           <div class="row">
-          {exp:channel:entries channel="cursos" limit="6" dynamic="off"} 
+          {exp:channel:entries channel="cursos|contenidos" limit="6" dynamic="off"} 
             <div class="large-4 columns">
               <div class="course">
                 <p>CURSO <span>//ESCUELA DE VENTAS</span></p>
                 <!--<p>TENDENCIAS <span>//CULTURA</span></p>-->
-                <h3>{Title}</h3>
+                <h3>{title}</h3>
                 <a href="{site_url}catalogo/curso/{url_title}">
                   <span id="enter">Entrar <img src="{site_url}img/enter_arrow.png" alt=""></span>
                 </a>
