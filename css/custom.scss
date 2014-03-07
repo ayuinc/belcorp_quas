@@ -2,10 +2,10 @@ $liderazgo: #72D100;
 $marcas: #FF0000;
 $planeamiento: #72D100;
 $ventas: #FF0066;
-$innovacion: #FF7500;
+$innovacion: #6C217F;
 $belcorp: #6C217F;
 $comercial: #00BCED;
-
+$negocios: #00BCED;
 html, body {
   	height: 100%;
 	font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -937,6 +937,15 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 
 .belcorp{
 	border-right: 25px solid $belcorp;	
+	.school{
+		.icon-school{
+			color: $belcorp;
+		}
+	}
+}
+
+.negocios{
+	border-right: 25px solid $negocios;	
 	.school{
 		.icon-school{
 			color: $belcorp;
