@@ -36,24 +36,24 @@
     <script>
     $(document).ready(function(){
 
-      $( "#down" ).click(function( event ) {
-        event.preventDefault();
-          $("html, body").animate({scrollTop:$("#destacados").offset().top});
-      });
-
       $( "#destacados_menu" ).click(function( event ) {
         event.preventDefault();
           $("html, body").animate({scrollTop:$("#destacados").offset().top});
       });
 
-      $( "#la_ucb_menu" ).click(function( event ) {
-        event.preventDefault();
-          $("html, body").animate({scrollTop:$("#la_ucb").offset().top});
-      });
-
       $( "#escuelas_menu" ).click(function( event ) {
         event.preventDefault();
-          $("html, body").animate({scrollTop:$("#escuelas_title").offset().top});
+          $("html, body").animate({scrollTop:$("#escuelas").offset().top});
+      });
+
+      $( "#summa_menu" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:$("#summa").offset().top});
+      });
+
+      $( "#convenios_menu" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:$("#convenios").offset().top});
       });
 
       $("#school_panel_trigger").on("click", function () {
