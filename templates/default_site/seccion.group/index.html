@@ -1,3 +1,4 @@
+{exp:channel:entries channel="secciones" limit="1" disable="pagination"}
 {embed="includes/header"} 
 
     <section id="navbar">
@@ -14,42 +15,23 @@
         </div>
       </div>
     </section>
-    <section id="sub_navbar">      
-      <div class="row">
-        <div class="large-6 large-centered columns">
-          <ul class="inline-list">
-            <li>
-              <a href="#">UCB</a>
-            </li>
-            <li>
-              <a href="#">Destacados</a>
-            </li>
-            <li>
-              <a href="#">Escuelas</a>
-            </li>
-            <li>
-              <a href="#">Summa</a>
-            </li>
-            <li>
-              <a href="#">Convenios</a>
-            </li>
-            <li>
-              <a href="#">Contáctanos</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
     
-    <section id="article_header">
+    {embed="includes/menu-homepage"}
+    {imagenes-seccion}
+    <section id="article_header" style="background: url('{image:url:large}') no-repeat; background-size: cover;background-position: center center;">
+    {/imagenes-seccion}
       <div class="overlay"></div>
       <div class="article_title">
         <div class="row">
           <div class="large-8 large-centered columns">
-            <h1>Composición Fotográfica</h1>
-            <span id="sub_header">Lorem ipsum dolor sit amet, consectetur adipisicing elit quia.</span>
-            <img src="{site_url}img/profile_img.png" alt="">
-            <p>Sean Kim en <span>Escuela Comercial</span></p>
+            <h1>{title}</h1>
+            <span id="sub_header">{texto-descriptivo-seccion}</span>
+            <!--{imagenes-seccion}
+            	<img src="{image:url:large}" alt="{title}">
+            {/imagenes-seccion}-->
+            {if autor-recurso}
+            	<p>Publicado por <span>{autor-recurso}</span></p>
+            {/if}
           </div>
         </div>
       </div>
@@ -58,28 +40,20 @@
       <div class="row">
         <div class="large-8 large-centered columns">
           
-          <p>Over the years, I’ve seen designers get discouraged because they worked hard to create a better-designed competitor to an incumbent’s product, and yet failed to get traction. The result can be the demoralizing, erroneous conclusion that design doesn’t matter.</p>
-
-          <p>These startups may be launching a social network, marketplace, auction system, classified listing site, advertising network, or payment system. The common element between these products is that they have complementary network effects. This is a situation where a product is more valuable as more people use it, and in many of these examples, you also have a two-way marketplace. For example, buyers want to go to where the sellers are, and sellers want to go to where buyers are posting things for sale. Merchants want to accept payments from as many buyers as possible, and customers use payment methods accepted by merchants.</p>
-
-          <p>The designer may work tirelessly to create an elegant, highly-crafted auction site, but that isn’t sufficient for success when the incumbent you are competing against has strong network effects in their favor. In addition to having a great product, you need a distribution strategy that can solve your “chicken and egg” or “cold start” problem.</p>
-
-          <p>Looking back over the last 15 years, we can see companies using various techniques to solve this distribution problem against incumbents with strong network effects in their favor:</p>
-
-          <p><b>1. Start on the supply side, then use supply to generate press to create demand</b></p>
-
-          <p>Brian Chesky, the CEO of Airbnb, described how they went about getting their marketplace for home rentals off the ground. Having a site that was nicer than Craigslist was not sufficient. To get distribution, they started on the supply side, finding supply for housing in situations where there was a supply/demand imbalance, e.g. when a conference was coming to a town. Then, they used this supply to generate press, which in turn stimulated demand. Airbnb continues to do this today by getting unique locations, and then having press write stories about them.</p>
-
-          <p><b>2. Start with a niche, then expand out from there</b></p>
-
-          <p>Chris Dixon lists several examples of companies that used the technique of starting small and focused, then using that momentum to expand. He called this a Bowling Pin strategy:</p>
-
-          <img src="{site_url}img/img_example.png" alt="">
-
-          <p>Many designers want to launch a well designed product and have it spread by word of mouth. It feels like the best product should just win. But in situations where the product is facing an incumbent and there are complimentary network effects, it’s simply not enough to launch a well designed product. Peter Thiel, again, in his lecture about distribution: “[People talk about] the product is so good it sells itself.</p>
+          {if contenido-recurso}
+          	{contenido-recurso}
+          {/if}
+          
+          {if contenido-seccion}	
+          	{contenido-seccion}
+          {/if}
+          
         </div>
       </div>
     </section>
+{/exp:channel:entries}     
+    
+{exp:channel:entries channel="secciones" limit="1" disable="pagination" offset="1"}    
     <section id="next_article">
       <div class="overlay"></div>
       <div class="next_title">
@@ -92,12 +66,18 @@
       <div class="article_title">
         <div class="row">
           <div class="large-8 large-centered columns">
-            <h1>Design Thinking</h1>
-            <span id="sub_header">Lorem ipsum dolor sit amet, consectetur adipisicing elit quia.</span>
-            <img src="{site_url}img/profile_img.png" alt="">
-            <p>Jack Dorsey en <span>Escuela Belcorp</span></p>
+            <h1>{title}</h1>
+            <span id="sub_header">{texto-descriptivo-seccion}</span>
+            {imagenes-seccion}
+            	<img src="{image:url:large}" alt="{title}">
+            {/imagenes-seccion}
+            {if autor-recurso}
+            	<p>Publicado por <span>{autor-recurso}</span></p>
+            {/if}
           </div>
         </div>
       </div>
     </section>
+{/exp:channel:entries}
+ 
 {embed="includes/footer"}
