@@ -756,50 +756,6 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 }
 
 
-.orbit-container .orbit-prev, .orbit-container .orbit-next {
-  background: none;
-}
-
-.orbit-container .orbit-prev:hover, .orbit-container .orbit-next:hover {
-  background: none;
-}
-
-.orbit-bullets-container{
-	display: none;
-}
-
-.orbit-prev, .orbit-next{
-  background: none;
-}
-
-.orbit-prev:hover, .orbit-next:hover{
-  background: none;
-}
-
-.orbit-container .orbit-prev > span {
-  border-right-color: #6C217F;
-}
-
-.orbit-container .orbit-prev:hover > span {
-  border-right-color: #6C217F; 
-}
-
-.orbit-container .orbit-next > span {  
-  border-left-color: #6C217F;
-}
-
-.orbit-container .orbit-next:hover > span {
-  border-left-color: #6C217F; 
-}
-
-.orbit-container .orbit-timer {
-  display: none;
-}
-
-.orbit-container .orbit-slide-number {
-  display: none;
-}
-
 
 
 
