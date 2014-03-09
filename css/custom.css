@@ -795,7 +795,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   color: #94A0AA;
 }
 /* line 704, custom.scss */
-#escuelas .course h3 {
+#escuelas .course h5 {
   color: #596c79;
   font-weight: 300;
 }
