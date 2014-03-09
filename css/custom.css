@@ -1728,9 +1728,9 @@ footer p {
 /* line 1576, custom.scss */
 .heading-pocket .inline-list li a {
   color: #596c79;
-  font-weight: 300;
+  font-weight: 100;
   font-size: 0.9rem;
-  line-height: 2.5;
+  line-height: 1.5rem;
   -webkit-transition-duration: 0.4s;
   -moz-transition-duration: 0.4s;
   -o-transition-duration: 0.4s;
@@ -1738,7 +1738,7 @@ footer p {
 }
 /* line 1585, custom.scss */
 .heading-pocket .inline-list li a:hover {
-  font-weight: 600;
+  color: #6C217F;
 }
 
 /* line 1595, custom.scss */
