@@ -32,6 +32,7 @@ p{
 	font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-style: normal;
 	font-weight: 100;
+	line-height: 125%;
 }
 
 .clearfix{
@@ -1277,6 +1278,9 @@ footer{
 	box-shadow: 0 2px 0 #94A0AA;
 	padding: 25px;
 	margin-bottom: 1.25em;
+	h3{
+		font-size: 1.25rem;
+	}
 }
 
 .syllabus {
@@ -2074,7 +2078,7 @@ box-shadow: -2px 0px 4px #edeff0;
 	#details_header{
 		h3{
 			padding-bottom: 0;
-			font-weight: 700;
+			font-weight: 300;
 			text-transform: uppercase;
 		}
 	}
