@@ -1917,7 +1917,6 @@ footer p {
 }
 /* line 1746, custom.scss */
 #new_homepage .headline {
-  padding-top: 10%;
   background: rgba(102, 0, 102, 0.45);
   position: absolute;
   top: 0;
@@ -1926,6 +1925,7 @@ footer p {
   text-align: left;
   padding: 1em 2em;
   width: 35%;
+  padding-top: 10%;
 }
 /* line 1756, custom.scss */
 #new_homepage .headline h1, #new_homepage .headline h2, #new_homepage .headline h3, #new_homepage .headline h4, #new_homepage .headline h5, #new_homepage .headline h6 {

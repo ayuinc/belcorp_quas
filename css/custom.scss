@@ -1744,7 +1744,6 @@ box-shadow: -2px 0px 4px #edeff0;
 	background-position: center center;
 	padding: 70px 0 2.5em 0;
 	.headline {
-		padding-top: 10%;
 		background: rgba(102, 0, 102, 0.45);
 		position: absolute;
 		top: 0;
@@ -1753,6 +1752,7 @@ box-shadow: -2px 0px 4px #edeff0;
 		text-align: left;
 		padding: 1em 2em;
 		width: 35%;
+		padding-top: 10%;
 		h1,h2,h3,h4,h5,h6{
 			color: #FFFFFF;
 			font-weight: 100;
