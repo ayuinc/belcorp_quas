@@ -635,7 +635,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		}
 		h3{
 			text-transform: uppercase;
-			font-size: 1.5rem;
+			font-size: 1.2rem;
+			line-height: 125%;
 		}
 		p{
 			color: #6C217F;
@@ -654,7 +655,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 			bottom: 25px;
 			right: 25px;
 			color: #6C217F;
-			font-weight: 300;
+			font-weight: 100;
+			font-size: 0.95rem;
 		}
 		&:hover{
 			background-color: #DADFE1;
@@ -1701,8 +1703,8 @@ box-shadow: -2px 0px 4px #edeff0;
 	top: 0;
 	a{
 		line-height: 75px;
-		font-weight: 300;
-		font-size: 1.2rem;
+		font-weight: 100;
+		font-size: 1.1rem;
 	}
 }
 
