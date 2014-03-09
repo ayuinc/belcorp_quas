@@ -1770,6 +1770,7 @@ box-shadow: -2px 0px 4px #edeff0;
 			font-weight: 300;
 			-webkit-font-smoothing: antialiased;
 			line-height: 120%;
+			font-size: 1.275rem;
 		}
 		a{
 			background: transparent;
@@ -1812,9 +1813,19 @@ box-shadow: -2px 0px 4px #edeff0;
 			font-weight: 100;
 		}
 		h1{
-			font-size: 4rem;
-			line-height: 1.1;
+			font-size: 3rem;
+			line-height: 100%;
 			margin-bottom: 1.2rem;
+			text-transform: uppercase;
+			font-weight: 100;
+			-webkit-font-smoothing: antialiased;
+		}
+		h4{
+			color: #FFFFFF;
+			font-weight: 300;
+			-webkit-font-smoothing: antialiased;
+			line-height: 120%;
+			font-size: 1.275rem;
 		}
 		a{
 			background: transparent;
