@@ -1877,7 +1877,7 @@ footer p {
 /* line 1709, custom.scss */
 #sub_navbar {
   background-color: #ECECEC;
-  box-shadow: 0 2px 1px 0px #ADADAD;
+  box-shadow: 0 1px 1px 0px #C2C2C2;
   position: fixed;
   width: 100%;
   z-index: 1;
