@@ -1917,7 +1917,7 @@ footer p {
 .shadow_trigger {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 122px;
   width: 100%;
   text-align: center;
   height: 1px;
