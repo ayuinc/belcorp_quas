@@ -864,8 +864,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		// padding: 0.5em;
 		span{
 			color: #6C217F;
-			font-size: 0.8rem;
-			font-weight: 500;
+			font-size: 0.75rem;
+			font-weight: 300;
 		}
 		.icon-school{
 			position: absolute;
@@ -873,7 +873,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		}
 	}
 	h5{
-		font-weight: 700;
+		font-weight: 300;
 		text-transform:uppercase;
 		color: #596c79;
 		margin-bottom: 0;
@@ -885,14 +885,16 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		}
 	}
 	h6{
-		font-weight: 400;
+		font-weight: 100;
 		text-transform: uppercase;
 		color: #596c79;
-		font-size: 0.95rem;
+		font-size: 0.85rem;
 		margin-top: 0;
 	}
 	p{
 		color: #929FAA;
+		line-height: 125%;
+		margin-top: 1rem;
 	}
 	#fuente{
 		a{
@@ -1060,7 +1062,7 @@ footer{
 
 
 .accordion dd > a {
-	background: #6C217F;
+	background: #596c79;
 	color: #FFFFFF;
 	font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-style: normal;
@@ -1071,7 +1073,7 @@ footer{
 }
 
 .accordion dd > a:hover {
-	background: #6C217F;
+	background: #596c79;
 }
 
 #details_lesson {
@@ -1131,18 +1133,18 @@ footer{
 		position: relative;
 		border: none;
 		a{
-			background: #9E79B8;
-			border-bottom: 1px solid #AC89C5;
+			background: #909DA8;
+			border-bottom: 1px solid #A4B1BD;
 			-webkit-transition-duration: 0.2s;
 			-moz-transition-duration: 0.2s;
 			-o-transition-duration: 0.2s;
 			transition-duration: 0.2s;
 			font-size: 0.9em;
 			&:hover{
-				background: #AC89C5;
+				background: #A4B1BD;
 			}
 			&.selected{
-				background: #AC89C5;
+				background: #A4B1BD;
 		}
 		}
 		.icon-school{
@@ -2006,10 +2008,16 @@ box-shadow: -2px 0px 4px #edeff0;
 
 
 #new_header{
-	padding: 25px 15px;
+	padding: 25px;
 	h2{
 		margin-bottom: 2.5rem;
 		font-weight: 400;
+		text-transform: uppercase;
+		margin-top: 0;
+	}
+	h6{
+		margin: 0;
+		font-size: 1.125rem;
 	}
 }
 .menu-nav{
