@@ -702,10 +702,12 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		text-transform: uppercase;
 		span{
 			color: #94A0AA;
+			font-size: 0.7rem;
 		}
 		h5{
 			color: #596c79;
 			font-weight: 300;
+			font-size: 1rem;
 		}
 	}
 	.escuelas_box{
@@ -1865,7 +1867,7 @@ box-shadow: -2px 0px 4px #edeff0;
 		right: 0;
 		bottom: 0;
 		opacity: 1;
-		background: rgba(0, 0, 0, 0.5);
+		background: rgba(0, 0, 0, 0.2);
 	}
 	.article_title{
 		position: absolute;
