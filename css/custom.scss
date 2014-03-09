@@ -1733,6 +1733,9 @@ box-shadow: -2px 0px 4px #edeff0;
 				&:hover{
 					color: #6C217F;
 				}
+				&.active{
+					color: #6C217F;					
+				}
 			}
 		}
 	}

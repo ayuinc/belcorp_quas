@@ -40,21 +40,29 @@
       $( "#destacados_menu" ).click(function( event ) {
         event.preventDefault();
           $("html, body").animate({scrollTop:$("#destacados").offset().top -122});
+          $("#sub_navbar .inline-list li a").removeClass("active");
+          $(this).addClass("active");
       });
 
       $( "#escuelas_menu" ).click(function( event ) {
         event.preventDefault();
           $("html, body").animate({scrollTop:$("#escuelas").offset().top -122});
+          $("#sub_navbar .inline-list li a").removeClass("active");
+          $(this).addClass("active");
       });
 
       $( "#summa_menu" ).click(function( event ) {
         event.preventDefault();
           $("html, body").animate({scrollTop:$("#summa").offset().top -122});
+          $("#sub_navbar .inline-list li a").removeClass("active");
+          $(this).addClass("active");
       });
 
       $( "#convenios_menu" ).click(function( event ) {
         event.preventDefault();
           $("html, body").animate({scrollTop:$("#convenios").offset().top -122});
+          $("#sub_navbar .inline-list li a").removeClass("active");
+          $(this).addClass("active");
       });
 
       $("#school_panel_trigger").on("click", function () {
