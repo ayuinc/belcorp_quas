@@ -53,7 +53,11 @@
                 <!--<p>TENDENCIAS <span>//CULTURA</span></p>-->
                 <h3>{title}</h3>
                 {if channel=='Tendencias'} 
-                <a href="{site_url}seccion/{url_title}">
+                	{if link-recurso}
+						<a href="{link-recurso}" target="_blank">
+					{if:else}
+						<a href="{site_url}seccion/{url_title}">
+                	{/if}
                 {if:else}
                 <a href="{site_url}catalogo/curso/{url_title}">
                 {/if}
@@ -63,7 +67,7 @@
             </div>
            {/exp:channel:entries}  
           </div>
-          <a href="#" id="more_index" class="small button">VER MÁS</a>
+          <a href="{site_url}catalogo" id="more_index" class="small button">VER MÁS</a>
           <div id="down"></div>
 
         </div>
@@ -73,23 +77,29 @@
     <section id="escuelas">
       <div class="row">
         <div class="index_padding large-12 columns">
-          <h3 class="title">NUESTRAS ESCUELAS</h3>
-          <h5>La columna vertebral de la UCB está compuesta por cuatro escuelas. Exploralas y aprende sobre todos los temás clave de nuestro negocio.</h5>
+        <div class="row">
+        	<div class="large-10 large-centered columns">
+	        {exp:channel:entries channel="secciones" limit="1" entry_id="194" dynamic="off"}
+	          <h3 class="title">{title}</h3>
+	          <h5>{texto-descriptivo-seccion}</h5>
+	        {/exp:channel:entries} 
+        	</div>
+        </div> 
           <div class="row">
             <div class="large-3 columns">
-                <div class="course ventas">
+                <div class="course belcorp">
                   <h5>ESCUELA DE VENTAS</h5>
                 </div>
                 <a href="#" class="small button">ENTRAR</a>
             </div>
             <div class="large-3 columns">
-                <div class="course negocios">
+                <div class="course ventas">
                   <h5>ESCUELA DE NEGOCIOS</h5>
                 </div>
                 <a href="#" class="small button">ENTRAR</a>
             </div>
             <div class="large-3 columns">
-                <div class="course liderazgo y cultura">
+                <div class="course comercial">
                   <h5>ESCUELA DE LIDERAZGO Y CULTURA</h5>
                 </div>
                 <a href="#" class="small button">ENTRAR</a>
@@ -106,13 +116,15 @@
       </div> 
     </section>
 
+	{exp:channel:entries channel="secciones" limit="1" entry_id="195" dynamic="off"}
     <section id="summa">
       <div class="headline">
-        <h1>SUMMA A TU TALENTO</h1>
-        <h4>sUMMA busca alinear metas individuales con la estrategia de Belcorp, orientando el desempeño y guiando los planes de desarrollo hacia acciones clave que contribuyan al logro de objetivos, Aquí encontrarás todo lo relacionado al proceso.</h4>
-        <a href="#" class="small button">LEER MÁS</a>
+        <h1>{title}</h1>
+        <h4>{texto-descriptivo-seccion}</h4>
+        <a href="{site_url}seccion/{url_title}" class="small button">LEER MÁS</a>
       </div>
     </section>
+    {/exp:channel:entries}
     
 <!--     <section id="la_ucb">
       <div class="row">
@@ -207,11 +219,20 @@
     <section id="convenios">
       <div class="row">
         <div class="index_padding large-9 large-centered columns">
-          <h3 class="title">CONVENIOS</h3>
-          <h5>Belcorp y la UCB quieren que sus colaboradores se desarrollen y logren sus objetivos, es por eso que hemos creado una red de aliados con los cuales tenemos convenios de diferentes indoles.</h5>
+        
+		  {exp:channel:entries channel="secciones" limit="1" entry_id="196" dynamic="off"}
+          <div class="row">
+	          <div class="large-10 large-centered columns">
+		          <h3 class="title">{title}</h3>
+		          <h5>{texto-descriptivo-seccion}</h5>
+	          </div>
+          </div>
+          {/exp:channel:entries} 
           <img src="{site_url}img/convenios.png" alt="">
-          <a href="#" class="small button">LEER MÁS</a>
-        </div>
+          {exp:channel:entries channel="secciones" limit="1" entry_id="196" dynamic="off"}
+          <a href="{site_url}seccion/{url_title}" class="small button">LEER MÁS</a>
+          {/exp:channel:entries} 
+        </div>   
       </div> 
     </section>
 
