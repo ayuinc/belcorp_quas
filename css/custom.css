@@ -1917,6 +1917,7 @@ footer p {
 }
 /* line 1746, custom.scss */
 #new_homepage .headline {
+  padding-top: 10%;
   background: rgba(102, 0, 102, 0.45);
   position: absolute;
   top: 0;
@@ -1926,19 +1927,28 @@ footer p {
   padding: 1em 2em;
   width: 35%;
 }
-/* line 1755, custom.scss */
+/* line 1756, custom.scss */
 #new_homepage .headline h1, #new_homepage .headline h2, #new_homepage .headline h3, #new_homepage .headline h4, #new_homepage .headline h5, #new_homepage .headline h6 {
   color: #FFFFFF;
   font-weight: 100;
 }
-/* line 1759, custom.scss */
+/* line 1760, custom.scss */
 #new_homepage .headline h1 {
-  font-size: 4rem;
-  line-height: 1.1;
+  font-size: 3rem;
+  line-height: 100%;
   margin-bottom: 1.2rem;
   text-transform: uppercase;
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
 }
-/* line 1765, custom.scss */
+/* line 1768, custom.scss */
+#new_homepage .headline h4 {
+  color: #FFFFFF;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  line-height: 120%;
+}
+/* line 1774, custom.scss */
 #new_homepage .headline a {
   background: transparent;
   border: 2px solid white;
@@ -1946,13 +1956,13 @@ footer p {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-/* line 1771, custom.scss */
+/* line 1780, custom.scss */
 #new_homepage .headline a:hover {
   background: #FFFFFF;
   color: #6C217F;
 }
 
-/* line 1779, custom.scss */
+/* line 1788, custom.scss */
 #summa {
   min-height: 600px;
   height: auto !important;
@@ -1966,7 +1976,7 @@ footer p {
   background-position: center center;
   padding: 70px 0 2.5em 0;
 }
-/* line 1791, custom.scss */
+/* line 1800, custom.scss */
 #summa .headline {
   background: rgba(102, 0, 102, 0.45);
   position: absolute;
@@ -1978,18 +1988,18 @@ footer p {
   width: 35%;
   padding-top: 2rem;
 }
-/* line 1801, custom.scss */
+/* line 1810, custom.scss */
 #summa .headline h1, #summa .headline h2, #summa .headline h3, #summa .headline h4, #summa .headline h5, #summa .headline h6 {
   color: #FFFFFF;
   font-weight: 100;
 }
-/* line 1805, custom.scss */
+/* line 1814, custom.scss */
 #summa .headline h1 {
   font-size: 4rem;
   line-height: 1.1;
   margin-bottom: 1.2rem;
 }
-/* line 1810, custom.scss */
+/* line 1819, custom.scss */
 #summa .headline a {
   background: transparent;
   border: 2px solid white;
@@ -1997,13 +2007,13 @@ footer p {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-/* line 1816, custom.scss */
+/* line 1825, custom.scss */
 #summa .headline a:hover {
   background: #FFFFFF;
   color: #6C217F;
 }
 
-/* line 1825, custom.scss */
+/* line 1834, custom.scss */
 #article_header {
   min-height: 450px;
   height: auto !important;
@@ -2017,7 +2027,7 @@ footer p {
   width: 100%;
   margin-top: 125px;
 }
-/* line 1837, custom.scss */
+/* line 1846, custom.scss */
 #article_header .overlay {
   position: absolute;
   top: 0;
@@ -2027,19 +2037,19 @@ footer p {
   opacity: 1;
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 1846, custom.scss */
+/* line 1855, custom.scss */
 #article_header .article_title {
   position: absolute;
   width: 100%;
   bottom: 50px;
 }
-/* line 1851, custom.scss */
+/* line 1860, custom.scss */
 #article_header h1 {
   color: #FFFFFF;
   font-weight: 400;
   margin-bottom: 0;
 }
-/* line 1856, custom.scss */
+/* line 1865, custom.scss */
 #article_header #sub_header {
   opacity: 0.65;
   font-size: 1.35rem;
@@ -2047,34 +2057,34 @@ footer p {
   display: block;
   margin-bottom: 0.8rem;
 }
-/* line 1863, custom.scss */
+/* line 1872, custom.scss */
 #article_header p {
   opacity: 0.65;
   display: inline-block;
   font-weight: 100;
 }
-/* line 1867, custom.scss */
+/* line 1876, custom.scss */
 #article_header p span {
   text-decoration: underline;
 }
 
-/* line 1874, custom.scss */
+/* line 1883, custom.scss */
 #article_content {
   background-color: #FFFFFF;
   padding: 5rem 0;
 }
-/* line 1877, custom.scss */
+/* line 1886, custom.scss */
 #article_content p {
   margin-bottom: 30px;
   font-size: 1.25rem;
   color: #333332;
 }
-/* line 1882, custom.scss */
+/* line 1891, custom.scss */
 #article_content img {
   margin-bottom: 30px;
 }
 
-/* line 1887, custom.scss */
+/* line 1896, custom.scss */
 #next_article {
   min-height: 400px;
   height: auto !important;
@@ -2087,7 +2097,7 @@ footer p {
   color: #FFFFFF;
   width: 100%;
 }
-/* line 1898, custom.scss */
+/* line 1907, custom.scss */
 #next_article .overlay {
   position: absolute;
   top: 0;
@@ -2097,7 +2107,7 @@ footer p {
   opacity: 1;
   background: rgba(0, 0, 0, 0.2);
 }
-/* line 1907, custom.scss */
+/* line 1916, custom.scss */
 #next_article .next_title {
   color: #FFFFFF;
   opacity: 0.65;
@@ -2105,7 +2115,7 @@ footer p {
   top: 100px;
   width: 100%;
 }
-/* line 1913, custom.scss */
+/* line 1922, custom.scss */
 #next_article .next_title h6 {
   border-top: 1px solid #FFFFFF;
   color: #FFFFFF;
@@ -2113,19 +2123,19 @@ footer p {
   width: 100%;
   font-weight: 300;
 }
-/* line 1921, custom.scss */
+/* line 1930, custom.scss */
 #next_article .article_title {
   position: absolute;
   width: 100%;
   bottom: 50px;
 }
-/* line 1926, custom.scss */
+/* line 1935, custom.scss */
 #next_article h1 {
   color: #FFFFFF;
   font-weight: 400;
   margin-bottom: 0;
 }
-/* line 1931, custom.scss */
+/* line 1940, custom.scss */
 #next_article #sub_header {
   opacity: 0.65;
   font-size: 1.35rem;
@@ -2133,87 +2143,87 @@ footer p {
   display: block;
   margin-bottom: 0.8rem;
 }
-/* line 1938, custom.scss */
+/* line 1947, custom.scss */
 #next_article p {
   opacity: 0.65;
   display: inline-block;
   font-weight: 100;
 }
-/* line 1942, custom.scss */
+/* line 1951, custom.scss */
 #next_article p span {
   text-decoration: underline;
 }
 
-/* line 1950, custom.scss */
+/* line 1959, custom.scss */
 #new_header {
   padding: 25px 15px;
 }
-/* line 1952, custom.scss */
+/* line 1961, custom.scss */
 #new_header h2 {
   margin-bottom: 2.5rem;
   font-weight: 400;
 }
 
-/* line 1959, custom.scss */
+/* line 1968, custom.scss */
 .menu-nav nav span {
   color: #FFFFFF;
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 1969, custom.scss */
+  /* line 1978, custom.scss */
   #cover h1 {
     line-height: 1;
     font-size: 3rem;
     text-align: left;
   }
-  /* line 1974, custom.scss */
+  /* line 1983, custom.scss */
   #cover h5 {
     font-size: 1.45rem;
     text-align: left;
   }
-  /* line 1978, custom.scss */
+  /* line 1987, custom.scss */
   #cover a {
     font-size: 1.2rem;
   }
-  /* line 1981, custom.scss */
+  /* line 1990, custom.scss */
   #cover #view_video {
     font-size: 1.2rem;
     height: 75px;
     font-weight: 100;
     color: #F1F1F1;
   }
-  /* line 1988, custom.scss */
+  /* line 1997, custom.scss */
   #cover .explore {
     width: 175px;
     float: left;
   }
-  /* line 1992, custom.scss */
+  /* line 2001, custom.scss */
   #cover .down {
     display: block;
   }
-  /* line 1995, custom.scss */
+  /* line 2004, custom.scss */
   #cover #logo_index {
     float: left;
   }
 
-  /* line 2000, custom.scss */
+  /* line 2009, custom.scss */
   .course {
     height: 230px;
   }
 
-  /* line 2004, custom.scss */
+  /* line 2013, custom.scss */
   .externo {
     height: auto;
   }
 
-  /* line 2009, custom.scss */
+  /* line 2018, custom.scss */
   #details_header h3 {
     padding-bottom: 0;
     font-weight: 700;
     text-transform: uppercase;
   }
 
-  /* line 2017, custom.scss */
+  /* line 2026, custom.scss */
   .details_info p {
     font-size: 2rem;
     line-height: 1.25rem;
@@ -2222,36 +2232,36 @@ footer p {
     font-weight: 500;
     text-align: center;
   }
-  /* line 2025, custom.scss */
+  /* line 2034, custom.scss */
   .details_info span {
     font-size: 0.9rem;
     font-weight: 100;
   }
 
-  /* line 2031, custom.scss */
+  /* line 2040, custom.scss */
   #courses, #details {
     padding-top: 0;
     margin-left: 70px;
   }
 
-  /* line 2036, custom.scss */
+  /* line 2045, custom.scss */
   #forum_header, #details_header, #courses_header, #contact_header, #content_header, #new_header {
     margin-top: 70px;
     margin-bottom: 1.9em;
     text-align: left;
   }
 
-  /* line 2042, custom.scss */
+  /* line 2051, custom.scss */
   #details_header {
     padding: 0.6em 25px;
   }
-  /* line 2044, custom.scss */
+  /* line 2053, custom.scss */
   #details_header h3 {
     margin: 0;
     font-size: 1.5em;
   }
 
-  /* line 2050, custom.scss */
+  /* line 2059, custom.scss */
   #forum_header, #courses_header, #content_header, #contact_header, #details_header {
     margin-top: 0;
     position: fixed;
@@ -2261,89 +2271,89 @@ footer p {
     width: calc(100% - 131px);
   }
 
-  /* line 2059, custom.scss */
+  /* line 2068, custom.scss */
   #catalogo_content, #contenidos_content, #feedback_content, #contact_content, #details_content {
     margin-top: 70px;
   }
 
-  /* line 2064, custom.scss */
+  /* line 2073, custom.scss */
   .fixed_menu {
     position: fixed;
     right: 0;
   }
 
-  /* line 2071, custom.scss */
+  /* line 2080, custom.scss */
   .fixed_menu_details {
     position: fixed;
     right: 0;
     top: 4.4rem;
   }
 
-  /* line 2078, custom.scss */
+  /* line 2087, custom.scss */
   #footer p {
     text-align: center;
   }
 
-  /* line 2083, custom.scss */
+  /* line 2092, custom.scss */
   #form_search {
     position: relative;
     margin-bottom: 1.5em;
     margin-top: 0;
   }
 
-  /* line 2089, custom.scss */
+  /* line 2098, custom.scss */
   .total_padding {
     padding-left: 1.9em;
     padding-right: 1.9em;
   }
 
-  /* line 2094, custom.scss */
+  /* line 2103, custom.scss */
   .index_padding {
     padding-left: 70px;
     padding-right: 70px;
   }
 
-  /* line 2099, custom.scss */
+  /* line 2108, custom.scss */
   .right_padding {
     padding-right: 1.9em;
   }
 
-  /* line 2103, custom.scss */
+  /* line 2112, custom.scss */
   .course {
     margin-bottom: 1.9em;
   }
 
-  /* line 2107, custom.scss */
+  /* line 2116, custom.scss */
   #details_lesson {
     margin: 0 auto 1.9em;
   }
 
-  /* line 2111, custom.scss */
+  /* line 2120, custom.scss */
   .contact_form {
     margin-bottom: 20em;
   }
 
-  /* line 2115, custom.scss */
+  /* line 2124, custom.scss */
   .video_curso {
     margin-bottom: 1.9em;
   }
 
-  /* line 2119, custom.scss */
+  /* line 2128, custom.scss */
   .under_fixed_header {
     margin-top: 150px;
   }
 
-  /* line 2123, custom.scss */
+  /* line 2132, custom.scss */
   #feedback_content .under_fixed_header, #contact_content .under_fixed_header {
     margin-top: 150px;
   }
 
-  /* line 2128, custom.scss */
+  /* line 2137, custom.scss */
   #details .under_fixed_header {
     margin-top: 82px;
   }
 }
-/* line 2135, custom.scss */
+/* line 2144, custom.scss */
 .confirmacion p {
   color: #6C217F;
   font-weight: 500;
@@ -2351,7 +2361,7 @@ footer p {
 }
 
 @media only screen and (min-width: 64.063em) {
-  /* line 2144, custom.scss */
+  /* line 2153, custom.scss */
   #forum_header, #courses_header, #content_header, #contact_header, #details_header {
     margin-top: 0;
     position: fixed;
