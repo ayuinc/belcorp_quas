@@ -115,95 +115,6 @@
     </section>
     {/exp:channel:entries}
     
-<!--     <section id="la_ucb">
-      <div class="row">
-        <div class="index_padding large-12 columns">
-          <div class="row">
-            <div class="large-10 large-centered columns">          
-              <h3>La <span>Universidad Corporativa Belcorp</span> busca honrar nuestro propósito a través del desarrollo personal, profesional y colectivo.</h3>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-7 large-centered columns">
-              <p id="sub_p">Aprender más rápido e incorporar en nuestra gestión diaria esos aprendizajes es nuestro mayor desafío. </p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-7 large-centered columns">
-              <p>Tenemos 5 escuelas cuya misión es llevarnos a lograr vivir nuestro backbone, generando y recolectando contenidos que nos ayuden a desarrollar comportamientos que soportan los valores y principios de la organización.</p>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="index_padding large-12 columns">
-          <div class="row">
-            <div class="large-12 columns">
-              <h3 class="title">NUESTRA METODOLOGÍA</h3>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-8 large-centered columns">
-              <div class="row">
-                <div class="medium-4 large-4 columns">
-                  <span class="icon-rocket"></span>
-                  <h6>APRENDIZAJE EXPERIENCIAL O ACTION LEARNING</h6>
-                </div>
-                <div class="medium-4 large-4 columns">
-                  <span class="icon-shield"></span>
-                  <h6>APRENDIZAJE SIGNIFICATIVO O CONSTRUCTIVISTA</h6>
-                </div>
-                <div class="medium-4 large-4 columns">
-                  <span class="icon-trophy"></span>
-                  <h6>CERTIFICACIÓN DEL APRENDIZAJE</h6>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
- -->
-
-  
-<!--     <section id="escuelas_title">
-      <div class="row">
-        <div class="index_padding large-12 columns">
-          <h3 class="title">NUESTRAS ESCUELAS</h3>
-        </div>
-      </div> 
-    </section>
-
-    <section id="escuelas">
-      <div class="row">
-        <div class="index_padding large-12 columns">
-          <div class="row">
-            <ul class="example-orbit" data-orbit>
-              {exp:channel:entries channel="escuelas" limit="10" dynamic="off"}
-              <li>
-                <div class="large-8 large-centered columns">
-                  <h3 class="title">{title}</h3>
-                  <img src="{site_url}img/quote.png" alt="">
-                  <h3 class="quote">  
-                    {quote-escuela}                 
-                  </h3>
-                  {imagenes-seccion}
-                    <img class="author" src="{image:url:quote}" alt="{title}">
-                  {/imagenes-seccion}
-                  <h4>{autor-seccion}</h4>
-                </div>
-              </li>
-              {/exp:channel:entries}
-            </ul>
-          </div>
-
-
-        </div>
-      </div>
-    </section> -->
-
-
 
     <section id="convenios">
       <div class="row">
@@ -217,7 +128,23 @@
 	          </div>
           </div>
           {/exp:channel:entries} 
-          <img src="{site_url}img/convenios.png" alt="">
+          
+          
+          <div class="row">
+          	<div class="large-10 large-centered columns">
+          		<div class="row">
+          			{exp:channel:entries channel="convenios" limit="4" orderby="random" dynamic="off"}
+			  		<div class="large-3 columns">
+			  			{imagen-convenio}
+				  		<img src="{image:url:small}" alt="{title}">
+				  		{/imagen-convenio}	
+			  		</div>	
+			  		{/exp:channel:entries}
+          		</div>
+          	</div>
+          </div>
+ 
+          
           {exp:channel:entries channel="secciones" limit="1" entry_id="196" dynamic="off"}
           <a href="{site_url}seccion/{url_title}" class="small button">LEER MÁS</a>
           {/exp:channel:entries} 
