@@ -702,10 +702,12 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		text-transform: uppercase;
 		span{
 			color: #94A0AA;
+			font-size: 0.7rem;
 		}
 		h5{
 			color: #596c79;
 			font-weight: 300;
+			font-size: 1rem;
 		}
 	}
 	.escuelas_box{
@@ -1733,6 +1735,15 @@ box-shadow: -2px 0px 4px #edeff0;
 	}
 }
 
+.shadow_trigger {
+	position: absolute;
+	left: 0;
+	top: 1px;
+	width: 100%;
+	text-align: center;
+	height: 1px;
+}
+
 #new_homepage{
 	margin-top: 125px;
 	min-height: 600px;
@@ -1777,7 +1788,7 @@ box-shadow: -2px 0px 4px #edeff0;
 		}
 		a{
 			background: transparent;
-			border: 2px solid white;
+			border: 1px solid white;
 			margin-top: 3rem;
 			padding-top: 0.5rem;
 			padding-bottom: 0.5rem;
@@ -1865,7 +1876,7 @@ box-shadow: -2px 0px 4px #edeff0;
 		right: 0;
 		bottom: 0;
 		opacity: 1;
-		background: rgba(0, 0, 0, 0.5);
+		background: rgba(0, 0, 0, 0.2);
 	}
 	.article_title{
 		position: absolute;
