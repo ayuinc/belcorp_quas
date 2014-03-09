@@ -1735,6 +1735,15 @@ box-shadow: -2px 0px 4px #edeff0;
 	}
 }
 
+.shadow_trigger {
+	position: absolute;
+	left: 0;
+	top: 1px;
+	width: 100%;
+	text-align: center;
+	height: 1px;
+}
+
 #new_homepage{
 	margin-top: 125px;
 	min-height: 600px;
@@ -1779,7 +1788,7 @@ box-shadow: -2px 0px 4px #edeff0;
 		}
 		a{
 			background: transparent;
-			border: 2px solid white;
+			border: 1px solid white;
 			margin-top: 3rem;
 			padding-top: 0.5rem;
 			padding-bottom: 0.5rem;
