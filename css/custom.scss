@@ -1716,6 +1716,10 @@ box-shadow: -2px 0px 4px #edeff0;
 	width: 100%;
 	z-index: 1;
 	top: 75px;
+	-webkit-transition: 0.2s;
+	-moz-transition: 0.2s;
+	-o-transition: 0.2s;
+	transition: 0.2s;
 	.inline-list{
 		margin-bottom: 0;
 		line-height: 50px;
@@ -1741,7 +1745,7 @@ box-shadow: -2px 0px 4px #edeff0;
 .shadow_trigger {
 	position: absolute;
 	left: 0;
-	top: 1px;
+	bottom: 0;
 	width: 100%;
 	text-align: center;
 	height: 1px;
