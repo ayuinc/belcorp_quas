@@ -1,0 +1,75 @@
+{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination"}
+                  <div class="row hide-for-small">
+                    <div class="large-12 columns">
+                      
+	                  <div id="new_header">
+	                  	<div class="row">
+						  	<div class="large-12 columns">
+			                    <h6>ESCUELA DE</h6>
+				                <h2 id="color-ventas">{title}</h2>
+						  	</div>
+	                  	</div>
+				        <div class="row">
+						  	<div class="large-12 columns">        		             
+		                        <ul class="example-orbit-content" data-options="pause_on_hover:false; timer: false; timer_speed:5000;"  data-orbit>
+		                         <li data-orbit-slide="headline-1">
+			                        <div class="row">
+			                          <div class="medium-10 medium-centered large-10 large-centered columns">
+			                            <div class="row">
+			                              <div class="large-4 columns">
+			                              	{imagen_slide1_escuela}
+			                              	<img src="{image:url:small}" alt="{title}">
+			                              	{/imagen_slide1_escuela}
+			                              </div>
+			                              <div class="large-8 columns">
+			                                <h5>{descripcion_slide1_escuela}</h5>
+			                              </div>
+			                            </div>
+			                          </div>
+			                        </div>
+		                          </li>
+		                         
+		                         {if descripcion_slide2_escuela} 
+		                          <li data-orbit-slide="headline-1">
+			                        <div class="row">
+			                          <div class="medium-10 medium-centered large-10 large-centered columns">
+			                            <div class="row">
+			                              <div class="large-8 columns">
+			                                <h5>{descripcion_slide2_escuela}</h5>
+			                              </div>
+			                              <div class="large-4 columns">
+			                              	{imagen_slide2_escuela}
+			                              	<img src="{image:url:small}" alt="{title}">
+			                              	{/imagen_slide2_escuela}
+			                              </div>
+			                            </div>
+			                          </div>
+			                        </div>
+		                          </li> 
+		                          {/if} 
+		                          {if descripcion_slide3_escuela}
+		                          <li data-orbit-slide="headline-1">
+			                        <div class="row">
+			                          <div class="medium-10 medium-centered large-10 large-centered columns">
+			                            <div class="row">
+			                              <div class="large-4 columns">
+			                              	{imagen_slide3_escuela}
+			                              	<img src="{image:url:small}" alt="{title}">
+			                              	{/imagen_slide3_escuela}
+			                              </div>
+			                              <div class="large-8 columns">
+			                                <h5>{descripcion_slide3_escuela}</h5>
+			                              </div>
+			                            </div>
+			                          </div>
+			                        </div>
+		                          </li>  
+		                          {/if}                                                  
+		                        </ul>
+						  	</div>
+	                  	</div>
+                      </div>
+                      
+                    </div>
+                  </div>
+{/exp:channel:entries}                  
