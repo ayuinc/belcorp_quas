@@ -16,11 +16,13 @@
 			                        <div class="row">
 			                          <div class="medium-10 medium-centered large-10 large-centered columns">
 			                            <div class="row">
+										  {if imagen_slide1_escuela}			                            
 			                              <div class="large-4 columns">
 			                              	{imagen_slide1_escuela}
 			                              	<img src="{image:url:small}" alt="{title}">
 			                              	{/imagen_slide1_escuela}
 			                              </div>
+			                              {/if}
 			                              <div class="large-8 columns">
 			                                <h5>{descripcion_slide1_escuela}</h5>
 			                              </div>
@@ -37,16 +39,19 @@
 			                              <div class="large-8 columns">
 			                                <h5>{descripcion_slide2_escuela}</h5>
 			                              </div>
-			                              <div class="large-4 columns">
-			                              	{imagen_slide2_escuela}
-			                              	<img src="{image:url:small}" alt="{title}">
-			                              	{/imagen_slide2_escuela}
-			                              </div>
+			                              {if imagen_slide2_escuela}
+				                              <div class="large-4 columns">
+				                              	{imagen_slide2_escuela}
+				                              	<img src="{image:url:small}" alt="{title}">
+				                              	{/imagen_slide2_escuela}
+				                              </div>
+			                              {/if}
 			                            </div>
 			                          </div>
 			                        </div>
 		                          </li> 
 		                          {/if} 
+		                          
 		                          {if descripcion_slide3_escuela}
 		                          <li data-orbit-slide="headline-1">
 			                        <div class="row">
