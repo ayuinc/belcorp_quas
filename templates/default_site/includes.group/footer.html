@@ -71,6 +71,11 @@
       });
 
     });
+    $(function() {
+          $(".shadow_trigger").waypoint(function (d) {
+            return "down" === d ? $("#sub_navbar").addClass("shadow_navbar") : $("#sub_navbar").removeClass("shadow_navbar");
+          });
+    });
     </script>
     <!-- Qualaroo -->
     <script type="text/javascript">
