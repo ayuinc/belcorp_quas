@@ -1013,11 +1013,11 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 /* line 910, custom.scss */
 .liderazgo {
-  border-right: 25px solid #72d100;
+  border-right: 25px solid #00bce4;
 }
 /* line 913, custom.scss */
 .liderazgo .school .icon-school {
-  color: #72d100;
+  color: #00bce4;
 }
 
 /* line 920, custom.scss */
@@ -1058,11 +1058,11 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 /* line 957, custom.scss */
 .innovacion {
-  border-right: 25px solid #6c217f;
+  border-right: 25px solid #8dc63f;
 }
 /* line 960, custom.scss */
 .innovacion .school .icon-school {
-  color: #6c217f;
+  color: #8dc63f;
 }
 
 /* line 966, custom.scss */
@@ -1076,7 +1076,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 /* line 975, custom.scss */
 .negocios {
-  border-right: 25px solid #00bced;
+  border-right: 25px solid #5a277d;
 }
 /* line 978, custom.scss */
 .negocios .school .icon-school {
@@ -1276,7 +1276,7 @@ footer p {
 }
 /* line 1158, custom.scss */
 #school_panel .liderazgo .icon-school {
-  color: #72d100;
+  color: #00bce4;
 }
 /* line 1163, custom.scss */
 #school_panel .marcas .icon-school {
@@ -1296,7 +1296,7 @@ footer p {
 }
 /* line 1183, custom.scss */
 #school_panel .innovacion .icon-school {
-  color: #6c217f;
+  color: #8dc63f;
 }
 /* line 1188, custom.scss */
 #school_panel .belcorp .icon-school {
