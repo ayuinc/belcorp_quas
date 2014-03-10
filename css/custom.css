@@ -1076,11 +1076,11 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 /* line 975, custom.scss */
 .negocios {
-  border-right: 25px solid #fdbb30;
+  border-right: 25px solid #ef3e42;
 }
 /* line 978, custom.scss */
 .negocios .school .icon-school {
-  color: #fdbb30;
+  color: #ef3e42;
 }
 
 /* line 985, custom.scss */
@@ -1100,7 +1100,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 /* line 999, custom.scss */
 .bg_negocios {
-  background-color: #fdbb30;
+  background-color: #ef3e42;
 }
 
 /* line 1003, custom.scss */
@@ -1761,7 +1761,7 @@ footer p {
 .heading-pocket .inline-list li a {
   color: #596c79;
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.5rem;
   -webkit-transition-duration: 0.4s;
   -moz-transition-duration: 0.4s;
