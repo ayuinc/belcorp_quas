@@ -1770,15 +1770,21 @@ footer p {
 }
 /* line 1614, custom.scss */
 .heading-pocket .inline-list li a:hover {
-  color: #6C217F;
+  color: #FFFFFF;
+  background: #9E79B8;
+}
+/* line 1618, custom.scss */
+.heading-pocket .inline-list li a.active {
+  color: #FFFFFF;
+  background: #9E79B8;
 }
 
-/* line 1624, custom.scss */
+/* line 1629, custom.scss */
 .back {
   padding-top: 1.5em;
 }
 
-/* line 1628, custom.scss */
+/* line 1633, custom.scss */
 .heading-pocket:before, .heading-pocket:after {
   content: "";
   position: absolute;
@@ -1793,7 +1799,7 @@ footer p {
   box-shadow: -2px 0px 4px #edeff0;
 }
 
-/* line 1642, custom.scss */
+/* line 1647, custom.scss */
 #clickable_div {
   position: absolute;
   width: 100%;
@@ -1812,15 +1818,15 @@ footer p {
   /* Fix to make div clickable in IE */
 }
 
-/* line 1656, custom.scss */
+/* line 1661, custom.scss */
 .filtro-interno .inline-list {
   margin-left: 0;
 }
-/* line 1659, custom.scss */
+/* line 1664, custom.scss */
 .filtro-interno .inline-list li {
   margin-left: 0.5rem;
 }
-/* line 1661, custom.scss */
+/* line 1666, custom.scss */
 .filtro-interno .inline-list li a {
   font-weight: 300;
   -webkit-transition: all ease-out 0.2s;
@@ -1831,30 +1837,30 @@ footer p {
   text-transform: capitalize;
   color: #596c79;
 }
-/* line 1670, custom.scss */
+/* line 1675, custom.scss */
 .filtro-interno .inline-list li a:hover {
   color: #FFFFFF;
   background: #9E79B8;
 }
-/* line 1674, custom.scss */
+/* line 1679, custom.scss */
 .filtro-interno .inline-list li a.selected {
   color: #FFFFFF;
   background: #9E79B8;
 }
-/* line 1680, custom.scss */
+/* line 1685, custom.scss */
 .filtro-interno .inline-list li:first-child {
   margin-left: 0;
 }
 
-/* line 1687, custom.scss */
+/* line 1692, custom.scss */
 .filtro-externo .inline-list {
   margin-left: 0;
 }
-/* line 1690, custom.scss */
+/* line 1695, custom.scss */
 .filtro-externo .inline-list li {
   margin-left: 0.5rem;
 }
-/* line 1692, custom.scss */
+/* line 1697, custom.scss */
 .filtro-externo .inline-list li a {
   font-weight: 300;
   -webkit-transition: all ease-out 0.2s;
@@ -1865,37 +1871,37 @@ footer p {
   text-transform: capitalize;
   color: #596c79;
 }
-/* line 1701, custom.scss */
+/* line 1706, custom.scss */
 .filtro-externo .inline-list li a:hover {
   color: #FFFFFF;
   background: #9E79B8;
 }
-/* line 1705, custom.scss */
+/* line 1710, custom.scss */
 .filtro-externo .inline-list li a.selected {
   color: #FFFFFF;
   background: #9E79B8;
 }
-/* line 1711, custom.scss */
+/* line 1716, custom.scss */
 .filtro-externo .inline-list li:first-child {
   margin-left: 0;
 }
 
-/* line 1717, custom.scss */
+/* line 1722, custom.scss */
 .under_fixed_header {
   margin-top: 184px;
 }
 
-/* line 1722, custom.scss */
+/* line 1727, custom.scss */
 #feedback_content .under_fixed_header, #contact_content .under_fixed_header {
   margin-top: 70px;
 }
 
-/* line 1728, custom.scss */
+/* line 1733, custom.scss */
 #details .under_fixed_header {
   margin-top: 70px;
 }
 
-/* line 1736, custom.scss */
+/* line 1741, custom.scss */
 #navbar {
   position: fixed;
   background-color: #FFFFFF;
@@ -1903,14 +1909,14 @@ footer p {
   z-index: 2;
   top: 0;
 }
-/* line 1742, custom.scss */
+/* line 1747, custom.scss */
 #navbar a {
   line-height: 75px;
   font-weight: 100;
   font-size: 1.1rem;
 }
 
-/* line 1749, custom.scss */
+/* line 1754, custom.scss */
 #sub_navbar {
   background-color: #ECECEC;
   position: fixed;
@@ -1922,34 +1928,36 @@ footer p {
   -o-transition: 0.2s;
   transition: 0.2s;
 }
-/* line 1759, custom.scss */
+/* line 1764, custom.scss */
 #sub_navbar .inline-list {
   margin-bottom: 0;
   line-height: 50px;
   margin: auto;
   width: 665px;
 }
-/* line 1765, custom.scss */
+/* line 1770, custom.scss */
 #sub_navbar .inline-list li a {
   color: #596c79;
   font-size: 1.1rem;
   font-weight: 100;
 }
-/* line 1769, custom.scss */
+/* line 1774, custom.scss */
 #sub_navbar .inline-list li a:hover {
-  color: #6C217F;
+  color: #FFFFFF;
+  background: #9E79B8;
 }
-/* line 1772, custom.scss */
+/* line 1778, custom.scss */
 #sub_navbar .inline-list li a.active {
-  color: #6C217F;
+  color: #FFFFFF;
+  background: #9E79B8;
 }
 
-/* line 1780, custom.scss */
+/* line 1787, custom.scss */
 .shadow_navbar {
   box-shadow: 0 1px 1px 0px #C2C2C2;
 }
 
-/* line 1784, custom.scss */
+/* line 1791, custom.scss */
 .shadow_trigger {
   position: absolute;
   left: 0;
@@ -1959,7 +1967,7 @@ footer p {
   height: 1px;
 }
 
-/* line 1793, custom.scss */
+/* line 1800, custom.scss */
 #new_homepage {
   margin-top: 125px;
   min-height: 600px;
@@ -1974,7 +1982,7 @@ footer p {
   background-position: center center;
   padding: 70px 0 2.5em 0;
 }
-/* line 1806, custom.scss */
+/* line 1813, custom.scss */
 #new_homepage .headline {
   background: rgba(102, 0, 102, 0.45);
   position: absolute;
@@ -1986,12 +1994,12 @@ footer p {
   width: 35%;
   padding-top: 10%;
 }
-/* line 1816, custom.scss */
+/* line 1823, custom.scss */
 #new_homepage .headline h1, #new_homepage .headline h2, #new_homepage .headline h3, #new_homepage .headline h4, #new_homepage .headline h5, #new_homepage .headline h6 {
   color: #FFFFFF;
   font-weight: 100;
 }
-/* line 1820, custom.scss */
+/* line 1827, custom.scss */
 #new_homepage .headline h1 {
   font-size: 3rem;
   line-height: 100%;
@@ -2000,7 +2008,7 @@ footer p {
   font-weight: 100;
   -webkit-font-smoothing: antialiased;
 }
-/* line 1828, custom.scss */
+/* line 1835, custom.scss */
 #new_homepage .headline h4 {
   color: #FFFFFF;
   font-weight: 300;
@@ -2008,7 +2016,7 @@ footer p {
   line-height: 120%;
   font-size: 1.275rem;
 }
-/* line 1835, custom.scss */
+/* line 1842, custom.scss */
 #new_homepage .headline a {
   background: transparent;
   border: 1px solid white;
@@ -2016,13 +2024,13 @@ footer p {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-/* line 1841, custom.scss */
+/* line 1848, custom.scss */
 #new_homepage .headline a:hover {
   background: #FFFFFF;
   color: #6C217F;
 }
 
-/* line 1849, custom.scss */
+/* line 1856, custom.scss */
 #summa {
   min-height: 600px;
   height: auto !important;
@@ -2036,7 +2044,7 @@ footer p {
   background-position: center center;
   padding: 70px 0 2.5em 0;
 }
-/* line 1861, custom.scss */
+/* line 1868, custom.scss */
 #summa .headline {
   background: rgba(102, 0, 102, 0.45);
   position: absolute;
@@ -2049,12 +2057,12 @@ footer p {
   padding-top: 2rem;
   padding-top: 10%;
 }
-/* line 1872, custom.scss */
+/* line 1879, custom.scss */
 #summa .headline h1, #summa .headline h2, #summa .headline h3, #summa .headline h4, #summa .headline h5, #summa .headline h6 {
   color: #FFFFFF;
   font-weight: 100;
 }
-/* line 1876, custom.scss */
+/* line 1883, custom.scss */
 #summa .headline h1 {
   font-size: 3rem;
   line-height: 100%;
@@ -2063,7 +2071,7 @@ footer p {
   font-weight: 100;
   -webkit-font-smoothing: antialiased;
 }
-/* line 1884, custom.scss */
+/* line 1891, custom.scss */
 #summa .headline h4 {
   color: #FFFFFF;
   font-weight: 300;
@@ -2071,7 +2079,7 @@ footer p {
   line-height: 120%;
   font-size: 1.275rem;
 }
-/* line 1891, custom.scss */
+/* line 1898, custom.scss */
 #summa .headline a {
   background: transparent;
   border: 2px solid white;
@@ -2079,13 +2087,13 @@ footer p {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-/* line 1897, custom.scss */
+/* line 1904, custom.scss */
 #summa .headline a:hover {
   background: #FFFFFF;
   color: #6C217F;
 }
 
-/* line 1906, custom.scss */
+/* line 1913, custom.scss */
 #article_header {
   min-height: 450px;
   height: auto !important;
@@ -2099,7 +2107,7 @@ footer p {
   width: 100%;
   margin-top: 125px;
 }
-/* line 1918, custom.scss */
+/* line 1925, custom.scss */
 #article_header .overlay {
   position: absolute;
   top: 0;
@@ -2109,13 +2117,13 @@ footer p {
   opacity: 1;
   background: rgba(0, 0, 0, 0.3);
 }
-/* line 1927, custom.scss */
+/* line 1934, custom.scss */
 #article_header .article_title {
   position: absolute;
   width: 100%;
   bottom: 50px;
 }
-/* line 1932, custom.scss */
+/* line 1939, custom.scss */
 #article_header h1 {
   font-size: 2.2rem;
   line-height: 100%;
@@ -2125,7 +2133,7 @@ footer p {
   -webkit-font-smoothing: antialiased;
   color: #FFFFFF;
 }
-/* line 1941, custom.scss */
+/* line 1948, custom.scss */
 #article_header #sub_header {
   opacity: 1;
   color: #D1D1D1;
@@ -2136,23 +2144,23 @@ footer p {
   margin-bottom: 0.8rem;
   -webkit-font-smoothing: antialiased;
 }
-/* line 1951, custom.scss */
+/* line 1958, custom.scss */
 #article_header p {
   opacity: 0.65;
   display: inline-block;
   font-weight: 100;
 }
-/* line 1955, custom.scss */
+/* line 1962, custom.scss */
 #article_header p span {
   text-decoration: underline;
 }
 
-/* line 1962, custom.scss */
+/* line 1969, custom.scss */
 #article_content {
   background-color: #FFFFFF;
   padding: 5rem 0;
 }
-/* line 1965, custom.scss */
+/* line 1972, custom.scss */
 #article_content p {
   margin-bottom: 30px;
   font-size: 1.25rem;
@@ -2160,12 +2168,12 @@ footer p {
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
 }
-/* line 1972, custom.scss */
+/* line 1979, custom.scss */
 #article_content img {
   margin-bottom: 30px;
 }
 
-/* line 1977, custom.scss */
+/* line 1984, custom.scss */
 #next_article {
   min-height: 400px;
   height: auto !important;
@@ -2178,7 +2186,7 @@ footer p {
   color: #FFFFFF;
   width: 100%;
 }
-/* line 1988, custom.scss */
+/* line 1995, custom.scss */
 #next_article .overlay {
   position: absolute;
   top: 0;
@@ -2188,7 +2196,7 @@ footer p {
   opacity: 1;
   background: rgba(0, 0, 0, 0.2);
 }
-/* line 1997, custom.scss */
+/* line 2004, custom.scss */
 #next_article .next_title {
   color: #FFFFFF;
   opacity: 0.65;
@@ -2196,7 +2204,7 @@ footer p {
   top: 100px;
   width: 100%;
 }
-/* line 2003, custom.scss */
+/* line 2010, custom.scss */
 #next_article .next_title h6 {
   border-top: 1px solid #FFFFFF;
   color: #FFFFFF;
@@ -2204,19 +2212,19 @@ footer p {
   width: 100%;
   font-weight: 300;
 }
-/* line 2011, custom.scss */
+/* line 2018, custom.scss */
 #next_article .article_title {
   position: absolute;
   width: 100%;
   bottom: 50px;
 }
-/* line 2016, custom.scss */
+/* line 2023, custom.scss */
 #next_article h1 {
   color: #FFFFFF;
   font-weight: 400;
   margin-bottom: 0;
 }
-/* line 2021, custom.scss */
+/* line 2028, custom.scss */
 #next_article #sub_header {
   opacity: 0.65;
   font-size: 1.35rem;
@@ -2224,41 +2232,41 @@ footer p {
   display: block;
   margin-bottom: 0.8rem;
 }
-/* line 2028, custom.scss */
+/* line 2035, custom.scss */
 #next_article p {
   opacity: 0.65;
   display: inline-block;
   font-weight: 100;
 }
-/* line 2032, custom.scss */
+/* line 2039, custom.scss */
 #next_article p span {
   text-decoration: underline;
 }
 
-/* line 2040, custom.scss */
+/* line 2047, custom.scss */
 #new_header {
   padding: 0;
 }
-/* line 2042, custom.scss */
+/* line 2049, custom.scss */
 #new_header .new_header_title {
   padding: 15px 25px;
 }
-/* line 2045, custom.scss */
+/* line 2052, custom.scss */
 #new_header .new_header_content {
   padding: 25px;
 }
-/* line 2047, custom.scss */
+/* line 2054, custom.scss */
 #new_header .new_header_content strong {
   font-weight: 300;
 }
-/* line 2051, custom.scss */
+/* line 2058, custom.scss */
 #new_header h2 {
   font-weight: 300;
   text-transform: uppercase;
   margin: 0;
   color: #FFFFFF;
 }
-/* line 2057, custom.scss */
+/* line 2064, custom.scss */
 #new_header h6 {
   font-weight: 100;
   color: #FFFFFF;
@@ -2267,66 +2275,66 @@ footer p {
   line-height: 1rem;
 }
 
-/* line 2067, custom.scss */
+/* line 2074, custom.scss */
 .menu-nav nav span {
   color: #FFFFFF;
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 2077, custom.scss */
+  /* line 2084, custom.scss */
   #cover h1 {
     line-height: 1;
     font-size: 3rem;
     text-align: left;
   }
-  /* line 2082, custom.scss */
+  /* line 2089, custom.scss */
   #cover h5 {
     font-size: 1.45rem;
     text-align: left;
   }
-  /* line 2086, custom.scss */
+  /* line 2093, custom.scss */
   #cover a {
     font-size: 1.2rem;
   }
-  /* line 2089, custom.scss */
+  /* line 2096, custom.scss */
   #cover #view_video {
     font-size: 1.2rem;
     height: 75px;
     font-weight: 100;
     color: #F1F1F1;
   }
-  /* line 2096, custom.scss */
+  /* line 2103, custom.scss */
   #cover .explore {
     width: 175px;
     float: left;
   }
-  /* line 2100, custom.scss */
+  /* line 2107, custom.scss */
   #cover .down {
     display: block;
   }
-  /* line 2103, custom.scss */
+  /* line 2110, custom.scss */
   #cover #logo_index {
     float: left;
   }
 
-  /* line 2108, custom.scss */
+  /* line 2115, custom.scss */
   .course {
     height: 230px;
   }
 
-  /* line 2112, custom.scss */
+  /* line 2119, custom.scss */
   .externo {
     height: auto;
   }
 
-  /* line 2117, custom.scss */
+  /* line 2124, custom.scss */
   #details_header h3 {
     padding-bottom: 0;
     font-weight: 300;
     text-transform: uppercase;
   }
 
-  /* line 2125, custom.scss */
+  /* line 2132, custom.scss */
   .details_info p {
     font-size: 2rem;
     line-height: 1.25rem;
@@ -2335,41 +2343,41 @@ footer p {
     font-weight: 500;
     text-align: center;
   }
-  /* line 2133, custom.scss */
+  /* line 2140, custom.scss */
   .details_info span {
     font-size: 0.9rem;
     font-weight: 100;
   }
 
-  /* line 2139, custom.scss */
+  /* line 2146, custom.scss */
   #courses, #details {
     padding-top: 0;
     margin-left: 70px;
   }
 
-  /* line 2144, custom.scss */
+  /* line 2151, custom.scss */
   #forum_header, #details_header, #courses_header, #contact_header, #content_header, #new_header {
     margin-top: 70px;
     margin-bottom: 1.9em;
     text-align: left;
   }
 
-  /* line 2150, custom.scss */
+  /* line 2157, custom.scss */
   #new_header {
     margin-top: 0px;
   }
 
-  /* line 2154, custom.scss */
+  /* line 2161, custom.scss */
   #details_header {
     padding: 0.6em 25px;
   }
-  /* line 2156, custom.scss */
+  /* line 2163, custom.scss */
   #details_header h3 {
     margin: 0;
     font-size: 1.5em;
   }
 
-  /* line 2162, custom.scss */
+  /* line 2169, custom.scss */
   #forum_header, #courses_header, #content_header, #contact_header, #details_header {
     margin-top: 0;
     position: fixed;
@@ -2379,89 +2387,89 @@ footer p {
     width: calc(100% - 131px);
   }
 
-  /* line 2171, custom.scss */
+  /* line 2178, custom.scss */
   #catalogo_content, #contenidos_content, #feedback_content, #contact_content, #details_content {
     margin-top: 70px;
   }
 
-  /* line 2176, custom.scss */
+  /* line 2183, custom.scss */
   .fixed_menu {
     position: fixed;
     right: 0;
   }
 
-  /* line 2183, custom.scss */
+  /* line 2190, custom.scss */
   .fixed_menu_details {
     position: fixed;
     right: 0;
     top: 4.4rem;
   }
 
-  /* line 2190, custom.scss */
+  /* line 2197, custom.scss */
   #footer p {
     text-align: center;
   }
 
-  /* line 2195, custom.scss */
+  /* line 2202, custom.scss */
   #form_search {
     position: relative;
     margin-bottom: 1.5em;
     margin-top: 0;
   }
 
-  /* line 2201, custom.scss */
+  /* line 2208, custom.scss */
   .total_padding {
     padding-left: 1.9em;
     padding-right: 1.9em;
   }
 
-  /* line 2206, custom.scss */
+  /* line 2213, custom.scss */
   .index_padding {
     padding-left: 70px;
     padding-right: 70px;
   }
 
-  /* line 2211, custom.scss */
+  /* line 2218, custom.scss */
   .right_padding {
     padding-right: 1.9em;
   }
 
-  /* line 2215, custom.scss */
+  /* line 2222, custom.scss */
   .course {
     margin-bottom: 1.9em;
   }
 
-  /* line 2219, custom.scss */
+  /* line 2226, custom.scss */
   #details_lesson {
     margin: 0 auto 1.9em;
   }
 
-  /* line 2223, custom.scss */
+  /* line 2230, custom.scss */
   .contact_form {
     margin-bottom: 20em;
   }
 
-  /* line 2227, custom.scss */
+  /* line 2234, custom.scss */
   .video_curso {
     margin-bottom: 1.9em;
   }
 
-  /* line 2231, custom.scss */
+  /* line 2238, custom.scss */
   .under_fixed_header {
     margin-top: 150px;
   }
 
-  /* line 2235, custom.scss */
+  /* line 2242, custom.scss */
   #feedback_content .under_fixed_header, #contact_content .under_fixed_header {
     margin-top: 150px;
   }
 
-  /* line 2240, custom.scss */
+  /* line 2247, custom.scss */
   #details .under_fixed_header {
     margin-top: 82px;
   }
 }
-/* line 2247, custom.scss */
+/* line 2254, custom.scss */
 .confirmacion p {
   color: #6C217F;
   font-weight: 500;
@@ -2469,7 +2477,7 @@ footer p {
 }
 
 @media only screen and (min-width: 64.063em) {
-  /* line 2256, custom.scss */
+  /* line 2263, custom.scss */
   #forum_header, #courses_header, #content_header, #contact_header, #details_header {
     margin-top: 0;
     position: fixed;
