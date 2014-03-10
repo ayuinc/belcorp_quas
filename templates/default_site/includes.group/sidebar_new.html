@@ -26,14 +26,11 @@
                 <div id="school_panel" class="activex">
                         <dl class="accordion" data-accordion>
                           <dd>
-                            <a class="#">TODAS {last_segment_category_group_id} {last_segment_category_parent_id}</a>
+                            <a class="#">TODAS</a>
                           </dd>
                           
-                          {exp:channel:categories category_group="{last_segment_category_group_id}"}
-                          <dd class="belcorp">
-                            <a href="#">{category_name}</a>
-                          </dd>  
-                          {/exp:channel:categories}             
+                          {embed="includes/categorias-escuelas"}
+           
                         </dl>
                  </div>
               </dd>
