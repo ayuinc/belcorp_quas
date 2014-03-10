@@ -806,19 +806,19 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 }
 
 .orbit-container .orbit-prev > span {
-  border-right-color: #6C217F;
+  border-right-color: #909DA8;
 }
 
 .orbit-container .orbit-prev:hover > span {
-  border-right-color: #6C217F; 
+  border-right-color: #909DA8; 
 }
 
 .orbit-container .orbit-next > span {  
-  border-left-color: #6C217F;
+  border-left-color: #909DA8;
 }
 
 .orbit-container .orbit-next:hover > span {
-  border-left-color: #6C217F; 
+  border-left-color: #909DA8; 
 }
 
 .orbit-container .orbit-timer {
@@ -2036,18 +2036,19 @@ box-shadow: -2px 0px 4px #edeff0;
 #new_header{
 	padding: 0;
 	.new_header_title{
-		padding: 25px;
+		padding: 15px 25px;
 	}
 	.new_header_content{
 		padding: 25px;
 	}
 	h2{
-		margin-bottom: 2.5rem;
 		font-weight: 400;
 		text-transform: uppercase;
-		margin-top: 0;
+		margin: 0;
+		color: #FFFFFF;
 	}
 	h6{
+		color: #FFFFFF;
 		margin: 0;
 		font-size: 1.125rem;
 	}
