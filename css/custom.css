@@ -1012,11 +1012,11 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 }
 
 /* line 910, custom.scss */
-.liderazgo {
+.liderazgo-cultura {
   border-right: 25px solid #00bce4;
 }
 /* line 913, custom.scss */
-.liderazgo .school .icon-school {
+.liderazgo-cultura .school .icon-school {
   color: #00bce4;
 }
 
