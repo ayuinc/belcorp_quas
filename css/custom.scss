@@ -884,6 +884,13 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 				color: #596c79;
 			}
 		}
+		span{
+			font-weight: 100;
+			text-transform: uppercase;
+			color: #596c79;
+			font-size: 0.85rem;
+			margin-top: 0;			
+		}
 	}
 	h6{
 		font-weight: 100;
@@ -2070,12 +2077,13 @@ box-shadow: -2px 0px 4px #edeff0;
 		text-transform: uppercase;
 		margin: 0;
 		color: #FFFFFF;
+		line-height: 100%;
 	}
 	h6{
 		font-weight: 100;
 		color: #FFFFFF;
 		margin: 0;
-		font-size: 1.125rem;
+		font-size: 1rem;
 		line-height: 1rem;
 	}
 }
