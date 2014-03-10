@@ -1,7 +1,38 @@
 
 
-{exp:channel:categories style="linear"}
-	<dd class="belcorp">
-		<a href="#">{category_name}</a>
-	</dd>  
+{exp:channel:categories style="linear" category_group="4"}
+	
+	
+	{if last_segment=='innovacion'}
+		{if parent_id=='19'}
+		<dd class="belcorp">
+			<a href="#">{category_name}</a>
+		</dd>  
+		{/if}
+	{/if}
+	
+	{if last_segment=='ventas'}
+		{if parent_id=='28'}
+		<dd class="belcorp">
+			<a href="#">{category_name}</a>
+		</dd>  
+		{/if}
+	{/if}
+	
+	{if last_segment=='negocios'}
+		{if parent_id=='29'}
+		<dd class="belcorp">
+			<a href="#">{category_name}</a>
+		</dd>  
+		{/if}
+	{/if}
+	
+	{if last_segment=='liderazgo-cultura'}
+		{if parent_id=='25'}
+		<dd class="belcorp">
+			<a href="#">{category_name}</a>
+		</dd>  
+		{/if}
+	{/if}		
+		
 {/exp:channel:categories}  
