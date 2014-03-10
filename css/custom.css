@@ -2554,6 +2554,13 @@ footer p {
   }
 }
 /* line 2340, custom.scss */
+.convenios_header {
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 0 #94A0AA;
+  padding: 25px;
+}
+
+/* line 2347, custom.scss */
 .confirmacion p {
   color: #6C217F;
   font-weight: 500;
@@ -2561,7 +2568,7 @@ footer p {
 }
 
 @media only screen and (min-width: 64.063em) {
-  /* line 2349, custom.scss */
+  /* line 2356, custom.scss */
   #forum_header, #courses_header, #content_header, #contact_header, #details_header {
     margin-top: 0;
     position: fixed;
