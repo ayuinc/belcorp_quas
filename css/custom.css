@@ -1049,11 +1049,11 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 /* line 948, custom.scss */
 .ventas {
-  border-right: 25px solid #ff0066;
+  border-right: 25px solid #5a277d;
 }
 /* line 951, custom.scss */
 .ventas .school .icon-school {
-  color: #ff0066;
+  color: #5a277d;
 }
 
 /* line 957, custom.scss */
@@ -1076,7 +1076,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 /* line 975, custom.scss */
 .negocios {
-  border-right: 25px solid #5a277d;
+  border-right: 25px solid #fdbb30;
 }
 /* line 978, custom.scss */
 .negocios .school .icon-school {
@@ -1292,7 +1292,7 @@ footer p {
 }
 /* line 1178, custom.scss */
 #school_panel .ventas .icon-school {
-  color: #ff0066;
+  color: #5a277d;
 }
 /* line 1183, custom.scss */
 #school_panel .innovacion .icon-school {
