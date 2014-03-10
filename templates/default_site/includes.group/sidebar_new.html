@@ -12,7 +12,7 @@
 				</form>
 			
 			{if last_segment=='ventas'}
-				<a href="{site_url}quieres-crear-un-curso" id="create_course" class="publish button expand">HERRAMIENTAS DE CERTIFICACIÓN</a><br>
+				<a href="http://ucb.belcorp.biz/index.php/la-clave-certificacion" target="_blank" id="create_course" class="publish button expand">HERRAMIENTAS DE CERTIFICACIÓN</a><br>
 			{/if}	
           
           
@@ -28,18 +28,12 @@
                           <dd>
                             <a class="#">TODAS</a>
                           </dd>
+                          {last_segment_category_group_id}
+                          {exp:channel:categories category_group="{last_segment_category_group_id}"}
                           <dd class="belcorp">
-                            <a href="#">VENTAS - 1</a>
-                          </dd>
-                          <dd class="belcorp">
-                            <a href="#">VENTAS - 2</a>
-                          </dd>
-                          <dd class="belcorp">
-                            <a href="#">VENTAS - 3</a>
-                          </dd>
-                          <dd class="belcorp">
-                            <a href="#">VENTAS - 4</a>
-                          </dd>               
+                            <a href="#">{category_name}</a>
+                          </dd>  
+                          {/exp:channel:categories}             
                         </dl>
                  </div>
               </dd>
