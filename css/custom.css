@@ -1084,31 +1084,36 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 }
 
 /* line 985, custom.scss */
-.bg_liderazgo {
+.bg_liderazgo-cultura {
   background-color: #00bce4;
 }
 
-/* line 990, custom.scss */
+/* line 989, custom.scss */
+.bg_todos {
+  background-color: #6C217F;
+}
+
+/* line 994, custom.scss */
 .bg_ventas {
   background-color: #5a277d;
 }
 
-/* line 995, custom.scss */
+/* line 999, custom.scss */
 .bg_negocios {
   background-color: #fdbb30;
 }
 
-/* line 999, custom.scss */
+/* line 1003, custom.scss */
 .bg_innovacion {
   background-color: #8dc63f;
 }
 
-/* line 1003, custom.scss */
+/* line 1007, custom.scss */
 #footer {
   background-color: #94A0AA;
   padding: 2.5em 0;
 }
-/* line 1006, custom.scss */
+/* line 1010, custom.scss */
 #footer p {
   color: #2C3945;
   font-weight: 300;
@@ -1116,84 +1121,84 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   text-align: center;
 }
 
-/* line 1014, custom.scss */
+/* line 1018, custom.scss */
 footer {
   background-color: #596c79;
   padding: 1.25em 0;
 }
-/* line 1017, custom.scss */
+/* line 1021, custom.scss */
 footer p {
   color: white;
   margin: 0;
 }
 
-/* line 1026, custom.scss */
+/* line 1030, custom.scss */
 #courses, #details {
   background-color: #EEEEEE;
 }
-/* line 1029, custom.scss */
+/* line 1033, custom.scss */
 #courses #create_course, #details #create_course {
   margin-top: 0;
   padding: 1.2rem;
 }
-/* line 1034, custom.scss */
+/* line 1038, custom.scss */
 #courses #footer, #details #footer {
   background-color: transparent;
 }
-/* line 1036, custom.scss */
+/* line 1040, custom.scss */
 #courses #footer p, #details #footer p {
   color: #596C79;
   font-weight: 300;
   margin: 0;
 }
 
-/* line 1045, custom.scss */
+/* line 1049, custom.scss */
 #forum_header, #courses_header, #contact_header, #content_header, #new_header {
   background-color: #FFFFFF;
   box-shadow: 0 2px 0 #94A0AA;
   padding: 25px;
 }
-/* line 1049, custom.scss */
+/* line 1053, custom.scss */
 #forum_header h3, #courses_header h3, #contact_header h3, #content_header h3, #new_header h3 {
   font-weight: 700;
 }
-/* line 1052, custom.scss */
+/* line 1056, custom.scss */
 #forum_header h5, #courses_header h5, #contact_header h5, #content_header h5, #new_header h5 {
   font-weight: 100;
   color: #929FAA;
 }
-/* line 1056, custom.scss */
+/* line 1060, custom.scss */
 #forum_header .icon-grid, #courses_header .icon-grid, #contact_header .icon-grid, #content_header .icon-grid, #new_header .icon-grid {
   color: #596c79;
   font-size: 3.55em;
   line-height: 1.4em;
 }
-/* line 1061, custom.scss */
+/* line 1065, custom.scss */
 #forum_header .icon-bubbles, #courses_header .icon-bubbles, #contact_header .icon-bubbles, #content_header .icon-bubbles, #new_header .icon-bubbles {
   color: #596c79;
   font-size: 3.4em;
   line-height: 1.2em;
 }
-/* line 1066, custom.scss */
+/* line 1070, custom.scss */
 #forum_header .icon-book, #courses_header .icon-book, #contact_header .icon-book, #content_header .icon-book, #new_header .icon-book {
   color: #596c79;
   font-size: 4em;
   line-height: 1.2em;
 }
-/* line 1071, custom.scss */
+/* line 1075, custom.scss */
 #forum_header .icon-mail, #courses_header .icon-mail, #contact_header .icon-mail, #content_header .icon-mail, #new_header .icon-mail {
   color: #596c79;
   font-size: 3.9em;
   line-height: 1.2em;
 }
 
-/* line 1078, custom.scss */
+/* line 1082, custom.scss */
 #form_search {
   position: relative;
   margin-top: 0.5em;
 }
 
-/* line 1084, custom.scss */
+/* line 1088, custom.scss */
 .accordion dd > a {
   background: #596c79;
   color: #FFFFFF;
@@ -1205,45 +1210,45 @@ footer p {
   position: relative;
 }
 
-/* line 1095, custom.scss */
+/* line 1099, custom.scss */
 .accordion dd > a:hover {
   background: #596c79;
 }
 
-/* line 1099, custom.scss */
+/* line 1103, custom.scss */
 #details_lesson {
   box-shadow: 0 2px 0 #94A0AA;
   margin: 1.25em auto;
 }
-/* line 1102, custom.scss */
+/* line 1106, custom.scss */
 #details_lesson dd > a {
   background: #FFFFFF;
   color: #5D6C7D;
   font-weight: 700;
 }
 
-/* line 1110, custom.scss */
+/* line 1114, custom.scss */
 #lesson_panel_1 dd, #lesson_panel_2 dd, #lesson_panel_3 dd, #lesson_panel_4 dd, #lesson_panel_5 dd, #lesson_panel_6 dd {
   line-height: 1;
   position: relative;
   border: none;
 }
-/* line 1114, custom.scss */
+/* line 1118, custom.scss */
 #lesson_panel_1 dd a, #lesson_panel_2 dd a, #lesson_panel_3 dd a, #lesson_panel_4 dd a, #lesson_panel_5 dd a, #lesson_panel_6 dd a {
   background: #FFFFFF;
   border-bottom: 1px solid #DDDDDD;
   font-weight: 300;
   color: #939FAA;
 }
-/* line 1121, custom.scss */
+/* line 1125, custom.scss */
 #lesson_panel_1 dd:first-child a, #lesson_panel_2 dd:first-child a, #lesson_panel_3 dd:first-child a, #lesson_panel_4 dd:first-child a, #lesson_panel_5 dd:first-child a, #lesson_panel_6 dd:first-child a {
   border-top: 1px solid #DDDDDD;
 }
-/* line 1125, custom.scss */
+/* line 1129, custom.scss */
 #lesson_panel_1 dd:last-child a, #lesson_panel_2 dd:last-child a, #lesson_panel_3 dd:last-child a, #lesson_panel_4 dd:last-child a, #lesson_panel_5 dd:last-child a, #lesson_panel_6 dd:last-child a {
   border-bottom: none;
 }
-/* line 1129, custom.scss */
+/* line 1133, custom.scss */
 #lesson_panel_1 dd span, #lesson_panel_2 dd span, #lesson_panel_3 dd span, #lesson_panel_4 dd span, #lesson_panel_5 dd span, #lesson_panel_6 dd span {
   position: absolute;
   top: 1em;
@@ -1253,24 +1258,24 @@ footer p {
   font-size: 0.92em;
 }
 
-/* line 1140, custom.scss */
+/* line 1144, custom.scss */
 .accordion .content {
   display: none;
   padding: 0;
 }
 
-/* line 1145, custom.scss */
+/* line 1149, custom.scss */
 #padding_accordion {
   margin-bottom: 0;
 }
 
-/* line 1151, custom.scss */
+/* line 1155, custom.scss */
 #school_panel dd {
   line-height: 1;
   position: relative;
   border: none;
 }
-/* line 1155, custom.scss */
+/* line 1159, custom.scss */
 #school_panel dd a {
   background: #909DA8;
   border-bottom: 1px solid #A4B1BD;
@@ -1280,86 +1285,86 @@ footer p {
   transition-duration: 0.2s;
   font-size: 0.9em;
 }
-/* line 1163, custom.scss */
+/* line 1167, custom.scss */
 #school_panel dd a:hover {
   background: #A4B1BD;
 }
-/* line 1166, custom.scss */
+/* line 1170, custom.scss */
 #school_panel dd a.selected {
   background: #A4B1BD;
 }
-/* line 1170, custom.scss */
+/* line 1174, custom.scss */
 #school_panel dd .icon-school {
   position: absolute;
   top: 1em;
   right: 1em;
 }
-/* line 1177, custom.scss */
+/* line 1181, custom.scss */
 #school_panel .liderazgo .icon-school {
   color: #00bce4;
 }
-/* line 1182, custom.scss */
+/* line 1186, custom.scss */
 #school_panel .marcas .icon-school {
   color: red;
 }
-/* line 1187, custom.scss */
+/* line 1191, custom.scss */
 #school_panel .comercial .icon-school {
   color: #00bced;
 }
-/* line 1192, custom.scss */
+/* line 1196, custom.scss */
 #school_panel .planeamiento .icon-school {
   color: #72d100;
 }
-/* line 1197, custom.scss */
+/* line 1201, custom.scss */
 #school_panel .ventas .icon-school {
   color: #5a277d;
 }
-/* line 1202, custom.scss */
+/* line 1206, custom.scss */
 #school_panel .innovacion .icon-school {
   color: #8dc63f;
 }
-/* line 1207, custom.scss */
+/* line 1211, custom.scss */
 #school_panel .belcorp .icon-school {
   color: #6c217f;
 }
 
-/* line 1213, custom.scss */
+/* line 1217, custom.scss */
 #school_panel_trigger {
   font-weight: 500;
 }
 
-/* line 1217, custom.scss */
+/* line 1221, custom.scss */
 .details_info {
   background-color: #FFFFFF;
   box-shadow: 0 2px 0 #94A0AA;
   padding: 25px;
   margin-bottom: 1.25em;
 }
-/* line 1224, custom.scss */
+/* line 1228, custom.scss */
 .details_info h6 {
   color: #596C79;
   text-align: center;
   font-weight: 700;
 }
-/* line 1230, custom.scss */
+/* line 1234, custom.scss */
 .details_info p, .details_info span {
   color: #929FAA;
 }
-/* line 1234, custom.scss */
+/* line 1238, custom.scss */
 .details_info p {
   margin: 0;
   font-weight: 500;
 }
-/* line 1238, custom.scss */
+/* line 1242, custom.scss */
 .details_info .details_info_item {
   margin-bottom: 0.2em;
 }
-/* line 1241, custom.scss */
+/* line 1245, custom.scss */
 .details_info .details_info_item:last-child {
   margin-bottom: 0;
 }
 
-/* line 1246, custom.scss */
+/* line 1250, custom.scss */
 #details_header {
   height: auto;
   margin-top: 0;
@@ -1369,42 +1374,42 @@ footer p {
   width: -webkit-calc(75% - 105px);
   width: calc(75% - 105px);
 }
-/* line 1254, custom.scss */
+/* line 1258, custom.scss */
 #details_header p {
   padding-bottom: 3em;
 }
-/* line 1257, custom.scss */
+/* line 1261, custom.scss */
 #details_header h3 {
   padding-bottom: 2em;
   font-weight: 500;
   text-transform: uppercase;
 }
 
-/* line 1265, custom.scss */
+/* line 1269, custom.scss */
 .instructor_info {
   background-color: #FFFFFF;
   box-shadow: 0 2px 0 #94A0AA;
   padding: 25px;
   margin-bottom: 1.25em;
 }
-/* line 1272, custom.scss */
+/* line 1276, custom.scss */
 .instructor_info h6 {
   color: #596C79;
   text-align: center;
   font-weight: 700;
 }
-/* line 1278, custom.scss */
+/* line 1282, custom.scss */
 .instructor_info h5 {
   font-size: 0.85rem;
   font-weight: 700;
 }
-/* line 1282, custom.scss */
+/* line 1286, custom.scss */
 .instructor_info p {
   font-size: 0.8rem;
   line-height: 1.2rem;
   margin-top: 0.6rem;
 }
-/* line 1287, custom.scss */
+/* line 1291, custom.scss */
 .instructor_info span {
   font-size: 0.7rem;
   font-style: italic;
@@ -1412,19 +1417,19 @@ footer p {
   font-weight: 300;
 }
 
-/* line 1295, custom.scss */
+/* line 1299, custom.scss */
 .requisitos_info {
   background-color: #FFFFFF;
   box-shadow: 0 2px 0 #94A0AA;
   padding: 25px;
   margin-bottom: 1.25em;
 }
-/* line 1300, custom.scss */
+/* line 1304, custom.scss */
 .requisitos_info h3 {
   font-size: 1.25rem;
 }
 
-/* line 1305, custom.scss */
+/* line 1309, custom.scss */
 .syllabus {
   background-color: #FFFFFF;
   box-shadow: 0 2px 0 #94A0AA;
@@ -1432,7 +1437,7 @@ footer p {
   margin-bottom: 1.25em;
 }
 
-/* line 1314, custom.scss */
+/* line 1318, custom.scss */
 #menu {
   background: #6C217F;
   width: 70px;
@@ -1443,24 +1448,24 @@ footer p {
   z-index: 500;
 }
 
-/* line 1323, custom.scss */
+/* line 1327, custom.scss */
 .menu-nav {
   padding: 12px;
 }
 
-/* line 1327, custom.scss */
+/* line 1331, custom.scss */
 .active-menu {
   opacity: 0.4;
 }
 
-/* line 1331, custom.scss */
+/* line 1335, custom.scss */
 .nav, .social {
   display: block;
   margin: 0;
   list-style-type: none;
   list-style-position: inside;
 }
-/* line 1336, custom.scss */
+/* line 1340, custom.scss */
 .nav li, .social li {
   text-align: center;
   height: 46px;
@@ -1469,15 +1474,15 @@ footer p {
   transition: background-color 0.2s;
   -webkit-transition: background-color ease-out 0.2s;
 }
-/* line 1343, custom.scss */
+/* line 1347, custom.scss */
 .nav li:hover, .social li:hover {
   background-color: #9E79B8;
 }
-/* line 1345, custom.scss */
+/* line 1349, custom.scss */
 .nav li:hover span, .social li:hover span {
   opacity: 1;
 }
-/* line 1349, custom.scss */
+/* line 1353, custom.scss */
 .nav li a, .social li a {
   line-height: 46px;
   margin-bottom: 10px;
@@ -1485,70 +1490,70 @@ footer p {
   padding: 11.5px;
   color: #FFFFFF;
 }
-/* line 1355, custom.scss */
+/* line 1359, custom.scss */
 .nav li a img, .social li a img {
   margin-top: -4px;
 }
 
-/* line 1362, custom.scss */
+/* line 1366, custom.scss */
 .social {
   position: absolute;
   bottom: 8px;
 }
 
-/* line 1367, custom.scss */
+/* line 1371, custom.scss */
 .has-tip, .has-tip:hover {
   cursor: default;
   color: #333333;
   border-bottom: none;
 }
 
-/* line 1376, custom.scss */
+/* line 1380, custom.scss */
 #forum_header {
   margin-bottom: 1.25em;
   text-align: center;
 }
-/* line 1379, custom.scss */
+/* line 1383, custom.scss */
 #forum_header #comment_number {
   margin-bottom: 0;
 }
-/* line 1382, custom.scss */
+/* line 1386, custom.scss */
 #forum_header span {
   font-size: 0.75em;
 }
 
-/* line 1387, custom.scss */
+/* line 1391, custom.scss */
 .contact_form, .forum_publish {
   background: #FFFFFF;
   padding: 25px;
 }
 
-/* line 1392, custom.scss */
+/* line 1396, custom.scss */
 .contact_form {
   box-shadow: 0 2px 0 #94A0AA;
   margin-bottom: 5em;
 }
 
-/* line 1398, custom.scss */
+/* line 1402, custom.scss */
 .forum_comments {
   background-color: #F7F7F7;
 }
-/* line 1400, custom.scss */
+/* line 1404, custom.scss */
 .forum_comments .forum_comments_item {
   padding: 1em 25px;
   border-top: 1px solid #EEEEEE;
   border-bottom: 1px solid #EEEEEE;
 }
-/* line 1404, custom.scss */
+/* line 1408, custom.scss */
 .forum_comments .forum_comments_item p {
   margin: 0;
 }
-/* line 1407, custom.scss */
+/* line 1411, custom.scss */
 .forum_comments .forum_comments_item span {
   padding-left: 1em;
 }
 
-/* line 1416, custom.scss */
+/* line 1420, custom.scss */
 .move-right > .inner-wrap {
   -webkit-transform: translate3d(70px, 0, 0);
   -moz-transform: translate3d(70px, 0, 0);
@@ -1557,7 +1562,7 @@ footer p {
   transform: translate3d(70px, 0, 0);
 }
 
-/* line 1424, custom.scss */
+/* line 1428, custom.scss */
 .left-off-canvas-menu, .right-off-canvas-menu {
   width: 70px;
   top: 0;
@@ -1570,13 +1575,13 @@ footer p {
   box-sizing: content-box;
 }
 
-/* line 1437, custom.scss */
+/* line 1441, custom.scss */
 .left-off-canvas-toggle {
   font-weight: 700;
   color: #94A0AA;
 }
 
-/* line 1442, custom.scss */
+/* line 1446, custom.scss */
 .move-right a.exit-off-canvas {
   transition: background 300ms ease;
   cursor: pointer;
@@ -1591,7 +1596,7 @@ footer p {
   z-index: 1002;
 }
 
-/* line 1456, custom.scss */
+/* line 1460, custom.scss */
 #menu_title {
   font-weight: 500;
   display: inline;
@@ -1601,13 +1606,13 @@ footer p {
   color: #6C217F;
 }
 
-/* line 1465, custom.scss */
+/* line 1469, custom.scss */
 .left-off-canvas-toggle:hover {
   font-weight: 700;
   color: #94A0AA;
 }
 
-/* line 1470, custom.scss */
+/* line 1474, custom.scss */
 #courses_menu {
   background-color: #EEEEEE;
   padding-top: 1em;
@@ -1622,20 +1627,20 @@ footer p {
   -o-transition-duration: 0.2s;
   transition-duration: 0.2s;
 }
-/* line 1484, custom.scss */
+/* line 1488, custom.scss */
 #courses_menu select {
   height: 3.125rem;
   outline: none;
   margin: 0.5em 0 0 0;
 }
 
-/* line 1492, custom.scss */
+/* line 1496, custom.scss */
 .more #more_courses {
   color: #596c79;
   font-size: 1.4375rem;
   font-weight: 100;
 }
-/* line 1498, custom.scss */
+/* line 1502, custom.scss */
 .more #more_icon {
   background: url(../img/scroll_down_interno.png) no-repeat;
   color: #fff;
@@ -1649,79 +1654,79 @@ footer p {
   -o-transition: 0.4s;
   transition: 0.4s;
 }
-/* line 1510, custom.scss */
+/* line 1514, custom.scss */
 .more #more_icon:hover {
   background: url(../img/scroll_down_interno_hover.png) no-repeat;
 }
-/* line 1515, custom.scss */
+/* line 1519, custom.scss */
 .more:hover {
   cursor: pointer;
 }
-/* line 1516, custom.scss */
+/* line 1520, custom.scss */
 .more:hover #more_courses {
   color: #596c79;
   text-decoration: underline;
 }
 
-/* line 1524, custom.scss */
+/* line 1528, custom.scss */
 #courses_hidden {
   display: none;
 }
 
-/* line 1528, custom.scss */
+/* line 1532, custom.scss */
 .resources_list {
   background-color: #FFFFFF;
 }
-/* line 1531, custom.scss */
+/* line 1535, custom.scss */
 .resources_list h5 {
   font-weight: 400;
 }
-/* line 1534, custom.scss */
+/* line 1538, custom.scss */
 .resources_list span {
   color: #929FAA;
 }
-/* line 1537, custom.scss */
+/* line 1541, custom.scss */
 .resources_list img {
   border-radius: 50%;
 }
 
-/* line 1542, custom.scss */
+/* line 1546, custom.scss */
 .resources_item {
   padding: 1em 25px;
   border-top: 1px solid #EEEEEE;
   border-bottom: 1px solid #EEEEEE;
 }
-/* line 1546, custom.scss */
+/* line 1550, custom.scss */
 .resources_item h5 {
   font-weight: 400;
 }
-/* line 1549, custom.scss */
+/* line 1553, custom.scss */
 .resources_item span {
   color: #929FAA;
 }
-/* line 1552, custom.scss */
+/* line 1556, custom.scss */
 .resources_item img {
   border-radius: 50%;
 }
 
-/* line 1558, custom.scss */
+/* line 1562, custom.scss */
 .resources_item a {
   color: #596c79;
 }
 
-/* line 1564, custom.scss */
+/* line 1568, custom.scss */
 #myModal {
   padding: 1.8em;
   border: none;
   box-shadow: none;
   background: white;
 }
-/* line 1569, custom.scss */
+/* line 1573, custom.scss */
 #myModal .flex-video {
   margin-bottom: 0;
 }
 
-/* line 1574, custom.scss */
+/* line 1578, custom.scss */
 .like {
   position: absolute;
   top: 1em;
@@ -1729,12 +1734,12 @@ footer p {
   cursor: pointer;
 }
 
-/* line 1581, custom.scss */
+/* line 1585, custom.scss */
 .vermas {
   margin-bottom: 1.5em;
 }
 
-/* line 1585, custom.scss */
+/* line 1589, custom.scss */
 .heading-pocket {
   background: #edeff0;
   position: fixed;
@@ -1748,11 +1753,11 @@ footer p {
   -o-transition-duration: 0.2s;
   transition-duration: 0.2s;
 }
-/* line 1598, custom.scss */
+/* line 1602, custom.scss */
 .heading-pocket .inline-list {
   margin-top: 25px;
 }
-/* line 1601, custom.scss */
+/* line 1605, custom.scss */
 .heading-pocket .inline-list li a {
   color: #596c79;
   font-weight: 300;
@@ -1763,17 +1768,17 @@ footer p {
   -o-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
-/* line 1610, custom.scss */
+/* line 1614, custom.scss */
 .heading-pocket .inline-list li a:hover {
   color: #6C217F;
 }
 
-/* line 1620, custom.scss */
+/* line 1624, custom.scss */
 .back {
   padding-top: 1.5em;
 }
 
-/* line 1624, custom.scss */
+/* line 1628, custom.scss */
 .heading-pocket:before, .heading-pocket:after {
   content: "";
   position: absolute;
@@ -1788,7 +1793,7 @@ footer p {
   box-shadow: -2px 0px 4px #edeff0;
 }
 
-/* line 1638, custom.scss */
+/* line 1642, custom.scss */
 #clickable_div {
   position: absolute;
   width: 100%;
@@ -1807,15 +1812,15 @@ footer p {
   /* Fix to make div clickable in IE */
 }
 
-/* line 1652, custom.scss */
+/* line 1656, custom.scss */
 .filtro-interno .inline-list {
   margin-left: 0;
 }
-/* line 1655, custom.scss */
+/* line 1659, custom.scss */
 .filtro-interno .inline-list li {
   margin-left: 0.5rem;
 }
-/* line 1657, custom.scss */
+/* line 1661, custom.scss */
 .filtro-interno .inline-list li a {
   font-weight: 300;
   -webkit-transition: all ease-out 0.2s;
@@ -1826,30 +1831,30 @@ footer p {
   text-transform: capitalize;
   color: #596c79;
 }
-/* line 1666, custom.scss */
+/* line 1670, custom.scss */
 .filtro-interno .inline-list li a:hover {
   color: #FFFFFF;
   background: #9E79B8;
 }
-/* line 1670, custom.scss */
+/* line 1674, custom.scss */
 .filtro-interno .inline-list li a.selected {
   color: #FFFFFF;
   background: #9E79B8;
 }
-/* line 1676, custom.scss */
+/* line 1680, custom.scss */
 .filtro-interno .inline-list li:first-child {
   margin-left: 0;
 }
 
-/* line 1683, custom.scss */
+/* line 1687, custom.scss */
 .filtro-externo .inline-list {
   margin-left: 0;
 }
-/* line 1686, custom.scss */
+/* line 1690, custom.scss */
 .filtro-externo .inline-list li {
   margin-left: 0.5rem;
 }
-/* line 1688, custom.scss */
+/* line 1692, custom.scss */
 .filtro-externo .inline-list li a {
   font-weight: 300;
   -webkit-transition: all ease-out 0.2s;
@@ -1860,37 +1865,37 @@ footer p {
   text-transform: capitalize;
   color: #596c79;
 }
-/* line 1697, custom.scss */
+/* line 1701, custom.scss */
 .filtro-externo .inline-list li a:hover {
   color: #FFFFFF;
   background: #9E79B8;
 }
-/* line 1701, custom.scss */
+/* line 1705, custom.scss */
 .filtro-externo .inline-list li a.selected {
   color: #FFFFFF;
   background: #9E79B8;
 }
-/* line 1707, custom.scss */
+/* line 1711, custom.scss */
 .filtro-externo .inline-list li:first-child {
   margin-left: 0;
 }
 
-/* line 1713, custom.scss */
+/* line 1717, custom.scss */
 .under_fixed_header {
   margin-top: 184px;
 }
 
-/* line 1718, custom.scss */
+/* line 1722, custom.scss */
 #feedback_content .under_fixed_header, #contact_content .under_fixed_header {
   margin-top: 70px;
 }
 
-/* line 1724, custom.scss */
+/* line 1728, custom.scss */
 #details .under_fixed_header {
   margin-top: 70px;
 }
 
-/* line 1732, custom.scss */
+/* line 1736, custom.scss */
 #navbar {
   position: fixed;
   background-color: #FFFFFF;
@@ -1898,14 +1903,14 @@ footer p {
   z-index: 2;
   top: 0;
 }
-/* line 1738, custom.scss */
+/* line 1742, custom.scss */
 #navbar a {
   line-height: 75px;
   font-weight: 100;
   font-size: 1.1rem;
 }
 
-/* line 1745, custom.scss */
+/* line 1749, custom.scss */
 #sub_navbar {
   background-color: #ECECEC;
   position: fixed;
@@ -1917,34 +1922,34 @@ footer p {
   -o-transition: 0.2s;
   transition: 0.2s;
 }
-/* line 1755, custom.scss */
+/* line 1759, custom.scss */
 #sub_navbar .inline-list {
   margin-bottom: 0;
   line-height: 50px;
   margin: auto;
   width: 665px;
 }
-/* line 1761, custom.scss */
+/* line 1765, custom.scss */
 #sub_navbar .inline-list li a {
   color: #596c79;
   font-size: 1.1rem;
   font-weight: 100;
 }
-/* line 1765, custom.scss */
+/* line 1769, custom.scss */
 #sub_navbar .inline-list li a:hover {
   color: #6C217F;
 }
-/* line 1768, custom.scss */
+/* line 1772, custom.scss */
 #sub_navbar .inline-list li a.active {
   color: #6C217F;
 }
 
-/* line 1776, custom.scss */
+/* line 1780, custom.scss */
 .shadow_navbar {
   box-shadow: 0 1px 1px 0px #C2C2C2;
 }
 
-/* line 1780, custom.scss */
+/* line 1784, custom.scss */
 .shadow_trigger {
   position: absolute;
   left: 0;
@@ -1954,7 +1959,7 @@ footer p {
   height: 1px;
 }
 
-/* line 1789, custom.scss */
+/* line 1793, custom.scss */
 #new_homepage {
   margin-top: 125px;
   min-height: 600px;
@@ -1969,7 +1974,7 @@ footer p {
   background-position: center center;
   padding: 70px 0 2.5em 0;
 }
-/* line 1802, custom.scss */
+/* line 1806, custom.scss */
 #new_homepage .headline {
   background: rgba(102, 0, 102, 0.45);
   position: absolute;
@@ -1981,12 +1986,12 @@ footer p {
   width: 35%;
   padding-top: 10%;
 }
-/* line 1812, custom.scss */
+/* line 1816, custom.scss */
 #new_homepage .headline h1, #new_homepage .headline h2, #new_homepage .headline h3, #new_homepage .headline h4, #new_homepage .headline h5, #new_homepage .headline h6 {
   color: #FFFFFF;
   font-weight: 100;
 }
-/* line 1816, custom.scss */
+/* line 1820, custom.scss */
 #new_homepage .headline h1 {
   font-size: 3rem;
   line-height: 100%;
@@ -1995,7 +2000,7 @@ footer p {
   font-weight: 100;
   -webkit-font-smoothing: antialiased;
 }
-/* line 1824, custom.scss */
+/* line 1828, custom.scss */
 #new_homepage .headline h4 {
   color: #FFFFFF;
   font-weight: 300;
@@ -2003,7 +2008,7 @@ footer p {
   line-height: 120%;
   font-size: 1.275rem;
 }
-/* line 1831, custom.scss */
+/* line 1835, custom.scss */
 #new_homepage .headline a {
   background: transparent;
   border: 1px solid white;
@@ -2011,13 +2016,13 @@ footer p {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-/* line 1837, custom.scss */
+/* line 1841, custom.scss */
 #new_homepage .headline a:hover {
   background: #FFFFFF;
   color: #6C217F;
 }
 
-/* line 1845, custom.scss */
+/* line 1849, custom.scss */
 #summa {
   min-height: 600px;
   height: auto !important;
@@ -2031,7 +2036,7 @@ footer p {
   background-position: center center;
   padding: 70px 0 2.5em 0;
 }
-/* line 1857, custom.scss */
+/* line 1861, custom.scss */
 #summa .headline {
   background: rgba(102, 0, 102, 0.45);
   position: absolute;
@@ -2044,12 +2049,12 @@ footer p {
   padding-top: 2rem;
   padding-top: 10%;
 }
-/* line 1868, custom.scss */
+/* line 1872, custom.scss */
 #summa .headline h1, #summa .headline h2, #summa .headline h3, #summa .headline h4, #summa .headline h5, #summa .headline h6 {
   color: #FFFFFF;
   font-weight: 100;
 }
-/* line 1872, custom.scss */
+/* line 1876, custom.scss */
 #summa .headline h1 {
   font-size: 3rem;
   line-height: 100%;
@@ -2058,7 +2063,7 @@ footer p {
   font-weight: 100;
   -webkit-font-smoothing: antialiased;
 }
-/* line 1880, custom.scss */
+/* line 1884, custom.scss */
 #summa .headline h4 {
   color: #FFFFFF;
   font-weight: 300;
@@ -2066,7 +2071,7 @@ footer p {
   line-height: 120%;
   font-size: 1.275rem;
 }
-/* line 1887, custom.scss */
+/* line 1891, custom.scss */
 #summa .headline a {
   background: transparent;
   border: 2px solid white;
@@ -2074,13 +2079,13 @@ footer p {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-/* line 1893, custom.scss */
+/* line 1897, custom.scss */
 #summa .headline a:hover {
   background: #FFFFFF;
   color: #6C217F;
 }
 
-/* line 1902, custom.scss */
+/* line 1906, custom.scss */
 #article_header {
   min-height: 450px;
   height: auto !important;
@@ -2094,7 +2099,7 @@ footer p {
   width: 100%;
   margin-top: 125px;
 }
-/* line 1914, custom.scss */
+/* line 1918, custom.scss */
 #article_header .overlay {
   position: absolute;
   top: 0;
@@ -2104,13 +2109,13 @@ footer p {
   opacity: 1;
   background: rgba(0, 0, 0, 0.3);
 }
-/* line 1923, custom.scss */
+/* line 1927, custom.scss */
 #article_header .article_title {
   position: absolute;
   width: 100%;
   bottom: 50px;
 }
-/* line 1928, custom.scss */
+/* line 1932, custom.scss */
 #article_header h1 {
   font-size: 2.2rem;
   line-height: 100%;
@@ -2120,7 +2125,7 @@ footer p {
   -webkit-font-smoothing: antialiased;
   color: #FFFFFF;
 }
-/* line 1937, custom.scss */
+/* line 1941, custom.scss */
 #article_header #sub_header {
   opacity: 1;
   color: #D1D1D1;
@@ -2131,23 +2136,23 @@ footer p {
   margin-bottom: 0.8rem;
   -webkit-font-smoothing: antialiased;
 }
-/* line 1947, custom.scss */
+/* line 1951, custom.scss */
 #article_header p {
   opacity: 0.65;
   display: inline-block;
   font-weight: 100;
 }
-/* line 1951, custom.scss */
+/* line 1955, custom.scss */
 #article_header p span {
   text-decoration: underline;
 }
 
-/* line 1958, custom.scss */
+/* line 1962, custom.scss */
 #article_content {
   background-color: #FFFFFF;
   padding: 5rem 0;
 }
-/* line 1961, custom.scss */
+/* line 1965, custom.scss */
 #article_content p {
   margin-bottom: 30px;
   font-size: 1.25rem;
@@ -2155,12 +2160,12 @@ footer p {
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
 }
-/* line 1968, custom.scss */
+/* line 1972, custom.scss */
 #article_content img {
   margin-bottom: 30px;
 }
 
-/* line 1973, custom.scss */
+/* line 1977, custom.scss */
 #next_article {
   min-height: 400px;
   height: auto !important;
@@ -2173,7 +2178,7 @@ footer p {
   color: #FFFFFF;
   width: 100%;
 }
-/* line 1984, custom.scss */
+/* line 1988, custom.scss */
 #next_article .overlay {
   position: absolute;
   top: 0;
@@ -2183,7 +2188,7 @@ footer p {
   opacity: 1;
   background: rgba(0, 0, 0, 0.2);
 }
-/* line 1993, custom.scss */
+/* line 1997, custom.scss */
 #next_article .next_title {
   color: #FFFFFF;
   opacity: 0.65;
@@ -2191,7 +2196,7 @@ footer p {
   top: 100px;
   width: 100%;
 }
-/* line 1999, custom.scss */
+/* line 2003, custom.scss */
 #next_article .next_title h6 {
   border-top: 1px solid #FFFFFF;
   color: #FFFFFF;
@@ -2199,19 +2204,19 @@ footer p {
   width: 100%;
   font-weight: 300;
 }
-/* line 2007, custom.scss */
+/* line 2011, custom.scss */
 #next_article .article_title {
   position: absolute;
   width: 100%;
   bottom: 50px;
 }
-/* line 2012, custom.scss */
+/* line 2016, custom.scss */
 #next_article h1 {
   color: #FFFFFF;
   font-weight: 400;
   margin-bottom: 0;
 }
-/* line 2017, custom.scss */
+/* line 2021, custom.scss */
 #next_article #sub_header {
   opacity: 0.65;
   font-size: 1.35rem;
@@ -2219,103 +2224,103 @@ footer p {
   display: block;
   margin-bottom: 0.8rem;
 }
-/* line 2024, custom.scss */
+/* line 2028, custom.scss */
 #next_article p {
   opacity: 0.65;
   display: inline-block;
   font-weight: 100;
 }
-/* line 2028, custom.scss */
+/* line 2032, custom.scss */
 #next_article p span {
   text-decoration: underline;
 }
 
-/* line 2036, custom.scss */
+/* line 2040, custom.scss */
 #new_header {
   padding: 0;
 }
-/* line 2038, custom.scss */
+/* line 2042, custom.scss */
 #new_header .new_header_title {
   padding: 15px 25px;
 }
-/* line 2041, custom.scss */
+/* line 2045, custom.scss */
 #new_header .new_header_content {
   padding: 25px;
 }
-/* line 2044, custom.scss */
+/* line 2048, custom.scss */
 #new_header h2 {
   font-weight: 400;
   text-transform: uppercase;
   margin: 0;
   color: #FFFFFF;
 }
-/* line 2050, custom.scss */
+/* line 2054, custom.scss */
 #new_header h6 {
   color: #FFFFFF;
   margin: 0;
   font-size: 1.125rem;
 }
 
-/* line 2058, custom.scss */
+/* line 2062, custom.scss */
 .menu-nav nav span {
   color: #FFFFFF;
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 2068, custom.scss */
+  /* line 2072, custom.scss */
   #cover h1 {
     line-height: 1;
     font-size: 3rem;
     text-align: left;
   }
-  /* line 2073, custom.scss */
+  /* line 2077, custom.scss */
   #cover h5 {
     font-size: 1.45rem;
     text-align: left;
   }
-  /* line 2077, custom.scss */
+  /* line 2081, custom.scss */
   #cover a {
     font-size: 1.2rem;
   }
-  /* line 2080, custom.scss */
+  /* line 2084, custom.scss */
   #cover #view_video {
     font-size: 1.2rem;
     height: 75px;
     font-weight: 100;
     color: #F1F1F1;
   }
-  /* line 2087, custom.scss */
+  /* line 2091, custom.scss */
   #cover .explore {
     width: 175px;
     float: left;
   }
-  /* line 2091, custom.scss */
+  /* line 2095, custom.scss */
   #cover .down {
     display: block;
   }
-  /* line 2094, custom.scss */
+  /* line 2098, custom.scss */
   #cover #logo_index {
     float: left;
   }
 
-  /* line 2099, custom.scss */
+  /* line 2103, custom.scss */
   .course {
     height: 230px;
   }
 
-  /* line 2103, custom.scss */
+  /* line 2107, custom.scss */
   .externo {
     height: auto;
   }
 
-  /* line 2108, custom.scss */
+  /* line 2112, custom.scss */
   #details_header h3 {
     padding-bottom: 0;
     font-weight: 300;
     text-transform: uppercase;
   }
 
-  /* line 2116, custom.scss */
+  /* line 2120, custom.scss */
   .details_info p {
     font-size: 2rem;
     line-height: 1.25rem;
@@ -2324,41 +2329,41 @@ footer p {
     font-weight: 500;
     text-align: center;
   }
-  /* line 2124, custom.scss */
+  /* line 2128, custom.scss */
   .details_info span {
     font-size: 0.9rem;
     font-weight: 100;
   }
 
-  /* line 2130, custom.scss */
+  /* line 2134, custom.scss */
   #courses, #details {
     padding-top: 0;
     margin-left: 70px;
   }
 
-  /* line 2135, custom.scss */
+  /* line 2139, custom.scss */
   #forum_header, #details_header, #courses_header, #contact_header, #content_header, #new_header {
     margin-top: 70px;
     margin-bottom: 1.9em;
     text-align: left;
   }
 
-  /* line 2141, custom.scss */
+  /* line 2145, custom.scss */
   #new_header {
     margin-top: 0px;
   }
 
-  /* line 2145, custom.scss */
+  /* line 2149, custom.scss */
   #details_header {
     padding: 0.6em 25px;
   }
-  /* line 2147, custom.scss */
+  /* line 2151, custom.scss */
   #details_header h3 {
     margin: 0;
     font-size: 1.5em;
   }
 
-  /* line 2153, custom.scss */
+  /* line 2157, custom.scss */
   #forum_header, #courses_header, #content_header, #contact_header, #details_header {
     margin-top: 0;
     position: fixed;
@@ -2368,89 +2373,89 @@ footer p {
     width: calc(100% - 131px);
   }
 
-  /* line 2162, custom.scss */
+  /* line 2166, custom.scss */
   #catalogo_content, #contenidos_content, #feedback_content, #contact_content, #details_content {
     margin-top: 70px;
   }
 
-  /* line 2167, custom.scss */
+  /* line 2171, custom.scss */
   .fixed_menu {
     position: fixed;
     right: 0;
   }
 
-  /* line 2174, custom.scss */
+  /* line 2178, custom.scss */
   .fixed_menu_details {
     position: fixed;
     right: 0;
     top: 4.4rem;
   }
 
-  /* line 2181, custom.scss */
+  /* line 2185, custom.scss */
   #footer p {
     text-align: center;
   }
 
-  /* line 2186, custom.scss */
+  /* line 2190, custom.scss */
   #form_search {
     position: relative;
     margin-bottom: 1.5em;
     margin-top: 0;
   }
 
-  /* line 2192, custom.scss */
+  /* line 2196, custom.scss */
   .total_padding {
     padding-left: 1.9em;
     padding-right: 1.9em;
   }
 
-  /* line 2197, custom.scss */
+  /* line 2201, custom.scss */
   .index_padding {
     padding-left: 70px;
     padding-right: 70px;
   }
 
-  /* line 2202, custom.scss */
+  /* line 2206, custom.scss */
   .right_padding {
     padding-right: 1.9em;
   }
 
-  /* line 2206, custom.scss */
+  /* line 2210, custom.scss */
   .course {
     margin-bottom: 1.9em;
   }
 
-  /* line 2210, custom.scss */
+  /* line 2214, custom.scss */
   #details_lesson {
     margin: 0 auto 1.9em;
   }
 
-  /* line 2214, custom.scss */
+  /* line 2218, custom.scss */
   .contact_form {
     margin-bottom: 20em;
   }
 
-  /* line 2218, custom.scss */
+  /* line 2222, custom.scss */
   .video_curso {
     margin-bottom: 1.9em;
   }
 
-  /* line 2222, custom.scss */
+  /* line 2226, custom.scss */
   .under_fixed_header {
     margin-top: 150px;
   }
 
-  /* line 2226, custom.scss */
+  /* line 2230, custom.scss */
   #feedback_content .under_fixed_header, #contact_content .under_fixed_header {
     margin-top: 150px;
   }
 
-  /* line 2231, custom.scss */
+  /* line 2235, custom.scss */
   #details .under_fixed_header {
     margin-top: 82px;
   }
 }
-/* line 2238, custom.scss */
+/* line 2242, custom.scss */
 .confirmacion p {
   color: #6C217F;
   font-weight: 500;
@@ -2458,7 +2463,7 @@ footer p {
 }
 
 @media only screen and (min-width: 64.063em) {
-  /* line 2247, custom.scss */
+  /* line 2251, custom.scss */
   #forum_header, #courses_header, #content_header, #contact_header, #details_header {
     margin-top: 0;
     position: fixed;
