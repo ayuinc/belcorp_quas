@@ -93,9 +93,11 @@
 				    <div class="video_curso">
 				    
 				    	{if proveedor-video-curso=='No Hay Video'}
-				    		{foto-curso}
-				    			<img src="{image:url:large}" alt="{title}">
-				    		{/foto-curso}
+				    		{if foto-curso}
+					    		{foto-curso}
+					    			<img src="{image:url:large}" alt="{title}">
+					    		{/foto-curso}
+				    		{/if}
 				    	{/if}                
 
 	                    {if proveedor-video-curso=='Youtube'}             
