@@ -1,13 +1,24 @@
  
                   <div class="row">
-                    {exp:channel:entries channel="cursos|tendencias" limit="20"  category="{embed:id_categoria}" dynamic="off"}
+                  	{if segment_4=='tendencias'}
+                  		{exp:channel:entries channel="tendencias" limit="20"  category="{embed:id_categoria}" dynamic="off"}
+                  	{/if}
+                  		
+                  	{if segment_4=='cursos'}
+                  		{exp:channel:entries channel="cursos" limit="20"  category="{embed:id_categoria}" dynamic="off"}
+                  	{/if}
+                  	
+                  	{if segment_4==''}
+                  		{exp:channel:entries channel="cursos|tendencias" limit="20"  category="{embed:id_categoria}" dynamic="off"}
+                  	{/if}                  	
+                    
 
 	                    <div class="medium-12 large-6 columns">
 	                      <a href="{site_url}catalogo/curso/{url_title}">
 	                        {categories limit="1"}
 	                        <div class="course {category_url_title}">
 	                        {/categories}
-	                          <h5>{title}</h5>
+	                          <h5><span>{channel}</span><br>{title}</h5>
 	                          {if subttulo-curso}
                               <h6>{subttulo-curso}</h6>
                               {/if}
