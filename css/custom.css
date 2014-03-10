@@ -2554,7 +2554,7 @@ footer p {
   }
 }
 /* line 2340, custom.scss */
-.convenios_header {
+#convenios_header {
   background-color: #FFFFFF;
   box-shadow: 0 2px 0 #94A0AA;
   padding: 25px;
