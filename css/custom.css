@@ -2558,9 +2558,20 @@ footer p {
   background-color: #FFFFFF;
   box-shadow: 0 2px 0 #94A0AA;
   padding: 25px;
+  margin-bottom: 1.9em;
+}
+/* line 2345, custom.scss */
+#convenios_header h5 {
+  font-weight: 100;
+  color: #929FAA;
+}
+/* line 2349, custom.scss */
+#convenios_header h3 {
+  color: #596c79;
+  font-weight: 700;
 }
 
-/* line 2347, custom.scss */
+/* line 2356, custom.scss */
 .confirmacion p {
   color: #6C217F;
   font-weight: 500;
@@ -2568,7 +2579,7 @@ footer p {
 }
 
 @media only screen and (min-width: 64.063em) {
-  /* line 2356, custom.scss */
+  /* line 2365, custom.scss */
   #forum_header, #courses_header, #content_header, #contact_header, #details_header {
     margin-top: 0;
     position: fixed;
