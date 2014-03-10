@@ -1222,7 +1222,75 @@ footer{
 	}
 }
 
+#school_panel_1{
+	dd{
+		line-height: 1;
+		position: relative;
+		border: none;
+		a{
+			background: #909DA8;
+			border-bottom: 1px solid #A4B1BD;
+			-webkit-transition-duration: 0.2s;
+			-moz-transition-duration: 0.2s;
+			-o-transition-duration: 0.2s;
+			transition-duration: 0.2s;
+			font-size: 0.9em;
+			text-transform: uppercase;
+			&:hover{
+				background: #A4B1BD;
+			}
+			&.selected{
+				background: #A4B1BD;
+		}
+		}
+		.icon-school{
+			position: absolute;
+			top: 1em;
+			right: 1em;
+		}
+	}
+	.liderazgo{
+		.icon-school{
+			color: $liderazgo;
+		}
+	}
+	.marcas{
+		.icon-school{
+			color: $marcas;
+		}
+	}
+	.comercial{
+		.icon-school{
+			color: $comercial;
+		}
+	}
+	.planeamiento{
+		.icon-school{
+			color: $planeamiento;
+		}
+	}
+	.ventas{
+		.icon-school{
+			color: $ventas;
+		}
+	}
+	.innovacion{
+		.icon-school{
+			color: $innovacion;
+		}
+	}
+	.belcorp{
+		.icon-school{
+			color: $belcorp;
+		}
+	}
+}
+
 #school_panel_trigger{
+	font-weight: 500;
+}
+
+#school_panel_trigger_1{
 	font-weight: 500;
 }
 
