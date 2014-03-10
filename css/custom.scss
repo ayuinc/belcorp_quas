@@ -1611,6 +1611,8 @@ z-index: 1002;
 				-moz-transition-duration: 0.4s;
 				-o-transition-duration: 0.4s;
 				transition-duration: 0.4s;
+				background-color: transparent;
+				padding: 0.25em 0.8em;
 				&:hover{
 					color: #FFFFFF;
 					background: #9E79B8;
@@ -1763,7 +1765,6 @@ box-shadow: -2px 0px 4px #edeff0;
 	transition: 0.2s;
 	.inline-list{
 		margin-bottom: 0;
-		line-height: 50px;
 		margin: auto;
 		width: 665px;
 		li{
@@ -1771,6 +1772,10 @@ box-shadow: -2px 0px 4px #edeff0;
 				color: #596c79;
 				font-size: 1.1rem;
 				font-weight: 100;
+				background-color: transparent;
+				padding: 0.25em 0.8em;
+				margin-top: 0.8rem;
+				margin-bottom: 0.8rem;
 				&:hover{
 					color: #FFFFFF;
 					background: #9E79B8;
