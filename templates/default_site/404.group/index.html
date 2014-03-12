@@ -1,0 +1,36 @@
+{embed="includes/header"} 
+	{exp:channel:entries channel="secciones" limit="1" disable="member_data|pagination" dynamic="off" entry_id='185'}
+	{imagenes-seccion}
+    <section id="cover" style="background: url({image:url:large}); background-position: center center; -webkit-background-size: cover; background-size: cover">
+    {/imagenes-seccion}
+      <div class="row">
+        <div class="index_padding large-12 columns">
+          <div class="row">
+            <div class="medium-3 large-3 columns">
+              <div class="text-left">
+                <a href="{site_url}">
+                  <img src="{site_url}img/logo_header.png" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <h1 style="color:#6C217F;">{title}</h1>
+              <h5 style="color:#6C217F;">{texto-descriptivo-seccion}</h5>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    {/exp:channel:entries}
+
+
+        </div>
+      </div>
+    </section>
+
+        
+{embed="includes/footer"}     

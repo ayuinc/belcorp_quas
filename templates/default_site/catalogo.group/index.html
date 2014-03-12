@@ -1,0 +1,101 @@
+{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination"}
+{embed="includes/header" titulo="Escuela de {title}"}
+
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+        <div id="courses_menu" class="hide-for-medium-up">
+          <div class="row">
+            <div class="large-12 columns">
+              <a class="left-off-canvas-toggle" ><span class="icon-list"></span></a>
+              <h3 id="menu_title">{title}</h3>
+            </div>
+            <div class="small-12 columns">
+              <form action="#" id="form_search">
+                <input type="search" placeholder="BUSCAR">
+                <span class="icon-search"></span>
+              </form>
+            </div>
+            
+            <!--Solo para Moviles-->
+            <div class="small-12 columns">
+              <form action="#">
+                <select>
+                  <option value="-1">Seleccionar Categoría</option>
+                  <option value="0">Belcorp</option>
+                  <option value="1">Liderazgo</option>
+                  <option value="2">Ventas</option>
+                  <option value="3">Comercial</option>
+                </select>
+              </form>
+            </div>
+            
+          </div>
+        </div>
+{/exp:channel:entries}
+
+
+		{embed="includes/menu_new"}
+
+
+
+		<!-- Solo para Moviles-->
+        <section id="courses">
+          <div class="hide-for-small heading-pocket">
+            <div class="row">
+              <div class="large-12 total_padding columns">
+                
+                {embed="includes/menu-escuelas"}
+                
+              </div>
+            </div>
+          </div>
+          
+          
+          
+          <div class="row">
+            <div class="total_padding medium-12 large-12 columns">
+              <div id="catalogo_content" class="row">
+              
+                <div class="large-9 columns">
+                  
+                  
+                 {embed="includes/escuelas-slider"}
+                 
+                 
+                 {if segment_3=='summa'}
+                 	{embed="includes/descripcion-summa"}
+                 {/if}
+                 
+                 <!--Llamado a los Posts de Tendencias y Cursos-->                             
+				 {embed="includes/posts-cursos-tendencias" 
+				 	{if url_title!='todos'}
+				 		id_categoria="{last_segment_category_id}"
+				 	{if:else} 
+				 		id_categoria="1|4|6|18"
+				 	{/if}
+				 }
+                  
+                </div>
+                
+                {embed="includes/sidebar_new"}
+              
+              </div>
+            </div>
+          </div>
+		   
+		</section>
+
+		{embed="includes/footer-interno_new"}
+
+
+
+
+
+
+
+
+
+
+
+
+

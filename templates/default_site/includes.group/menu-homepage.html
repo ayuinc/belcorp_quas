@@ -1,0 +1,58 @@
+
+    <section id="navbar">
+      <div class="row">
+        <div class="large-6 columns">
+          <a href="{site_url}">
+            <img src="{site_url}img/logo_header.png" alt="">
+          </a>      
+        </div>
+        <div class="large-6 columns">
+          <div class="text-right">
+            <a href="{site_url}catalogo/todos">Ingresa a la universidad <img src="{site_url}img/enter_arrow.png" alt=""></span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sub_navbar">      
+      <div class="row">
+        <div class="large-8 large-centered columns">
+          <ul class="inline-list">
+            <li>
+            	{if segment_1!='seccion'}
+              	<a id='ucb_menu active' href='#'>UCB</a>
+              	{if:else}
+              	<a id='ucb_menu active' href='{site_url}#ucb_menu'>UCB</a>
+              	{/if}
+            </li>
+            <li>
+            	{if segment_1!='seccion'}
+              	<a id="destacados_menu" href="#">Destacados</a>
+              	{if:else}
+              	<a href='{site_url}#destacados'>Destacados</a>
+              	{/if}
+            </li>
+            <li>
+            	{if segment_1!='seccion'}
+				<a id="escuelas_menu" href="#">Escuelas</a>
+				{if:else}
+              	<a href='{site_url}#escuelas'>Escuelas</a>
+              	{/if}
+            </li>
+            <!--<li>
+              <a id="summa_menu" href="#"}>Summa</a>
+            </li>-->
+            <li>
+              	{if segment_1!='seccion'}
+              	<a id="summa_menu" href="#">Convenios</a>
+              	{if:else}
+              	<a href='{site_url}#convenios'>Convenios</a>
+              	{/if}
+            </li>
+            <li>
+              <a id="contactanos_menu" href="{site_url}contactanos/institucional">Contáctanos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>

@@ -1,0 +1,127 @@
+{exp:channel:entries channel="secciones" limit="1" disable="member_data|pagination|categories" entry_id="77"}
+{embed="includes/header" titulo="{title}"}
+
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+        <div id="courses_menu" class="hide-for-medium-up">
+          <div class="row">
+            <div class="large-12 columns">
+              <a class="left-off-canvas-toggle" ><span class="icon-list"></span></a>
+              <h3 id="menu_title">{title}</h3>
+            </div>
+            <div class="small-12 columns">
+              <form action="#" id="form_search">
+                <input type="search" placeholder="BUSCAR">
+                <span class="icon-search"></span>
+              </form>
+            </div>
+            <div class="small-12 columns">
+              <form action="#">
+                <select>
+                  <option value="-1">Seleccionar Categoría</option>
+                  <option value="0">Belcorp</option>
+                  <option value="1">Liderazgo</option>
+                  <option value="2">Ventas</option>
+                  <option value="3">Comercial</option>
+                </select>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        {embed="includes/menu-offcanvas"}
+
+    <section id="courses">
+      <div class="hide-for-small heading-pocket"></div>
+      <div class="row">
+
+        <div class="total_padding medium-12 large-12 columns">  
+
+        <div id="contenidos_content" class="row">
+          <div class="large-9 columns">
+
+          <div class="row hide-for-small">
+            <div class="large-12 columns">
+              <div id="content_header">
+                <div class="row">
+                  <div class="show-for-large-up large-1 columns">
+                    <span class="icon-book"></span>
+                  </div>
+                  <div class="medium-12 large-11 columns"> 
+                    <h3>{title}</h3>
+                    <h5>{texto-descriptivo-seccion}</h5>
+                  </div>
+<!--                   <div class="hide-for-small medium-2 large-2 columns">
+                    <div class="text-center">
+                      <h3 id="comment_number">30</h3>
+                      <span>COMENTARIOS</span>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+{/exp:channel:entries}
+
+           <div class="under_fixed_header">
+
+          {embed="includes/submenu-contenidos"}
+
+          <div class="row">
+          {exp:channel:entries channel="contenidos" disable="member_data" limit="20" category="{last_segment_category_id}"}
+            <div class="medium-12 large-12 columns">
+              <a id ="clickable_div" href="{link-recurso}" target="_blank">
+                {categories limit="1"}
+                <div class="course externo {category_url_title}">
+                {/categories}
+                  <h5>
+                    <a href="{link-recurso}" target="_blank">{title}</a>
+                  </h5>
+                  {if subtitulo-recurso}
+                  <h6>{subtitulo-recurso}</h6>
+                  {/if}
+                  <span id="fuente"><a href="{link-recurso}" target="_blank">{fuente-recurso}</a></span>
+                  <p>{descripcion-recurso}</p>
+                  {!--categories--}
+                  <div class="school">
+                    <span>{!--category_name--}Ver Más »</span>
+                    <!--<span class="icon-school"></span>-->
+                  </div>
+                  {!--/categories--}
+                </div>
+              </a>
+            </div>
+            
+			              {paginate}  
+			              	{pagination_links}
+                        <div class="medium-12 large-12 columns">
+                          <div class="row">
+                            <div class="large-12 large-centered columns vermas">
+                              <div class="more">                      
+                                <div class="text-center">
+                                  {next_page}
+                                  <a id="more_icon" href="{pagination_url}">
+                                  </a>
+                                  {/next_page}
+                                </div>
+                              </div>
+                            </div>
+                              </div>
+                            </div>
+			              	{/pagination_links}   
+			              {/paginate}           
+            
+          {/exp:channel:entries}
+          </div>
+
+          </div>
+
+          </div>
+          
+          {embed="includes/sidebar-categorias-contenidos"}
+
+        </div>
+      </div>
+    </section>
+
+{embed="includes/footer-interno"}

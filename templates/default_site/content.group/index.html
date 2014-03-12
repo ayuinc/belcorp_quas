@@ -1,0 +1,166 @@
+{embed="includes/header"} 
+    
+    {embed="includes/menu-homepage"}
+
+	{exp:channel:entries channel="secciones" limit="1" entry_id="192" dynamic="off"}
+	{imagenes-seccion}
+    <section id="new_homepage" style="background: url('{image:url:large}') no-repeat; background-size: cover;background-position: center center;">
+        <div class="shadow_trigger"></div>
+    {/imagenes-seccion}
+      <div class="headline">
+        <h1>{title}</h1>
+        <h4>{texto-descriptivo-seccion}</h4>
+        <a href="{site_url}seccion/{url_title}" class="small button">LEER MÁS</a>
+      </div>
+    </section>
+    {/exp:channel:entries} 
+
+    
+    
+    <section id="destacados">
+      <div class="row">
+        <div class="index_padding large-12 columns">  
+          
+          {exp:channel:entries channel="secciones" limit="1" entry_id="193" dynamic="off"}    
+          <div class="row">
+            <div class="large-10 large-centered columns">
+                <h3 class="title">{title}</h3>
+                <h5>{texto-descriptivo-seccion}</h5>
+            </div>
+          </div>
+          {/exp:channel:entries} 
+          
+          
+          <div class="row">
+          
+          {exp:channel:entries channel="tendencias" limit="3" dynamic="off" orderby="date" sort="DESC"} 
+            <div class="large-4 columns">
+              <div class="course">
+                <p>Escuela de {categories show_group="1"}{category_name} {/categories} //<span> {channel}</span></p>
+                <h3>{title}</h3>
+                	{if link-recurso}
+						<a href="{link-recurso}" target="_blank">
+					{if:else}
+						<a href="#">
+                	{/if}
+                  <span id="enter">Entrar <img src="{site_url}img/enter_arrow.png" alt=""></span>
+                </a>
+              </div>
+            </div>
+           {/exp:channel:entries}  
+            
+          {exp:low_reorder:entries set="cursos-destacados" limit="3"}
+            <div class="large-4 columns">
+              <div class="course">
+                <p>Escuela de {categories show_group="1"}{category_name} {/categories} //<span> {channel}</span></p>
+                <h3>{title}</h3>
+                <a href="{site_url}catalogo/curso/{url_title}">
+                  <span id="enter">Entrar <img src="{site_url}img/enter_arrow.png" alt=""></span>
+                </a>
+              </div>
+            </div>
+           {/exp:low_reorder:entries}             
+           
+          </div>
+          <a href="{site_url}catalogo/todos" id="more_index" class="small button">VER TODOS</a>
+          <div id="down"></div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="escuelas">
+      <div class="row">
+        <div class="index_padding large-12 columns">
+        <div class="row">
+        	<div class="large-10 large-centered columns">
+	        {exp:channel:entries channel="secciones" limit="1" entry_id="194" dynamic="off"}
+	          <h3 class="title">{title}</h3>
+	          <h5>{texto-descriptivo-seccion}</h5>
+	        {/exp:channel:entries} 
+        	</div>
+        </div> 
+          <div class="row">
+            <div class="large-3 columns">
+                <div class="course ventas">
+                  <span>ESCUELA DE</span>
+                  <h5>VENTAS</h5>
+                </div>
+                <a href="{site_url}catalogo/ventas" class="small button">ENTRAR</a>
+            </div>
+            <div class="large-3 columns">
+                <div class="course negocios">
+                  <span>ESCUELA DE</span>
+                  <h5>NEGOCIOS</h5>
+                </div>
+                <a href="{site_url}catalogo/negocios" class="small button">ENTRAR</a>
+            </div>
+            <div class="large-3 columns">
+                <div class="course liderazgo-cultura">
+                  <span>ESCUELA DE</span>
+                  <h5>LIDERAZGO Y CULTURA</h5>
+                </div>
+                <a href="{site_url}catalogo/liderazgo-cultura" class="small button">ENTRAR</a>
+            </div>
+            <div class="large-3 columns">
+                <div class="course innovacion">
+                  <span>ESCUELA DE</span>
+                  <h5>INNOVACIÓN</h5>
+                </div>
+                <a href="{site_url}catalogo/innovacion" class="small button">ENTRAR</a>
+            </div>
+          </div>
+          <div id="down"></div>
+        </div>
+      </div> 
+    </section>
+
+
+	{exp:channel:entries channel="secciones" limit="1" entry_id="196" dynamic="off"}
+    <section id="summa">
+      <div class="headline">
+        <h1>{title}</h1>
+        <h4>{texto-descriptivo-seccion}</h4>
+        <a href="{site_url}seccion/{url_title}" class="small button">LEER MÁS</a>
+      </div>
+    </section>
+    {/exp:channel:entries}
+   
+
+    <!--<section id="convenios">
+      <div class="row">
+        <div class="index_padding large-10 large-centered columns">
+        
+		  {exp:channel:entries channel="secciones" limit="1" entry_id="196" dynamic="off"}
+          <div class="row">
+	          <div class="large-10 large-centered columns">
+		          <h3 class="title">{title}</h3>
+		          <h5>{texto-descriptivo-seccion}</h5>
+	          </div>
+          </div>
+          {/exp:channel:entries} 
+          
+          
+          <div class="row">
+          	<div class="large-12 large-centered columns">
+          		<div class="row">
+          			{exp:channel:entries channel="convenios" limit="4" orderby="random" dynamic="off"}
+			  		<div class="large-3 columns">
+			  			{imagen-convenio}
+				  		<img src="{image:url:small}" alt="{title}">
+				  		{/imagen-convenio}	
+			  		</div>	
+			  		{/exp:channel:entries}
+          		</div>
+          	</div>
+          </div>
+ 
+          
+          {exp:channel:entries channel="secciones" limit="1" entry_id="196" dynamic="off"}
+          <a href="{site_url}seccion/{url_title}" class="small button">LEER MÁS</a>
+          {/exp:channel:entries} 
+        </div>   
+      </div> 
+    </section>-->
+
+{embed="includes/footer"}     

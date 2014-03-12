@@ -1,0 +1,73 @@
+{exp:channel:entries channel="secciones" limit="1" disable="pagination" entry_id="81"}
+{embed="includes/header"} 
+
+    <section id="navbar">
+      <div class="row">
+        <div class="large-6 columns">
+          <a href="{site_url}">
+            <img src="{site_url}img/logo_header.png" alt="">
+          </a>
+        </div>
+        <div class="large-6 columns">
+          <div class="text-right">
+            <a href="{site_url}catalogo">Ingresar <img src="{site_url}img/enter_arrow.png" alt=""></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    {embed="includes/menu-homepage"}
+
+	    {imagenes-seccion}
+	    <section id="article_header" style="background: url('{image:url:large}') no-repeat; background-size: cover;background-position: center center;">
+	    {/imagenes-seccion}
+
+    
+      <div class="overlay"></div>
+      <div class="article_title">
+        <div class="row">
+          <div class="large-8 large-centered columns">
+            <h1>{title}</h1>
+            
+            {if texto-descriptivo-seccion}
+            	<span id="sub_header">{texto-descriptivo-seccion}</span>
+            {/if}
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="article_content">
+      <div class="row">
+        <div class="large-8 large-centered columns">
+          
+          {if contenido-seccion}	
+          	{contenido-seccion}
+          {/if}
+          
+				{exp:freeform:form form_name="contactenos" return="contactanos/institucional_gracias" }
+				    <dl>
+				    {freeform:all_form_fields}
+				        <dt><label>{freeform:field_label}</label></dt>
+				        <dd>{freeform:field_output}</dd>
+				    {/freeform:all_form_fields}
+				    </dl>
+				    {if freeform:captcha}
+				        <p>Please enter the word you see in the image below:</p>
+				        <p>{freeform:captcha}<br />
+				        <input type="text" name="captcha" style="width:140px;" /></p>
+				    {/if}
+				  <div class="row">
+                    <div class="large-offset-10 large-2 columns"> 
+                    <button class="publish button expand">ENVIAR</button>
+                    </div>
+                  </div>    
+				{/exp:freeform:form} 
+          
+        </div>
+      </div>
+    </section>
+{/exp:channel:entries}     
+    
+ 
+{embed="includes/footer"}

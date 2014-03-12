@@ -1,0 +1,53 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{if embed:titulo}{embed:titulo} | {/if}UCB - Universidad Corporativa de Belcorp</title>
+    <link rel="shortcut icon" href="{site_url}img/favicon.ico" />
+    <link rel="stylesheet" href="{site_url}css/foundation.css" />
+    <link rel="stylesheet" href="{site_url}css/custom.css">
+    <script src="{site_url}js/modernizr.js"></script>
+<!--[if lt IE 9]>
+  <script src="{site_url}js/ie9/html5shiv.js"></script>
+  <script src="{site_url}js/ie9/nwmatcher-1.2.5-min.js"></script>
+  <script src="{site_url}js/ie9/respond.min.js"></script>
+  <script src="{site_url}js/ie9/selectivizr-min.js"></script>
+<![endif]-->
+    {if segment_2=='foro'}
+    	<link href="{path=css/_ee_channel_form_css}" type="text/css" rel="stylesheet" media="screen">
+    {/if}
+    
+    <!--Google+-->
+    <meta name="description" content="Somos una comunidad dedicada al desarrollo personal." />
+    <meta name="keywords" content="educaci[on, belcorp, universidad, cursos, en l[inea, aprender" />
+    <meta name="author" content="Universidad Coorporativa de Belcorp" />
+    <meta name="copyright" content="Universidad Coorporativa de Belcorp" />
+    <meta name="application-name" content="{if embed:titulo}{embed:titulo} | {/if}UCB - Universidad Corporativa de Belcorp" />
+    
+    <!-- for Facebook -->
+    <meta property="og:title" content="{if embed:titulo}{embed:titulo} | {/if}UCB - Universidad Corporativa de Belcorp" />
+	<meta property="og:type" content="other" />
+	<meta property="og:image" content="{site_url}img/logo_header.png" />
+	<meta property="og:url" content="{site_url}" />
+	<meta property="og:description" content="Somos una comunidad dedicada al desarrollo personal." />
+	
+    <!-- for Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{if embed:titulo}{embed:titulo} | {/if}UCB - Universidad Corporativa de Belcorp" />
+    <meta name="twitter:description" content="Somos una comunidad dedicada al desarrollo personal. @ubelcorp" />
+    <meta name="twitter:image" content="{site_url}img/logo_header.png" />       
+    
+    <!--TypeKit-->
+	<script type="text/javascript">
+	  (function(d) {
+	    var config = {
+	      kitId: 'gqp3hja',
+	      scriptTimeout: 3000
+	    },
+	    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+	  })(document);
+	</script>     
+    
+  </head>
+  <body>

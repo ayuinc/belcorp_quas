@@ -1,0 +1,101 @@
+{exp:channel:entries channel="secciones" limit="1" disable="member_data|pagination|categories" entry_id="81"}
+{embed="includes/header"  titulo="{title}"}
+
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+        <div id="courses_menu" class="hide-for-medium-up">
+          <div class="row">
+            <div class="large-12 columns">
+              <a class="left-off-canvas-toggle" ><span class="icon-list"></span></a>
+              <h3 id="menu_title">{title}</h3>
+            </div>
+          </div>
+        </div>
+
+	{embed="inbcludes/menu-offcanvas"}
+
+    <section id="courses">
+      <div class="heading-pocket"></div>
+      <div class="row">
+
+        <div class="total_padding medium-12 large-12 columns">  
+
+        <div id="feedback_content" class="row">
+          <div class="large-9 columns">
+
+          <div class="row">
+            <div class="large-12 columns">
+              <div id="contact_header">
+                <div class="row">
+                  <div class="show-for-large-up large-1 columns">
+                    <span class="icon-mail"></span>
+                  </div>
+                  <div class="medium-12 large-11 columns"> 
+                    <h3>{title}</h3>
+                    <h5>{texto-descriptivo-seccion}</h5>
+                  </div>
+<!--                   <div class="hide-for-small medium-2 large-2 columns">
+                    <div class="text-center">
+                      <h3 id="comment_number">30</h3>
+                      <span>COMENTARIOS</span>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+{/exp:channel:entries}
+
+        <div class="under_fixed_header">
+        
+          <div class="row">
+            <div class="large-12 columns confirmacion text-center">
+                <p>Tu mensaje fue enviado correctamente.</p>
+            </div>
+          </div>         
+        
+          <div class="row">
+            <div class="large-12 columns">
+
+              <div class="contact_form">
+                
+
+				{exp:freeform:form form_name="contactenos" return="contactanos/gracias" }
+				    <dl>
+				    {freeform:all_form_fields}
+				        <dt><label>{freeform:field_label}</label></dt>
+				        <dd>{freeform:field_output}</dd>
+				    {/freeform:all_form_fields}
+				    </dl>
+				    {if freeform:captcha}
+				        <p>Please enter the word you see in the image below:</p>
+				        <p>{freeform:captcha}<br />
+				        <input type="text" name="captcha" style="width:140px;" /></p>
+				    {/if}
+				  <div class="row">
+                    <div class="large-offset-10 large-2 columns"> 
+                    <button class="publish button expand">ENVIAR</button>
+                    </div>
+                  </div>    
+				{/exp:freeform:form}                  
+
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+
+          <div class="large-3 columns hide-for-small hide-for-medium fixed_menu right_padding">
+                  {exp:search:simple_form channel="cursos|contenidos" form_id="form_search" status="open"  search_in="titles" result_page="buscar/index"}
+                    <input type="search" name="keywords" id="keywords" placeholder="BUSCAR">
+                    <span class="icon-search"></span>
+                  {/exp:search:simple_form}
+              <a href="{site_url}quieres-crear-un-curso" id="create_course" class="publish button expand">¿QUIERES CREAR UN CURSO?</a>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+{embed="includes/footer-interno_new"}
