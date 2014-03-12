@@ -18,49 +18,54 @@
           
           	{if segment_1!='buscar'}
             
-            {if segment_2!='todos'}
-            <dl id="padding_accordion" class="accordion" data-accordion>
-              <dd>
-                <a id="school_panel_trigger" href="#school_panel">
-                  SUBCATEGORIAS
-                  <span id="menu_arrow" class="icon-arrow-down"></span>
-                </a>
-                <div id="school_panel" class="activex">
-                        <dl class="accordion" data-accordion>
-                          <dd>
-                            <a class="#" href="{site_url}catalogo/{segment_2}">TODAS</a>
-                          </dd>
-                          {embed="includes/categorias-escuelas"}
-           
-                        </dl>
-                 </div>
-              </dd>
-            </dl>
-            {/if}
-            <dl id="padding_accordion" class="accordion" data-accordion>
-              <dd>
-                <a id="school_panel_trigger_1" href="#school_panel">
-                  TIPO DE CONTENIDO
-                  <span id="menu_arrow_1" class="icon-arrow-down"></span>
-                </a>
-                <div id="school_panel_1" class="activex">
-                        <dl class="accordion" data-accordion>
-                          <dd class="belcorp">
-                            <a href="{site_url}catalogo/{segment_2}">TODOS</a>
-                          </dd>
-                          <dd class="belcorp">
-                            <a href="{site_url}catalogo/{segment_2}/{segment_3}/cursos">CURSOS</a>
-                          </dd>
-                          <dd class="belcorp">
-                            <a href="{site_url}catalogo/{segment_2}/{segment_3}/tendencias">TENDENCIAS</a>
-                          </dd>            
-                        </dl>
-                 </div>
-              </dd>
-            </dl>
+	            {if segment_2!='todos'}
+	            <dl id="padding_accordion" class="accordion" data-accordion>
+	              <dd>
+	                <a id="school_panel_trigger" href="#school_panel">
+	                  CATEGORIAS
+	                  <span id="menu_arrow" class="icon-arrow-down"></span>
+	                </a>
+	                <div id="school_panel" class="activex">
+	                        <dl class="accordion" data-accordion>
+	                          <dd>
+	                            <a class="#" href="{site_url}catalogo/{segment_2}">TODAS</a>
+	                          </dd>
+	                          {embed="includes/categorias-escuelas"}
+	                        </dl>
+	                 </div>
+	              </dd>
+	            </dl>
+            
+				
+	            <dl id="padding_accordion" class="accordion" data-accordion>
+	              <dd>
+	                <a id="school_panel_trigger_1" href="#school_panel">
+	                  {if segment_2=='liderazgo-cultura'}
+	                  	BACKBONE
+	                  {if:else}
+	                  	CONTENIDOS
+	                  {/if}
+	                  <span id="menu_arrow_1" class="icon-arrow-down"></span>
+	                </a>
+	                <div id="school_panel_1" class="activex">
+	                        <dl class="accordion" data-accordion>
+	                          {if segment_2!='liderazgo-cultura'}
+	                          <dd class="belcorp">
+	                            <a href="{site_url}catalogo/{segment_2}">TODOS</a>
+	                          </dd>
+	                          {/if}
+	                          {embed="includes/contenido-escuelas"}           
+	                        </dl>
+	                 </div>
+	              </dd>
+	            </dl>
+	            {/if}
             
             {/if}
             
+            {if segment_2=='liderazgo-cultura'}
+            <a href="{site_url}quieres-crear-un-curso" id="create_course" class="publish button expand" style="margin-top:1.5rem;">BACKBONE</a>  
+            {/if}
             
             <a href="{site_url}quieres-crear-un-curso" id="create_course" class="publish button expand" style="margin-top:1.5rem;">¿QUIERES CREAR UN CURSO?</a>              
                         

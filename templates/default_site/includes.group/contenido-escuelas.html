@@ -1,0 +1,56 @@
+{if segment_2!='liderazgo-cultura'}
+
+	{exp:channel:categories style="linear" category_group="5"}
+		
+		{if segment_2=='innovacion'}
+			{if parent_id=='65'}
+			<dd class="belcorp">
+				<a href="{site_url}catalogo/{segment_2}/{category_url_title}">{category_name}</a>
+			</dd>  
+			{/if}
+		{/if}
+		
+		{if segment_2=='ventas'}
+			{if parent_id=='41'}
+			<dd class="belcorp">
+				<a href="{site_url}catalogo/{segment_2}/{category_url_title}">{category_name}</a>
+			</dd>  
+			{/if}
+		{/if}
+		
+		{if segment_2=='negocios'}
+			{if parent_id=='68'}
+			<dd class="belcorp">
+				<a href="{site_url}catalogo/{segment_2}/{category_url_title}">{category_name}</a>
+			</dd>  
+			{/if}
+		{/if}		
+			
+	{/exp:channel:categories}  
+
+
+{if:else}
+		
+		<dd class="belcorp">
+			<a href="">PRINCIPIOS</a>
+		</dd> 
+		{exp:channel:categories style="linear" category_group="5"}
+			{if parent_id=='72'}
+			<dd class="belcorp">
+				<a href="{site_url}catalogo/{segment_2}/{category_url_title}">{category_name}</a>
+			</dd>  
+			{/if}
+		{/exp:channel:categories} 
+
+		
+		<dd class="belcorp">
+			<a href="">VALORES</a>
+		</dd> 
+		{exp:channel:categories style="linear" category_group="5"}
+			{if parent_id=='73'}		
+			<dd class="belcorp">
+				<a href="{site_url}catalogo/{segment_2}/{category_url_title}">{category_name}</a>
+			</dd>  
+			{/if}
+		{/exp:channel:categories} 
+{/if}
