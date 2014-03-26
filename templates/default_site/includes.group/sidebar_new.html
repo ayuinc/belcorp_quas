@@ -1,6 +1,6 @@
-          <div class="large-3 columns hide-for-small hide-for-medium fixed_menu right_padding">
+          <div class="large-3 columns hide-for-small hide-for-medium right_padding">
           
-				<form method="post" action="{path='buscar/index'}" id="form_search">
+				<!--<form method="post" action="{path='buscar/index'}" id="form_search">
 				    {exp:super_search:search
 				        {if segment_2 == "saved"}
 				            search_id="{segment_3}"
@@ -9,10 +9,17 @@
 				        <input type="search" name="keywords" id="keywords" placeholder="BUSCAR">
                     <span class="icon-search"></span>
 				    {/exp:super_search:search}
-				</form>
+				</form>-->
+
+				
+{exp:search:simple_form channel="cursos|tendencias" result_page="buscar/index" where="all" form_id="form_search"}
+                <input type="search" name="keywords" id="keywords" placeholder="BUSCAR">
+				<span class="icon-search"></span>
+{/exp:search:simple_form}
+
 			
 			{if last_segment=='ventas'}
-				<a href="http://ucb.belcorp.biz/index.php/la-clave-certificacion" target="_blank" id="create_course" class="publish button expand" style="margin-bottom:1.5rem;">HERRAMIENTAS DE CERTIFICACIÓN</a>
+				<a href="http://ucb.belcorp.biz/escueladeventas" target="_blank" id="create_course" class="publish button expand" style="margin-bottom:1.5rem;">HERRAMIENTAS DE CERTIFICACIÓN</a>
 			{/if}	
           
           
@@ -59,12 +66,46 @@
 	                 </div>
 	              </dd>
 	            </dl>
+	            {if:else}
+	            <dl id="padding_accordion" class="accordion" data-accordion>
+	              <dd>
+	                <a id="school_panel_trigger" href="#school_panel">
+	                  CATEGORIAS
+	                  <span id="menu_arrow" class="icon-arrow-down"></span>
+	                </a>
+	                <div id="school_panel" class="activex">
+	                        <dl class="accordion" data-accordion>
+	                          <dd>
+	                            <a class="#" href="{site_url}catalogo/{segment_2}">TODAS</a>
+	                          </dd>
+	                          {embed="includes/categorias-escuelas"}
+	                        </dl>
+	                 </div>
+	              </dd>
+	            </dl>
+	            
+	            <dl id="padding_accordion" class="accordion" data-accordion>
+	              <dd>
+	                <a id="school_panel_trigger" href="#school_panel">
+	                  CONTENIDOS
+	                  <span id="menu_arrow" class="icon-arrow-down"></span>
+	                </a>
+	                <div id="school_panel" class="activex">
+	                        <dl class="accordion" data-accordion>
+	                          <dd>
+	                            <a class="#" href="{site_url}catalogo/{segment_2}">TODAS</a>
+	                          </dd>
+	                          {embed="includes/contenido-escuelas"}
+	                        </dl>
+	                 </div>
+	              </dd>
+	            </dl>
 	            {/if}
             
             {/if}
             
             {if segment_2=='liderazgo-cultura'}
-            <a href="{site_url}quieres-crear-un-curso" id="create_course" class="publish button expand" style="margin-top:1.5rem;">BACKBONE</a>  
+            <a href="{site_url}images/documentos/PDF_Backbone.pdf" target="_blank" id="create_course" class="publish button expand" style="margin-top:1.5rem;">DESCARGA BACKBONE</a>  
             {/if}
             
             <a href="{site_url}quieres-crear-un-curso" id="create_course" class="publish button expand" style="margin-top:1.5rem;">¿QUIERES CREAR UN CURSO?</a>              

@@ -2,10 +2,27 @@
 
 	{exp:channel:categories style="linear" category_group="5"}
 		
+		{if segment_2=='todos'}
+			{if parent_id=='84'}
+			<dd class="belcorp">
+				<a href="{site_url}catalogo/{segment_2}/{category_url_title}"
+				{if segment_3==category_url_title}
+				class="selected"
+				{/if}				
+				>{category_name}</a>
+			</dd>  
+			{/if}
+		{/if}
+
+
 		{if segment_2=='innovacion'}
 			{if parent_id=='65'}
 			<dd class="belcorp">
-				<a href="{site_url}catalogo/{segment_2}/{category_url_title}">{category_name}</a>
+				<a href="{site_url}catalogo/{segment_2}/{category_url_title}"
+				{if segment_3==category_url_title}
+				class="selected"
+				{/if}				
+				>{category_name}</a>
 			</dd>  
 			{/if}
 		{/if}
@@ -13,7 +30,14 @@
 		{if segment_2=='ventas'}
 			{if parent_id=='41'}
 			<dd class="belcorp">
-				<a href="{site_url}catalogo/{segment_2}/{category_url_title}">{category_name}</a>
+				<a href="{site_url}catalogo/{segment_2}/{category_url_title}"
+				{if segment_3==category_url_title}
+				class="selected"
+				{/if}
+				{if category_url_title=='marcas'}
+				style="padding-left:3rem;"
+				{/if}				
+				>{category_name}</a>
 			</dd>  
 			{/if}
 		{/if}
@@ -21,7 +45,11 @@
 		{if segment_2=='negocios'}
 			{if parent_id=='68'}
 			<dd class="belcorp">
-				<a href="{site_url}catalogo/{segment_2}/{category_url_title}">{category_name}</a>
+				<a href="{site_url}catalogo/{segment_2}/{category_url_title}"
+				{if segment_3==category_url_title}
+				class="selected"
+				{/if}				
+				>{category_name}</a>
 			</dd>  
 			{/if}
 		{/if}		
@@ -37,7 +65,12 @@
 		{exp:channel:categories style="linear" category_group="5"}
 			{if parent_id=='72'}
 			<dd class="belcorp">
-				<a href="{site_url}catalogo/{segment_2}/{category_url_title}">{category_name}</a>
+				{if segment_3!=category_url_title}
+				<a class="sub_category" href="{site_url}catalogo/{segment_2}/{category_url_title}">
+				{if:else}
+				<a class="sub_category selected" href="{site_url}catalogo/{segment_2}/{category_url_title}">
+				{/if}	
+				{category_name}</a>
 			</dd>  
 			{/if}
 		{/exp:channel:categories} 
@@ -49,7 +82,12 @@
 		{exp:channel:categories style="linear" category_group="5"}
 			{if parent_id=='73'}		
 			<dd class="belcorp">
-				<a href="{site_url}catalogo/{segment_2}/{category_url_title}">{category_name}</a>
+				{if segment_3!=category_url_title}
+				<a class="sub_category" href="{site_url}catalogo/{segment_2}/{category_url_title}">
+				{if:else}
+				<a class="sub_category selected" href="{site_url}catalogo/{segment_2}/{category_url_title}">
+				{/if}	
+				{category_name}</a>
 			</dd>  
 			{/if}
 		{/exp:channel:categories} 

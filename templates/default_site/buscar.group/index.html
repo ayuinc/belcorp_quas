@@ -6,12 +6,34 @@
           <div class="row">
             <div class="large-12 columns">
               <a class="left-off-canvas-toggle" ><span class="icon-list"></span></a>
-              <h3 id="menu_title">Contenidos</h3>
+              <h3 id="menu_title">{title}</h3>
             </div>
+            <div class="small-12 columns">
+              <form action="#" id="form_search">
+                <input type="search" placeholder="BUSCAR">
+                <span class="icon-search"></span>
+              </form>
+            </div>
+            
+            <!--Solo para Moviles-->
+            <div class="small-12 columns">
+              <form action="#">
+                <select>
+                  <option value="-1">Seleccionar Categoría</option>
+                  <option value="0">Belcorp</option>
+                  <option value="1">Liderazgo</option>
+                  <option value="2">Ventas</option>
+                  <option value="3">Comercial</option>
+                </select>
+              </form>
+            </div>
+            
           </div>
         </div>
 
-        {embed="inbcludes/menu-offcanvas"}
+
+
+		{embed="includes/menu_new"}
 
     <section id="courses">
       <div class="heading-pocket"></div>
@@ -31,18 +53,11 @@
                   </div>
                   <div class="medium-10 large-11 columns"> 
                     <h3>RESULTADOS DE LA BUSQUEDA</h3>
-                    {if super_search_total_results}
-                    <span>Encontramos {super_search_total_results} resultado(s) de la palabra(s): {super_search_keywords}</span>
-                    {if:else}
-                    <span>No Encontramos ningún resultado para la(s) palabra(s): {super_search_keywords}</span>
-                    {/if}
+                    
+					        Encontramos {exp:search:total_results} {total_results} {/exp:search:total_results} resultado(s) para la(s) palabra(s) {exp:search:keywords}.
+					
+
                   </div>
-<!--                   <div class="hide-for-small medium-2 large-2 columns">
-                    <div class="text-center">
-                      <h3 id="comment_number">30</h3>
-                      <span>COMENTARIOS</span>
-                    </div>
-                  </div> -->
                 </div>
               </div>
             </div>
@@ -52,10 +67,51 @@
             <div class="large-12 columns">
               <div class="resources_list">
               
+              
+{exp:search:search_results}
 
+                <div class="resources_item">
+                  <div class="row">
+                    <div class="medium-12 large-12 columns">  
+
+						<h5>
+                        	<a href="{auto_path}" target="_blank">{title}</a>
+                        </h5>
+                        
+                      {if subtitulo-recurso}
+                      <h6>{subtitulo-recurso}</h6>
+                      {/if}
+                      
+                      {if descripcion-curso}
+                      <p>{descripcion-curso}</p>
+                      {/if}
+                      
+                      {if descripcion-recurso}
+                      <p>{descripcion-recurso}</p>
+                      {/if}  
+                      
+                                           
+                          <div class="school">
+                          	{if descripcion-curso}
+                            	<span><a href="{site_url}catalogo/curso/{url_title}">Ver Más »</a></span>
+                            {if:else}
+                            	<span><a href="{link-recurso}" target="_blank">Ver Más »</a></span>
+                            {/if}
+                          </div>
+
+    {paginate}
+        <p>Page {current_page} of {total_pages} pages {pagination_links}</p>
+    {/paginate}
+    
+                        </div>
+                  </div>
+                </div>
+
+{/exp:search:search_results}
               
               
-               {exp:super_search:results channel="contenidos|cursos" limit="10" dynamic="off" orderby="entry_date+desc+title+asc" search_in="title" paginate="bottom"}
+              
+               <!--{exp:super_search:results channel="cursos" limit="10"}
                 <div class="resources_item">
                   <div class="row">
                     <div class="medium-12 large-12 columns">  
@@ -84,6 +140,7 @@
                   </div>
                 </div>
 
+				
 			              {paginate}  
 			              	{pagination_links}
 							  <div class="row">
@@ -91,23 +148,21 @@
 				                  <div class="more">                      
 				                    <div class="text-center">
 				                      {next_page}
-  				                    <div class="text-center">
-  				                      <a href="{pagination_url}">
-                                  <span id="more_icon"></span>
-                                </a>
-  				                    </div>
-                              {/next_page}
-                            </div>
+  				                      <div class="text-center">
+  				                      	<a href="{pagination_url}"><span id="more_icon"></span></a>
+  				                      </div>
+  									  {/next_page}
+  									</div>
 				                  </div>
 				                </div>
 				              </div>
 			              	{/pagination_links}   
 			              {/paginate}                
                 
-               {/exp:super_search:results}
+               {/exp:super_search:results} -->
                
-                
-              </div>
+               </div> 
+              
 
 
 
@@ -116,7 +171,7 @@
 
           </div>
           
-          {embed="includes/sidebar-categorias-contenidos"}
+          {embed="includes/sidebar_new"}
 
         </div>
       </div>

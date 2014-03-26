@@ -5,8 +5,10 @@
       <div class="inner-wrap">
         <div id="courses_menu" class="hide-for-medium-up">
           <div class="row">
-            <div class="large-12 columns">
+            <div class="small-2 large-2 columns">
               <a class="left-off-canvas-toggle" ><span class="icon-list"></span></a>
+	    </div>
+	    <div class="small-10 large-10 columns">
               <h3 id="menu_title">{title}</h3>
             </div>
           </div>
@@ -16,7 +18,7 @@
 
     <section id="details">
       <div class="hide-for-small heading-pocket">
-        <div class="row">
+        <!--<div class="row">
           <div class="total_padding large-12 columns">
             <div class="back">
               <a href="javascript:history.go(-1)">  
@@ -24,7 +26,17 @@
               </a>
             </div>
           </div>
-        </div>
+        </div>-->
+          <div class="hide-for-small heading-pocket">
+            <div class="row">
+              <div class="large-12 total_padding columns">
+                
+                {categories  show_group="1"}
+                	{embed="includes/menu-escuelas" nombre-categoria="{category_name}"}
+                {/categories}
+              </div>
+            </div>
+          </div>
       </div>
       
       <div class="row">
@@ -39,14 +51,10 @@
                   {categories limit="1"}
                     <div id="details_header" class="course {category_url_title}">
                   {/categories}  
+                      {categories show_group="1"}
+                      	<span>Escuela de {category_name}</span>
+                      {/categories}
                       <h3>{title}</h3>
-                      <!--<p>{introduccin-curso}</p>-->
-                      <!--{categories}
-                      <div class="school">
-                        <span>{category_name}</span>
-                        <span class="icon-school"></span>
-                      </div>
-                      {/categories}-->
                     </div>
                 </div>
               </div>
@@ -172,5 +180,5 @@
     </section>
 {/exp:channel:entries}
 
-	{embed="includes/footer-interno"}
+	{embed="includes/footer-interno_new"}
 	

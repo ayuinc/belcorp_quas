@@ -43,7 +43,7 @@
 					{if:else}
 						<a href="#">
                 	{/if}
-                  <span id="enter">Entrar <img src="{site_url}img/enter_arrow.png" alt=""></span>
+                  <span id="enter">Entrar <span class="icon-arrow-right"></span></span>
                 </a>
               </div>
             </div>
@@ -55,7 +55,7 @@
                 <p>Escuela de {categories show_group="1"}{category_name} {/categories} //<span> {channel}</span></p>
                 <h3>{title}</h3>
                 <a href="{site_url}catalogo/curso/{url_title}">
-                  <span id="enter">Entrar <img src="{site_url}img/enter_arrow.png" alt=""></span>
+                  <span id="enter">Entrar <span class="icon-arrow-right"></span></span>
                 </a>
               </div>
             </div>
@@ -80,7 +80,7 @@
 	        {/exp:channel:entries} 
         	</div>
         </div> 
-          <div class="row">
+          <div class="row nuestras-escuelas">
             <div class="large-3 columns">
                 <div class="course ventas">
                   <span>ESCUELA DE</span>
@@ -127,21 +127,22 @@
     {/exp:channel:entries}
    
 
-    <!--<section id="convenios">
+    <section id="contacto">
       <div class="row">
         <div class="index_padding large-10 large-centered columns">
         
-		  {exp:channel:entries channel="secciones" limit="1" entry_id="196" dynamic="off"}
+		  {exp:channel:entries channel="secciones" limit="1" entry_id="81" dynamic="off"}
           <div class="row">
 	          <div class="large-10 large-centered columns">
 		          <h3 class="title">{title}</h3>
 		          <h5>{texto-descriptivo-seccion}</h5>
+		          <a href="{site_url}contactanos" class="small button">ENVIAR UN E-MAIL</a>
 	          </div>
           </div>
           {/exp:channel:entries} 
           
           
-          <div class="row">
+          <!--<div class="row">
           	<div class="large-12 large-centered columns">
           		<div class="row">
           			{exp:channel:entries channel="convenios" limit="4" orderby="random" dynamic="off"}
@@ -153,14 +154,15 @@
 			  		{/exp:channel:entries}
           		</div>
           	</div>
-          </div>
+          </div>-->
  
-          
+          <!--
           {exp:channel:entries channel="secciones" limit="1" entry_id="196" dynamic="off"}
           <a href="{site_url}seccion/{url_title}" class="small button">LEER MÁS</a>
           {/exp:channel:entries} 
+          -->
         </div>   
       </div> 
-    </section>-->
+    </section>
 
 {embed="includes/footer"}     

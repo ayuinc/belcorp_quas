@@ -1,14 +1,13 @@
-
     <section id="navbar">
       <div class="row">
-        <div class="large-6 columns">
+        <div class="small-5 medium-6 large-6 columns">
           <a href="{site_url}">
             <img src="{site_url}img/logo_header.png" alt="">
           </a>      
         </div>
-        <div class="large-6 columns">
+        <div class="small-7 medium-6 large-6 columns">
           <div class="text-right">
-            <a href="{site_url}catalogo/todos">Ingresa a la universidad <img src="{site_url}img/enter_arrow.png" alt=""></span></a>
+            <a href="{site_url}catalogo">Ingresa a la universidad <span class="icon-arrow-right"></span></a>
           </div>
         </div>
       </div>
@@ -16,13 +15,13 @@
 
     <section id="sub_navbar">      
       <div class="row">
-        <div class="large-8 large-centered columns">
+        <div class="large-6 large-centered columns">
           <ul class="inline-list">
             <li>
             	{if segment_1!='seccion'}
-              	<a id='ucb_menu active' href='#'>UCB</a>
+              	<a id='ucb_menu' href='#'>UCB</a>
               	{if:else}
-              	<a id='ucb_menu active' href='{site_url}#ucb_menu'>UCB</a>
+              	<a href='{site_url}#ucb_menu'>UCB</a>
               	{/if}
             </li>
             <li>
@@ -50,7 +49,7 @@
               	{/if}
             </li>
             <li>
-              <a id="contactanos_menu" href="{site_url}contactanos/institucional">Contáctanos</a>
+              <a id="contacto_menu" href="#">Contáctanos</a>
             </li>
           </ul>
         </div>

@@ -37,6 +37,13 @@
     <script>
     $(document).ready(function(){
 
+      $( "#ucb_menu" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:0}, "slow");
+          $("#sub_navbar .inline-list li a").removeClass("active");
+          $(this).addClass("active");
+      });
+
       $( "#destacados_menu" ).click(function( event ) {
         event.preventDefault();
           $("html, body").animate({scrollTop:$("#destacados").offset().top -122});
@@ -61,6 +68,13 @@
       $( "#convenios_menu" ).click(function( event ) {
         event.preventDefault();
           $("html, body").animate({scrollTop:$("#convenios").offset().top -122});
+          $("#sub_navbar .inline-list li a").removeClass("active");
+          $(this).addClass("active");
+      });
+
+      $( "#contacto_menu" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:$("#contacto").offset().top -122});
           $("#sub_navbar .inline-list li a").removeClass("active");
           $(this).addClass("active");
       });
@@ -123,7 +137,7 @@
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 	
-	  ga('create', 'UA-48871643-1', 'belcopr.biz');
+	  ga('create', 'UA-39228167-1', 'nuevabelcopr.biz');
 	  ga('send', 'pageview');
 	
 	</script>   

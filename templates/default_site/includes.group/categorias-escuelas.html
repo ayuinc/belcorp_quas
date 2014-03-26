@@ -2,11 +2,26 @@
 
 {exp:channel:categories style="linear" category_group="4"}
 	
-	
+	{if segment_2=='todos'}
+		{if parent_id=='82'}
+		<dd class="belcorp">
+			<a href="{site_url}catalogo/{segment_2}/{category_url_title}" 
+			{if segment_3==category_url_title}
+			class="selected"
+			{/if}
+			>{category_name}</a>
+		</dd>  
+		{/if}
+	{/if}	
+
 	{if segment_2=='innovacion'}
 		{if parent_id=='19'}
 		<dd class="belcorp">
-			<a href="{site_url}catalogo/{segment_2}/{category_url_title}">{category_name}</a>
+			<a href="{site_url}catalogo/{segment_2}/{category_url_title}"
+			{if segment_3==category_url_title}
+			class="selected"
+			{/if}
+			>{category_name}</a>
 		</dd>  
 		{/if}
 	{/if}
@@ -14,7 +29,11 @@
 	{if segment_2=='ventas'}
 		{if parent_id=='28'}
 		<dd class="belcorp">
-			<a href="{site_url}catalogo/{segment_2}/{category_url_title}">{category_name}</a>
+			<a href="{site_url}catalogo/{segment_2}/{category_url_title}"
+			{if segment_3==category_url_title}
+			class="selected"
+			{/if}
+			>{category_name}</a>
 		</dd>  
 		{/if}
 	{/if}
@@ -22,7 +41,11 @@
 	{if segment_2=='negocios'}
 		{if parent_id=='29'}
 		<dd class="belcorp">
-			<a href="{site_url}catalogo/{segment_2}/{category_url_title}">{category_name}</a>
+			<a href="{site_url}catalogo/{segment_2}/{category_url_title}"
+			{if segment_3==category_url_title}
+			class="selected"
+			{/if}
+			>{category_name}</a>
 		</dd>  
 		{/if}
 	{/if}
@@ -30,7 +53,11 @@
 	{if segment_2=='liderazgo-cultura'}
 		{if parent_id=='25'}
 		<dd class="belcorp">
-			<a href="{site_url}catalogo/{segment_2}/{category_url_title}">{category_name}</a>
+			<a href="{site_url}catalogo/{segment_2}/{category_url_title}"
+			{if segment_3==category_url_title}
+			class="selected"
+			{/if}			
+			>{category_name}</a>
 		</dd>  
 		{/if}
 	{/if}		

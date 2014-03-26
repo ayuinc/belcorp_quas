@@ -6,6 +6,7 @@ $innovacion: #8DC63F;
 $belcorp: #6C217F;
 $comercial: #00BCED;
 $negocios: #EF3E42;
+$operaciones: #EF3E42;
 
 
 //COLOR 
@@ -672,7 +673,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	}
 	#more_index{
 		background: transparent;
-		border: 2px solid #94A0AA;
+		border: 1px solid #94A0AA;
 		color: #94A0AA;
 		display: block;
 		width: 120px;
@@ -731,7 +732,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	}
 	a{
 		background: transparent;
-		border: 2px solid #94A0AA;
+		border: 1px solid #94A0AA;
 		color: #94A0AA;
 		display: block;
 		width: 120px;
@@ -769,7 +770,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	}
 	a{
 		background: transparent;
-		border: 2px solid #94A0AA;
+		border: 1px solid #94A0AA;
 		color: #94A0AA;
 		display: block;
 		width: 120px;
@@ -833,14 +834,36 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 
 
 #contacto{
-	padding: 2.5em 0;
+	padding: 3.5em 0 2.5em 0;
 	background: #ECECEC;
 	text-align: center;
 	.title{
 		margin: 0;
 		line-height: 1;
-		padding-bottom: 1.25em;
-		font-weight: 700;
+		padding-bottom: 0.5em;
+		font-weight: 100;
+		font-size: 2.8em;
+		color: #6C217F;
+	}
+	h5{
+		color: #94A0AA;
+		font-weight: 100;
+		padding-bottom: 1em;
+	}
+	a{
+		background: transparent;
+		border: 1px solid #94A0AA;
+		color: #94A0AA;
+		display: block;
+		width: 150px;
+		text-align: center;
+		float: center;
+		margin: 1rem auto;
+		padding: 0.5rem 0;
+		&:hover{
+			background: #94A0AA;
+			color: #FFFFFF;
+		}
 	}
 }
 
@@ -887,8 +910,8 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		span{
 			font-weight: 300;
 			text-transform: uppercase;
-			color: #596c79;
-			font-size: 0.85rem;
+			color: #6C217F;
+			font-size: 0.75rem;
 			margin-top: 0;			
 		}
 	}
@@ -988,6 +1011,15 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	}
 }
 
+.operaciones{
+	border-right: 25px solid $operaciones;	
+	.school{
+		.icon-school{
+			color: $operaciones;
+		}
+	}
+}
+
 
 .bg_liderazgo-cultura{
 	background-color: $liderazgo;
@@ -1009,6 +1041,10 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 
 .bg_innovacion{
 	background-color: $innovacion;
+}
+
+.bg_operaciones{
+	background-color: $operaciones;
 }
 
 #footer{
@@ -1057,6 +1093,7 @@ footer{
 	background-color: #FFFFFF;
 	box-shadow: 0 2px 0 #94A0AA;
 	padding: 25px;
+	text-align: left;
 	h3{
 		font-weight: 700;
 	}
@@ -1177,7 +1214,10 @@ footer{
 			}
 			&.selected{
 				background: #A4B1BD;
-		}
+			}
+			&.sub_category{
+				padding-left: 3rem;
+			}
 		}
 		.icon-school{
 			position: absolute;
@@ -1241,7 +1281,10 @@ footer{
 			}
 			&.selected{
 				background: #A4B1BD;
-		}
+			}
+			&.sub_category{
+				padding-left: 3rem;
+			}
 		}
 		.icon-school{
 			position: absolute;
@@ -1454,8 +1497,17 @@ footer{
 // FORUM
 
 #forum_header{
-	margin-bottom: 1.25em;
-	text-align: center;
+	margin-bottom: 1.9em;
+	#comment_number{
+		margin-bottom: 0;
+	}
+	span{
+		font-size: 0.75em;
+	}
+}
+
+#contact_header{
+	margin-bottom: 1.9em;
 	#comment_number{
 		margin-bottom: 0;
 	}
@@ -1676,7 +1728,7 @@ z-index: 1002;
 	-o-transition-duration: 0.2s;
 	transition-duration: 0.2s;
 	.inline-list{
-		margin-top: 25px;
+		margin-top: 20px;
 		li{
 			a{
 				color: #596c79;
@@ -1982,7 +2034,7 @@ box-shadow: -2px 0px 4px #edeff0;
 		}
 		a{
 			background: transparent;
-			border: 2px solid white;
+			border: 1px solid white;
 			margin-top: 3rem;
 			padding-top: 0.5rem;
 			padding-bottom: 0.5rem;
@@ -2006,7 +2058,6 @@ box-shadow: -2px 0px 4px #edeff0;
 	background-position: top center;
 	color: #FFFFFF;
 	width: 100%;
-	margin-top: 125px;
 	.overlay{
 		position: absolute;
 		top: 0;
@@ -2136,6 +2187,7 @@ box-shadow: -2px 0px 4px #edeff0;
 	}
 	.new_header_content{
 		padding: 25px;
+		margin-bottom: 1.9em;
 		strong{
 			font-weight: 300;
 		}
@@ -2234,11 +2286,11 @@ box-shadow: -2px 0px 4px #edeff0;
 		margin-left: 70px;
 	}
 
-	#forum_header, #details_header, #courses_header, #contact_header, #content_header, #new_header{
-		margin-top: 70px;
-		margin-bottom: 1.9em;
-		text-align: left;
-	}
+	// #forum_header, #details_header, #courses_header, #contact_header, #content_header, #new_header{
+	// 	margin-top: 70px;
+	// 	margin-bottom: 1.9em;
+	// 	text-align: left;
+	// }
 
 	#new_header{
 		margin-top: 0px;
@@ -2252,14 +2304,14 @@ box-shadow: -2px 0px 4px #edeff0;
 		}
 	}
 
-	#forum_header, #courses_header, #content_header, #contact_header, #details_header{
-		margin-top: 0;
-		position: fixed;
-		z-index: 1;
-		width: -moz-calc(100% - 131px);
-		width: -webkit-calc(100% - 131px);
-		width: calc(100% - 131px);
-	}
+	// #forum_header, #courses_header, #content_header, #contact_header, #details_header{
+	// 	margin-top: 0;
+	// 	position: fixed;
+	// 	z-index: 1;
+	// 	width: -moz-calc(100% - 131px);
+	// 	width: -webkit-calc(100% - 131px);
+	// 	width: calc(100% - 131px);
+	// }
 
 	#catalogo_content, #contenidos_content, #feedback_content, #contact_content, #details_content{
 		margin-top: 70px;
@@ -2337,7 +2389,32 @@ box-shadow: -2px 0px 4px #edeff0;
 }
 
 
-#convenios_header{
+#convenios_header, #contacto_header, #foro_header{
+	background-color: #FFFFFF;
+	padding: 25px;
+	margin-bottom: 1.9em;
+	position: relative;
+	.overlay{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 1;
+		background: rgba(0, 0, 0, 0.2);
+	}
+	h5{
+		font-weight: 100;
+		color: #FFFFFF;
+	}
+	h3{
+		padding-top: 80px;
+		color: #FFFFFF;
+		font-weight: 100;
+	}
+}
+
+#convenios_content, #contacto_content, #foro_content{
 	background-color: #FFFFFF;
 	box-shadow: 0 2px 0 #94A0AA;
 	padding: 25px;
@@ -2362,14 +2439,14 @@ box-shadow: -2px 0px 4px #edeff0;
 
 @media only screen and (min-width: 64.063em) { 
 
-	#forum_header, #courses_header, #content_header, #contact_header, #details_header{
-		margin-top: 0;
-		position: fixed;
-		z-index: 1;
-		width: -moz-calc(75% - 105px);
-		width: -webkit-calc(75% - 105px);
-		width: calc(75% - 105px);
-	}
+	// #forum_header, #courses_header, #content_header, #contact_header, #details_header{
+	// 	margin-top: 0;
+	// 	position: fixed;
+	// 	z-index: 1;
+	// 	width: -moz-calc(75% - 105px);
+	// 	width: -webkit-calc(75% - 105px);
+	// 	width: calc(75% - 105px);
+	// }
 
 }
 

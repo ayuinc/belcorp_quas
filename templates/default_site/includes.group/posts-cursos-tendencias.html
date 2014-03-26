@@ -1,26 +1,43 @@
  
                   <div class="row">
                   	{if segment_4=='tendencias'}
-                  		{exp:channel:entries channel="tendencias" limit="20"  category="{embed:id_categoria}" dynamic="off"}
+                  	1
+                  		{exp:channel:entries channel="tendencias" limit="40"  category="{embed:id_categoria}" dynamic="off"}
                   	{/if}
                   		
                   	{if segment_4=='cursos'}
-                  		{exp:channel:entries channel="cursos" limit="20"  category="{embed:id_categoria}" dynamic="off"}
+                  	2
+                  		{exp:channel:entries channel="cursos" limit="40"  category="{embed:id_categoria}" dynamic="off"}
                   	{/if}
                   	
                   	{if segment_4==''}
-                  		{exp:channel:entries channel="cursos|tendencias" limit="20"  category="{embed:id_categoria}" dynamic="off"}
+                  		{exp:channel:entries channel="cursos|tendencias" paginate_base="catalogo/todos" paginate=“bottom” limit="40"  category="{embed:id_categoria}"  dynamic="off"}
                   	{/if}                  	
                     
 
 	                    <div class="medium-12 large-6 columns">
-	                      <a href="{site_url}catalogo/curso/{url_title}">
+	                      {if link-recurso}
+	                        <a href="{link-recurso}" target="_blank">
+	                      {if:else}
+	                      	<a href="{site_url}catalogo/curso/{url_title}">
+	                      {/if}
+					      
+							  
 	                        {categories limit="1"}
 	                        <div class="course {category_url_title}">
 	                        {/categories}
-	                          <h5><span>{channel}</span><br>{title}</h5>
+	                          <h5>
+	                          {if tipo-contenido-recurso}
+	                            <span>{tipo-contenido-recurso}</span><br>
+	                          {if:else}
+	                          	<span>CURSO</span><br>
+	                          {/if}
+	                          {title}</h5>
 	                          {if subttulo-curso}
                               <h6>{subttulo-curso}</h6>
+                              {/if}
+                              {if fuente-recurso}
+                              	<h6>{fuente-recurso}</h6>
                               {/if}
 	                          <p>{descripcion-curso}</p>
 	                          <div class="school">
