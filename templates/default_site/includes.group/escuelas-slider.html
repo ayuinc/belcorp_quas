@@ -1,21 +1,21 @@
-{if segment_2==''}
-{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="203"}
+{if segment_2=='index' OR segment_2=='' OR segment_2=='por-escuela'}
+{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="203" dynamic="off"}
 {/if}
 
 {if segment_2=='ventas'}
-{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="199"}
+{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="199" dynamic="off"}
 {/if}
 
 {if segment_2=='negocios'}
-{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="202"}
+{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="202" dynamic="off"}
 {/if}
 
 {if segment_2=='liderazgo-cultura'}
-{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="201"}
+{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="201" dynamic="off"}
 {/if}
 
 {if segment_2=='innovacion'}
-{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="200"}
+{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="200" dynamic="off"}
 {/if}
 
                   <div class="row hide-for-small">

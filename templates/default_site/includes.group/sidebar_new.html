@@ -25,7 +25,7 @@
           
           	{if segment_1!='buscar'}
             
-	            {if segment_2!='todos'}
+	            {if segment_2!='index' AND segment_2!='por-escuela' AND segment_2!=''}
 	            <dl id="padding_accordion" class="accordion" data-accordion>
 	              <dd>
 	                <a id="school_panel_trigger" href="#school_panel">
@@ -67,10 +67,11 @@
 	              </dd>
 	            </dl>
 	            {if:else}
+
 	            <dl id="padding_accordion" class="accordion" data-accordion>
 	              <dd>
 	                <a id="school_panel_trigger" href="#school_panel">
-	                  CATEGORIAS
+	                  ESCUELAS
 	                  <span id="menu_arrow" class="icon-arrow-down"></span>
 	                </a>
 	                <div id="school_panel" class="activex">
@@ -84,7 +85,7 @@
 	              </dd>
 	            </dl>
 	            
-	            <dl id="padding_accordion" class="accordion" data-accordion>
+	            <!--<dl id="padding_accordion" class="accordion" data-accordion>
 	              <dd>
 	                <a id="school_panel_trigger" href="#school_panel">
 	                  CONTENIDOS
@@ -99,7 +100,7 @@
 	                        </dl>
 	                 </div>
 	              </dd>
-	            </dl>
+	            </dl>-->
 	            {/if}
             
             {/if}

@@ -1,4 +1,21 @@
 <style>
+.accordion {
+letter-spacing: 0.046rem;
+}
+
+#school_panel_1 dd a {
+line-height: 125%;
+}
+
+.course h5 {
+margin-bottom: 1rem;
+line-height: 115%;
+}
+
+.course h6 {
+letter-spacing: 0.045rem;
+}
+
 @media only screen and (max-width: 40em) { 
 	#navbar {
 		position:inherit;
@@ -80,8 +97,15 @@
 		color:#596C79;
 		text-transform: uppercase;
 	}
+	.menu_title_catalogo {
+		top: -0.5rem;
+		font-size:1.75rem !important;
+	}
 	#courses_menu {
-		position:inherit;
+		height:8rem;
+	}
+	#catalogo_content {
+		margin-top:9rem;
 	}
 
 } /* max-width 640px, mobile-only styles, use when QAing mobile issues */

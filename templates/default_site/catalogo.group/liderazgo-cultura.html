@@ -3,36 +3,31 @@
 
     <div class="off-canvas-wrap">
       <div class="inner-wrap">
+      
         <div id="courses_menu" class="hide-for-medium-up">
           <div class="row">
+            
             <div class="large-12 columns">
-              <a class="left-off-canvas-toggle" ><span class="icon-list"></span></a>
-              <h3 id="menu_title">{title}</h3>
-            </div>
-            <div class="small-12 columns">
-              <form action="#" id="form_search">
-                <input type="search" placeholder="BUSCAR">
-                <span class="icon-search"></span>
-              </form>
+              <h3 id="menu_title" class="menu_title_catalogo">{title}</h3>
             </div>
             
             <!--Solo para Moviles-->
             <div class="small-12 columns">
-              <form action="#">
-                <select>
-                  <option value="-1">Seleccionar Categoría</option>
-                  <option value="0">Belcorp</option>
-                  <option value="1">Liderazgo</option>
-                  <option value="2">Ventas</option>
-                  <option value="3">Comercial</option>
-                </select>
-              </form>
+				<a href="#" data-dropdown="drop1" class="button dropdown expand">Escuelas</a><br>
+				<ul id="drop1" data-dropdown-content class="f-dropdown">
+				  <li><a href="{site_url}catalogo/ventas">Escuela de Ventas</a></li>
+				  <li><a href="{site_url}catalogo/negocios">Escuela de Negocios</a></li>
+				  <li><a href="{site_url}catalogo/liderazgo-cultura">Escuela de Liderazgo y Cultura</a></li>
+				  <li><a href="{site_url}catalogo/innovacion">Escuela de Innovación</a></li>
+				</ul>
             </div>
             
           </div>
         </div>
+        
+      </div>
+    </div> 
 {/exp:channel:entries}
-
 
 		{embed="includes/menu_new"}
 
@@ -74,7 +69,7 @@
 				 }-->
 
                  <div class="row">
-                  	{exp:channel:entries channel="cursos|tendencias" limit="20" paginate_base="catalogo/liderazgo-cultura" paginate=“bottom” category="{last_segment_category_id}" }                  
+                  	{exp:channel:entries channel="cursos|tendencias" limit="20" paginate_base="catalogo/liderazgo-cultura" paginate=“bottom” category="{last_segment_category_id}"}                  
 
 	                    <div class="medium-12 large-6 columns">
 	                      {if link-recurso}
@@ -143,6 +138,22 @@
 		</section>
 
 		{embed="includes/footer-interno_new"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
 
 
 

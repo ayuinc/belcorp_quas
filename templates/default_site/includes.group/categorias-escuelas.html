@@ -1,19 +1,17 @@
-
-
-{exp:channel:categories style="linear" category_group="4"}
+{exp:channel:categories style="linear" category_group="1" show_empty="no"}
 	
-	{if segment_2=='todos'}
-		{if parent_id=='82'}
+	{if segment_2=='' OR segment_2=='index' OR segment_2=='por-escuela'}
 		<dd class="belcorp">
-			<a href="{site_url}catalogo/{segment_2}/{category_url_title}" 
+			<a href="{site_url}catalogo/por-escuela/{category_url_title}" 
 			{if segment_3==category_url_title}
 			class="selected"
 			{/if}
 			>{category_name}</a>
 		</dd>  
-		{/if}
 	{/if}	
+{/exp:channel:categories}
 
+{exp:channel:categories style="linear" category_group="4" show_empty="no"}
 	{if segment_2=='innovacion'}
 		{if parent_id=='19'}
 		<dd class="belcorp">
