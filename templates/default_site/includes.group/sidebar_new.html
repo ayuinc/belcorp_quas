@@ -46,14 +46,18 @@
 				
 	            <dl id="padding_accordion" class="accordion" data-accordion>
 	              <dd>
-	                <a id="school_panel_trigger_1" href="#school_panel">
+	                
 	                  {if segment_2=='liderazgo-cultura'}
-	                  	BACKBONE
+	                  	<a id="school_panel_trigger_1" href="#school_panel">BACKBONE
+				<span id="menu_arrow_1" class="icon-arrow-down"></span>
+	                	</a>
 	                  {if:else}
-	                  	CONTENIDOS
+	                  	<!--<a id="school_panel_trigger_1" href="#school_panel">CONTENIDOS
+				<span id="menu_arrow_1" class="icon-arrow-down"></span>
+	                	</a>-->
 	                  {/if}
-	                  <span id="menu_arrow_1" class="icon-arrow-down"></span>
-	                </a>
+	                  
+	                {if segment_2=='liderazgo-cultura'}
 	                <div id="school_panel_1" class="activex">
 	                        <dl class="accordion" data-accordion>
 	                          {if segment_2!='liderazgo-cultura'}
@@ -64,6 +68,7 @@
 	                          {embed="includes/contenido-escuelas"}           
 	                        </dl>
 	                 </div>
+	                 {/if}
 	              </dd>
 	            </dl>
 	            {if:else}
@@ -88,7 +93,7 @@
 	            <!--<dl id="padding_accordion" class="accordion" data-accordion>
 	              <dd>
 	                <a id="school_panel_trigger" href="#school_panel">
-	                  CONTENIDOS
+	                  TIPO DE CONTENIDO
 	                  <span id="menu_arrow" class="icon-arrow-down"></span>
 	                </a>
 	                <div id="school_panel" class="activex">
@@ -106,7 +111,7 @@
             {/if}
             
             {if segment_2=='liderazgo-cultura'}
-            <a href="{site_url}images/documentos/PDF_Backbone.pdf" target="_blank" id="create_course" class="publish button expand" style="margin-top:1.5rem;">DESCARGA BACKBONE</a>  
+            <a href="{site_url}images/documentos/PDF_Backbone.pdf" target="_blank" id="create_course" class="publish button expand" style="margin-top:1.5rem;">DESCARGA EL BACKBONE</a>  
             {/if}
             
             <a href="{site_url}quieres-crear-un-curso" id="create_course" class="publish button expand" style="margin-top:1.5rem;">¿QUIERES CREAR UN CURSO?</a>              

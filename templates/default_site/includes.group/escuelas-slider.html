@@ -1,22 +1,4 @@
-{if segment_2=='index' OR segment_2=='' OR segment_2=='por-escuela'}
-{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="203" dynamic="off"}
-{/if}
-
-{if segment_2=='ventas'}
-{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="199" dynamic="off"}
-{/if}
-
-{if segment_2=='negocios'}
-{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="202" dynamic="off"}
-{/if}
-
-{if segment_2=='liderazgo-cultura'}
-{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="201" dynamic="off"}
-{/if}
-
-{if segment_2=='innovacion'}
-{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="200" dynamic="off"}
-{/if}
+{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="{embed:seccion}" dynamic="off"}
 
                   <div class="row hide-for-small">
                     <div class="large-12 columns">
@@ -25,7 +7,7 @@
 	                  	<div class="new_header_title {if segment_2=='ventas' OR  segment_2=='negocios' OR  segment_2=='liderazgo-cultura' OR  segment_2=='innovacion'}bg_{segment_2}{if:else}bg_todos {/if}">
 		                  	<div class="row">
 							  	<div class="large-12 columns">
-				                    {if segment_2!=''}
+				                    {if segment_2!='index' AND segment_2!='' AND segment_2!='por-escuela'}
 				                    	<h6>ESCUELA DE</h6>
 				                    {/if}	
 					                <h2>{title}</h2>

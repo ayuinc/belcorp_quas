@@ -3,18 +3,23 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9"/>
     <title>{if embed:titulo}{embed:titulo} | {/if}UCB - Universidad Corporativa de Belcorp</title>
     <link rel="shortcut icon" href="{site_url}img/favicon.ico" />
     <link rel="stylesheet" href="{site_url}css/foundation.css" />
     <link rel="stylesheet" href="{site_url}css/custom.css">
-    {embed="style/style.css"}
-    <script src="{site_url}js/modernizr.js"></script>
+    
 <!--[if lt IE 9]>
   <script src="{site_url}js/ie9/html5shiv.js"></script>
   <script src="{site_url}js/ie9/nwmatcher-1.2.5-min.js"></script>
   <script src="{site_url}js/ie9/respond.min.js"></script>
   <script src="{site_url}js/ie9/selectivizr-min.js"></script>
 <![endif]-->
+
+    {embed="style/style.css"}
+    
+    <script src="{site_url}js/modernizr.js"></script>
+
     {if segment_2=='foro'}
     	<link href="{path=css/_ee_channel_form_css}" type="text/css" rel="stylesheet" media="screen">
     {/if}

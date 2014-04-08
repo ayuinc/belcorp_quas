@@ -1,5 +1,5 @@
 {exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination"}
-{embed="includes/header" titulo="Escuela de {title}"}
+{embed="includes/header" titulo="Escuela de Liderazgo y Cultura"}
 
     <div class="off-canvas-wrap">
       <div class="inner-wrap">
@@ -54,7 +54,7 @@
                 <div class="large-9 columns">
                   
                   
-                 {embed="includes/escuelas-slider"}
+                 {embed="includes/escuelas-slider" seccion="201"}
                  
                  
                  {if segment_3=='summa'}
@@ -69,7 +69,7 @@
 				 }-->
 
                  <div class="row">
-                  	{exp:channel:entries channel="cursos|tendencias" limit="20" paginate_base="catalogo/liderazgo-cultura" paginate=“bottom” category="{last_segment_category_id}"}                  
+                  	{exp:channel:entries channel="cursos|tendencias" limit="20"  paginate=“bottom” category="{last_segment_category_id}"}                  
 
 	                    <div class="medium-12 large-6 columns">
 	                      {if link-recurso}

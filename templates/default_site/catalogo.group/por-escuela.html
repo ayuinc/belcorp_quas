@@ -1,5 +1,5 @@
 {exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination"}
-{embed="includes/header" titulo="Escuela de {title}"}
+{embed="includes/header" titulo="Catálogo UCB"}
 
     <div class="off-canvas-wrap">
       <div class="inner-wrap">
@@ -53,9 +53,26 @@
               
                 <div class="large-9 columns">
                   
-                  
-                 {embed="includes/escuelas-slider"}
                  
+                 {if segment_3=='ventas'} 
+                 	{embed="includes/escuelas-slider" seccion="199"}
+                 {/if}
+                 
+                 {if segment_3=='negocios'} 
+                 	{embed="includes/escuelas-slider" seccion="202"}
+                 {/if}  
+                 
+                 {if segment_3=='liderazgo-cultura'} 
+                 	{embed="includes/escuelas-slider" seccion="201"}
+                 {/if}   
+                 
+                 {if segment_3=='innovacion'} 
+                 	{embed="includes/escuelas-slider" seccion="200"}
+                 {/if} 
+                 
+                 {if segment_3=='operaciones-escuela'} 
+                 	{embed="includes/escuelas-slider" seccion="203"}
+                 {/if}                                                                    
                  
                  {if segment_3=='summa'}
                  	{embed="includes/descripcion-summa"}
