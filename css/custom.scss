@@ -2437,25 +2437,257 @@ box-shadow: -2px 0px 4px #edeff0;
 	}
 }
 
-@media only screen and (min-width: 64.063em) { 
+.accordion {
+letter-spacing: 0.046rem;
+}
 
-	// #forum_header, #courses_header, #content_header, #contact_header, #details_header{
-	// 	margin-top: 0;
-	// 	position: fixed;
-	// 	z-index: 1;
-	// 	width: -moz-calc(75% - 105px);
-	// 	width: -webkit-calc(75% - 105px);
-	// 	width: calc(75% - 105px);
-	// }
+#school_panel_1 dd a {
+line-height: 125%;
+}
 
+.course  {
+	h5 {
+	margin-bottom: 1rem;
+	line-height: 115%;
+	}
+	h6 {
+	letter-spacing: 0.045rem;
+	}
 }
 
 
-// @media only screen and (min-width: 85em) {
-// 	.fixed_menu_details{
-// 		position: fixed;
-// 		right: 3.2%;
-// 		width: 23%;
-// 	}
+@media only screen and (max-width: 40em) { 
+	#navbar {
+		position:inherit;
+		a {
+			font-size: 0.9rem;
+		}		
+	}
 
-// }
+
+	#new_homepage {
+		min-height:390px;
+		.headline {
+			width:100%;
+			h1 {
+				margin-top:1.25rem;
+				font-size: 2rem;
+				margin-bottom:0px;
+			}	
+			h4 {
+				font-size: 1.1rem;
+				margin-bottom:-1rem
+			}		
+		}
+	}
+	
+	#summa {
+		min-height:340px;
+		.headline {
+			width:100%;
+			h1 {
+				margin-top:1.25rem;
+				font-size: 2rem;
+				margin-bottom:0px;
+			}
+			h4 {
+				font-size: 1.1rem;
+				margin-bottom:-1rem
+			}				
+		}				
+	}
+
+	
+	#sub_navbar {
+		position:inherit;
+		top:0rem;
+		height: 7.1rem;
+		.inline-list {
+			width:100%;
+			li {
+				width:100%;
+				float:none;
+				margin-left:0rem;
+				text-align: center;
+				border-bottom: 1px solid #FFF;
+				a {
+					margin:0.3rem 0;
+				}				
+			}			
+		}		
+	}
+
+	#destacados {
+		.title {
+			font-size: 2rem;
+			margin-bottom:0px;
+		}
+		.course {
+			h3 {
+			    font-size: 1rem;
+			    margin-bottom: 2rem;
+			}	
+		}			
+	}	
+	
+	#escuelas {
+		.title {
+			font-size: 2rem;
+			margin-bottom:0px;
+		}
+	}
+	
+	.nuestras-escuelas {
+		div {
+			margin-bottom:2rem;
+		}
+	}
+	
+	#contacto {
+		.title {
+			font-size: 2rem;
+			margin-bottom:0px;
+		}
+	}
+	
+	#menu_title {
+		font-weight: 300;
+		font-size: 0.9rem;
+		bottom: -0.4rem;
+		color:#596C79;
+		text-transform: uppercase;
+	}
+	
+	.menu_title_catalogo {
+		top: -0.5rem;
+		font-size:1.75rem !important;
+	}
+	
+	#courses_menu {
+		height:8rem;
+	}
+	
+	#catalogo_content {
+		margin-top:9rem;
+	}
+
+} /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+  	#navbar {
+		position:inherit;
+	}
+	#sub_navbar {
+		position:inherit;
+		top:0rem;
+		height: 0rem;
+		margin-bottom:-4rem;
+	}
+	#new_homepage {
+		min-height:500px;
+		.headline { 
+			width:50%;
+		}	
+	}
+	
+	#summa {
+		min-height:500px;
+		.headline {
+			width:50%;
+		}
+	}
+	.nuestras-escuelas {
+		div {
+			margin-bottom:2rem;
+		}
+	}
+	#article_header  {
+		width:93%;
+		margin-left:70px;
+		padding:1.25rem 1.25rem;
+		.article_title {
+			width:95%;
+			margin:0 auto;
+		}			
+	}
+	
+	#article_content {
+		width:93%;
+		margin-left:70px;
+		padding:1.25rem 1.25rem;
+	}	
+	
+	.inline-list > li {
+		margin-left:0.5rem
+	}
+	.heading-pocket {
+		.inline-list {
+			margin-left:-10px;
+			li {
+				a {
+					font-size: 0.7rem;
+					padding:0.2rem 0.3rem;
+				  }
+			}	  		
+		}
+	}
+
+	#details_header {
+		width: 83.2%;
+	}
+
+}
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {
+  	#navbar {
+		position:inherit;
+	}
+	
+	#sub_navbar {
+		position:inherit;
+		top:0rem;
+		height: 0rem;
+		margin-bottom:-4rem;
+	}
+	
+	#new_homepage {
+		min-height:500px;
+		.headline { 
+			width:50%;
+		}	
+	}
+	
+	#summa {
+		min-height:500px;
+		.headline {
+			width:50%;
+		}
+	}
+	
+	.nuestras-escuelas { 
+		div {
+			margin-bottom:2rem;
+		}
+	}
+	
+	#article_header  {
+		width:93%;
+		margin-left:70px;
+		padding:1.25rem 1.25rem;
+		.article_title {
+			width:95%;
+			margin:0 auto;
+		}			
+	}
+	
+	#article_content {
+		width:93%;
+		margin-left:70px;
+		padding:1.25rem 1.25rem;
+	}
+	
+
+	#details_header {
+		width: 87.2%;
+	}
+}
