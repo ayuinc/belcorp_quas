@@ -1,5 +1,5 @@
 <form action="<?=$form_uri?>" method="POST" id="notification_edit_form">
-	<input type="hidden" name="XID" 			value="<?=$XID_SECURE_HASH?>" />
+	<input type="hidden" name="<?=$csrf_hidden_name?>"	value="<?=$CSRF_TOKEN?>" />
 	<input type="hidden" name="notification_id"	value="<?=$notification_id?>" />
 	<!-- defaults for checkboxes when unchecked -->
 	<input type="hidden" value="n" name="wordwrap" 		/>

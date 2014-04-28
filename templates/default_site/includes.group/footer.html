@@ -36,46 +36,66 @@
     </script>
     <script>
     $(document).ready(function(){
-
+    
+      //CONVENIOS
+      $( "#nav-postgrados" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:0}, "slow");
+      });    
+      $( "#nav-idiomas" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:0}, "slow");
+      });    
+      $( "#nav-tecnologia" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:0}, "slow");
+      });    
+      $( "#nav-otros" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:0}, "slow");
+      });                      
+    
+	  //HOMEPAGE
+	  
       $( "#ucb_menu" ).click(function( event ) {
         event.preventDefault();
           $("html, body").animate({scrollTop:0}, "slow");
-          $("#sub_navbar .inline-list li a").removeClass("active");
+          $("#navbar .inline-list li a").removeClass("active");
           $(this).addClass("active");
       });
 
       $( "#destacados_menu" ).click(function( event ) {
         event.preventDefault();
-          $("html, body").animate({scrollTop:$("#destacados").offset().top -122});
-          $("#sub_navbar .inline-list li a").removeClass("active");
+          $("html, body").animate({scrollTop:$("#destacados").offset().top -78});
+          $("#navbar .inline-list li a").removeClass("active");
           $(this).addClass("active");
       });
 
       $( "#escuelas_menu" ).click(function( event ) {
         event.preventDefault();
-          $("html, body").animate({scrollTop:$("#escuelas").offset().top -122});
-          $("#sub_navbar .inline-list li a").removeClass("active");
+          $("html, body").animate({scrollTop:$("#escuelas").offset().top -78});
+          $("#navbar .inline-list li a").removeClass("active");
           $(this).addClass("active");
       });
 
       $( "#summa_menu" ).click(function( event ) {
         event.preventDefault();
-          $("html, body").animate({scrollTop:$("#summa").offset().top -122});
-          $("#sub_navbar .inline-list li a").removeClass("active");
+          $("html, body").animate({scrollTop:$("#summa").offset().top -78});
+          $("#navbar .inline-list li a").removeClass("active");
           $(this).addClass("active");
       });
 
       $( "#convenios_menu" ).click(function( event ) {
         event.preventDefault();
-          $("html, body").animate({scrollTop:$("#convenios").offset().top -122});
+          $("html, body").animate({scrollTop:$("#convenios").offset().top -78});
           $("#sub_navbar .inline-list li a").removeClass("active");
           $(this).addClass("active");
       });
 
       $( "#contacto_menu" ).click(function( event ) {
         event.preventDefault();
-          $("html, body").animate({scrollTop:$("#contacto").offset().top -122});
-          $("#sub_navbar .inline-list li a").removeClass("active");
+          $("html, body").animate({scrollTop:$("#contacto").offset().top -78});
+          $("#navbar .inline-list li a").removeClass("active");
           $(this).addClass("active");
       });
 

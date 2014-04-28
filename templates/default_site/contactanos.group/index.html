@@ -61,15 +61,44 @@
             <div class="large-12 columns">
 
               <div class="contact_form">
-                
 
-				{exp:freeform:form form_name="contactenos" return="contactanos/gracias" }
+				{exp:freeform:form form_name="contactenos" return="contactanos/gracias" required="first_name|last_name|email|user_message" 
+inline_errors="yes" inline_error_return="contactanos/index" admin_notify="coloradomarin@gmail.com" admin_notification_template="alerta_contactenos" }
+				    
+				    <dl>
+				    		{if freeform:error:first_name OR freeform:error:last_name OR freeform:error:email OR freeform:error:user_message}
+				    		<dt class="error">ERROR: Necesitas llenar los siguientes campos.</dt>
+					    		<dd>
+					    			<ul>
+						    		{if freeform:error:first_name}
+									    <li class="error">Nombre</li>
+									{/if}
+						        	{if freeform:error:last_name}
+									    <li class="error">Apellido</li>
+									{/if}
+						        	{if freeform:error:email}
+									    <li class="error">Correo Electrónico</li>
+									{/if}
+						        	{if freeform:error:user_message}
+									    <li class="error">Mensaje</li>
+									{/if}	
+					    			</ul>
+								</dd>				    		
+				    		{/if}
+					</dl>
+				    
 				    <dl>
 				    {freeform:all_form_fields}
 				        <dt><label>{freeform:field_label}</label></dt>
-				        <dd>{freeform:field_output}</dd>
+				        <dd>
+				        	{freeform:field_output}																				
+				        </dd>
+				        
 				    {/freeform:all_form_fields}
 				    </dl>
+				    
+				    
+				    
 				    {if freeform:captcha}
 				        <p>Please enter the word you see in the image below:</p>
 				        <p>{freeform:captcha}<br />

@@ -1,5 +1,5 @@
 <form method="POST" action="<?=$form_uri?>" id="freeform_preferences">
-	<input type="hidden" name="XID" value="<?=$XID_SECURE_HASH?>" />
+	<input type="hidden" name="<?=$csrf_hidden_name?>"	value="<?=$CSRF_TOKEN?>" />
 
 <?php if ($show_global_prefs):?>
 	<h4><?=lang('global_prefs')?></h4>

@@ -1,6 +1,6 @@
 <form method="post" action="<?=$base_url?>&amp;method=save_set" id="reorder-settings">
 	<div>
-		<input type="hidden" name="XID" value="<?=XID_SECURE_HASH?>" />
+		<input type="hidden" name="<?=$csrf_token_name?>" value="<?=$csrf_token_value?>" />
 		<input type="hidden" name="set_id" value="<?=($set['set_id']?$set['set_id']:'new')?>" />
 	</div>
 

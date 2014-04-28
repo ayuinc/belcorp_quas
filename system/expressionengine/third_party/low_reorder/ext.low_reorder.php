@@ -12,10 +12,10 @@ if ( ! class_exists('Low_reorder_base'))
  * @package        low_reorder
  * @author         Lodewijk Schutte <hi@gotolow.com>
  * @link           http://gotolow.com/addons/low-reorder
- * @copyright      Copyright (c) 2009-2013, Low
+ * @copyright      Copyright (c) 2009-2014, Low
  */
-class Low_reorder_ext extends Low_reorder_base
-{
+class Low_reorder_ext extends Low_reorder_base {
+
 	// --------------------------------------------------------------------
 	// PROPERTIES
 	// --------------------------------------------------------------------
@@ -78,7 +78,6 @@ class Low_reorder_ext extends Low_reorder_base
 		$query = ee()->db->select('group_id, group_title')
 		       ->from('member_groups')
 		       ->where('can_access_cp', 'y')
-		       ->where_not_in('group_id', array('1'))
 		       ->order_by('group_title')
 		       ->get();
 
@@ -154,30 +153,12 @@ class Low_reorder_ext extends Low_reorder_base
 		// including parents if necessary
 		// -------------------------------------------
 
-		// Get categories either from data or POST
-		$categories = (isset($data['revision_post']['category']))
-			? $data['revision_post']['category']
-			: ee()->input->post('category');
+		ee()->load->library('api');
+		ee()->api->instantiate('channel_categories');
 
-		if ( ! is_array($categories))
-		{
-			$categories = array(0);
-		}
-
-		// Make sure we get the auto-assigned parents, too
-		if (ee()->config->item('auto_assign_cat_parents') == 'y')
-		{
-			// Load channel categories API
-			ee()->load->library('api');
-			ee()->api->instantiate('channel_categories');
-
-			if ( ! empty(ee()->api_channel_categories->cat_parents))
-			{
-				$categories = array_unique(array_merge(
-					$categories, ee()->api_channel_categories->cat_parents
-				));
-			}
-		}
+		$categories = empty(ee()->api_channel_categories->cat_parents)
+			? array()
+			: array_unique(ee()->api_channel_categories->cat_parents);
 
 		// Is this entry sticky?
 		$sticky = (@$meta['sticky'] == 'y');
@@ -195,7 +176,7 @@ class Low_reorder_ext extends Low_reorder_base
 			if (isset($params['sticky']) && $params['sticky'] == 'yes' && ! $sticky) continue;
 
 			// Use posted category IDs for Sort By Single Category
-			$cat_ids = ($set['cat_option'] == 'one') ? $categories : array(0);
+			$cat_ids = ($set['cat_option'] == 'one') ? array_filter($categories) : array(0);
 
 			// Create array of all the Orders that must be present
 			foreach ($cat_ids AS $cat_id)

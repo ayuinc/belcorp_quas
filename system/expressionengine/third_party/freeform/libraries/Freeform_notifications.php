@@ -5,7 +5,7 @@
  *
  * @package		Solspace:Freeform
  * @author		Solspace, Inc.
- * @copyright	Copyright (c) 2008-2013, Solspace, Inc.
+ * @copyright	Copyright (c) 2008-2014, Solspace, Inc.
  * @link		http://solspace.com/docs/freeform
  * @license		http://www.solspace.com/license_agreement
  * @filesource	freeform/libraries/Freeform_notifications.php
@@ -481,7 +481,7 @@ class Freeform_notifications extends Addon_builder_freeform
 		$this->variables['message']			= $this->variables['msg'] = $this->message;
 		$this->variables['subject']			= $this->subject;
 		$this->variables['from_name']		= $from_name;
-		$this->variables['from_email']		= $from_name;
+		$this->variables['from_email']		= $from_email;
 		$this->variables['field_inputs']	=& $this->field_inputs;
 		$this->variables['field_outputs']	=& $this->field_outputs;
 
@@ -525,6 +525,8 @@ class Freeform_notifications extends Addon_builder_freeform
 		$bcc_recipients		= $this->variables['bcc_recipients'];
 		$reply_to_email		= $this->variables['reply_to_email'];
 		$reply_to_name		= $this->variables['reply_to_name'];
+		$from_email			= $this->variables['from_email'];
+		$from_name			= $this->variables['from_name'];
 
 		//if the message has changed, copy back
 		if ($this->variables['message'] !== $this->message)

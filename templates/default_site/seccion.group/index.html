@@ -1,20 +1,7 @@
 {exp:channel:entries channel="secciones|tendencias" limit="1" disable="pagination"}
 {embed="includes/header"} 
 {embed="includes/menu_new"}
-<!--     <section id="navbar">
-      <div class="row">
-        <div class="large-6 columns">
-          <a href="{site_url}">
-            <img src="{site_url}img/logo_header.png" alt="">
-          </a>
-        </div>
-        <div class="large-6 columns">
-          <div class="text-right">
-            <a href="{site_url}catalogo">Ingresar <img src="{site_url}img/enter_arrow.png" alt=""></a>
-          </div>
-        </div>
-      </div>
-    </section> -->
+
   
     {if channel=='Tendenciasecciones'}
 	    {imagen-recurso limit="1"}
@@ -38,19 +25,46 @@
             {if descripcion-recurso}
             	<span id="sub_header">{descripcion-recurso}</span>
             {/if}
-            <!--{imagenes-seccion}
-            	<img src="{image:url:large}" alt="{title}">
-            {/imagenes-seccion}-->
             {if autor-recurso}
             	<p>Publicado por <span>{autor-recurso}</span></p>
             {/if}
+            
+            <!--QUE PUEDE HACER LA UCB POR TI-->
+            {if segment_2=='que-puede-hacer-la-ucb-por-ti' OR  segment_2=='solicitud-de-capacitacion' OR segment_2=="politica-de-capacitacion" OR segment_2=="video"}
+            <div class="row">
+				<div class="large-12 large-centered columns">
+					<ul class="inline-list menu-convenios">
+						<li><a href="{site_url}seccion/convenios" >Convenios</a></li>
+						<li><a href="{site_url}seccion/solicitud-de-capacitacion" {if segment_2=='solicitud-de-capacitacion'}class="activo-boton-menu"{/if}> Solicitud de Capacitación</a></li>						
+						<li><a href="{site_url}seccion/politica-de-capacitacion"{if segment_2=='politica-de-capacitacion'}class="activo-boton-menu"{/if}>Política de Capacitación</a></li>
+						<li><a href="{site_url}seccion/video" {if segment_2=='video'}class="activo-boton-menu"{/if}>Video</a></li>
+					</ul>
+				</div>
+			</div>
+            {/if}
+			
+			<!--CONVENIOS-->
+            {if segment_2=='convenios'}
+            <div class="row">
+				<div class="large-12 large-centered columns">
+					<ul class="inline-list menu-convenios">
+						<li><a href="#nav-postgrados">Post-grados</a></li>
+						<li><a href="#nav-idiomas">Idiomas</a></li>						
+						<li><a href="#nav-tecnologia">Tecnología</a></li>
+						<li><a href="#nav-otros">Otros</a></li>
+					</ul>
+				</div>
+			</div>
+            {/if}
+            
+            
           </div>
         </div>
       </div>
     </section>
     <section id="article_content">
       <div class="row">
-        <div class="large-8 large-centered columns">
+        <div class="large-8 large-centered columns bg-content-blanco">
           
           {if contenido-recurso}
           	{contenido-recurso}

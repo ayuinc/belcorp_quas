@@ -1,5 +1,5 @@
 <form method="POST" action="<?=$form_uri?>" id="freeform_utilities">
-	<input type="hidden" name="XID" value="<?=$XID_SECURE_HASH?>" />
+	<input type="hidden" name="<?=$csrf_hidden_name?>"	value="<?=$CSRF_TOKEN?>" />
 
 <h4><?=lang('migrate_collections')?></h4>
 

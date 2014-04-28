@@ -7,10 +7,10 @@
  *
  * @package		Solspace:Addon Builder
  * @author		Solspace, Inc.
- * @copyright	Copyright (c) 2008-2013, Solspace, Inc.
+ * @copyright	Copyright (c) 2008-2014, Solspace, Inc.
  * @link		http://solspace.com/docs/
  * @license		http://www.solspace.com/license_agreement/
- * @version		1.4.4
+ * @version		1.5.6
  * @filesource 	addon_builder/extension_builder.php
  */
 
@@ -91,19 +91,9 @@ class Extension_builder_freeform extends Addon_builder_freeform
 
 		if (REQ == 'CP')
 		{
-			//BASE is not set until AFTER sessions_end,
-			//and we don't want to clobber it.
-			$base_const = defined('BASE') ? BASE :  SELF . '?S=0';
-
-			//2.x adds an extra param for base
-			if (substr($base_const, -4) != 'D=cp')
-			{
-				$base_const .= '&amp;D=cp';
-			}
-
 			// For 2.0, we have '&amp;D=cp' with BASE and
 			// we want pure characters, so we convert it
-			$this->base	= str_replace('&amp;', '&', $base_const) .
+			$this->base	= str_replace('&amp;', '&', $this->get_cp_url_base()) .
 							'&C=addons_extensions&M=extension_settings&file=' .
 							$this->lower_name;
 

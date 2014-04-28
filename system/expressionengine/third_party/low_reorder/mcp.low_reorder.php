@@ -12,7 +12,7 @@ if ( ! class_exists('Low_reorder_base'))
  * @package        low_reorder
  * @author         Lodewijk Schutte <hi@gotolow.com>
  * @link           http://gotolow.com/addons/low-reorder
- * @copyright      Copyright (c) 2009-2013, Low
+ * @copyright      Copyright (c) 2009-2014, Low
  */
 class Low_reorder_mcp extends Low_reorder_base {
 

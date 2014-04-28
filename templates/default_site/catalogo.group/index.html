@@ -61,12 +61,6 @@
                  	{embed="includes/descripcion-summa"}
                  {/if}
                  
-                 <!--Llamado a los Posts de Tendencias y Cursos-->                             
-				 <!--{embed="includes/posts-cursos-tendencias" 
-				 	{if url_title!='todos'}
-				 		id_categoria="{last_segment_category_id}"
-				 	{/if}
-				 }-->
 
                  <div class="row">
                   	{exp:channel:entries channel="cursos|tendencias" limit="20" paginate_base="catalogo/index" paginate=“bottom” }                  
@@ -138,29 +132,3 @@
 		</section>
 
 		{embed="includes/footer-interno_new"}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-

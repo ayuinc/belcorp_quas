@@ -1,5 +1,5 @@
 <form action="<?=$form_uri?>" method="POST" id="field_edit_form" autocomplete="off">
-	<input type="hidden" name="XID" 		value="<?=$XID_SECURE_HASH?>" />
+	<input type="hidden" name="<?=$csrf_hidden_name?>"	value="<?=$CSRF_TOKEN?>" />
 	<input type="hidden" name="field_id"	value="<?=$field_id?>" />
 	<input type="hidden" name="form_ids"	value="<?=$form_ids?>" id="form_ids"/>
 	<!-- defaults for checkboxes when unchecked -->

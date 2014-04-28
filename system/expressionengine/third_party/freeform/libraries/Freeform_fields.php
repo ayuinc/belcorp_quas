@@ -5,7 +5,7 @@
  *
  * @package		Solspace:Freeform
  * @author		Solspace, Inc.
- * @copyright	Copyright (c) 2008-2013, Solspace, Inc.
+ * @copyright	Copyright (c) 2008-2014, Solspace, Inc.
  * @link		http://solspace.com/docs/freeform
  * @license		http://www.solspace.com/license_agreement
  * @filesource	freeform/libraries/Freeform_fields.php
@@ -376,7 +376,23 @@ class Freeform_fields extends Addon_builder_freeform
 
 		$installed_updated		= FALSE;
 
-		$third_party_fields		= directory_map(PATH_THIRD);
+		//PHP 5.3 is a million times faster at this
+		if (class_exists('DirectoryIterator'))
+		{
+			$third_party_fields = array();
+
+			foreach (new DirectoryIterator(PATH_THIRD) as $fileInfo)
+			{
+				if ($fileInfo->isDir() && ! $fileInfo->isDot())
+				{
+					$third_party_fields[$fileInfo->getFilename()] = array();
+				}
+			}
+		}
+		else
+		{
+			$third_party_fields		= directory_map(PATH_THIRD);
+		}
 
 		//each item in the path third
 		foreach ($third_party_fields as $name => $folder)

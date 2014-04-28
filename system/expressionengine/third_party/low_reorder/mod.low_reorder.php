@@ -12,7 +12,7 @@ if ( ! class_exists('Low_reorder_base'))
  * @package        low_reorder
  * @author         Lodewijk Schutte <hi@gotolow.com>
  * @link           http://gotolow.com/addons/low-reorder
- * @copyright      Copyright (c) 2009-2013, Low
+ * @copyright      Copyright (c) 2009-2014, Low
  */
 class Low_reorder extends Low_reorder_base {
 
@@ -137,7 +137,10 @@ class Low_reorder extends Low_reorder_base {
 		// Add fixed_order to parameters
 		// --------------------------------------
 
-		$this->set['parameters']['fixed_order'] = implode('|', $this->entry_ids);
+		$orderby = ee()->TMPL->fetch_param('orderby');
+		$param   = empty($orderby) ? 'fixed_order' : 'entry_id';
+
+		$this->set['parameters'][$param] = implode('|', $this->entry_ids);
 
 		// --------------------------------------
 		// Set template parameters
@@ -600,7 +603,8 @@ class Low_reorder extends Low_reorder_base {
 			$filtered = low_flatten_results($this->get_entries($params, FALSE), 'entry_id');
 
 			// Intersect to preserve the order
-			$filtered = array_intersect($this->entry_ids, $filtered);
+			$filtered = array_filter(array_intersect($this->entry_ids, $filtered));
+			$filtered = array_values($filtered);
 
 			// Add to cache
 			$entries[$key] = $filtered;

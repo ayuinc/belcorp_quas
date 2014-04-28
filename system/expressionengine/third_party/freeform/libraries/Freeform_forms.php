@@ -5,7 +5,7 @@
  *
  * @package		Solspace:Freeform
  * @author		Solspace, Inc.
- * @copyright	Copyright (c) 2008-2013, Solspace, Inc.
+ * @copyright	Copyright (c) 2008-2014, Solspace, Inc.
  * @link		http://solspace.com/docs/freeform
  * @license		http://www.solspace.com/license_agreement
  * @filesource	freeform/libraries/Freeform_forms.php
@@ -62,7 +62,7 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return	bool 	is duplicate
 	 */
 
-	public function check_duplicate ($form_id = 0, $prevent_on = '',
+	public function check_duplicate($form_id = 0, $prevent_on = '',
 									 $check = '',  $site_id = FALSE)
 	{
 		//admins or form 0, goodbye
@@ -145,7 +145,7 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return	entry_id 	id of insert
 	 */
 
-	private function entry ($form_id, $field_input_data, $entry_id = 0, $complete = TRUE)
+	private function entry($form_id, $field_input_data, $entry_id = 0, $complete = TRUE)
 	{
 		if ( ! $this->data->is_valid_form_id($form_id))
 		{
@@ -301,7 +301,7 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return	entry_id 	id of insert
 	 */
 
-	public function insert_new_entry ($form_id, $field_input_data)
+	public function insert_new_entry($form_id, $field_input_data)
 	{
 		return $this->entry($form_id, $field_input_data);
 	}
@@ -322,7 +322,7 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return	bool 	update successful
 	 */
 
-	public function update_entry ($form_id, $entry_id, $form_input_data)
+	public function update_entry($form_id, $entry_id, $form_input_data)
 	{
 		return $this->entry($form_id, $form_input_data, $entry_id);
 	}
@@ -347,7 +347,7 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return	array 	form data
 	 */
 
-	public function store_multipage_entry ( $form_id, $form_input_data,
+	public function store_multipage_entry( $form_id, $form_input_data,
 											$hash, $finished = FALSE,
 											$hash_data = array())
 	{
@@ -416,7 +416,7 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return	bool
 	 */
 
-	public function cookie_expire_time ()
+	public function cookie_expire_time()
 	{
 		if ( ! isset($this->cookie_expire))
 		{
@@ -441,11 +441,11 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return	string 	32bit hash
 	 */
 
-	public function start_multipage_hash ($form_id = 0, $entry_id = 0, $edit = FALSE)
+	public function start_multipage_hash($form_id = 0, $entry_id = 0, $edit = FALSE)
 	{
 		$hash = md5(uniqid(mt_rand(), TRUE));
 
-		ee()->functions->set_cookie(
+		$this->set_cookie(
 			$this->hash_cookie_name,
 			$hash,
 			$this->hash_expire_time()
@@ -478,14 +478,14 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return	null
 	 */
 
-	public function update_hash ($hash = '', $data = array())
+	public function update_hash($hash = '', $data = array())
 	{
 		if ($hash == '' OR strlen($hash) !== 32)
 		{
 			return;
 		}
 
-		ee()->functions->set_cookie(
+		$this->set_cookie(
 			$this->hash_cookie_name,
 			$hash,
 			$this->cookie_expire_time()
@@ -509,18 +509,14 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return	null
 	 */
 
-	public function remove_hash ($hash = '')
+	public function remove_hash($hash = '')
 	{
 		if ($hash == '' OR strlen($hash) !== 32)
 		{
 			return;
 		}
 
-		ee()->functions->set_cookie(
-			$this->hash_cookie_name,
-			'',
-			''
-		);
+		$this->delete_cookie($this->hash_cookie_name);
 
 		ee()->db->delete(
 			'freeform_multipage_hashes',
@@ -543,7 +539,7 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return	string 	hash
 	 */
 
-	public function check_multipage_hash ($form_id = 0, $entry_id = 0, $edit = FALSE)
+	public function check_multipage_hash($form_id = 0, $entry_id = 0, $edit = FALSE)
 	{
 		$hash = FALSE;
 
@@ -616,7 +612,7 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return	bool
 	 */
 
-	public function hash_expire_time ()
+	public function hash_expire_time()
 	{
 		if ( ! isset($this->hash_expire))
 		{
@@ -645,7 +641,7 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return	null
 	 */
 
-	public function hash_clean_up ()
+	public function hash_clean_up()
 	{
 		//delete entries?
 		$delete_entries = ! $this->check_yes(
@@ -760,7 +756,7 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return	mixed
 	 */
 
-	public function get_multipage_form_data ($form_id, $hash)
+	public function get_multipage_form_data($form_id, $hash)
 	{
 		ee()->load->model('freeform_entry_model');
 
@@ -814,7 +810,7 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return	boolean
 	 */
 
-	public function check_keyword_banning ()
+	public function check_keyword_banning()
 	{
 		// --------------------------------------------
 		//  Get our list of keywords
@@ -851,7 +847,7 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return void
 	 */
 
-	public function add_field_to_form ($form_id, $new_field_ids)
+	public function add_field_to_form($form_id, $new_field_ids)
 	{
 		if ( ! $this->is_positive_intlike($form_id))
 		{
@@ -937,7 +933,7 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return null
 	 */
 
-	public function remove_field_from_form ($form_id, $field_id)
+	public function remove_field_from_form($form_id, $field_id)
 	{
 		$form_data = ee()->freeform_form_model->get_row($form_id);
 
@@ -1016,7 +1012,7 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return	int 	form id
 	 */
 
-	public function create_form ($data)
+	public function create_form($data)
 	{
 		ee()->load->model('freeform_form_model');
 
@@ -1047,7 +1043,7 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return	null
 	 */
 
-	public function update_form ($form_id, $data)
+	public function update_form($form_id, $data)
 	{
 		ee()->load->model('freeform_form_model');
 
@@ -1073,7 +1069,7 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return	bool 	success
 	 */
 
-	public function update_form_fields ($form_id, $field_ids)
+	public function update_form_fields($form_id, $field_ids)
 	{
 		if ( ! $this->is_positive_intlike($form_id))
 		{
@@ -1090,9 +1086,8 @@ class Freeform_forms extends Addon_builder_freeform
 
 		$table_name 			= ee()->freeform_form_model->table_name($form_id);
 		$p_table_name			= (
-			substr($table_name, 0,strlen(ee()->db->dbprefix)
-		) !== ee()->db->dbprefix) ?
-			ee()->db->dbprefix . $table_name :
+			substr($table_name, 0,strlen(ee()->db->dbprefix)) !== ee()->db->dbprefix
+		) ?	ee()->db->dbprefix . $table_name :
 			$table_name;
 
 		// -------------------------------------
@@ -1236,7 +1231,7 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @param 	form_id id of form to delete
 	 */
 
-	public function delete_form ($form_id)
+	public function delete_form($form_id)
 	{
 		if ( ! $this->is_positive_intlike($form_id))
 		{
@@ -1314,7 +1309,7 @@ class Freeform_forms extends Addon_builder_freeform
 	 * @return	mixed				return value of db delete
 	 */
 
-	public function delete_entries ($form_id, $entry_ids)
+	public function delete_entries($form_id, $entry_ids)
 	{
 		// -------------------------------------
 		//	lots of validation

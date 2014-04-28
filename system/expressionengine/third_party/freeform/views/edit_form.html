@@ -7,7 +7,7 @@
 </div>
 
 <form action="<?=$form_uri?>" method="POST" id="form_edit_form" autocomplete="off">
-	<input type="hidden" name="XID"				value="<?=$XID_SECURE_HASH?>" />
+	<input type="hidden" name="<?=$csrf_hidden_name?>"	value="<?=$CSRF_TOKEN?>" />
 	<input type="hidden" name="ret"				value="forms" />
 	<input type="hidden" name="form_id"			value="<?=$form_id?>" />
 	<input type="hidden" name="duplicate_id"	value="<?=$duplicate_id?>" />

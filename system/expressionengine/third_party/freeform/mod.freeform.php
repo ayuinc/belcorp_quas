@@ -5,10 +5,10 @@
  *
  * @package		Solspace:Freeform
  * @author		Solspace, Inc.
- * @copyright	Copyright (c) 2008-2013, Solspace, Inc.
+ * @copyright	Copyright (c) 2008-2014, Solspace, Inc.
  * @link		http://solspace.com/docs/freeform
  * @license		http://www.solspace.com/license_agreement
- * @version		4.1.3
+ * @version		4.1.7
  * @filesource	freeform/mod.freeform.php
  */
 
@@ -159,11 +159,13 @@ class Freeform extends Module_builder_freeform
 			//if this isn't false, its single or an array
 			if ($site_id !== FALSE)
 			{
+				//no ids? exit
 				if (empty($site_id['ids']))
 				{
 					ee()->freeform_form_model->reset();
 					return $this->no_results_error();
 				}
+				//e.g. site_id="not 1"
 				else if ($site_id['not'])
 				{
 					ee()->freeform_form_model->where_not_in(
@@ -248,15 +250,18 @@ class Freeform extends Module_builder_freeform
 		{
 			$new_row = array();
 
+			//prefix everything
 			foreach ($row as $key => $value)
 			{
 				$new_row['freeform:' . $key] = $value;
 			}
 
+			//we are only counting completed entries
 			$new_row['freeform:total_entries']	=	ee()->freeform_entry_model
 														->id($row['form_id'])
 														->where('complete', 'y')
 														->count();
+
 			$new_row['freeform:author']			=	(
 				isset($author_data[$row['author_id']]) ?
 					(
@@ -309,7 +314,7 @@ class Freeform extends Module_builder_freeform
 	 * @return	string 	tagdata
 	 */
 
-	public function entries ()
+	public function entries()
 	{
 		// -------------------------------------
 		//	form id
@@ -348,7 +353,7 @@ class Freeform extends Module_builder_freeform
 		$statuses	= array_keys($this->data->get_form_statuses());
 
 		// -------------------------------------
-		//	field data
+		//	field order ids
 		// -------------------------------------
 
 		$all_field_ids	= array();
@@ -517,7 +522,7 @@ class Freeform extends Module_builder_freeform
 		}
 
 		// -------------------------------------
-		//	freeform:all_form_fields
+		//	{freeform:all_form_fields}
 		// -------------------------------------
 
 		$tagdata = $this->replace_all_form_fields(
@@ -620,6 +625,7 @@ class Freeform extends Module_builder_freeform
 		{
 			ee()->freeform_entry_model->where('complete', 'n');
 		}
+		//default unless show_incomplete="y"
 		else if ( ! $this->check_yes($show_incomplete))
 		{
 			ee()->freeform_entry_model->where('complete', 'y');
@@ -701,6 +707,12 @@ class Freeform extends Module_builder_freeform
 
 			foreach ($orderby as $key => $value)
 			{
+				if ($value == 'random')
+				{
+					ee()->freeform_entry_model->order_by('', 'random');
+					continue;
+				}
+
 				if (isset($available_fields[$value]))
 				{
 					//if the sort is not set, just use the first
@@ -1543,7 +1555,7 @@ class Freeform extends Module_builder_freeform
 		{
 			$this->set_form_param(
 				'require_captcha',
-				($has_captcha) ? 'yes' : 'no',
+				($this->require_captcha() && $has_captcha) ? 'yes' : 'no',
 				true
 			);
 		}
@@ -1645,6 +1657,7 @@ class Freeform extends Module_builder_freeform
 	}
 	//END composer
 
+
 	// --------------------------------------------------------------------
 
 	/**
@@ -1657,7 +1670,7 @@ class Freeform extends Module_builder_freeform
 	 * @return	string 	tagdata
 	 */
 
-	public function edit ()
+	public function edit()
 	{
 		return $this->form(TRUE);
 	}
@@ -2037,7 +2050,7 @@ class Freeform extends Module_builder_freeform
 
 						//no need for an if. if we are here, this matched before
 						preg_match(
-							'/' . LD . 'freeform:page:([0-9]+).*?' . RD . '/',
+							'/' . LD . 'freeform:page:([0-9]+).*?' . RD . '/ims',
 							$value,
 							$sub_matches
 						);
@@ -2204,6 +2217,7 @@ class Freeform extends Module_builder_freeform
 		if ($this->params['require_captcha'])
 		{
 			$this->params['require_captcha'] = (
+				$this->require_captcha() &&
 				stristr($tagdata, LD . 'freeform:captcha' . RD) != FALSE
 			);
 		}
@@ -2596,7 +2610,8 @@ class Freeform extends Module_builder_freeform
 
 				$i++;
 
-				//extra protection because while loops are scary
+				//In case fetch_param ever defaults to something
+				//thats not falsy.
 				if (++$counter >= $while_limit)
 				{
 					break;
@@ -2611,7 +2626,7 @@ class Freeform extends Module_builder_freeform
 		}
 
 		//	----------------------------------------
-		//	parse {captcha}
+		//	parse {freeform:captcha}
 		//	----------------------------------------
 
 		$variables['freeform:captcha'] = FALSE;
@@ -2619,6 +2634,24 @@ class Freeform extends Module_builder_freeform
 		if ($this->params['require_captcha'])
 		{
 			$variables['freeform:captcha'] = ee()->functions->create_captcha();
+
+			// -------------------------------------
+			//	IF there is no captcha present
+			//	in this tagdata, we don't want
+			//	to require people to input it.
+			//	Thats asking for errors.
+			//	Usually this occurs when someone is
+			//	trying to force captcha but the
+			//	member is logged in and EE wont
+			//	output captcha for members unless
+			//	captcha_require_members is enabled.
+			// -------------------------------------
+
+			if (stristr($tagdata, LD . 'freeform:captcha' . RD) == FALSE OR
+				empty($variables['freeform:captcha']))
+			{
+				$this->params['require_captcha'] = FALSE;
+			}
 		}
 
 		// -------------------------------------
@@ -2718,9 +2751,12 @@ class Freeform extends Module_builder_freeform
 		);
 
 		// -------------------------------------
-		//	this doesn't force ana ajax request
+		//	This doesn't force an ajax request
 		//	but instead forces it _not_ to be
-		//	if the ajax param = 'no'
+		//	if the ajax param = 'no'.
+		//	$this->params['ajax'] defaults to
+		//	boolean true, so this will only
+		//	happen if someone adds ajax="no".
 		// -------------------------------------
 
 		if ( ! $this->params['ajax'])
@@ -2789,7 +2825,7 @@ class Freeform extends Module_builder_freeform
 	 * @return	mixed 	ajax request
 	 */
 
-	public function ajax_validate_form ()
+	public function ajax_validate_form()
 	{
 		return $this->save_form(TRUE);
 	}
@@ -3427,10 +3463,12 @@ class Freeform extends Module_builder_freeform
 			// -------------------------------------
 			//	EE 2.7 auto removes XID so we
 			//	have to restore it on errors where
-			//	we want the back button to work
+			//	we want the back button to work.
+			//	EE 2.8 changes everything again ;D.
 			// -------------------------------------
 
-			if (version_compare($this->ee_version, '2.7', '>='))
+			if (version_compare($this->ee_version, '2.7', '>=') &&
+				version_compare($this->ee_version, '2.8', '<'))
 			{
 				ee()->security->restore_xid();
 			}
@@ -3621,7 +3659,8 @@ class Freeform extends Module_builder_freeform
 			ee()->db->delete('captcha');
 		}
 
-		if ($this->check_yes(ee()->config->item('secure_forms')) )
+		if (version_compare($this->ee_version, '2.8', '<') &&
+			$this->check_yes(ee()->config->item('secure_forms')) )
 		{
 			ee()->security->delete_xid(ee()->input->post('XID'));
 		}
@@ -3836,10 +3875,7 @@ class Freeform extends Module_builder_freeform
 		//	NOTE: These are pre-validation errors
 		//	that are only supposed to be things
 		//	that are fatal to the submitting
-		//	of the form. This we are _not_
-		//	restoring XIDs here (EE 2.7+)
-		//	because its not a standard user
-		//	error where the back button is relevant.
+		//	of the form.
 		// -------------------------------------
 
 		if ($this->param('inline_errors'))
@@ -3889,7 +3925,7 @@ class Freeform extends Module_builder_freeform
 	 * @return 	mixed  	boolean false if not found else id
 	 */
 
-	private function build_form( $data )
+	private function build_form($data)
 	{
 		// -------------------------------------
 		//	prep input data
@@ -3912,7 +3948,7 @@ class Freeform extends Module_builder_freeform
 		//
 		if ( $this->check_yes(ee()->config->item('secure_forms')) )
 		{
-			$data['hidden_fields']['XID'] = $this->create_xid();
+			$data['hidden_fields'][$this->sc->csrf_name] = $this->create_xid();
 		}
 
 		// --------------------------------------------
@@ -4448,13 +4484,7 @@ class Freeform extends Module_builder_freeform
 			//security
 			'secure_action'					=> FALSE,
 			'secure_return'					=> FALSE,
-			'require_captcha'				=> (
-				$this->check_yes(ee()->config->item('captcha_require_members')) OR
-				(
-					$this->check_no(ee()->config->item('captcha_require_members')) AND
-					ee()->session->userdata('member_id') == 0
-				)
-			),
+			'require_captcha'				=> $this->require_captcha(),
 			'require_ip'					=> ! $this->check_no(
 				ee()->config->item("require_ip_for_posting")
 			),
@@ -4517,6 +4547,24 @@ class Freeform extends Module_builder_freeform
 		return $this->params_with_defaults;
 	}
 	//END get_default_params
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Require Captcha?
+	 *
+	 * @access	public
+	 * @return	boolean		user isn't logged in or member require captcha
+	 */
+
+	public function require_captcha()
+	{
+		return (
+			ee()->session->userdata('member_id') == 0 OR
+			$this->check_yes(ee()->config->item('captcha_require_members'))
+		);
+	}
+	//END require_captcha
 
 
 	// --------------------------------------------------------------------
@@ -6018,7 +6066,8 @@ class Freeform extends Module_builder_freeform
 
 	public function restore_xid()
 	{
-		if (version_compare($this->ee_version, '2.7', '>='))
+		if (version_compare($this->ee_version, '2.7', '>=') &&
+			version_compare($this->ee_version, '2.8', '<'))
 		{
 			ee()->security->restore_xid();
 		}

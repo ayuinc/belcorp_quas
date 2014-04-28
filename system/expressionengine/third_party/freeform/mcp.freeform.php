@@ -7,10 +7,10 @@
  *
  * @package		Solspace:Freeform
  * @author		Solspace, Inc.
- * @copyright	Copyright (c) 2008-2013, Solspace, Inc.
+ * @copyright	Copyright (c) 2008-2014, Solspace, Inc.
  * @link		http://solspace.com/docs/freeform
  * @license		http://www.solspace.com/license_agreement
- * @version		4.1.3
+ * @version		4.1.7
  * @filesource	freeform/mcp.freeform.php
  */
 
@@ -55,39 +55,39 @@ class Freeform_mcp extends Module_builder_freeform
 				'link'  => $this->base,
 				'title' => lang('forms')
 			),
-			'module_fields' 			=> array(
+			'module_fields'			=> array(
 				'link'  => $this->base . AMP . 'method=fields',
 				'title' => lang('fields')
 			),
-			'module_fieldtypes' 			=> array(
+			'module_fieldtypes'			=> array(
 				'link'  => $this->base . AMP . 'method=fieldtypes',
 				'title' => lang('fieldtypes')
 			),
-			'module_notifications' 		=> array(
+			'module_notifications'		=> array(
 				'link'  => $this->base . AMP . 'method=notifications',
 				'title' => lang('notifications')
 			),
 			
-			'module_composer_templates' 			=> array(
+			'module_composer_templates'			=> array(
 				'link'  => $this->base . AMP . 'method=templates',
 				'title' => lang('composer_templates')
 			),
 			
-			/*'module_export' 			=> array(
+			/*'module_export'			=> array(
 				'link'  => $this->base . AMP . 'method=export',
 				'title' => lang('export')
 			),*/
-			'module_utilities' 		=> array(
+			'module_utilities'		=> array(
 				'link'  => $this->base . AMP . 'method=utilities',
 				'title' => lang('utilities')
 			),
 			
-			'module_permissions' 		=> array(
+			'module_permissions'		=> array(
 				'link'  => $this->base . AMP . 'method=permissions',
 				'title' => lang('permissions')
 			),
 			
-			'module_preferences' 		=> array(
+			'module_preferences'		=> array(
 				'link'  => $this->base . AMP . 'method=preferences',
 				'title' => lang('preferences')
 			),
@@ -217,7 +217,7 @@ class Freeform_mcp extends Module_builder_freeform
 	 * @return	string html output
 	 */
 
-	public function forms ( $message = '' )
+	public function forms($message = '')
 	{
 		// -------------------------------------
 		//  Messages
@@ -391,34 +391,34 @@ class Freeform_mcp extends Module_builder_freeform
 				// -------------------------------------
 
 				$row['form_submissions_link'] 	= $this->mod_link(array(
-					'method' 		=> 'entries',
-					'form_id' 		=> $row['form_id']
+					'method'		=> 'entries',
+					'form_id'		=> $row['form_id']
 				));
 
 				$row['form_moderate_link'] 		= $this->mod_link(array(
-					'method' 		=> 'moderate_entries',
-					'form_id' 		=> $row['form_id'],
+					'method'		=> 'moderate_entries',
+					'form_id'		=> $row['form_id'],
 					'search_status'	=> 'pending'
 				));
 
 				$row['form_edit_composer_link'] = $this->mod_link(array(
-					'method' 		=> 'form_composer',
-					'form_id' 		=> $row['form_id']
+					'method'		=> 'form_composer',
+					'form_id'		=> $row['form_id']
 				));
 
 				$row['form_settings_link']		= $this->mod_link(array(
-					'method' 		=> 'edit_form',
-					'form_id' 		=> $row['form_id']
+					'method'		=> 'edit_form',
+					'form_id'		=> $row['form_id']
 				));
 
 				$row['form_duplicate_link']		= $this->mod_link(array(
-					'method' 		=> 'edit_form',
-					'duplicate_id' 	=> $row['form_id']
+					'method'		=> 'edit_form',
+					'duplicate_id'	=> $row['form_id']
 				));
 
 				$row['form_delete_link']		= $this->mod_link(array(
-					'method' 		=> 'delete_confirm_form',
-					'form_id' 		=> $row['form_id']
+					'method'		=> 'delete_confirm_form',
+					'form_id'		=> $row['form_id']
 				));
 
 				$form_data[] = $row;
@@ -428,7 +428,7 @@ class Freeform_mcp extends Module_builder_freeform
 		$this->cached_vars['form_data'] = $form_data;
 
 		$this->cached_vars['form_url']	= $this->mod_link(array(
-			'method' 		=> 'delete_confirm_form'
+			'method'		=> 'delete_confirm_form'
 		));
 
 		//	----------------------------------------
@@ -570,7 +570,7 @@ class Freeform_mcp extends Module_builder_freeform
 			'default_status'			=> $this->data->defaults['default_form_status'],
 			'notify_admin'				=> 'n',
 			'notify_user'				=> 'n',
-			'user_email_field' 			=> '',
+			'user_email_field'			=> '',
 			'user_notification_id'		=> '0',
 			'admin_notification_id'		=> '0',
 			'admin_notification_email'	=> ee()->config->item('webmaster_email'),
@@ -943,9 +943,9 @@ class Freeform_mcp extends Module_builder_freeform
 													'images/captcha.png';
 
 		$this->cached_vars['new_field_url'] = $this->mod_link(array(
-			'method' 	=> 'edit_field',
+			'method'	=> 'edit_field',
 			//this builds a URL, so yes this is intentionally a string
-			'modal' 	=> 'true'
+			'modal'	=> 'true'
 		), TRUE);
 
 		$this->cached_vars['field_data_url'] = $this->mod_link(array(
@@ -1094,8 +1094,8 @@ class Freeform_mcp extends Module_builder_freeform
 			$this->cached_vars['page_url']		= $page_url;
 			$this->cached_vars['default_preview_css'] = $this->sc->addon_theme_url .
 														'css/default_composer.css';
-			$this->cached_vars['jquery_src']	= rtrim(ee()->config->item('theme_folder_url'), '/') .
-										'/javascript/compressed/jquery/jquery.js';
+			$this->cached_vars['jquery_src']	= ee()->functions->fetch_site_index(0, 0) .
+					QUERY_MARKER . 'ACT=jquery';
 
 			$html = $this->view('composer_preview.html', NULL, TRUE);
 		}
@@ -1107,7 +1107,6 @@ class Freeform_mcp extends Module_builder_freeform
 			$subhtml .= ($template_id > 0) ? " composer_template_id='" . $template_id . "'" : '';
 			$subhtml .= ($preview_id > 0) ? " preview_id='" . $preview_id . "'" : '';
 			$subhtml .= "}";
-
 			$html = $this->actions()->template()->process_string_as_template($subhtml);
 		}
 
@@ -1181,9 +1180,7 @@ class Freeform_mcp extends Module_builder_freeform
 		//	user using session id instead of cookies?
 		// -------------------------------------
 
-		$this->cached_vars['fingerprint'] = isset(
-			ee()->session->userdata['fingerprint']
-		) ? ee()->session->userdata['fingerprint'] : 0;
+		$this->cached_vars['fingerprint'] = $this->get_session_id();
 
 		// -------------------------------------
 		//	form data? legit? GTFO?
@@ -1348,7 +1345,7 @@ class Freeform_mcp extends Module_builder_freeform
 
 		//base url for pagination
 		$pag_url		= array(
-			'method' 	=> $method,
+			'method'	=> $method,
 			'form_id'	=> $form_id
 		);
 
@@ -1628,14 +1625,14 @@ class Freeform_mcp extends Module_builder_freeform
 			ee()->freeform_export->format_dates = (ee()->input->get_post('format_dates') == 'y');
 
 			ee()->freeform_export->export(array(
-				'method' 			=> ee()->input->get_post('export_method'),
-				'form_id' 			=> $form_id,
-				'form_name' 		=> $form_data['form_name'],
-				'output' 			=> 'download',
-				'model' 			=> ee()->freeform_entry_model,
-				'remove_entry_id' 	=> ($export_fields != 'all' AND ! in_array('entry_id', $visible_columns)),
-				'header_labels' 	=> $export_labels,
-				'total_entries' 	=> $total_entries
+				'method'			=> ee()->input->get_post('export_method'),
+				'form_id'			=> $form_id,
+				'form_name'		=> $form_data['form_name'],
+				'output'			=> 'download',
+				'model'			=> ee()->freeform_entry_model,
+				'remove_entry_id'	=> ($export_fields != 'all' AND ! in_array('entry_id', $visible_columns)),
+				'header_labels'	=> $export_labels,
+				'total_entries'	=> $total_entries
 			));
 		}
 		//END if ($export)
@@ -1713,8 +1710,8 @@ class Freeform_mcp extends Module_builder_freeform
 		// -------------------------------------
 
 		ee()->freeform_fields->apply_field_method(array(
-			'method' 		=> 'pre_process_entries',
-			'form_id' 		=> $form_id,
+			'method'		=> 'pre_process_entries',
+			'form_id'		=> $form_id,
 			'entry_id'		=> $entry_ids,
 			'form_data'		=> $form_data,
 			'field_data'	=> $form_data['fields']
@@ -1724,12 +1721,12 @@ class Freeform_mcp extends Module_builder_freeform
 		{
 			//apply display_entry_cp to our field data
 			$field_parse = ee()->freeform_fields->apply_field_method(array(
-				'method' 			=> 'display_entry_cp',
-				'form_id' 			=> $form_id,
-				'entry_id' 			=> $row['entry_id'],
+				'method'			=> 'display_entry_cp',
+				'form_id'			=> $form_id,
+				'entry_id'			=> $row['entry_id'],
 				'form_data'			=> $form_data,
 				'field_data'		=> $form_data['fields'],
-				'field_input_data' 	=> $row
+				'field_input_data'	=> $row
 			));
 
 			$row = array_merge($row, $field_parse['variables']);
@@ -1737,21 +1734,21 @@ class Freeform_mcp extends Module_builder_freeform
 			$entry						= array();
 
 			$entry['view_entry_link']	= $this->mod_link(array(
-				'method' 		=> 'view_entry',
-				'form_id' 		=> $form_id,
-				'entry_id' 		=> $row['entry_id']
+				'method'		=> 'view_entry',
+				'form_id'		=> $form_id,
+				'entry_id'		=> $row['entry_id']
 			));
 
 			$entry['edit_entry_link']	= $this->mod_link(array(
-				'method' 		=> 'edit_entry',
-				'form_id' 		=> $form_id,
-				'entry_id' 		=> $row['entry_id']
+				'method'		=> 'edit_entry',
+				'form_id'		=> $form_id,
+				'entry_id'		=> $row['entry_id']
 			));
 
 			$entry['approve_link']		= $this->mod_link(array(
-				'method' 		=> 'approve_entries',
-				'form_id' 		=> $form_id,
-				'entry_ids' 	=> $row['entry_id']
+				'method'		=> 'approve_entries',
+				'form_id'		=> $form_id,
+				'entry_ids'	=> $row['entry_id']
 			));
 
 			$entry['count']				= ++$count;
@@ -1827,8 +1824,8 @@ class Freeform_mcp extends Module_builder_freeform
 
 		$this->cached_vars['moderation_count'] 	= $moderation_count;
 		$this->cached_vars['moderation_link']	= $this->mod_link(array(
-			'method' 		=> 'moderate_entries',
-			'form_id' 		=> $form_id,
+			'method'		=> 'moderate_entries',
+			'form_id'		=> $form_id,
 			'search_status'	=> 'pending'
 		));
 
@@ -1909,12 +1906,12 @@ class Freeform_mcp extends Module_builder_freeform
 		// -------------------------------------
 
 		$this->cached_vars['form_url'] 			= $this->mod_link(array(
-			'method' 		=> 'entries_action',
+			'method'		=> 'entries_action',
 			'return_method' => (($moderate) ? 'moderate_' :	'' ) . 'entries'
 		));
 
 		$this->cached_vars['save_layout_url']	= $this->mod_link(array(
-			'method' 		=> 'save_field_layout'
+			'method'		=> 'save_field_layout'
 		));
 
 		// -------------------------------------
@@ -2660,7 +2657,7 @@ class Freeform_mcp extends Module_builder_freeform
 				'form_id'		=> $form_id,
 				'entry_id'		=> $entry_id,
 				'edit'			=> $edit,
-				'extra_settings' 	=> array(
+				'extra_settings'	=> array(
 					'entry_id'	=> $entry_id
 				)
 			));
@@ -2802,9 +2799,7 @@ class Freeform_mcp extends Module_builder_freeform
 		//	data
 		// -------------------------------------
 
-		$this->cached_vars['fingerprint'] = isset(
-			ee()->session->userdata['fingerprint']
-		) ? ee()->session->userdata['fingerprint'] : 0;
+		$this->cached_vars['fingerprint'] = $this->get_session_id();
 
 		$row_limit			= $this->data->defaults['mcp_row_limit'];
 		$paginate			= '';
@@ -2918,17 +2913,17 @@ class Freeform_mcp extends Module_builder_freeform
 			{
 				$row['count']					= ++$count;
 				$row['field_edit_link'] 		= $this->mod_link(array(
-					'method' 		=> 'edit_field',
+					'method'		=> 'edit_field',
 					'field_id'		=> $row['field_id']
 				));
 
 				$row['field_duplicate_link'] 	= $this->mod_link(array(
-					'method' 		=> 'edit_field',
+					'method'		=> 'edit_field',
 					'duplicate_id'	=> $row['field_id']
 				));
 
 				$row['field_delete_link'] 		= $this->mod_link(array(
-					'method' 		=> 'delete_confirm_fields',
+					'method'		=> 'delete_confirm_fields',
 					'field_id'		=> $row['field_id']
 				));
 
@@ -2957,7 +2952,7 @@ class Freeform_mcp extends Module_builder_freeform
 		//	----------------------------------------
 
 		$this->cached_vars['form_uri'] = $this->mod_link(array(
-			'method' 		=> 'delete_confirm_fields'
+			'method'		=> 'delete_confirm_fields'
 		));
 
 		// -------------------------------------
@@ -3192,7 +3187,7 @@ class Freeform_mcp extends Module_builder_freeform
 		}
 
 		$this->cached_vars['form_uri'] = $this->mod_link(array(
-			'method' 		=> 'save_field'
+			'method'		=> 'save_field'
 		));
 
 		//----------------------------------------
@@ -3306,11 +3301,11 @@ class Freeform_mcp extends Module_builder_freeform
 
 			$fieldtypes[$name]['action_lang'] 	 = lang($action);
 			$fieldtypes[$name]['action_url']	 = $this->mod_link(array(
-				'method' 		=> 'freeform_fieldtype_action',
+				'method'		=> 'freeform_fieldtype_action',
 				'name'			=> $name,
 				'action'		=> $action,
 				//some other time -gf
-				//'folder' 		=> base64_encode($data['folder'])
+				//'folder'		=> base64_encode($data['folder'])
 			));
 		}
 
@@ -3362,7 +3357,7 @@ class Freeform_mcp extends Module_builder_freeform
 		//--------------------------------------------
 
 		$this->cached_vars['new_notification_link'] = $this->mod_link(array(
-			'method' 		=> 'edit_notification'
+			'method'		=> 'edit_notification'
 		));
 
 		$this->add_crumb( lang('notifications') );
@@ -3404,7 +3399,7 @@ class Freeform_mcp extends Module_builder_freeform
 			$row_count			= $this->get_post_or_zero('row');
 
 			$url 				= $this->mod_link(array(
-				'method' 				=> 'notifications'
+				'method'				=> 'notifications'
 			));
 
 			//get pagination info
@@ -3430,17 +3425,17 @@ class Freeform_mcp extends Module_builder_freeform
 			foreach ($query->result_array() as $row)
 			{
 				$row['notification_edit_link'] 		= $this->mod_link(array(
-					'method' 			=> 'edit_notification',
+					'method'			=> 'edit_notification',
 					'notification_id'	=> $row['notification_id'],
 				));
 
 				$row['notification_duplicate_link'] = $this->mod_link(array(
-					'method' 			=> 'edit_notification',
+					'method'			=> 'edit_notification',
 					'duplicate_id'		=> $row['notification_id'],
 				));
 
 				$row['notification_delete_link'] 	= $this->mod_link(array(
-					'method' 			=> 'delete_confirm_notification',
+					'method'			=> 'delete_confirm_notification',
 					'notification_id'	=> $row['notification_id'],
 				));
 
@@ -3521,10 +3516,10 @@ class Freeform_mcp extends Module_builder_freeform
 			'allow_html'				=> $this->data->defaults['allow_html'],
 			'from_name'					=> form_prep(ee()->config->item('webmaster_name')),
 			'from_email'				=> ee()->config->item('webmaster_email'),
-			'reply_to_email' 			=> ee()->config->item('webmaster_email'),
+			'reply_to_email'			=> ee()->config->item('webmaster_email'),
 			'email_subject'				=> '',
 			'template_data'				=> '',
-			'include_attachments' 		=> 'n'
+			'include_attachments'		=> 'n'
 		);
 
 		// -------------------------------------
@@ -3686,7 +3681,7 @@ class Freeform_mcp extends Module_builder_freeform
 		//--------------------------------------------
 
 		$this->cached_vars['new_template_link'] = $this->mod_link(array(
-			'method' 		=> 'edit_template'
+			'method'		=> 'edit_template'
 		));
 
 		$this->add_crumb( lang('templates') );
@@ -3724,7 +3719,7 @@ class Freeform_mcp extends Module_builder_freeform
 			$row_count			= $this->get_post_or_zero('row');
 
 			$url 				= $this->mod_link(array(
-				'method' 				=> 'templates'
+				'method'				=> 'templates'
 			));
 
 			//get pagination info
@@ -3748,17 +3743,17 @@ class Freeform_mcp extends Module_builder_freeform
 			foreach ($query as $row)
 			{
 				$row['template_edit_link'] 		= $this->mod_link(array(
-					'method' 			=> 'edit_template',
+					'method'			=> 'edit_template',
 					'template_id'	=> $row['template_id'],
 				));
 
 				$row['template_duplicate_link'] = $this->mod_link(array(
-					'method' 			=> 'edit_template',
+					'method'			=> 'edit_template',
 					'duplicate_id'		=> $row['template_id'],
 				));
 
 				$row['template_delete_link'] 	= $this->mod_link(array(
-					'method' 			=> 'delete_confirm_template',
+					'method'			=> 'delete_confirm_template',
 					'template_id'	=> $row['template_id'],
 				));
 
@@ -4286,8 +4281,8 @@ class Freeform_mcp extends Module_builder_freeform
 	{
 		$this->cached_vars = array_merge($this->cached_vars, array(
 			'hidden_values' => $hidden_values,
-			'lang_message' 	=> ($message_use_lang ? lang($message_line) : $message_line),
-			'lang_submit' 	=> lang($submit_line),
+			'lang_message'	=> ($message_use_lang ? lang($message_line) : $message_line),
+			'lang_submit'	=> lang($submit_line),
 			'form_url'		=> $this->mod_link(array('method' => $method))
 		));
 
@@ -4392,8 +4387,8 @@ class Freeform_mcp extends Module_builder_freeform
 		if ($this->is_ajax_request())
 		{
 			return $this->send_ajax_response(array(
-				'success' 	=> TRUE,
-				'message' 	=> lang('fieldtype_uninstalled')
+				'success'	=> TRUE,
+				'message'	=> lang('fieldtype_uninstalled')
 			));
 		}
 		else
@@ -4437,8 +4432,8 @@ class Freeform_mcp extends Module_builder_freeform
 		)
 		{
 			return $this->send_ajax_response(array(
-				'success' 	=> FALSE,
-				'message' 	=> lang('invalid_input')
+				'success'	=> FALSE,
+				'message'	=> lang('invalid_input')
 			));
 		}
 
@@ -4451,8 +4446,8 @@ class Freeform_mcp extends Module_builder_freeform
 		//)
 		//{
 		//	return $this->send_ajax_response(array(
-		//		'success' 	=> FALSE,
-		//		'message' 	=> lang('invalid_permissions')
+		//		'success'	=> FALSE,
+		//		'message'	=> lang('invalid_permissions')
 		//	));
 		//}
 
@@ -4548,8 +4543,8 @@ class Freeform_mcp extends Module_builder_freeform
 		// -------------------------------------
 
 		$settings = array(
-			'visible' 	=> $data,
-			'hidden' 	=> $possible_columns
+			'visible'	=> $data,
+			'hidden'	=> $possible_columns
 		);
 
 		if ($for == 'just_me')
@@ -4586,8 +4581,8 @@ class Freeform_mcp extends Module_builder_freeform
 		//don't want JS erorrs preventing this from
 		//working
 		$this->send_ajax_response(array(
-			'success' 		=> TRUE,
-			'message' 		=> lang('layout_saved'),
+			'success'		=> TRUE,
+			'message'		=> lang('layout_saved'),
 			'update_fields' => array()
 		));
 
@@ -4821,7 +4816,7 @@ class Freeform_mcp extends Module_builder_freeform
 			'admin_notification_id'		=> $this->get_post_or_zero('admin_notification_id'),
 			'admin_notification_email'	=> $admin_notification_email,
 			'form_description'			=> strip_tags(ee()->input->get_post('form_description', TRUE)),
-			'author_id' 				=> ee()->session->userdata('member_id'),
+			'author_id'				=> ee()->session->userdata('member_id'),
 			'field_ids'					=> implode('|', $sorted_field_ids),
 			'field_order'				=> implode('|', $field_ids),
 			'notify_admin'				=> (
@@ -4830,7 +4825,7 @@ class Freeform_mcp extends Module_builder_freeform
 			'notify_user'				=> (
 				(ee()->input->get_post('notify_user') == 'y') ? 'y' : 'n'
 			),
-			'user_email_field' 			=> $user_email_field,
+			'user_email_field'			=> $user_email_field,
 		);
 
 		//load the forms model if its not been already
@@ -4889,17 +4884,17 @@ class Freeform_mcp extends Module_builder_freeform
 		if ( ! $composer_save_finish AND $do_composer)
 		{
 			ee()->functions->redirect($this->mod_link(array(
-				'method' 	=> 'form_composer',
-				'form_id' 	=> $form_id,
-				'msg' 		=> 'edit_form_success'
+				'method'	=> 'form_composer',
+				'form_id'	=> $form_id,
+				'msg'		=> 'edit_form_success'
 			)));
 		}
 		//'save and finish, default'
 		else
 		{
 			ee()->functions->redirect($this->mod_link(array(
-				'method' 	=> 'forms',
-				'msg' 		=> 'edit_form_success'
+				'method'	=> 'forms',
+				'msg'		=> 'edit_form_success'
 			)));
 		}
 	}
@@ -5196,9 +5191,9 @@ class Freeform_mcp extends Module_builder_freeform
 		else
 		{
 			ee()->functions->redirect($this->mod_link(array(
-				'method' 	=> 'entries',
+				'method'	=> 'entries',
 				'form_id'	=> $form_id,
-				'msg' 		=> $success_line
+				'msg'		=> $success_line
 			)));
 		}
 	}
@@ -5434,8 +5429,8 @@ class Freeform_mcp extends Module_builder_freeform
 		foreach($entry_ids as $entry_id)
 		{
 			$updates[] = array(
-				'entry_id' 	=> $entry_id,
-				'status' 	=> 'open'
+				'entry_id'	=> $entry_id,
+				'status'	=> 'open'
 			);
 		}
 
@@ -5467,9 +5462,9 @@ class Freeform_mcp extends Module_builder_freeform
 							'moderate_entries';
 
 			ee()->functions->redirect($this->mod_link(array(
-				'method' 	=> $method,
+				'method'	=> $method,
 				'form_id'	=> $form_id,
-				'msg' 		=> 'entries_approved'
+				'msg'		=> 'entries_approved'
 			)));
 		}
 	}
@@ -5618,8 +5613,8 @@ class Freeform_mcp extends Module_builder_freeform
 		return $this->delete_confirm(
 			'delete_entries',
 			array(
-				'form_id' 		=> $form_id,
-				'entry_ids' 	=> $entry_ids,
+				'form_id'		=> $form_id,
+				'entry_ids'	=> $entry_ids,
 				'return_method' => $return_method
 			),
 			'confirm_delete_entries'
@@ -5694,9 +5689,9 @@ class Freeform_mcp extends Module_builder_freeform
 							$method : 'entries';
 
 			ee()->functions->redirect($this->mod_link(array(
-				'method' 	=> $method,
+				'method'	=> $method,
 				'form_id'	=> $form_id,
-				'msg' 		=> 'entries_deleted'
+				'msg'		=> 'entries_deleted'
 			)));
 		}
 	}
@@ -5956,15 +5951,15 @@ class Freeform_mcp extends Module_builder_freeform
 		if ($this->is_ajax_request())
 		{
 			$this->send_ajax_response(array(
-				'success' 	=> $success,
-				'message' 	=> lang('fieldtype_uninstalled'),
+				'success'	=> $success,
+				'message'	=> lang('fieldtype_uninstalled'),
 			));
 		}
 		else
 		{
 			ee()->functions->redirect($this->mod_link(array(
-				'method' 	=> 'fieldtypes',
-				'msg' 		=> 'fieldtype_uninstalled'
+				'method'	=> 'fieldtypes',
+				'msg'		=> 'fieldtype_uninstalled'
 			)));
 		}
 	}
@@ -6021,8 +6016,8 @@ class Freeform_mcp extends Module_builder_freeform
 		else
 		{
 			ee()->functions->redirect($this->mod_link(array(
-				'method' 	=> 'fields',
-				'msg' 		=> 'fields_deleted'
+				'method'	=> 'fields',
+				'msg'		=> 'fields_deleted'
 			)));
 		}
 	}
@@ -6496,7 +6491,7 @@ class Freeform_mcp extends Module_builder_freeform
 			$this->is_ajax_request())
 		{
 			$this->send_ajax_response(array(
-				'success' 	=> TRUE
+				'success'	=> TRUE
 			));
 		}
 
@@ -6505,15 +6500,15 @@ class Freeform_mcp extends Module_builder_freeform
 		// -------------------------------------
 
 		$data 		= array(
-			'field_name' 		=> strip_tags($field_name),
-			'field_label' 		=> strip_tags($field_label),
-			'field_type' 		=> $field_type,
-			'edit_date' 		=> '0', //overridden if update
+			'field_name'		=> strip_tags($field_name),
+			'field_label'		=> strip_tags($field_label),
+			'field_type'		=> $field_type,
+			'edit_date'		=> '0', //overridden if update
 			'field_description' => strip_tags(ee()->input->get_post('field_description', TRUE)),
-			'submissions_page' 	=> $submissions_page,
-			'moderation_page' 	=> $moderation_page,
-			'composer_use' 		=> $composer_use,
-			'settings' 			=> json_encode($field_instance->save_settings())
+			'submissions_page'	=> $submissions_page,
+			'moderation_page'	=> $moderation_page,
+			'composer_use'		=> $composer_use,
+			'settings'			=> json_encode($field_instance->save_settings())
 		);
 
 		if ($update)
@@ -6536,7 +6531,7 @@ class Freeform_mcp extends Module_builder_freeform
 					array(
 						'author_id'		=> ee()->session->userdata('member_id'),
 						'entry_date'	=> ee()->localize->now,
-						'site_id' 		=> ee()->config->item('site_id')
+						'site_id'		=> ee()->config->item('site_id')
 					)
 				)
 			);
@@ -6603,7 +6598,7 @@ class Freeform_mcp extends Module_builder_freeform
 		if ($this->is_ajax_request())
 		{
 			$return = array(
-				'success' 	=> TRUE,
+				'success'	=> TRUE,
 				'field_id'	=> $field_id,
 			);
 
@@ -6686,12 +6681,12 @@ class Freeform_mcp extends Module_builder_freeform
 			'fieldName'		=> $field_data['field_name'],
 			'fieldLabel'	=> $field_data['field_label'],
 			//encode to keep JS from running
-			'fieldOutput' 	=> base64_encode($instance->display_composer_field()),
+			'fieldOutput'	=> base64_encode($instance->display_composer_field()),
 			'fieldEditUrl'	=> $this->mod_link(array(
-				'method' 	=> 'edit_field',
+				'method'	=> 'edit_field',
 				//this builds a URL, so yes this is intentionally a string
-				'modal' 	=> 'true',
-				'field_id' 	=> $field_data['field_id']
+				'modal'	=> 'true',
+				'field_id'	=> $field_data['field_id']
 			), TRUE)
 		);
 
@@ -6701,7 +6696,7 @@ class Freeform_mcp extends Module_builder_freeform
 		}
 
 		$this->send_ajax_response(array(
-			'success' 				=> TRUE,
+			'success'				=> TRUE,
 			'fieldId'				=> $field_id,
 			'composerFieldData'		=> $composer_field_data
 		));
@@ -6914,7 +6909,7 @@ class Freeform_mcp extends Module_builder_freeform
 		else if ($this->check_yes(ee()->input->get_post('validate_only')))
 		{
 			return $this->send_ajax_response(array(
-				'success' 				=> TRUE
+				'success'				=> TRUE
 			));
 		}
 
@@ -6964,16 +6959,16 @@ class Freeform_mcp extends Module_builder_freeform
 		if ($this->is_ajax_request())
 		{
 			$this->send_ajax_response(array(
-				'success' 				=> TRUE,
-				'notification_id' 		=> $notification_id
+				'success'				=> TRUE,
+				'notification_id'		=> $notification_id
 			));
 		}
 		else
 		{
 			//redirect back to fields on success
 			ee()->functions->redirect($this->mod_link(array(
-				'method' 	=> 'notifications',
-				'msg' 		=> 'edit_notification_success'
+				'method'	=> 'notifications',
+				'msg'		=> 'edit_notification_success'
 			)));
 		}
 	}
@@ -6990,7 +6985,7 @@ class Freeform_mcp extends Module_builder_freeform
 	 * @return	null (redirect)
 	 */
 
-	public function save_template ()
+	public function save_template()
 	{
 		// -------------------------------------
 		//	template ID? we must be editing
@@ -7199,7 +7194,7 @@ class Freeform_mcp extends Module_builder_freeform
 	 * @return	null (redirect)
 	 */
 
-	public function save_permissions ()
+	public function save_permissions()
 	{
 		// -------------------------------------
 		//	menu items
@@ -7344,7 +7339,7 @@ class Freeform_mcp extends Module_builder_freeform
 	 * @return	mixed				bool permission or redirect
 	 */
 
-	public function check_permissions ($menu_item = '', $redirect = TRUE)
+	public function check_permissions($menu_item = '', $redirect = TRUE)
 	{
 		$group_id	= ee()->session->userdata('group_id');
 
@@ -7458,7 +7453,7 @@ class Freeform_mcp extends Module_builder_freeform
 	 * @param	string		$menu_item	The menu item to highlight
 	 */
 
-	protected function set_highlight ($menu_item = 'module_forms')
+	protected function set_highlight($menu_item = 'module_forms')
 	{
 		
 		$this->check_permissions($menu_item);
@@ -7477,7 +7472,7 @@ class Freeform_mcp extends Module_builder_freeform
 	 * @return	null (redirect)
 	 */
 
-	public function save_preferences ()
+	public function save_preferences()
 	{
 		//defaults are in data.freeform.php
 		$prefs = array();
@@ -7622,8 +7617,20 @@ class Freeform_mcp extends Module_builder_freeform
 
 	private function mod_link ($vars = array(), $real_amp = FALSE)
 	{
-		$link 	= $this->base;
-		$amp 	= $real_amp ? '&' : AMP;
+		$link	= $this->base;
+		$amp	= $real_amp ? '&' : AMP;
+
+		if ($real_amp)
+		{
+			$link = str_replace(AMP, '&', $link);
+		}
+		else
+		{
+			//Swap all to regular amp first so we don't get false
+			//positives. Could do this with negative lookups, but
+			//those are spottier than this.
+			$link = str_replace('&', AMP, str_replace(AMP, '&', $link));
+		}
 
 		if ( ! empty($vars))
 		{
@@ -7953,7 +7960,9 @@ class Freeform_mcp extends Module_builder_freeform
 
 	public function restore_xid()
 	{
-		if (version_compare($this->ee_version, '2.7', '>='))
+		//deprecated in 2.8. Weeee!
+		if (version_compare($this->ee_version, '2.7', '>=') &&
+			version_compare($this->ee_version, '2.8', '<'))
 		{
 			ee()->security->restore_xid();
 		}

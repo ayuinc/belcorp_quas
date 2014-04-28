@@ -5,7 +5,7 @@
 
 <form method="post" action="<?=$base_url?>&amp;method=save_order">
 	<div>
-		<input type="hidden" name="XID" value="<?=XID_SECURE_HASH?>" />
+		<input type="hidden" name="<?=$csrf_token_name?>" value="<?=$csrf_token_value?>" />
 		<input type="hidden" name="set_id" value="<?=$set['set_id']?>" />
 		<input type="hidden" name="cat_id" value="<?=$set['cat_id']?>" />
 		<input type="hidden" name="sort" value="<?=@$params['sort']?>" />
@@ -45,7 +45,7 @@
 							<div class="title"><?=$row['title']?></div>
 							<?php if ( ! empty($row['hidden'])): ?>
 								<?php foreach ($row['hidden'] AS $j => $hidden): ?>
-									<div class="hidden" class="hidden-<?=$j?>"><?=$hidden?></div>
+									<div class="hidden" id="hidden-<?=$j?>"><?=$hidden?></div>
 								<?php endforeach; ?>
 							<?php endif; ?>
 						</li>
@@ -59,7 +59,7 @@
 						<?php if (@$set['clear_cache'] == 'y'): ?> checked="checked"<?php endif; ?> />
 						<?=lang('clear_cache')?>
 					</label>
-				</p>	
+				</p>
 			<?php endif; ?>
 		</div>
 	<?php endif; ?>

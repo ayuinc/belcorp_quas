@@ -151,7 +151,7 @@
 
 <!-- entries table -->
 	<form id="freeform_entries" action="<?=$form_url?>" method="post">
-		<input type="hidden" name="XID" 	value="<?=$XID_SECURE_HASH?>" />
+		<input type="hidden" name="<?=$csrf_hidden_name?>"	value="<?=$CSRF_TOKEN?>" />
 		<input type="hidden" name="form_id" value="<?=$form_id?>" />
 
 		<table class="freeform_table cb_toggle padTable mainTable">
@@ -242,7 +242,7 @@
 
 	<div id="edit_field_layout_holder">
 		<form method="post" action="<?=$save_layout_url?>" id="field_layout_form">
-			<input type="hidden" name="XID" 	value="<?=$XID_SECURE_HASH?>" />
+			<input type="hidden" name="<?=$csrf_hidden_name?>"	value="<?=$CSRF_TOKEN?>" />
 			<input type="hidden" name="form_id" value="<?=$form_id?>" />
 
 			<div class="field_layout_head">
@@ -325,7 +325,7 @@
 	<div id="export_dialog_holder">
 		<div id="export_dialog">
 			<form id="export_form" action="<?=$export_url?>" method="POST" autocomplete="off">
-				<input type="hidden" name="XID"		value="<?=$XID_SECURE_HASH?>" />
+				<input type="hidden" name="<?=$csrf_hidden_name?>"	value="<?=$CSRF_TOKEN?>" />
 				<input type="hidden" name="form_id" value="<?=$form_id?>" />
 				<table>
 					<tbody>
@@ -591,7 +591,7 @@
 				{
 					$('#export_form').submit(function(){
 						//refresh XID
-						$(this).find('[name="XID"]').val(EE.XID);
+						$(this).find('[name="<?=$csrf_hidden_name?>"]').val(EE.<?=$csrf_js_name?>);
 
 						setTimeout(function(){
 							$.fancybox.close();

@@ -1,6 +1,6 @@
 <?php if ( ! empty($files)):?>
 <form method="post" action="<?=$form_url?>">
-	<input type="hidden" name="XID" value="<?=XID_SECURE_HASH?>" />
+	<input type="hidden" name="<?=$csrf_hidden_name?>"	value="<?=$CSRF_TOKEN?>" />
 	<table id="file-entries" class="freeform_table cb_toggle mainTable padTable" style="width:100%;"
 		   cellspacing='0'  cellpadding='0'  border='0'>
 		<thead>
@@ -81,7 +81,7 @@
 			e.preventDefault();
 			return false;
 		});
-	})
+	});
 </script>
 <?php else: ?>
 	<p><?=lang('no_files_uploaded')?></p>

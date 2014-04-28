@@ -33,10 +33,10 @@
           
           <div class="row">
           
-          {exp:channel:entries channel="tendencias" limit="3" dynamic="off" orderby="date" sort="DESC"} 
+          {exp:low_reorder:entries set="2" limit="3"}
             <div class="large-4 columns">
               <div class="course">
-                <p>Escuela de {categories show_group="1"}{category_name} {/categories} //<span> {channel}</span></p>
+                <p>Escuela de {categories show_group="1"}{category_name} {/categories}<br><span> {channel}</span></p>
                 <h3>{title}</h3>
                 	{if link-recurso}
 						<a href="{link-recurso}" target="_blank">
@@ -47,12 +47,13 @@
                 </a>
               </div>
             </div>
-           {/exp:channel:entries}  
+           {/exp:low_reorder:entries}
+
             
-          {exp:low_reorder:entries set="cursos-destacados" limit="3"}
+          {exp:low_reorder:entries set="1" limit="3"}
             <div class="large-4 columns">
               <div class="course">
-                <p>Escuela de {categories show_group="1"}{category_name} {/categories} //<span> {channel}</span></p>
+                <p>Escuela de {categories show_group="1"}{category_name} {/categories}<br><span> {channel}</span></p>
                 <h3>{title}</h3>
                 <a href="{site_url}catalogo/curso/{url_title}">
                   <span id="enter">Entrar <span class="icon-arrow-right"></span></span>
@@ -63,7 +64,7 @@
            
           </div>
           <a href="{site_url}catalogo/todos" id="more_index" class="small button">VER TODOS</a>
-          <div id="down"></div>
+          <!--<div id="down"></div>-->
 
         </div>
       </div>
@@ -86,31 +87,31 @@
                   <span>ESCUELA DE</span>
                   <h5>VENTAS</h5>
                 </div>
-                <a href="{site_url}catalogo/ventas" class="small button">ENTRAR</a>
+                <!--<a href="{site_url}catalogo/ventas" class="small button">ENTRAR</a>-->
             </div>
             <div class="large-3 columns">
                 <div class="course negocios">
                   <span>ESCUELA DE</span>
                   <h5>NEGOCIOS</h5>
                 </div>
-                <a href="{site_url}catalogo/negocios" class="small button">ENTRAR</a>
+                <!--<a href="{site_url}catalogo/negocios" class="small button">ENTRAR</a>-->
             </div>
             <div class="large-3 columns">
                 <div class="course liderazgo-cultura">
                   <span>ESCUELA DE</span>
                   <h5>LIDERAZGO Y CULTURA</h5>
                 </div>
-                <a href="{site_url}catalogo/liderazgo-cultura" class="small button">ENTRAR</a>
+                <!--<a href="{site_url}catalogo/liderazgo-cultura" class="small button">ENTRAR</a>-->
             </div>
             <div class="large-3 columns">
                 <div class="course innovacion">
                   <span>ESCUELA DE</span>
                   <h5>INNOVACIÓN</h5>
                 </div>
-                <a href="{site_url}catalogo/innovacion" class="small button">ENTRAR</a>
+                <!--<a href="{site_url}catalogo/innovacion" class="small button">ENTRAR</a>-->
             </div>
           </div>
-          <div id="down"></div>
+          <!--<div id="down"></div>-->
         </div>
       </div> 
     </section>

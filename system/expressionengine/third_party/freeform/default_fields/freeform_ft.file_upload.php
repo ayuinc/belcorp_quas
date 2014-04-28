@@ -7,7 +7,7 @@
  *
  * @package		Solspace:Freeform
  * @author		Solspace, Inc.
- * @copyright	Copyright (c) 2008-2013, Solspace, Inc.
+ * @copyright	Copyright (c) 2008-2014, Solspace, Inc.
  * @link		http://solspace.com/docs/freeform
  * @license		http://www.solspace.com/license_agreement
  * @filesource	freeform/default_fields/freeform_ft.file_upload.php
@@ -216,6 +216,9 @@ class File_upload_freeform_ft extends Freeform_base_ft
 				$data['files'] = $files;
 			}
 		}
+
+		$data['csrf_hidden_name']	= defined('CSRF_TOKEN') ? 'csrf_token' : 'XID';
+		$data['CSRF_TOKEN']			= defined('CSRF_TOKEN') ? CSRF_TOKEN : XID_SECURE_HASH;
 
 		return ee()->load->view('file_uploads.html', $data, TRUE);
 	}

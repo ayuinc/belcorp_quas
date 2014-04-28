@@ -61,7 +61,7 @@
 </p>
 
 <form action="<?=$form_uri?>" method="POST">
-	<input type="hidden" name="XID" value="<?=$XID_SECURE_HASH?>" />
+	<input type="hidden" name="<?=$csrf_hidden_name?>"	value="<?=$CSRF_TOKEN?>" />
 	<table id="fields_table" class="cb_toggle mainTable padTable freeform_table" style="width:100%;"
 			cellspacing='0' cellpadding='0' border='0'>
 		<thead>

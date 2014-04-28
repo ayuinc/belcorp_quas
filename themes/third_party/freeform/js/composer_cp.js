@@ -1910,7 +1910,7 @@
 			submitRedirect = true;
 		}).css('cursor', 'pointer');
 
-		//quicksave shouldn't post
+		//quicksave shouldn't redirect after post
 		$('#quicksave').click(function(e){
 			submitRedirect = false;
 		}).css('cursor', 'pointer');

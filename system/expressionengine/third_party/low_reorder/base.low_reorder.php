@@ -9,7 +9,7 @@ include(PATH_THIRD.'low_reorder/config.php');
  * @package        low_reorder
  * @author         Lodewijk Schutte <hi@gotolow.com>
  * @link           http://gotolow.com/addons/low-reorder
- * @copyright      Copyright (c) 2009-2013, Low
+ * @copyright      Copyright (c) 2009-2014, Low
  */
 class Low_reorder_base {
 
@@ -243,8 +243,13 @@ class Low_reorder_base {
 	 */
 	protected function set_base_url()
 	{
-		$this->data['base_url'] = $this->base_url = BASE.AMP.'C=addons_modules&amp;M=show_module_cp&amp;module='.$this->package;
-		$this->data['ext_url'] = $this->ext_url = BASE.AMP.'C=addons_extensions&amp;M=extension_settings&amp;file='.$this->package;
+		$this->base_url = $this->data['base_url'] = function_exists('cp_url')
+			? cp_url('addons_modules/show_module_cp', array('module' => $this->package))
+			: BASE.AMP.'C=addons_modules&amp;M=show_module_cp&amp;module='.$this->package;
+
+		$this->ext_url = $this->data['ext_url'] = function_exists('cp_url')
+			? cp_url('addons_extensions/extension_settings', array('file' => $this->package))
+			: BASE.AMP.'C=addons_extensions&amp;M=extension_settings&amp;file='.$this->package;
 	}
 
 	/**
@@ -264,6 +269,13 @@ class Low_reorder_base {
 
 		ee()->cp->load_package_css($this->package.$version);
 		ee()->cp->load_package_js($this->package.$version);
+
+		// -------------------------------------
+		// Adds the XID / CSRF_TOKEN data to the view
+		// -------------------------------------
+
+		$this->data['csrf_token_name'] = defined('CSRF_TOKEN') ? 'csrf_token' : 'XID';
+		$this->data['csrf_token_value'] = defined('CSRF_TOKEN') ? CSRF_TOKEN : XID_SECURE_HASH;
 
 		// -------------------------------------
 		//  Add feedback msg to output

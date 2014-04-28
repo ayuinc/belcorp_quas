@@ -5,7 +5,7 @@
  *
  * @package		Solspace:Freeform
  * @author		Solspace, Inc.
- * @copyright	Copyright (c) 2008-2013, Solspace, Inc.
+ * @copyright	Copyright (c) 2008-2014, Solspace, Inc.
  * @link		http://solspace.com/docs/freeform
  * @license		http://www.solspace.com/license_agreement
  * @filesource	freeform/models/freeform_model.php
@@ -43,6 +43,7 @@ class Freeform_Model extends CI_Model
 
 	//default to mysql, but if another drive is found
 	//we will reset in the constructor
+	public $random_keyword 				= ' RAND()';
 	public $_random_keyword 			= ' RAND()';
 	public $_escape_char 				= '`';
 	public $_count_string 				= 'SELECT COUNT(*) AS ';
@@ -156,6 +157,8 @@ class Freeform_Model extends CI_Model
 				$this->{$key} = $value;
 			}
 		}
+
+		$this->random_keyword = $this->_random_keyword;
 	}
 	//END __construct
 

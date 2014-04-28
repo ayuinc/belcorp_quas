@@ -12,7 +12,7 @@ if ( ! class_exists('Low_reorder_base'))
  * @package        low_reorder
  * @author         Lodewijk Schutte <hi@gotolow.com>
  * @link           http://gotolow.com/addons/low-reorder
- * @copyright      Copyright (c) 2009-2013, Low
+ * @copyright      Copyright (c) 2009-2014, Low
  */
 class Low_reorder_upd extends Low_reorder_base {
 
@@ -301,9 +301,9 @@ class Low_reorder_upd extends Low_reorder_base {
 			// Upgrading from EE1
 			if ( ! isset($rows[0]['channel_id']))
 			{
-				foreach ($rows AS &$row)
+				foreach ($rows AS &$r)
 				{
-					$row['channel_id'] = $row['weblog_id'];
+					$r['channel_id'] = $r['weblog_id'];
 				}
 			}
 

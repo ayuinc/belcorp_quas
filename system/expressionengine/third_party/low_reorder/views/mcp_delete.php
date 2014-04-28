@@ -1,7 +1,7 @@
 <form method="post" action="<?=$base_url?>&amp;method=delete">
 	<div>
 		<input type="hidden" name="set_id" value="<?=$set_id?>" />
-		<input type="hidden" name="XID" value="<?=XID_SECURE_HASH?>" />
+		<input type="hidden" name="<?=$csrf_token_name?>" value="<?=$csrf_token_value?>" />
 	</div>
 	<p>
 		<?=sprintf(lang('delete_set_confirm_message'), $set_label)?>

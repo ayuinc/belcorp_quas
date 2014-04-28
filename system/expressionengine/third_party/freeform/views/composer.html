@@ -172,7 +172,7 @@
 	<div class="bottom_right_submit_block">
 		<button id="preview" class="submit"><?=lang('preview')?></button>
 		<form id="save_composer" action="<?=$composer_save_url?>" method="post">
-			<input type="hidden" name="XID" value="<?=$XID_SECURE_HASH?>" />
+			<input type="hidden" name="<?=$csrf_hidden_name?>"	value="<?=$CSRF_TOKEN?>" />
 			<input type="hidden" id="composer_save_data" name="composer_data" value="" />
 			<input type="hidden" name="preview" value="n" />
 			<input type="hidden" id="composer_template_id" name="template_id" value="0" />

@@ -14,7 +14,7 @@
 <?php endif;?>
 
 <form action="<?=$form_uri?>" method="POST">
-	<input type="hidden" name="XID" value="<?=$XID_SECURE_HASH?>" />
+	<input type="hidden" name="<?=$csrf_hidden_name?>"	value="<?=$CSRF_TOKEN?>" />
 	<table class="mainTable padTable freeform_table cb_toggle" style="width:100%;">
 		<thead>
 			<tr>
