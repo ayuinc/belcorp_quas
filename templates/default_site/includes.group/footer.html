@@ -37,22 +37,54 @@
     <script>
     $(document).ready(function(){
     
+      $(".arrow-up-nav").hide(0);
+      
+      
+      $( ".arrow-up-nav" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:$("#article_header").offset().top -25});
+          $(".arrow-up-nav").hide(10);
+      });  
+      
+      	
+      //QUE HACE LA UCB POR TI
+      $( "#nav-solicitud" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:$("#navsolicitud-seccion").offset().top -15});
+          $(".arrow-up-nav").show(10);
+      });    
+      $( "#nav-politica" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:$("#navpolitica-seccion").offset().top -15});
+          $(".arrow-up-nav").show(10);
+      });    
+      $( "#nav-video" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:$("#navvideo-seccion").offset().top -15});
+          $(".arrow-up-nav").show(10);
+      });    
+      
+
       //CONVENIOS
       $( "#nav-postgrados" ).click(function( event ) {
         event.preventDefault();
-          $("html, body").animate({scrollTop:0}, "slow");
+          $("html, body").animate({scrollTop:$("#navPost-grado-seccion").offset().top -15});
+          $(".arrow-up-nav").show(10);
       });    
       $( "#nav-idiomas" ).click(function( event ) {
         event.preventDefault();
-          $("html, body").animate({scrollTop:0}, "slow");
+          $("html, body").animate({scrollTop:$("#navIdiomas-seccion").offset().top -15});
+          $(".arrow-up-nav").show(10);
       });    
-      $( "#nav-tecnologia" ).click(function( event ) {
+      $( "#navTecnología" ).click(function( event ) {
         event.preventDefault();
-          $("html, body").animate({scrollTop:0}, "slow");
+          $("html, body").animate({scrollTop:$("#navTecnología-seccion").offset().top -15});
+          $(".arrow-up-nav").show(10);
       });    
       $( "#nav-otros" ).click(function( event ) {
         event.preventDefault();
-          $("html, body").animate({scrollTop:0}, "slow");
+          $("html, body").animate({scrollTop:$("#navOtros-seccion").offset().top -15});
+          $(".arrow-up-nav").show(10);
       });                      
     
 	  //HOMEPAGE

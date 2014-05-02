@@ -1,15 +1,9 @@
                 <div class="large-3 columns hide-for-small hide-for-medium fixed_menu right_padding">
 
-				<form method="post" action="{path='buscar/index'}" id="form_search">
-				    {exp:super_search:search
-				        {if segment_2 == "saved"}
-				            search_id="{segment_3}"
-				        {/if}
-				    }
-				        <input type="search" name="keywords" id="keywords" placeholder="BUSCAR">
-                    <span class="icon-search"></span>
-				    {/exp:super_search:search}
-				</form>
+				{exp:search:simple_form channel="cursos|contenidos" form_id="form_search" status="open"  search_in="everywhere" result_page="buscar/index" no_result_page="buscar/no-resultados"}
+				                <input type="search" name="keywords" id="keywords" placeholder="BUSCAR">
+								<span class="icon-search"></span>
+				{/exp:search:simple_form}
                   
                   
                   

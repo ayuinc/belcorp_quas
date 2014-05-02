@@ -1908,9 +1908,8 @@ button, .button {
   padding-bottom: 1.0625rem;
   padding-left: 2rem;
   font-size: 0.76rem;
-  /*     @else                            { font-size: $padding - rem-calc(2); } */
-  background-color: #A478B6;
-  border-bottom:3px solid #6b1f7e;
+  border: none;
+  background-color: #9b59b6;
   color: #FFF;
   -webkit-transition: background-color 300ms ease-out;
   -moz-transition: background-color 300ms ease-out;
@@ -1919,12 +1918,10 @@ button, .button {
   padding-bottom: 1rem;
   -webkit-appearance: none;
   letter-spacing: 0.02rem; 
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+
   }
   button:hover, button:focus, .button:hover, .button:focus {
-    background-color: #8A659B; }
+    background-color: #8e44ad; }
   button:active, .button:active {
     border-bottom:none; }    
   button:hover, button:focus, .button:hover, .button:focus {
@@ -2418,11 +2415,13 @@ a.th {
       .orbit-container .orbit-slides-container > * .orbit-caption {
         position: absolute;
         bottom: 0;
-        background-color: rgba(51, 51, 51, 0.8);
+        /*background-color: rgba(51, 51, 51, 0.8);*/
         color: white;
         width: 100%;
         padding: 10px 14px;
-        font-size: 0.875rem; }
+        font-size: 0.875rem;
+        font-weight:100;
+         }
   .orbit-container .orbit-slide-number {
     position: absolute;
     top: 10px;

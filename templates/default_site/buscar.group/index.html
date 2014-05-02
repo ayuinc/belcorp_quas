@@ -1,4 +1,4 @@
-{embed="includes/header" titulo="Buscar"}
+{embed="includes/header"  titulo="Resultados de la Busqueda"}
 
     <div class="off-canvas-wrap">
       <div class="inner-wrap">
@@ -6,175 +6,120 @@
           <div class="row">
             <div class="large-12 columns">
               <a class="left-off-canvas-toggle" ><span class="icon-list"></span></a>
-              <h3 id="menu_title">{title}</h3>
+              <h3 id="menu_title">RESULTADOS DE LA BUSQUEDA</h3>
             </div>
-            <div class="small-12 columns">
-              <form action="#" id="form_search">
-                <input type="search" placeholder="BUSCAR">
-                <span class="icon-search"></span>
-              </form>
-            </div>
-            
-            <!--Solo para Moviles-->
-            <div class="small-12 columns">
-              <form action="#">
-                <select>
-                  <option value="-1">Seleccionar Categoría</option>
-                  <option value="0">Belcorp</option>
-                  <option value="1">Liderazgo</option>
-                  <option value="2">Ventas</option>
-                  <option value="3">Comercial</option>
-                </select>
-              </form>
-            </div>
-            
           </div>
         </div>
 
-
-
-		{embed="includes/menu_new"}
+	{embed="includes/menu_new"}
 
     <section id="courses">
-      <div class="heading-pocket"></div>
+      
+      <div class="hide-for-small heading-pocket">
+        <div class="row">
+          <div class="large-12 total_padding columns">
+            
+            {embed="includes/menu-escuelas"}
+            
+          </div>
+        </div>
+      </div>
+
       <div class="row">
 
         <div class="total_padding medium-12 large-12 columns">  
 
-        <div id="contenidos_content" class="row">
+        <div id="contact_content" class="row">
           <div class="large-9 columns">
 
           <div class="row">
             <div class="large-12 columns">
-              <div id="content_header">
+              <div id="contacto_header" style="background: url('http://54.83.45.138/images/imagenes-paginas/81/contactanos__large.jpg') no-repeat; background-size: cover;background-position: center center;">
+                <div class="overlay"></div>
                 <div class="row">
-                  <div class="medium-2 large-1 columns">
-                    <span class="icon-book"></span>
-                  </div>
-                  <div class="medium-10 large-11 columns"> 
+                  <div class="medium-12 large-11 columns"> 
                     <h3>RESULTADOS DE LA BUSQUEDA</h3>
-                    
-					        Encontramos {exp:search:total_results} {total_results} {/exp:search:total_results} resultado(s) para la(s) palabra(s) {exp:search:keywords}.
-					
-
+                    <h5>Encontramos {exp:search:total_results} {total_results} {/exp:search:total_results} resultado(s) para la(s) palabra(s) {exp:search:keywords}.</h5>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
+
           <div class="row">
             <div class="large-12 columns">
-              <div class="resources_list">
-              
-              
-{exp:search:search_results}
+              <div class="contact_form">
 
-                <div class="resources_item">
-                  <div class="row">
-                    <div class="medium-12 large-12 columns">  
+				{exp:search:search_results}
+				
 
-						<h5>
-                        	<a href="{auto_path}" target="_blank">{title}</a>
-                        </h5>
-                        
-                      {if subtitulo-recurso}
-                      <h6>{subtitulo-recurso}</h6>
-                      {/if}
-                      
-                      {if descripcion-curso}
-                      <p>{descripcion-curso}</p>
-                      {/if}
-                      
-                      {if descripcion-recurso}
-                      <p>{descripcion-recurso}</p>
-                      {/if}  
-                      
-                                           
-                          <div class="school">
-                          	{if descripcion-curso}
-                            	<span><a href="{site_url}catalogo/curso/{url_title}">Ver Más »</a></span>
-                            {if:else}
-                            	<span><a href="{link-recurso}" target="_blank">Ver Más »</a></span>
-                            {/if}
-                          </div>
-
-    {paginate}
-        <p>Page {current_page} of {total_pages} pages {pagination_links}</p>
-    {/paginate}
-    
-                        </div>
-                  </div>
-                </div>
-
-{/exp:search:search_results}
-              
-              
-              
-               <!--{exp:super_search:results channel="cursos" limit="10"}
-                <div class="resources_item">
-                  <div class="row">
-                    <div class="medium-12 large-12 columns">  
-                    
-                      <h5>
-                        <a href="{auto_path}" target="_blank">{title}</a>
-                      </h5>
-                      {if subtitulo-recurso}
-                      <h6>{subtitulo-recurso}</h6>
-                      {/if}
-                      
-                      {if descripcion-curso}
-                      <p>{descripcion-curso}</p>
-                      {/if}
-                      
-                      {if descripcion-recurso}
-                      <p>{descripcion-recurso}</p>
-                      {/if}                      
-                      
-                          <div class="school">
-                            <span><a href="{auto_path}">Ver Más »</a></span>
-                          </div>
-                      
-                      
-                    </div>
-                  </div>
-                </div>
+				                  <div class="row resultado-busqueda">
+				                    <div class="medium-12 large-12 columns">  
+				                            {if channel=='Contenidos'}
+				                              <small>{tipo-contenido-recurso}</small>
+				                            {if:else}
+				                          	  <small>CURSO</small>
+				                            {/if}
+										<h5>
+											{if channel=='Cursos'}
+				                        		<a href="{site_url}catalogo/curso/{url_title}">
+				                        	{/if}
+				                        	{if channel=='Contenidos'}
+				                        		<a href="{link-recurso}" target="_blank">
+				                        	{/if}
+				                        		{title}
+				                        	</a>
+				                        </h5>
+				                        
+				                      {if subtitulo-recurso}
+				                      <h6>{subtitulo-recurso}</h6>
+				                      {/if}
+				                      
+				                      {if descripcion-curso}
+				                      <p>{descripcion-curso}</p>
+				                      {/if}
+				                      
+				                      {if descripcion-recurso}
+				                      <p>{descripcion-recurso}</p>
+				                      {/if}  
+				                      
+				                                           
+	
+				                      {if channel=='Cursos'}
+				                      		<span><a href="{site_url}catalogo/curso/{url_title}">Ver Más »</a></span>
+				                      {/if}
+				                      {if channel=='Contenidos'}
+				                      		<span><a href="{link-recurso}" target="_blank">Ver Más »</a></span>
+				                      {/if}
 
 				
-			              {paginate}  
-			              	{pagination_links}
-							  <div class="row">
-				                <div class="large-3 large-centered columns vermas">
-				                  <div class="more">                      
-				                    <div class="text-center">
-				                      {next_page}
-  				                      <div class="text-center">
-  				                      	<a href="{pagination_url}"><span id="more_icon"></span></a>
-  				                      </div>
-  									  {/next_page}
-  									</div>
+									  {paginate}
+									  	<p>Page {current_page} of {total_pages} pages {pagination_links}</p>
+									  {/paginate}
+				    
+				                        </div>
 				                  </div>
-				                </div>
-				              </div>
-			              	{/pagination_links}   
-			              {/paginate}                
-                
-               {/exp:super_search:results} -->
-               
-               </div> 
-              
+				
+				{/exp:search:search_results}             
 
-
-
+              </div>
             </div>
           </div>
 
+		</div>
+
+          <div class="large-3 columns hide-for-small hide-for-medium fixed_menu right_padding">
+                  {exp:search:simple_form channel="cursos|contenidos" form_id="form_search" status="open"  search_in="everywhere" result_page="buscar/index" no_result_page="buscar/no-resultados"}
+                    <input type="search" name="keywords" id="keywords" placeholder="BUSCAR">
+                    <span class="icon-search"></span>
+                  {/exp:search:simple_form}
+				  <a href="{site_url}quieres-crear-un-curso" id="create_course" class="publish button expand">¿QUIERES CREAR UN CURSO?</a>
           </div>
-          
-          {embed="includes/sidebar_new"}
 
         </div>
       </div>
+
     </section>
 
 {embed="includes/footer-interno_new"}

@@ -87,26 +87,35 @@
 		  
 				   <!--SECCION DESCRIPCIONES-->
 				   <div class="row requisitos_info">
+				   		  {if introduccin-curso}
 						  <div class="large-12 medium-12 small-12 columns clearfix">
 							  <h3>DESCRIPCIÓN DEL CURSO</h3>
 							  <p>{introduccin-curso}</p>
 						  </div>
-						
+						  {/if}
+						  
+						  {if que-voy-aprender-curso}
 						  <div class="large-12 medium-12 small-12 columns clearfix">
 							  <h3>¿QUÉ VOY A APRENDER?</h3>
 							  <p>{que-voy-aprender-curso}</p>
 						  </div>
+						  {/if}
+						  
+						  {if que-debo-saber-curso}
 						  <div class="large-12 medium-12 small-12 columns clearfix">
 							  <h3>¿QUÉ DEBO SABER?</h3>
 							  <p>{que-debo-saber-curso}</p>
 						  </div>
-				   </div>		  
+						  {/if}
+				   </div>	
+				   {if syllabus-curso}	  
 				   <div class="row requisitos_info">	  	  
 						  <div class="large-12 medium-12 small-12 columns clearfix">
 							  <h3>SYLLABUS</h3>
 							  <p>{syllabus-curso}</p>
 						  </div>  
 				    </div>
+				    {/if}
 				    <!--END. SECCION DESCRIPCIONES-->
 				     
 	        	</div>
