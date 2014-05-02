@@ -1,0 +1,151 @@
+{embed="includes/header" titulo="Destacados"}
+
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+      
+        <div id="courses_menu" class="hide-for-medium-up">
+          <div class="row">
+            
+            <!--TITULO SECCION-->
+            <div class="large-12 columns">
+              <h3 id="menu_title" class="menu_title_catalogo">Destacados</h3>
+            </div>
+            
+            <!--SOLO PARA MOVILES-->
+            <div class="small-12 columns">
+				<a href="#" data-dropdown="drop1" class="button dropdown expand">Escuelas</a><br>
+				<ul id="drop1" data-dropdown-content class="f-dropdown">
+				  <li><a href="{site_url}catalogo/ventas">Escuela de Ventas</a></li>
+				  <li><a href="{site_url}catalogo/negocios">Escuela de Negocios</a></li>
+				  <li><a href="{site_url}catalogo/liderazgo-cultura">Escuela de Liderazgo y Cultura</a></li>
+				  <li><a href="{site_url}catalogo/innovacion">Escuela de Innovación</a></li>
+				</ul>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div> 
+
+	{embed="includes/menu_new"}
+
+
+
+		<!--MENU ESCUELAS-->
+        <section id="courses">
+          <div class="hide-for-small heading-pocket">
+            <div class="row">
+              <div class="large-12 total_padding columns">
+                
+                {embed="includes/menu-escuelas"}
+
+              </div>
+            </div>
+          </div>
+          
+          
+		 <!--MAIN FOTO-->
+	     <div class="row destacados-highlight">
+		     <div class="medium-12 large-12 columns">
+			     <div class="row">
+			     	<div class="small-12 medium-8 large-8 columns">
+			     		
+			     		<!--Slider-->
+				     	<ul class="example-orbit" data-orbit>
+				     	{exp:channel:entries channel="tendencias" limit="3" category="241" dynamic="off"}
+						  <li>
+						  	<div class="tema-de-la-semana">TEMA DE LA SEMANA</div>
+						  	{imagen-recurso}
+						    <img src="{image:url:destacados}" alt="{title}" />
+						    {/imagen-recurso}
+						    <div class="orbit-caption">
+						      <h2><a href="{link-recurso}" target="_blank">{title}</a><h2>
+						      <h6>{descripcion-recurso}</h6>
+						    </div>
+						  </li>
+						{/exp:channel:entries}  
+						</ul>
+						
+			     	</div>
+			     	<div class="small-12 medium-4 large-4 columns">
+			     		
+			     		<div class="row">
+			     			<div class="small-12 medium-12 large-12 columns">
+					     		{exp:search:simple_form 
+			                  		channel="cursos|contenidos" 
+			                  		form_id="form_search" 
+			                  		status="open"  
+			                  		search_in="everywhere" 
+			                  		result_page="buscar/index" 
+			                  		no_result_page="buscar/no-resultados"
+			                  	}
+				                    <input type="search" name="keywords" id="keywords" placeholder="BUSCAR">
+				                    <span class="icon-search"></span>
+								{/exp:search:simple_form}
+			     			</div>
+			     			<div class="small-12 medium-12 large-12 columns">
+			     				<div class="los-mas-populares">
+			     					<h4>LOS CURSOS MÁS RECOMENDADOS</h4>
+			     					<ul>
+			     						{exp:low_reorder:entries set="3" limit="3"}
+			     						<li><a href="{site_url}catalogo/curso/{url_title}">{title}</a></li>
+			     						{/exp:low_reorder:entries}
+			     					</ul>
+			     					<a href="{site_url}catalogo/">DESCUBRE MÁS CURSOS →</a>
+			     				</div>
+			     			</div>
+			     		</div>
+			     		
+			     	</div>
+			     </div>
+		     </div>
+	     </div>           
+          
+         <!--CAJA GRANDE DE CONTENIDOS--> 
+         <div class="row">
+           <div class="total_padding medium-12 large-12 columns">
+             <div class="row">
+               <div class="small-12 medium-12 large-12 columns">
+				   
+				   <!--CAJAS-->
+		           <div class="row destacados-modulos">  
+		           	   {exp:channel:entries channel="tendencias" limit="21" dynamic="off"}              
+				       <div class="small-12 medium-4 large-4 columns end">
+						   <div class="row">
+						   	   <div class="small-12 medium-12 large-12 columns">
+								  	{if imagen-recurso}
+									  	{imagen-recurso}
+									    <img src="{image:url:medium}" alt="{title}" />
+									    {/imagen-recurso}
+								    {if:else}
+								    	<img src="http://placehold.it/320x214" alt="{title}">
+								    {/if}
+						   	   </div>
+						   	   <div class="small-12 medium-12 large-12 columns">
+						   	   	   <div class="destados-tipo">{tipo-contenido-recurso}</div>
+						   	   	   {if tipo-contenido-recurso=='Video'}
+						   	   	   		<a href="{link-recurso}" target="_blank"><div class="video-play"></div></a>
+						   	   	   {/if}
+						   	   	   <a href="{link-recurso}" target="_blank">
+							   	   	   <div class="destacados-mod-contenido">
+										   <h5>{title}</h5>
+										   {if descripcion-recurso}
+										   <h6>{descripcion-recurso}</h6>
+										   {/if}
+							   	   	   </div>
+						   	   	   </a>
+						   	   </div>						   	   
+						   </div>
+					   </div>
+					   {/exp:channel:entries}                
+		           </div>
+		           				 
+               </div><!--end.large-12-->
+             </div><!--end.row-->
+           </div><!--end#total_padding-->
+         </div>
+		   
+		</section>
+
+{embed="includes/footer-interno_new"}
