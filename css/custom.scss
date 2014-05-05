@@ -820,18 +820,13 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		margin-bottom: 2em;
 	}
 	a{
-		background: transparent;
-		border: 1px solid #94A0AA;
-		color: #94A0AA;
-		display: block;
-		width: 120px;
-		text-align: center;
-		float: center;
-		margin: auto;
-		padding: 0.5rem 0;
+		-webkit-transition-duration: 0.2s;
+		-moz-transition-duration: 0.2s;
+		-o-transition-duration: 0.2s;
+		transition-duration: 0.2s;
 		&:hover{
-			background: #94A0AA;
-			color: #FFFFFF;
+			opacity:0.6;
+			background-color: #DDD;
 		}
 	}
 	#down{
@@ -2080,7 +2075,7 @@ z-index: 1002;
 	.orbit-container {
 		.orbit-prev  {
 			top:83%;
-			left:37.2rem;
+			left:89%;
 			background-color: #A679B2;
 			width:20px;
 			height:24px;
@@ -2200,7 +2195,7 @@ z-index: 1002;
 	width: auto;
 	font-size: 0.7rem;
 	position: absolute;
-	top: 9rem;
+	top: 44.5%;
 	left: 2rem;
 	color: #FFF;
 	font-weight: 300;
