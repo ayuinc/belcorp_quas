@@ -7,6 +7,7 @@ $belcorp: #6C217F;
 $comercial: #00BCED;
 $negocios: #EF3E42;
 $operaciones: #bdc3c7;
+$tecnologia: #f1c40f;
 $otros-cursos: #f39c12;
 $otros-contenidos:#2c3e50;
 
@@ -335,7 +336,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 }
 .icon-pregunta {
 	&:before {
-		content:"\e60d";
+		content:"\e600";
 	}
 }
 .icon-graduation {
@@ -353,8 +354,6 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 		content: "\e60c";
 	}
 }
-
-
 
 
 .icon-play{
@@ -446,9 +445,43 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
 	margin: 0;
 }
 
+#subcategoria {
+	background-color: #596c79 !important;
+}
+
 // .more{
 // 	margin-top: 1em;
 // }
+
+.innovacion-temas {
+	border-right:25px solid $innovacion !important;
+}
+
+.ventas-temas {
+	border-right:25px solid $ventas !important;
+}
+
+.liderazgo-y-cultura-temas {
+	border-right:25px solid $liderazgo !important;
+}
+
+.negocios-temas {
+	border-right:25px solid $negocios !important;
+}
+
+.operaciones-temas {
+	border-right:25px solid $operaciones !important;
+}
+
+.tecnologia-temas {
+	border-right:25px solid $tecnologia !important;
+}
+
+.learning-coffee-temas {
+	border-right:25px solid $innovacion !important;
+}
+
+
 
 #cover {
 	min-height: 100%;
@@ -2172,7 +2205,7 @@ z-index: 1002;
 	text-transform: uppercase;
 	font-weight: 300;
 	letter-spacing: 0.02rem;
-	&:before,
+	/*&:before,
 	&:before {
 		z-index: 0;
 		position: absolute;
@@ -2184,8 +2217,9 @@ z-index: 1002;
 		border-bottom: solid 17px #681A8A;
 		border-left: solid 10px transparent;
 		border-right: solid 0px transparent;
-	}	
+	}*/	
 }
+
 
 
 
@@ -2823,7 +2857,17 @@ z-index: 1002;
 }
 
 
-
+.orbit-container {
+	.overlay{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 1;
+		background: rgba(0, 0, 0, 0.3);
+	}
+}
 
 
 #next_article{

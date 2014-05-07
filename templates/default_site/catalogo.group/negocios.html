@@ -61,27 +61,44 @@
                  	{embed="includes/descripcion-summa"}
                  {/if}
                  
-                 <!--Llamado a los Posts de Tendencias y Cursos-->                             
-				 <!--{embed="includes/posts-cursos-tendencias" 
-				 	{if url_title!='todos'}
-				 		id_categoria="{last_segment_category_id}"
-				 	{/if}
-				 }-->
 
                  <div class="row">
-                  	{exp:channel:entries channel="cursos|tendencias" limit="20" paginate_base="catalogo/negocios" paginate=“bottom” category="{last_segment_category_id}"}                  
+                  	{if segment_3!=''}
+                  	
+                  	{exp:channel:entries 
+                  		channel="cursos|tendencias" 
+                  		limit="20" 
+                  		paginate_base="catalogo/index" 
+                  		paginate=“bottom” 
+                  		category="{segment_3_category_id}{if segment_4}&{segment_4_category_id}{/if}"
+                  	}    
+                  	{/if}
+                  	
+                  	{if segment_3==''}
+                  	
+                  	{exp:channel:entries 
+                  		channel="cursos|tendencias" 
+                  		limit="20" 
+                  		paginate_base="catalogo/index" 
+                  		paginate=“bottom” 
+                  		category="112{if segment_3}|{segment_3_category_id}{/if}"
+            
+                  	}                      	              
+				  	{/if}                
 
 	                    <div class="medium-12 large-6 columns">
-	                      {if link-recurso}
-	                        <a href="{link-recurso}" target="_blank">
-	                      {if:else}
-	                      	<a href="{site_url}catalogo/curso/{url_title}">
-	                      {/if}
-					      
-							  
-	                        {categories limit="1"}
-	                        <div class="course {category_url_title}">
-	                        {/categories}
+		                    {if channel=='Cursos'}
+		                      	<a href="{site_url}catalogo/curso/{url_title}">
+						    {/if}
+						      
+						    {if channel=="Contenidos"}
+			                    {if interna-contenido=="Pagina Interna"}
+			                      <a href="{site_url}contenidos/curso/{url_title}" target="_blank">
+			                    {if:else}
+			                      <a href="{link-recurso}" target="_blank">
+			                    {/if}
+						    {/if}
+	                        <div class="course negocios-temas">
 	                          <h5>
 	                          {if tipo-contenido-recurso}
 	                            <span>{tipo-contenido-recurso}</span><br>
@@ -129,7 +146,13 @@
                   
                 </div>
                 
-                {embed="includes/sidebar_new"}
+                <div class="large-3 columns hide-for-small hide-for-medium right_padding">
+
+	                {embed="includes/buscar"}
+	                {embed="includes/categorias-negocios"}
+	                {embed="includes/links-de-interes"}
+                
+                </div>
               
               </div>
             </div>

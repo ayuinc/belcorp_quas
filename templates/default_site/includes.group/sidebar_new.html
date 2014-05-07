@@ -11,7 +11,7 @@
                 <input type="search" name="keywords" id="keywords" placeholder="BUSCAR">
 				<span class="icon-search"></span>
 				{/exp:search:simple_form}
-			
+
           
           	{if segment_1!='buscar'}
             
@@ -58,57 +58,17 @@
 	              </dd>
 	            </dl>
 	            {if:else}
-
+	            <!--CATALOGO GENERAL-->	
+						
+						<!--PREGUNTAS FRECUENTES-->
 						{if segment_1!='preguntas-frecuentes'}
-			            <dl id="padding_accordion" class="accordion" data-accordion>
-			              <dd>
-			                <a id="school_panel_trigger" href="#school_panel">
-			                  ESCUELAS
-			                  <span id="menu_arrow" class="icon-arrow-down"></span>
-			                </a>
-			                <div id="school_panel" class="activex">
-				                <dl class="accordion" data-accordion>
-					                <dd>
-					                	<a class="#" href="{site_url}catalogo/{segment_2}">TODAS</a>
-					                </dd>
-				                {embed="includes/categorias-escuelas"}
-				                </dl>
-			                </div>
-			              </dd>
-			            </dl>
+							{embed="includes/categorias-homepage"}	
 						{/if}
 	            {/if}
             
             {/if}
             
-            
-            <div class="row">
-            	<div class="large-12 columns">
-            		<div class="links-interes">
-            		<h5>LINKS DE INTERÉS</h5>
-            		<ul>
-						{if last_segment=='ventas'}
-						<li>
-							<a href="http://ucb.belcorp.biz/escueladeventas" target="_blank" id="create_course">Certificaciones</a>
-						</li>
-						{/if}	
-						{if segment_2=='liderazgo-cultura'}
-						<li>         
-			            	<a href="{site_url}images/documentos/PDF_Backbone.pdf" target="_blank" id="create_course">Descargar Backbone</a>  
-						</li>
-						{/if}
-						{if segment_1=='preguntas-frecuentes'}
-						<li>
-			            	<a href="mailto:soporteucb@belcorp.biz" id="create_course" >Pregúntale a la UCB</a>             
-			            </li>
-			            {/if}
-						<li>
-							<a href="{site_url}quieres-crear-un-curso" id="create_course">Crea un Curso</a>  
-						</li>  
-            		</ul> 
-            		</div>        	
-            	</div>
-            </div>
+            {embed="includes/links-de-interes"}
             
 
           </div>

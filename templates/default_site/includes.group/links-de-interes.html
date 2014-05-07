@@ -1,0 +1,28 @@
+<!--ESTO ES PARA TODOS-->
+            <div class="row">
+            	<div class="large-12 columns">
+            		<div class="links-interes">
+            		<h5>LINKS DE INTERÉS</h5>
+            		<ul>
+						{if last_segment=='ventas'}
+						<li>
+							<a href="http://ucb.belcorp.biz/escueladeventas" target="_blank" id="create_course">Certificaciones</a>
+						</li>
+						{/if}	
+						{if segment_2=='liderazgo-cultura'}
+						<li>         
+			            	<a href="{site_url}images/documentos/PDF_Backbone.pdf" target="_blank" id="create_course">Descargar Backbone</a>  
+						</li>
+						{/if}
+						{if segment_1=='preguntas-frecuentes' OR segment_1=='contenidos'}
+						<li>
+			            	<a href="mailto:soporteucb@belcorp.biz" id="create_course" >Pregúntale a la UCB</a>             
+			            </li>
+			            {/if}
+						<li>
+							<a href="{site_url}quieres-crear-un-curso" id="create_course">Crea un Curso</a>  
+						</li>  
+            		</ul> 
+            		</div>        	
+            	</div>
+            </div>

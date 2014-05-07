@@ -1,0 +1,83 @@
+<dl id="padding_accordion" class="accordion" data-accordion>
+	<dd>
+		<a id="school_panel_trigger" href="#school_panel">
+		TEMAS
+		<span id="menu_arrow" class="icon-arrow-down"></span>
+		</a>
+		<div id="school_panel" class="activex">
+			<dl class="accordion" data-accordion>
+				<dd>
+					<a href="{site_url}catalogo/{segment_2}">TODAS</a>
+				</dd>	
+				
+				{exp:channel:categories style="linear" category_group="14" show_empty="yes"}
+					{if parent_id!='154' AND parent_id!='159' AND parent_id!='258' }
+						{if category_url_title!='principios-lide' AND category_url_title!='valores-lidera' AND category_url_title!='tipos-de-contenido-lc'}
+						<dd>
+							<a href="{site_url}catalogo/{segment_2}/{category_url_title}"
+								{if segment_3==category_url_title}
+								class="selected"
+								{/if}
+							>{category_name}</a>
+						</dd>
+						{/if}	
+					{/if}			
+				{/exp:channel:categories}
+				<dd>
+					<a href="{site_url}catalogo/{segment_2}" id="subcategoria">Principios</a>
+				</dd>					
+				{exp:channel:categories style="linear" category_group="14" show_empty="yes"}
+					{if parent_id=='154'}
+						<dd>
+							<a href="
+								{site_url}catalogo/{segment_2}/
+								{if segment_4==''}
+									{if segment_3!=''}
+										{segment_3}/
+									{/if}
+								{if:else}
+									{segment_3}/
+								{/if}
+								{category_url_title}"
+								{if segment_3==category_url_title}
+								class="selected"
+								{/if}
+								{if segment_4==category_url_title}
+								class="selected"
+								{/if}								
+							>{category_name}</a>
+						</dd>	
+					{/if}			
+				{/exp:channel:categories}	
+					<dd>
+						<a href="" id="subcategoria">Valores</a>
+					</dd>												 	
+					{exp:channel:categories style="linear" category_group="14" show_empty="yes"}
+						{if parent_id=='159'}
+							<dd>
+								<a href="
+								{site_url}catalogo/{segment_2}/
+								{if segment_4==''}
+									{if segment_3!=''}
+										{segment_3}/
+									{/if}
+								{if:else}
+									{segment_3}/
+								{/if}
+								{category_url_title}"
+									{if segment_3=='category_url_title'}
+									class="selected"
+									{/if}		
+									{if segment_4==category_url_title}
+									class="selected"
+									{/if}						
+								>{category_name}
+								</a>
+							</dd>	
+						{/if}			
+					{/exp:channel:categories}	
+			
+			</dl>
+		</div>
+	</dd>
+</dl>

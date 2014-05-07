@@ -1,0 +1,68 @@
+
+<dl id="padding_accordion" class="accordion" data-accordion>
+	<dd>
+		<a id="school_panel_trigger" href="#school_panel">
+		TEMAS
+		<span id="menu_arrow" class="icon-arrow-down"></span>
+		</a>
+		<div id="school_panel" class="activex">
+			<dl class="accordion" data-accordion>
+				<dd>
+					<a href="{site_url}catalogo/temas">TODAS</a>
+				</dd>	
+				{exp:channel:categories style="linear" category_group="10" show_empty="yes"}
+					{if parent_id=='108'}
+						<dd>
+							<a href="{site_url}catalogo/{category_url_title}"
+								{if segment_2==category_url_title}
+								class="selected"
+								{/if}
+							>{category_name}</a>
+						</dd>	
+					{/if}			
+				{/exp:channel:categories}	
+				
+				{if segment_2=='tecnologia-temas' OR segment_2=='operaciones-temas' OR segment_2=='learning-coffee-temas'}
+					<dd>
+						<a href="" id="subcategoria">App</a>
+					</dd>												 	
+					
+					{if segment_2=='tecnologia-temas'}
+						{embed="includes/categorias-tecnologia"}
+					{/if}
+					
+					<!--{if segment_2=='operaciones-temas'}
+						{embed="includes/categorias-operaciones"}
+					{/if}
+					
+					{if segment_2=='learning-coffee-temas'}
+						{embed="includes/categorias-learning-coffee"}
+					{/if}-->										
+
+				{if:else}
+					<dd>
+						<a href="" id="subcategoria">Tipos de Contenido</a>
+					</dd>												 	
+					{exp:channel:categories style="linear" category_group="10" show_empty="yes"}
+						{if parent_id=='115'}
+							<dd>
+								<a href="{site_url}catalogo/{if segment_2!=''}{segment_2}/{/if}{category_url_title}"
+									{if segment_2=='category_url_title'}
+									class="selected"
+									{/if}		
+									{if segment_3==category_url_title}
+									class="selected"
+									{/if}						
+								>{category_name}
+								</a>
+							</dd>	
+						{/if}			
+					{/exp:channel:categories}	
+				{/if}
+				
+			
+			</dl>
+		</div>
+	</dd>
+</dl>
+

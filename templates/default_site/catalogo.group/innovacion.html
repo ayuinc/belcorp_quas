@@ -1,4 +1,4 @@
-{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination"}
+{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" }
 {embed="includes/header" titulo="Escuela de Innovación"}
 
     <div class="off-canvas-wrap">
@@ -61,27 +61,45 @@
                  	{embed="includes/descripcion-summa"}
                  {/if}
                  
-                 <!--Llamado a los Posts de Tendencias y Cursos-->                             
-				 <!--{embed="includes/posts-cursos-tendencias" 
-				 	{if url_title!='todos'}
-				 		id_categoria="{last_segment_category_id}"
-				 	{/if}
-				 }-->
-
                  <div class="row">
-                  	{exp:channel:entries channel="cursos|tendencias" limit="20" paginate_base="catalogo/innovacion" paginate=“bottom” category="{last_segment_category_id}"}                  
+
+
+                  	{if segment_3!=''}
+                  	
+                  	{exp:channel:entries 
+                  		channel="cursos|tendencias" 
+                  		limit="20" 
+                  		paginate_base="catalogo/index" 
+                  		paginate=“bottom” 
+                  		category="{segment_3_category_id}{if segment_4}&{segment_4_category_id}{/if}"
+                  	}    
+                  	{/if}
+                  	
+                  	{if segment_3==''}
+                  	
+                  	{exp:channel:entries 
+                  		channel="cursos|tendencias" 
+                  		limit="20" 
+                  		paginate_base="catalogo/index" 
+                  		paginate=“bottom” 
+                  		category="114{if segment_3}|{segment_3_category_id}{/if}"
+            
+                  	}                      	              
+				  	{/if}         	                            
 
 	                    <div class="medium-12 large-6 columns">
-	                      {if link-recurso}
-	                        <a href="{link-recurso}" target="_blank">
-	                      {if:else}
-	                      	<a href="{site_url}catalogo/curso/{url_title}">
-	                      {/if}
-					      
-							  
-	                        {categories limit="1"}
-	                        <div class="course {category_url_title}">
-	                        {/categories}
+		                    {if channel=='Cursos'}
+		                      	<a href="{site_url}catalogo/curso/{url_title}">
+						    {/if}
+						      
+						    {if channel=="Contenidos"}
+			                    {if interna-contenido=="Pagina Interna"}
+			                      <a href="{site_url}contenidos/curso/{url_title}" target="_blank">
+			                    {if:else}
+			                      <a href="{link-recurso}" target="_blank">
+			                    {/if}
+						    {/if}
+	                        <div class="course innovacion-temas">
 	                          <h5>
 	                          {if tipo-contenido-recurso}
 	                            <span>{tipo-contenido-recurso}</span><br>
@@ -100,12 +118,12 @@
 								  <span>Ver Más »</span>
 						      </div>
 	                        </div>
-	                      </a>
-	                    </div>
+							</a>
+	                    </div> 
 
   			              {paginate}  
   			              	{pagination_links}
-  			              	<div class="medium-12 large-12 columns">
+  			              		<div class="medium-12 large-12 columns">
 	  							 <div class="row">
 	  				                <div class="large-12 large-centered columns vermas">
 	  				                  <div class="more">                      
@@ -119,8 +137,8 @@
 	  				                </div>
 	                            </div>
                             </div>
-                        {/pagination_links}   
-                      {/paginate} 
+  						  	{/pagination_links}   
+  						  {/paginate} 
                       
                     {/exp:channel:entries}
                  </div>				 
@@ -129,7 +147,13 @@
                   
                 </div>
                 
-                {embed="includes/sidebar_new"}
+                <div class="large-3 columns hide-for-small hide-for-medium right_padding">
+
+	                {embed="includes/buscar"}
+	                {embed="includes/categorias-innovacion"}
+	                {embed="includes/links-de-interes"}
+                
+                </div>
               
               </div>
             </div>

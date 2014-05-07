@@ -1,0 +1,46 @@
+<dl id="padding_accordion" class="accordion" data-accordion>
+	<dd>
+		<a id="school_panel_trigger" href="#school_panel">
+		TEMAS
+		<span id="menu_arrow" class="icon-arrow-down"></span>
+		</a>
+		<div id="school_panel" class="activex">
+			<dl class="accordion" data-accordion>
+				<dd>
+					<a href="{site_url}catalogo/{segment_2}">TODAS</a>
+				</dd>	
+				{exp:channel:categories style="linear" category_group="11" show_empty="yes"}
+					{if parent_id=='121'}
+						<dd>
+							<a href="{site_url}catalogo/{segment_2}/{category_url_title}"
+								{if segment_3==category_url_title}
+								class="selected"
+								{/if}
+							>{category_name}</a>
+						</dd>	
+					{/if}			
+				{/exp:channel:categories}	
+					<dd>
+						<a href="" id="subcategoria">Tipos de Contenido</a>
+					</dd>												 	
+					{exp:channel:categories style="linear" category_group="11" show_empty="yes"}
+						{if parent_id=='125'}
+							<dd>
+								<a href="{site_url}catalogo/{segment_2}/{segment_3}/{category_url_title}"
+									{if segment_3=='category_url_title'}
+									class="selected"
+									{/if}		
+									{if segment_4==category_url_title}
+									class="selected"
+									{/if}							
+								>{category_name}
+								</a>
+							</dd>	
+						{/if}			
+					{/exp:channel:categories}	
+			
+			</dl>
+		</div>
+	</dd>
+</dl>
+

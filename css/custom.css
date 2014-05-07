@@ -230,7 +230,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   content: "\e613"; }
 
 .icon-pregunta:before {
-  content: "\e60d"; }
+  content: "\e600"; }
 
 .icon-graduation:before {
   content: "\e60a"; }
@@ -313,6 +313,30 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 .publish {
   margin: 0; }
+
+#subcategoria {
+  background-color: #596c79 !important; }
+
+.innovacion-temas {
+  border-right: 25px solid #8dc63f !important; }
+
+.ventas-temas {
+  border-right: 25px solid #5a277d !important; }
+
+.liderazgo-y-cultura-temas {
+  border-right: 25px solid #00bce4 !important; }
+
+.negocios-temas {
+  border-right: 25px solid #ef3e42 !important; }
+
+.operaciones-temas {
+  border-right: 25px solid #bdc3c7 !important; }
+
+.tecnologia-temas {
+  border-right: 25px solid #f1c40f !important; }
+
+.learning-coffee-temas {
+  border-right: 25px solid #8dc63f !important; }
 
 #cover {
   min-height: 100%;
@@ -1590,18 +1614,20 @@ footer {
   color: #FFF;
   text-transform: uppercase;
   font-weight: 300;
-  letter-spacing: 0.02rem; }
-  .destados-tipo:before, .destados-tipo:before {
-    z-index: 0;
-    position: absolute;
-    top: 0px;
-    left: -10px;
-    content: '';
-    width: 0px;
-    height: 10px;
-    border-bottom: solid 17px #681A8A;
-    border-left: solid 10px transparent;
-    border-right: solid 0px transparent; }
+  letter-spacing: 0.02rem;
+  /*&:before,
+  &:before {
+  	z-index: 0;
+  	position: absolute;
+  	top: 0px;
+  	left: -10px;
+  	content: '';
+  	width: 0px;
+  	height: 10px;
+  	border-bottom: solid 17px #681A8A;
+  	border-left: solid 10px transparent;
+  	border-right: solid 0px transparent;
+  }*/ }
 
 .tema-de-la-semana {
   background-color: #A679B2;
@@ -2095,6 +2121,15 @@ footer {
     margin-bottom: 1.5rem; }
   #article_content img {
     margin-bottom: 30px; }
+
+.orbit-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.3); }
 
 #next_article {
   min-height: 400px;
