@@ -10,7 +10,7 @@
       <div class="headline">
         <h1>{title}</h1>
         <h4>{texto-descriptivo-seccion}</h4>
-        <a href="{site_url}seccion/{url_title}">Leer más ›</a>
+        <a href="{site_url}seccion/{url_title}" onClick="_gaq.push(['_trackEvent', 'Seccion', 'Entrar-Homepage', 'Que hace la UCB']);">Leer más ›</a>
       </div>
     </section>
     {/exp:channel:entries} 
@@ -43,7 +43,7 @@
 					{if:else}
 						<a href="#">
                 	{/if}
-                  <span id="enter">Entrar ›</span>
+                  <span id="enter" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Homepage', '{title}']);">Entrar ›</span>
                 </a>
               </div>
             </div>
@@ -56,14 +56,14 @@
                 <p>Escuela de {categories show_group="1"}{category_name} {/categories}<br><span> {channel}</span></p>
                 <h3>{title}</h3>
                 <a href="{site_url}catalogo/curso/{url_title}">
-                  <span id="enter">Entrar ›</span>
+                  <span id="enter" onClick="_gaq.push(['_trackEvent', 'Curso', 'Entrar-Homepage', '{title}']);">Entrar ›</span>
                 </a>
               </div>
             </div>
            {/exp:low_reorder:entries}             
            
           </div>
-          <a href="{site_url}catalogo/todos" id="more_index" class="small button">VER TODOS</a>
+          <a href="{site_url}catalogo/temas" id="more_index" class="small button" onClick="_gaq.push(['_trackEvent', 'Catalogo', 'Entrar-Homepage', 'temas']);">VER TODOS</a>
           <!--<div id="down"></div>-->
 
         </div>
@@ -83,7 +83,7 @@
         </div> 
           <div class="row nuestras-escuelas">
             <div class="large-3 columns">
-                <a href="{site_url}catalogo/ventas">
+                <a href="{site_url}catalogo/ventas" onClick="_gaq.push(['_trackEvent', 'Escuelas', 'Entrar-Homepage', 'ventas']);">
                 	<div class="course ventas">
 						<span>ESCUELA DE</span>
 						<h5>VENTAS</h5>
@@ -92,7 +92,7 @@
                 <!--<a href="{site_url}catalogo/ventas" class="small button">ENTRAR</a>-->
             </div>
             <div class="large-3 columns">
-                <a href="{site_url}catalogo/negocios">
+                <a href="{site_url}catalogo/negocios" onClick="_gaq.push(['_trackEvent', 'Escuelas', 'Entrar-Homepage', 'negocios']);">
 	                <div class="course negocios">
 	                  <span>ESCUELA DE</span>
 	                  <h5>NEGOCIOS</h5>
@@ -101,7 +101,7 @@
                 <!--<a href="{site_url}catalogo/negocios" class="small button">ENTRAR</a>-->
             </div>
             <div class="large-3 columns">
-                <a href="{site_url}catalogo/liderazgo-cultura">
+                <a href="{site_url}catalogo/liderazgo-cultura"  onClick="_gaq.push(['_trackEvent', 'Escuelas', 'Entrar-Homepage', 'liderazgo y cultura']);">
 	                <div class="course liderazgo-cultura">
 	                  <span>ESCUELA DE</span>
 	                  <h5>LIDERAZGO Y CULTURA</h5>
@@ -110,7 +110,7 @@
                 <!--<a href="{site_url}catalogo/liderazgo-cultura" class="small button">ENTRAR</a>-->
             </div>
             <div class="large-3 columns">
-                <a href="{site_url}catalogo/innovacion">
+                <a href="{site_url}catalogo/innovacion" onClick="_gaq.push(['_trackEvent', 'Escuelas', 'Entrar-Homepage', 'innovacion']);">
 	                <div class="course innovacion">
 	                  <span>ESCUELA DE</span>
 	                  <h5>INNOVACIÓN</h5>
@@ -130,7 +130,7 @@
       <div class="headline">
         <h1>{title}</h1>
         <h4>{texto-descriptivo-seccion}</h4>
-        <a href="{site_url}seccion/{url_title}/peru">Leer más ›</a>
+        <a href="{site_url}seccion/{url_title}/peru"  onClick="_gaq.push(['_trackEvent', 'Seccion', 'Entrar-Homepage', 'contenidos']);">Leer más ›</a>
       </div>
     </section>
     {/exp:channel:entries}

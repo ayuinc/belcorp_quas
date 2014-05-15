@@ -41,7 +41,17 @@
 <!--                   <div class="show-for-large-up large-1 columns">
                     <span class="icon-mail"></span>
                   </div> -->
-                  <div class="medium-12 large-11 columns"> 
+		          <div class="medium-12 large-1 columns"> 
+			          <div class="row link-regresar">
+			          	<div class="large-1 columns">
+			          		<div class="icon-arrow-left2"></div>
+			          	</div>
+			          	<div class="large-3 columns clearfix">
+			          		<a href="javascript: history.go(-1)"> Regresar</a>
+			          	</div>
+			          </div>  
+		          </div>
+                  <div class="medium-12 large-12 columns">    
                     <h3>{title}</h3>
                     <h5>{texto-descriptivo-seccion}</h5>
                   </div>
@@ -67,29 +77,29 @@ inline_errors="yes" inline_error_return="quieres-crear-un-curso/index" }
 				    
 				    <dl>
 				    		{if freeform:error:first_name OR freeform:error:last_name OR freeform:error:email OR freeform:error:user_message OR freeform:error:titulo_del_curso OR freeform:error:descripcion_del_curso OR freeform:error:curricula_del_curso}
-				    		<dt class="error">ERROR: Necesitas llenar los siguientes campos.</dt>
+				    		<dt class="error">ERROR en los siguientes campos. </dt>
 					    		<dd>
 					    			<ul>
 						    		{if freeform:error:first_name}
-									    <li class="error">Nombre</li>
+									    <li class="error">Nombre: verificar si fue ingresado correctamente</li>
 									{/if}
 						        	{if freeform:error:last_name}
-									    <li class="error">Apellido</li>
+									    <li class="error">Apellido: verificar si fue ingresado correctamente</li>
 									{/if}
 						        	{if freeform:error:email}
-									    <li class="error">Correo Electrónico</li>
+									    <li class="error">Correo Electrónico: verificar el formato, o si fue ingresado correctamente</li>
 									{/if}
 						        	{if freeform:error:user_message}
-									    <li class="error">Mensaje</li>
+									    <li class="error">Mensaje: verificar si fue ingresado correctamente</li>
 									{/if}	
 						        	{if freeform:error:titulo_del_curso}
-									    <li class="error">Título del Curso</li>
+									    <li class="error">Título del Curso: verificar si fue ingresado correctamente</li>
 									{/if}
 						        	{if freeform:error:descripcion_del_curso}
-									    <li class="error">Descripción del Curso</li>
+									    <li class="error">Descripción del Curso: verificar si fue ingresado correctamente</li>
 									{/if}
 						        	{if freeform:error:curricula_del_curso}
-									    <li class="error">Curricula del Curso</li>
+									    <li class="error">Curricula del Curso: verificar si fue ingresado correctamente</li>
 									{/if}	
 					    			</ul>
 								</dd>				    		
@@ -127,11 +137,8 @@ inline_errors="yes" inline_error_return="quieres-crear-un-curso/index" }
 </div>
 
           <div class="large-3 columns hide-for-small hide-for-medium fixed_menu right_padding">
-                  {exp:search:simple_form channel="cursos|contenidos" form_id="form_search" status="open"  search_in="titles" result_page="buscar/index"}
-                    <input type="search" name="keywords" id="keywords" placeholder="BUSCAR">
-                    <span class="icon-search"></span>
-                  {/exp:search:simple_form}
-              <a href="{site_url}quieres-crear-un-curso" id="create_course" class="publish button expand">¿QUIERES CREAR UN CURSO?</a>
+              {embed="includes/buscar"}
+              {embed="includes/links-de-interes"}
           </div>
 
         </div>

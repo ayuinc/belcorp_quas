@@ -1,33 +1,35 @@
-
 <dl id="padding_accordion" class="accordion" data-accordion>
 	<dd>
 		<a id="school_panel_trigger" href="#school_panel">
-		TEMAS
+		Contenidos
 		<span id="menu_arrow" class="icon-arrow-down"></span>
 		</a>
-		<div id="school_panel" class="activex">
+		<div id="school_panel">
 			<dl class="accordion" data-accordion>
 				<dd>
-					<a href="{site_url}catalogo/temas">TODAS</a>
+					<a href="{site_url}catalogo/temas">TODOS</a>
 				</dd>	
 				{exp:channel:categories style="linear" category_group="10" show_empty="yes"}
 					{if parent_id=='108'}
-						<dd>
-							<a href="{site_url}catalogo/{category_url_title}"
+						{if category_id!='257'}
+						<dd class="filtro-{category_url_title}">
+							<a id="{category_id}" href="{site_url}catalogo/{category_url_title}"
 								{if segment_2==category_url_title}
 								class="selected"
 								{/if}
 							>{category_name}</a>
-						</dd>	
+						</dd>
+						{/if}	
 					{/if}			
 				{/exp:channel:categories}	
 				
 				{if segment_2=='tecnologia-temas' OR segment_2=='operaciones-temas' OR segment_2=='learning-coffee-temas'}
-					<dd>
-						<a href="" id="subcategoria">App</a>
-					</dd>												 	
+											 	
 					
 					{if segment_2=='tecnologia-temas'}
+						<dd>
+							<a href="" id="subcategoria">App</a>
+						</dd>						
 						{embed="includes/categorias-tecnologia"}
 					{/if}
 					
@@ -41,12 +43,12 @@
 
 				{if:else}
 					<dd>
-						<a href="" id="subcategoria">Tipos de Contenido</a>
+						<a href="" id="subcategoria">Formatos</a>
 					</dd>												 	
 					{exp:channel:categories style="linear" category_group="10" show_empty="yes"}
 						{if parent_id=='115'}
 							<dd>
-								<a href="{site_url}catalogo/{if segment_2!=''}{segment_2}/{/if}{category_url_title}"
+								<a id="{category_id}" href="{site_url}catalogo/{if segment_2!=''}{segment_2}/{/if}{category_url_title}"
 									{if segment_2=='category_url_title'}
 									class="selected"
 									{/if}		
@@ -65,4 +67,3 @@
 		</div>
 	</dd>
 </dl>
-

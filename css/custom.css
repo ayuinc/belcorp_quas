@@ -241,6 +241,11 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 .icon-arrow-left:before {
   content: "\e60c"; }
 
+.icon-arrow-left2:before {
+  content: "\e60e";
+  font-size: 1.2rem;
+  color: #FFF; }
+
 .icon-play {
   position: relative;
   top: 2px; }
@@ -333,10 +338,31 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   border-right: 25px solid #bdc3c7 !important; }
 
 .tecnologia-temas {
-  border-right: 25px solid #f1c40f !important; }
+  border-right: 25px solid #7f8c8d !important; }
 
 .learning-coffee-temas {
-  border-right: 25px solid #8dc63f !important; }
+  border-right: 25px solid #2c3e50 !important; }
+
+.filtro-innovacion-temas {
+  border-right: 10px solid #8dc63f !important; }
+
+.filtro-ventas-temas {
+  border-right: 10px solid #5a277d !important; }
+
+.filtro-liderazgo-y-cultura-temas {
+  border-right: 10px solid #00bce4 !important; }
+
+.filtro-negocios-temas {
+  border-right: 10px solid #ef3e42 !important; }
+
+.filtro-operaciones-temas {
+  border-right: 10px solid #bdc3c7 !important; }
+
+.filtro-tecnologia-temas {
+  border-right: 10px solid #7f8c8d !important; }
+
+.filtro-learning-coffee-temas {
+  border-right: 10px solid #2c3e50 !important; }
 
 #cover {
   min-height: 100%;
@@ -846,19 +872,39 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   top: -1rem; }
   .nav-regresar .icon-arrow-left {
     font-size: 1.1rem;
-    color: #ccc !important; }
+    color: #FFF !important; }
     .nav-regresar .icon-arrow-left:hover {
       color: #FFF; }
   .nav-regresar a {
     font-size: 1.1rem;
-    color: #ccc !important;
+    color: #FFF !important;
     -webkit-transition-duration: 0.2s;
     -moz-transition-duration: 0.2s;
     -o-transition-duration: 0.2s;
     transition-duration: 0.2s;
-    margin-left: 0.5rem; }
+    margin-left: 0.5rem;
+    letter-spacing: 0.03rem; }
     .nav-regresar a:hover {
       color: #FFF; }
+
+.link-regresar .icon-arrow-left {
+  font-size: 1.1rem;
+  color: #FFF !important; }
+  .link-regresar .icon-arrow-left:hover {
+    color: #FFF; }
+.link-regresar a {
+  font-size: 1.1rem;
+  color: #FFF !important;
+  position: absolute;
+  left: -1rem;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  margin-left: 0.5rem;
+  letter-spacing: 0.03rem; }
+  .link-regresar a:hover {
+    color: #FFF; }
 
 .bg_liderazgo-cultura {
   background-color: #00bce4; }
@@ -1003,7 +1049,8 @@ footer {
   padding: 1rem;
   display: block;
   font-size: 1rem;
-  position: relative; }
+  position: relative;
+  text-transform: uppercase; }
 
 .accordion dd > a:hover {
   background: #596c79; }
@@ -1191,7 +1238,8 @@ footer {
   margin-bottom: 1.25em; }
   .requisitos_info h3 {
     font-size: 1.25rem;
-    margin-bottom: 0.2rem; }
+    margin-bottom: 0.2rem;
+    text-transform: uppercase; }
 
 .syllabus {
   background-color: #FFFFFF;
@@ -1509,7 +1557,8 @@ footer {
       margin: 0px;
       padding: 0px;
       line-height: 90%;
-      letter-spacing: 0.03rem; }
+      letter-spacing: 0.03rem;
+      color: #FFF; }
       .destacados-highlight .orbit-caption h2 a {
         font-size: 1.8rem;
         font-weight: 100;
@@ -1656,7 +1705,7 @@ footer {
 .los-mas-populares {
   background-color: #FFF;
   padding: 1rem;
-  min-height: 15.1rem; }
+  min-height: 17.3rem; }
   .los-mas-populares h4 {
     color: #5a277d;
     font-weight: 100;
@@ -1772,7 +1821,7 @@ footer {
   #navbar .inline-list {
     margin-top: 2rem;
     position: absolute;
-    left: 9.5rem; }
+    left: 13.5rem; }
     #navbar .inline-list li {
       border-right: 1px solid #F1F1F1;
       padding-right: 0.7rem;
@@ -1998,7 +2047,7 @@ footer {
     text-transform: uppercase;
     font-weight: 300;
     font-size: 0.9rem;
-    color: #CCC;
+    color: #FFF;
     letter-spacing: 0.03rem;
     -webkit-transition: 0.2s;
     -moz-transition: 0.2s;
@@ -2044,7 +2093,8 @@ footer {
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
   -o-transition: 0.2s;
-  transition: 0.2s; }
+  transition: 0.2s;
+  z-index: 99999; }
   .arrow-up-nav:hover {
     opacity: 0.6; }
 
@@ -2129,7 +2179,81 @@ footer {
   right: 0;
   bottom: 0;
   opacity: 1;
-  background: rgba(0, 0, 0, 0.3); }
+  background: rgba(0, 0, 0, 0.45); }
+
+.login-lms {
+  position: absolute;
+  top: 3.71rem;
+  right: 1.5rem;
+  background-color: #8e44ad;
+  width: 35rem;
+  padding: 1rem;
+  height: 7rem; }
+  .login-lms label {
+    font-size: 0.7rem;
+    color: #FFF;
+    cursor: pointer;
+    display: block;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-bottom: -0.5rem;
+    letter-spacing: 0.05rem; }
+  .login-lms p {
+    margin-top: -0.5rem;
+    color: #fff;
+    font-size: 0.8rem; }
+  .login-lms a {
+    color: #FFF;
+    font-size: 0.8rem;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+    letter-spacing: 0.06rem;
+    margin-top: -0.3rem; }
+    .login-lms a:hover {
+      opacity: 0.6; }
+  .login-lms input[type="submit"] {
+    width: 150px;
+    border: 1px solid #FFF;
+    background-color: #FFF;
+    padding: 0.55rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #9b59b6;
+    position: absolute;
+    top: 1rem;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s; }
+    .login-lms input[type="submit"]:hover {
+      opacity: 0.6; }
+  .login-lms input[type="text"] {
+    margin-bottom: 0.3rem; }
+
+.perfil-info p {
+  position: relative;
+  top: 1rem;
+  right: 4rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 0.03rem !important;
+  text-align: right; }
+  .perfil-info p small {
+    font-size: 0.7rem; }
+  .perfil-info p a {
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s; }
+    .perfil-info p a:hover {
+      opacity: 0.6; }
+
+.defaultuserpic {
+  position: absolute;
+  top: 0.7rem;
+  right: 1rem; }
 
 #next_article {
   min-height: 400px;
@@ -2393,7 +2517,7 @@ footer {
     right: 0;
     bottom: 0;
     opacity: 1;
-    background: rgba(0, 0, 0, 0.4); }
+    background: rgba(0, 0, 0, 0.5); }
   #convenios_header h5, #contacto_header h5, #foro_header h5 {
     font-weight: 100;
     color: #FFFFFF;

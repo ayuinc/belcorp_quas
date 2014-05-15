@@ -1,11 +1,13 @@
 				  	{exp:search:simple_form 
-				  		channel="cursos|contenidos" 
+				  		channel="cursos|tendencias" 
+						search_in="everywhere"
 				  		form_id="form_search" 
 				  		status="open"  
-				  		search_in="everywhere" 
 				  		result_page="buscar/index" 
+						where="all"
 				  		no_result_page="buscar/no-resultados"
 				  	}
-	                <input type="search" name="keywords" id="keywords" placeholder="BUSCAR">
+                        		<input type="hidden" name="XID" value="{XID_HASH}" /> 
+	                		<input type="search" name="keywords" id="keywords" placeholder="BUSCAR">
 					<span class="icon-search"></span>
 					{/exp:search:simple_form}

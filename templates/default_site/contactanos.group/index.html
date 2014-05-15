@@ -38,19 +38,21 @@
               <div id="contacto_header" style="background: url('http://54.83.45.138/images/imagenes-paginas/81/contactanos__large.jpg') no-repeat; background-size: cover;background-position: center center;">
                 <div class="overlay"></div>
                 <div class="row">
-<!--                   <div class="show-for-large-up large-1 columns">
-                    <span class="icon-mail"></span>
-                  </div> -->
-                  <div class="medium-12 large-11 columns"> 
+		          <div class="medium-12 large-1 columns"> 
+			          <div class="row link-regresar">
+			          	<div class="large-1 columns">
+			          		<div class="icon-arrow-left2"></div>
+			          	</div>
+			          	<div class="large-3 columns clearfix">
+			          		<a href="javascript: history.go(-1)"> Regresar</a>
+			          	</div>
+			          </div>  
+		          </div>                  
+                  <div class="medium-12 large-12 columns"> 
                     <h3>{title}</h3>
                     <h5>{texto-descriptivo-seccion}</h5>
                   </div>
-<!--                   <div class="hide-for-small medium-2 large-2 columns">
-                    <div class="text-center">
-                      <h3 id="comment_number">30</h3>
-                      <span>COMENTARIOS</span>
-                    </div>
-                  </div> -->
+
                 </div>
               </div>
             </div>
@@ -63,24 +65,24 @@
               <div class="contact_form">
 
 				{exp:freeform:form form_name="contactenos" return="contactanos/gracias" required="first_name|last_name|email|user_message" 
-inline_errors="yes" inline_error_return="contactanos/index" admin_notify="coloradomarin@gmail.com" admin_notification_template="alerta_contactenos" }
+inline_errors="yes" inline_error_return="contactanos/index" admin_notify="coloradomarin@gmail.com" admin_notification_template="alerta_contactenos" error_page="contactanos/index"} 
 				    
 				    <dl>
 				    		{if freeform:error:first_name OR freeform:error:last_name OR freeform:error:email OR freeform:error:user_message}
-				    		<dt class="error">ERROR: Necesitas llenar los siguientes campos.</dt>
+				    		<dt class="error">ERROR en los siguientes campos. </dt>
 					    		<dd>
 					    			<ul>
 						    		{if freeform:error:first_name}
-									    <li class="error">Nombre</li>
+									    <li class="error">Nombre: verificar si fue ingresado correctamente</li>
 									{/if}
 						        	{if freeform:error:last_name}
-									    <li class="error">Apellido</li>
+									    <li class="error">Apellido: verificar si fue ingresado correctamente</li>
 									{/if}
 						        	{if freeform:error:email}
-									    <li class="error">Correo Electrónico</li>
+									    <li class="error">Correo Electrónico: verificar el formato, o si fue ingresado correctamente</li>
 									{/if}
 						        	{if freeform:error:user_message}
-									    <li class="error">Mensaje</li>
+									    <li class="error">Mensaje: verificar si fue ingresado correctamente</li>
 									{/if}	
 					    			</ul>
 								</dd>				    		
@@ -118,11 +120,8 @@ inline_errors="yes" inline_error_return="contactanos/index" admin_notify="colora
 </div>
 
           <div class="large-3 columns hide-for-small hide-for-medium fixed_menu right_padding">
-                  {exp:search:simple_form channel="cursos|contenidos" form_id="form_search" status="open"  search_in="titles" result_page="buscar/index"}
-                    <input type="search" name="keywords" id="keywords" placeholder="BUSCAR">
-                    <span class="icon-search"></span>
-                  {/exp:search:simple_form}
-              <a href="{site_url}quieres-crear-un-curso" id="create_course" class="publish button expand">¿QUIERES CREAR UN CURSO?</a>
+              {embed="includes/buscar"}
+              {embed="includes/links-de-interes"}
           </div>
 
         </div>

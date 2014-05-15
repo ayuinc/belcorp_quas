@@ -1,10 +1,24 @@
 <div class="row">
-	<div class="large-10 columns">
+	<div class="large-9 columns">
 		<ul class="inline-list">
 			<li><a href="{site_url}catalogo/ventas" class="bgventas {if segment_2=='ventas' OR embed:nombre-categoria=='Ventas'} bgventas-activo{/if}">ESCUELA DE VENTAS</a></li>
 			<li><a href="{site_url}catalogo/negocios" class="bgnegocios {if segment_2=='negocios' OR embed:nombre-categoria=='Negocios'}bgnegocios-activo{/if}">ESCUELA DE NEGOCIOS</a></li>
 			<li><a href="{site_url}catalogo/liderazgo-cultura" class="bgliderazgo {if segment_2=='liderazgo-cultura' OR embed:nombre-categoria=='Liderazgo y Cultura'} bgliderazgo-activo {/if}">ESCUELA DE LIDERAZGO Y CULTURA</a></li>
 			<li><a href="{site_url}catalogo/innovacion" class="bginnovacion {if segment_2=='innovacion' OR embed:nombre-categoria=='Innovación'} bginnovacion-activo {/if}">ESCUELA DE INNOVACIÓN</a></li>
 		</ul>                    
+	</div>
+	<div class="large-3 columns">
+		{if logged_in}
+		<div id="user-login-block">
+			<div class="row">
+				<div class="large-12 columns perfil-info">	
+					{exp:member:custom_profile_data}
+						<p>Hola, <a href="http://54.243.186.233/moodle/my/">{screen_name}</a>. <br><small><a href="{path='logout'}">Salir ⟼</a></small></p>
+					{/exp:member:custom_profile_data}
+					<a href="http://54.243.186.233/moodle/my/"><img src="http://54.243.186.233/moodle/theme/image.php/ucb/core/1399485730/u/f2" alt="Imagen de Juan Perez" title="Imagen de {screen_name}" class="userpicture defaultuserpic" width="45" height="45"></a>
+				</div>				
+			</div>
+		</div>
+		{/if}
 	</div>
 </div>

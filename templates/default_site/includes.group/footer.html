@@ -37,9 +37,9 @@
     <script>
     $(document).ready(function(){
     
-      $(".arrow-up-nav").hide(0);
-      
-      
+	$(".login-lms").hide(0);
+    $(".arrow-up-nav").hide(0);    
+    
       $( ".arrow-up-nav" ).click(function( event ) {
         event.preventDefault();
           $("html, body").animate({scrollTop:$("#article_header").offset().top -25});
@@ -150,6 +150,14 @@
             return "down" === d ? $("#sub_navbar").addClass("shadow_navbar") : $("#sub_navbar").removeClass("shadow_navbar");
           });
     });
+    
+    //BOTON INICIO
+    
+    $( "#ingresa-ucb" ).click(function( event ) {
+      $(".login-lms").toggle(0);
+    });
+    
+    
     </script>
     <!-- Qualaroo -->
     <script type="text/javascript">

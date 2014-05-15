@@ -1,13 +1,13 @@
 <dl id="padding_accordion" class="accordion" data-accordion>
 	<dd>
 		<a id="school_panel_trigger" href="#school_panel">
-		TEMAS
+		Contenidos
 		<span id="menu_arrow" class="icon-arrow-down"></span>
 		</a>
 		<div id="school_panel" class="activex">
 			<dl class="accordion" data-accordion>
 				<dd>
-					<a href="{site_url}catalogo/{segment_2}">TODAS</a>
+					<a href="{site_url}catalogo/{segment_2}">TODOS</a>
 				</dd>	
 				{exp:channel:categories style="linear" category_group="13" show_empty="yes"}
 					{if parent_id=='142'}
@@ -21,7 +21,7 @@
 					{/if}			
 				{/exp:channel:categories}	
 					<dd>
-						<a href="" id="subcategoria">Tipos de Contenido</a>
+						<a href="" id="subcategoria">Formatos</a>
 					</dd>												 	
 					{exp:channel:categories style="linear" category_group="13" show_empty="yes"}
 						{if parent_id=='145'}

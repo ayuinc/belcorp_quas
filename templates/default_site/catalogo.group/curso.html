@@ -126,7 +126,7 @@
       	<div class=" small-12 medium-3 large-3 columns">
               <div class="row sidebar-curso">
 	              <div class="small-12 medium-12 large-12 columns">
-		              <a href="{link-curso}" target="_blank" id="start_course" class="explore button expand">COMENZAR</a>
+		              <a href="{link-curso}" target="_blank" id="start_course" class="explore button expand"  onClick="_gaq.push(['_trackEvent', 'Curso', 'Entrar-Curso', '{title}']);">COMENZAR CURSO</a>
 		
 		
 			              {embed="includes/curso-detalles" 
@@ -146,6 +146,8 @@
 			              		}
 			              	{/instructor-curso:foto-instructor}
 			              {/instructor-curso}
+			              
+			            
 	              </div>
               </div>
       	</div>      	

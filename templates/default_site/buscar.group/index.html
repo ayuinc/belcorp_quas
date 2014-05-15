@@ -37,7 +37,17 @@
               <div id="contacto_header" style="background: url('http://54.83.45.138/images/imagenes-paginas/81/contactanos__large.jpg') no-repeat; background-size: cover;background-position: center center;">
                 <div class="overlay"></div>
                 <div class="row">
-                  <div class="medium-12 large-11 columns"> 
+		          <div class="medium-12 large-1 columns"> 
+			          <div class="row link-regresar">
+			          	<div class="large-1 columns">
+			          		<div class="icon-arrow-left2"></div>
+			          	</div>
+			          	<div class="large-3 columns clearfix">
+			          		<a href="javascript: history.go(-1)"> Regresar</a>
+			          	</div>
+			          </div>  
+		          </div>
+                  <div class="medium-12 large-12 columns">  
                     <h3>RESULTADOS DE LA BUSQUEDA</h3>
                     <h5>Encontramos {exp:search:total_results} {total_results} {/exp:search:total_results} resultado(s) para la(s) palabra(s) {exp:search:keywords}.</h5>
                   </div>
@@ -110,11 +120,8 @@
 		</div>
 
           <div class="large-3 columns hide-for-small hide-for-medium fixed_menu right_padding">
-                  {exp:search:simple_form channel="cursos|contenidos" form_id="form_search" status="open"  search_in="everywhere" result_page="buscar/index" no_result_page="buscar/no-resultados"}
-                    <input type="search" name="keywords" id="keywords" placeholder="BUSCAR">
-                    <span class="icon-search"></span>
-                  {/exp:search:simple_form}
-				  <a href="{site_url}quieres-crear-un-curso" id="create_course" class="publish button expand">¿QUIERES CREAR UN CURSO?</a>
+			  {embed="includes/buscar"}
+              {embed="includes/links-de-interes"}
           </div>
 
         </div>

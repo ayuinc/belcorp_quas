@@ -89,14 +89,14 @@
 
 	                    <div class="medium-12 large-6 columns">
 		                    {if channel=='Cursos'}
-		                      	<a href="{site_url}catalogo/curso/{url_title}">
+		                      	<a href="{site_url}catalogo/curso/{url_title}" onClick="_gaq.push(['_trackEvent', 'Curso', 'Entrar-Innovacion', '{title}']);">
 						    {/if}
 						      
 						    {if channel=="Contenidos"}
 			                    {if interna-contenido=="Pagina Interna"}
-			                      <a href="{site_url}contenidos/curso/{url_title}" target="_blank">
+			                      <a href="{site_url}contenidos/curso/{url_title}" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Innovacion', '{title}']);">
 			                    {if:else}
-			                      <a href="{link-recurso}" target="_blank">
+			                      <a href="{link-recurso}" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Innovacion', '{title}-LINKEXTERNO']);">
 			                    {/if}
 						    {/if}
 	                        <div class="course innovacion-temas">

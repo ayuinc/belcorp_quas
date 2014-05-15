@@ -15,11 +15,7 @@
     $(document).ready(function(){
 
 	/*ACTIVACION VER MAS INFINITE SCROLLING*/ 	
-      //$("#more_courses").on("click", function(){
-        //$("#courses_hidden").css("display","block");
-        //$(this).css("display","none");
-      //});
-
+	  //$("#school_panel").slideUp();
 
       $("#school_panel dd a").on("click", function(){
         $("#school_panel dd a").removeClass("selected");
@@ -33,12 +29,12 @@
         if($("#school_panel").hasClass("activex")){
           $("#school_panel").slideUp();
           $("#school_panel").removeClass("activex");
-          $("#menu_arrow").css('-webkit-transform','rotate(180deg)'); 
+          $("#menu_arrow").css('-webkit-transform','rotate(0deg)'); 
         }
         else {
           $("#school_panel").slideDown();
           $("#school_panel").addClass("activex");
-          $("#menu_arrow").css('-webkit-transform','rotate(0deg)'); 
+          $("#menu_arrow").css('-webkit-transform','rotate(180deg)'); 
         }
       });
       
@@ -55,12 +51,12 @@
         if($("#school_panel_1").hasClass("activex")){
           $("#school_panel_1").slideUp();
           $("#school_panel_1").removeClass("activex");
-          $("#menu_arrow_1").css('-webkit-transform','rotate(180deg)'); 
+          $("#menu_arrow_1").css('-webkit-transform','rotate(0deg)'); 
         }
         else {
           $("#school_panel_1").slideDown();
           $("#school_panel_1").addClass("activex");
-          $("#menu_arrow_1").css('-webkit-transform','rotate(0deg)'); 
+          $("#menu_arrow_1").css('-webkit-transform','rotate(180deg)'); 
         }
       });      
       
