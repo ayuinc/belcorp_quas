@@ -48,6 +48,12 @@
 					{exp:channel:categories style="linear" category_group="10" show_empty="yes"}
 						{if parent_id=='115'}
 							<dd>
+								<script>
+								  $(function(){
+								    var temp = "{category_id}";
+								    	k.push(temp);
+								  });
+								</script>
 								<a id="{category_id}" href="{site_url}catalogo/{if segment_2!=''}{segment_2}/{/if}{category_url_title}"
 									{if segment_2=='category_url_title'}
 									class="selected"
