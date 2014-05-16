@@ -3,6 +3,8 @@
 <script>
   $(function(){
     i = new Array();
+    j = new Array();
+    flag = false;
   });
 </script>
 {embed="includes/header" titulo="Catálogo UCB"}
@@ -96,7 +98,20 @@
                         {categories show_group="7|10"}
                         <script>
                           $(function(){
-                            i.push("{category_id}");
+                            if("{category_id}"=="108"){
+                              flag = false;
+                              continue;
+                            }
+                            if("{category_id}"=="115"){
+                              flag = true;
+                              continue;
+                            }
+                            if(flag == false ){
+                                i.push("{category_id}");
+                            }
+                            if (flag == true ) {
+                                j.push("{category_id}");
+                            }
                           });
                         </script>
                         {/categories}
@@ -178,9 +193,8 @@
     {embed="includes/footer-interno_new"}
     
     <script>
-
-        $(function(){ 
-        console.log(i);
+    $(function(){ 
+        console.log("I="+i);
+        console.log("I="+j);
     });
-
     </script>
