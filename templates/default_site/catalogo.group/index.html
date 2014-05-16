@@ -1,4 +1,9 @@
 {exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" dynamic="off"}
+<script>
+  $(function(){
+    var i = new array();
+  });
+</script>
 {embed="includes/header" titulo="Catálogo UCB"}
 
     <div class="off-canvas-wrap">
@@ -87,7 +92,13 @@
 				  	{/if}
 				  	
 	                    <div id="{categories show="not 108|115" show_group="7|10"}_{category_id}{/categories}" class="medium-12 large-6 columns">
-
+                        {categories show_group="7|10"}
+                        <script>
+                          $(function(){
+                            i.push("{category_id}");
+                          });
+                        </script>
+                        {/categories}
 	                      {if channel=='Cursos'}
 	                      	<a href="{site_url}catalogo/curso/{url_title}" onClick="_gaq.push(['_trackEvent', 'Curso', 'Entrar-Temas', '{title}']);">
 					      {/if}
@@ -168,8 +179,7 @@
     <script>
 
         $(function(){ 
-        var i = '{categories show_group="7|10"}{category_id},{/categories}';
-
+        console.log(i);
     });
 
     </script>
