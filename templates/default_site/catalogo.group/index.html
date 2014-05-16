@@ -98,19 +98,20 @@
                         {categories show_group="7|10"}
                         <script>
                           $(function(){
-                            if("{category_id}"=="108"){
+                            var temp = "{category_id}";
+                            if(temp=="108"){
                               flag = false;
                               continue;
                             }
-                            if("{category_id}"=="115"){
+                            if(temp=="115"){
                               flag = true;
                               continue;
                             }
                             if(flag == false ){
-                                i.push("{category_id}");
+                                i.push(temp);
                             }
                             if (flag == true ) {
-                                j.push("{category_id}");
+                                j.push(temp);
                             }
                           });
                         </script>
