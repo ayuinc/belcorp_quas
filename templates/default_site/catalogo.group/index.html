@@ -105,10 +105,10 @@
                             if(temp=="115"){
                               flag = true;
                             }
-                            if(flag == false ){
+                            if(temp!="108" && flag == false ){
                                 i.push(temp);
                             }
-                            if (flag == true ) {
+                            if (temp!="115" && flag == true ) {
                                 j.push(temp);
                             }
                           });
@@ -193,7 +193,7 @@
     
     <script>
     $(function(){ 
-        console.log("I="+i);
-        console.log("I="+j);
+        console.log("TEMAS="+i);
+        console.log("SUBTEMAS="+j);
     });
     </script>
