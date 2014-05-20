@@ -86,9 +86,13 @@
 			                      <iframe width="100%" height="400" src="//www.youtube.com/embed/{videoid-contenido}" frameborder="0" allowfullscreen></iframe>
 								{/if}  
 								
-								{if video-tipo-contenido=='Ted'}
-								  <iframe src="http://embed.ted.com/talks/{videoid-contenido}.html" width="100%" height="400" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-								{/if}                             
+								{if video-tipo-contenido=='Ted-ingles'}
+								  <iframe src="http://embed.ted.com/talks/lang/en/{videoid-contenido}.html" width="100%" height="400" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+								{/if}  
+								
+								{if video-tipo-contenido=='Ted-espanol'}
+								  <iframe src="http://embed.ted.com/talks/lang/es/{videoid-contenido}.html" width="100%" height="400" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+								{/if}  								                           
 				     </div>
 				   </div>
 				   <!--END. SECCION VIDEO-->
