@@ -99,6 +99,7 @@ class Authlms
         curl_close($ch);
         return $result."  ".$data_string; */
     }
+}
 
 /* End of file pi.infhotel.php */
 /* Location: ./system/expressionengine/third_party/infhotel/pi.infhotel.php */
