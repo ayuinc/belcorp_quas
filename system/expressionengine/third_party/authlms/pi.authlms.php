@@ -63,7 +63,7 @@ class Authlms
     // END
 
     public function auth_lms_first(){
-        require_once 'nusoap/lib/nusoap.php';
+        include_once 'nusoap/lib/nusoap.php';
         //instantiate the NuSOAP class and define the web service URL:
         $client = new nusoap_client('http://54.243.186.233/moodle/auth/belcorpws/belcorpws_server.php?wsdl', 'WSDL');
         //check if there were any instantiation errors, and if so stop execution with an error message:
