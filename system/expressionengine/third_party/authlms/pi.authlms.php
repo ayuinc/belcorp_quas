@@ -81,8 +81,10 @@ class Authlms
           print_r($client->getDebug());
           die();
         }
+        $url='http://54.243.186.233/moodle/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24';
         //output the response (in the form of a multidimensional array) from the function call:
-        header('Location: http://54.243.186.233/moodle/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
+        redirect(prep_url($url), 'location', 302);
+        //header('Location: http://54.243.186.233/moodle/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
         /*
         $data_string = json_encode($data, true);
         $url = 'http://190.41.151.102/Infhotel/ServiceReservaWeb.svc/InsertReserva';
