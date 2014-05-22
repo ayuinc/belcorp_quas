@@ -71,7 +71,7 @@ class Authlms
         if ($error) {
           die("client construction error: {$error}\n");
         }
-        $param = array('username' => 'herman.marin');
+        $param = array('username' => 'peppinedo');
         //perform a function call without parameters:
         $answer = $client->call('login_usuario', array($param));
         //check if there were any call errors, and if so stop execution with some error messages:
@@ -82,7 +82,7 @@ class Authlms
           die();
         }
         //output the response (in the form of a multidimensional array) from the function call:
-        return $answer;
+        header('Location: http://54.243.186.233/moodle/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
         /*
         $data_string = json_encode($data, true);
         $url = 'http://190.41.151.102/Infhotel/ServiceReservaWeb.svc/InsertReserva';
