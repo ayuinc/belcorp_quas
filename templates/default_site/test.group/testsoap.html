@@ -1,2 +1,6 @@
-{exp:authlms:auth_lms_first}
-{/exp:authlms:auth_lms_first}
+{exp:get_post_vars parse="inward"}
+	{exp:authlms:auth_lms_first
+		username="{post_username}"
+		id_curse="{post_id_curse}"}						
+	{/exp:authlms:auth_lms_first}
+{/exp:get_post_vars}

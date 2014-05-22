@@ -64,6 +64,8 @@ class Authlms
 
     public function auth_lms_first(){
         include_once 'nusoap/lib/nusoap.php';
+        $username= $TMPL->fetch_param('username');
+        $id_curse= $TMPL->fetch_param('id_curse');
         //instantiate the NuSOAP class and define the web service URL:
         $client = new nusoap_client('http://54.243.186.233/moodle/auth/belcorpws/belcorpws_server.php?wsdl', 'WSDL');
         //check if there were any instantiation errors, and if so stop execution with an error message:
@@ -71,7 +73,7 @@ class Authlms
         if ($error) {
           die("client construction error: {$error}\n");
         }
-        $param = array('username' => 'peppinedo');
+        $param = array('username' => $username);
         //perform a function call without parameters:
         $answer = $client->call('login_usuario', array($param));
         //check if there were any call errors, and if so stop execution with some error messages:
@@ -81,7 +83,7 @@ class Authlms
           print_r($client->getDebug());
           die();
         }
-        $url='http://54.243.186.233/moodle/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24';
+        $url='http://54.243.186.233/moodle/auth/belcorpws/client/client.php?usuario='.$username.'&token='.$answer.'&curso='.$id_curse;
         //output the response (in the form of a multidimensional array) from the function call:
         return '{exp:redirecturl url="'.$url.'"}';
         //header('Location: http://54.243.186.233/moodle/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
