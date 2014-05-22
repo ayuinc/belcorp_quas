@@ -126,12 +126,14 @@
       	<div class=" small-12 medium-3 large-3 columns">
               <div class="row sidebar-curso">
 	              <div class="small-12 medium-12 large-12 columns">
+	              	{exp:user:stats}
 	              	  <form action="/?/test/testsoap" method="POST">
 	              	  	<input type="hidden" name="XID" value="{XID_HASH}" /> 
 	              	  	<input type="hidden" name="username" value="{username}">
 	              	  	<input type="hidden" name="id_curse" value="24">
 	              	  	<button type="submit" id="start_course" class="explore button expand">COMENZAR CURSO</button>
 	              	  </form>
+	              	{/exp:user:stats}
 		              
 		              <a href="{link-curso}" target="_blank" id="start_course" class="explore button expand"  onClick="_gaq.push(['_trackEvent', 'Curso', 'Entrar-Curso', '{title}']);">COMENZAR CURSO</a>
 		
