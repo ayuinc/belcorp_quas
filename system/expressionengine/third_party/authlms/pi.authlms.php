@@ -68,9 +68,9 @@ class Authlms
         $client = new nusoap_client('http://54.243.186.233/moodle/auth/belcorpws/belcorpws_server.php?wsdl', 'WSDL');
         //check if there were any instantiation errors, and if so stop execution with an error message:
         $error = $client->getError();
-        if ($error) {
+        /*if ($error) {
           die("client construction error: {$error}\n");
-        }
+        }*/
         $param = array('username' => 'peppinedo');
         //perform a function call without parameters:
         $answer = $client->call('login_usuario', array($param));
