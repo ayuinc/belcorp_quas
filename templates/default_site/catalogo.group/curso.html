@@ -126,17 +126,19 @@
       	<div class=" small-12 medium-3 large-3 columns">
               <div class="row sidebar-curso">
 	              <div class="small-12 medium-12 large-12 columns">
-	              	{exp:member:custom_profile_data}
-	              	  <form action="/?/test/testsoap" method="POST">
-	              	  	<input type="hidden" name="XID" value="{XID_HASH}" /> 
-	              	  	<input type="hidden" name="username" value="{member_id}">
-	              	  	<input type="hidden" name="id_curse" value="24">
-	              	  	<button type="submit" id="start_course" class="explore button expand">COMENZAR CURSO</button>
-	              	  </form>
-	              	{/exp:member:custom_profile_data}
-		              
+	              	{if logged_in}
+		              	{exp:member:custom_profile_data}
+		              	  <form action="/?/test/testsoap" method="POST">
+		              	  	<input type="hidden" name="XID" value="{XID_HASH}" /> 
+		              	  	<input type="hidden" name="username" value="{member_id}">
+		              	  	<input type="hidden" name="id_curse" value="24">
+		              	  	<button type="submit" id="start_course" class="explore button expand">COMENZAR CURSO</button>
+		              	  </form>
+		              	{/exp:member:custom_profile_data}
+		             {/if}
+		             {if logged_out}
 		              <a href="{link-curso}" target="_blank" id="start_course" class="explore button expand"  onClick="_gaq.push(['_trackEvent', 'Curso', 'Entrar-Curso', '{title}']);">COMENZAR CURSO</a>
-		
+						{/if}
 		
 			              {embed="includes/curso-detalles" 
 			              	tiempo-duracion-horas-curso="{tiempo-duracion-horas-curso}"
