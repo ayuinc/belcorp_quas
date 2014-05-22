@@ -71,7 +71,7 @@ class Authlms
         if ($error) {
           die("client construction error: {$error}\n");
         }
-        $param = array('username' => 'peppinedo');
+        $param = array('username' => 'herman.marin');
         //perform a function call without parameters:
         $answer = $client->call('login_usuario', array($param));
         //check if there were any call errors, and if so stop execution with some error messages:
