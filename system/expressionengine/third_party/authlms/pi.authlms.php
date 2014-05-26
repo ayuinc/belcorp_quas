@@ -84,7 +84,8 @@ class Authlms
           print_r($client->getDebug());
           die();
         }
-        $url='http://54.243.186.233/moodle/auth/belcorpws/client/client.php?usuario='.$username.'&token='.$answer.'&curso='.$id_curse;
+        //$url='http://54.243.186.233/moodle/auth/belcorpws/client/client.php?usuario='.$username.'&token='.$answer.'&curso='.$id_curse;
+        $url='http://54.243.186.233/moodle/auth/belcorpws/client/client.php?usuario='.$username.'&token=43221747&curso='.$id_curse;
         //output the response (in the form of a multidimensional array) from the function call:
         return '{exp:redirecturl url="'.$url.'"}';
         //header('Location: http://54.243.186.233/moodle/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
