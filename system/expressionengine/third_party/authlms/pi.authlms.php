@@ -76,7 +76,7 @@ class Authlms
         }
         $param = array($username);
         //perform a function call without parameters:
-        $answer = $client->call('login_usuario', array($param));
+        $answer = $client->call('login_usuario', $param);
         //check if there were any call errors, and if so stop execution with some error messages:
         $error = $client->getError();
         if ($error) {
