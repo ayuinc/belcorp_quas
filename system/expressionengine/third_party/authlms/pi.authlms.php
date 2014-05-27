@@ -68,7 +68,7 @@ class Authlms
         $username= "pechvillaran";
         $id_curse= ee()->TMPL->fetch_param('id_curse');
         //instantiate the NuSOAP class and define the web service URL:
-        $client = new nusoap_client('http://54.243.186.233/moodle/auth/belcorpws/belcorpws_server.php?wsdl', 'WSDL');
+        $client = new nusoap_client('http://54.243.186.233/moodle/auth/belcorpws/belcorpws_server.php', 'WSDL');
         //check if there were any instantiation errors, and if so stop execution with an error message:
         $error = $client->getError();
         if ($error) {
