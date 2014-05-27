@@ -1,5 +1,7 @@
 {embed="includes/header" titulo="Destacados"}
 
+{if logged_in}
+
     <div class="off-canvas-wrap">
       <div class="inner-wrap">
       
@@ -103,13 +105,13 @@
 			     			</div>
 			     			<div class="small-12 medium-12 large-12 columns">
 			     				<div class="los-mas-populares">
-			     					<h4>ALGUNOS DE NUESTROS CURSOS</h4>
+			     					<h4>PLAN DE DESARROLLO</h4>
 			     					<ul>
-			     						{exp:low_reorder:entries set="3" limit="3"}
+			     						{exp:low_reorder:entries set="4" limit="3"}
 			     						<li><a href="{site_url}catalogo/curso/{url_title}"  onClick="_gaq.push(['_trackEvent', 'Curso', 'Entrar-Destacados', '{title}']);">{title}</a></li>
 			     						{/exp:low_reorder:entries}
 			     					</ul>
-			     					<a href="{site_url}catalogo/temas" onClick="_gaq.push(['_trackEvent', 'Catalogo', 'Entrar-Destacados', 'visita-el-catalogo']);">VISITA NUESTRO CATÁLOGO →</a>
+			     					<a href="{site_url}catalogo/liderazgo-cultura" onClick="_gaq.push(['_trackEvent', 'Catalogo', 'Entrar-Destacados', 'visita-el-catalogo']);">VER TODO EL PLAN DE DESARROLLO →</a>
 			     				</div>
 			     			</div>
 			     		</div>
@@ -174,5 +176,13 @@
          </div>
 		   
 		</section>
+		
+{if:else}		
+	<div class="row destacados-highlight">
+		<div class="small-12 medium-12 large-12 columns">	
+		<h3 class="text-center">Necesita ingresar al sistema. <a href="{site_url}">Regresar al inicio</a></h3>
+		</div>
+	</div>
+{/if}		
 
 {embed="includes/footer-interno_new"}
