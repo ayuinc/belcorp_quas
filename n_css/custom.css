@@ -1,0 +1,207 @@
+/*COLORES*/
+/*TIPOGRAFIA*/
+@font-face {
+  font-family: 'icomoon';
+  src: url("../n_fonts/icomoon.eot?c28mxt");
+  src: url("../n_fonts/icomoon.eot?#iefixc28mxt") format("embedded-opentype"), url("../n_fonts/icomoon.woff?c28mxt") format("woff"), url("../n_fonts/icomoon.ttf?c28mxt") format("truetype"), url("../n_fonts/icomoon.svg?c28mxt#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-paste:before {
+  content: "\e600"; }
+
+.icon-tag:before {
+  content: "\e601"; }
+
+.icon-coin:before {
+  content: "\e605"; }
+
+.icon-user:before {
+  content: "\e608"; }
+
+.icon-users:before {
+  content: "\e606"; }
+
+.icon-key:before {
+  content: "\e609"; }
+
+.icon-shield:before {
+  content: "\e60a"; }
+
+.icon-mail:before {
+  content: "\e604"; }
+
+.icon-graduation:before {
+  content: "\e607"; }
+
+.icon-screen:before {
+  content: "\e60b"; }
+
+.icon-light-bulb:before {
+  content: "\e60c"; }
+
+.icon-question:before {
+  content: "\e60d"; }
+
+.icon-twitter:before {
+  content: "\e602"; }
+
+.icon-facebook:before {
+  content: "\e603"; }
+
+.clearfix {
+  padding: 0;
+  margin: 0; }
+
+.bg-gris {
+  background-color: #eaeef1; }
+
+/*SECCIONES EN EL OFFCANVAS*/
+.move-right .exit-off-canvas {
+  -webkit-backface-visibility: hidden;
+  transition: background 300ms ease;
+  cursor: pointer;
+  box-shadow: none;
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 0);
+  top: 0;
+  bottom: 0;
+  left: 4rem;
+  right: 0;
+  z-index: 1002;
+  -webkit-tap-highlight-color: none; }
+  .move-right .exit-off-canvas:hover {
+    background: rgba(0, 0, 0, 0); }
+
+.main-section {
+  min-height: 40rem;
+  position: relative;
+  left: 4rem; }
+
+.tab-bar {
+  left: 4rem; }
+
+.left-off-canvas-menu {
+  width: 19.625rem; }
+
+ul.off-canvas-list li label {
+  border-top: none; }
+
+/*END.SECCIONES EN EL OFFCANVAS*/
+.icono {
+  background-color: #5a277d; }
+  .icono .icon-user, .icono .icon-key {
+    color: #a679b2;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    min-height: 3rem;
+    max-height: 3rem; }
+
+.login-formulario {
+  min-height: 41rem;
+  background-color: #eaeef1; }
+  .login-formulario .panel {
+    background-color: transparent;
+    border: none;
+    padding: 3rem; }
+  .login-formulario img {
+    margin: 5rem 0; }
+  .login-formulario h1 {
+    font-weight: 100;
+    color: white;
+    margin-top: 18rem;
+    font-size: 2rem; }
+  .login-formulario p {
+    color: #5a277d;
+    font-weight: 100; }
+  .login-formulario .button.expand {
+    background-color: #5a277d;
+    font-weight: 100;
+    color: white; }
+    .login-formulario .button.expand:hover {
+      background-color: #481f66; }
+  .login-formulario input {
+    box-shadow: none;
+    border: none;
+    padding: 1.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 100;
+    color: #5a277d;
+    -moz-box-shadow: 0 0 5px #ccc;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #ccc; }
+  .login-formulario .bg-morado {
+    background-color: #5a277d;
+    height: 41rem; }
+
+.menu {
+  background-color: #5a277d;
+  left: 4rem; }
+  .menu .row {
+    background-color: none;
+    padding: 0; }
+  .menu .logo {
+    background-color: white; }
+    .menu .logo img {
+      padding: 0.5rem 0; }
+    .menu .logo .large {
+      position: relative;
+      top: 0;
+      left: 1rem; }
+    .menu .logo .small {
+      position: relative;
+      top: 0.2rem;
+      left: 1.2rem; }
+  .menu ul li {
+    font-weight: 100;
+    color: #a679b2;
+    border-bottom: 1px solid #5f4566; }
+    .menu ul li a {
+      padding: 0.35rem 0;
+      color: #a679b2;
+      font-size: 0.9rem;
+      border-bottom: none;
+      -webkit-transition: 300ms;
+      /* For Safari 3.1 to 6.0 */
+      transition: 300ms; }
+      .menu ul li a:hover {
+        background-color: #5a277d;
+        color: white; }
+      .menu ul li a [class^="icon-"], .menu ul li a [class*=" icon-"] {
+        float: left;
+        margin: -0.4rem 0.8rem 0 0.4rem;
+        font-size: 1.1rem;
+        cursor: pointer; }
+    .menu ul li [class^="icon-"], .menu ul li [class*=" icon-"] {
+      position: relative;
+      top: 0.5rem;
+      left: -0.3rem;
+      -webkit-transition: 300ms;
+      /* For Safari 3.1 to 6.0 */
+      transition: 300ms;
+      font-size: 1.1rem; }
+      .menu ul li [class^="icon-"]:hover, .menu ul li [class*=" icon-"]:hover {
+        background-color: #5a277d;
+        color: white;
+        cursor: pointer; }
+    .menu ul li label {
+      background-color: #5a277d;
+      color: #a679b2;
+      font-size: 1.1rem;
+      font-weight: 100;
+      padding-top: 2rem; }
+    .menu ul li:first-child {
+      border-bottom: 1px solid #a679b2; }
