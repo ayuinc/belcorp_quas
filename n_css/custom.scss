@@ -1,271 +1,88 @@
-/*COLORES*/
-$morado: #5a277d;
-$morado-hover: #481F66;
-$morado-claro: #A679B2;
-$morado-lista: #5F4566;
-$girs: #596c79;
-$gris-claro: #909DA8;
-$gris-background: #EAEEF1;
-$blanco: #FFF;
+// Bourbon sass tools
+@import "bourbon/bourbon";
 
-/*TIPOGRAFIA*/
-$light: 100;
-$medium: 300;
-$strong: 500;
+// Normalize 
+@import "normalize";
 
+// Foundation by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
 
+// Make sure the charset is set appropriately
+@charset "UTF-8";
 
-@font-face {
-	font-family: 'icomoon';
-	src:url('../n_fonts/icomoon.eot?c28mxt');
-	src:url('../n_fonts/icomoon.eot?#iefixc28mxt') format('embedded-opentype'),
-		url('../n_fonts/icomoon.woff?c28mxt') format('woff'),
-		url('../n_fonts/icomoon.ttf?c28mxt') format('truetype'),
-		url('../n_fonts/icomoon.svg?c28mxt#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
+// Behold, here are all the Foundation components.
+@import
+	"foundation/settings",
+	"foundation/functions",
+  "foundation/components/grid",
+  "foundation/components/accordion",
+  "foundation/components/alert-boxes",
+  "foundation/components/block-grid",
+  "foundation/components/breadcrumbs",
+  "foundation/components/button-groups",
+  "foundation/components/buttons",
+  "foundation/components/clearing",
+  "foundation/components/dropdown",
+  "foundation/components/dropdown-buttons",
+  "foundation/components/flex-video",
+  "foundation/components/forms",
+  "foundation/components/inline-lists",
+  "foundation/components/joyride",
+  "foundation/components/keystrokes",
+  "foundation/components/labels",
+  "foundation/components/magellan",
+  "foundation/components/orbit",
+  "foundation/components/pagination",
+  "foundation/components/panels",
+  "foundation/components/pricing-tables",
+  "foundation/components/progress-bars",
+  "foundation/components/range-slider",
+  "foundation/components/reveal",
+  "foundation/components/side-nav",
+  "foundation/components/split-buttons",
+  "foundation/components/sub-nav",
+  "foundation/components/switch",
+  "foundation/components/tables",
+  "foundation/components/tabs",
+  "foundation/components/thumbs",
+  "foundation/components/tooltips",
+  "foundation/components/top-bar",
+  "foundation/components/type",
+  "foundation/components/offcanvas",
+  "foundation/components/visibility";
 
-[class^="icon-"], [class*=" icon-"] {
-	font-family: 'icomoon';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.icon-paste:before {
-	content: "\e600";
-}
-.icon-tag:before {
-	content: "\e601";
-}
-.icon-coin:before {
-	content: "\e605";
-}
-.icon-user:before {
-	content: "\e608";
-}
-.icon-users:before {
-	content: "\e606";
-}
-.icon-key:before {
-	content: "\e609";
-}
-.icon-shield:before {
-	content: "\e60a";
-}
-.icon-mail:before {
-	content: "\e604";
-}
-.icon-graduation:before {
-	content: "\e607";
-}
-.icon-screen:before {
-	content: "\e60b";
-}
-.icon-light-bulb:before {
-	content: "\e60c";
-}
-.icon-question:before {
-	content: "\e60d";
-}
-.icon-twitter:before {
-	content: "\e602";
-}
-.icon-facebook:before {
-	content: "\e603";
-}
+// APP Custom
+@import 
+	"app/utilities-custom",
+	"app/type-custom",
+	"app/icons",
+	"app/app";
 
 
 
-.clearfix {
-	padding:0;
-	margin:0;
-}
-
-.bg-gris {
-	background-color: $gris-background;
-}
-
-/*SECCIONES EN EL OFFCANVAS*/
-
-.move-right .exit-off-canvas {
-	-webkit-backface-visibility: hidden;
-	transition: background 300ms ease;
-	cursor: pointer;
-	box-shadow: none;
-	display: block;
-	position: absolute;
-	background: rgba(255, 255, 255, 0);
-	top: 0;
-	bottom: 0;
-	left: 4rem;
-	right: 0;
-	z-index: 1002;
-	-webkit-tap-highlight-color: none;
-	&:hover {
-		background: rgba(0, 0, 0, 0);
-	}
-}
-
-.main-section {
-	min-height: 40rem;
-	position: relative;
-	left: 4rem;
-}
-
-.tab-bar {
-	left:4rem;
-}
-
-.left-off-canvas-menu {
-	width: 19.625rem;
-}
-
-ul.off-canvas-list li label {
-	border-top:none;
-}
-
-/*END.SECCIONES EN EL OFFCANVAS*/
-
-.icono {
-	background-color: $morado;
-	.icon-user, .icon-key {
-		color: $morado-claro;
-		font-size: 2rem;
-		padding: 0.5rem 1rem;;
-		min-height: 3rem;
-		max-height: 3rem;
-	}
-}
 
 
-.login-formulario {
-	min-height:41rem;
-	background-color: $gris-background;
-	.panel {
-		background-color: transparent;
-		border: none;
-		padding:3rem;
-	}
-	img {
-		margin:5rem 0;
-	}
-	h1 {
-		font-weight: $light;
-		color:$blanco;
-		margin-top: 18rem;
-		font-size: 2rem;
-	}
-	p {
-		color:$morado;
-		font-weight: $light;
-	}
-	.button.expand {
-		background-color: $morado;
-		font-weight: $light;
-		color: $blanco;
-		&:hover {
-			background-color: $morado-hover;
-		}
-	}
-	input {
-		box-shadow: none;
-		border: none;
-		padding:1.5rem 1rem;
-		font-size: 1rem;
-		font-weight: $light;
-		color: $morado;
-		-moz-box-shadow: 0 0 5px #ccc;
-		-webkit-box-shadow: 0 0 5px #ccc;
-		box-shadow: 0 0 5px #ccc;		
-	}
-	.bg-morado {
-		background-color: $morado;
-		height:41rem;
-	}	
-}
 
 
-.menu {
-	background-color: $morado;
-	left:4rem;
-	.row {
-		background-color: none;
-		padding:0;
-	}
-	.logo {
-		background-color: $blanco;
-		img {
-			padding: 0.5rem 0;			
-		}
-		.large {
-			position:relative;
-			top:0;
-			left:1rem;
-		}	
-		.small {
-			position:relative;
-			top:0.2rem;
-			left:1.2rem;
-		}		
-	}
-	ul {
-		li {
-			font-weight: $light;
-			color: $morado-claro;
-			border-bottom: 1px solid $morado-lista;
-			a {
-				padding:0.35rem 0;
-				color:$morado-claro;
-				font-size:0.9rem;
-				border-bottom:none;
-				-webkit-transition: 300ms; /* For Safari 3.1 to 6.0 */
-				transition: 300ms;
-				&:hover {
-					background-color: $morado;
-					color:$blanco;
-				}
-				[class^="icon-"], [class*=" icon-"]  {
-					float:left;
-					margin: -0.4rem 0.8rem 0 0.4rem;
-					font-size: 1.1rem;
-					cursor: pointer;
-				}
-			}
-			[class^="icon-"], [class*=" icon-"]  {
-				position: relative;
-				top: 0.5rem;
-				left: -0.3rem;
-				-webkit-transition: 300ms; /* For Safari 3.1 to 6.0 */
-				transition: 300ms;	
-				font-size: 1.1rem;			
-				&:hover {
-					background-color: $morado;
-					color:$blanco;	
-					cursor: pointer;
-				}
-			}		
-				
-			label {
-				background-color: $morado;
-				color: $morado-claro;
-				font-size: 1.1rem;
-				font-weight: $light;
-				padding-top:2rem;
-			}
-			&:first-child {
-				border-bottom: 1px solid $morado-claro;
-			}
-		}
-	}
-}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
