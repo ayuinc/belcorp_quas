@@ -193,53 +193,36 @@ ul.off-canvas-list li label {
 }	
 
 // N_WALL.html
-.destacados-modulos {
-	margin-top:2rem !important;
-	.destacados-mod-contenido {
-		background-color: $gris-background;
-		margin-top:-3px;
-		margin-bottom:2rem;
-		padding:1rem;
-		min-height:15.8rem;
-		-webkit-transition-duration: 0.2s;
-		-moz-transition-duration: 0.2s;
-		-o-transition-duration: 0.2s;
-		transition-duration: 0.2s;	
-		h5 {
-			margin-top:1rem;
-			margin-bottom: 0rem;
-			line-height: 115%;
-			font-size: 1rem;
-			font-weight: 300;
-			text-transform: uppercase;
-			color: $morado;
-		}
-		h6 {
-			font-weight: 100;
-			color: #596c79;
-			font-size: 0.9rem;
-			margin-top: 0.3rem;
-			letter-spacing: 0.02rem;
-			line-height: 125%;
-		}
-		&:hover {
-			background-color: #F7f7f7;
+.grid-panels {
+	a.link-wrapper {
+		display: block;
+	}
+	.panel-heading {		
+		img {
+			width: 100%;
+			height: auto;
+		}	
+	}
+	.panel-body {
+		background: $gray-lighter;
+		position: relative;
+		padding: 14px;
+		padding: rem(14);
+		.panel-badge {
+			position: absolute;
+			top: -34px;
+			left: 0;
+			display: block;
+			padding: 3px 7px;
+			background: $primary-color;
 		}
 	}
-}
-
-.destados-tipo {
-	background-color: #A679B2;
-	padding:0.5rem 0.8rem;
-	width:auto;
-	position:absolute;
-	top:-1.2rem;
-	left:2rem;
-	font-size: 0.7rem;
-	color:#FFF;
-	text-transform: uppercase;
-	font-weight: 300;
-	letter-spacing: 0.02rem;
+	h5 {
+		@include light;
+	}
+	h6 {
+		@include thin;
+	}
 }
 
 	// N_WALL Heading Block

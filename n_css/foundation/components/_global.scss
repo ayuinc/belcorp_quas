@@ -231,7 +231,7 @@ $font-weight-bold: bold !default;
 // We use these to control various global styles
 $body-bg: #fff !default;
 $body-font-color: #222 !default;
-$body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
+$body-font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $body-font-weight: $font-weight-normal !default;
 $body-font-style: normal !default;
 
@@ -250,12 +250,19 @@ $opposite-direction: right !default;
   $opposite-direction: left;
 }
 // We use these as default colors throughout
-$primary-color: #008CBA !default;
+$primary-color: #5a277d !default;
 $secondary-color: #e7e7e7 !default;
 $alert-color: #f04124 !default;
 $success-color: #43AC6A !default;
 $warning-color: #f08a24 !default;
 $info-color: #a0d3e8 !default;
+
+// Grayscale
+$gray-darker:            lighten(#313233, 0%) !default; // #222
+$gray-dark:              lighten(#313233, 21%) !default;   // #333
+$gray:                   lighten(#313233, 35%) !default; // #555
+$gray-light:             lighten(#313233, 63%) !default;   // #999
+$gray-lighter:           lighten(#313233, 84%) !default; // #eee
 
 // We use these to make sure border radius matches unless we want it different.
 $global-radius: 3px !default;

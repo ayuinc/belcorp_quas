@@ -43,7 +43,7 @@
 // We use these to control various global styles
 // $body-bg: #fff;
 // $body-font-color: #222;
-$body-font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+// $body-font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
 
@@ -63,12 +63,6 @@ $body-font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
 
-// Grayscale
-$gray-darker:            lighten(#000, 0%) !default; // #222
-$gray-dark:              lighten(#000, 21%) !default;   // #333
-$gray:                   lighten(#000, 35%) !default; // #555
-$gray-light:             lighten(#000, 63%) !default;   // #999
-$gray-lighter:           lighten(#000, 84%) !default; // #eee
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
