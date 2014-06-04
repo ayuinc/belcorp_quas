@@ -1,0 +1,158 @@
+       
+   {embed="includes/menu_new"}
+    
+    <script src="{site_url}js/jquery.js"></script>
+    <script src="{site_url}js/expanding.js"></script>
+    <script src="{site_url}js/foundation.min.js"></script>
+    <script src="{site_url}js/foundation/foundation.orbit.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+     
+     
+    
+    <script>
+    $(document).ready(function(){
+
+	/*ACTIVACION VER MAS INFINITE SCROLLING*/ 	
+	  //$("#school_panel").slideUp();
+
+      $("#school_panel dd a").on("click", function(){
+        $("#school_panel dd a").removeClass("selected");
+        $(this).addClass("selected");
+        var redireccion = $(this).attr('href');
+        window.location.replace(redireccion);
+      });
+
+
+      $("#school_panel_trigger").on("click", function () {
+        if($("#school_panel").hasClass("activex")){
+          $("#school_panel").slideUp();
+          $("#school_panel").removeClass("activex");
+          $("#menu_arrow").css('-webkit-transform','rotate(0deg)'); 
+        }
+        else {
+          $("#school_panel").slideDown();
+          $("#school_panel").addClass("activex");
+          $("#menu_arrow").css('-webkit-transform','rotate(180deg)'); 
+        }
+      });
+      
+      
+      $("#school_panel_1 dd a").on("click", function(){
+        $("#school_panel_1 dd a").removeClass("selected");
+        $(this).addClass("selected");
+        var redireccion = $(this).attr('href');
+        window.location.replace(redireccion);
+      });
+
+
+      $("#school_panel_trigger_1").on("click", function () {
+        if($("#school_panel_1").hasClass("activex")){
+          $("#school_panel_1").slideUp();
+          $("#school_panel_1").removeClass("activex");
+          $("#menu_arrow_1").css('-webkit-transform','rotate(0deg)'); 
+        }
+        else {
+          $("#school_panel_1").slideDown();
+          $("#school_panel_1").addClass("activex");
+          $("#menu_arrow_1").css('-webkit-transform','rotate(180deg)'); 
+        }
+      });      
+      
+      
+      /*ACTIVA LOS ACORDIONES EN LOS CURSOS DEL SYLABUS*/
+      $("#lesson_panel_trigger_1").on("click", function () {
+        if($("#lesson_panel_1").hasClass("activex")){
+          $("#lesson_panel_1").slideUp();
+          $("#lesson_panel_1").removeClass("activex");
+          $("#menu_arrow_1").css('-webkit-transform','rotate(180deg)'); 
+        }
+        else {
+          $("#lesson_panel_1").slideDown();
+          $("#lesson_panel_1").addClass("activex");
+          $("#menu_arrow_1").css('-webkit-transform','rotate(0deg)'); 
+        }
+      });
+      
+      $("#lesson_panel_trigger_2").on("click", function () {
+        if($("#lesson_panel_2").hasClass("activex")){
+          $("#lesson_panel_2").slideUp();
+          $("#lesson_panel_2").removeClass("activex");
+          $("#menu_arrow_2").css('-webkit-transform','rotate(180deg)'); 
+        }
+        else {
+          $("#lesson_panel_2").slideDown();
+          $("#lesson_panel_2").addClass("activex");
+          $("#menu_arrow_2").css('-webkit-transform','rotate(0deg)'); 
+        }
+      });
+      
+      $("#lesson_panel_trigger_3").on("click", function () {
+        if($("#lesson_panel_3").hasClass("activex")){
+          $("#lesson_panel_3").slideUp();
+          $("#lesson_panel_3").removeClass("activex");
+          $("#menu_arrow_3").css('-webkit-transform','rotate(180deg)'); 
+        }
+        else {
+          $("#lesson_panel_3").slideDown();
+          $("#lesson_panel_3").addClass("activex");
+          $("#menu_arrow_3").css('-webkit-transform','rotate(0deg)'); 
+        }
+      });  
+      
+      $("#lesson_panel_trigger_4").on("click", function () {
+        if($("#lesson_panel_4").hasClass("activex")){
+          $("#lesson_panel_4").slideUp();
+          $("#lesson_panel_4").removeClass("activex");
+          $("#menu_arrow_4").css('-webkit-transform','rotate(180deg)'); 
+        }
+        else {
+          $("#lesson_panel_4").slideDown();
+          $("#lesson_panel_4").addClass("activex");
+          $("#menu_arrow_4").css('-webkit-transform','rotate(0deg)'); 
+        }
+      }); 
+      
+      $("#lesson_panel_trigger_5").on("click", function () {
+        if($("#lesson_panel_5").hasClass("activex")){
+          $("#lesson_panel_5").slideUp();
+          $("#lesson_panel_5").removeClass("activex");
+          $("#menu_arrow_5").css('-webkit-transform','rotate(180deg)'); 
+        }
+        else {
+          $("#lesson_panel_5").slideDown();
+          $("#lesson_panel_5").addClass("activex");
+          $("#menu_arrow_5").css('-webkit-transform','rotate(0deg)'); 
+        }
+      });                        
+      
+      
+      /*DETECTA EL URL DE LA LECCION*/
+      $("#lesson_panel dd a").on("click", function(){
+        //var redireccionaurl = $(this).attr('href');
+		//window.location.replace(redireccionaurl);
+      }); 
+
+    });
+	</script>
+
+
+	<!--Analytics-->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39228167-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; 
+
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+
+    
+  </body>
+</html>
+       

@@ -1,0 +1,132 @@
+{embed="includes/header"  titulo="Resultados de la Busqueda"}
+
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+        <div id="courses_menu" class="hide-for-medium-up">
+          <div class="row">
+            <div class="large-12 columns">
+              <a class="left-off-canvas-toggle" ><span class="icon-list"></span></a>
+              <h3 id="menu_title">RESULTADOS DE LA BUSQUEDA</h3>
+            </div>
+          </div>
+        </div>
+
+	{embed="includes/menu_new"}
+
+    <section id="courses">
+      
+      <div class="hide-for-small heading-pocket">
+        <div class="row">
+          <div class="large-12 total_padding columns">
+            
+            {embed="includes/menu-escuelas"}
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="total_padding medium-12 large-12 columns">  
+
+        <div id="contact_content" class="row">
+          <div class="large-9 columns">
+
+          <div class="row">
+            <div class="large-12 columns">
+              <div id="contacto_header" style="background: url('http://54.83.45.138/images/imagenes-paginas/81/contactanos__large.jpg') no-repeat; background-size: cover;background-position: center center;">
+                <div class="overlay"></div>
+                <div class="row">
+		          <div class="medium-12 large-1 columns"> 
+			          <div class="row link-regresar">
+			          	<div class="large-1 columns">
+			          		<div class="icon-arrow-left2"></div>
+			          	</div>
+			          	<div class="large-3 columns clearfix">
+			          		<a href="javascript: history.go(-1)"> Regresar</a>
+			          	</div>
+			          </div>  
+		          </div>
+                  <div class="medium-12 large-12 columns">  
+                    <h3>RESULTADOS DE LA BUSQUEDA</h3>
+                    <h5>Encontramos {exp:search:total_results} {total_results} {/exp:search:total_results} resultado(s) para la(s) palabra(s) {exp:search:keywords}.</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="contact_form">
+
+				{exp:search:search_results}
+				
+
+				                  <div class="row resultado-busqueda">
+				                    <div class="medium-12 large-12 columns">  
+				                            {if channel=='Contenidos'}
+				                              <small>{tipo-contenido-recurso}</small>
+				                            {if:else}
+				                          	  <small>CURSO</small>
+				                            {/if}
+										<h5>
+											{if channel=='Cursos'}
+				                        		<a href="{site_url}catalogo/curso/{url_title}">
+				                        	{/if}
+				                        	{if channel=='Contenidos'}
+				                        		<a href="{link-recurso}" target="_blank">
+				                        	{/if}
+				                        		{title}
+				                        	</a>
+				                        </h5>
+				                        
+				                      {if subtitulo-recurso}
+				                      <h6>{subtitulo-recurso}</h6>
+				                      {/if}
+				                      
+				                      {if descripcion-curso}
+				                      <p>{descripcion-curso}</p>
+				                      {/if}
+				                      
+				                      {if descripcion-recurso}
+				                      <p>{descripcion-recurso}</p>
+				                      {/if}  
+				                      
+				                                           
+	
+				                      {if channel=='Cursos'}
+				                      		<span><a href="{site_url}catalogo/curso/{url_title}">Ver Más »</a></span>
+				                      {/if}
+				                      {if channel=='Contenidos'}
+				                      		<span><a href="{link-recurso}" target="_blank">Ver Más »</a></span>
+				                      {/if}
+
+				
+									  {paginate}
+									  	<p>Page {current_page} of {total_pages} pages {pagination_links}</p>
+									  {/paginate}
+				    
+				                        </div>
+				                  </div>
+				
+				{/exp:search:search_results}             
+
+              </div>
+            </div>
+          </div>
+
+		</div>
+
+          <div class="large-3 columns hide-for-small hide-for-medium fixed_menu right_padding">
+			  {embed="includes/buscar"}
+              {embed="includes/links-de-interes"}
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+{embed="includes/footer-interno_new"}

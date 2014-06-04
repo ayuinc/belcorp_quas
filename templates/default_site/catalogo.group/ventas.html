@@ -1,0 +1,198 @@
+{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination"}
+{embed="includes/header" titulo="Escuela de Ventas"}
+
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+      
+        <div id="courses_menu" class="hide-for-medium-up">
+          <div class="row">
+            
+            <div class="large-12 columns">
+              <h3 id="menu_title" class="menu_title_catalogo">{title}</h3>
+            </div>
+            
+            <!--Solo para Moviles-->
+            <div class="small-12 columns">
+				<a href="#" data-dropdown="drop1" class="button dropdown expand">Escuelas</a><br>
+				<ul id="drop1" data-dropdown-content class="f-dropdown">
+				  <li><a href="{site_url}catalogo/ventas">Escuela de Ventas</a></li>
+				  <li><a href="{site_url}catalogo/negocios">Escuela de Negocios</a></li>
+				  <li><a href="{site_url}catalogo/liderazgo-cultura">Escuela de Liderazgo y Cultura</a></li>
+				  <li><a href="{site_url}catalogo/innovacion">Escuela de Innovación</a></li>
+				</ul>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div> 
+{/exp:channel:entries}
+
+		{embed="includes/menu_new"}
+
+
+
+		<!-- Solo para Moviles-->
+        <section id="courses">
+          <div class="hide-for-small heading-pocket">
+            <div class="row">
+              <div class="large-12 total_padding columns">
+                
+                {embed="includes/menu-escuelas"}
+                
+              </div>
+            </div>
+          </div>
+          
+          
+          
+          <div class="row">
+            <div class="total_padding medium-12 large-12 columns">
+              <div id="catalogo_content" class="row">
+              
+                <div class="large-9 columns">
+                  
+                  
+                 {embed="includes/escuelas-slider" seccion="199"}
+                 
+                 
+                 {if segment_3=='summa'}
+                 	{embed="includes/descripcion-summa"}
+                 {/if}
+
+
+                 <div class="row">
+                  	{if segment_3!=''}
+                  	
+                  	{exp:channel:entries 
+                  		channel="cursos|tendencias" 
+                  		limit="20" 
+                  		paginate_base="catalogo/index" 
+                  		paginate=“bottom” 
+                  		category="{segment_3_category_id}{if segment_4}&{segment_4_category_id}{/if}"
+                  	}    
+                  	{/if}
+                  	
+                  	{if segment_3==''}
+                  	
+                  	{exp:channel:entries 
+                  		channel="cursos|tendencias" 
+                  		limit="20" 
+                  		paginate_base="catalogo/index" 
+                  		paginate=“bottom” 
+                  		category="111{if segment_3}|{segment_3_category_id}{/if}"
+            
+                  	}                      	              
+				  	{/if}             
+
+	                    <div class="medium-12 large-6 columns">
+	                      {if channel=='Cursos'}
+	                      	<a href="{site_url}catalogo/curso/{url_title}" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Ventas', '{title}']);">
+					      {/if}
+					      
+					      {if channel=="Contenidos"}
+		                      {if interna-contenido=="Pagina Interna"}
+		                        <a href="{site_url}contenidos/curso/{url_title}" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Ventas', '{title}']);">
+		                      {if:else}
+		                        <a href="{link-recurso}" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Ventas', '{title}-LINKEXTERNO']);">
+		                      {/if}
+					      {/if}
+					      
+							  
+	                        <div class="course ventas-temas">
+	                          <h5>
+	                          {if tipo-contenido-recurso}
+	                            <span>{tipo-contenido-recurso}</span><br>
+	                          {if:else}
+	                          	<span>CURSO</span><br>
+	                          {/if}
+	                          {title}</h5>
+	                          {if subttulo-curso}
+                              <h6>{subttulo-curso}</h6>
+                              {/if}
+                              {if fuente-recurso}
+                              	<h6>{fuente-recurso}</h6>
+                              {/if}
+	                          <p>{descripcion-curso}</p>
+	                          <div class="school">
+								  <span>Ver Más »</span>
+						      </div>
+	                        </div>
+	                      </a>
+	                    </div>
+
+  			              {paginate}  
+  			              	{pagination_links}
+  			              	<div class="medium-12 large-12 columns">
+	  							 <div class="row">
+	  				                <div class="large-12 large-centered columns vermas">
+	  				                  <div class="more">                      
+	  				                    <div class="text-center">
+	  				                      {next_page}
+	  				                      <a id="more_icon" href="{pagination_url}">
+	                                </a>
+	  				                      {/next_page}
+	  				                    </div>
+	  				                  </div>
+	  				                </div>
+	                            </div>
+                            </div>
+                        {/pagination_links}   
+                      {/paginate} 
+                      
+                    {/exp:channel:entries}
+                 </div>				 
+
+
+                  
+                </div>
+                
+                <div class="large-3 columns hide-for-small hide-for-medium right_padding">
+		            
+		            {embed="includes/buscar"}
+		            <div class="row" style="margin-top:1.25rem;">
+		            	<div class="large-12 columns">
+		            		<a href="{site_url}escueladeventas" id="start_course" class="explore button expand" onClick="_gaq.push(['_trackEvent', 'Herramientas de Certificacion', 'Documento', '{title}']);">Herramienta de certificación</a>   
+		            		  	
+		            	</div>
+		            </div>
+	                
+	                {embed="includes/categorias-ventas"}
+	                {embed="includes/links-de-interes"}
+                
+                </div>
+              
+              </div>
+            </div>
+          </div>
+		   
+		</section>
+
+		{embed="includes/footer-interno_new"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+

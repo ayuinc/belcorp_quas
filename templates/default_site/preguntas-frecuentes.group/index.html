@@ -1,0 +1,115 @@
+{exp:channel:entries channel="secciones" limit="1" disable="member_data|pagination|categories" entry_id="278"}
+{embed="includes/header"  titulo="{title}"}
+
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+        <div id="courses_menu" class="hide-for-medium-up">
+          <div class="row">
+            <div class="large-12 columns">
+              <a class="left-off-canvas-toggle" ><span class="icon-list"></span></a>
+              <h3 id="menu_title">{title}</h3>
+            </div>
+          </div>
+        </div>
+
+	{embed="includes/menu_new"}
+
+    <section id="courses">
+      
+      <div class="hide-for-small heading-pocket">
+        <div class="row">
+          <div class="large-12 total_padding columns">
+            
+            {embed="includes/menu-escuelas"}
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="total_padding medium-12 large-12 columns">  
+
+        <div id="contact_content" class="row">
+          <div class="large-9 columns">
+
+          <div class="row">
+            <div class="large-12 columns">
+              {imagenes-seccion}
+              <div id="contacto_header" style="background: url('{image:url}') no-repeat; background-size: cover;background-position: center center;">
+              {/imagenes-seccion}
+                <div class="overlay"></div>
+                <div class="row">
+<!--                   <div class="show-for-large-up large-1 columns">
+                    <span class="icon-mail"></span>
+                  </div> -->
+		          <div class="medium-12 large-1 columns"> 
+			          <div class="row link-regresar">
+			          	<div class="large-1 columns">
+			          		<div class="icon-arrow-left2"></div>
+			          	</div>
+			          	<div class="large-3 columns clearfix">
+			          		<a href="javascript: history.go(-1)"> Regresar</a>
+			          	</div>
+			          </div>  
+		          </div>
+                  <div class="medium-12 large-12 columns">                  
+                    <h3>{title}</h3>
+                    <h5>{texto-descriptivo-seccion}</h5>
+                  </div>
+<!--                   <div class="hide-for-small medium-2 large-2 columns">
+                    <div class="text-center">
+                      <h3 id="comment_number">30</h3>
+                      <span>COMENTARIOS</span>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+{/exp:channel:entries}
+
+          <div class="row">
+            <div class="large-12 columns">
+            	<div class="preguntas-frecuentes">
+				{exp:channel:entries channel="preguntas-frecuentes" limit="10" disable="member_data" category="{segment_2}" dynamic="off" }
+				<div class="row">
+					<div class="medium-12 large-12 columns">
+						<h4>{title}</h4>
+						<p>{respuesta-pregunta}</p>
+					</div>	
+				</div>
+
+  			              {paginate}  
+  			              	{pagination_links}
+  			              	<div class="medium-12 large-12 columns">
+	  							 <div class="row">
+	  				                <div class="large-12 large-centered columns vermas">
+	  				                  <div class="more">                      
+	  				                    <div class="text-center">
+	  				                      {next_page}
+	  				                      <a id="more_icon" href="{pagination_url}"></a>
+	  				                      {/next_page}
+	  				                    </div>
+	  				                  </div>
+	  				                </div>
+	                            </div>
+                            </div>
+                        {/pagination_links}   
+                      {/paginate} 				
+				
+				{/exp:channel:entries}
+            	</div>
+            </div>
+          </div>
+
+</div>
+
+          {embed="includes/sidebar_new"}
+
+        </div>
+      </div>
+
+    </section>
+
+{embed="includes/footer-interno_new"}

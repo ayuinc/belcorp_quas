@@ -1,0 +1,149 @@
+{exp:channel:entries channel="secciones" limit="1" disable="member_data|pagination|categories" entry_id="83"}
+{embed="includes/header"  titulo="{title}"}
+
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+        <div id="courses_menu" class="hide-for-medium-up">
+          <div class="row">
+            <div class="large-12 columns">
+              <a class="left-off-canvas-toggle" ><span class="icon-list"></span></a>
+              <h3 id="menu_title">{title}</h3>
+            </div>
+          </div>
+        </div>
+
+	{embed="includes/menu_new"}
+
+    <section id="courses">
+      
+      <div class="hide-for-small heading-pocket">
+        <div class="row">
+          <div class="large-12 total_padding columns">
+            
+            {embed="includes/menu-escuelas"}
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="total_padding medium-12 large-12 columns">  
+
+        <div id="contact_content" class="row">
+          <div class="large-9 columns">
+
+          <div class="row">
+            <div class="large-12 columns">
+              <div id="contacto_header" style="background: url('http://54.83.45.138/images/imagenes-paginas/81/contactanos__large.jpg') no-repeat; background-size: cover;background-position: center center;">
+                <div class="overlay"></div>
+                <div class="row">
+<!--                   <div class="show-for-large-up large-1 columns">
+                    <span class="icon-mail"></span>
+                  </div> -->
+		          <div class="medium-12 large-1 columns"> 
+			          <div class="row link-regresar">
+			          	<div class="large-1 columns">
+			          		<div class="icon-arrow-left2"></div>
+			          	</div>
+			          	<div class="large-3 columns clearfix">
+			          		<a href="javascript: history.go(-1)"> Regresar</a>
+			          	</div>
+			          </div>  
+		          </div>
+                  <div class="medium-12 large-12 columns">    
+                    <h3>{title}</h3>
+                    <h5>{texto-descriptivo-seccion}</h5>
+                  </div>
+<!--                   <div class="hide-for-small medium-2 large-2 columns">
+                    <div class="text-center">
+                      <h3 id="comment_number">30</h3>
+                      <span>COMENTARIOS</span>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+{/exp:channel:entries}
+
+          <div class="row">
+            <div class="large-12 columns">
+
+              <div class="contact_form">
+
+				{exp:freeform:form form_id="2" return="quieres-crear-un-curso/gracias" required="first_name|last_name|email|user_message|titulo_del_curso|descripcion_del_curso|curricula_del_curso" 
+inline_errors="yes" inline_error_return="quieres-crear-un-curso/index" }
+				    
+				    <dl>
+				    		{if freeform:error:first_name OR freeform:error:last_name OR freeform:error:email OR freeform:error:user_message OR freeform:error:titulo_del_curso OR freeform:error:descripcion_del_curso OR freeform:error:curricula_del_curso}
+				    		<dt class="error">ERROR en los siguientes campos. </dt>
+					    		<dd>
+					    			<ul>
+						    		{if freeform:error:first_name}
+									    <li class="error">Nombre: verificar si fue ingresado correctamente</li>
+									{/if}
+						        	{if freeform:error:last_name}
+									    <li class="error">Apellido: verificar si fue ingresado correctamente</li>
+									{/if}
+						        	{if freeform:error:email}
+									    <li class="error">Correo Electrónico: verificar el formato, o si fue ingresado correctamente</li>
+									{/if}
+						        	{if freeform:error:user_message}
+									    <li class="error">Mensaje: verificar si fue ingresado correctamente</li>
+									{/if}	
+						        	{if freeform:error:titulo_del_curso}
+									    <li class="error">Título del Curso: verificar si fue ingresado correctamente</li>
+									{/if}
+						        	{if freeform:error:descripcion_del_curso}
+									    <li class="error">Descripción del Curso: verificar si fue ingresado correctamente</li>
+									{/if}
+						        	{if freeform:error:curricula_del_curso}
+									    <li class="error">Curricula del Curso: verificar si fue ingresado correctamente</li>
+									{/if}	
+					    			</ul>
+								</dd>				    		
+				    		{/if}
+					</dl>
+				    
+				    <dl>
+				    {freeform:all_form_fields}
+				        <dt><label>{freeform:field_label}</label></dt>
+				        <dd>
+				        	{freeform:field_output}																				
+				        </dd>
+				        
+				    {/freeform:all_form_fields}
+				    </dl>
+				    
+				    
+				    
+				    {if freeform:captcha}
+				        <p>Please enter the word you see in the image below:</p>
+				        <p>{freeform:captcha}<br />
+				        <input type="text" name="captcha" style="width:140px;" /></p>
+				    {/if}
+				  <div class="row">
+                    <div class="large-offset-10 large-2 columns"> 
+                    <button class="publish button expand">ENVIAR</button>
+                    </div>
+                  </div>    
+				{/exp:freeform:form}                  
+
+              </div>
+            </div>
+          </div>
+
+</div>
+
+          <div class="large-3 columns hide-for-small hide-for-medium fixed_menu right_padding">
+              {embed="includes/buscar"}
+              {embed="includes/links-de-interes"}
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+{embed="includes/footer-interno_new"}

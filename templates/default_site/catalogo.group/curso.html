@@ -1,0 +1,165 @@
+{exp:channel:entries channel="cursos" limit="1" disable="pagination|member_data"}
+{embed="includes/header" titulo="{title} | Curso"}
+
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+        <div id="courses_menu" class="hide-for-medium-up">
+          <div class="row">
+            <div class="small-2 large-2 columns">
+              <a class="left-off-canvas-toggle" ><span class="icon-list"></span></a>
+	    </div>
+	    <div class="small-10 large-10 columns">
+              <h3 id="menu_title">{title}</h3>
+            </div>
+          </div>
+        </div>
+
+        {embed="includes/menu-offcanvas"}
+
+    <section id="details">
+    
+      <div class="hide-for-small heading-pocket">
+          <div class="hide-for-small heading-pocket">
+            <div class="row">
+              <div class="large-12 total_padding columns">
+                {categories  show_group="1" limit='1'}
+                	{embed="includes/menu-escuelas" nombre-categoria="{category_name}"}
+                {/categories}
+              </div>
+            </div>
+          </div>
+      </div>
+      
+      <div class="row">
+      	<div class="small-12 medium-9 large-9 columns">
+	        
+	        <!--TITULO DEL CURSO-->
+	        <div class="row titulo-curso">
+		        {categories limit="1"}
+		        <div class="small-12 medium-12 large-12 columns {category_url_title}">
+			    {/categories}  
+				        {categories show_group="1"}
+				        <span>Escuela de {category_name}</span>
+				        {/categories}
+				        <h3>{title}</h3>
+		        </div>
+	        </div>
+	        <!--END. TITULO DEL CURSO-->   
+	        
+	        <!--MAIN CONTENT-->
+	        <div class="row contenido-curso">
+	        	<div class="small-12 medium-12 large-12 columns">
+		          
+		          <!--SOLO CELULARES-->
+				  <div class="row hide-for-large">
+					  <div class="large-9 medium-12 small-12 columns">  				
+		                  <a href="{link-curso}" target="_blank" id="start_course" class="explore button expand">COMENZAR</a>
+					  </div>
+				  </div>
+				  <!--END. SOLO CELULARES-->
+		  
+				  <!--SECCION VIDEO-->				
+				  <div class="row">
+				    <div class="large-12 medium-12 small-12 columns clearfix">
+						    	{if proveedor-video-curso=='No Hay Video'}
+						    		{if foto-curso}
+							    		{foto-curso}
+							    			<img src="{image:url:large}" alt="{title}">
+							    		{/foto-curso}
+						    		{/if}
+						    	{/if}                
+		
+			                    {if proveedor-video-curso=='Youtube'}             
+			                      <iframe width="100%" height="500" src="//www.youtube.com/embed/{video-introductorio-curso}" frameborder="0" allowfullscreen></iframe>
+			                    {/if} 
+			            
+			                    {if proveedor-video-curso=='Vimeo'}             
+			                      <iframe width="100%" height="500" src="//www.youtube.com/embed/{video-introductorio-curso}" frameborder="0" allowfullscreen></iframe>
+								{/if}   
+			            
+			                    {if proveedor-video-curso=='Amazon'}             
+			                      <iframe width="100%" height="500" src="//www.youtube.com/embed/{video-introductorio-curso}" frameborder="0" allowfullscreen></iframe>
+								{/if}                               
+				     </div>
+				   </div>
+				   <!--END. SECCION VIDEO-->
+				      
+		  
+				   <!--SECCION DESCRIPCIONES-->
+				   <div class="row requisitos_info">
+				   		  {if introduccin-curso}
+						  <div class="large-12 medium-12 small-12 columns clearfix">
+							  <h3>DESCRIPCIÓN DEL CURSO</h3>
+							  <p>{introduccin-curso}</p>
+						  </div>
+						  {/if}
+						  
+						  {if que-voy-aprender-curso}
+						  <div class="large-12 medium-12 small-12 columns clearfix">
+							  <h3>¿QUÉ VOY A APRENDER?</h3>
+							  <p>{que-voy-aprender-curso}</p>
+						  </div>
+						  {/if}
+						  
+						  {if que-debo-saber-curso}
+						  <div class="large-12 medium-12 small-12 columns clearfix">
+							  <h3>¿QUÉ DEBO SABER?</h3>
+							  <p>{que-debo-saber-curso}</p>
+						  </div>
+						  {/if}
+				   </div>	
+				   {if syllabus-curso}	  
+				   <div class="row requisitos_info">	  	  
+						  <div class="large-12 medium-12 small-12 columns clearfix">
+							  <h3>SYLLABUS</h3>
+							  <p>{syllabus-curso}</p>
+						  </div>  
+				    </div>
+				    {/if}
+				    <!--END. SECCION DESCRIPCIONES-->
+				     
+	        	</div>
+	        </div>
+	           	
+      	</div>
+      	<!--SIDEBAR-->
+      	<div class=" small-12 medium-3 large-3 columns">
+              <div class="row sidebar-curso">
+	              <div class="small-12 medium-12 large-12 columns">
+	              	{if logged_in}
+		              	{embed="includes/comerzar-curso"}
+		             {/if}
+		             {if logged_out}
+		              <a href="{link-curso}" target="_blank" id="start_course" class="explore button expand"  onClick="_gaq.push(['_trackEvent', 'Curso', 'Entrar-Curso', '{title}']);">COMENZAR CURSO</a>
+						{/if}
+		
+			              {embed="includes/curso-detalles" 
+			              	tiempo-duracion-horas-curso="{tiempo-duracion-horas-curso}"
+			              	tiempo-duracion-minutos-curso="{tiempo-duracion-minutos-curso}" 
+			              	cantidad-lecciones-curso="{cantidad-lecciones-curso}" 
+			              	cantidad-video-curso="{cantidad-video-curso}" link-curso="{link-curso}" 
+			              	cantidad-modulos-cursos="{cantidad-modulos-cursos}" 
+			              }
+		
+			              {instructor-curso}
+			              	{instructor-curso:foto-instructor}
+			              		{embed="includes/curso-instructor" 
+			              			instructor="{instructor-curso:title}" 
+			              			imagen_instructor="{image:url:small}" 
+			              			descripcion_instructor="{instructor-curso:descripcin-instructor}"
+			              		}
+			              	{/instructor-curso:foto-instructor}
+			              {/instructor-curso}
+			              
+			            
+	              </div>
+              </div>
+      	</div>      	
+      </div>
+
+
+    </section>
+{/exp:channel:entries}
+
+	{embed="includes/footer-interno_new"}
+	

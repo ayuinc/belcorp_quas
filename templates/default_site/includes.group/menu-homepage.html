@@ -1,0 +1,78 @@
+<section id="navbar">
+	<div class="row">
+		<div class="small-12 medium-12 large-12 columns">
+			<div class="row">
+				<div class="small-12 medium-3 large-2 columns">
+					<a href="{site_url}" id='ucb_menu' href='#'><img src="{site_url}img/logo_header.png" alt=""></a> 
+				</div>
+				<div class="small-12 medium-6 large-7 columns">
+					<div class="row">
+						<div class="small-10 medium-10 large-12 large-centered columns">
+							<ul class="inline-list">
+					            <!--<li>
+					            	{if segment_1!='seccion'}
+					              	<a id='ucb_menu' href='#'>UCB</a>
+					              	{if:else}
+					              	<a href='{site_url}#ucb_menu'>UCB</a>
+					              	{/if}
+					            </li>-->
+					            <li>
+					            	{if segment_1!='seccion'}
+					              	<a id="destacados_menu" href="#">Destacados</a>
+					              	{if:else}
+					              	<a href='{site_url}#destacados'>Destacados</a>
+					              	{/if}
+					            </li>
+					            <li>
+					            	{if segment_1!='seccion'}
+									<a id="escuelas_menu" href="#">Escuelas</a>
+									{if:else}
+					              	<a href='{site_url}#escuelas'>Escuelas</a>
+					              	{/if}
+					            </li>
+					            <li>
+					              	{if segment_1!='seccion'}
+					              	<a id="summa_menu" href="#">Convenios</a>
+					              	{if:else}
+					              	<a href='{site_url}#convenios'>Convenios</a>
+					              	{/if}
+					            </li>
+					            <li><a id="contacto_menu" href="#">Contáctanos</a></li>
+					          </ul>
+						</div>
+					</div>		
+				</div>		
+				<div class="small-12 medium-3 large-3 columns">
+					{if logged_in}
+						<a href="{site_url}destacados/index" class="button">
+					{if:else}
+						<a href="#" class="button" id="ingresa-ucb">
+					{/if}
+					Ingresar</a>
+					
+					<div class="login-lms">
+						<div class="row">
+							{exp:member:login_form return="{site_url}destacados/index"}
+							<div class="small-12 medium-12 large-4 columns">
+								<label>Usuario</label><br>
+								<input type="text" name="username" value="" maxlength="32" size="25">
+								<a href="{path='member/forgot_password'}">¿Olvidó su Contraseña?</a>
+							</div>
+							<div class="small-12 medium-12 large-4 columns">
+								<label>Contraseña</label><br>
+								<input type="password" name="password" value="" maxlength="32" size="25">
+								{if auto_login}
+								<p><input class="checkbox" type="checkbox" name="auto_login" value="1"> Auto-login</p>
+								{/if}
+							</div>
+							<div class="small-12 medium-12 large-4 columns">
+								<input type="submit" name="submit" value="Ingresar" onClick="_gaq.push(['_trackEvent', 'Ingresar', 'Entrar-Homepage', 'Ingreso al Catalogo']);">
+							</div>        
+							{/exp:member:login_form}	
+						</div>
+					</div>				
+				</div>
+			</div>
+		</div>		
+	</div>
+</section>

@@ -1,0 +1,202 @@
+{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" dynamic="off"}
+<script src="{site_url}js/jquery.js"></script>
+<script>
+  $(function(){
+    i = new Array();
+    j = new Array();
+    k = new Array();
+    flag = false;
+  });
+</script>
+{embed="includes/header" titulo="Catálogo UCB"}
+
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+      
+        <div id="courses_menu" class="hide-for-medium-up">
+          <div class="row">
+            
+            <div class="large-12 columns">
+              <h3 id="menu_title" class="menu_title_catalogo">{title}</h3>
+            </div>
+            
+            <!--Solo para Moviles-->
+            <div class="small-12 columns">
+				<a href="#" data-dropdown="drop1" class="button dropdown expand">Escuelas</a><br>
+				<ul id="drop1" data-dropdown-content class="f-dropdown">
+				  <li><a href="{site_url}catalogo/ventas">Escuela de Ventas</a></li>
+				  <li><a href="{site_url}catalogo/negocios">Escuela de Negocios</a></li>
+				  <li><a href="{site_url}catalogo/liderazgo-cultura">Escuela de Liderazgo y Cultura</a></li>
+				  <li><a href="{site_url}catalogo/innovacion">Escuela de Innovación</a></li>
+				</ul>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div> 
+{/exp:channel:entries}
+
+		{embed="includes/menu_new"}
+
+
+
+		<!-- Solo para Moviles-->
+        <section id="courses">
+          <div class="hide-for-small heading-pocket">
+            <div class="row">
+              <div class="large-12 total_padding columns">
+                
+                {embed="includes/menu-escuelas"}
+                
+              </div>
+            </div>
+          </div>
+          
+          
+          
+          <div class="row">
+            <div class="total_padding medium-12 large-12 columns">
+              <div id="catalogo_content" class="row">
+              
+                <div class="large-9 columns">
+                  
+                  
+                 {embed="includes/escuelas-slider" seccion="203"}
+                 
+                 
+                 {if segment_3=='summa'}
+                 	{embed="includes/descripcion-summa"}
+                 {/if}
+                 
+
+                 <div class="row">
+                  	{if segment_3!=''}
+                  	
+                  	{exp:channel:entries 
+                  		channel="cursos|tendencias" 
+                  		limit="20" 
+                  		paginate_base="catalogo/index" 
+                  		paginate=“bottom” 
+                  		category="{segment_2_category_id}&{segment_3_category_id}"
+                  	}    
+                  	{/if}
+                  	
+                  	{if segment_3==''}
+                  	
+                  	{exp:channel:entries 
+                  		channel="cursos|tendencias" 
+                  		limit="20" 
+                  		paginate_base="catalogo/index" 
+                  		paginate=“bottom” 
+                  		category="{segment_2_category_id}"
+                  	}                      	              
+
+				  	{/if}
+				  	
+	                    <div id="{categories show="not 108|115" show_group="7|10"}_{category_id}{/categories}" class="{categories show="not 108|115" show_group="7|10"}{category_id} {/categories}medium-12 large-6 columns">
+                        {categories show_group="7|10"}
+                        <script>
+                          $(function(){
+                            var temp = "{category_id}";
+                            if(temp=="108"){
+                              flag = false;
+                            }
+                            if(temp=="115"){
+                              flag = true;
+                            }
+                            if(temp!="108" && flag == false ){
+                                i.push(temp);
+                            }
+                            if (temp!="115" && flag == true ) {
+                                j.push(temp);
+                            }
+                          });
+                        </script>
+                        {/categories}
+	                      {if channel=='Cursos'}
+	                      	<a href="{site_url}catalogo/curso/{url_title}" onClick="_gaq.push(['_trackEvent', 'Curso', 'Entrar-Temas', '{title}']);">
+					      {/if}
+					      
+					      {if channel=="Contenidos"}
+		                      {if interna-contenido=="Pagina Interna"}
+		                        <a href="{site_url}contenidos/curso/{url_title}" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Temas', '{title}']);">
+		                      {if:else}
+		                        <a href="{link-recurso}" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Temas', '{title}-LINKEXTERNO']);">
+		                      {/if}
+					      {/if}
+							  
+	                        {categories limit="1" show_group="not 1|2|3|4|5|6|7|8|9|11|12|13|14|15|16|17" show="not 108"}
+	                        <div class="course {category_url_title}">
+	                        {/categories}
+	                          <h5>
+	                          {if tipo-contenido-recurso}
+	                            <span>{tipo-contenido-recurso}</span><br>
+	                          {if:else}
+	                          	<span>CURSO</span><br>
+	                          {/if}
+	                          {title}</h5>
+	                          {if subttulo-curso}
+                              <h6>{subttulo-curso}</h6>
+                              {/if}
+                              {if fuente-recurso}
+                              	<h6>{fuente-recurso}</h6>
+                              {/if}
+	                          <p>{descripcion-curso}</p>
+	                          <div class="school">
+								  <span>Ver Más »</span>
+						      </div>
+	                        </div>
+	                      </a>
+	                    </div>
+
+  			              {paginate}  
+  			              	{pagination_links}
+  			              	<div class="medium-12 large-12 columns">
+	  							 <div class="row">
+	  				                <div class="large-12 large-centered columns vermas">
+	  				                  <div class="more">                      
+	  				                    <div class="text-center">
+	  				                      {next_page}
+	  				                      <a id="more_icon" href="{pagination_url}">
+	                                </a>
+	  				                      {/next_page}
+	  				                    </div>
+	  				                  </div>
+	  				                </div>
+	                            </div>
+                            </div>
+                        {/pagination_links}   
+                      {/paginate} 
+                      
+                    {/exp:channel:entries}
+                 </div>				 
+
+
+                  
+                </div>
+                
+                <div class="large-3 columns hide-for-small hide-for-medium right_padding">
+
+	                {embed="includes/buscar"}
+	                {embed="includes/categorias-homepage"}
+	                {embed="includes/links-de-interes"}
+                
+                </div>
+              
+              </div>
+            </div>
+          </div>
+		   
+		</section>
+    {embed="includes/footer-interno_new"}
+    
+    <script>
+    $(function(){ 
+        console.log("TEMAS="+i);
+        console.log("SUBTEMAS="+j);
+        console.log("ACORDION="+k);
+
+    });
+    </script>

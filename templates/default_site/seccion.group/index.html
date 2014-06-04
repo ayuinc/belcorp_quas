@@ -1,0 +1,205 @@
+{exp:channel:entries channel="secciones|tendencias" limit="1" disable="pagination"}
+{embed="includes/header"} 
+{embed="includes/menu_new"}
+
+  
+    {if channel=='Tendenciasecciones'}
+	    {imagen-recurso limit="1"}
+	    <section id="article_header" style="background: url('{image:url:large}') no-repeat; background-size: cover;background-position: center center;">
+	    {/imagen-recurso}
+    {if:else}
+	    {imagenes-seccion limit="1"}
+	    <section id="article_header" style="background: url('{image:url:large}') no-repeat; background-size: cover;background-position: center center;">
+	    {/imagenes-seccion}
+    {/if}
+    
+      <div class="overlay"></div>
+      <div class="article_title">
+        <div class="row">
+          <div class="large-8 large-centered columns">
+          	<div class="row nav-regresar">
+	          	<div class="large-1 columns">
+		          	<div class="row">
+		          		<div class="large-6 columns">
+		          			<div class="icon-arrow-left2"></div>
+		          		</div>
+		          		<div class="large-6 columns clearfix">
+		          			<a href="javascript: history.go(-1)"> Regresar</a>
+		          		</div>
+		          	</div>
+	          	</div>
+          	</div>
+          	
+            <h1>{title}</h1>
+            
+            {if texto-descriptivo-seccion}
+            	{if segment_2!="convenios"}
+            		<span id="sub_header">{texto-descriptivo-seccion}</span>
+            	{/if}	
+            {/if}
+            {if descripcion-recurso}
+            	<span id="sub_header">{descripcion-recurso}</span>
+            {/if}
+            {if autor-recurso}
+            	<p>Publicado por <span>{autor-recurso}</span></p>
+            {/if}
+            
+            <!--QUE PUEDE HACER LA UCB POR TI-->
+            {if segment_2=='que-puede-hacer-la-ucb-por-ti'}
+            <div class="row">
+				<div class="large-12 large-centered columns">
+					<ul class="inline-list menu-convenios">
+						<!--<li><a href="{site_url}seccion/convenios/peru" >Convenios</a></li>-->
+						<li><a href="#" id="nav-solicitud" {if segment_2=='solicitud-de-capacitacion'}class="activo-boton-menu"{/if}> Solicitud de Capacitación</a></li>						
+						<li><a href="#" id="nav-politica" {if segment_2=='politica-de-capacitacion'}class="activo-boton-menu"{/if}>Política de Capacitación</a></li>
+						<!--<li><a href="#" id="nav-video" {if segment_2=='video'}class="activo-boton-menu"{/if}>Video</a></li>-->
+					</ul>
+				</div>
+			</div>
+            {/if}
+			
+			<!--SECCION DE CONVENIOS-->
+            {if segment_2=='convenios'}
+            <div class="row">
+				<div class="large-12 large-centered columns">
+					<ul class="inline-list menu-convenios">
+						<li>
+							<a href="#" data-dropdown="drop1">País › <span>{if segment_3_category_name} {segment_3_category_name} {if:else} Perú {/if}</span></a>
+							<div id="drop1" class="row f-dropdown content small clearfix">
+								<div class="large-6 columns clearfix">
+									<ul>
+									  <li><a href="{site_url}seccion/convenios/todos">Todos</a></li>
+									  <li><a href="{site_url}seccion/convenios/bolivia">Bolivia</a></li>
+									  <li><a href="{site_url}seccion/convenios/brasil">Brasil</a></li>
+									  <li><a href="{site_url}seccion/convenios/chile">Chile</a></li>
+									  <li><a href="{site_url}seccion/convenios/colombia">Colombia</a></li>
+									  <li><a href="{site_url}seccion/convenios/costa-rica">Costa Rica</a></li>
+									  <li><a href="{site_url}seccion/convenios/ecuador">Ecuador</a></li>
+									  <li><a href="{site_url}seccion/convenios/el-salvador">El Salvador</a></li>
+									  <li><a href="{site_url}seccion/convenios/guatemala">Guatemala</a></li>
+									</ul>
+								</div>
+								<div class="large-6 columns clearfix">
+									<ul>
+									  <li><a href="{site_url}seccion/convenios/mexico">México</a></li>
+									  <li><a href="{site_url}seccion/convenios/panama">Panamá</a></li>
+									  <li><a href="{site_url}seccion/convenios/peru">Perú</a></li>
+									  <li><a href="{site_url}seccion/convenios/puerto-rico">Puerto Rico</a></li>
+									  <li><a href="{site_url}seccion/convenios/republica-dominicana">Rep. Dominicana</a></li>
+									  <li><a href="{site_url}seccion/convenios/usa">USA</a></li>
+									  <li><a href="{site_url}seccion/convenios/venezuela">Venezuela</a></li>
+									</ul>
+								</div>								
+							</div>
+						</li>
+						<li><a href="#" id="nav-postgrados">Post-grados</a></li>
+						<li><a href="#" id="nav-idiomas">Idiomas</a></li>						
+						<li><a href="#" id="navTecnología">Tecnología</a></li>
+						<li><a href="#" id="nav-otros">Otros</a></li>						
+					</ul>
+				</div>
+			</div>
+            {/if}
+            
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="article_content">
+      <div class="row">
+        <div class="large-8 large-centered columns bg-content-blanco">
+          
+          {if contenido-recurso}
+          	{contenido-recurso}
+          {/if}
+          
+          <!--SECCION que-puede-hacer-la-ucb-por-ti-->
+          {if segment_2=='que-puede-hacer-la-ucb-por-ti'}
+		  	{embed="includes/contenido-que-hace-la-ucb-por-ti"}
+		  	<div class="arrow-up-nav"></div>	
+          {/if}
+          
+          <!--SECCION DE CONVENIOS-->
+          {if segment_2=='convenios'}
+          <div clas="row">
+          		<div class="large-12 large-centered columns clearfix">
+          			<h2>{last_segment_category_name}</h2>
+          		</div>
+          </div>
+    
+		  <div clas="row">
+          		<div class="large-12 large-centered columns clearfix">
+						{exp:child_categories 
+						    parent="{last_segment_category_id}"
+							site="1" 
+							child_categories_sort_by="custom" 
+							child_categories_sort_direction="asc"
+						}
+						{child_category_start}
+							<h3 id="nav{child_category_name}-seccion">{child_category_name}</h3>
+							{embed="includes/posts-convenios" categoria_hija="{child_category_id}"}
+						{child_category_end}
+					{/exp:child_categories}
+          		</div>
+          	</div>
+          	
+          	<div class="arrow-up-nav"></div>
+          {/if}   
+          
+          <!--SECCION DE SUMMA-->
+          {if segment_2=='summa-a-tu-talento'}
+          	<div class="flex-vide">
+          		<iframe width="100%" height="420" src="//www.youtube.com/embed/q-eMePtxATw" frameborder="0" allowfullscreen=""></iframe>  	
+          	</div>
+          {/if}
+          
+          <!--OTRAS SECCIONES-->
+          {if segment_2!='que-puede-hacer-la-ucb-por-ti' AND segment_2!='convenios'}
+          	
+          	{if video-seccion}
+          		{if proveedor-video-seccion}
+	          	<div class="flex-vide">
+	          		<iframe width="100%" height="420" src="//www.youtube.com/embed/{video-seccion}" frameborder="0" allowfullscreen=""></iframe>  	
+	          	</div>
+          		{/if}
+          	{/if}                    
+		  	
+		  	{contenido-seccion}
+          
+          {/if}            
+          
+          
+        </div>
+      </div>
+    </section>
+{/exp:channel:entries}     
+    
+{exp:channel:entries channel="secciones|tendencias" limit="1" disable="pagination" offset="1"}    
+    <section id="next_article">
+      <div class="overlay"></div>
+      <div class="next_title">
+        <div class="row">
+          <div class="large-8 large-centered columns">
+            <h6>SIGUIENTE LECTURA</h6>
+          </div>
+        </div>
+      </div>
+      <div class="article_title">
+        <div class="row">
+          <div class="large-8 large-centered columns">
+            <h1>{title}</h1>
+            <span id="sub_header">{texto-descriptivo-seccion}</span>
+            {imagenes-seccion}
+            	<img src="{image:url:large}" alt="{title}">
+            {/imagenes-seccion}
+            {if autor-recurso}
+            	<p>Publicado por <span>{autor-recurso}</span></p>
+            {/if}
+          </div>
+        </div>
+      </div>
+    </section>
+{/exp:channel:entries}
+ 
+{embed="includes/footer"}

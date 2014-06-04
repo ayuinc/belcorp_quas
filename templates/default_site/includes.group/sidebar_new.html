@@ -1,0 +1,75 @@
+          <div class="large-3 columns hide-for-small hide-for-medium right_padding">
+			  	
+			  	{exp:search:simple_form 
+			  		channel="cursos|contenidos" 
+			  		form_id="form_search" 
+			  		status="open"  
+			  		search_in="everywhere" 
+			  		result_page="buscar/index" 
+			  		no_result_page="buscar/no-resultados"
+			  	}
+                <input type="search" name="keywords" id="keywords" placeholder="BUSCAR">
+				<span class="icon-search"></span>
+				{/exp:search:simple_form}
+
+          
+          	{if segment_1!='buscar'}
+            
+	            {if segment_2!='index' AND segment_2!='por-escuela' AND segment_2!=''}
+	            <dl id="padding_accordion" class="accordion" data-accordion>
+	              <dd>
+	                <a id="school_panel_trigger" href="#school_panel">
+	                  CATEGORIAS
+	                  <span id="menu_arrow" class="icon-arrow-down"></span>
+	                </a>
+	                <div id="school_panel" class="activex">
+	                        <dl class="accordion" data-accordion>
+	                          <dd>
+	                            <a class="#" href="{site_url}catalogo/{segment_2}">TODAS</a>
+	                          </dd>
+	                          {embed="includes/categorias-escuelas"}
+	                        </dl>
+	                 </div>
+	              </dd>
+	            </dl>
+            
+				
+	            <dl id="padding_accordion" class="accordion" data-accordion>
+	              <dd>
+	                
+	                {if segment_2=='liderazgo-cultura'}
+		                <a id="school_panel_trigger_1" href="#school_panel">BACKBONE
+							<span id="menu_arrow_1" class="icon-arrow-down"></span>
+		                </a>
+	                {/if}
+	                  
+	                {if segment_2=='liderazgo-cultura'}
+	                <div id="school_panel_1" class="activex">
+		                <dl class="accordion" data-accordion>
+			                {if segment_2!='liderazgo-cultura'}
+			                <dd class="belcorp">
+			                	<a href="{site_url}catalogo/{segment_2}">TODOS</a>
+			                </dd>
+			                {/if}
+		                {embed="includes/contenido-escuelas"}           
+		                </dl>
+	                </div>
+	                {/if}
+	              </dd>
+	            </dl>
+	            {if:else}
+	            <!--CATALOGO GENERAL-->	
+						
+						<!--PREGUNTAS FRECUENTES-->
+						{if segment_1!='preguntas-frecuentes'}
+							{embed="includes/categorias-homepage"}	
+						{/if}
+	            {/if}
+            
+            {/if}
+            
+            {embed="includes/links-de-interes"}
+            
+
+          </div>
+        </div>

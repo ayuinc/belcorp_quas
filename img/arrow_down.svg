@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="49px" height="49px" viewBox="0 0 49 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Arrows 1</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Rectangle-2-+-Oval-1-copy" sketch:type="MSLayerGroup" transform="translate(0.000012, 0.000000)">
+            <path d="M26.5,13.7579515 C26.5,12.7870617 25.7232366,12 24.75,12 C23.7835017,12 23,12.7756144 23,13.7579515 L23,31.1433035 L17.690183,26.0156728 C16.9949235,25.3442685 15.8917191,25.3587447 15.2156521,26.0588324 C14.544266,26.7540731 14.5649304,27.863224 15.2588787,28.5333621 L23.5312183,36.5218677 C23.8810983,36.8597428 24.3342891,37.0239208 24.7843652,37.0144359 C25.2344414,37.0239208 25.6876322,36.8597428 26.0375121,36.5218677 L34.3098518,28.5333621 C35.0038001,27.863224 35.0244645,26.7540731 34.3530783,26.0588324 C33.6770114,25.3587447 32.573807,25.3442685 31.8785475,26.0156728 L26.5,31.2096758 L26.5,13.7579515 Z" id="Rectangle-2" fill="#6B1F7E" sketch:type="MSShapeGroup"></path>
+            <path d="M24.5,49 C38.030977,49 49,38.030977 49,24.5 C49,10.969023 38.030977,0 24.5,0 C10.969023,0 0,10.969023 0,24.5 C0,38.030977 10.969023,49 24.5,49 Z" id="Oval-1" stroke="#6B1F7E" stroke-width="4" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

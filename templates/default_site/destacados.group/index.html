@@ -1,0 +1,188 @@
+{embed="includes/header" titulo="Destacados"}
+
+{if logged_in}
+
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+      
+        <div id="courses_menu" class="hide-for-medium-up">
+          <div class="row">
+            
+            <!--TITULO SECCION-->
+            <div class="large-12 columns">
+              <h3 id="menu_title" class="menu_title_catalogo">Destacados</h3>
+            </div>
+            
+            <!--SOLO PARA MOVILES-->
+            <div class="small-12 columns">
+				<a href="#" data-dropdown="drop1" class="button dropdown expand">Escuelas</a><br>
+				<ul id="drop1" data-dropdown-content class="f-dropdown">
+				  <li><a href="{site_url}catalogo/ventas">Escuela de Ventas</a></li>
+				  <li><a href="{site_url}catalogo/negocios">Escuela de Negocios</a></li>
+				  <li><a href="{site_url}catalogo/liderazgo-cultura">Escuela de Liderazgo y Cultura</a></li>
+				  <li><a href="{site_url}catalogo/innovacion">Escuela de Innovación</a></li>
+				</ul>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div> 
+
+	{embed="includes/menu_new"}
+
+
+
+		<!--MENU ESCUELAS-->
+        <section id="courses">
+          <div class="hide-for-small heading-pocket">
+            <div class="row">
+              <div class="large-12 total_padding columns">
+                
+                {embed="includes/menu-escuelas"}
+
+              </div>
+            </div>
+          </div>
+          
+          
+		 <!--MAIN FOTO-->
+	     <div class="row destacados-highlight">
+		     <div class="medium-12 large-12 columns">
+			     <div class="row">
+			     	<div class="small-12 medium-8 large-8 columns">
+			     		
+			     		<!--Slider-->
+				     	<!--<ul class="example-orbit" data-orbit>
+						  <li>
+		                    <a href="{site_url}catalogo/temas"  onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);">
+						  	<div class="overlay"></div>
+						    <img src="{site_url}images/imagenes-curso/167/female-entrepreneur__destacados.jpg" alt="Bienvenidos" />
+						    <div class="orbit-caption">
+						      <h2>Bienvenidos, esto es lo último de la UCB.<h2>
+						      <h6>Para ver todos nuestros cursos y contenidos, haz click aquí.</h6>
+						    </div>
+						    </a>
+						  </li>
+				     	{exp:channel:entries channel="tendencias" limit="3" category="241" dynamic="off"}
+						  <li>
+							{if interna-contenido=="Pagina Interna"}
+		                        <a href="{site_url}contenidos/curso/{url_title}"  onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);">
+		                    {if:else}
+		                        <a href="{link-recurso}" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}-LINKEXTERNO']);">
+		                    {/if}
+						  	<div class="overlay"></div>
+						  	<div class="tema-de-la-semana">TEMA DE LA SEMANA</div>
+						  	{imagen-recurso}
+						    <img src="{image:url:destacados}" alt="{title}" />
+						    {/imagen-recurso}
+						    <div class="orbit-caption">
+						      <h2>{title}<h2>
+						      <h6>{descripcion-recurso}</h6>
+						    </div>
+						    </a>
+						  </li>
+						{/exp:channel:entries}  
+						</ul>-->
+						<img src="{site_url}img/IMAGEN_PARA_SLIDER_DESTACADOS.png">
+			     	</div>
+			     	<div class="small-12 medium-4 large-4 columns">
+			     		
+			     		<div class="row">
+			     			<div class="small-12 medium-12 large-12 columns">
+					     		{exp:search:simple_form 
+			                  		channel="cursos|contenidos" 
+			                  		form_id="form_search" 
+			                  		status="open"  
+			                  		search_in="everywhere" 
+			                  		result_page="buscar/index" 
+			                  		no_result_page="buscar/no-resultados"
+			                  	}
+				                    <input type="search" name="keywords" id="keywords" placeholder="BUSCAR">
+				                    <span class="icon-search"></span>
+								{/exp:search:simple_form}
+			     			</div>
+			     			<div class="small-12 medium-12 large-12 columns">
+			     				<div class="los-mas-populares">
+			     					<h4>PLAN DE DESARROLLO</h4>
+			     					<ul>
+			     						{exp:low_reorder:entries set="4" limit="3"}
+			     						<li><a href="{site_url}catalogo/curso/{url_title}"  onClick="_gaq.push(['_trackEvent', 'Curso', 'Entrar-Destacados', '{title}']);">{title}</a></li>
+			     						{/exp:low_reorder:entries}
+			     					</ul>
+			     					<a href="{site_url}catalogo/liderazgo-cultura" onClick="_gaq.push(['_trackEvent', 'Catalogo', 'Entrar-Destacados', 'visita-el-catalogo']);">VER TODO EL PLAN DE DESARROLLO →</a>
+			     				</div>
+			     			</div>
+			     		</div>
+			     		
+			     	</div>
+			     </div>
+		     </div>
+	     </div>           
+          
+         <!--CAJA GRANDE DE CONTENIDOS--> 
+         <div class="row">
+           <div class="total_padding medium-12 large-12 columns">
+             <div class="row">
+               <div class="small-12 medium-12 large-12 columns">
+				   
+				   <!--CAJAS-->
+		           <div class="row destacados-modulos">  
+		           	   {exp:channel:entries channel="tendencias" limit="6" dynamic="off" category="269"}              
+				       <div class="small-12 medium-4 large-4 columns end">
+						   <div class="row">
+						   	   <div class="small-12 medium-12 large-12 columns">
+								  	{if imagen-recurso}
+									  	{imagen-recurso}
+									    <img src="{image:url:medium}" alt="{title}"  onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);"/>
+									    {/imagen-recurso}
+								    {if:else}
+								    	<img src="http://placehold.it/320x214" alt="{title}" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}-LINKEXTERNO']);">
+								    {/if}
+						   	   </div>
+						   	   <div class="small-12 medium-12 large-12 columns">
+						   	   	   <div class="destados-tipo">{tipo-contenido-recurso}</div>
+						   	   	   {if tipo-contenido-recurso=='Video'}
+										{if interna-contenido=="Pagina Interna"}
+					                        <a href="{site_url}contenidos/curso/{url_title}" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);">
+					                    {if:else}
+					                        <a href="{link-recurso}" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}-LINKEXTERNO']);">
+					                    {/if}
+						   	   	   			<div class="video-play"></div>
+						   	   	   		</a>
+						   	   	   {/if}
+										{if interna-contenido=="Pagina Interna"}
+					                        <a href="{site_url}contenidos/curso/{url_title}" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);">
+					                    {if:else}
+					                        <a href="{link-recurso}" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}-LINKEXTERNO']);">
+					                    {/if}
+							   	   	   <div class="destacados-mod-contenido">
+										   <h5>{title}</h5>
+										   {if descripcion-recurso}
+										   <h6>{descripcion-recurso}</h6>
+										   {/if}
+							   	   	   </div>
+						   	   	   </a>
+						   	   </div>						   	   
+						   </div>
+					   </div>
+					   {/exp:channel:entries}                
+		           </div>
+		           				 
+               </div><!--end.large-12-->
+             </div><!--end.row-->
+           </div><!--end#total_padding-->
+         </div>
+		   
+		</section>
+		
+{if:else}		
+	<div class="row destacados-highlight">
+		<div class="small-12 medium-12 large-12 columns">	
+		<h3 class="text-center">Necesita ingresar al sistema. <a href="{site_url}">Regresar al inicio</a></h3>
+		</div>
+	</div>
+{/if}		
+
+{embed="includes/footer-interno_new"}

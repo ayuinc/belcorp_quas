@@ -1,0 +1,21 @@
+
+          			{exp:channel:entries channel="convenios" disable="pagination" dynamic="off" category="{embed:categoria_hija}"}
+          			<div class="row  post-convenios">
+          				<div class="large-3 columns">
+          					{imagen-convenio}
+          					<img src="{image:url:small}" alt="{title}">
+          					{/imagen-convenio}
+          				</div>
+          				<div class="large-9 columns">
+          					<h4>{title}</h4>
+          					<h6>Países que aplican</h6>
+          					<p>{pais-convenios}</p>
+          					<h6>Beneficios</h6>
+          					<p>{beneficios_del_convenio}</p>
+          					<h6>Alcance del Convenio</h6>
+          					<p>{alcance-convenios}</p>
+          					<h6>Contactos</h6>
+          					<p><a href="mailto:{mailto-convenios}">{contacto-convenios}</a></p>
+          				</div>          				
+          			</div>
+          			{/exp:channel:entries} 
