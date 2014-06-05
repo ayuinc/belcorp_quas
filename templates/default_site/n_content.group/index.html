@@ -10,7 +10,7 @@
     			</div>
     			<div class="row">
     				<div class="small-12 medium-6 medium-centered large-12 columns">
-    					<form>
+    					{exp:member:login_form return="{site_url}destacados/index"}
     						<div class="row">
     							<div class="small-2 medium-2 large-2 columns icono clearfix">
     								<div class="icon-user"></div>
@@ -29,11 +29,12 @@
     						</div>
     						<div class="row">
     							<div class="small-12 medium-12 large-12 columns clearfix">    						
-										<a href="" class="button expand">INICIAR SESIÓN ›</a>
-										<p class="text-center">¿Olvidate tu contraseña?</p>
+										<input type="submit" class="button expand" onClick="_gaq.push(['_trackEvent', 'Ingresar', 'Entrar-Homepage', 'Ingreso al Catalogo']);" value="INICIAR SESIÓN ›" name="submit">
+										<p class="text-center"><a href="{path='member/forgot_password'}">¿Olvidate tu contraseña?</a></p>
     							</div>
     						</div>
-    					</form>
+    						<input type="hidden" name="auto_login" value="1">
+    					{/exp:member:login_form}
     				</div>
     			</div>    					
     		</div>
