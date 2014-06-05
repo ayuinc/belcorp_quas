@@ -8,6 +8,10 @@ $gris-claro: #909DA8;
 $gris-background: #EAEEF1;
 $blanco: #FFF;
 */
+body {
+	@include thin;
+}
+
 .clearfix {
 	padding:0;
 	margin:0;
@@ -226,17 +230,15 @@ ul.off-canvas-list li label {
 // N_WALL.html, N_Escuela.html
 .grid-panels {
 	a.link-wrapper {
-		@include transition(all 0.3s ease);
 		display: block;
 		&:hover .panel-heading img {
 			@include transform(scale(1.1));
+			@include transition(all 0.3s ease);
 		}
 		&:hover .panel-body {
 			background: $gray-light;
-		}		
-		&:hover {
 			@include transition(all 0.3s ease);
-		}
+		}		
 	}
 	.panel-heading {		
 		overflow: hidden;
@@ -315,6 +317,9 @@ ul.off-canvas-list li label {
 			font-size: rem-calc(21);
 			@include thin;
 			color: $gris-claro;
+		}
+		button i {
+			color: white;
 		}
 	}
 }
