@@ -1,4 +1,4 @@
-/*COLORES*/
+/*COLORES
 $morado: #5a277d;
 $morado-hover: #481F66;
 $morado-claro: #A679B2;
@@ -7,7 +7,7 @@ $girs: #596c79;
 $gris-claro: #909DA8;
 $gris-background: #EAEEF1;
 $blanco: #FFF;
-
+*/
 .clearfix {
 	padding:0;
 	margin:0;
@@ -41,8 +41,8 @@ $blanco: #FFF;
 .main-section {
 	min-height: 40rem;
 	position: relative;
-	left: 4rem;
-	padding: 5rem 9rem 5rem 5rem;
+	padding: 70px 112px 70px 147px;
+	padding: rem(70) rem(112) rem(70) rem(147);
 }
 
 .tab-bar {
@@ -58,6 +58,10 @@ ul.off-canvas-list li label {
 }
 
 /*END.SECCIONES EN EL OFFCANVAS*/
+
+.breadcrumbs {
+	margin: 0 1.2rem;
+}
 
 .icono {
 	background-color: $morado;
@@ -192,12 +196,50 @@ ul.off-canvas-list li label {
 	}
 }	
 
-// N_WALL.html
+//N_Escuela.html
+.escuela-block {
+	h1, h4 {
+		@include thin;
+	}
+	h1 {
+
+		font-size: rem(77);
+		line-height: 105%;
+	}
+	h4 {
+		font-size: rem(28);
+	}
+	p {
+		color:$gris-medio;
+		@include light;
+	}
+	div:first-child {
+		padding-top: rem(21);
+	}
+	div:last-child {
+		padding-top: rem(12);
+	}
+}
+
+
+
+// N_WALL.html, N_Escuela.html
 .grid-panels {
 	a.link-wrapper {
+		@include transition(all 0.3s ease);
 		display: block;
+		&:hover .panel-heading img {
+			@include transform(scale(1.1));
+		}
+		&:hover .panel-body {
+			background: $gray-light;
+		}		
+		&:hover {
+			@include transition(all 0.3s ease);
+		}
 	}
 	.panel-heading {		
+		overflow: hidden;
 		img {
 			width: 100%;
 			height: auto;
@@ -214,15 +256,33 @@ ul.off-canvas-list li label {
 			left: 0;
 			display: block;
 			padding: 3px 7px;
-			background: $primary-color;
+			background: $gris-background;
 		}
+	}
+	.panel-curso {
+		background: $gris-background;
+		padding:rem-calc(14);
+		border-right:10px solid $morado;
+		p {
+			font-size: rem-calc(12);
+			color: $gris;
+			@include light;
+			letter-spacing:rem-calc(0.4);
+		}		
 	}
 	h5 {
 		@include light;
+		line-height: 110%;
+		font-size: rem-calc(16);
+		color: $morado;
 	}
 	h6 {
-		@include thin;
+		@include light;
+		color:$gris;
+		font-size: rem-calc(14);
+		letter-spacing:rem-calc(0.4);
 	}
+
 }
 
 	// N_WALL Heading Block
@@ -231,20 +291,18 @@ ul.off-canvas-list li label {
 		@include thin;
 	}
 	h1 {
-		font-size: 77px;
 		font-size: rem(77);
 	}
 	h4 {
-		font-size: 28px;
 		font-size: rem(28);
+		@include light;
+
 	}
 	div:first-child {
 		border-right: 5px solid $gris-claro;
-		padding-top: 21px;
 		padding-top: rem(21);
 	}
 	div:last-child {
-		padding-top: 12px;
 		padding-top: rem(12);
 	}
 }
@@ -253,8 +311,10 @@ ul.off-canvas-list li label {
 	form {
 		input,
 		.input {
-			height: 52px;
-			height: rem(52);
+			height: rem-calc(52);
+			font-size: rem-calc(21);
+			@include thin;
+			color: $gris-claro;
 		}
 	}
 }
@@ -263,7 +323,7 @@ ul.off-canvas-list li label {
 .list-heading {
 	border-left: 4px solid $gris-claro;
 	text-transform: uppercase;
-	@include thin;
+	@include light;
 }
 
 ul.no-bullet {

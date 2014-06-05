@@ -460,7 +460,7 @@ select {
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 62.5rem; }
+  max-width: 100%; }
   .row:before, .row:after {
     content: " ";
     display: table; }
@@ -1811,21 +1811,21 @@ select {
       clear: both; } }
 .breadcrumbs {
   display: block;
-  padding: 0.5625rem 0.875rem 0.5625rem;
+  padding: 0 0 0.9375rem 0;
   overflow: hidden;
   margin-left: 0;
   list-style: none;
-  border-style: solid;
-  border-width: 1px;
-  background-color: #f4f4f4;
-  border-color: gainsboro;
+  border-style: none;
+  border-width: 0;
+  background-color: white;
+  border-color: #e6e6e6;
   border-radius: 3px; }
   .breadcrumbs > * {
     margin: 0;
     float: left;
-    font-size: 0.6875rem;
-    line-height: 0.6875rem;
-    text-transform: uppercase;
+    font-size: 1rem;
+    line-height: 1rem;
+    text-transform: capitalize;
     color: #5a277d; }
     .breadcrumbs > *:hover a, .breadcrumbs > *:focus a {
       text-decoration: underline; }
@@ -1849,8 +1849,8 @@ select {
         color: #999999;
         cursor: default; }
     .breadcrumbs > *:before {
-      content: "/";
-      color: #aaaaaa;
+      content: "\xE2";
+      color: #5a277d;
       margin: 0 0.75rem;
       position: relative;
       top: 1px; }
@@ -2720,7 +2720,7 @@ textarea {
   background-color: white;
   font-family: inherit;
   border: 1px solid #cccccc;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 0 transparent;
   color: rgba(0, 0, 0, 0.75);
   display: block;
   font-size: 0.875rem;
@@ -2746,8 +2746,8 @@ textarea {
   input[type="time"]:focus,
   input[type="url"]:focus,
   textarea:focus {
-    box-shadow: 0 0 5px #999999;
-    border-color: #999999; }
+    box-shadow: 0 0 5px #cccccc;
+    border-color: #cccccc; }
   input[type="text"]:focus,
   input[type="password"]:focus,
   input[type="date"]:focus,
@@ -2763,7 +2763,7 @@ textarea {
   input[type="url"]:focus,
   textarea:focus {
     background: #fafafa;
-    border-color: #999999;
+    border-color: #cccccc;
     outline: none; }
   input[type="text"][disabled], fieldset[disabled] input[type="text"],
   input[type="password"][disabled], fieldset[disabled]
@@ -2834,7 +2834,7 @@ select {
     border-radius: 3px; }
   select:hover {
     background-color: #f3f3f3;
-    border-color: #999999; }
+    border-color: #cccccc; }
 
 /* Adjust margin for form elements below */
 input[type="file"],
@@ -4283,12 +4283,12 @@ a {
 p {
   font-family: inherit;
   font-weight: normal;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 1.25rem;
   text-rendering: optimizeLegibility; }
   p.lead {
-    font-size: 1.21875rem;
+    font-size: 1.31875rem;
     line-height: 1.6; }
   p aside {
     font-size: 0.875rem;
@@ -4311,7 +4311,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 0; }
 
 h1 {
-  font-size: 2.125rem; }
+  font-size: 4.1875rem; }
 
 h2 {
   font-size: 1.6875rem; }
@@ -4366,7 +4366,7 @@ code {
 ul,
 ol,
 dl {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 1.25rem;
   list-style-position: outside;
@@ -4475,7 +4475,7 @@ blockquote p {
     line-height: 1.4; }
 
   h1 {
-    font-size: 2.75rem; }
+    font-size: 4.8125rem; }
 
   h2 {
     font-size: 2.3125rem; }
@@ -5048,7 +5048,7 @@ meta.foundation-mq-topbar {
       background: #333333; }
 
   .contain-to-grid .top-bar {
-    max-width: 62.5rem;
+    max-width: 100%;
     margin: 0 auto;
     margin-bottom: 0; }
 
@@ -6766,9 +6766,6 @@ a.not-underline:hover {
 .icon-users:before {
   content: "\e606"; }
 
-.icon-search:before {
-  content: "\e60e"; }
-
 .icon-key:before {
   content: "\e609"; }
 
@@ -6796,7 +6793,16 @@ a.not-underline:hover {
 .icon-facebook:before {
   content: "\e603"; }
 
-/*COLORES*/
+/*COLORES
+$morado: #5a277d;
+$morado-hover: #481F66;
+$morado-claro: #A679B2;
+$morado-lista: #5F4566;
+$girs: #596c79;
+$gris-claro: #909DA8;
+$gris-background: #EAEEF1;
+$blanco: #FFF;
+*/
 .clearfix {
   padding: 0;
   margin: 0; }
@@ -6825,8 +6831,8 @@ a.not-underline:hover {
 .main-section {
   min-height: 40rem;
   position: relative;
-  left: 4rem;
-  padding: 5rem 9rem 5rem 5rem; }
+  padding: 70px 112px 70px 147px;
+  padding: 4.375rem 7rem 4.375rem 9.1875rem; }
 
 .tab-bar {
   left: 4rem; }
@@ -6838,6 +6844,9 @@ ul.off-canvas-list li label {
   border-top: none; }
 
 /*END.SECCIONES EN EL OFFCANVAS*/
+.breadcrumbs {
+  margin: 0 1.2rem; }
+
 .icono {
   background-color: #5a277d; }
   .icono .icon-user, .icono .icon-key {
@@ -6849,7 +6858,7 @@ ul.off-canvas-list li label {
 
 .login-formulario {
   min-height: 41rem;
-  background-color: #eaeef1; }
+  background-color: #ecf0f1; }
   .login-formulario .panel {
     background-color: transparent;
     border: none;
@@ -6955,11 +6964,47 @@ ul.off-canvas-list li label {
     .menu ul li:first-child {
       border-bottom: 1px solid #a679b2; }
 
+.escuela-block h1, .escuela-block h4 {
+  font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+  font-weight: 100;
+  font-style: normal; }
+.escuela-block h1 {
+  font-size: 4.8125rem;
+  line-height: 105%; }
+.escuela-block h4 {
+  font-size: 1.75rem; }
+.escuela-block p {
+  color: #999999;
+  font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+  font-weight: 300;
+  font-style: normal; }
+.escuela-block div:first-child {
+  padding-top: 1.3125rem; }
+.escuela-block div:last-child {
+  padding-top: 0.75rem; }
+
 .grid-panels a.link-wrapper {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   display: block; }
-.grid-panels .panel-heading img {
-  width: 100%;
-  height: auto; }
+  .grid-panels a.link-wrapper:hover .panel-heading img {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1); }
+  .grid-panels a.link-wrapper:hover .panel-body {
+    background: #d2d3d4; }
+  .grid-panels a.link-wrapper:hover {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+.grid-panels .panel-heading {
+  overflow: hidden; }
+  .grid-panels .panel-heading img {
+    width: 100%;
+    height: auto; }
 .grid-panels .panel-body {
   background: white;
   position: relative;
@@ -6971,44 +7016,64 @@ ul.off-canvas-list li label {
     left: 0;
     display: block;
     padding: 3px 7px;
-    background: #5a277d; }
+    background: #ecf0f1; }
+.grid-panels .panel-curso {
+  background: #ecf0f1;
+  padding: 0.875rem;
+  border-right: 10px solid #5a277d; }
+  .grid-panels .panel-curso p {
+    font-size: 0.75rem;
+    color: #596c79;
+    font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 0.025rem; }
 .grid-panels h5 {
   font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
   font-weight: 300;
-  font-style: normal; }
+  font-style: normal;
+  line-height: 110%;
+  font-size: 1rem;
+  color: #5a277d; }
 .grid-panels h6 {
   font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
-  font-weight: 100;
-  font-style: normal; }
+  font-weight: 300;
+  font-style: normal;
+  color: #596c79;
+  font-size: 0.875rem;
+  letter-spacing: 0.025rem; }
 
 .heading-block h1, .heading-block h4 {
   font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
   font-weight: 100;
   font-style: normal; }
 .heading-block h1 {
-  font-size: 77px;
   font-size: 4.8125rem; }
 .heading-block h4 {
-  font-size: 28px;
-  font-size: 1.75rem; }
+  font-size: 1.75rem;
+  font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+  font-weight: 300;
+  font-style: normal; }
 .heading-block div:first-child {
   border-right: 5px solid #909da8;
-  padding-top: 21px;
   padding-top: 1.3125rem; }
 .heading-block div:last-child {
-  padding-top: 12px;
   padding-top: 0.75rem; }
 
 .search-block form input,
 .search-block form .input {
-  height: 52px;
-  height: 3.25rem; }
+  height: 3.25rem;
+  font-size: 1.3125rem;
+  font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+  font-weight: 100;
+  font-style: normal;
+  color: #909da8; }
 
 .list-heading {
   border-left: 4px solid #909da8;
   text-transform: uppercase;
   font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
-  font-weight: 100;
+  font-weight: 300;
   font-style: normal; }
 
 ul.no-bullet li a {
