@@ -41,10 +41,8 @@ $blanco: #FFF;
 .main-section {
 	min-height: 40rem;
 	position: relative;
-	left: 56px;
-	left: rem(56);
-	padding: 70px 112px 70px 0px;
-	padding: rem(70) rem(112) rem(70) rem(0);
+	padding: 70px 112px 70px 147px;
+	padding: rem(70) rem(112) rem(70) rem(147);
 }
 
 .tab-bar {
@@ -228,9 +226,20 @@ ul.off-canvas-list li label {
 // N_WALL.html, N_Escuela.html
 .grid-panels {
 	a.link-wrapper {
+		@include transition(all 0.3s ease);
 		display: block;
+		&:hover .panel-heading img {
+			@include transform(scale(1.1));
+		}
+		&:hover .panel-body {
+			background: $gray-light;
+		}		
+		&:hover {
+			@include transition(all 0.3s ease);
+		}
 	}
 	.panel-heading {		
+		overflow: hidden;
 		img {
 			width: 100%;
 			height: auto;
