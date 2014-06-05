@@ -7092,3 +7092,25 @@ ul.no-bullet li a {
   color: #909da8; }
   ul.no-bullet li a:hover {
     color: #481f66; }
+
+#filters {
+  padding: 14px 0;
+  padding: 0.875rem 0; }
+  #filters li:first-child label {
+    margin-left: 0; }
+  #filters li:nth-child(n + 2) {
+    margin-left: 21px;
+    margin-left: 1.3125rem; }
+  #filters li {
+    float: left; }
+    #filters li label {
+      padding: 7px 14px;
+      padding: 0.4375rem 0.875rem;
+      border-radius: 3px;
+      border: 1px solid #f6f6f7; }
+      #filters li label:hover, #filters li label.active {
+        background: #f6f6f7; }
+    #filters li input[type="checkbox"] {
+      display: none; }
+      #filters li input[type="checkbox"]:checked ~ label {
+        background: #f6f6f7; }
