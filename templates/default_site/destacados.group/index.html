@@ -144,7 +144,7 @@
 						   	   <div class="small-12 medium-12 large-12 columns">
 						   	   	   <div class="destados-tipo">{tipo-contenido-recurso}</div>
 						   	   	   {if tipo-contenido-recurso=='Video'}
-										{if interna-contenido=="Pagina Interna"}
+							 		 		 				{if interna-contenido=="Pagina Interna"}
 					                        <a href="{site_url}contenidos/curso/{url_title}" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);">
 					                    {if:else}
 					                        <a href="{link-recurso}" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}-LINKEXTERNO']);">
@@ -152,16 +152,16 @@
 						   	   	   			<div class="video-play"></div>
 						   	   	   		</a>
 						   	   	   {/if}
-										{if interna-contenido=="Pagina Interna"}
+							 		 		 {if interna-contenido=="Pagina Interna"}
 					                        <a href="{site_url}contenidos/curso/{url_title}" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);">
-					                    {if:else}
+					             {if:else}
 					                        <a href="{link-recurso}" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}-LINKEXTERNO']);">
-					                    {/if}
+					             {/if}
 							   	   	   <div class="destacados-mod-contenido">
-										   <h5>{title}</h5>
-										   {if descripcion-recurso}
-										   <h6>{descripcion-recurso}</h6>
-										   {/if}
+												   <h5>{title}</h5>
+												   {if descripcion-recurso}
+												   <h6>{descripcion-recurso}</h6>
+												   {/if}
 							   	   	   </div>
 						   	   	   </a>
 						   	   </div>						   	   

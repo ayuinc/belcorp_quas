@@ -1,0 +1,84 @@
+{embed="n_includes/header"}
+
+	{if logged_in}
+	
+	<div class="off-canvas-wrap" data-offcanvas>
+	  <div class="inner-wrap">
+	    
+	  <!--TOP BANNER-->  
+	  {embed="n_includes/top-banner"}  
+	    
+		<!--MENU LADO IZQUIERDO-->
+	  {embed="n_includes/menu-izquierdo"}
+	    
+	
+		<!--CONTENIDOS-->
+	    <section class="main-section">
+	    	<div class="row heading-block mb-7-100">
+	    		<div class="small-12 medium-6 large-6 columns">
+						<h1>BIENVENIDO</h1>
+	    		</div>
+	    		<div class="small-12 medium-6 large-6 columns">
+						<h4>LA COMUNIDAD DE APRENDIZAJE PARA QUE LOGRES TUS OBJETIVOS Y CREZCAS EN BELCORP</h4>
+	    		</div>	    		
+	    	</div>
+	    	<div class="row search-block mb-7-100">
+  	    	<div class="small-9 medium-9 large-9 columns">
+  	    		{embed="n_includes/buscador"}
+  	    	</div>
+  	    	<div class="small-3 medium-3 large-3 columns">
+  	    		<a href="#" class="button expand">Ingresa</a>
+  	    	</div>
+  	    </div>
+  	    <div class="row">
+  	    	<div class="small-9 medium-9 large-9 columns">
+  	    		<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-3 grid-panels">
+							{exp:channel:entries channel="tendencias" limit="3" dynamic="off" category="269"}  	    		
+  	    			<li>
+							  {if interna-contenido=="Pagina Interna"}
+					      	<a href="{site_url}contenidos/curso/{url_title}" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);">
+					      {if:else}
+					        <a href="{link-recurso}" target="_blank" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}-LINKEXTERNO']);">
+					      {/if}  	    				
+	  	    				<div class="panel-heading">
+								  	{if imagen-recurso}
+									  	{imagen-recurso}
+									    <img src="{image:url:medium}" alt="{title}" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);"/>
+									    {/imagen-recurso}
+								    {if:else}
+								    	<img src="http://placehold.it/320x214" alt="{title}" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}-LINKEXTERNO']);">
+								    {/if}
+								    
+								    {if tipo-contenido-recurso=='Video'}
+								    
+								    {/if}
+	  	    				</div>
+	  	    				<div class="panel-body">
+	  	    					<div class="panel-badge">{tipo-contenido-recurso}</div>
+	  	    					<h5>{title}</h5>
+										<h6>Este artículo nos enseña los diferentes tipos de definiciones para la palabra "pasión" y  cuenta la experiencia de un escritor que decidió escribir un libro sobre un tema que a él lo apasionaba y no paró hasta lograr su meta.</h6>
+	  	    				</div>
+	  	    			</a>
+  	    			</li>
+  	    			{/exp:channel:entries}
+  	    		</ul>				
+  	    	</div>
+  	    	<div class="small-3 medium-3 large-3 columns">
+						{embed="n_includes/menu-derecho"}
+  	    	</div>
+  	    </div>
+	    </section>
+		<a class="exit-off-canvas"></a>
+	
+	  </div>
+	</div>
+	
+	{if:else}		
+		<div class="row">
+			<div class="small-12 medium-12 large-12 columns">	
+			<h3 class="text-center">Necesita ingresar al sistema. <a href="{site_url}">Regresar al inicio</a></h3>
+			</div>
+		</div>
+	{/if}		
+
+{embed="n_includes/footer"}

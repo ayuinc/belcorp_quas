@@ -1,0 +1,19 @@
+  	    		{exp:search:simple_form 
+				  		channel="cursos|tendencias" 
+							search_in="everywhere"
+				  		form_id="form_search" 
+				  		status="open"  
+				  		result_page="buscar/index" 
+							where="all"
+				  		no_result_page="buscar/no-resultados"
+				  	}
+				  		<input type="hidden" name="XID" value="{XID_HASH}" /> 
+				      <div class="row collapse">
+				        <div class="small-10 medium-10 large-10 columns">
+				          <input type="search" name="keywords" id="keywords" placeholder="Encuentra los cursos de tu interés aquí">
+				        </div>
+				        <div class="small-2 medium-2 large-2 columns">
+				          <button type="submit" class="input postfix"><i class="icon-search"></i></button>
+				        </div>
+				      </div>
+  	    		{/exp:search:simple_form}
