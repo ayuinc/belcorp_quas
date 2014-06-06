@@ -18,7 +18,27 @@
 		</script>    
   </head>
   <body>
-
+  <!-- SEARCH OVERLAY STARTS -->
+	<div class="search-canvas-overlay animated">
+		<a href="#" class="close">Cerrar</a>
+		<div class="search-form">
+			<div class="row">
+				<div class="medium-6 columns">
+					<form>
+			      <div class="row collapse">
+			        <div class="small-10 medium-10 large-10 columns">
+			          <input type="text" placeholder="Encuentra los cursos de tu interés aquí" autofocus="autofocus">
+			        </div>
+			        <div class="small-2 medium-2 large-2 columns">
+			          <button type="submit" class="input postfix"><i class="icon-search"></i></button>
+			        </div>
+			      </div>
+	    		</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- SEARCH OVERLAY END -->
 	<div class="off-canvas-wrap" data-offcanvas>
 	  <div class="inner-wrap">
 	    
@@ -213,22 +233,18 @@
 	    		</div>   		
 	    	</div>
 	    	<div class="row search-block mb-7-100">
+	    		<!-- SEARCH OVERLAY TRIGGER STARTS -->
   	    	<div class="small-8 medium-9 large-9 columns">
-  	    		<div id="seach-button">
-  	    			<button class="search-form-trigger">Encuentra los cursos de tu preferencia aquí</button>
-  	    			<div class="search-icon"></div>
+  	    		<div id="search-button" class="row">
+  	    			<div class="medium-10 columns pr-0">
+  	    				<button class="search-form-trigger">Encuentra los cursos de tu preferencia aquí</button>
+  	    			</div>
+  	    			<div class="medium-2 columns pl-0">
+  	    				<div class="search-icon"><i class="icon-search"></i></div>
+  	    			</div>
   	    		</div>
-  	    		<!-- <form>
-				      <div class="row collapse">
-				        <div class="small-10 medium-10 large-10 columns">
-				          <input type="text" placeholder="Encuentra los cursos de tu interés aquí">
-				        </div>
-				        <div class="small-2 medium-2 large-2 columns">
-				          <button type="submit" class="input postfix"><i class="icon-search"></i></button>
-				        </div>
-				      </div>
-  	    		</form> -->
   	    	</div>
+  	    	<!-- SEARCH OVERLAY TRIGGER ENDS -->
   	    	<div class="small-4 medium-3 large-3 columns">
   	    		<a href="#" class="button expand">Ingresa</a>
   	    	</div>
@@ -369,6 +385,27 @@
 			    close_on_click : true
 			  }
 		  });
+    </script>
+    <script>
+    $(document).ready(function(){
+    	var $searchOv = $('.search-canvas-overlay');
+
+    	$('.search-form-trigger').click(function(e) {
+    		e.preventDefault();
+    		$searchOv.addClass('searching fadeInDown');
+    	});
+    	$('.search-canvas-overlay .close').click(function(e) {
+    		if($searchOv.hasClass("fadeInDown")) {
+    			$searchOv.removeClass('fadeInDown');
+    			$searchOv.addClass('fadeOutUpBig');
+    			setTimeout(function(){
+    				$searchOv.removeClass('searching fadeOutUpBig');
+    			}, 1000);
+    		} else {
+    			$searchOv.removeClass('fadeOutUpBig');
+    		}
+    	});
+    });
     </script>
   </body>
 </html>

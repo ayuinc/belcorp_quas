@@ -10,6 +10,11 @@ $blanco: #FFF;
 */
 body {
 	@include thin;
+	position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	@include thin;
 }
 
 .clearfix {
@@ -20,6 +25,31 @@ body {
 .bg-gris {
 	background-color: $gray-lighter;
 }
+
+
+// TEXT GRADIENTS
+@mixin text-fill-color($color) {
+  @include prefixer(text-fill-color, $color, webkit moz spec);
+}
+
+@mixin background-clip($clip) {
+  @include prefixer(background-clip, $clip, webkit moz spec);
+}
+
+.text-gradient {
+	@include background(linear-gradient(left, $gris, $gris-claro, $primary-color) repeat);
+  @include background-clip(text);
+  @include text-fill-color(transparent);
+}
+
+.escuela-block {
+	h1, p {
+		@include background(linear-gradient(left, $gris, $gris-claro, $primary-color) repeat);
+  	@include background-clip(text);
+  	@include text-fill-color(transparent);
+	}
+}
+// TEXT GRADIENTS END
 
 /*SECCIONES EN EL OFFCANVAS*/
 
@@ -202,7 +232,7 @@ ul.off-canvas-list li label {
 
 //N_Escuela.html
 .escuela-block {
-	h1, h4 {
+	h1, h4, p {
 		@include thin;
 	}
 	h1 {
@@ -214,8 +244,7 @@ ul.off-canvas-list li label {
 		font-size: rem(28);
 	}
 	p {
-		color:$gris-medio;
-		@include light;
+		color: $gris-medio;
 	}
 	div:first-child {
 		padding-top: rem(21);
@@ -297,8 +326,6 @@ ul.off-canvas-list li label {
 	}
 	h4 {
 		font-size: rem(28);
-		@include light;
-
 	}
 	div:first-child {
 		border-right: 5px solid $gris-claro;
@@ -382,19 +409,83 @@ ul.no-bullet {
 // SEARCH TRIGGER Button
 #search-button {
 	.search-icon,
-	.search-form-trigger {
-		float: left;
+	button.search-form-trigger {		
 		height: 52px;
 		height: rem(52);
 	}
-	.search-form-trigger {
-		border: 1px solid $gray-lighter;	
+	button.search-form-trigger {
+		border: 1px solid $gray-lighter;
+		background: white;
+		color: $gray-light;
+		width: 100%;
 	}
 	.search-icon {
-		background: $brand-primary;
+		background: $primary-color;
 		width: 140px;
-		height: 
+		text-align: center;
+		padding-top: 14px;
+		padding-top: rem(14);
+		color: white;
+		font-size: rem(21);
+		font-size: 21px;
 	}
+}
+
+.search-canvas-overlay {
+	display: none;
+	position: absolute;
+	z-index: 1002;
+	background: rgba($gray, 0.9);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: auto;
+	height: auto;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	@include transition(display 0.7s ease-in);
+	&.searching {
+		display: block;
+		position: absolute;
+		z-index: 1002;
+		background: rgba($gray, 0.9);
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: auto;
+		height: auto;
+		overflow-y: hidden;
+		overflow-x: hidden;
+		.search-form {
+			position: absolute;
+			width: 100%;
+			height: auto;
+			top: 50%;
+			left: 28%;
+			form {
+				input,
+				button {
+					height: 56px;
+					height: rem(56);
+					font-size: 21px;
+					font-size: rem(21);
+				}
+			}
+		}
+		.close {
+			font-size: 28px;
+			font-size: rem(28);
+			color: white;
+			text-transform: uppercase;
+			text-decoration: none;
+			@include thin;
+			position: absolute;
+			right: 21px;
+			top: 21px;
+		}
+	}	
 }
 
 
