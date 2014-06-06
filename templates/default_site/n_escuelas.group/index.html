@@ -2,6 +2,8 @@
 
 	{if logged_in}
 	
+	{embed="n_includes/buscador"}
+	
 	<div class="off-canvas-wrap" data-offcanvas>
 	  <div class="inner-wrap">
 	    
@@ -22,7 +24,7 @@
 	    	</div>
 	    	<div class="row search-block mb-7-100">
   	    	<div class="small-8 medium-9 large-9 columns">
-  	    		{embed="n_includes/buscador"}
+  	    		{embed="n_includes/buscador-trigger"}
   	    	</div>
   	    	<div class="small-4 medium-3 large-3 columns">
   	    		<a href="#" class="button expand">Ingresa</a>
@@ -30,27 +32,9 @@
   	    </div>
   	    <div class="row">
   	    	<div class="small-8 medium-9 large-9 columns">
-  	    		<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-3 grid-panels">
-							{exp:channel:entries channel="cursos|tendencias" limit="16" dynamic="off" }  	    		
-  	    			<li>
-							  {if interna-contenido=="Pagina Interna"}
-					      	<a href="{site_url}contenidos/curso/{url_title}" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);">
-					      {if:else}
-					        <a href="{link-recurso}" target="_blank" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}-LINKEXTERNO']);">
-					      {/if}  	    				
-	  	    				<div class="panel-curso">
-	  	    					<h5>{title}</h5>
-                    {if subttulo-curso}
-                    	<h6>{subttulo-curso}</h6>
-                    {/if}
-                    {if fuente-recurso}
-                    	<h6>{fuente-recurso}</h6>
-                    {/if}                    
-										<p>{descripcion-curso}</p>
-	  	    				</div>
-	  	    			</a>
-  	    			</li>
-  	    			{/exp:channel:entries}
+  	    		{embed="n_includes/filtro-tipo-contentido"}
+  	    		<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-3 grid-panels" id="isotope-container">
+							{embed="n_includes/escuelas-loop-contenido"}
   	    		</ul>				
   	    	</div>
   	    	<div class="small-4 medium-3 large-3 columns">

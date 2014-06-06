@@ -1,5 +1,40 @@
-	    			{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" }
-						<h1>{title}</h1>
-						<p>{descripcion_slide1_escuela}</p>
+					{if segment_3}
+						{if segment_4}
+							<h1>{segment_4_category_name}</h1>
+						{if:else}
+							<h1>{segment_3_category_name}</h1>	
+						{/if}				
+					{if:else}
+					
+						{if segment_2_category_name=="Ventas"}
+	    			{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="199" }
+	    			{/if}
+	    			
+						{if segment_2_category_name=="Negocios"}
+	    			{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="202" }
+	    			{/if}
+	    			
+						{if segment_2_category_name=="Liderazgo y Cultura"}
+	    			{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="201" }
+	    			{/if}
+	    			
+						{if segment_2_category_name=="Innovación"}
+	    			{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="200" }
+	    			{/if}	
+	    			   	   	    				    			 				    				    			
+							<h1>{title}</h1>
+							<p>{descripcion_slide1_escuela}</p>
+							
 						{/exp:channel:entries}
+						
+					{/if}
+					
+					{if segment_2_category_name=="Tecnologia"}
+						<h1>{segment_2_category_name}</h1>
+	    		{/if}	   
+					
+					{if segment_2_category_name=="Operaciones"}
+						<h1>{segment_2_category_name}</h1>
+	    		{/if}
+						
 						

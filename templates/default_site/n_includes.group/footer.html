@@ -2,8 +2,61 @@
     <!-- SCRIPTS-->
     <script src="{site_url}n_js/vendor/jquery.js"></script>
     <script src="{site_url}n_js/foundation.min.js"></script>
+    {if segment_1=='n_escuelas'}
+    	<script src="{site_url}n_js/vendor/isotope.pkgd.min.js"></script>
+			<script>
+		    $(document).ready(function(){
+					var $container = $('#isotope-container'),
+				      $checkboxes = $('#filters input');
+				      $labels = $('#filters label');
+				  
+				  $container.isotope({
+				    itemSelector: '.isotope-item'
+				  });
+				  
+				  $checkboxes.change(function(){
+				    var filters = [];
+				    // get checked checkboxes values
+				    $checkboxes.filter(':checked').each(function(){
+				      filters.push( this.value );
+				    });
+				    filters = filters.join(', ');
+				    $container.isotope({ filter: filters });
+				  });
+		
+		    });
+	    </script>
+    {/if}
     <script>
-      $(document).foundation();
+      $(document).foundation({
+			  offcanvas : {
+			    open_method: 'move', // Sets method in which offcanvas opens, can also be 'overlap'
+			    close_on_click : true
+			  }
+		  });
     </script>
+		<!--BUSCADOR-->
+    <script>
+    $(document).ready(function(){
+    	var $searchOv = $('.search-canvas-overlay');
+
+    	$('.search-form-trigger').click(function(e) {
+    		e.preventDefault();
+    		$searchOv.addClass('searching fadeInDown');
+    	});
+    	$('.search-canvas-overlay .close').click(function(e) {
+    		if($searchOv.hasClass("fadeInDown")) {
+    			$searchOv.removeClass('fadeInDown');
+    			$searchOv.addClass('fadeOutUpBig');
+    			setTimeout(function(){
+    				$searchOv.removeClass('searching fadeOutUpBig');
+    			}, 1000);
+    		} else {
+    			$searchOv.removeClass('fadeOutUpBig');
+    		}
+    	});
+    });
+    </script>
+		<!--END.BUSCADOR-->
   </body>
 </html>

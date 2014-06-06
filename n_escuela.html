@@ -18,7 +18,27 @@
 		</script>    
   </head>
   <body>
-
+  <!-- SEARCH OVERLAY STARTS -->
+	<div class="search-canvas-overlay animated">
+		<a href="#" class="close">Cerrar</a>
+		<div class="search-form">
+			<div class="row">
+				<div class="medium-6 columns">
+					<form>
+			      <div class="row collapse">
+			        <div class="small-10 medium-10 large-10 columns">
+			          <input type="text" placeholder="Encuentra los cursos de tu interés aquí" autofocus="autofocus">
+			        </div>
+			        <div class="small-2 medium-2 large-2 columns">
+			          <button type="submit" class="input postfix"><i class="icon-search"></i></button>
+			        </div>
+			      </div>
+	    		</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- SEARCH OVERLAY END -->
 	<div class="off-canvas-wrap" data-offcanvas>
 	  <div class="inner-wrap">
 	    
@@ -27,13 +47,11 @@
 	      <section class="left-small">
 	        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
 	      </section>
-	
 	      <section class="middle tab-bar-section">
 	        <h1 class="title">Foundation</h1>
 	      </section>
 	    </nav>
-	    
-	    
+
 		<!--MENU LADO IZQUIERDO-->
 	    <aside class="left-off-canvas-menu menu">
 	      <div class="row logo">
@@ -215,26 +233,56 @@
 	    		</div>   		
 	    	</div>
 	    	<div class="row search-block mb-7-100">
+	    		<!-- SEARCH OVERLAY TRIGGER STARTS -->
   	    	<div class="small-8 medium-9 large-9 columns">
-  	    		<form>
-				      <div class="row collapse">
-				        <div class="small-10 medium-10 large-10 columns">
-				          <input type="text" placeholder="Encuentra los cursos de tu interés aquí">
-				        </div>
-				        <div class="small-2 medium-2 large-2 columns">
-				          <button type="submit" class="input postfix"><i class="icon-search"></i></button>
-				        </div>
-				      </div>
-  	    		</form>
+  	    		<div id="search-button" class="row">
+  	    			<div class="medium-10 columns pr-0">
+  	    				<button class="search-form-trigger">Encuentra los cursos de tu preferencia aquí</button>
+  	    			</div>
+  	    			<div class="medium-2 columns pl-0">
+  	    				<div class="search-icon"><i class="icon-search"></i></div>
+  	    			</div>
+  	    		</div>
   	    	</div>
+  	    	<!-- SEARCH OVERLAY TRIGGER ENDS -->
   	    	<div class="small-4 medium-3 large-3 columns">
   	    		<a href="#" class="button expand">Ingresa</a>
   	    	</div>
   	    </div>
   	    <div class="row">
   	    	<div class="small-8 medium-9 large-9 columns">
-  	    		<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-3 grid-panels">
-  	    			<li>
+  	    		<div class="row mb-14">
+  	    			<div class="small-12 medium-12 large-12 columns">
+		  	    		<ul id="filters" class="no-bullet pt-0">
+		  	    			<li>
+		  	    				<input type="checkbox" value=".archivo" name="archivo" id="archivo">
+		  	    				<label for="archivo">Archivo</label>
+		  	    			</li>
+		  	    			<li>
+		  	    				<input type="checkbox" value=".articulo" name="articulo" id="articulo">
+		  	    				<label for="articulo">Articulo</label>
+		  	    			</li>
+		  	    			<li>
+		  	    				<input type="checkbox" value=".audio" name="audio" id="audio">
+		  	    				<label for="audio">Audio</label>
+		  	    			</li>
+		  	    			<li>
+		  	    				<input type="checkbox" value=".curso" name="curso" id="curso">
+		  	    				<label for="curso">Curso</label>
+		  	    			</li>
+		  	    			<li>
+		  	    				<input type="checkbox" value=".curso-externo" name="curso-externo" id="curso-externo">
+		  	    				<label for="curso-externo">Curso-externo</label>
+		  	    			</li>
+		  	    			<li>
+		  	    				<input type="checkbox" value=".video" name="video" id="video">
+		  	    				<label for="video">Video</label>
+		  	    			</li>
+		  	    		</ul>
+		  	    	</div>
+		  	    </div>
+  	    		<ul class="mt-35 small-block-grid-2 medium-block-grid-3 large-block-grid-3 grid-panels" id="isotope-container">
+  	    			<li class="isotope-item archivo">
   	    				<a href="#" class="link-wrapper">
 	  	    				<div class="panel-curso">
 	  	    					<h5>The power of passion</h5>
@@ -243,26 +291,32 @@
 	  	    				</div>
 	  	    			</a>
   	    			</li>
-  	    			<li>
-  	    				<div class="panel-curso">
-  	    					<h5>Design Thinking</h5>
-									<h6>Logrando el éxito a través de mi equipo</h6>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  	    				</div>
+  	    			<li class="isotope-item archivo curso">
+  	    				<a href="#" class="link-wrapper">
+	  	    				<div class="panel-curso">
+	  	    					<h5>The power of passion</h5>
+										<h6>Logrando el éxito a través de mi equipo</h6>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	  	    				</div>
+	  	    			</a>
   	    			</li>
-  	    			<li>
-  	    				<div class="panel-curso">
-  	    					<h5>Pre-Work Curso 1</h5>
-									<h6>Logrando el éxito a través de mi equipo</h6>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  	    				</div>
+  	    			<li class="isotope-item audio video">
+  	    				<a href="#" class="link-wrapper">
+	  	    				<div class="panel-curso">
+	  	    					<h5>The power of passion</h5>
+										<h6>Logrando el éxito a través de mi equipo</h6>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	  	    				</div>
+	  	    			</a>
   	    			</li>
-  	    			<li>
-  	    				<div class="panel-curso">
-  	    					<h5>The power of passion</h5>
-									<h6>Logrando el éxito a través de mi equipo</h6>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  	    				</div>
+  	    			<li class="isotope-item curso-externo curso">
+  	    				<a href="#" class="link-wrapper">
+	  	    				<div class="panel-curso">
+	  	    					<h5>The power of passion</h5>
+										<h6>Logrando el éxito a través de mi equipo</h6>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	  	    				</div>
+	  	    			</a>
   	    			</li>
   	    		</ul>				
   	    	</div>
@@ -293,6 +347,7 @@
     <script src="n_js/vendor/jquery.js"></script>
     <script src="n_js/foundation.min.js"></script>
     <script src="n_js/foundation/foundation.offcanvas.js"></script>
+    <script src="n_js/vendor/isotope.pkgd.min.js"></script>
     <script>
       $(document).foundation({
 			  offcanvas : {
@@ -300,6 +355,57 @@
 			    close_on_click : true
 			  }
 		  });
+    </script>
+    <script>
+    $(document).ready(function(){
+			var $container = $('#isotope-container'),
+		      $checkboxes = $('#filters input');
+		      $labels = $('#filters label');
+		  
+		  $container.isotope({
+		    itemSelector: '.isotope-item'
+		  });
+		  
+		  $checkboxes.change(function(){
+		    var filters = [];
+		    // get checked checkboxes values
+		    $checkboxes.filter(':checked').each(function(){
+		      filters.push( this.value );
+		    });
+		    filters = filters.join(', ');
+		    $container.isotope({ filter: filters });
+		  });
+
+    });
+    </script>
+    <script>
+      $(document).foundation({
+			  offcanvas : {
+			    open_method: 'move', // Sets method in which offcanvas opens, can also be 'overlap'
+			    close_on_click : true
+			  }
+		  });
+    </script>
+    <script>
+    $(document).ready(function(){
+    	var $searchOv = $('.search-canvas-overlay');
+
+    	$('.search-form-trigger').click(function(e) {
+    		e.preventDefault();
+    		$searchOv.addClass('searching fadeInDown');
+    	});
+    	$('.search-canvas-overlay .close').click(function(e) {
+    		if($searchOv.hasClass("fadeInDown")) {
+    			$searchOv.removeClass('fadeInDown');
+    			$searchOv.addClass('fadeOutUpBig');
+    			setTimeout(function(){
+    				$searchOv.removeClass('searching fadeOutUpBig');
+    			}, 1000);
+    		} else {
+    			$searchOv.removeClass('fadeOutUpBig');
+    		}
+    	});
+    });
     </script>
   </body>
 </html>
