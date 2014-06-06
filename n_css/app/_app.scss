@@ -313,8 +313,10 @@ ul.off-canvas-list li label {
 	form {
 		input,
 		.input {
-			height: rem-calc(52);
-			font-size: rem-calc(21);
+			height: 52px;
+			height: rem(52);
+			font-size: 21px;
+			font-size: rem(21);
 			@include thin;
 			color: $gris-claro;
 		}
@@ -376,4 +378,53 @@ ul.no-bullet {
 		}
 	}
 }
+
+// SEARCH TRIGGER Button
+#search-button {
+	.search-icon,
+	.search-form-trigger {
+		float: left;
+		height: 52px;
+		height: rem(52);
+	}
+	.search-form-trigger {
+		border: 1px solid $gray-lighter;	
+	}
+	.search-icon {
+		background: $brand-primary;
+		width: 140px;
+		height: 
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
