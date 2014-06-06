@@ -6796,21 +6796,12 @@ a.not-underline:hover {
 .icon-facebook:before {
   content: "\e603"; }
 
-/*COLORES
-$morado: #5a277d;
-$morado-hover: #481F66;
-$morado-claro: #A679B2;
-$morado-lista: #5F4566;
-$girs: #596c79;
-$gris-claro: #909DA8;
-$gris-background: #EAEEF1;
-$blanco: #FFF;
-*/
 body {
   font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
   font-weight: 100;
   font-style: normal;
-  position: relative; }
+  position: relative;
+  letter-spacing: 0.10px; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
@@ -7133,6 +7124,7 @@ ul.off-canvas-list li label {
   font-style: normal; }
 
 ul.no-bullet li a {
+  letter-spacing: 0.10px;
   font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
   font-weight: 100;
   font-style: normal;
