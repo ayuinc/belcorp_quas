@@ -421,13 +421,12 @@ ul.no-bullet {
 	}
 	.search-icon {
 		background: $primary-color;
-		width: 140px;
 		text-align: center;
 		padding-top: 14px;
 		padding-top: rem(14);
 		color: white;
-		font-size: rem(21);
 		font-size: 21px;
+		font-size: rem(21);
 	}
 }
 
