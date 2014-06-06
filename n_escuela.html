@@ -356,6 +356,9 @@
 		  	$('.off-canvas-trigger').on('mouseover', function(){
 		  		$('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'move-right');
 		  	});
+		  	$('.off-canvas-list .large-2').on('mouseover', function(){
+		  		$('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'move-right');
+		  	});
 		  });
 		  $(document).on('open', '[data-offcanvas]', function() {
 			  $('.off-canvas-list .large-2').addClass("off-canvas-open");

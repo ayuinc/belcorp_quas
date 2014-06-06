@@ -1,16 +1,7 @@
-/*COLORES
-$morado: #5a277d;
-$morado-hover: #481F66;
-$morado-claro: #A679B2;
-$morado-lista: #5F4566;
-$girs: #596c79;
-$gris-claro: #909DA8;
-$gris-background: #EAEEF1;
-$blanco: #FFF;
-*/
 body {
 	@include thin;
 	position: relative;
+	letter-spacing: 0.10px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -201,7 +192,8 @@ ul.off-canvas-list li label {
 				border-bottom:none;
 				-webkit-transition: 300ms; /* For Safari 3.1 to 6.0 */
 				transition: 300ms;
-				&:hover {
+				&:hover,
+				&.active {
 					background-color: $morado;
 					color:$blanco;
 				}
@@ -387,6 +379,7 @@ ul.off-canvas-list li label {
 ul.no-bullet {
 	li {
 		a {
+			letter-spacing: 0.10px;
 			@include thin;
 			color: $gris-claro;
 			&:hover {
