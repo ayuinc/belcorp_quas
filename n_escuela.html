@@ -44,12 +44,9 @@
 	    
 	    <!--TOP BANNER-->
 	    <nav class="tab-bar">
-	      <section class="left-small">
+	      <!-- <section class="left-small">
 	        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
-	      </section>
-	      <section class="middle tab-bar-section">
-	        <h1 class="title">Foundation</h1>
-	      </section>
+	      </section> -->
 	    </nav>
 
 		<!--MENU LADO IZQUIERDO-->
@@ -59,7 +56,7 @@
 	      		<img src="n_img/logo-header-nuevo.png" class="large">
 	      	</div>
 	        <div class="small-12 medium-12 large-3 columns clearfix">
-		    	<img src="n_img/logo-header-nuevo-sml.png" class="small">
+		    		<a href="#" class="off-canvas-trigger"><img src="n_img/logo-header-nuevo-sml.png" class="small" /></a>
 	        </div>	      	
 	      </div>
 	      <ul class="off-canvas-list">
@@ -352,9 +349,26 @@
       $(document).foundation({
 			  offcanvas : {
 			    open_method: 'move', // Sets method in which offcanvas opens, can also be 'overlap'
-			    close_on_click : true
+			    close_on_click : false
 			  }
 		  });
+		  $(document).ready(function(){
+		  	$('.off-canvas-trigger').on('mouseover', function(){
+		  		$('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'move-right');
+		  	});
+		  });
+		  $(document).on('open', '[data-offcanvas]', function() {
+			  $('.off-canvas-list .large-2').addClass("off-canvas-open");
+			  $('.off-canvas-trigger').addClass("off-canvas-open");
+			  $('.off-canvas-list .large-2').removeClass("off-canvas-close");
+			  $('.off-canvas-trigger').removeClass("off-canvas-close");
+			});
+			$(document).on('close', '[data-offcanvas]', function() {
+			  $('.off-canvas-list .large-2').removeClass("off-canvas-open");
+			  $('.off-canvas-trigger').removeClass("off-canvas-open");
+			  $('.off-canvas-list .large-2').addClass("off-canvas-close");
+			  $('.off-canvas-trigger').addClass("off-canvas-close");
+			});
     </script>
     <script>
     $(document).ready(function(){
@@ -377,14 +391,6 @@
 		  });
 
     });
-    </script>
-    <script>
-      $(document).foundation({
-			  offcanvas : {
-			    open_method: 'move', // Sets method in which offcanvas opens, can also be 'overlap'
-			    close_on_click : true
-			  }
-		  });
     </script>
     <script>
     $(document).ready(function(){
