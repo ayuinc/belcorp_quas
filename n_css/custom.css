@@ -6975,7 +6975,7 @@ ul.off-canvas-list li label {
       -webkit-transition: 300ms;
       /* For Safari 3.1 to 6.0 */
       transition: 300ms; }
-      .menu ul li a:hover {
+      .menu ul li a:hover, .menu ul li a.active {
         background-color: #5a277d;
         color: white; }
       .menu ul li a [class^="icon-"], .menu ul li a [class*=" icon-"] {
