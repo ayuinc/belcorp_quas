@@ -6803,7 +6803,7 @@ body {
   position: relative;
   letter-spacing: 0.10px; }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
   font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
   font-weight: 100;
   font-style: normal; }
@@ -7018,6 +7018,7 @@ ul.off-canvas-list li label {
   font-weight: 100;
   font-style: normal; }
 .escuela-block h1 {
+  text-transform: uppercase;
   font-size: 4.8125rem;
   line-height: 105%; }
 .escuela-block h4 {
@@ -7225,6 +7226,11 @@ ul.no-bullet li a {
       position: absolute;
       right: 21px;
       top: 21px; }
+
+.length-panel {
+  border-left: 4px solid #5a277d;
+  background: #f6f6f7;
+  padding: 14px 0px 12px 14px; }
 
 /*!
 Animate.css - http://daneden.me/animate
