@@ -4,7 +4,7 @@ body {
 	letter-spacing: 0.10px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
 	@include thin;
 }
 
@@ -251,7 +251,7 @@ ul.off-canvas-list li label {
 		@include thin;
 	}
 	h1 {
-
+		text-transform: uppercase;
 		font-size: rem(77);
 		line-height: 105%;
 	}
@@ -504,7 +504,13 @@ ul.no-bullet {
 	}	
 }
 
-
+// SHOW PAGE
+	// Length panel
+.length-panel {
+	border-left: 4px solid $primary-color;
+	background: $gray-lighter;
+	padding: 14px 0px 12px 14px;
+}
 
 
 
