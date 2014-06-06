@@ -81,6 +81,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .tab-bar {
 	left:4rem;
+	background: $gray-lighter;
+	color: $gray-dark;
+	height: 63px;
+	height: rem(63);
+	.left-small {
+		border-right: none;
+		a {
+			color: $gray-dark;
+		}
+	}
 }
 
 .left-off-canvas-menu {
@@ -183,11 +193,11 @@ ul.off-canvas-list li label {
 		li {
 			@include thin;
 			color: $morado-claro;
-			border-bottom: 1px solid $morado-lista;
 			a {
 				padding:0.35rem 0;
-				color:$morado-claro;
-				font-size:0.9rem;
+				color: mix(white, $morado-claro, 28%);
+				font-size: 18px;
+				font-size: rem(18);
 				border-bottom:none;
 				-webkit-transition: 300ms; /* For Safari 3.1 to 6.0 */
 				transition: 300ms;
@@ -200,6 +210,8 @@ ul.off-canvas-list li label {
 					margin: -0.4rem 0.8rem 0 0.4rem;
 					font-size: 1.1rem;
 					cursor: pointer;
+					padding-top: 3px;
+					padding-top: rem(3);
 				}
 			}
 			[class^="icon-"], [class*=" icon-"]  {
@@ -214,21 +226,32 @@ ul.off-canvas-list li label {
 					color:$blanco;	
 					cursor: pointer;
 				}
-			}		
-				
+			}
 			label {
 				background-color: $morado;
 				color: $morado-claro;
 				font-size: 1.1rem;
 				@include thin;
-				padding-top:2rem;
+				padding-top: 21px;
+				padding-top: rem(21);
 			}
-			&:first-child {
-				border-bottom: 1px solid $morado-claro;
+			label:nth-child(n + 2) {
+				padding-top: 21px;
+				padding-top: rem(21);
 			}
 		}
 	}
-}	
+}
+
+.off-canvas-open {
+	opacity: 0;
+	@include transition(all 0.3s ease);
+}
+
+.off-canvas-close {
+	opacity: 1;
+	@include transition(all 0.3s ease);
+}
 
 //N_Escuela.html
 .escuela-block {
@@ -323,6 +346,7 @@ ul.off-canvas-list li label {
 	}
 	h1 {
 		font-size: rem(77);
+		text-transform: uppercase;
 	}
 	h4 {
 		font-size: rem(28);
