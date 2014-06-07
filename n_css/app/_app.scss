@@ -512,6 +512,76 @@ ul.no-bullet {
 	padding: 14px 0px 12px 14px;
 }
 
+	// Menu Convenios
+.menu-convenios {
+	> li {		
+	  padding-right: 1.5rem;
+	  line-height: 100%;
+		a {
+			text-transform: uppercase;
+	    font-weight: 300;
+	    font-size: 0.9rem;
+	    letter-spacing: 0.03rem;
+	    -webkit-transition: 0.2s;
+	    -moz-transition: 0.2s;
+	    -o-transition: 0.2s;
+	    transition: 0.2s;
+			&:hover {
+				color: darken($primary-color, 14%);
+			}
+			span {				
+	      font-size: 0.7rem;
+	      letter-spacing: 0.06rem;
+	      text-rendering: optimizeLegibility;
+			}
+		}
+		&:first-child {
+			a,
+			span {
+				font-size: 18px;
+			}			
+		}
+		&:last-child {
+			border-right: none;
+		}
+		.columns {
+			ul {
+				margin: 0 !important;
+    		list-style: none;
+				li {
+					border-right: none;
+		      padding: 0 !important;
+		      line-height: 50% !important;
+					a {
+						color: #596c79;
+        		font-size: 0.7rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+.convenio-list {
+	li {
+		margin-bottom: 21px;
+		margin-bottom: rem(21);
+		p {
+			line-height: 28px;
+			line-height: rem(28);
+		}
+		h4 {
+			color: $primary-color;
+		}
+		h5 {
+			color: $gris-medio;
+			span {
+				color: $gray-darker;
+			}
+		}
+	}
+}
+
 
 
 
