@@ -7066,7 +7066,9 @@ ul.off-canvas-list li label {
 .grid-panels .panel-curso {
   background: #ecf0f1;
   padding: 0.875rem;
-  border-right: 10px solid #5a277d; }
+  border-right: 10px solid #5a277d;
+  height: 210px;
+  height: 13.125rem; }
   .grid-panels .panel-curso p {
     font-size: 0.75rem;
     color: #596c79;

@@ -309,6 +309,8 @@ ul.off-canvas-list li label {
 		background: $gris-background;
 		padding:rem-calc(14);
 		border-right:10px solid $morado;
+		height: 210px;
+		height: rem(210);
 		p {
 			font-size: rem-calc(12);
 			color: $gris;
