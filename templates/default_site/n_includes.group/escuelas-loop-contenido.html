@@ -1,14 +1,20 @@
-							{exp:channel:entries channel="cursos|tendencias" limit="16" category="{last_segment_category_id}" dynamic="off" }  	    		
+							{exp:channel:entries channel="cursos|tendencias" limit="16" category="{last_segment_category_id}" dynamic="off" }  	    	
   	    			<li  class="isotope-item 
   	    				{categories show_group='10' show='not 108|109|110|111|112|113|114|115'}
 								        {category_name}
 								{/categories}
    	    			">
-							  {if interna-contenido=="Pagina Interna"}
-					      	<a href="{site_url}contenidos/curso/{url_title}" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);">
-					      {if:else}
-					        <a href="{link-recurso}" target="_blank" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}-LINKEXTERNO']);">
-					      {/if}  	    				
+   	    			
+   	    				{if interna-contenido}
+								  {if interna-contenido=="Pagina Interna"}
+						      	<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);">
+						      {if:else}
+						        <a href="{link-recurso}" target="_blank" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}-LINKEXTERNO']);">
+						      {/if}  
+   	    				{if:else}
+   	    				<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);">
+   	    				{/if}
+
 	  	    				<div class="panel-curso">
 	  	    					<h5>{title}</h5>
                     {if subttulo-curso}

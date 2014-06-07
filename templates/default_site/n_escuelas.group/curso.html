@@ -1,0 +1,104 @@
+{exp:channel:entries channel="cursos|tendencias" limit="1" }
+{embed="n_includes/header" titulo="{title} | Curso"}
+
+	{if logged_in}
+	
+	{embed="n_includes/buscador"}
+	
+	<div class="off-canvas-wrap" data-offcanvas>
+	  <div class="inner-wrap">
+	    
+	  <!--TOP BANNER-->  
+	  {embed="n_includes/top-banner"}  
+	    
+		<!--MENU LADO IZQUIERDO-->
+	  {embed="n_includes/menu-izquierdo"}
+	    
+	
+		<!--CONTENIDOS-->
+	    <section class="main-section">
+				{embed="n_includes/breadcrumbs"}
+	    	<div class="row escuela-block mb-7-100">
+	    		<div class="small-12 medium-12 large-9 columns">
+						<h1>{title}</h1>						
+	    		</div>   		
+	    	</div>
+	    	<div class="row mb-7-100">
+	    		<!-- SEARCH OVERLAY TRIGGER STARTS -->
+  	    	<div class="small-8 medium-9 large-9 columns">
+		    	{if proveedor-video-curso=='No Hay Video'}
+		    		{if foto-curso}
+			    		{foto-curso}
+			    			<img src="{image:url:large}" alt="{title}">
+			    		{/foto-curso}
+		    		{/if}
+		    	{/if}                
+
+          {if proveedor-video-curso=='Youtube'}             
+            <iframe width="100%" height="500" src="//www.youtube.com/embed/{video-introductorio-curso}" frameborder="0" allowfullscreen></iframe>
+          {/if} 
+          
+          {if proveedor-video-curso=='Vimeo'}             
+            <iframe width="100%" height="500" src="//www.youtube.com/embed/{video-introductorio-curso}" frameborder="0" allowfullscreen></iframe>
+				  {/if}   
+          
+          {if proveedor-video-curso=='Amazon'}             
+            <iframe width="100%" height="500" src="//www.youtube.com/embed/{video-introductorio-curso}" frameborder="0" allowfullscreen></iframe>
+				  {/if} 
+  	    	</div>
+  	    	<!-- SEARCH OVERLAY TRIGGER ENDS -->
+  	    	<div class="small-4 medium-3 large-3 columns">
+	          {if logged_in}
+		          {embed="includes/comerzar-curso"}
+		        {/if}
+		        {if logged_out}
+		        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand"  onClick="_gaq.push(['_trackEvent', 'Curso', 'Entrar-Curso', '{title}']);">Comenzar</a>
+						{/if}  	    	
+            {embed="includes/curso-detalles" 
+            	tiempo-duracion-horas-curso="{tiempo-duracion-horas-curso}"
+            	tiempo-duracion-minutos-curso="{tiempo-duracion-minutos-curso}" 
+            	cantidad-lecciones-curso="{cantidad-lecciones-curso}" 
+            	cantidad-video-curso="{cantidad-video-curso}" link-curso="{link-curso}" 
+            	cantidad-modulos-cursos="{cantidad-modulos-cursos}" 
+            }					
+  	    	</div>
+  	    </div>
+  	    <div class="row">
+  	    	<div class="small-8 medium-9 large-9 columns">
+  	    		{if introduccin-curso}
+  	    		<h6 class="uppercase">Descripción del curso</h6>
+  	    		<p>{introduccin-curso}</p>
+  	    		{/if}
+  	    		{if que-voy-aprender-curso}
+  	    		<h6 class="uppercase">¿Qué voy a aprender?</h6>
+  	    		<p>{que-voy-aprender-curso}</p>
+  	    		{/if}
+  	    		{if que-debo-saber-curso}
+  	    		<h6 class="uppercase">¿Qué debo saber?</h6>
+  	    		<p>{que-debo-saber-curso}</p>
+  	    		{/if}  
+  	    		{if syllabus-curso}
+  	    		<h6 class="uppercase">Syllabus</h6>
+  	    		<p>{syllabus-curso}</p>
+  	    		{/if}    	    			    		  	    		
+  	    	</div>
+  	    	<div class="small-4 medium-3 large-3 columns">
+  	    		
+  	    	</div>
+  	    </div>
+	    </section>
+		<a class="exit-off-canvas"></a>
+	
+	  </div>
+	</div>
+	
+	{if:else}		
+		<div class="row">
+			<div class="small-12 medium-12 large-12 columns">	
+			<h3 class="text-center">Necesita ingresar al sistema. <a href="{site_url}">Regresar al inicio</a></h3>
+			</div>
+		</div>
+	{/if}		
+	
+{/exp:channel:entries}
+{embed="n_includes/footer"}

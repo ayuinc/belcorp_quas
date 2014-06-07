@@ -87,7 +87,7 @@
 		  
 				   <!--SECCION DESCRIPCIONES-->
 				   <div class="row requisitos_info">
-				   		  {if introduccin-curso}
+				   		{if introduccin-curso}
 						  <div class="large-12 medium-12 small-12 columns clearfix">
 							  <h3>DESCRIPCIÓN DEL CURSO</h3>
 							  <p>{introduccin-curso}</p>
@@ -126,12 +126,12 @@
       	<div class=" small-12 medium-3 large-3 columns">
               <div class="row sidebar-curso">
 	              <div class="small-12 medium-12 large-12 columns">
-	              	{if logged_in}
+	               {if logged_in}
 		              	{embed="includes/comerzar-curso"}
 		             {/if}
 		             {if logged_out}
 		              <a href="{link-curso}" target="_blank" id="start_course" class="explore button expand"  onClick="_gaq.push(['_trackEvent', 'Curso', 'Entrar-Curso', '{title}']);">COMENZAR CURSO</a>
-						{/if}
+								 {/if}
 		
 			              {embed="includes/curso-detalles" 
 			              	tiempo-duracion-horas-curso="{tiempo-duracion-horas-curso}"
