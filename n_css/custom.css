@@ -7066,7 +7066,9 @@ ul.off-canvas-list li label {
 .grid-panels .panel-curso {
   background: #ecf0f1;
   padding: 0.875rem;
-  border-right: 10px solid #5a277d; }
+  border-right: 10px solid #5a277d;
+  height: 210px;
+  height: 13.125rem; }
   .grid-panels .panel-curso p {
     font-size: 0.75rem;
     color: #596c79;
@@ -7231,6 +7233,53 @@ ul.no-bullet li a {
   border-left: 4px solid #5a277d;
   background: #f6f6f7;
   padding: 14px 0px 12px 14px; }
+
+.menu-convenios > li {
+  padding-right: 1.5rem;
+  line-height: 100%; }
+  .menu-convenios > li a {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.9rem;
+    letter-spacing: 0.03rem;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s; }
+    .menu-convenios > li a:hover {
+      color: #331647; }
+    .menu-convenios > li a span {
+      font-size: 0.7rem;
+      letter-spacing: 0.06rem;
+      text-rendering: optimizeLegibility; }
+  .menu-convenios > li:first-child a,
+  .menu-convenios > li:first-child span {
+    font-size: 18px; }
+  .menu-convenios > li:last-child {
+    border-right: none; }
+  .menu-convenios > li .columns ul {
+    margin: 0 !important;
+    list-style: none; }
+    .menu-convenios > li .columns ul li {
+      border-right: none;
+      padding: 0 !important;
+      line-height: 50% !important; }
+      .menu-convenios > li .columns ul li a {
+        color: #596c79;
+        font-size: 0.7rem; }
+
+.convenio-list li {
+  margin-bottom: 21px;
+  margin-bottom: 1.3125rem; }
+  .convenio-list li p {
+    line-height: 28px;
+    line-height: 1.75rem; }
+  .convenio-list li h4 {
+    color: #5a277d; }
+  .convenio-list li h5 {
+    color: #999999; }
+    .convenio-list li h5 span {
+      color: #313233; }
 
 /*!
 Animate.css - http://daneden.me/animate
