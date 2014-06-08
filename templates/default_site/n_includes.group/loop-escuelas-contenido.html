@@ -16,7 +16,14 @@
    	    				{/if}
 
 	  	    				<div class="panel-curso">
-	  	    					<h5>{title}</h5>
+	  	    					<h5 class="mb-0">
+                      {if tipo-contenido-recurso}
+                        <small>{tipo-contenido-recurso}</small>
+                      {if:else}
+                      	<small>CURSO</small>
+                      {/if}
+											<br>{title}
+										</h5>
                     {if subttulo-curso}
                     	<h6>{subttulo-curso}</h6>
                     {/if}

@@ -87,20 +87,20 @@
 	        <li>
 	        	<div class="row clearfix">
 	        		<div class="small-12 medium-12 large-10 columns">
-			        	<a href="#">
-			        		<div class="icon-users"></div>Que hace por ti
+			        	<a href="{site_url}n_seccion/que-hace-la-ucb-por-ti" {if segment_2=='que-hace-la-ucb-por-ti'}class="active"{/if}>
+			        		<div class="icon-users"></div>Que hace la UCB por ti
 			        	</a>
 	        		</div>
 	        		<div class="small-12 medium-12 large-2 columns">
-		        		<div class="icon-users"></div>
+		        		<div class="icon-users {if segment_2=='que-hace-la-ucb-por-ti'}active{/if}"></div>
 	        		</div>	        		
 	        	</div>		        
 	        </li>
 	        <li>
 	        	<div class="row clearfix">
 	        		<div class="small-12 medium-12 large-10 columns">
-			        	<a href="#">
-			        		<div class="icon-graduation"></div>Convenios
+			        	<a href="{site_url}n_convenios/peru" {if segment_1=='n_convenios'}class="active"{/if}>
+			        		<div class="icon-graduation {if segment_1=='n_convenios'}active{/if}"></div>Convenios
 			        	</a>
 	        		</div>
 	        		<div class="small-12 medium-12 large-2 columns">
@@ -111,12 +111,12 @@
 	        <li>
 	        	<div class="row clearfix">
 	        		<div class="small-12 medium-12 large-10 columns">
-			        	<a href="#">
+			        	<a href="{site_url}n_preguntas_frecuentes" {if segment_1=='n_preguntas_frecuentes'}class="active"{/if}>
 			        		<div class="icon-question"></div>Preguntas frecuentes
 			        	</a>
 	        		</div>
 	        		<div class="small-12 medium-12 large-2 columns">
-		        		<div class="icon-question"></div>
+		        		<div class="icon-question {if segment_1=='n_preguntas_frecuentes'}active{/if}"></div>
 	        		</div>	        		
 	        	</div>	        
 	        </li>

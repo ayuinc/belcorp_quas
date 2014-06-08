@@ -1,12 +1,12 @@
 	    <nav class="tab-bar">
-	      <section class="left-small">
-	        <!--<a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>-->
-	      </section>
-	
 	      <section class="middle tab-bar-section">
 	        <ul class="inline-list right">
-		        <li>Herman Marin</li>
-						<li><img src="http://placehold.it/35x35"></li>
+		        <li>
+		        {exp:member:custom_profile_data}
+		        Hola, <a href="http://54.243.186.233/moodle/my/">{screen_name}</a><br>
+		        <small><a href="{path='logout'}">Salir</a></small>
+		        {/exp:member:custom_profile_data}
+		        </li>
 	        </ul>
 	      </section>
 	    </nav>

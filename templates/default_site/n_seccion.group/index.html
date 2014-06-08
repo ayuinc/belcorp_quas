@@ -16,10 +16,12 @@
 	
 		<!--CONTENIDOS-->
 	    <section class="main-section">
-				{embed="n_includes/breadcrumbs"}
+	    	{exp:channel:entries channel="secciones" limit="1" disable="pagination"}
+					{embed="n_includes/breadcrumbs" titulo="{title}"}
+				{/exp:channel:entries}
 	    	<div class="row escuela-block mb-7-100">
 	    		<div class="small-12 medium-12 large-12 columns">
-						{embed="n_includes/escuelas-descripcion"}
+						<h1>Que Hace la UCB por ti</h1> 
 	    		</div>   		
 	    	</div>
 	    	<div class="row search-block mb-7-100">
@@ -30,12 +32,9 @@
   	    		<!--<a href="#" class="button expand">Ingresa</a>-->
   	    	</div>
   	    </div>
-  	    <div class="row">
+				<div class="row">
   	    	<div class="small-8 medium-9 large-9 columns">
-  	    		{embed="n_includes/filtro-tipo-contentido"}
-  	    		<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-3 grid-panels" id="isotope-container">
-							{embed="n_includes/loop-escuelas-contenido"}
-  	    		</ul>				
+  	    		{embed="n_includes/loop-que-hace-por-ti"}
   	    	</div>
   	    	<div class="small-4 medium-3 large-3 columns">
   	    		{embed="n_includes/menu-derecho"}

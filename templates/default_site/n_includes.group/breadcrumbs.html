@@ -3,7 +3,7 @@
 				  {if segment_2=='curso'}
 				  <li><a href="{site_url}n_wall">Wall</a></li>
 				  {/if}
-					{if segment_2!=''}
+					{if segment_2!='' AND segment_1!='n_seccion'}
 				  <li>
 				  	<a href="{site_url}n_escuelas/{segment_2}">{segment_2_category_name}</a>
 				  </li> 
@@ -13,5 +13,14 @@
 				  {/if}
 				  {if segment_4!=''}
 				  	<li class="current">{segment_4_category_name}</li>
-				  {/if}				  
+				  {/if}		
+				  {if segment_1=='n_convenios'}
+				  	<li class="current">Convenios: {segment_2_category_name}</li>
+				  {/if}		
+				  {if segment_1=='n_preguntas_frecuentes'}
+				  	<li class="current">Preguntas Frecuentes</li>
+				  {/if}	
+				  {if segment_1=='n_seccion'}
+				  	<li class="current">{embed:titulo}</li>
+				  {/if}					  					    
 				</ul>

@@ -1,0 +1,8 @@
+  	    		<ul class="no-bullet convenio-list">
+  	    			{exp:channel:entries channel="preguntas-frecuentes" limit="20" disable="member_data" category="{segment_2}" dynamic="off" }
+							<li>
+								<h4 class="uppercase">{title}</h4>
+								<p>{respuesta-pregunta}</p>
+							</li>
+							{/exp:channel:entries}
+						</ul>
