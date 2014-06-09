@@ -1,7 +1,7 @@
 	    <aside class="left-off-canvas-menu menu">
 	      <div class="row logo">
 	      	<div class="small-12 medium-12 large-9 columns clearfix">
-	      		<a href="{site_url}/n_wall"><img src="{site_url}n_img/logo-header-nuevo.png" class="large"></a>
+	      		<a href="{site_url}n_wall"><img src="{site_url}n_img/logo-header-nuevo.png" class="large"></a>
 	      	</div>
 	        <div class="small-12 medium-12 large-3 columns clearfix">
 		    		<a href="#" class="off-canvas-trigger"><img src="{site_url}n_img/logo-header-nuevo-sml.png" class="small"></a>
@@ -123,12 +123,12 @@
 	        <li>
 	        	<div class="row clearfix">
 	        		<div class="small-12 medium-12 large-10 columns">
-			        	<a href="#">
+			        	<a href="{site_url}n_contactos" {if segment_1=='n_contactos'}class="active"{/if}>
 			        		<div class="icon-mail"></div>Contacto
 			        	</a>
 	        		</div>
 	        		<div class="small-12 medium-12 large-2 columns">
-		        		<div class="icon-mail"></div>
+		        		<div class="icon-mail {if segment_1=='n_contactos'}active{/if}"></div>
 	        		</div>	        		
 	        	</div>	        
 	        </li>

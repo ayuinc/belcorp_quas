@@ -21,7 +21,12 @@
 						<h1>BIENVENIDO</h1>
 	    		</div>
 	    		<div class="small-12 medium-6 large-6 columns">
-						<h4>LA COMUNIDAD DE APRENDIZAJE PARA QUE LOGRES TUS OBJETIVOS Y CREZCAS EN BELCORP</h4>
+						<h4>
+						ENCUENTRA TU RUTA PERSONALIZADA DE APRENDIZAJE<br>
+						{exp:member:custom_profile_data}
+						<a href="http://54.243.186.233/moodle/my/">ENTRA A TU PERFIL ›</a>
+						{/exp:member:custom_profile_data}
+						</h4>
 	    		</div>	    		
 	    	</div>
 	    	<div class="row search-block mb-7-100">
@@ -34,36 +39,11 @@
   	    </div>
   	    <div class="row">
   	    	<div class="small-9 medium-9 large-9 columns">
-  	    		<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-3 grid-panels">
-							{exp:channel:entries channel="tendencias" limit="3" dynamic="off" category="269"}  	    		
-  	    			<li>
-							  {if interna-contenido=="Pagina Interna"}
-					      	<a href="{site_url}contenidos/curso/{url_title}" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);">
-					      {if:else}
-					        <a href="{link-recurso}" target="_blank" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}-LINKEXTERNO']);">
-					      {/if}  	    				
-	  	    				<div class="panel-heading">
-								  	{if imagen-recurso}
-									  	{imagen-recurso}
-									    <img src="{image:url:medium}" alt="{title}" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);"/>
-									    {/imagen-recurso}
-								    {if:else}
-								    	<img src="http://placehold.it/320x214" alt="{title}" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}-LINKEXTERNO']);">
-								    {/if}
-								    
-								    {if tipo-contenido-recurso=='Video'}
-								    
-								    {/if}
-	  	    				</div>
-	  	    				<div class="panel-body">
-	  	    					<div class="panel-badge">{tipo-contenido-recurso}</div>
-	  	    					<h5>{title}</h5>
-										<h6>Este artículo nos enseña los diferentes tipos de definiciones para la palabra "pasión" y  cuenta la experiencia de un escritor que decidió escribir un libro sobre un tema que a él lo apasionaba y no paró hasta lograr su meta.</h6>
-	  	    				</div>
-	  	    			</a>
-  	    			</li>
-  	    			{/exp:channel:entries}
-  	    		</ul>				
+  	    		{exp:channel:entries channel="wall" limit="3" dynamic="off" disable="pagination"} 
+							{embed="n_includes/loop-wall" seccion="{1linea-wall}"}
+							{embed="n_includes/loop-wall" seccion="{2linea-wall}"}
+							{embed="n_includes/loop-wall" seccion="{3linea-wall}"}
+						{/exp:channel:entries} 
   	    	</div>
   	    	<div class="small-3 medium-3 large-3 columns">
 						{embed="n_includes/menu-derecho"}

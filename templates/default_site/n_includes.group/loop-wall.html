@@ -1,0 +1,44 @@
+  	    		<h4>{embed:seccion}</h4>
+  	    		<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-3 grid-panels">
+  	    			{if embed:seccion=='Innovacion'}
+							{exp:channel:entries channel="tendencias" limit="3" dynamic="off" category="114"} 
+							{/if} 	
+  	    			{if embed:seccion=='Ventas'}
+							{exp:channel:entries channel="tendencias" limit="3" dynamic="off" category="111"} 
+							{/if} 			
+  	    			{if embed:seccion=='Negocios'}
+							{exp:channel:entries channel="tendencias" limit="3" dynamic="off" category="112"} 
+							{/if} 				
+  	    			{if embed:seccion=='Liderazgo y Cultura'}
+							{exp:channel:entries channel="tendencias" limit="3" dynamic="off" category="113"} 
+							{/if} 																	    		
+  	    			{if embed:seccion=='Tecnologia'}
+							{exp:channel:entries channel="tendencias" limit="3" dynamic="off" category="110"} 
+							{/if} 	
+  	    			{if embed:seccion=='Operaciones'}
+							{exp:channel:entries channel="tendencias" limit="3" dynamic="off" category="109"} 
+							{/if} 														
+  	    			<li>
+							  {if interna-contenido=="Pagina Interna"}
+					      	<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);">
+					      {if:else}
+					        <a href="{link-recurso}" target="_blank" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}-LINKEXTERNO']);">
+					      {/if}  	    				
+	  	    				<div class="panel-heading">
+								  	{if imagen-recurso}
+									  	{imagen-recurso}
+									    <img src="{image:url:medium}" alt="{title}" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);"/>
+									    {/imagen-recurso}
+								    {if:else}
+								    	<img src="http://placehold.it/320x214" alt="{title}" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}-LINKEXTERNO']);">
+								    {/if}
+	  	    				</div>
+	  	    				<div class="panel-body">
+	  	    					<div class="panel-badge">{tipo-contenido-recurso}</div>
+	  	    					<h5>{title}</h5>
+										<h6>{descripcion-recurso}</h6>
+	  	    				</div>
+	  	    			</a>
+  	    			</li>
+  	    			{/exp:channel:entries}
+  	    		</ul>	
