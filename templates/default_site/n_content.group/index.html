@@ -2,7 +2,7 @@
 
 	{if logged_in}
 	
-		{redirect='n_wall' status_code="301"}
+		{redirect='n_muro' status_code="301"}
 	
 	{if:else}
     <div class="row login-formulario">
@@ -15,13 +15,13 @@
     			</div>
     			<div class="row">
     				<div class="small-12 medium-6 medium-centered large-12 columns">
-    					{exp:member:login_form return="{site_url}destacados/index"}
+    					{exp:member:login_form return="{site_url}n_muro/index"}
     						<div class="row">
     							<div class="small-2 medium-2 large-2 columns icono clearfix">
     								<div class="icon-user"></div>
     							</div>
     							<div class="small-10 medium-10 large-10 columns clearfix">
-    								<input type="text" name="" value="" placeholder="Nombre de Usuario">
+    								<input type="text" name="username" value="33" placeholder="Nombre de Usuario">
     							</div>
     						</div>
     						<div class="row">
@@ -29,16 +29,18 @@
     								<div class="icon-key"></div>
     							</div>
     							<div class="small-10 medium-10 large-10 columns clearfix">
-    								<input type="password" name="" value="" placeholder="Contraseña">
+    								<input type="password" name="password" value="444" placeholder="Contraseña">
     							</div>
     						</div>
     						<div class="row">
     							<div class="small-12 medium-12 large-12 columns clearfix">    						
 										<input type="submit" class="button expand" onClick="_gaq.push(['_trackEvent', 'Ingresar', 'Entrar-Homepage', 'Ingreso al Catalogo']);" value="INICIAR SESIÓN ›" name="submit">
+										{if auto_login}
+										<p class="text-center"><input class="checkbox" type="checkbox" name="auto_login" value="1"> Auto-login</p>
+										{/if}
 										<p class="text-center"><a href="{path='member/forgot_password'}">¿Olvidate tu contraseña?</a></p>
     							</div>
     						</div>
-    						<input type="hidden" name="auto_login" value="1">
     					{/exp:member:login_form}
     				</div>
     			</div>    					

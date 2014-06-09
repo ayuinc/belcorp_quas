@@ -1,0 +1,61 @@
+				{exp:freeform:form 
+					form_id="2" 
+					return="n_quieres-crear-un-curso/gracias" 
+					required="first_name|last_name|email|user_message|titulo_del_curso|descripcion_del_curso|curricula_del_curso" 
+					inline_errors="yes" 
+					inline_error_return="n_quieres-crear-un-curso/index" }
+				    
+				    <dl>
+				    		{if freeform:error:first_name OR freeform:error:last_name OR freeform:error:email OR freeform:error:user_message OR freeform:error:titulo_del_curso OR freeform:error:descripcion_del_curso OR freeform:error:curricula_del_curso}
+				    		<dt class="error">ERROR en los siguientes campos. </dt>
+					    		<dd>
+					    			<ul>
+						    		{if freeform:error:first_name}
+									    <li class="error">Nombre: verificar si fue ingresado correctamente</li>
+									{/if}
+						        	{if freeform:error:last_name}
+									    <li class="error">Apellido: verificar si fue ingresado correctamente</li>
+									{/if}
+						        	{if freeform:error:email}
+									    <li class="error">Correo Electrónico: verificar el formato, o si fue ingresado correctamente</li>
+									{/if}
+						        	{if freeform:error:user_message}
+									    <li class="error">Mensaje: verificar si fue ingresado correctamente</li>
+									{/if}	
+						        	{if freeform:error:titulo_del_curso}
+									    <li class="error">Título del Curso: verificar si fue ingresado correctamente</li>
+									{/if}
+						        	{if freeform:error:descripcion_del_curso}
+									    <li class="error">Descripción del Curso: verificar si fue ingresado correctamente</li>
+									{/if}
+						        	{if freeform:error:curricula_del_curso}
+									    <li class="error">Curricula del Curso: verificar si fue ingresado correctamente</li>
+									{/if}	
+					    			</ul>
+								</dd>				    		
+				    		{/if}
+						</dl>
+				    
+				    <dl>
+				    {freeform:all_form_fields}
+				        <dt><label>{freeform:field_label}</label></dt>
+				        <dd>
+				        	{freeform:field_output}																				
+				        </dd>
+				        
+				    {/freeform:all_form_fields}
+				    </dl>
+				    
+				    {if freeform:captcha}
+				        <p>Please enter the word you see in the image below:</p>
+				        <p>{freeform:captcha}<br />
+				        <input type="text" name="captcha" style="width:140px;" /></p>
+				    {/if}
+				    
+						<div class="row">
+	            <div class="large-offset-10 large-2 columns"> 
+	            <button class="publish button expand">ENVIAR</button>
+	            </div>
+	          </div>
+	              
+				{/exp:freeform:form}
