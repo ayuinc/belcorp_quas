@@ -29,17 +29,37 @@
 
 	.main-section {
 		padding:2.3rem 2rem 1.875rem 6.1875rem;
+		position:absolute;
+		top:0;
+		left:0;
+		bottom:0;
+		right:0;
 	}
 
 	.heading-block {
 		h1 {
-			margin:0;
+			margin: -0.5rem 0 0 0;
 			font-size:3rem;
 		}
 		h4 {
 			font-size:1rem;
 		}
 	}
+	
+	.full-width-for-portrait {
+		width:100% !important;
+	}
+	
+	.grid-panels {
+		.panel-heading {
+			.video-clip {
+				width:45px;
+			}
+		}
+		.panel-body {
+			height:265px;
+		}
+	}	
 
 } /* min-width 641px, medium screens */
 
@@ -58,6 +78,10 @@
 			font-size:1.35rem;
 		}
 	}
+	
+	.full-width-for-landscape {
+		width:100% !important;
+	}	
 
 	.escuela-block {
 		h1 {

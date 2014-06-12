@@ -1,8 +1,8 @@
 	<div class="search-canvas-overlay animated">
-		<a href="#" class="close">Cerrar</a>
-		<div class="search-form">
+		<a href="#" class="close"><i class="icon-typ-times"></i> Cerrar</a>
+		<div class="search-form pt-28-100">
 			<div class="row">
-				<div class="medium-6 columns">
+				<div class="large-6 columns large-centered">
 					{exp:search:simple_form 
 						channel="cursos|tendencias" 
 						search_in="everywhere"
@@ -14,10 +14,10 @@
 					}
 						<input type="hidden" name="XID" value="{XID_HASH}" />	
 			      <div class="row collapse">
-			        <div class="small-10 medium-10 large-10 columns">
-			          <input type="search" name="keywords" id="keywords" autofocus="autofocus" placeholder="Encuentra los cursos de tu interés aquí">
+			        <div class="large-10 columns">
+			          <input type="text" name="keywords" id="keywords" autofocus="autofocus" placeholder="Encuentra los cursos de tu interés aquí">
 			        </div>
-			        <div class="small-2 medium-2 large-2 columns">
+			        <div class="large-2 columns">
 			          <button type="submit" class="input postfix"><i class="icon-search"></i></button>
 			        </div>
 			      </div>

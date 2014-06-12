@@ -32,7 +32,7 @@
 	    		</div>	    		
 	    	</div>
 	    	<div class="row search-block mb-7-100">
-  	    	<div class="small-12 medium-9 large-9 columns">
+  	    	<div class="small-12 medium-9 large-9 columns full-width-for-portrait">
   	    		{embed="n_includes/buscador-trigger"}
   	    	</div>
   	    	<div class="medium-3 large-3 columns">
@@ -40,14 +40,14 @@
   	    	</div>
   	    </div>
   	    <div class="row">
-  	    	<div class="small-12 medium-9 large-9 columns">
+  	    	<div class="small-12 medium-9 large-9 columns full-width-for-portrait">
   	    		{exp:channel:entries channel="wall" limit="3" dynamic="off" disable="pagination"} 
 							{embed="n_includes/loop-wall" seccion="{1linea-wall}"}
 							{embed="n_includes/loop-wall" seccion="{2linea-wall}"}
 							{embed="n_includes/loop-wall" seccion="{3linea-wall}"}
 						{/exp:channel:entries} 
   	    	</div>
-  	    	<div class="medium-3 large-3 columns hide-for-small">
+  	    	<div class="medium-3 large-3 columns hide-for-small hide-for-portrait">
 						{embed="n_includes/menu-derecho"}
   	    	</div>
   	    </div>

@@ -526,7 +526,7 @@ ul.no-bullet {
 	@include transition(display 0.7s ease-in);
 	&.searching {
 		display: block;
-		position: absolute;
+		position: fixed;
 		z-index: 1002;
 		background: rgba($gray, 0.9);
 		top: 0;
@@ -538,11 +538,11 @@ ul.no-bullet {
 		overflow-y: hidden;
 		overflow-x: hidden;
 		.search-form {
-			position: absolute;
-			width: 100%;
-			height: auto;
-			top: 50%;
-			left: 28%;
+			// position: absolute;
+			// width: 100%;
+			// height: auto;
+			// top: 50%;
+			// left: 28%;
 			form {
 				input,
 				button {
@@ -550,6 +550,9 @@ ul.no-bullet {
 					height: rem(56);
 					font-size: 21px;
 					font-size: rem(21);
+				}
+				button i {
+					color: white;
 				}
 			}
 		}

@@ -1,5 +1,5 @@
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
-/**
+/** 
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
@@ -9,7 +9,7 @@ html {
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
-  -webkit-text-size-adjust: 100%; 
+  -webkit-text-size-adjust: 100%;
   /* 2 */ }
 
 /**
@@ -8192,7 +8192,7 @@ ul.no-bullet li a {
   transition: display 0.7s ease-in; }
   .search-canvas-overlay.searching {
     display: block;
-    position: absolute;
+    position: fixed;
     z-index: 1002;
     background: rgba(137, 139, 142, 0.9);
     top: 0;
@@ -8203,18 +8203,14 @@ ul.no-bullet li a {
     height: auto;
     overflow-y: hidden;
     overflow-x: hidden; }
-    .search-canvas-overlay.searching .search-form {
-      position: absolute;
-      width: 100%;
-      height: auto;
-      top: 50%;
-      left: 28%; }
-      .search-canvas-overlay.searching .search-form form input,
-      .search-canvas-overlay.searching .search-form form button {
-        height: 56px;
-        height: 3.5rem;
-        font-size: 21px;
-        font-size: 1.3125rem; }
+    .search-canvas-overlay.searching .search-form form input,
+    .search-canvas-overlay.searching .search-form form button {
+      height: 56px;
+      height: 3.5rem;
+      font-size: 21px;
+      font-size: 1.3125rem; }
+    .search-canvas-overlay.searching .search-form form button i {
+      color: white; }
     .search-canvas-overlay.searching .close {
       font-size: 28px;
       font-size: 1.75rem;

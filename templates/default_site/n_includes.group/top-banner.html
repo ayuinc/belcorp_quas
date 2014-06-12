@@ -3,7 +3,28 @@
 	        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
 	      </section>
 	      <section class="middle tab-bar-section hide-for-medium hide-for-large">
-	      	<h6 class="uppercase text-primary">Escuela de liderazgo y cultura</h6>
+	      	<h6 class="uppercase text-primary">
+	      	{if segment_1=='n_escuelas'}
+		      	{if segment_2!='tecnologia-temas' OR segment_2!='operaciones-temas'}
+		      	Escuela de
+		      	{/if} 
+		      	{segment_2_category_name}
+	      	{/if}
+	      	{if segment_1=='n_seccion'}
+	      		{if segment_2=='que-hace-la-ucb-por-ti'}
+	      			QUE HACE LA UCB POR TI
+	      		{/if}
+	      	{/if}
+	      	{if segment_1=='n_contactos'}	
+	      		CONTACTOS
+	      	{/if}
+	      	{if segment_1=='n_convenios'}	
+	      		CONVENIOS
+	      	{/if}      	
+	      	{if segment_1=='n_preguntas_frecuentes'}	
+	      		PREGUNTAS FRECUENTES
+	      	{/if}
+	      	</h6>
 	      </section>
 	      <section class="right tab-bar-section hide-for-small">
 	        <ul class="inline-list right username pt-7 text-right">

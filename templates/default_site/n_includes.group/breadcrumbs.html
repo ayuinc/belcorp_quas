@@ -1,6 +1,9 @@
 				<ul class="breadcrumbs">
 				  <li><a href="{site_url}n_muro">El Muro</a></li>
-					{if segment_2!='' AND segment_1!='n_seccion' AND segment_2!='gracias' AND segment_2!='no_resultados'}
+				  {if segment_1=='n_escuelas'}
+				  <li><a href="{site_url}n_muro">Escuelas</a></li>
+				  {/if}
+					{if segment_2!=''AND segment_1!='n_convenios' AND segment_1!='n_seccion' AND segment_2!='gracias' AND segment_2!='no_resultados'}
 				  <li>
 				  	<a href="{site_url}n_escuelas/{segment_2}">{segment_2_category_name}</a>
 				  </li> 
@@ -23,12 +26,14 @@
 				  	<li class="current">{segment_4_category_name}</li>
 				  {/if}		
 				  {if segment_1=='n_convenios'}
-				  	<li class="current">Convenios: {segment_2_category_name}</li>
+				  	<li><a href="{site_url}n_convenios/peru">Convenios</a></li>
+				  	<li class="current">{segment_2_category_name}</li>
 				  {/if}		
 				  {if segment_1=='n_preguntas_frecuentes'}
 				  	<li class="current">Preguntas Frecuentes</li>
 				  {/if}	
 				  {if segment_1=='n_seccion'}
+				  	<li><a href="{site_url}n_muro">La UCB</a></li>
 				  	<li class="current">{embed:titulo}</li>
 				  {/if}	
 				  {if segment_1=='n_plan_de_desarrollo'}
