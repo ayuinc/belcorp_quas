@@ -1,0 +1,75 @@
+// Bourbon sass tools
+@import "bourbon/bourbon";
+
+// Foundation by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// Behold, here are all the Foundation components.
+@import
+  "foundation/components/global",
+	"foundation/settings",
+	"foundation/functions";
+
+// APP Custom
+@import
+	"app/type-custom",
+	"app/utilities-custom";
+
+/*  ==============   */
+
+@media #{$small-only} {
+	.tab-bar {
+		left: 0;
+	}
+	.tab-bar-section.middle {
+		padding: 8px 0 0 0;
+	}
+	.tab-bar .menu-icon span:after {
+		box-shadow: 0 0px 0 1px $primary-color, 0 7px 0 1px $primary-color, 0 14px 0 1px $primary-color;
+	}
+	.tab-bar .middle h6 {
+		text-align: left;
+		font-weight: 100 !important;
+		line-height: 21px;
+		line-height: rem(21);
+	}
+	
+	.menu {
+		left: 0;
+	}
+	.left-off-canvas-menu {
+		width: 265px;
+		width: rem(265);
+	}
+
+	.main-section {
+		padding: 0px 7px 0px 7px;
+		padding: rem(0) rem(7) rem(0) rem(7);
+	}
+
+	.heading-block {
+		h1 {
+			font-size: 42px;
+			font-size: rem(42);
+		}
+		h4 {
+			font-size: 21px;
+			font-size: rem(21);
+		}
+	}
+	#search-button {
+		button.search-form-trigger {
+			font-size: 14px;
+			font-size: rem(14);
+		}	
+	}
+
+	.breadcrumbs,
+	.escuela-block {
+		display: none;
+	}
+}

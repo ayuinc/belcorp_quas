@@ -5,36 +5,31 @@
 							<h1>{segment_3_category_name}</h1>	
 						{/if}				
 					{if:else}
-					
 						{if segment_2_category_name=="Ventas"}
-	    			{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="199" }
-	    			{/if}
-	    			
+		    			{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="199" }
+		    		{/if}
 						{if segment_2_category_name=="Negocios"}
-	    			{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="202" }
-	    			{/if}
-	    			
+		    			{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="202" }
+		    		{/if}
 						{if segment_2_category_name=="Liderazgo y Cultura"}
-	    			{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="201" }
-	    			{/if}
-	    			
+		    			{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="201" }
+		    		{/if}	
 						{if segment_2_category_name=="Innovación"}
-	    			{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="200" }
-	    			{/if}	
-	    			   	   	    				    			 				    				    			
+		    			{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="200" }
+		    		{/if}	
+						{if segment_2_category_name=="Plan de Desarrollo"}
+		    			{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="303" }
+		    			<h1>{segment_2_category_name}</h1>
+		    		{/if}				
+		    		{if segment_2_category_name=="Tecnologia" OR segment_2_category_name=="Operaciones"} 	 
+    			  	<h1>{segment_2_category_name}</h1>
+    			  {if:else}
+    			  	{if segment_2_category_name!="Plan de Desarrollo"}  	    				    			 				    				    		
 							<h1>Escuela de {title}</h1>
 							<p>{descripcion_slide1_escuela}</p>
-							
-						{/exp:channel:entries}
-						
+							{/exp:channel:entries}
+							{/if}
+						{/if}
 					{/if}
+		    		
 					
-					{if segment_2_category_name=="Tecnologia"}
-						<h1>{segment_2_category_name}</h1>
-	    		{/if}	   
-					
-					{if segment_2_category_name=="Operaciones"}
-						<h1>{segment_2_category_name}</h1>
-	    		{/if}
-						
-						

@@ -1,22 +1,22 @@
-  	    		<h4>{embed:seccion}</h4>
-  	    		<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-3 grid-panels">
+  	    		<h5 class="uppercase mb-21 text-primary">{embed:seccion}</h5>
+  	    		<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3 grid-panels">
   	    			{if embed:seccion=='Innovacion'}
-							{exp:channel:entries channel="tendencias" limit="3" dynamic="off" category="114"} 
+							{exp:channel:entries channel="cursos|tendencias" limit="3" dynamic="off" category="114"} 
 							{/if} 	
   	    			{if embed:seccion=='Ventas'}
-							{exp:channel:entries channel="tendencias" limit="3" dynamic="off" category="111"} 
+							{exp:channel:entries channel="cursos|tendencias" limit="3" dynamic="off" category="111"} 
 							{/if} 			
   	    			{if embed:seccion=='Negocios'}
-							{exp:channel:entries channel="tendencias" limit="3" dynamic="off" category="112"} 
+							{exp:channel:entries channel="cursos|tendencias" limit="3" dynamic="off" category="112"} 
 							{/if} 				
   	    			{if embed:seccion=='Liderazgo y Cultura'}
-							{exp:channel:entries channel="tendencias" limit="3" dynamic="off" category="113"} 
+							{exp:channel:entries channel="cursos|tendencias" limit="3" dynamic="off" category="113"} 
 							{/if} 																	    		
   	    			{if embed:seccion=='Tecnologia'}
-							{exp:channel:entries channel="tendencias" limit="3" dynamic="off" category="110"} 
+							{exp:channel:entries channel="cursos|tendencias" limit="3" dynamic="off" category="110"} 
 							{/if} 	
   	    			{if embed:seccion=='Operaciones'}
-							{exp:channel:entries channel="tendencias" limit="3" dynamic="off" category="109"} 
+							{exp:channel:entries channel="cursos|tendencias" limit="3" dynamic="off" category="109"} 
 							{/if} 														
   	    			<li>
 							  {if interna-contenido=="Pagina Interna"}
@@ -32,11 +32,21 @@
 								    {if:else}
 								    	<img src="http://placehold.it/320x214" alt="{title}" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}-LINKEXTERNO']);">
 								    {/if}
+								    {if tipo-contenido-recurso=="Video"}
+											<div class="video-clip"><img src="{site_url}img/play_icon.png" alt=""></div>
+								    {/if}
 	  	    				</div>
 	  	    				<div class="panel-body">
+	  	    					{if tipo-contenido-recurso}
 	  	    					<div class="panel-badge">{tipo-contenido-recurso}</div>
+	  	    					{/if}
 	  	    					<h5>{title}</h5>
-										<h6>{descripcion-recurso}</h6>
+	  	    					{if descripcion-recurso}
+										<p>{descripcion-recurso}</p>
+										{/if}
+										{if descripcion-curso}
+										<p>{descripcion-curso}</p>
+										{/if}
 	  	    				</div>
 	  	    			</a>
   	    			</li>

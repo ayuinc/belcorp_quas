@@ -1,9 +1,15 @@
 	    <nav class="tab-bar">
-	      <section class="middle tab-bar-section">
-	        <ul class="inline-list right">
+	    	<section class="left-small pt-7 hide-for-medium hide-for-large">
+	        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+	      </section>
+	      <section class="middle tab-bar-section hide-for-medium hide-for-large">
+	      	<h6 class="uppercase text-primary">Escuela de liderazgo y cultura</h6>
+	      </section>
+	      <section class="right tab-bar-section hide-for-small">
+	        <ul class="inline-list right username pt-7 text-right">
 		        <li>
 		        {exp:member:custom_profile_data}
-		        Hola, <a href="http://54.243.186.233/moodle/my/">{screen_name}</a><br>
+		        <a href="http://54.243.186.233/moodle/my/">{screen_name}</a>
 		        <small><a href="{path='logout'}">Salir</a></small>
 		        {/exp:member:custom_profile_data}
 		        </li>

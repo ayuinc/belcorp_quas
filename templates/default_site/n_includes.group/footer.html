@@ -39,8 +39,8 @@
     <script>
       $(document).foundation({
 			  offcanvas : {
-			    open_method: 'overlap', // Sets method in which offcanvas opens, can also be 'overlap'
-			    close_on_click : false
+			    open_method: 'move', // Sets method in which offcanvas opens, can also be 'overlap'
+			    close_on_click : true
 			  }
 		  });
     </script>
@@ -53,22 +53,24 @@
 		  	});
 		  });
 		  $(document).ready(function(){
-		  	$('.off-canvas-list .large-2').on('mouseover', function(){
-		  		$('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'move-right');
-		  	});
+		  	if($(window).width() > 420) {
+			  	$('.off-canvas-list .large-2').on('mouseover', function(){
+			  		$('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'move-right');
+			  	});
+		  	}
+			  $(document).on('open', '[data-offcanvas]', function() {
+				  $('.off-canvas-list .large-2').addClass("off-canvas-open");
+				  $('.off-canvas-trigger').addClass("off-canvas-open");
+				  $('.off-canvas-list .large-2').removeClass("off-canvas-close");
+				  $('.off-canvas-trigger').removeClass("off-canvas-close");
+				});
+				$(document).on('close', '[data-offcanvas]', function() {
+				  $('.off-canvas-list .large-2').removeClass("off-canvas-open");
+				  $('.off-canvas-trigger').removeClass("off-canvas-open");
+				  $('.off-canvas-list .large-2').addClass("off-canvas-close");
+				  $('.off-canvas-trigger').addClass("off-canvas-close");
+				});
 		  });		  
-		  $(document).on('open', '[data-offcanvas]', function() {
-			  $('.off-canvas-list .large-2').addClass("off-canvas-open");
-			  $('.off-canvas-trigger').addClass("off-canvas-open");
-			  $('.off-canvas-list .large-2').removeClass("off-canvas-close");
-			  $('.off-canvas-trigger').removeClass("off-canvas-close");
-			});
-			$(document).on('close', '[data-offcanvas]', function() {
-			  $('.off-canvas-list .large-2').removeClass("off-canvas-open");
-			  $('.off-canvas-trigger').removeClass("off-canvas-open");
-			  $('.off-canvas-list .large-2').addClass("off-canvas-close");
-			  $('.off-canvas-trigger').addClass("off-canvas-close");
-			});
     </script>
     <!--END.MOUSE OVER OFF-CANVAS-->
     

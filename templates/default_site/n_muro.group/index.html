@@ -17,35 +17,37 @@
 		<!--CONTENIDOS-->
 	    <section class="main-section">
 	    	<div class="row heading-block mb-7-100">
-	    		<div class="small-12 medium-6 large-6 columns">
+	    		<div class="medium-6 large-6 columns text-gradient pt-14">
 						<h1>BIENVENIDO</h1>
 	    		</div>
-	    		<div class="small-12 medium-6 large-6 columns">
-						<h4>
-						ENCUENTRA TU RUTA PERSONALIZADA DE APRENDIZAJE<br>
-						{exp:member:custom_profile_data}
-						<a href="http://54.243.186.233/moodle/my/">ENTRA A TU PERFIL ›</a>
-						{/exp:member:custom_profile_data}
+	    		<div class="medium-6 large-6 columns pt-0">
+						<h4 class="text-gradient mb-0 ">
+						ENCUENTRA TU RUTA <br>PERSONALIZADA DE APRENDIZAJE
 						</h4>
+						{exp:member:custom_profile_data}
+						<h4 class="mt-0">
+							<a class="heading-link" href="http://54.243.186.233/moodle/my/">ENTRA A TU PERFIL ›</a>
+						</h4>
+						{/exp:member:custom_profile_data}
 	    		</div>	    		
 	    	</div>
 	    	<div class="row search-block mb-7-100">
-  	    	<div class="small-9 medium-9 large-9 columns">
+  	    	<div class="small-12 medium-9 large-9 columns">
   	    		{embed="n_includes/buscador-trigger"}
   	    	</div>
-  	    	<div class="small-3 medium-3 large-3 columns">
+  	    	<div class="medium-3 large-3 columns">
   	    		<!--<a href="#" class="button expand">Ingresa</a>-->
   	    	</div>
   	    </div>
   	    <div class="row">
-  	    	<div class="small-9 medium-9 large-9 columns">
+  	    	<div class="small-12 medium-9 large-9 columns">
   	    		{exp:channel:entries channel="wall" limit="3" dynamic="off" disable="pagination"} 
 							{embed="n_includes/loop-wall" seccion="{1linea-wall}"}
 							{embed="n_includes/loop-wall" seccion="{2linea-wall}"}
 							{embed="n_includes/loop-wall" seccion="{3linea-wall}"}
 						{/exp:channel:entries} 
   	    	</div>
-  	    	<div class="small-3 medium-3 large-3 columns">
+  	    	<div class="medium-3 large-3 columns hide-for-small">
 						{embed="n_includes/menu-derecho"}
   	    	</div>
   	    </div>

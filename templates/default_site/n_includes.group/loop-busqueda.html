@@ -1,0 +1,35 @@
+  	    		<p>Encontramos {exp:search:total_results} {total_results} {/exp:search:total_results} resultado(s) para la(s) palabra(s) {exp:search:keywords}.</p>
+  	    		<ul class="no-bullet convenio-list">
+  	    			{exp:search:search_results}
+							<li>
+                {if channel=='Contenidos'}
+                  <small>{tipo-contenido-recurso}</small>
+                {if:else}
+              	  <small>CURSO</small>
+                {/if}							
+								<br>
+								<h4 class="uppercase">
+								{if channel=='Cursos'}
+              	<a href="{site_url}n_escuelas/curso/{url_title}">
+              	{/if}
+              	{if channel=='Contenidos'}
+              	<a href="{link-recurso}" target="_blank">
+              	{/if}
+              	{title}
+								</a>									
+								</h4>
+                
+                {if descripcion-curso}
+                <p>{descripcion-curso}</p>
+                {/if}
+                
+                {if descripcion-recurso}
+                <p>{descripcion-recurso}</p>
+                {/if} 	
+                
+                {paginate}
+									<p>Page {current_page} of {total_pages} pages {pagination_links}</p>
+								{/paginate}							
+							</li>
+							{/exp:search:search_results}
+						</ul>
