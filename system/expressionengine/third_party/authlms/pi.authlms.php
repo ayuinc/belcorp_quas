@@ -104,6 +104,49 @@ class Authlms
         curl_close($ch);
         return $result."  ".$data_string; */
     }
+
+    public function auth_lms_access_profile(){
+        include_once 'nusoap/lib/nusoap.php';
+        $username= ee()->TMPL->fetch_param('username');
+        //$username= "pechvillaran";
+        $screen_name= ee()->TMPL->fetch_param('screen_name');
+        //instantiate the NuSOAP class and define the web service URL:
+        $client = new nusoap_client('http://54.243.186.233/moodle/auth/belcorpws/belcorpws_server.php?wsdl', 'WSDL');
+        //check if there were any instantiation errors, and if so stop execution with an error message:
+        $error = $client->getError();
+        if ($error) {
+          die("client construction error: {$error}\n");
+        }
+        $param = array('username' => $username);
+        //perform a function call without parameters:
+        $answer = $client->call('login_usuario', $param);
+        //check if there were any call errors, and if so stop execution with some error messages:
+        $error = $client->getError();
+        if ($error) {
+          print_r($client->response);
+          print_r($client->getDebug());
+          die();
+        }
+        $url='http://54.243.186.233/moodle/auth/belcorpws/client/clientprofile.php?usuario='.$username.'&token='.$answer;
+        //output the response (in the form of a multidimensional array) from the function call:
+        return '{exp:redirecturl url="'.$url.'"}';
+        //header('Location: http://54.243.186.233/moodle/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
+        /*
+        $data_string = json_encode($data, true);
+        $url = 'http://190.41.151.102/Infhotel/ServiceReservaWeb.svc/InsertReserva';
+        //  Initiate curl
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data_string)); 
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);     
+        curl_setopt($ch, CURLOPT_URL,$url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER,array(
+            'Content-Type: application/json', 'charset=utf-8')
+        ); 
+        $result = curl_exec($ch);
+        curl_close($ch);
+        return $result."  ".$data_string; */
+    }
 }
 
 /* End of file pi.infhotel.php */
