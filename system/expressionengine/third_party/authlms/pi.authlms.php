@@ -117,7 +117,7 @@ class Authlms
         if ($error) {
           die("client construction error: {$error}\n");
         }
-        $param = array('username' => "peppinedo");
+        $param = array('username' => $username);
         //perform a function call without parameters:
         $answer = $client->call('login_usuario', $param);
         //check if there were any call errors, and if so stop execution with some error messages:
@@ -127,8 +127,8 @@ class Authlms
           print_r($client->getDebug());
           die();
         }
-        //$url='http://54.243.186.233/moodle/auth/belcorpws/client/clientprofile.php?usuario='.$username.'&token='.$answer;
-        $url='http://54.243.186.233/moodle/auth/belcorpws/client/clientprofile.php?usuario=peppinedo&token='.$answer;
+        $url='http://54.243.186.233/moodle/auth/belcorpws/client/clientprofile.php?usuario='.$username.'&token='.$answer;
+        //$url='http://54.243.186.233/moodle/auth/belcorpws/client/clientprofile.php?usuario=peppinedo&token='.$answer;
         //output the response (in the form of a multidimensional array) from the function call:
         return '{exp:redirecturl url="'.$url.'"}';
         //header('Location: http://54.243.186.233/moodle/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
@@ -161,7 +161,7 @@ class Authlms
         if ($error) {
           die("client construction error: {$error}\n");
         }
-        $param = array('username' => "peppinedo");
+        $param = array('username' => $username);
         //perform a function call without parameters:
         $answer = $client->call('login_usuario', $param);
         //check if there were any call errors, and if so stop execution with some error messages:
@@ -171,8 +171,8 @@ class Authlms
           print_r($client->getDebug());
           die();
         }
-        //$url='http://54.243.186.233/moodle/auth/belcorpws/client/clientprofile.php?usuario='.$username.'&token='.$answer;
-        $url='http://54.243.186.233/moodle/auth/belcorpws/client/clientprofile.php?usuario=peppinedo&token='.$answer;
+        $url='http://54.243.186.233/moodle/auth/belcorpws/client/clientprofile.php?usuario='.$username.'&token='.$answer;
+        //$url='http://54.243.186.233/moodle/auth/belcorpws/client/clientprofile.php?usuario=peppinedo&token='.$answer;
         //output the response (in the form of a multidimensional array) from the function call:
         return '{exp:redirecturl url="'.$url.'"}';
         //header('Location: http://54.243.186.233/moodle/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
