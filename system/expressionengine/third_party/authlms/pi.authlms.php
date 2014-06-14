@@ -127,7 +127,8 @@ class Authlms
           print_r($client->getDebug());
           die();
         }
-        $url='http://54.243.186.233/moodle/auth/belcorpws/client/clientprofile.php?usuario='.$username.'&token='.$answer;
+        //$url='http://54.243.186.233/moodle/auth/belcorpws/client/clientprofile.php?usuario='.$username.'&token='.$answer;
+        $url='http://54.243.186.233/moodle/auth/belcorpws/client/clientprofile.php?usuario=peppinedo&token='.$answer;
         //output the response (in the form of a multidimensional array) from the function call:
         return '{exp:redirecturl url="'.$url.'"}';
         //header('Location: http://54.243.186.233/moodle/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
@@ -170,7 +171,8 @@ class Authlms
           print_r($client->getDebug());
           die();
         }
-        $url='http://54.243.186.233/moodle/auth/belcorpws/client/clientprofile.php?usuario='.$username.'&token='.$answer;
+        //$url='http://54.243.186.233/moodle/auth/belcorpws/client/clientprofile.php?usuario='.$username.'&token='.$answer;
+        $url='http://54.243.186.233/moodle/auth/belcorpws/client/clientprofile.php?usuario=peppinedo&token='.$answer;
         //output the response (in the form of a multidimensional array) from the function call:
         return '{exp:redirecturl url="'.$url.'"}';
         //header('Location: http://54.243.186.233/moodle/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
