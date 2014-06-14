@@ -41,12 +41,16 @@
 	  	    					<div class="panel-badge">{tipo-contenido-recurso}</div>
 	  	    					{/if}
 	  	    					<h5>{title}</h5>
-	  	    					{if descripcion-recurso}
-										<p>{descripcion-recurso}</p>
-										{/if}
-										{if descripcion-curso}
-										<p>{descripcion-curso}</p>
-										{/if}
+		                {if descripcion-curso}
+			                {exp:char_limit total="100" exact="no"}	
+			                <p>{descripcion-curso}</p>
+			                {/exp:char_limit}
+		                {/if}
+		                {if descripcion-recurso}
+		                	{exp:char_limit total="100" exact="no"}	
+											<p>{descripcion-recurso}</p>
+		                	{/exp:char_limit}
+		                {/if}	
 	  	    				</div>
 	  	    			</a>
   	    			</li>

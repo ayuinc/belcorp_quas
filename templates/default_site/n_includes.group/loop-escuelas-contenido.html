@@ -16,7 +16,7 @@
    	    				{/if}
 
 	  	    				<div class="panel-curso">
-	  	    					<h5 class="mb-0">
+	  	    					<h5>
                       {if tipo-contenido-recurso}
                         <small>{tipo-contenido-recurso}</small>
                       {if:else}
@@ -30,7 +30,9 @@
                     {if fuente-recurso}
                     	<h6 class="mt-0">{fuente-recurso}</h6>
                     {/if}                    
-										<p>{descripcion-curso}</p>
+		                {exp:char_limit total="50" exact="no"}	
+		                <p>{descripcion-curso}</p>
+		                {/exp:char_limit}
 	  	    				</div>
 	  	    			</a>
   	    			</li>

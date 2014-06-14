@@ -1093,6 +1093,10 @@ a.not-underline:hover {
   .menu {
     left: 0; }
 
+  .menu ul li {
+    padding-left: 14px;
+    padding-left: 0.875rem; }
+
   .left-off-canvas-menu {
     width: 265px;
     width: 16.5625rem; }
@@ -1114,4 +1118,7 @@ a.not-underline:hover {
 
   .breadcrumbs,
   .escuela-block {
-    display: none; } }
+    display: none; }
+
+  .icon-container {
+    padding: 10px 0; } }

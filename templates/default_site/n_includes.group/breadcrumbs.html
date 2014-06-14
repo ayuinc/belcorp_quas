@@ -3,8 +3,8 @@
 				  {if segment_1=='n_escuelas'}
 				  <li><a href="{site_url}n_muro">Escuelas</a></li>
 				  {/if}
-					{if segment_2!=''AND segment_1!='n_convenios' AND segment_1!='n_seccion' AND segment_2!='gracias' AND segment_2!='no_resultados'}
-				  <li>
+					{if segment_2!=''AND segment_1!='n_convenios' AND segment_1!='n_buscar' AND segment_1!='n_seccion' AND segment_2!='gracias' AND segment_2!='no_resultados'}
+				  <li {if segment_3==''}class="current"{/if}>
 				  	<a href="{site_url}n_escuelas/{segment_2}">{segment_2_category_name}</a>
 				  </li> 
 				  {/if}

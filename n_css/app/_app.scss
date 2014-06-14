@@ -4,7 +4,7 @@ body {
 	letter-spacing: 0.10px;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, p, ol {
 	@include thin;
 }
 
@@ -39,6 +39,14 @@ h1, h2, h3, h4, h5, h6, p {
   	@include background-clip(text);
   	@include text-fill-color(transparent);
 	}
+}
+
+.note-blockquote, blockquote, blockquote p {
+	@include thin;
+	@include background(linear-gradient(left, $gris, $gris-claro, $primary-color) repeat);
+	@include background-clip(text);
+	@include text-fill-color(transparent);
+	line-height: 1.6;
 }
 // TEXT GRADIENTS END
 
@@ -86,10 +94,20 @@ h1, h2, h3, h4, h5, h6, p {
 
 .left-off-canvas-menu {
 	width: 19.625rem;
+	/*position: fixed;
+	overflow-y: hidden;*/
 }
 
 ul.off-canvas-list li label {
 	border-top:none;
+}
+
+ul.off-canvas-list {
+	li {
+		a:hover {
+			background: none;
+		}
+	}
 }
 
 ul.off-canvas-list {
@@ -105,7 +123,18 @@ ul.off-canvas-list {
 
 .breadcrumbs {
 	margin: 0 1.2rem;
-	text-transform: capitalize;
+	li {
+		a {
+		text-transform: uppercase;
+		font-size: 0.9rem;
+		@include thin;
+		}	
+	}
+  .current {
+		text-transform: uppercase !important;
+		font-size: 0.9rem;
+		@include thin;
+  }	
 }
 
 .icono {
@@ -117,6 +146,14 @@ ul.off-canvas-list {
 		min-height: 3rem;
 		max-height: 3rem;
 	}
+}
+
+.icon-container {
+	font-size: 28px;
+	color: white;
+	padding: 10px;
+	padding: rem(10); 
+	text-align: center;
 }
 
 
@@ -152,17 +189,19 @@ ul.off-canvas-list {
 	input {
 		box-shadow: none;
 		border: none;
-		padding:1.5rem 1rem;
 		font-size: 1rem;
 		@include thin;
 		color: $morado;
 		-moz-box-shadow: 0 0 5px #ccc;
 		-webkit-box-shadow: 0 0 5px #ccc;
-		box-shadow: 0 0 5px #ccc;		
+		box-shadow: 0 0 5px #ccc;
+		height: 48px;
+		height: rem(48);
 	}
 	.bg-morado {
 		background-color: $morado;
-		height:41rem;
+		height: 768px;
+		height: rem(768);
 	}	
 }
 
@@ -204,7 +243,6 @@ ul.off-canvas-list {
 				transition: 300ms;
 				&:hover,
 				&.active {
-					background-color: $morado;
 					color:$blanco;
 				}
 				[class^="icon-"], [class*=" icon-"]  {
@@ -248,11 +286,29 @@ ul.off-canvas-list {
 .off-canvas-open {
 	opacity: 0;
 	@include transition(all 0.3s ease);
+	[class*="icon-"].active {
+		color: white;
+	}
 }
 
 .off-canvas-close {
 	opacity: 1;
 	@include transition(all 0.3s ease);
+	[class*="icon-"].active {
+		color: white;
+	}
+}
+
+//Menu_Secundario
+.menu-secundario {
+	ul {
+		li {
+			a.active {
+				color:$morado;
+			}
+		}
+	}
+	
 }
 
 //N_Escuela.html
@@ -316,7 +372,7 @@ ul.off-canvas-list {
 		position: relative;
 		padding: 14px;
 		padding: rem(14);
-		height: 210px;
+		height: 185px !important;
 		@include box-shadow(inset 0 0 5px $gray-light);
 		.panel-badge {
 			position: absolute;
@@ -333,7 +389,6 @@ ul.off-canvas-list {
 			font-size: rem-calc(12);
 			color: $gris;
 			@include light;
-			letter-spacing:rem-calc(0.4);
 		}
 	}
 	.panel-curso {
@@ -346,7 +401,6 @@ ul.off-canvas-list {
 			font-size: rem-calc(12);
 			color: $gris;
 			@include light;
-			letter-spacing:rem-calc(0.4);
 		}		
 	}
 	h5 {
@@ -354,13 +408,13 @@ ul.off-canvas-list {
 		line-height: 110%;
 		font-size: rem-calc(16);
 		color: $morado;
-		text-transform: capitalize;
+		text-transform: uppercase;
+		margin-bottom:rem-cal(5);
 	}
 	h6 {
 		@include light;
 		color:$gris;
 		font-size: rem-calc(14);
-		letter-spacing:rem-calc(0.4);
 	}
 
 }
@@ -550,6 +604,7 @@ ul.no-bullet {
 					height: rem(56);
 					font-size: 21px;
 					font-size: rem(21);
+					@include thin;
 				}
 				button i {
 					color: white;
@@ -645,6 +700,9 @@ ul.no-bullet {
 		p {
 			line-height: 28px;
 			line-height: rem(28);
+			a {
+				color:red;
+			}
 		}
 		h4 {
 			color: $primary-color;
@@ -685,7 +743,16 @@ ul.inline-list.username {
 	right: rem(77);
 }
 
-
+// CURSO_SHOW
+.details_info {
+	background: $gray-lighter;
+	border-left: 5px solid $primary-color;
+	padding: 12px;
+	padding: rem(12);
+	p {
+		margin-bottom: 0;
+	}
+}
 
 
 

@@ -1,5 +1,6 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
-/** 
+/**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
@@ -7748,7 +7749,7 @@ body {
   position: relative;
   letter-spacing: 0.10px; }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, p, ol {
   font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
   font-weight: 100;
   font-style: normal; }
@@ -7779,6 +7780,20 @@ h1, h2, h3, h4, h5, h6, p {
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
   text-fill-color: transparent; }
+
+.note-blockquote, blockquote, blockquote p {
+  font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+  font-weight: 100;
+  font-style: normal;
+  background: -webkit-linear-gradient(left, #596c79, #909da8, #5a277d) repeat;
+  background: linear-gradient(to right, #596c79, #909da8, #5a277d) repeat;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  text-fill-color: transparent;
+  line-height: 1.6; }
 
 /*SECCIONES EN EL OFFCANVAS*/
 .move-right .exit-off-canvas {
@@ -7816,10 +7831,15 @@ h1, h2, h3, h4, h5, h6, p {
       color: #65686a; }
 
 .left-off-canvas-menu {
-  width: 19.625rem; }
+  width: 19.625rem;
+  /*position: fixed;
+  overflow-y: hidden;*/ }
 
 ul.off-canvas-list li label {
   border-top: none; }
+
+ul.off-canvas-list li a:hover {
+  background: none; }
 
 ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class*=" icon-"] {
   font-size: 21px;
@@ -7827,8 +7847,19 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
 
 /*END.SECCIONES EN EL OFFCANVAS*/
 .breadcrumbs {
-  margin: 0 1.2rem;
-  text-transform: capitalize; }
+  margin: 0 1.2rem; }
+  .breadcrumbs li a {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+    font-weight: 100;
+    font-style: normal; }
+  .breadcrumbs .current {
+    text-transform: uppercase !important;
+    font-size: 0.9rem;
+    font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+    font-weight: 100;
+    font-style: normal; }
 
 .icono {
   background-color: #5a277d; }
@@ -7838,6 +7869,13 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
     padding: 0.5rem 1rem;
     min-height: 3rem;
     max-height: 3rem; }
+
+.icon-container {
+  font-size: 28px;
+  color: white;
+  padding: 10px;
+  padding: 0.625rem;
+  text-align: center; }
 
 .login-formulario {
   min-height: 41rem;
@@ -7871,7 +7909,6 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   .login-formulario input {
     box-shadow: none;
     border: none;
-    padding: 1.5rem 1rem;
     font-size: 1rem;
     font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
     font-weight: 100;
@@ -7879,10 +7916,13 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
     color: #5a277d;
     -moz-box-shadow: 0 0 5px #ccc;
     -webkit-box-shadow: 0 0 5px #ccc;
-    box-shadow: 0 0 5px #ccc; }
+    box-shadow: 0 0 5px #ccc;
+    height: 48px;
+    height: 3rem; }
   .login-formulario .bg-morado {
     background-color: #5a277d;
-    height: 41rem; }
+    height: 768px;
+    height: 48rem; }
 
 .menu {
   background-color: #5a277d;
@@ -7917,7 +7957,6 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
       /* For Safari 3.1 to 6.0 */
       transition: 300ms; }
       .menu ul li a:hover, .menu ul li a.active {
-        background-color: #5a277d;
         color: white; }
       .menu ul li a [class^="icon-"], .menu ul li a [class*=" icon-"] {
         float: left;
@@ -7956,12 +7995,19 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease; }
+  .off-canvas-open [class*="icon-"].active {
+    color: white; }
 
 .off-canvas-close {
   opacity: 1;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease; }
+  .off-canvas-close [class*="icon-"].active {
+    color: white; }
+
+.menu-secundario ul li a.active {
+  color: #5a277d; }
 
 .escuela-block h1, .escuela-block h4, .escuela-block p {
   font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
@@ -8014,7 +8060,7 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   position: relative;
   padding: 14px;
   padding: 0.875rem;
-  height: 210px;
+  height: 185px !important;
   -webkit-box-shadow: inset 0 0 5px #d2d3d4;
   box-shadow: inset 0 0 5px #d2d3d4; }
   .grid-panels .panel-body .panel-badge {
@@ -8032,8 +8078,7 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
     color: #596c79;
     font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
     font-weight: 300;
-    font-style: normal;
-    letter-spacing: 0.025rem; }
+    font-style: normal; }
 .grid-panels .panel-curso {
   background: #ecf0f1;
   padding: 0.875rem;
@@ -8045,8 +8090,7 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
     color: #596c79;
     font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
     font-weight: 300;
-    font-style: normal;
-    letter-spacing: 0.025rem; }
+    font-style: normal; }
 .grid-panels h5 {
   font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
   font-weight: 300;
@@ -8054,14 +8098,14 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   line-height: 110%;
   font-size: 1rem;
   color: #5a277d;
-  text-transform: capitalize; }
+  text-transform: uppercase;
+  margin-bottom: rem-cal(5); }
 .grid-panels h6 {
   font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
   font-weight: 300;
   font-style: normal;
   color: #596c79;
-  font-size: 0.875rem;
-  letter-spacing: 0.025rem; }
+  font-size: 0.875rem; }
 
 .heading-block h1, .heading-block h4 {
   font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
@@ -8208,7 +8252,10 @@ ul.no-bullet li a {
       height: 56px;
       height: 3.5rem;
       font-size: 21px;
-      font-size: 1.3125rem; }
+      font-size: 1.3125rem;
+      font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+      font-weight: 100;
+      font-style: normal; }
     .search-canvas-overlay.searching .search-form form button i {
       color: white; }
     .search-canvas-overlay.searching .close {
@@ -8277,6 +8324,8 @@ ul.no-bullet li a {
   .convenio-list li p {
     line-height: 28px;
     line-height: 1.75rem; }
+    .convenio-list li p a {
+      color: red; }
   .convenio-list li h4 {
     color: #5a277d; }
   .convenio-list li h5 {
@@ -8307,6 +8356,14 @@ ul.inline-list.username li {
 .tab-bar-section.right {
   right: 77px;
   right: 4.8125rem; }
+
+.details_info {
+  background: #f6f6f7;
+  border-left: 5px solid #5a277d;
+  padding: 12px;
+  padding: 0.75rem; }
+  .details_info p {
+    margin-bottom: 0; }
 
 /*!
 Animate.css - http://daneden.me/animate

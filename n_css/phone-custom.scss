@@ -41,6 +41,10 @@
 	.menu {
 		left: 0;
 	}
+	.menu ul li {
+		padding-left: 14px;
+		padding-left: rem(14);
+	}
 	.left-off-canvas-menu {
 		width: 265px;
 		width: rem(265);
@@ -71,5 +75,9 @@
 	.breadcrumbs,
 	.escuela-block {
 		display: none;
+	}
+
+	.icon-container {
+		padding: 10px 0; 
 	}
 }
