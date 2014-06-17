@@ -1,7 +1,7 @@
 meta.foundation-version {
-  font-family: "/5.2.3/"; } 
+  font-family: "/5.2.3/"; }
 
-meta.foundation-mq-small {
+meta.foundation-mq-small { 
   font-family: "/only screen/";
   width: 0em; }
 
@@ -1075,6 +1075,10 @@ a.not-underline:hover {
 
 /*  ==============   */
 @media only screen and (max-width: 40em) {
+  .login-formulario img {
+    margin-top: 5rem;
+    margin-bottom: 2rem; }
+
   .tab-bar {
     left: 0; }
 
@@ -1085,17 +1089,32 @@ a.not-underline:hover {
     box-shadow: 0 0px 0 1px #5a277d, 0 7px 0 1px #5a277d, 0 14px 0 1px #5a277d; }
 
   .tab-bar .middle h6 {
-    text-align: left;
-    font-weight: 100 !important;
+    text-align: center;
+    font-weight: 500 !important;
     line-height: 21px;
-    line-height: 1.3125rem; }
+    line-height: 1.3125rem;
+    font-size: 0.8rem;
+    margin-top: 0.7rem;
+    color: #909da8 !important; }
+
+  ul.no-bullet li ul, ul.no-bullet li ol {
+    margin-left: 0; }
 
   .menu {
     left: 0; }
+    .menu .logo img {
+      width: 120px;
+      margin-left: 1rem; }
 
   .menu ul li {
     padding-left: 14px;
     padding-left: 0.875rem; }
+    .menu ul li a {
+      padding: 0.2rem 0;
+      font-size: 1rem; }
+
+  .grid-panels .panel-body {
+    height: 120px !important; }
 
   .left-off-canvas-menu {
     width: 265px;
@@ -1105,6 +1124,8 @@ a.not-underline:hover {
     padding: 0px 7px 0px 7px;
     padding: 0rem 0.4375rem 0rem 0.4375rem; }
 
+  .heading-block div:last-child {
+    border-left: none; }
   .heading-block h1 {
     font-size: 42px;
     font-size: 2.625rem; }
@@ -1116,9 +1137,55 @@ a.not-underline:hover {
     font-size: 14px;
     font-size: 0.875rem; }
 
-  .breadcrumbs,
-  .escuela-block {
+  .search-block {
+    margin-bottom: 0 !important; }
+    .search-block form input[type=text] {
+      font-size: 1rem; }
+
+  .breadcrumbs {
     display: none; }
 
+  .escuela-block h1 {
+    font-size: 2rem; }
+  .escuela-block form {
+    margin-bottom: 0; }
+
   .icon-container {
-    padding: 10px 0; } }
+    padding: 10px 0; }
+
+  .list-heading {
+    border: none;
+    padding: 0 !important; }
+
+  .movil-menu-secundario {
+    position: relative; }
+
+  .show-for-small-only {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 3500px;
+    background: white;
+    z-index: 30;
+    padding: 0; }
+    .show-for-small-only h6 {
+      font-size: 14px;
+      font-size: 0.875rem;
+      margin-bottom: 0; }
+      .show-for-small-only h6:nth-child(n+2) {
+        margin-top: 28px; }
+    .show-for-small-only ul {
+      padding: 0 !important; }
+      .show-for-small-only ul li {
+        padding: 7px 14px;
+        background: white;
+        border-bottom: 1px solid whitesmoke;
+        text-align: center; }
+        .show-for-small-only ul li .active {
+          color: #5a277d; }
+        .show-for-small-only ul li a {
+          font-size: 18px !important;
+          font-size: 1.125rem !important; } }

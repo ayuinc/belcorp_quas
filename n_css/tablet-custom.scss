@@ -1,9 +1,6 @@
 // Bourbon sass tools
 @import "bourbon/bourbon";
 
-// Normalize 
-@import "normalize";
-
 // Foundation by ZURB
 // foundation.zurb.com
 // Licensed under MIT Open Source
@@ -35,7 +32,7 @@
 	.heading-block {
 		h1 {
 			margin: -0.5rem 0 0 0;
-			font-size:3rem;
+			font-size:3rem; 
 		}
 		h4 {
 			font-size:1rem;
@@ -64,7 +61,7 @@
 	.grid-panels {
 		.panel-heading {
 			.video-clip {
-				width:45px;
+				// width:45px; 
 			}
 		}
 		.panel-body {
@@ -137,7 +134,7 @@
 	.grid-panels {
 		.panel-heading {
 			.video-clip {
-				width:45px;
+				// width:45px;
 			}
 		}
 		.panel-body {

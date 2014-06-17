@@ -17,6 +17,15 @@ h1, h2, h3, h4, h5, h6, p, ol {
 	background-color: $gray-lighter;
 }
 
+.tab-bar-section #start_course {
+	padding: 0;
+	font-size: 16px;
+	font-size: rem(16);
+	background: none;
+	margin-bottom: 0;
+	color: $gray;
+}
+
 
 // TEXT GRADIENTS
 @mixin text-fill-color($color) {
@@ -27,26 +36,28 @@ h1, h2, h3, h4, h5, h6, p, ol {
   @include prefixer(background-clip, $clip, webkit moz spec);
 }
 
-.text-gradient {
-	@include background(linear-gradient(left, $gris, $gris-claro, $primary-color) repeat);
-  @include background-clip(text);
-  @include text-fill-color(transparent);
-}
-
-.escuela-block {
-	h1, p {
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+	.text-gradient {
 		@include background(linear-gradient(left, $gris, $gris-claro, $primary-color) repeat);
-  	@include background-clip(text);
-  	@include text-fill-color(transparent);
+	  @include background-clip(text);
+	  @include text-fill-color(transparent);
 	}
-}
 
-.note-blockquote, blockquote, blockquote p {
-	@include thin;
-	@include background(linear-gradient(left, $gris, $gris-claro, $primary-color) repeat);
-	@include background-clip(text);
-	@include text-fill-color(transparent);
-	line-height: 1.6;
+	.escuela-block {
+		h1, p {
+			@include background(linear-gradient(left, $gris, $gris-claro, $primary-color) repeat);
+	  	@include background-clip(text);
+	  	@include text-fill-color(transparent);
+		}
+	}
+
+	.note-blockquote, blockquote, blockquote p {
+		@include thin;
+		@include background(linear-gradient(left, $gris, $gris-claro, $primary-color) repeat);
+		@include background-clip(text);
+		@include text-fill-color(transparent);
+		line-height: 1.6;
+	}
 }
 // TEXT GRADIENTS END
 
@@ -119,6 +130,7 @@ ul.off-canvas-list {
 	}
 }
 
+
 /*END.SECCIONES EN EL OFFCANVAS*/
 
 .breadcrumbs {
@@ -136,6 +148,7 @@ ul.off-canvas-list {
 		@include thin;
   }	
 }
+
 
 .icono {
 	background-color: $morado;
@@ -155,7 +168,6 @@ ul.off-canvas-list {
 	padding: rem(10); 
 	text-align: center;
 }
-
 
 .login-formulario {
 	min-height:41rem;
@@ -241,6 +253,7 @@ ul.off-canvas-list {
 				border-bottom:none;
 				-webkit-transition: 300ms; /* For Safari 3.1 to 6.0 */
 				transition: 300ms;
+				text-transform: capitalize;
 				&:hover,
 				&.active {
 					color:$blanco;
@@ -359,11 +372,13 @@ ul.off-canvas-list {
 		}
 		.video-clip {
 			position: absolute;
-			top: 32%;
-			left: 37%;
+			top: 35%;
+			text-align: center;
+			width: 100%;
 			img {
-				width: 70px;
+				width: 56px;
 				height: auto;
+				display: inline-block;
 			}
 		}
 	}
@@ -407,7 +422,7 @@ ul.off-canvas-list {
 		@include light;
 		line-height: 110%;
 		font-size: rem-calc(16);
-		color: $morado;
+		color: $gray-dark;
 		text-transform: uppercase;
 		margin-bottom:rem-cal(5);
 	}
@@ -416,7 +431,37 @@ ul.off-canvas-list {
 		color:$gris;
 		font-size: rem-calc(14);
 	}
-
+	// ESCUELAS Colors
+	.ventas-temas {
+		.panel-curso {
+			border-right: 10px solid $primary-color !important;
+		}
+	}
+	.negocios-temas {
+		.panel-curso {
+			border-right: 10px solid $warning-color !important;
+		}
+	}
+	.liderazgo-y-cultura-temas {
+		.panel-curso {
+			border-right: 10px solid $info-color !important;
+		}
+	}
+	.innovacion-temas {
+		.panel-curso {
+			border-right: 10px solid $success-color !important;
+		}
+	}
+	.tecnologia-temas {
+		.panel-curso {
+			border-right: 10px solid $alert-color !important;
+		}
+	}
+	.operaciones-temas {
+		.panel-curso {
+			border-right: 10px solid $secondary-color !important;
+		}
+	}
 }
 
 	// N_WALL Heading Block
@@ -568,7 +613,7 @@ ul.no-bullet {
 	display: none;
 	position: absolute;
 	z-index: 1002;
-	background: rgba($gray, 0.9);
+	background: rgba($gray-lighter, 0.7);
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -582,7 +627,7 @@ ul.no-bullet {
 		display: block;
 		position: fixed;
 		z-index: 1002;
-		background: rgba($gray, 0.9);
+		background: rgba($gray-lighter, 0.9);
 		top: 0;
 		bottom: 0;
 		left: 0;
@@ -592,29 +637,51 @@ ul.no-bullet {
 		overflow-y: hidden;
 		overflow-x: hidden;
 		.search-form {
-			// position: absolute;
-			// width: 100%;
-			// height: auto;
-			// top: 50%;
-			// left: 28%;
 			form {
 				input,
 				button {
 					height: 56px;
 					height: rem(56);
-					font-size: 21px;
-					font-size: rem(21);
 					@include thin;
 				}
-				button i {
-					color: white;
+				button {
+					background: transparent;
+					border: 3px solid lighten($primary-color, 42%);
+					color: lighten($primary-color, 42%);
+					font-size: 28px;
+					font-size: rem(28);
+					@include transition(all 0.3s ease);
+					&:hover {
+						border: 3px solid lighten($primary-color, 7%);
+						color: lighten($primary-color, 7%);
+						@include transition(all 0.3s ease);
+					}
+				}
+				input {
+					background: none;
+					font-size: 42px;
+					font-size: rem(42);
+					text-align: center;
+					margin: 21px 0;
+					margin: rem(21) 0;
+					border: none;
+					&:focus {
+						border: none;
+						box-shadow: none;
+					}
+					// @include placeholder {
+				 //    &:before {
+				 //    	content: "\e6bb";
+				 //    	font-family: "icomoon-typ";
+				 //    }
+				 //  }
 				}
 			}
 		}
 		.close {
 			font-size: 28px;
 			font-size: rem(28);
-			color: white;
+			color: $gray;
 			text-transform: uppercase;
 			text-decoration: none;
 			@include thin;
@@ -679,6 +746,7 @@ ul.no-bullet {
 			ul {
 				margin: 0 !important;
     		list-style: none;
+    		width:120px;
 				li {
 					border-right: none;
 		      padding: 0 !important;
@@ -701,7 +769,9 @@ ul.no-bullet {
 			line-height: 28px;
 			line-height: rem(28);
 			a {
-				color:red;
+				color:$morado;
+				text-transform: none;
+				font-size: 1.1rem;
 			}
 		}
 		h4 {
@@ -721,6 +791,9 @@ ul.no-bullet {
 	color: white;
 	padding: 0 5px;
 	@include transition(all 0.3s ease);
+	font-size: 21px;
+	font-size: rem(21);
+	@include thin;
 	&:hover {
 		background: $primary-color;
 		color: white;
@@ -754,8 +827,10 @@ ul.inline-list.username {
 	}
 }
 
-
-
+#form_search button[type="submit"] {
+	padding: 0;
+	text-align: center;
+}
 
 
 

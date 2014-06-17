@@ -1,4 +1,5 @@
 # Untracked files:
-/system/expressionengine/config/
+/system/expressionengine/config/config.php
+/system/expressionengine/config/database.php
 .htaccess
 .sass-cache

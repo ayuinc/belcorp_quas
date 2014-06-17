@@ -17,11 +17,45 @@
 	
 		<!--CONTENIDOS-->
 	    <section class="main-section">
-				{embed="n_includes/breadcrumbs" titulo="{title}"}
-	    	<div class="row escuela-block mb-7-100">
+	    	{categories show_group="1"}
+				{embed="n_includes/breadcrumbs" titulo="{title}" categoria="{category_name}"}
+				{/categories}
+	    	<div class="row escuela-block">
 	    		<div class="small-12 medium-12 large-9 columns">
 						<h1>{title}</h1>						
 	    		</div>   		
+	    		
+	    		<div class="small-12 medium-12 columns mb-28 mt-28 show-for-large- hide-for-landscape">
+	          {if channel=="Cursos"}
+		          {if logged_in}
+			          {embed="includes/comerzar-curso"}
+			        {/if}
+			        {if logged_out}
+			        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand"  onClick="_gaq.push(['_trackEvent', 'Curso', 'Entrar-Curso', '{title}']);">Comenzar</a>
+							{/if}  	
+							<div class="show-for-large-only">    
+	            {embed="includes/curso-detalles" 
+	            	tiempo-duracion-horas-curso="{tiempo-duracion-horas-curso}"
+	            	tiempo-duracion-minutos-curso="{tiempo-duracion-minutos-curso}" 
+	            	cantidad-lecciones-curso="{cantidad-lecciones-curso}" 
+	            	cantidad-video-curso="{cantidad-video-curso}" link-curso="{link-curso}" 
+	            	cantidad-modulos-cursos="{cantidad-modulos-cursos}" 
+	            }
+							</div>
+            {/if}	
+            
+            <!--CONTENIDOS-->
+            {if channel=="Contenidos"}
+              {if tipo-contenido-recurso=='Video' OR tipo-contenido-recurso=='Artículo' OR tipo-contenido-recurso=='Audio'}
+              	<a href="{link-encuesta-lms}" id="start_course" class="explore button expand" onClick="_gaq.push(['_trackEvent', 'Encuesta', 'Entrar-Contenido', '{title}']);">ENCUESTA DE SATISFACCIÓN</a>
+              {/if}	
+              {if tipo-contenido-recurso=='Curso Externo'}
+              	<a href="{link-recurso}" target="_blank" id="start_course" class="explore button expand" onClick="_gaq.push(['_trackEvent', 'Encuesta', 'Entrar-Contenido', '{title}-LINKEXTERNO']);">COMENZAR CURSO</a>
+              	<a href="{link-encuesta-lms}"  id="start_course" class="explore button expand" onClick="_gaq.push(['_trackEvent', 'Encuesta', 'Entrar-Contenido', '{title}']);">ENCUESTA DE SATISFACCIÓN</a>
+              {/if}
+            {/if}		    		
+	    		</div>
+	    		
 	    		<div class="small-12 medium-6 medium-centered columns hide-for-landscape">
   	    		<!--CURSO-->
 	          {if channel=="Cursos"}
@@ -30,7 +64,8 @@
 			        {/if}
 			        {if logged_out}
 			        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand"  onClick="_gaq.push(['_trackEvent', 'Curso', 'Entrar-Curso', '{title}']);">Comenzar</a>
-							{/if}  	    	
+							{/if}  
+							<div class="show-for-large-only"> 	    	
 	            {embed="includes/curso-detalles" 
 	            	tiempo-duracion-horas-curso="{tiempo-duracion-horas-curso}"
 	            	tiempo-duracion-minutos-curso="{tiempo-duracion-minutos-curso}" 
@@ -38,6 +73,7 @@
 	            	cantidad-video-curso="{cantidad-video-curso}" link-curso="{link-curso}" 
 	            	cantidad-modulos-cursos="{cantidad-modulos-cursos}" 
 	            }
+							</div>
             {/if}	
             
             <!--CONTENIDOS-->
@@ -50,11 +86,12 @@
               	<a href="{link-encuesta-lms}"  id="start_course" class="explore button expand" onClick="_gaq.push(['_trackEvent', 'Encuesta', 'Entrar-Contenido', '{title}']);">ENCUESTA DE SATISFACCIÓN</a>
               {/if}
             {/if}				    		
-	    		</div>	    	
+	    		</div>	  
+	    		  	
 	    	</div>
 	    	<div class="row mb-7-100">
 	    		<!-- SEARCH OVERLAY TRIGGER STARTS -->
-  	    	<div class="small-8 medium-9 large-9 columns full-width-for-portrait">
+  	    	<div class="small-12 medium-9 large-9 columns full-width-for-portrait">
 		    	<!--CURSOS-->
 		    	{if proveedor-video-curso=='No Hay Video'}
 		    		{if foto-curso}
@@ -80,7 +117,7 @@
 				  
   	    	</div>
   	    	<!-- SEARCH OVERLAY TRIGGER ENDS -->
-  	    	<div class="small-4 medium-3 large-3 columns hide-for-portrait">
+  	    	<div class="small-12 medium-3 large-3 columns hide-for-portrait">
   	    		<!--CURSO-->
 	          {if channel=="Cursos"}
 		          {if logged_in}
@@ -88,7 +125,8 @@
 			        {/if}
 			        {if logged_out}
 			        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand"  onClick="_gaq.push(['_trackEvent', 'Curso', 'Entrar-Curso', '{title}']);">Comenzar</a>
-							{/if}  	    	
+							{/if}  	
+							<div class="show-for-large-only">    
 	            {embed="includes/curso-detalles" 
 	            	tiempo-duracion-horas-curso="{tiempo-duracion-horas-curso}"
 	            	tiempo-duracion-minutos-curso="{tiempo-duracion-minutos-curso}" 
@@ -96,6 +134,7 @@
 	            	cantidad-video-curso="{cantidad-video-curso}" link-curso="{link-curso}" 
 	            	cantidad-modulos-cursos="{cantidad-modulos-cursos}" 
 	            }
+							</div>
             {/if}	
             
             <!--CONTENIDOS-->
@@ -111,7 +150,7 @@
   	    	</div>
   	    </div>
   	    <div class="row">
-  	    	<div class="small-8 medium-9 large-9 columns full-width-for-portrait full-width-for-landscape">
+  	    	<div class="small-12 medium-9 large-9 columns ">
   	    		<!--CURSO-->
   	    		{if introduccin-curso}
   	    		<h5 class="uppercase">Descripción del curso</h5>

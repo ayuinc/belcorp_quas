@@ -30,8 +30,13 @@
   	    		<a href="#" class="button expand">Ingresa</a>
   	    	</div>
   	    </div>-->
+  	    <div class="row movil-menu-secundario">
+  	    	<div class="small-12 columns show-for-small-only">
+  	    		{embed="n_includes/movil-menu-secundario"}
+  	    	</div>
+  	    </div>  	    
   	    <div class="row">
-  	    	<div class="small-8 medium-9 large-9 columns full-width-for-portrait">
+  	    	<div class="small-12 medium-9 large-9 columns full-width-for-portrait">
   	    		{exp:child_categories 
 						  parent="{last_segment_category_id}"
 							site="1" 
@@ -39,12 +44,12 @@
 							child_categories_sort_direction="asc"
 						}
 						{child_category_start}
-							<h5 class="uppercase mb-21 text-primary">{child_category_name}</h5>
+							<h5 class="uppercase mb-21 text-primary" id="{child_category_id}">{child_category_name}</h5>
 							{embed="n_includes/loop-convenios" categoria_hija="{child_category_id}"}
 						{child_category_end}
 					{/exp:child_categories}
   	    	</div>
-  	    	<div class="small-4 medium-3 large-3 columns hide-for-portrait">
+  	    	<div class="small-12 medium-3 large-3 columns hide-for-portrait">
 						{embed="n_includes/menu-derecho"}
   	    	</div>
   	    </div>

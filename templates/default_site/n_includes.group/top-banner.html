@@ -6,7 +6,9 @@
 	      	<h6 class="uppercase text-primary">
 	      	{if segment_1=='n_escuelas'}
 		      	{if segment_2!='tecnologia-temas' OR segment_2!='operaciones-temas'}
-		      	Escuela de
+		      		{if segment_2!='curso'}
+							Escuela de
+		      		{/if}
 		      	{/if} 
 		      	{segment_2_category_name}
 	      	{/if}

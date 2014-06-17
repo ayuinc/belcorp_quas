@@ -1,7 +1,20 @@
   	    		<h4>Encontramos {exp:search:total_results} {total_results} {/exp:search:total_results} resultado(s) para la(s) palabra(s) <i>{exp:search:keywords}</i>.</h4>
   	    		<ul  class="small-block-grid-1 medium-block-grid-3 large-block-grid-3 grid-panels" id="isotope-container">
   	    			{exp:search:search_results}
-							<li class="isotope-item">
+							<li class="isotope-item  
+  	    				{categories show_group='10' show='not 108|115'}
+								        {category_url_title}
+								{/categories}
+   	    			">
+   	    				{if interna-contenido}
+								  {if interna-contenido=="Pagina Interna"}
+						      	<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Buscar', '{title}']);">
+						      {if:else}
+						        <a href="{link-recurso}" target="_blank" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Buscar', '{title}-LINKEXTERNO']);">
+						      {/if}  
+   	    				{if:else}
+   	    				<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Buscar', '{title}']);">
+   	    				{/if}							
 								<div class="panel-curso">
 	  	    					<h5>
                       {if tipo-contenido-recurso}
@@ -29,7 +42,8 @@
 											<p>{descripcion-recurso}</p>
 		                	{/exp:char_limit}
 		                {/if}	
-								</div>					
+								</div>	
+   	    				</a>				
 							</li>
 							{/exp:search:search_results}
 						</ul>

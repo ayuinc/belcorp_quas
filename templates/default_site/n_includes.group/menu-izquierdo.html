@@ -1,14 +1,67 @@
 	    <aside class="left-off-canvas-menu menu">
 	      <div class="row logo">
 	      	<div class="small-9 medium-9 large-9 columns clearfix">
-	      		<a href="{site_url}n_muro"><img src="{site_url}n_img/logo-header-nuevo.png" class="large"></a>
+	      		<a href="{site_url}n_inicio"><img src="{site_url}n_img/logo-header-nuevo.png" class="large"></a>
 	      	</div>
 	        <div class="small-3 medium-3 large-3 columns clearfix">
 		    		<a href="#" class="off-canvas-trigger"><img src="{site_url}n_img/logo-header-nuevo-sml.png" class="small"></a>
 	        </div>	      	
 	      </div>
+				<!--RECURSOS-->
+	      <ul class="off-canvas-list show-for-medium-only hide-for-landscape">
+	      	<li><label>Recursos</label></li>
+	        <li>
+	        	<div class="row clearfix">
+	        		<div class="small-12 medium-10 large-10 columns">
+			        	<a href="{site_url}n_escuelas/plan-de-desarrollo-temas" {if segment_2=='plan-de-desarrollo-temas'}class="active"{/if}>
+			        		<div class="icon-typ-flag"></div>Plan de Desarrollo
+			        	</a>
+	        		</div>
+	        		<div class="small-12 medium-2 large-2 columns hide-for-small">
+		        		<div class="icon-typ-flag {if segment_2=='plan-de-desarrollo-temas'}active{/if}"></div>
+	        		</div>	        		
+	        	</div>		        
+	        </li>	
+	        <li>
+	        	<div class="row clearfix">
+	        		<div class="small-12 medium-10 large-10 columns">
+			        	<a href="{site_url}images/documentos/PDF_Backbone.pdf">
+			        		<div class="icon-typ-database"></div>Backbone
+			        	</a>
+	        		</div>
+	        		<div class="small-12 medium-2 large-2 columns hide-for-small">
+		        		<div class="icon-typ-database {if segment_2=='plan-de-desarrollo-temas'}active{/if}"></div>
+	        		</div>	        		
+	        	</div>		        
+	        </li>		              	
+	        <li>
+	        	<div class="row clearfix">
+	        		<div class="small-12 medium-10 large-10 columns">
+			        	<a href="#" target="_blank" data-reveal-id="herramienta_de_certificacion">
+			        		<div class="icon-typ-clipboard"></div>Certificación ventas
+			        	</a>
+	        		</div>
+	        		<div class="small-12 medium-2 large-2 columns hide-for-small">
+		        		<div class="icon-typ-clipboard"></div>
+	        		</div>	        		
+	        	</div>		        
+	        </li>	
+	        <li>
+	        	<div class="row clearfix">
+	        		<div class="small-12 medium-10 large-10 columns">
+			        	<a href="{site_url}n_quieres_crear_un_curso"  {if segment_1=='n_quieres_crear_un_curso'}class="active"{/if}>
+			        		<div class="icon-typ-pencil"></div>Crear un curso
+			        	</a>
+	        		</div>
+	        		<div class="small-12 medium-2 large-2 columns hide-for-small">
+		        		<div class="icon-typ-pencil {if segment_1=='n_quieres_crear_un_curso'}active{/if}"></div>
+	        		</div>	        		
+	        	</div>		        
+	        </li>		        	        
+	      </ul>	      
+	      <!--ESCUELAS-->
 	      <ul class="off-canvas-list">
-	        <li><label>ESCUELAS</label></li>
+	        <li><label>CONTENIDO</label></li>
 	        <li>
 	        	<div class="row clearfix">
 	        		<div class="small-12 medium-10 large-10 columns">
@@ -37,7 +90,7 @@
 	        	<div class="row clearfix">
 	        		<div class="small-12 medium-10 large-10 columns">
 			        	<a href="{site_url}n_escuelas/liderazgo-y-cultura-temas" {if segment_2=='liderazgo-y-cultura-temas'}class="active"{/if}>
-			        		<div class="icon-typ-group"></div>Liderazgo y Cultura
+			        		<div class="icon-typ-group"></div>Liderazgo Y Cultura
 			        	</a>
 	        		</div>
 	        		<div class="small-12 medium-2 large-2 columns hide-for-small">
@@ -82,61 +135,7 @@
 	        	</div>		        
 	        </li>
 	      </ul>
-	      
-	      
-	      
-	      
-	      <ul class="off-canvas-list show-for-medium-only hide-for-landscape">
-	      	<li><label>Recursos</label></li>
-	        <li>
-	        	<div class="row clearfix">
-	        		<div class="small-12 medium-10 large-10 columns">
-			        	<a href="{site_url}n_escuelas/plan-de-desarrollo-temas" {if segment_2=='plan-de-desarrollo-temas'}class="active"{/if}>
-			        		<div class="icon-typ-flag"></div>Plan de Desarrollo
-			        	</a>
-	        		</div>
-	        		<div class="small-12 medium-2 large-2 columns hide-for-small">
-		        		<div class="icon-typ-flag {if segment_2=='plan-de-desarrollo-temas'}active{/if}"></div>
-	        		</div>	        		
-	        	</div>		        
-	        </li>	
-	        <li>
-	        	<div class="row clearfix">
-	        		<div class="small-12 medium-10 large-10 columns">
-			        	<a href="{site_url}images/documentos/PDF_Backbone.pdf" {if segment_2=='plan-de-desarrollo-temas'}class="active"{/if}>
-			        		<div class="icon-typ-database"></div>Descarga el Backbone
-			        	</a>
-	        		</div>
-	        		<div class="small-12 medium-2 large-2 columns hide-for-small">
-		        		<div class="icon-typ-database {if segment_2=='plan-de-desarrollo-temas'}active{/if}"></div>
-	        		</div>	        		
-	        	</div>		        
-	        </li>		              	
-	        <li>
-	        	<div class="row clearfix">
-	        		<div class="small-12 medium-10 large-10 columns">
-			        	<a href="#" target="_blank" data-reveal-id="herramienta_de_certificacion">
-			        		<div class="icon-typ-clipboard"></div>Herramienta de Cert.
-			        	</a>
-	        		</div>
-	        		<div class="small-12 medium-2 large-2 columns hide-for-small">
-		        		<div class="icon-typ-clipboard"></div>
-	        		</div>	        		
-	        	</div>		        
-	        </li>	
-	        <li>
-	        	<div class="row clearfix">
-	        		<div class="small-12 medium-10 large-10 columns">
-			        	<a href="{site_url}n_quieres_crear_un_curso"  {if segment_1=='n_quieres_crear_un_curso'}class="active"{/if}>
-			        		<div class="icon-typ-pencil"></div>Crear un curso
-			        	</a>
-	        		</div>
-	        		<div class="small-12 medium-2 large-2 columns hide-for-small">
-		        		<div class="icon-typ-pencil {if segment_1=='n_quieres_crear_un_curso'}active{/if}"></div>
-	        		</div>	        		
-	        	</div>		        
-	        </li>		        	        
-	      </ul>
+	      <!--LAUCB-->
 	      <ul class="off-canvas-list">
 	        <li><label>LA UCB</label></li>
 	        <li>
@@ -187,7 +186,8 @@
 	        		</div>	        		
 	        	</div>	        
 	        </li>
-	      </ul>	 
+	      </ul>	
+	      <!--SOCIAL MEDIA--> 
 	      <ul class="off-canvas-list">
 	        <li><label></label></li>
 	        <li>
@@ -215,6 +215,7 @@
 	        	</div>		        
 	        </li>
 	      </ul>
+	      <!--USUARIOS-->
 	      <ul class="off-canvas-list hide-for-large">
 	        <li><label>USUARIO</label></li>
 	        <li>

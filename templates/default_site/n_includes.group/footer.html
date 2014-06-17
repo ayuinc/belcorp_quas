@@ -97,5 +97,41 @@
     });
     </script>
 		<!--END.BUSCADOR-->
+		
+		<!--SCROLL NAV CONVENIOS-->
+
+		<script>
+		$(document).ready (function(){
+      $( "#nav-postgrados" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:$("#104").offset().top -20});
+          $(".text-primary").removeClass("active");
+          $(this).addClass("active");
+      });
+
+      $( "#nav-idiomas" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:$("#105").offset().top -20});
+          $(".text-primary").removeClass("active");
+          $(this).addClass("active");
+      });
+
+      $( "#navTecnología" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:$("#106").offset().top -20});
+          $(".text-primary").removeClass("active");
+          $(this).addClass("active");
+      });
+
+      $( "#nav-otros" ).click(function( event ) {
+        event.preventDefault();
+          $("html, body").animate({scrollTop:$("#107").offset().top -20});
+          $(".text-primary").removeClass("active");
+          $(this).addClass("active");
+      });
+		});		
+		</script>
+
+		<!--END.SCROLL NAV CONVENIOS-->
   </body>
 </html>

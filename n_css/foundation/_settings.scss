@@ -57,12 +57,21 @@ $row-width: 100%;
 // $default-float: left;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
-// $secondary-color: #e7e7e7;
-// $alert-color: #f04124;
-// $success-color: #43AC6A;
-// $warning-color: #f08a24;
-// $info-color: #a0d3e8;
+$primary-color: #5a277d !default; // morado
+$secondary-color: #AA7BC9 !default;
+$alert-color: #E5FF36 !default;
+$success-color: #8dc63f !default; // verde
+$warning-color: #ef3e42 !default;  // rojo
+$info-color: #00bce4 !default; // azul
+
+// Grayscale
+$gray-darker:            lighten(#313233, 0%) !default; // #222
+$gray-dark:              lighten(#313233, 21%) !default;   // #333
+$gray:                   lighten(#313233, 35%) !default; // #555
+$gray-light:             lighten(#313233, 63%) !default;   // #999
+$gray-lighter:           lighten(#313233, 77%) !default; // #eee
+
+// Others
 $morado: #5a277d;
 $morado-hover: #481F66;
 $morado-claro: #A679B2;
@@ -343,7 +352,7 @@ $crumb-font-transform: capitalize;
 
 // We use these to control the slash between breadcrumbs
 $crumb-slash-color: $morado;
-$crumb-slash: ">";
+$crumb-slash: "\e678";
 
 //
 // BUTTONS
@@ -430,7 +439,7 @@ $crumb-slash: ">";
 // $include-html-dropdown-classes: $include-html-classes;
 
 // We use these to controls height and width styles.
-//$f-dropdown-max-width: 230px;
+// $f-dropdown-max-width: 240px;
 // $f-dropdown-height: auto;
 // $f-dropdown-max-height: none;
 
