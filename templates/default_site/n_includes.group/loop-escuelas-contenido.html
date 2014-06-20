@@ -1,4 +1,4 @@
-{exp:channel:entries channel="cursos|tendencias" limit="1" category="{last_segment_category_id}" dynamic="off" paginate="bottom"}  	    	
+{exp:channel:entries channel="cursos|tendencias" limit="3" category="{last_segment_category_id}" dynamic="off" paginate="bottom"}  	    	
 <li  class="isotope-item 
 	{categories show_group='10' show='not 108|115'}
 	        {category_url_title}
@@ -35,8 +35,7 @@
       {/exp:char_limit}
 		</div>
 	</a>
-</li>
-{paginate}
+  {paginate}
   {pagination_links}
     <ul>
       {first_page}
@@ -60,5 +59,7 @@
       {/last_page}
     </ul>
   {/pagination_links}
-{/paginate}
+{/paginate} 
+</li>
+
 {/exp:channel:entries}
