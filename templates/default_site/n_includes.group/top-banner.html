@@ -41,15 +41,15 @@
 							</div>
 							<div class="small-2 columns p-0">
 								<div class="user">
-									<div class="hide-for-small hide-for-medium hide-for-large">
+									<div class="hide-for-small hide-for-medium">
 										<span>
 										{if logged_in}
 											{embed="n_includes/head_profile_lms"}
+											{exp:member:custom_profile_data}
+												<a href="{path='logout'}">Salir</a>
+											{/exp:member:custom_profile_data}
 										{/if}
 										</span>
-										{exp:member:custom_profile_data}
-										<a href="{path='logout'}">Salir</a>
-										{/exp:member:custom_profile_data}
 									</div>
 									<div>
 										<a href="#"><img src="{site_url}images/user.jpg"></a>

@@ -7654,13 +7654,17 @@ header {
     header .user div {
       float: left; }
     header .user div:first-child {
-      padding-top: 7px;
       margin-right: 7px; }
       header .user div:first-child span {
         display: block; }
       header .user div:first-child a {
         font-size: 12px;
         font-size: 0.75rem; }
+      header .user div:first-child button {
+        margin: 0;
+        background: none;
+        color: gray;
+        padding: 3px; }
     header .user img {
       width: 42px;
       width: 2.625rem;
