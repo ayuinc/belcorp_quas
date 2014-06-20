@@ -1,37 +1,62 @@
-							{exp:channel:entries channel="cursos|tendencias" limit="21" category="154|159" dynamic="off" }  	    	
-  	    			<li  class="isotope-item 
-  	    				{categories show_group='14' show='not 151|152|153|154|155|156|157|158|159160|161|162|163|258'}
-								        {category_name}
-								{/categories}
-   	    			">
-   	    			
-   	    				{if interna-contenido}
-								  {if interna-contenido=="Pagina Interna"}
-						      	<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);">
-						      {if:else}
-						        <a href="{link-recurso}" target="_blank" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}-LINKEXTERNO']);">
-						      {/if}  
-   	    				{if:else}
-   	    				<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);">
-   	    				{/if}
+{exp:channel:entries channel="cursos|tendencias" limit="21" category="154|159" dynamic="off" paginate="bottom"}  	    	
+<li  class="isotope-item 
+	{categories show_group='14' show='not 151|152|153|154|155|156|157|158|159160|161|162|163|258'}
+	        {category_name}
+	{/categories}
+	">
+	
+		{if interna-contenido}
+	  {if interna-contenido=="Pagina Interna"}
+    	<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);">
+    {if:else}
+      <a href="{link-recurso}" target="_blank" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}-LINKEXTERNO']);">
+    {/if}  
+		{if:else}
+		<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Entrar-Destacados', '{title}']);">
+		{/if}
 
-	  	    				<div class="panel-curso">
-	  	    					<h5 class="mb-0">
-                      {if tipo-contenido-recurso}
-                        <small>{tipo-contenido-recurso}</small>
-                      {if:else}
-                      	<small>CURSO</small>
-                      {/if}
-											<br>{title}
-										</h5>
-                    {if subttulo-curso}
-                    	<h6>{subttulo-curso}</h6>
-                    {/if}
-                    {if fuente-recurso}
-                    	<h6>{fuente-recurso}</h6>
-                    {/if}                    
-										<p>{descripcion-curso}</p>
-	  	    				</div>
-	  	    			</a>
-  	    			</li>
-  	    			{/exp:channel:entries}
+		<div class="panel-curso">
+			<h5 class="mb-0">
+        {if tipo-contenido-recurso}
+          <small>{tipo-contenido-recurso}</small>
+        {if:else}
+        	<small>CURSO</small>
+        {/if}
+				<br>{title}
+			</h5>
+      {if subttulo-curso}
+      	<h6>{subttulo-curso}</h6>
+      {/if}
+      {if fuente-recurso}
+      	<h6>{fuente-recurso}</h6>
+      {/if}                    
+			<p>{descripcion-curso}</p>
+		</div>
+	</a>
+</li>
+{paginate}
+  {pagination_links}
+    <ul>
+      {first_page}
+        <li><a href="{pagination_url}" class="page-first">First Page</a></li>
+      {/first_page}
+
+      {previous_page}
+        <li><a href="{pagination_url}" class="page-previous">Previous Page</a></li>
+      {/previous_page}
+
+      {page}
+        <li><a href="{pagination_url}" class="page-{pagination_page_number} {if current_page}active{/if}">{pagination_page_number}</a></li>
+      {/page}
+
+      {next_page}
+        <li><a href="{pagination_url}" class="page-next">Next Page</a></li>
+      {/next_page}
+
+      {last_page}
+        <li><a href="{pagination_url}" class="page-last">Last Page</a></li>
+      {/last_page}
+    </ul>
+  {/pagination_links}
+{/paginate} 
+{/exp:channel:entries}
