@@ -17,7 +17,10 @@
 							{/if} 	
   	    			{if embed:seccion=='Operaciones'}
 							{exp:channel:entries channel="cursos|tendencias" limit="3" dynamic="off" category="109"} 
-							{/if} 														
+							{/if}
+  	    			{if embed:seccion=='Destacados'}
+							{exp:channel:entries channel="cursos|tendencias" limit="3" dynamic="off" category="257"} 
+							{/if}							 														
   	    			<li>
    	    				{if interna-contenido}
 								  {if interna-contenido=="Pagina Interna"}

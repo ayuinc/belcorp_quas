@@ -8,8 +8,8 @@
   Version: 0.1
   GitHub: https://github.com/netpoe/EBM.git
 
-*/ 
-.p-7 {
+*/
+ .p-7 {
   padding: 7px !important;
   padding: 0.4375rem !important; }
 
@@ -7966,8 +7966,8 @@ footer {
       top: 21px; }
 
 #form_search button[type="submit"] {
-  padding-top: 7px;
-  padding-top: 0.4375rem;
+  padding: 10px;
+  padding: 0.625rem;
   text-align: center; }
 
 .list-heading {
@@ -8081,8 +8081,8 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
 .icon-container {
   font-size: 28px;
   color: white;
-  padding: 10px;
-  padding: 0.625rem;
+  padding: 9px 9px 9px 3px;
+  padding: 0.5625rem 0.5625rem 0.5625rem 0.1875rem;
   text-align: center; }
 
 /* OFF CANVAS  */
@@ -8098,7 +8098,7 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
 
 #site-canvas {
   width: 100%;
-  height: auto;
+  min-height: 990px;
   position: relative;
   -webkit-transform: translateX(60px);
   transform: translateX(60px);
@@ -8279,6 +8279,103 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   padding: 0.75rem; }
   .details_info p {
     margin-bottom: 0; }
+
+body {
+  font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+  font-weight: 100;
+  font-style: normal;
+  position: relative;
+  letter-spacing: 0.10px; }
+
+h1, h2, h3, h4, h5, h6, p, ol {
+  font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+  font-weight: 100;
+  font-style: normal; }
+
+.clearfix {
+  padding: 0;
+  margin: 0; }
+
+.bg-gris {
+  background-color: #f6f6f7; }
+
+.tab-bar-section #start_course {
+  padding: 0;
+  font-size: 16px;
+  font-size: 1rem;
+  background: none;
+  margin-bottom: 0;
+  color: #898b8e; }
+
+.menu-convenios > li {
+  padding-right: 1.5rem;
+  line-height: 100%; }
+  .menu-convenios > li a {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.9rem;
+    letter-spacing: 0.03rem;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s; }
+    .menu-convenios > li a:hover {
+      color: #331647; }
+    .menu-convenios > li a span {
+      font-size: 0.7rem;
+      letter-spacing: 0.06rem;
+      text-rendering: optimizeLegibility; }
+  .menu-convenios > li:first-child a {
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+    font-weight: 500;
+    font-style: normal; }
+  .menu-convenios > li:first-child span {
+    font-size: 16px; }
+  .menu-convenios > li:first-child span:after {
+    content: "\e734";
+    font-family: "icomoon-typ"; }
+  .menu-convenios > li:last-child {
+    border-right: none; }
+  .menu-convenios > li .columns ul {
+    margin: 0 !important;
+    list-style: none;
+    width: 120px; }
+    .menu-convenios > li .columns ul li {
+      border-right: none;
+      padding: 0 !important;
+      line-height: 50% !important; }
+      .menu-convenios > li .columns ul li a {
+        color: #596c79;
+        font-size: 0.7rem; }
+
+.convenio-list li {
+  margin-bottom: 21px;
+  margin-bottom: 1.3125rem; }
+  .convenio-list li p {
+    line-height: 28px;
+    line-height: 1.75rem; }
+    .convenio-list li p a {
+      color: #5a277d;
+      text-transform: none;
+      font-size: 1.1rem; }
+  .convenio-list li h4 {
+    color: #5a277d; }
+  .convenio-list li h5 {
+    color: #999999; }
+    .convenio-list li h5 span {
+      color: #313233; }
+
+ul.inline-list.username li {
+  min-width: 170px;
+  min-width: 10.625rem; }
+  ul.inline-list.username li a {
+    color: #898b8e; }
+
+.tab-bar-section.right {
+  right: 77px;
+  right: 4.8125rem; }
 
 .escuela-block h1, .escuela-block h4, .escuela-block p {
   font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
