@@ -27,678 +27,113 @@ h1, h2, h3, h4, h5, h6, p, ol {
 }
 
 
-// TEXT GRADIENTS
-@mixin text-fill-color($color) {
-  @include prefixer(text-fill-color, $color, webkit moz spec);
-}
+// .menu {
+// 	background-color: $morado;
+// 	left:4rem;
+// 	.row {
+// 		background-color: none;
+// 		padding:0;
+// 	}
+// 	.logo {
+// 		background-color: $blanco;
+// 		img {
+// 			padding: 0.5rem 0;			
+// 		}
+// 		.large {
+// 			position:relative;
+// 			top:0;
+// 			left:1rem;
+// 		}	
+// 		.small {
+// 			position:relative;
+// 			top:0.2rem;
+// 			left:1.2rem;
+// 		}		
+// 	}
+// 	ul {
+// 		li {
+// 			@include thin;
+// 			color: $morado-claro;
+// 			a {
+// 				padding:0.35rem 0;
+// 				color: mix(white, $morado-claro, 28%);
+// 				font-size: 18px;
+// 				font-size: rem(18);
+// 				border-bottom:none;
+// 				-webkit-transition: 300ms; /* For Safari 3.1 to 6.0 */
+// 				transition: 300ms;
+// 				text-transform: capitalize;
+// 				&:hover,
+// 				&.active {
+// 					color:$blanco;
+// 				}
+// 				[class^="icon-"], [class*=" icon-"]  {
+// 					float:left;
+// 					margin: -0.4rem 0.8rem 0 0.4rem;
+// 					font-size: 1.1rem;
+// 					cursor: pointer;
+// 					padding-top: 3px;
+// 					padding-top: rem(3);
+// 				}
+// 			}
+// 			[class^="icon-"], [class*=" icon-"]  {
+// 				position: relative;
+// 				top: 0.5rem;
+// 				left: -0.3rem;
+// 				-webkit-transition: 300ms; /* For Safari 3.1 to 6.0 */
+// 				transition: 300ms;	
+// 				font-size: 1.1rem;			
+// 				&:hover {
+// 					background-color: $morado;
+// 					color:$blanco;	
+// 					cursor: pointer;
+// 				}
+// 			}
+// 			label {
+// 				background-color: $morado;
+// 				color: $morado-claro;
+// 				font-size: 1.1rem;
+// 				@include thin;
+// 				padding-top: 21px;
+// 				padding-top: rem(21);
+// 			}
+// 			label:nth-child(n + 2) {
+// 				padding-top: 21px;
+// 				padding-top: rem(21);
+// 			}
+// 		}
+// 	}
+// }
 
-@mixin background-clip($clip) {
-  @include prefixer(background-clip, $clip, webkit moz spec);
-}
+// .off-canvas-open {
+// 	opacity: 0;
+// 	@include transition(all 0.3s ease);
+// 	[class*="icon-"].active {
+// 		color: white;
+// 	}
+// }
 
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-	.text-gradient {
-		@include background(linear-gradient(left, $gris, $gris-claro, $primary-color) repeat);
-	  @include background-clip(text);
-	  @include text-fill-color(transparent);
-	}
-
-	.escuela-block {
-		h1, p {
-			@include background(linear-gradient(left, $gris, $gris-claro, $primary-color) repeat);
-	  	@include background-clip(text);
-	  	@include text-fill-color(transparent);
-		}
-	}
-
-	.note-blockquote, blockquote, blockquote p {
-		@include thin;
-		@include background(linear-gradient(left, $gris, $gris-claro, $primary-color) repeat);
-		@include background-clip(text);
-		@include text-fill-color(transparent);
-		line-height: 1.6;
-	}
-}
-// TEXT GRADIENTS END
-
-/*SECCIONES EN EL OFFCANVAS*/
-
-.move-right .exit-off-canvas {
-	-webkit-backface-visibility: hidden;
-	transition: background 300ms ease;
-	cursor: pointer;
-	box-shadow: none;
-	display: block;
-	position: absolute;
-	background: rgba(255, 255, 255, 0);
-	top: 0;
-	bottom: 0;
-	left: 4rem;
-	right: 0;
-	z-index: 1002;
-	-webkit-tap-highlight-color: none;
-	&:hover {
-		background: rgba(0, 0, 0, 0);
-	}
-}
-
-.main-section {
-	min-height: 40rem;
-	position: relative;
-	padding: 70px 112px 70px 147px;
-	padding: rem(70) rem(112) rem(70) rem(147);
-}
-
-.tab-bar {
-	left:4rem;
-	background: $gray-lighter;
-	color: $gray-dark;
-	height: 63px;
-	height: rem(63);
-	.left-small {
-		border-right: none;
-		a {
-			color: $gray-dark;
-		}
-	}
-}
-
-.left-off-canvas-menu {
-	width: 19.625rem;
-	/*position: fixed;
-	overflow-y: hidden;*/
-}
-
-ul.off-canvas-list li label {
-	border-top:none;
-}
-
-ul.off-canvas-list {
-	li {
-		a:hover {
-			background: none;
-		}
-	}
-}
-
-ul.off-canvas-list {
-	.large-2 {
-		[class^="icon-"], [class*=" icon-"] {
-			font-size: 21px;
-			font-size: rem(21);
-		}
-	}
-}
-
-
-/*END.SECCIONES EN EL OFFCANVAS*/
-
-.breadcrumbs {
-	margin: 0 1.2rem;
-	li {
-		a {
-		text-transform: uppercase;
-		font-size: 0.9rem;
-		@include thin;
-		}	
-	}
-  .current {
-		text-transform: uppercase !important;
-		font-size: 0.9rem;
-		@include thin;
-  }	
-}
-
-
-.icono {
-	background-color: $morado;
-	.icon-user, .icon-key {
-		color: $morado-claro;
-		font-size: 2rem;
-		padding: 0.5rem 1rem;;
-		min-height: 3rem;
-		max-height: 3rem;
-	}
-}
-
-.icon-container {
-	font-size: 28px;
-	color: white;
-	padding: 10px;
-	padding: rem(10); 
-	text-align: center;
-}
-
-.login-formulario {
-	min-height:41rem;
-	background-color: $gris-background;
-	.panel {
-		background-color: transparent;
-		border: none;
-		padding:3rem;
-	}
-	img {
-		margin:5rem 0;
-	}
-	h1 {
-		@include thin;
-		color:$blanco;
-		margin-top: 18rem;
-		font-size: 2rem;
-	}
-	p {
-		color:$morado;
-		@include thin;
-	}
-	.button.expand {
-		background-color: $morado;
-		@include thin;
-		color: $blanco;
-		&:hover {
-			background-color: $morado-hover;
-		}
-	}
-	input {
-		box-shadow: none;
-		border: none;
-		font-size: 1rem;
-		@include thin;
-		color: $morado;
-		-moz-box-shadow: 0 0 5px #ccc;
-		-webkit-box-shadow: 0 0 5px #ccc;
-		box-shadow: 0 0 5px #ccc;
-		height: 48px;
-		height: rem(48);
-	}
-	.bg-morado {
-		background-color: $morado;
-		height: 768px;
-		height: rem(768);
-	}	
-}
-
-
-.menu {
-	background-color: $morado;
-	left:4rem;
-	.row {
-		background-color: none;
-		padding:0;
-	}
-	.logo {
-		background-color: $blanco;
-		img {
-			padding: 0.5rem 0;			
-		}
-		.large {
-			position:relative;
-			top:0;
-			left:1rem;
-		}	
-		.small {
-			position:relative;
-			top:0.2rem;
-			left:1.2rem;
-		}		
-	}
-	ul {
-		li {
-			@include thin;
-			color: $morado-claro;
-			a {
-				padding:0.35rem 0;
-				color: mix(white, $morado-claro, 28%);
-				font-size: 18px;
-				font-size: rem(18);
-				border-bottom:none;
-				-webkit-transition: 300ms; /* For Safari 3.1 to 6.0 */
-				transition: 300ms;
-				text-transform: capitalize;
-				&:hover,
-				&.active {
-					color:$blanco;
-				}
-				[class^="icon-"], [class*=" icon-"]  {
-					float:left;
-					margin: -0.4rem 0.8rem 0 0.4rem;
-					font-size: 1.1rem;
-					cursor: pointer;
-					padding-top: 3px;
-					padding-top: rem(3);
-				}
-			}
-			[class^="icon-"], [class*=" icon-"]  {
-				position: relative;
-				top: 0.5rem;
-				left: -0.3rem;
-				-webkit-transition: 300ms; /* For Safari 3.1 to 6.0 */
-				transition: 300ms;	
-				font-size: 1.1rem;			
-				&:hover {
-					background-color: $morado;
-					color:$blanco;	
-					cursor: pointer;
-				}
-			}
-			label {
-				background-color: $morado;
-				color: $morado-claro;
-				font-size: 1.1rem;
-				@include thin;
-				padding-top: 21px;
-				padding-top: rem(21);
-			}
-			label:nth-child(n + 2) {
-				padding-top: 21px;
-				padding-top: rem(21);
-			}
-		}
-	}
-}
-
-.off-canvas-open {
-	opacity: 0;
-	@include transition(all 0.3s ease);
-	[class*="icon-"].active {
-		color: white;
-	}
-}
-
-.off-canvas-close {
-	opacity: 1;
-	@include transition(all 0.3s ease);
-	[class*="icon-"].active {
-		color: white;
-	}
-}
+// .off-canvas-close {
+// 	opacity: 1;
+// 	@include transition(all 0.3s ease);
+// 	[class*="icon-"].active {
+// 		color: white;
+// 	}
+// }
 
 //Menu_Secundario
-.menu-secundario {
-	ul {
-		li {
-			a.active {
-				color:$morado;
-			}
-		}
-	}
-	
-}
-
-//N_Escuela.html
-.escuela-block {
-	h1, h4, p {
-		@include thin;
-	}
-	h1 {
-		text-transform: uppercase;
-		font-size: rem(77);
-		line-height: 105%;
-	}
-	h4 {
-		font-size: rem(28);
-	}
-	p {
-		color: $gris-medio;
-	}
-	div:first-child {
-		padding-top: rem(21);
-	}
-	div:last-child {
-		padding-top: rem(12);
-	}
-}
-
-
-
-// N_WALL.html, N_Escuela.html
-.grid-panels {
-	a.link-wrapper {
-		display: block;
-		&:hover .panel-heading img {
-			@include transform(scale(1.1));
-			@include transition(all 0.3s ease);
-		}
-		&:hover .panel-body {
-			background: darken($gray-lighter, 7%);
-			@include transition(all 0.3s ease);
-		}		
-	}
-	.panel-heading {		
-		overflow: hidden;
-		position: relative;
-		img {
-			width: 100%;
-			height: auto;
-		}
-		.video-clip {
-			position: absolute;
-			top: 35%;
-			text-align: center;
-			width: 100%;
-			img {
-				width: 56px;
-				height: auto;
-				display: inline-block;
-			}
-		}
-	}
-	.panel-body {
-		background: $gray-lighter;
-		position: relative;
-		padding: 14px;
-		padding: rem(14);
-		height: 185px !important;
-		@include box-shadow(inset 0 0 5px $gray-light);
-		.panel-badge {
-			position: absolute;
-			top: -28px;
-			left: 0;
-			display: block;
-			padding: 3px 14px;
-			background: $primary-color;
-			color: white;
-			font-size: 14px;
-			font-size: rem(14);
-		}
-		p {
-			font-size: rem-calc(12);
-			color: $gris;
-			@include light;
-		}
-	}
-	.panel-curso {
-		background: $gris-background;
-		padding:rem-calc(14);
-		border-right:10px solid $morado;
-		height: 210px;
-		height: rem(210);
-		p {
-			font-size: rem-calc(12);
-			color: $gris;
-			@include light;
-		}		
-	}
-	h5 {
-		@include light;
-		line-height: 110%;
-		font-size: rem-calc(16);
-		color: $gray-dark;
-		text-transform: uppercase;
-		margin-bottom:rem-cal(5);
-	}
-	h6 {
-		@include light;
-		color:$gris;
-		font-size: rem-calc(14);
-	}
-	// ESCUELAS Colors
-	.ventas-temas {
-		.panel-curso {
-			border-right: 10px solid $primary-color !important;
-		}
-	}
-	.negocios-temas {
-		.panel-curso {
-			border-right: 10px solid $warning-color !important;
-		}
-	}
-	.liderazgo-y-cultura-temas {
-		.panel-curso {
-			border-right: 10px solid $info-color !important;
-		}
-	}
-	.innovacion-temas {
-		.panel-curso {
-			border-right: 10px solid $success-color !important;
-		}
-	}
-	.tecnologia-temas {
-		.panel-curso {
-			border-right: 10px solid $alert-color !important;
-		}
-	}
-	.operaciones-temas {
-		.panel-curso {
-			border-right: 10px solid $secondary-color !important;
-		}
-	}
-}
-
-	// N_WALL Heading Block
-.heading-block {
-	h1, h4 {
-		@include thin;
-	}
-	h1 {
-		font-size: rem(77);
-		text-transform: uppercase;
-		// letter-spacing: 3px;
-		// letter-spacing: rem(3);
-	}
-	h4 {
-		font-size: rem(28);
-	}
-	div:first-child {
-		padding-top: rem(21);
-	}
-	div:last-child {
-		border-left: 5px solid $gris-claro;
-		padding-top: rem(12);
-	}
-}
-	// Search Block
-.search-block {
-	form {
-		input,
-		.input {
-			height: 52px;
-			height: rem(52);
-			font-size: 21px;
-			font-size: rem(21);
-			@include thin;
-			color: $gris-claro;
-		}
-		button i {
-			color: white;
-		}
-	}
-}
-
-	// list-heading
-.list-heading {
-	border-left: 4px solid $gris-claro;
-	text-transform: uppercase;
-	@include light;
-}
-
-ul.no-bullet {
-	li {
-		a {
-			letter-spacing: 0.10px;
-			@include thin;
-			color: $gris-claro;
-			&:hover {
-				color: $morado-hover;
-			}
-			font-size: 14px;
-			font-size: rem(14);
-			text-transform: uppercase;
-		}
-	}
-}
-
-	// ISOTOPE FILTERS
-#filters {
-	padding: 14px 0;
-	padding: rem(14) 0;
-	li:first-child {
-		label {
-			margin-left: 0;
-		}
-	}
-	// li:nth-child(n + 2) {
-	// 	margin-left: 21px;
-	// 	margin-left: rem(21);
-	// }
-	li {
-		float: left;
-		label {
-			padding: 7px 14px;
-			padding: rem(7) rem(14);
-			border-radius: 3px;
-			border: 1px solid $gray-lighter;
-			margin-right: 0;
-			&:hover,
-			&.active {
-				background: $gray-lighter;
-			}
-			&:after {
-				content: "\e600";
-				margin-left: 14px;
-				font-family: "icomoon-typ";
-				color: $gray;
-			}
-		}
-		input[type="checkbox"] {
-			display: none;			
-			&:checked ~ label {
-				background: $gray-lighter;
-				&:after {
-					content: "\e601";
-					font-family: "icomoon-typ";
-					margin-left: 14px;
-				}
-			}
-		}
-	}
-}
-
-// SEARCH TRIGGER Button
-#search-button {
-	.search-icon,
-	button.search-form-trigger {		
-		height: 52px;
-		height: rem(52);
-	}
-	button.search-form-trigger {
-		border: 1px solid $gray-lighter;
-		background: white;
-		color: $gray-light;
-		width: 100%;
-		box-shadow: 0 0 5px #ccc;
-		@include thin;
-		font-size: 21px;
-		font-size: rem(21);
-		padding-top: 13px;
-		padding-top: rem(13);
-		@include transition(all 0.3s ease);
-		&:hover {
-			box-shadow: 0 0 5px $primary-color;
-			color: $primary-color;
-			@include transition(all 0.3s ease);
-		}
-	}
-	.search-icon {
-		background: $primary-color;
-		text-align: center;
-		padding-top: 14px;
-		padding-top: rem(14);
-		color: white;
-		font-size: 21px;
-		font-size: rem(21);
-	}
-}
-
-.search-canvas-overlay {
-	display: none;
-	position: absolute;
-	z-index: 1002;
-	background: rgba($gray-lighter, 0.7);
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	width: auto;
-	height: auto;
-	overflow-y: hidden;
-	overflow-x: hidden;
-	@include transition(display 0.7s ease-in);
-	&.searching {
-		display: block;
-		position: fixed;
-		z-index: 1002;
-		background: rgba($gray-lighter, 0.9);
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		width: auto;
-		height: auto;
-		overflow-y: hidden;
-		overflow-x: hidden;
-		.search-form {
-			form {
-				input,
-				button {
-					height: 56px;
-					height: rem(56);
-					@include thin;
-				}
-				button {
-					background: transparent;
-					border: 3px solid lighten($primary-color, 42%);
-					color: lighten($primary-color, 42%);
-					font-size: 28px;
-					font-size: rem(28);
-					@include transition(all 0.3s ease);
-					&:hover {
-						border: 3px solid lighten($primary-color, 7%);
-						color: lighten($primary-color, 7%);
-						@include transition(all 0.3s ease);
-					}
-				}
-				input {
-					background: none;
-					font-size: 42px;
-					font-size: rem(42);
-					text-align: center;
-					margin: 21px 0;
-					margin: rem(21) 0;
-					border: none;
-					&:focus {
-						border: none;
-						box-shadow: none;
-					}
-					// @include placeholder {
-				 //    &:before {
-				 //    	content: "\e6bb";
-				 //    	font-family: "icomoon-typ";
-				 //    }
-				 //  }
-				}
-			}
-		}
-		.close {
-			font-size: 28px;
-			font-size: rem(28);
-			color: $gray;
-			text-transform: uppercase;
-			text-decoration: none;
-			@include thin;
-			position: absolute;
-			right: 21px;
-			top: 21px;
-		}
-	}	
-}
+// .menu-secundario {
+// 	ul {
+// 		li {
+// 			a.active {
+// 				color:$morado;
+// 			}
+// 		}
+// 	}
+// }
 
 // SHOW PAGE
-	// Length panel
-.length-panel {
-	border-left: 4px solid $primary-color;
-	background: $gray-lighter;
-	padding: 14px 0px 12px 14px;
-}
+	
 
 	// Menu Convenios
 .menu-convenios {
@@ -786,21 +221,6 @@ ul.no-bullet {
 	}
 }
 
-.heading-link {
-	background: $gris;
-	color: white;
-	padding: 0 5px;
-	@include transition(all 0.3s ease);
-	font-size: 21px;
-	font-size: rem(21);
-	@include thin;
-	&:hover {
-		background: $primary-color;
-		color: white;
-		@include transition(all 0.3s ease);
-	}	
-}
-
 ul.inline-list.username {
 	li {
 		min-width: 170px;
@@ -815,39 +235,5 @@ ul.inline-list.username {
 	right: 77px;
 	right: rem(77);
 }
-
-// CURSO_SHOW
-.details_info {
-	background: $gray-lighter;
-	border-left: 5px solid $primary-color;
-	padding: 12px;
-	padding: rem(12);
-	p {
-		margin-bottom: 0;
-	}
-}
-
-#form_search button[type="submit"] {
-	padding: 0;
-	text-align: center;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

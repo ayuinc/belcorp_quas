@@ -1,43 +1,61 @@
-	    <nav class="tab-bar">
-	    	<section class="left-small pt-7 hide-for-medium hide-for-large">
-	        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
-	      </section>
-	      <section class="middle tab-bar-section hide-for-medium hide-for-large">
-	      	<h6 class="uppercase text-primary">
-	      	{if segment_1=='n_escuelas'}
-		      	{if segment_2!='tecnologia-temas' OR segment_2!='operaciones-temas'}
-		      		{if segment_2!='curso'}
-							Escuela de
-		      		{/if}
-		      	{/if} 
-		      	{segment_2_category_name}
-	      	{/if}
-	      	{if segment_1=='n_seccion'}
-	      		{if segment_2=='que-hace-la-ucb-por-ti'}
-	      			QUE HACE LA UCB POR TI
-	      		{/if}
-	      	{/if}
-	      	{if segment_1=='n_contactos'}	
-	      		CONTACTOS
-	      	{/if}
-	      	{if segment_1=='n_convenios'}	
-	      		CONVENIOS
-	      	{/if}      	
-	      	{if segment_1=='n_preguntas_frecuentes'}	
-	      		PREGUNTAS FRECUENTES
-	      	{/if}
-	      	</h6>
-	      </section>
-	      <section class="right tab-bar-section hide-for-small">
-	        <ul class="inline-list right username pt-7 text-right">
-		        <li>
-		        {if logged_in}
-			          {embed="n_includes/head_profile_lms"}
-			    {/if}
-		        {exp:member:custom_profile_data}
-		        <small><a href="{path='logout'}">Salir</a></small>
-		        {/exp:member:custom_profile_data}
-		        </li>
-	        </ul>
-	      </section>
-	    </nav>
+					<!-- HEADER -->
+					<header>
+						<div class="header-container small-11 small-centered">
+							<div class="small-3 columns pt-14">
+				        {if segment_1=='n_escuelas' AND segment_3!=''}
+				        <a class="menu-icon" href="javascript: history.go(-1)"><i class="icon-typ-arrow-back-circle-outline"></i></a>
+				        {if:else}
+								<a href="#" class="toggle-nav-link hide-for-medium hide-for-large">
+									<i class="icon-typ-th-menu-outline"></i>
+								</a>
+				        {/if}							
+							</div>
+							<div class="small-7 columns text-center pt-14">
+								<h6 class="m-0 hide-for-medium hide-for-large">
+				      	{if segment_1=='n_escuelas'}
+					      	{if segment_2!='tecnologia-temas' OR segment_2!='operaciones-temas'}
+					      		{if segment_2!='curso'}
+										Escuela de
+					      		{/if}
+					      	{/if} 
+					      	{segment_2_category_name}
+					      	{if segment_3!=''}
+					      		<br><span>{segment_3_category_name}</span>
+					      	{/if}
+				      	{/if}
+				      	{if segment_1=='n_seccion'}
+				      		{if segment_2=='que-hace-la-ucb-por-ti'}
+				      			QUE HACE LA UCB POR TI
+				      		{/if}
+				      	{/if}
+				      	{if segment_1=='n_contactos'}	
+				      		CONTACTOS
+				      	{/if}
+				      	{if segment_1=='n_convenios'}	
+				      		CONVENIOS
+				      	{/if}      	
+				      	{if segment_1=='n_preguntas_frecuentes'}	
+				      		PREGUNTAS FRECUENTES
+				      	{/if}									
+								</h6>
+							</div>
+							<div class="small-2 columns p-0">
+								<div class="user">
+									<div class="hide-for-small hide-for-medium">
+										<span>
+										{if logged_in}
+											{embed="n_includes/head_profile_lms"}
+											{exp:member:custom_profile_data}
+												<a href="{path='logout'}">Salir</a>
+											{/exp:member:custom_profile_data}
+										{/if}
+										</span>
+									</div>
+									<div>
+										<a href="#"><img src="{site_url}images/user.jpg"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</header>
+					<!-- END:HEADER -->

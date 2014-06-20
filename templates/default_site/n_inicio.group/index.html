@@ -1,26 +1,25 @@
 {embed="n_includes/header"}
 
 	{if logged_in}
-
-	{embed="n_includes/buscador"}
 	
-	<div class="off-canvas-wrap" data-offcanvas>
-	  <div class="inner-wrap">
-	    
-	  <!--TOP BANNER-->  
-	  {embed="n_includes/top-banner"}  
+	<div id="site-wrapper">
+		<div id="content-frame">	  
 	    
 		<!--MENU LADO IZQUIERDO-->
 	  {embed="n_includes/menu-izquierdo"}
-	    
-	
-		<!--CONTENIDOS-->
-	    <section class="main-section">
-	    	<div class="row heading-block">
-	    		<div class="small-12 medium-6 large-6 columns text-gradient pt-14">
-						<h1>BIENVENIDO</h1>
+
+		<div id="site-canvas">
+		
+	  <!--TOP BANNER-->  
+	  {embed="n_includes/top-banner"} 		
+
+		<!-- CANVAS CONTAINER -->
+		<div class="large-10 large-centered columns">
+	    	<div class="row heading-block mt-21">
+	    		<div class="small-12 medium-6 large-5 columns text-gradient pt-14">
+						<h1>BIENVENIDO A LA UCB</h1>
 	    		</div>
-	    		<div class="small-12 medium-6 large-6 columns pt-0">
+	    		<div class="small-12 medium-6 large-7 columns">
 						<h4 class="text-gradient mb-0 ">
 						ENCUENTRA TU RUTA <br>PERSONALIZADA DE APRENDIZAJE
 						</h4>
@@ -33,9 +32,10 @@
 						{/exp:member:custom_profile_data}
 	    		</div>	    		
 	    	</div>
+	    	
 	    	<div class="row search-block mb-28 mt-28">
   	    	<div class="small-12 medium-9 large-9 columns full-width-for-portrait">
-  	    		{embed="n_includes/buscador-trigger"}
+  	    		{embed="n_includes/buscador"}
   	    	</div>
   	    	<div class="medium-3 large-3 columns">
   	    		<!--<a href="#" class="button expand">Ingresa</a>-->
@@ -43,18 +43,23 @@
   	    </div>
   	    <div class="row">
   	    	<div class="small-12 medium-9 large-9 columns full-width-for-portrait">
-  	    		{exp:channel:entries channel="wall" limit="3" dynamic="off" disable="pagination"} 
-							{embed="n_includes/loop-wall" seccion="{1linea-wall}"}
+  	    		{exp:channel:entries channel="wall" limit="1" dynamic="off" disable="pagination"} 
+							{embed="n_includes/loop-wall" seccion="Destacados"}
+							<!--{embed="n_includes/loop-wall" seccion="{1linea-wall}"}
 							{embed="n_includes/loop-wall" seccion="{2linea-wall}"}
-							{embed="n_includes/loop-wall" seccion="{3linea-wall}"}
+							{embed="n_includes/loop-wall" seccion="{3linea-wall}"}-->
 						{/exp:channel:entries} 
   	    	</div>
   	    	<div class="medium-3 large-3 columns hide-for-small hide-for-portrait">
 						{embed="n_includes/menu-derecho"}
   	    	</div>
   	    </div>
-	    </section>
-		<a class="exit-off-canvas"></a>
+		</div>
+		<!-- END:CANVAS-CONTAINER -->	
+		
+		{embed="n_includes/footer-nav"}
+			
+		</div>
 	
 	  </div>
 	</div>

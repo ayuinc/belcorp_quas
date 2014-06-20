@@ -1,6 +1,9 @@
 // Bourbon sass tools
 @import "bourbon/bourbon";
 
+// EBM - EasyBoxModel
+@import "EBM/ebm";  
+
 // Normalize 
 @import "normalize";
 
@@ -10,7 +13,7 @@
 
 // Make sure the charset is set appropriately
 @charset "UTF-8";
-
+ 
 // Behold, here are all the Foundation components.
 @import
   "foundation/components/global",
@@ -54,13 +57,30 @@
   "foundation/components/visibility";
 
 // APP Custom
+// APP Includes
 @import 
-	"app/utilities-custom",
-	"app/type-custom",
-	"app/icons",
-  // "app/icons-ios", 
-  "app/icons-typ", 
-	"app/app";
+  "foundation/settings",
+  "app/includes/utilities-custom",
+  "app/includes/type-custom",
+  "app/includes/icons-typ",
+  "app/includes/header",
+  "app/includes/footer",
+  "app/includes/breadcrumbs",
+  "app/includes/login-form",
+  "app/includes/grid-panels",
+  "app/includes/search",
+  "app/includes/list-heading",
+  "app/includes/isotope-filters",
+  "app/includes/off-canvas-viejo",
+  "app/includes/ayu-off-canvas";
+
+// APP Views
+@import 
+  "app/canvas-container",
+  "app/wall",
+  "app/cursos",
+  "app/app",
+  "app/escuelas";
 
   // Animations
 // http://daneden.github.io/animate.css/

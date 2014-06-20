@@ -32,7 +32,7 @@
 	.heading-block {
 		h1 {
 			margin: -0.5rem 0 0 0;
-			font-size:3rem; 
+			font-size:4rem !important; 
 		}
 		h4 {
 			font-size:1rem;
@@ -128,6 +128,23 @@
 				font-size:1rem;
 				}
 			}
+		}
+	}
+
+	.tab-bar .menu-icon:last-child {
+		text-indent: 0;
+		line-height: 0;
+		padding: 7px 14px;
+		span:after {
+			box-shadow: 0 0px 0 1px $morado, 0 7px 0 1px $morado, 0 14px 0 1px $morado;
+		}
+		small {
+			color:$morado;
+			position: relative;
+			top: 13px;
+			left: 23px;
+			z-index: 1;
+			font-size: 0.7rem;
 		}
 	}
 

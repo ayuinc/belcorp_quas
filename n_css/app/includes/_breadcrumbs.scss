@@ -1,0 +1,17 @@
+// BREADCRUMBS
+.breadcrumbs {
+	margin: 21px 21px 0 21px;
+	margin: rem(21) rem(21) rem(0) rem(21);
+	li {
+		a {
+		text-transform: uppercase;
+		font-size: 0.9rem;
+		@include thin;
+		}	
+	}
+  .current {
+		text-transform: uppercase !important;
+		font-size: 0.9rem;
+		@include thin;
+  }	
+}

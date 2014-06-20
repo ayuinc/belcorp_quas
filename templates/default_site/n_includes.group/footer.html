@@ -11,6 +11,7 @@
     <!-- SCRIPTS-->
     <script src="{site_url}n_js/vendor/jquery.js"></script>
     <script src="{site_url}n_js/foundation.min.js"></script>
+    <script type="text/javascript" src="{site_url}n_js/ayu-off-canvas.js"></script>
     {if segment_1=='n_escuelas'}
     	<script src="{site_url}n_js/vendor/isotope.pkgd.min.js"></script>
 			<script>
@@ -63,12 +64,14 @@
 				  $('.off-canvas-trigger').addClass("off-canvas-open");
 				  $('.off-canvas-list .large-2').removeClass("off-canvas-close");
 				  $('.off-canvas-trigger').removeClass("off-canvas-close");
+				  $('html').css('overflow', 'hidden');
 				});
 				$(document).on('close', '[data-offcanvas]', function() {
 				  $('.off-canvas-list .large-2').removeClass("off-canvas-open");
 				  $('.off-canvas-trigger').removeClass("off-canvas-open");
 				  $('.off-canvas-list .large-2').addClass("off-canvas-close");
 				  $('.off-canvas-trigger').addClass("off-canvas-close");
+				  $('html').css('overflow', 'auto');
 				});
 		  });		  
     </script>
@@ -99,31 +102,30 @@
 		<!--END.BUSCADOR-->
 		
 		<!--SCROLL NAV CONVENIOS-->
-
 		<script>
 		$(document).ready (function(){
-      $( "#nav-postgrados" ).click(function( event ) {
+      $( "#nav_postgrados" ).click(function( event ) {
         event.preventDefault();
           $("html, body").animate({scrollTop:$("#104").offset().top -20});
           $(".text-primary").removeClass("active");
           $(this).addClass("active");
       });
 
-      $( "#nav-idiomas" ).click(function( event ) {
+      $( "#nav_idiomas" ).click(function( event ) {
         event.preventDefault();
           $("html, body").animate({scrollTop:$("#105").offset().top -20});
           $(".text-primary").removeClass("active");
           $(this).addClass("active");
       });
 
-      $( "#navTecnología" ).click(function( event ) {
+      $( "#nav_tecnologia" ).click(function( event ) {
         event.preventDefault();
           $("html, body").animate({scrollTop:$("#106").offset().top -20});
           $(".text-primary").removeClass("active");
           $(this).addClass("active");
       });
 
-      $( "#nav-otros" ).click(function( event ) {
+      $( "#nav_otros" ).click(function( event ) {
         event.preventDefault();
           $("html, body").animate({scrollTop:$("#107").offset().top -20});
           $(".text-primary").removeClass("active");
@@ -131,7 +133,7 @@
       });
 		});		
 		</script>
-
 		<!--END.SCROLL NAV CONVENIOS-->
+		
   </body>
 </html>

@@ -1,0 +1,23 @@
+//N_Escuela.html
+.escuela-block {
+	h1, h4, p {
+		@include thin;
+	}
+	h1 {
+		text-transform: uppercase;
+		font-size: rem(77);
+		line-height: 105%;
+	}
+	h4 {
+		font-size: rem(28);
+	}
+	p {
+		color: $gris-medio;
+	}
+	div:first-child {
+		padding-top: rem(21);
+	}
+	div:last-child {
+		padding-top: rem(12);
+	}
+}

@@ -1,0 +1,39 @@
+	// N_WALL Heading Block
+.heading-block {
+	h1, h4 {
+		@include thin;
+	}
+	h1 {
+		font-size: 4.4rem !important;
+		margin-top:-1rem !important;
+		text-transform: uppercase;
+		// letter-spacing: 3px;
+		// letter-spacing: rem(3);
+	} 
+	h4 {
+		font-size: rem(28);
+	}
+	div:first-child {
+	}
+	div:last-child {
+		padding-top: 42px;
+		padding-top: rem(42);
+		min-height: 180px;
+		border-left: 5px solid $gris-claro;		
+	}
+}
+
+.heading-link {
+	background: $gris;
+	color: white;
+	padding: 0 5px;
+	@include transition(all 0.3s ease);
+	font-size: 21px;
+	font-size: rem(21);
+	@include thin;
+	&:hover {
+		background: $primary-color;
+		color: white;
+		@include transition(all 0.3s ease);
+	}	
+}

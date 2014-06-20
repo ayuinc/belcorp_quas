@@ -1,0 +1,16 @@
+// Length panel
+.length-panel {
+	border-left: 4px solid $primary-color;
+	background: $gray-lighter;
+	padding: 14px 0px 12px 14px;
+}
+
+.details_info {
+	background: $gray-lighter;
+	border-left: 5px solid $primary-color;
+	padding: 12px;
+	padding: rem(12);
+	p {
+		margin-bottom: 0;
+	}
+}

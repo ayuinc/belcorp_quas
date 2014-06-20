@@ -23,8 +23,7 @@
 
 @media #{$small-only} {
 	.login-formulario img {
-		margin-top:5rem;
-		margin-bottom:2rem;
+		margin:2rem 0 1rem 0;
 	}
 	.tab-bar {
 		left: 0;
@@ -43,6 +42,30 @@
 		font-size: 0.8rem;
 		margin-top:0.7rem;
 		color: $gris-claro !important;
+		span {
+			color:$morado;
+			font-size: 0.7rem;
+			position: relative;
+			top: -5px;
+		}
+	} 
+	.tab-bar .menu-icon:last-child {
+		text-indent: 0;
+		line-height: 0;
+		padding: 7px 14px;
+		i {
+			font-size: 28px;
+			font-size: rem(28);
+			color: $gray-light;
+		}
+		small {
+			color:$morado;
+			position: relative;
+			top: 13px;
+			left: 23px;
+			z-index: 1;
+			font-size: 0.7rem;
+		}
 	}
 	
 	ul.no-bullet li ul, ul.no-bullet li ol {
@@ -86,8 +109,10 @@
 			border-left:none;
 		}
 		h1 {
-			font-size: 42px;
-			font-size: rem(42);
+			font-size: 3rem !important;
+			font-size: rem(3);
+			margin-top: 0rem !important;
+			
 		}
 		h4 {
 			font-size: 21px;
