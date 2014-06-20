@@ -8,8 +8,8 @@
   Version: 0.1
   GitHub: https://github.com/netpoe/EBM.git
 
-*/
- .p-7 {
+*/ 
+.p-7 {
   padding: 7px !important;
   padding: 0.4375rem !important; }
 
@@ -7678,8 +7678,6 @@ header {
     font-size: 1.3125rem; }
 
 footer {
-  height: 70px;
-  height: 4.375rem;
   background: #f6f6f7; }
 
 .breadcrumbs {
@@ -8334,7 +8332,7 @@ h1, h2, h3, h4, h5, h6, p, ol {
   .menu-convenios > li:first-child span {
     font-size: 16px; }
   .menu-convenios > li:first-child span:after {
-    content: "\e734";
+    content: "\e735";
     font-family: "icomoon-typ"; }
   .menu-convenios > li:last-child {
     border-right: none; }
