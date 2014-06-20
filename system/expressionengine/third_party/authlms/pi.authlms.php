@@ -65,7 +65,7 @@ class Authlms
     public function auth_lms_first(){
         include_once 'nusoap/lib/nusoap.php';
         $username= ee()->TMPL->fetch_param('username');
-        $username= "pellanoire";
+        //$username= "pellanoire";
         $id_curse= ee()->TMPL->fetch_param('id_curse');
         //instantiate the NuSOAP class and define the web service URL:
         $client = new nusoap_client('http://54.243.186.233/moodle/auth/belcorpws/belcorpws_server.php?wsdl', 'WSDL');
@@ -108,7 +108,7 @@ class Authlms
     public function auth_lms_access_profile(){
         include_once 'nusoap/lib/nusoap.php';
         $username= ee()->TMPL->fetch_param('username');
-        $username= "mariagomez";
+        //$username= "mariagomez";
         //$username= "pechvillaran";
         $screen_name= ee()->TMPL->fetch_param('screen_name');
         //instantiate the NuSOAP class and define the web service URL:
@@ -153,7 +153,7 @@ class Authlms
     public function auth_lms_access_profile_head(){
         include_once 'nusoap/lib/nusoap.php';
         $username= ee()->TMPL->fetch_param('username');
-        $username= "kcastro";
+        //$username= "kcastro";
         //$username= "pechvillaran";
         $screen_name= ee()->TMPL->fetch_param('screen_name');
         //instantiate the NuSOAP class and define the web service URL:
