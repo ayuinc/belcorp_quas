@@ -1,39 +1,64 @@
-							{exp:channel:entries channel="cursos|tendencias" limit="21" category="{last_segment_category_id}" dynamic="off" }  	    	
-  	    			<li  class="isotope-item 
-  	    				{categories show_group='10' show='not 108|115'}
-								        {category_url_title}
-								{/categories}
-   	    			">
-   	    			
-   	    				{if interna-contenido}
-								  {if interna-contenido=="Pagina Interna"}
-						      	<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Escuela', '{title}']);">
-						      {if:else}
-						        <a href="{link-recurso}" target="_blank" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Escuela', '{title}-LINKEXTERNO']);">
-						      {/if}  
-   	    				{if:else}
-   	    				<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Escuela', '{title}']);">
-   	    				{/if}
+{exp:channel:entries channel="cursos|tendencias" limit="21" category="{last_segment_category_id}" dynamic="off" paginate="bottom"}  	    	
+<li  class="isotope-item 
+	{categories show_group='10' show='not 108|115'}
+	        {category_url_title}
+	{/categories}
+	">
+	
+		{if interna-contenido}
+	  {if interna-contenido=="Pagina Interna"}
+    	<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Escuela', '{title}']);">
+    {if:else}
+      <a href="{link-recurso}" target="_blank" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Escuela', '{title}-LINKEXTERNO']);">
+    {/if}  
+		{if:else}
+		<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'Escuela', '{title}']);">
+		{/if}
 
-	  	    				<div class="panel-curso">
-	  	    					<h5>
-                      {if tipo-contenido-recurso}
-                        <small>{tipo-contenido-recurso}</small>
-                      {if:else}
-                      	<small>CURSO</small>
-                      {/if}
-											<br>{title}
-										</h5>
-                    {if subttulo-curso}
-                    	<h6 class="mt-0">{subttulo-curso}</h6>
-                    {/if}
-                    {if fuente-recurso}
-                    	<h6 class="mt-0">{fuente-recurso}</h6>
-                    {/if}                    
-		                {exp:char_limit total="50" exact="no"}	
-		                <p>{descripcion-curso}</p>
-		                {/exp:char_limit}
-	  	    				</div>
-	  	    			</a>
-  	    			</li>
-  	    			{/exp:channel:entries}
+		<div class="panel-curso">
+			<h5>
+        {if tipo-contenido-recurso}
+          <small>{tipo-contenido-recurso}</small>
+        {if:else}
+        	<small>CURSO</small>
+        {/if}
+				<br>{title}
+			</h5>
+      {if subttulo-curso}
+      	<h6 class="mt-0">{subttulo-curso}</h6>
+      {/if}
+      {if fuente-recurso}
+      	<h6 class="mt-0">{fuente-recurso}</h6>
+      {/if}                    
+      {exp:char_limit total="50" exact="no"}	
+      <p>{descripcion-curso}</p>
+      {/exp:char_limit}
+		</div>
+	</a>
+</li>
+{paginate}
+  {pagination_links}
+    <ul>
+      {first_page}
+        <li><a href="{pagination_url}" class="page-first">First Page</a></li>
+      {/first_page}
+
+      {previous_page}
+        <li><a href="{pagination_url}" class="page-previous">Previous Page</a></li>
+      {/previous_page}
+
+      {page}
+        <li><a href="{pagination_url}" class="page-{pagination_page_number} {if current_page}active{/if}">{pagination_page_number}</a></li>
+      {/page}
+
+      {next_page}
+        <li><a href="{pagination_url}" class="page-next">Next Page</a></li>
+      {/next_page}
+
+      {last_page}
+        <li><a href="{pagination_url}" class="page-last">Last Page</a></li>
+      {/last_page}
+    </ul>
+  {/pagination_links}
+{/paginate}
+{/exp:channel:entries}
