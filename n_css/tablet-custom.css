@@ -1,5 +1,6 @@
+@charset "UTF-8";
 meta.foundation-version {
-  font-family: "/5.2.3/"; } 
+  font-family: "/5.2.3/"; }
 
 meta.foundation-mq-small {
   font-family: "/only screen/";
@@ -1081,7 +1082,7 @@ a.not-underline:hover {
 
   .heading-block h1 {
     margin: -0.5rem 0 0 0;
-    font-size: 3rem; }
+    font-size: 4rem !important; }
   .heading-block h4 {
     font-size: 1rem; }
 
@@ -1127,6 +1128,20 @@ a.not-underline:hover {
   .menu ul li a {
     padding: 0.2rem 0;
     font-size: 1rem; }
+
+  .tab-bar .menu-icon:last-child {
+    text-indent: 0;
+    line-height: 0;
+    padding: 7px 14px; }
+    .tab-bar .menu-icon:last-child span:after {
+      box-shadow: 0 0px 0 1px #5a277d, 0 7px 0 1px #5a277d, 0 14px 0 1px #5a277d; }
+    .tab-bar .menu-icon:last-child small {
+      color: #5a277d;
+      position: relative;
+      top: 13px;
+      left: 23px;
+      z-index: 1;
+      font-size: 0.7rem; }
 
   .grid-panels .panel-body {
     height: 245px; }

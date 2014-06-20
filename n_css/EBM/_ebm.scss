@@ -1,0 +1,191 @@
+/* 
+
+  Description: EBM or Easy Box Model allows you to easily edit your UI box model margins and paddings 
+  through the browser inspector "elements" tab and make your elements fit on their parent container without
+  recurring to your CSS too often.
+  
+  Author: @MadeByGus
+  Version: 0.1
+  GitHub: https://github.com/netpoe/EBM.git
+
+*/
+
+// Set the global measure (range: 1 - 9)
+$times: 7;
+
+// Include EBM in "%" units?
+$percentage: true;
+
+// Define the em-base for rems to px conversion
+$em-base: 16px;
+
+
+@import 
+  "src/times-range",
+  "src/strip-units",
+  "src/px-to-rems",
+  "src/ebm-loops",
+  "src/ebm-loops-small",
+  "src/ebm-loops-percentage";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Margin & Padding SMALL
+// $pm-small: 3;
+// $box-model-abbr: pt, pr, pb, pl, mt, mr, mb, ml;
+// $box-model-sides: padding-top, padding-right, padding-bottom, padding-left, margin-top, margin-right, margin-bottom, margin-left;
+// @for $i from 1 through length($box-model-sides) {
+//   .#{nth($box-model-abbr, $i)}-sm {
+//     #{nth($box-model-sides, $i)}: em($pm-small) !important;
+//   }
+// }
+
+// // Margins 
+// @for $i from -7 to 11 {
+//   .m-#{$i*7} {
+//     margin: em($i*7)!important;
+//   }
+// }
+
+// @for $i from -7 to 11 {
+//   .mt-#{$i*7} {
+//     margin-top: em($i*7)!important;
+//   }
+// }
+
+// @for $i from -7 to 11 {
+//   .mb-#{$i*7} {
+//     margin-bottom: em($i*7)!important;
+//   }
+// }
+
+// @for $i from -7 to 11 {
+//   .ml-#{$i*7} {
+//     margin-left: em($i*7)!important;
+//   }
+// }
+
+// @for $i from -7 to 11 {
+//   .mr-#{$i*7} {
+//     margin-right: em($i*7)!important;
+//   }
+// }
+
+//     // Paddings
+// @for $i from -7 to 11 {
+//   .pt-#{$i*7} {
+//     padding-top: em($i*7)!important;
+//   }
+// }
+
+// @for $i from -7 to 11 {
+//   .pb-#{$i*7} {
+//     padding-bottom: em($i*7)!important;
+//   }
+// }
+
+// @for $i from -7 to 11 {
+//   .pl-#{$i*7} {
+//     padding-left: em($i*7)!important;
+//   }
+// }
+
+// @for $i from -7 to 11 {
+//   .pr-#{$i*7} {
+//     padding-right: em($i*7)!important;
+//   }
+// }
+
+// @for $i from -7 to 11 {
+//   .p-#{$i*7} {
+//     padding: em($i*7)!important;
+//   }
+// }
+
+// // Margins PERCENTAGE
+// @for $i from 1 to 11 {
+//   .m-#{$i*7}-100 {
+//     margin: percentage(($i*0.07)) !important;
+//   }
+// }
+
+// @for $i from 1 to 11 {
+//   .mt-#{$i*7}-100 {
+//     margin-top: percentage(($i*0.07)) !important;
+//   }
+// }
+
+// @for $i from 1 to 11 {
+//   .mb-#{$i*7}-100 {
+//     margin-bottom: percentage(($i*0.07)) !important;
+//   }
+// }
+
+// @for $i from 1 to 11 {
+//   .ml-#{$i*7}-100 {
+//     margin-left: percentage(($i*0.07)) !important;
+//   }
+// }
+
+// @for $i from 1 to 11 {
+//   .mr-#{$i*7}-100 {
+//     margin-right: percentage(($i*0.07)) !important;
+//   }
+// }
+
+// // Paddings PERCENTAGE
+// @for $i from 1 to 11 {
+//   .pt-#{$i*7}-100 {
+//     padding-top: percentage($i*0.07)!important;
+//   }
+// }
+
+// @for $i from 1 to 11 {
+//   .pb-#{$i*7}-100 {
+//     padding-bottom: percentage($i*0.07)!important;
+//   }
+// }
+
+// @for $i from 1 to 11 {
+//   .pl-#{$i*7}-100 {
+//     padding-left: percentage($i*0.07)!important;
+//   }
+// }
+
+// @for $i from 1 to 11 {
+//   .pr-#{$i*7}-100 {
+//     padding-right: percentage($i*0.07)!important;
+//   }
+// }
+
+// @for $i from 1 to 11 {
+//   .p-#{$i*7}-100 {
+//     padding: percentage($i*0.07)!important;
+//   }
+// }

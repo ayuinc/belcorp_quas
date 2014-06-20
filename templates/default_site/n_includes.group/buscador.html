@@ -1,9 +1,34 @@
-	<div class="search-canvas-overlay animated">
+						<div class="row">
+							<div class="large-12 columns large-centered">
+								{exp:search:simple_form 
+									channel="cursos|tendencias" 
+									search_in="everywhere"
+									form_id="form_search" 
+									status="open"  
+									result_page="n_buscar/index" 
+									where="all"
+									no_result_page="n_buscar/no_resultados"
+								}
+									<input type="hidden" name="XID" value="{XID_HASH}" />	
+						      <div class="row collapse">
+						        <div class="small-10 medium-11 large-10 columns">
+						          <input type="text" name="keywords" id="keywords" autofocus="autofocus" placeholder="Escribe lo que buscas">
+						        </div>
+						        <div class="small-2 medium-1 large-2 columns">
+						          <button type="submit" class="input postfix"><i class="icon-typ-zoom-outline"></i></button>
+						        </div>
+						      </div>
+				    		{/exp:search:simple_form}
+							</div>
+						</div>
+
+
+<!--	<div class="search-canvas-overlay animated">
 		<a href="#" class="close"><i class="icon-typ-times"></i> Cerrar</a>
 		<div class="search-form pt-21-100">
 			<div class="row">
 				<div class="large-6 columns large-centered">
-					{exp:search:simple_form 
+					{!--exp:search:simple_form 
 						channel="cursos|tendencias" 
 						search_in="everywhere"
 						form_id="form_search" 
@@ -11,7 +36,7 @@
 						result_page="n_buscar/index" 
 						where="all"
 						no_result_page="n_buscar/no_resultados"
-					}
+					--}
 						<input type="hidden" name="XID" value="{XID_HASH}" />	
 			      <div class="row collapse">
 			      	<h5 class="uppercase text-center">Escribe lo que buscas</h5>
@@ -24,8 +49,8 @@
 			          <button type="submit" class="input postfix uppercase">buscar</button>
 			        </div>
 			      </div>
-	    		{/exp:search:simple_form}
+	    		{!--/exp:search:simple_form--}
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->

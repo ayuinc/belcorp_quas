@@ -2,21 +2,21 @@
 {embed="n_includes/header" titulo="{title} | Curso"}
 
 	{if logged_in}
-	
-	{embed="n_includes/buscador"}
-	
-	<div class="off-canvas-wrap" data-offcanvas>
-	  <div class="inner-wrap">
-	    
-	  <!--TOP BANNER-->  
-	  {embed="n_includes/top-banner"}  
+
+
+	<div id="site-wrapper">
+		<div id="content-frame">	  
 	    
 		<!--MENU LADO IZQUIERDO-->
 	  {embed="n_includes/menu-izquierdo"}
-	    
-	
-		<!--CONTENIDOS-->
-	    <section class="main-section">
+
+		<div id="site-canvas">
+		
+	  <!--TOP BANNER-->  
+	  {embed="n_includes/top-banner"} 		
+
+		<!-- CANVAS CONTAINER -->
+		<div class="large-10 large-centered columns">
 	    	{categories show_group="1"}
 				{embed="n_includes/breadcrumbs" titulo="{title}" categoria="{category_name}"}
 				{/categories}
@@ -177,8 +177,10 @@
   	    	</div>
   	    	<div class="small-4 medium-3 large-3 columns hide-for-portrait"></div>
   	    </div>
-	    </section>
-		<a class="exit-off-canvas"></a>
+		</div>
+		<!-- END:CANVAS-CONTAINER -->	
+			
+		</div>
 	
 	  </div>
 	</div>
@@ -190,6 +192,6 @@
 			</div>
 		</div>
 	{/if}		
-	
+
 {/exp:channel:entries}
 {embed="n_includes/footer"}

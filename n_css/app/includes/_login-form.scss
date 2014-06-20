@@ -1,0 +1,48 @@
+// LOGIN FORM
+.login-formulario {
+	min-height:41rem;
+	background-color: $gris-background;
+	.panel {
+		background-color: transparent;
+		border: none;
+		padding:3rem;
+	}
+	img {
+		margin:5rem 0;
+	}
+	h1 {
+		@include thin;
+		color:$blanco;
+		margin-top: 18rem;
+		font-size: 2rem;
+	}
+	p {
+		color:$morado;
+		@include thin;
+	}
+	.button.expand {
+		background-color: $morado;
+		@include thin;
+		color: $blanco;
+		&:hover {
+			background-color: $morado-hover;
+		}
+	}
+	input {
+		box-shadow: none;
+		border: none;
+		font-size: 1rem;
+		@include thin;
+		color: $morado;
+		-moz-box-shadow: 0 0 5px #ccc;
+		-webkit-box-shadow: 0 0 5px #ccc;
+		box-shadow: 0 0 5px #ccc;
+		height: 48px;
+		height: rem(48);
+	}
+	.bg-morado {
+		background-color: $morado;
+		height: 768px;
+		height: rem(768);
+	}	
+}

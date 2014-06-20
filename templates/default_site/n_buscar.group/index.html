@@ -4,18 +4,20 @@
 	
 	{embed="n_includes/buscador"}
 	
-	<div class="off-canvas-wrap" data-offcanvas>
-	  <div class="inner-wrap">
-	    
-	  <!--TOP BANNER-->  
-	  {embed="n_includes/top-banner"}  
+
+	<div id="site-wrapper">
+		<div id="content-frame">	  
 	    
 		<!--MENU LADO IZQUIERDO-->
 	  {embed="n_includes/menu-izquierdo"}
-	    
-	
-		<!--CONTENIDOS-->
-	    <section class="main-section">
+
+		<div id="site-canvas">
+		
+	  <!--TOP BANNER-->  
+	  {embed="n_includes/top-banner"} 		
+
+		<!-- CANVAS CONTAINER -->
+		<div class="large-8 large-centered columns">
 				{embed="n_includes/breadcrumbs"}
 	    	<div class="row escuela-block">
 	    		<div class="small-12 medium-12 large-9 columns">
@@ -24,7 +26,7 @@
 	    	</div>
 	    	<div class="row search-block mb-7-100 mt-28">
   	    	<div class="small-8 medium-9 large-9 columns full-width-for-portrait">
-  	    		{embed="n_includes/buscador-trigger"}
+  	    		{embed="n_includes/buscador"}
   	    	</div>
   	    	<div class="small-4 medium-3 large-3 columns">
   	    		<!--<a href="#" class="button expand">Ingresa</a>-->
@@ -38,8 +40,10 @@
   	    		{embed="n_includes/menu-derecho"}
   	    	</div>
   	    </div>
-	    </section>
-		<a class="exit-off-canvas"></a>
+		</div>
+		<!-- END:CANVAS-CONTAINER -->	
+			
+		</div>
 	
 	  </div>
 	</div>

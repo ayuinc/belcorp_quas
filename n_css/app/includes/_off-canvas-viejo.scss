@@ -1,0 +1,90 @@
+/*SECCIONES EN EL OFFCANVAS*/
+
+.move-right .exit-off-canvas {
+	-webkit-backface-visibility: hidden;
+	transition: background 300ms ease;
+	cursor: pointer;
+	box-shadow: none;
+	display: block;
+	position: absolute;
+	background: rgba(255, 255, 255, 0);
+	top: 0;
+	bottom: 0;
+	left: 4rem;
+	right: 0;
+	z-index: 1002;
+	-webkit-tap-highlight-color: none;
+	&:hover {
+		background: rgba(0, 0, 0, 0);
+	}
+}
+
+.main-section {
+	min-height: 40rem;
+	position: relative;
+	padding: 70px 112px 70px 147px;
+	padding: rem(70) rem(112) rem(70) rem(147);
+}
+
+.tab-bar {
+	left:4rem;
+	background: $gray-lighter;
+	color: $gray-dark;
+	height: 63px;
+	height: rem(63);
+	.left-small {
+		border-right: none;
+		a {
+			color: $gray-dark;
+		}
+	}
+}
+
+.left-off-canvas-menu {
+	width: 19.625rem;
+	/*position: fixed;
+	overflow-y: hidden;*/
+}
+
+ul.off-canvas-list li label {
+	border-top:none;
+}
+
+ul.off-canvas-list {
+	li {
+		a:hover {
+			background: none;
+		}
+	}
+}
+
+ul.off-canvas-list {
+	.large-2 {
+		[class^="icon-"], [class*=" icon-"] {
+			font-size: 21px;
+			font-size: rem(21);
+		}
+	}
+}
+
+
+/*END.SECCIONES EN EL OFFCANVAS*/
+
+.icono {
+	background-color: $morado;
+	.icon-user, .icon-key {
+		color: $morado-claro;
+		font-size: 2rem;
+		padding: 0.5rem 1rem;;
+		min-height: 3rem;
+		max-height: 3rem;
+	}
+}
+
+.icon-container {
+	font-size: 28px;
+	color: white;
+	padding: 10px;
+	padding: rem(10); 
+	text-align: center;
+}
