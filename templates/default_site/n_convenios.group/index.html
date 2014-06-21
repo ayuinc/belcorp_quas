@@ -14,44 +14,46 @@
 	  {embed="n_includes/top-banner"} 		
 
 		<!-- CANVAS CONTAINER -->
-		<div class="large-10 large-centered columns">
-				{embed="n_includes/breadcrumbs"}
-	    	<div class="row escuela-block">
-	    		<div class="small-12 medium-12 large-9 columns">
-						<h1>Convenios</h1>						
-	    		</div>   		
-	    	</div>
-	    	<!--<div class="row mb-7-100 mt-28">
-  	    	<div class="small-8 medium-9 large-9 columns full-width-for-portrait">
-  	    		{embed="n_includes/buscador-trigger"}
-  	    	</div>
-  	    	<div class="small-4 medium-3 large-3 columns hide-for-portrait">
-  	    		<a href="#" class="button expand">Ingresa</a>
-  	    	</div>
-  	    </div>-->
-  	    <div class="row movil-menu-secundario">
-  	    	<div class="small-12 columns show-for-small-only">
-  	    		{embed="n_includes/movil-menu-secundario"}
-  	    	</div>
-  	    </div>  	    
-  	    <div class="row">
-  	    	<div class="small-12 medium-9 large-9 columns full-width-for-portrait">
-  	    		{exp:child_categories 
-						  parent="{last_segment_category_id}"
-							site="1" 
-							child_categories_sort_by="custom" 
-							child_categories_sort_direction="asc"
-						}
-						{child_category_start}
-							<h5 class="uppercase mb-21 text-primary" id="{child_category_id}">{child_category_name}</h5>
-							{embed="n_includes/loop-convenios" categoria_hija="{child_category_id}"}
-						{child_category_end}
-					{/exp:child_categories}
-  	    	</div>
-  	    	<div class="small-12 medium-3 large-3 columns hide-for-portrait">
-						{embed="n_includes/menu-derecho"}
-  	    	</div>
-  	    </div>
+		<div class="row">
+			<div class="large-9 medium-9 medium-offset-1 columns">
+					{embed="n_includes/breadcrumbs"}
+		    	<div class="row escuela-block">
+		    		<div class="small-12 medium-12 large-9 columns">
+							<h1>Convenios</h1>						
+		    		</div>   		
+		    	</div>
+		    	<!--<div class="row mb-7-100 mt-28">
+	  	    	<div class="small-8 medium-9 large-9 columns full-width-for-portrait">
+	  	    		{embed="n_includes/buscador-trigger"}
+	  	    	</div>
+	  	    	<div class="small-4 medium-3 large-3 columns hide-for-portrait">
+	  	    		<a href="#" class="button expand">Ingresa</a>
+	  	    	</div>
+	  	    </div>-->
+	  	    <div class="row movil-menu-secundario">
+	  	    	<div class="small-12 columns show-for-small-only">
+	  	    		{embed="n_includes/movil-menu-secundario"}
+	  	    	</div>
+	  	    </div>  	    
+	  	    <div class="row">
+	  	    	<div class="small-12 medium-9 large-9 columns full-width-for-portrait">
+	  	    		{exp:child_categories 
+							  parent="{last_segment_category_id}"
+								site="1" 
+								child_categories_sort_by="custom" 
+								child_categories_sort_direction="asc"
+							}
+							{child_category_start}
+								<h5 class="uppercase mb-21 text-primary" id="{child_category_id}">{child_category_name}</h5>
+								{embed="n_includes/loop-convenios" categoria_hija="{child_category_id}"}
+							{child_category_end}
+						{/exp:child_categories}
+	  	    	</div>
+	  	    	<div class="small-12 medium-3 large-3 columns hide-for-portrait">
+							{embed="n_includes/menu-derecho"}
+	  	    	</div>
+	  	    </div>
+			</div>
 		</div>
 		<!-- END:CANVAS-CONTAINER -->	
 		

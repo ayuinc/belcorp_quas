@@ -1,4 +1,4 @@
-{exp:channel:entries channel="cursos|tendencias" limit="21" category="154|159" dynamic="off" paginate="bottom"}  	    	
+{exp:channel:entries channel="cursos|tendencias" limit="21" category="154|159" dynamic="off"}  	    	
 <li  class="isotope-item 
 	{categories show_group='14' show='not 151|152|153|154|155|156|157|158|159160|161|162|163|258'}
 	        {category_name}
@@ -34,29 +34,4 @@
 		</div>
 	</a>
 </li>
-{paginate}
-  {pagination_links}
-    <ul>
-      {first_page}
-        <li><a href="{pagination_url}" class="page-first">First Page</a></li>
-      {/first_page}
-
-      {previous_page}
-        <li><a href="{pagination_url}" class="page-previous">Previous Page</a></li>
-      {/previous_page}
-
-      {page}
-        <li><a href="{pagination_url}" class="page-{pagination_page_number} {if current_page}active{/if}">{pagination_page_number}</a></li>
-      {/page}
-
-      {next_page}
-        <li><a href="{pagination_url}" class="page-next">Next Page</a></li>
-      {/next_page}
-
-      {last_page}
-        <li><a href="{pagination_url}" class="page-last">Last Page</a></li>
-      {/last_page}
-    </ul>
-  {/pagination_links}
-{/paginate} 
 {/exp:channel:entries}

@@ -1,15 +1,17 @@
+
 				<ul class="breadcrumbs">
 				  <li><a href="{site_url}n_inicio">Inicio</a></li>
 				  {if segment_2!='plan-de-desarrollo-temas'}
 					  {if embed:categoria}
 					  <li>
-					  	<a href="{site_url}n_inicio">Escuelas de {embed:categoria}</a>
+					  	<a href="{site_url}n_escuelas/{if embed:categoria=='Ventas'}ventas-temas{/if}{if embed:categoria=='Negocios'}negocios-temas{/if}{if embed:categoria=='Liderazgo y Cultura'}liderazgo-y-cultura-temas{/if}{if embed:categoria=='Innovación'}innovacion-temas{/if}
+					  	">Escuelas de {embed:categoria}</a>
 					  </li>
 					  {/if}	      
 				  {/if}
 					{if segment_2!=''AND segment_1!='n_convenios' AND segment_1!='n_buscar' AND segment_1!='n_seccion' AND segment_2!='gracias' AND segment_2!='no_resultados'}
 				  <li {if segment_3==''}class="current"{/if}>
-				  	<a href="{site_url}n_escuelas/{segment_2}">{if segment_2!='plan-de-desarrollo-temas'}Escuela de{/if} {segment_2_category_name}</a>
+				  	<a href="{site_url}n_escuelas/{segment_2}">{if segment_2!='plan-de-desarrollo-temas' AND segment_2!='curso'}Escuela de{/if} {segment_2_category_name}</a>
 				  </li> 
 				  {/if}
 				  {if segment_3!='' AND segment_2!="curso" AND segment_2!='no_resultados'}
@@ -44,7 +46,7 @@
 				  	<li class="current">Plan de Desarrollo</li>
 				  {/if}					  
 				  {if segment_1=='n_contactos'}
-				  	<li class="current">Contáctenos</li>
+				  	<li class="current">Contáctanos</li>
 				  {/if}	
 				  {if segment_1=='n_quieres_crear_un_curso'}
 				  	<li class="current">¿Quieres crear un Curso?</li>

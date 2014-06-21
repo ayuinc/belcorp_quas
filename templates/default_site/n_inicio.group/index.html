@@ -8,52 +8,54 @@
 		<!--MENU LADO IZQUIERDO-->
 	  {embed="n_includes/menu-izquierdo"}
 
-		<div id="site-canvas">
+		<div id="site-canvas" class="{if segment_1=='n_inicio'}homepage-on{/if}">
 		
 	  <!--TOP BANNER-->  
 	  {embed="n_includes/top-banner"} 		
 
 		<!-- CANVAS CONTAINER -->
-		<div class="large-10 large-centered columns">
-	    	<div class="row heading-block mt-21">
-	    		<div class="small-12 medium-6 large-5 columns text-gradient pt-14">
-						<h1>BIENVENIDO A LA UCB</h1>
-	    		</div>
-	    		<div class="small-12 medium-6 large-7 columns">
-						<h4 class="text-gradient mb-0 ">
-						ENCUENTRA TU RUTA <br>PERSONALIZADA DE APRENDIZAJE
-						</h4>
-						{exp:member:custom_profile_data}
-						<h4 class="mt-0">
-							{if logged_in}
-					    	{embed="n_includes/signin-lms"}
-					    {/if}
-						</h4>
-						{/exp:member:custom_profile_data}
-	    		</div>	    		
-	    	</div>
-	    	
-	    	<div class="row search-block mb-28 mt-28">
-  	    	<div class="small-12 medium-9 large-9 columns full-width-for-portrait">
-  	    		{embed="n_includes/buscador"}
-  	    	</div>
-  	    	<div class="medium-3 large-3 columns">
-  	    		<!--<a href="#" class="button expand">Ingresa</a>-->
-  	    	</div>
-  	    </div>
-  	    <div class="row">
-  	    	<div class="small-12 medium-9 large-9 columns full-width-for-portrait">
-  	    		{exp:channel:entries channel="wall" limit="1" dynamic="off" disable="pagination"} 
-							{embed="n_includes/loop-wall" seccion="Destacados"}
-							<!--{embed="n_includes/loop-wall" seccion="{1linea-wall}"}
-							{embed="n_includes/loop-wall" seccion="{2linea-wall}"}
-							{embed="n_includes/loop-wall" seccion="{3linea-wall}"}-->
-						{/exp:channel:entries} 
-  	    	</div>
-  	    	<div class="medium-3 large-3 columns hide-for-small hide-for-portrait">
-						{embed="n_includes/menu-derecho"}
-  	    	</div>
-  	    </div>
+		<div class="row">
+			<div class="large-9 medium-9 medium-offset-1 columns">
+		    	<div class="row heading-block mt-21">
+		    		<div class="small-12 medium-7 large-5 columns text-gradient pt-49">
+							<h1>BIENVENIDO <br>A LA UCB</h1>
+		    		</div>
+		    		<div class="small-12 medium-5 large-7 columns">
+							<!-- <h4 class="text-gradient mb-0 ">
+							ENCUENTRA TU RUTA <br>PERSONALIZADA DE APRENDIZAJE
+							</h4> -->
+							{exp:member:custom_profile_data}
+							<h4 class="mt-0">
+								{if logged_in}
+						    	{embed="n_includes/signin-lms"}
+						    {/if}
+							</h4>
+							{/exp:member:custom_profile_data}
+		    		</div>	    		
+		    	</div>
+		    	
+		    	<div class="row search-block mb-28 mt-28">
+	  	    	<div class="small-12 medium-9 large-9 columns full-width-for-portrait">
+	  	    		{embed="n_includes/buscador"}
+	  	    	</div>
+	  	    	<div class="medium-3 large-3 columns">
+	  	    		<!--<a href="#" class="button expand">Ingresa</a>-->
+	  	    	</div>
+	  	    </div>
+	  	    <div class="row">
+	  	    	<div class="small-12 medium-9 large-9 columns full-width-for-portrait">
+	  	    		{exp:channel:entries channel="wall" limit="1" dynamic="off" disable="pagination"} 
+								{embed="n_includes/loop-wall" seccion="Destacados"}
+								<!--{embed="n_includes/loop-wall" seccion="{1linea-wall}"}
+								{embed="n_includes/loop-wall" seccion="{2linea-wall}"}
+								{embed="n_includes/loop-wall" seccion="{3linea-wall}"}-->
+							{/exp:channel:entries} 
+	  	    	</div>
+	  	    	<div class="medium-3 large-3 columns hide-for-small hide-for-portrait">
+							{embed="n_includes/menu-derecho"}
+	  	    	</div>
+	  	    </div>
+			</div>
 		</div>
 		<!-- END:CANVAS-CONTAINER -->	
 		

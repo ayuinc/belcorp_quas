@@ -1,5 +1,5 @@
 				<!-- MENU-IZQUIERDO -->
-				<div id="site-menu" class="toggle-nav">
+				<div id="site-menu" class="toggle-nav {if segment_1=='n_inicio'}homepage-on{/if}">
 					<div class="logo">
 						<a href="{site_url}n_inicio" class="hover-toggle"><img src="{site_url}n_img/logo-header-nuevo.png"></a>
 					</div>
@@ -20,16 +20,6 @@
 							<a href="{site_url}n_escuelas/tecnologia-temas" class="list-group-item icon-typ-device-laptop  hover-toggle {if segment_2=='tecnologia-temas'}active{/if}">Tecnología</a>
 							<a href="{site_url}n_escuelas/operaciones-temas" class="list-group-item icon-typ-arrow-sync-outline  hover-toggle {if segment_2=='operaciones-temas'}active{/if}">Operaciones</a>
 						</div>
-						<!-- 						
-						<div class="list-group">
-							<a class="list-group-item nav-title hover-toggle">LA UCB</a>
-							<a href="{site_url}n_seccion/que-hace-la-ucb-por-ti" class="list-group-item icon-typ-support  hover-toggle {if segment_2=='que-hace-la-ucb-por-ti'}active{/if}">La UCB Por Ti</a>
-							<a href="{site_url}n_convenios/peru" class="list-group-item icon-typ-globe-outline hover-toggle {if segment_1=='n_convenios'}active{/if}">Convenios</a>
-							<a href="{site_url}n_preguntas_frecuentes" class="list-group-item icon-typ-info-large-outline hover-toggle {if segment_1=='n_preguntas_frecuentes'}active{/if}">Preguntas Frecuentes</a>
-							<a href="{site_url}n_contactos" class="list-group-item icon-typ-mail  hover-toggle {if segment_1=='n_contactos'}active{/if}">Contáctanos</a>
-						</div> 
-						-->
-
 						<div class="list-group">
 						  <a class="list-group-item nav-title hover-toggle">REDES</a>
 							<a href="https://www.facebook.com/aprendeconlaucb" target="_blank" class="list-group-item icon-typ-social-facebook-circular  hover-toggle">Facebook</a>
@@ -38,8 +28,8 @@
 
 						<div class="list-group  show-for-small-only">
 							<a class="list-group-item nav-title hover-toggle">USUARIO</a>
-							<a class="list-group-item icon-typ-social-facebook-circular  hover-toggle">{if logged_in} {screen_name} {/if}</a>
-							<a href="{path='logout'}" class="list-group-item icon-typ-eject hover-toggle">Twitter</a>
+							<a class="list-group-item icon-typ-user  hover-toggle">{if logged_in} {screen_name} {/if}</a>
+							<a href="{path='logout'}" class="list-group-item icon-typ-eject hover-toggle">Salir</a>
 						</div>
 					</div>
 				</div>

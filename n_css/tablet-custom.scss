@@ -16,14 +16,13 @@
 
 // APP Custom
 @import
-	"app/type-custom",
-	"app/utilities-custom";
+	"app/includes/type-custom";
 
 /*  ==============   */
 
 // Medium screens
 @media only screen and (min-width: 40.063em) and (orientation : portrait) { 
-
+	
 	.main-section {
 		padding:2.3rem 2rem 1.875rem 6.1875rem;
 		min-height:65rem;
@@ -32,7 +31,8 @@
 	.heading-block {
 		h1 {
 			margin: -0.5rem 0 0 0;
-			font-size:4rem !important; 
+			font-size: 49px !important;
+			font-size: rem(49) !important;
 		}
 		h4 {
 			font-size:1rem;
@@ -44,6 +44,12 @@
 			margin-bottom:0;
 		}
 	}	
+	
+	.list-heading {
+		h5 {
+			font-size: 1rem;
+		}
+	}
 	
 	.full-width-for-portrait {
 		width:100% !important;
@@ -88,7 +94,8 @@
 	.heading-block {
 		h1 {
 			margin:0;
-			font-size:4rem;
+			font-size: 49px ;
+			font-size: rem(49) ;
 		}
 		h4 {
 			font-size:1.35rem;

@@ -15,40 +15,44 @@
 	  {embed="n_includes/top-banner"} 		
 
 		<!-- CANVAS CONTAINER -->
-		<div class="large-10 large-centered columns">
-			<div class="canvas-container">
-				{embed="n_includes/breadcrumbs"}
-	    	<div class="row escuela-block hide-for-small">
-	    		<div class="small-12 medium-12 large-9 columns">
-						{embed="n_includes/escuelas-descripcion"}
-	    		</div>   		
-	    	</div>
-	    	<div class="row search-block mb-7-100 mt-28">
-  	    	<div class="small-12 medium-9 large-9 columns full-width-for-portrait">
-  	    		{embed="n_includes/buscador"}
-  	    	</div>
-  	    	<div class="medium-3 large-3 columns hide-for-portrait">
-  	    		<!--<a href="#" class="button expand">Ingresa</a>-->
-  	    	</div>
-  	    </div>
-  	    {if segment_1=='n_escuelas' AND segment_3==''}
-  	    <div class="row movil-menu-secundario">
-  	    	<div class="small-12 columns show-for-small-only">
-  	    		{embed="n_includes/movil-menu-secundario"}
-  	    	</div>
-  	    </div>
-  	    {/if}
-  	    <div class="row">
-  	    	<div class="small-12 medium-9 large-9 columns">
-  	    		{embed="n_includes/filtro-tipo-contentido"}
-  	    		<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 grid-panels" id="isotope-container">
-							{embed="n_includes/loop-escuelas-contenido"}
-  	    		</ul>				
-  	    	</div>
-  	    	<div class="hide-for-small medium-3 large-3 columns menu-secundario">
-  	    		{embed="n_includes/menu-derecho"}
-  	    	</div>
-  	    </div>				
+		<div class="row">
+			<div class="large-9 medium-9 medium-offset-1 columns">
+				<div class="canvas-container">
+					{embed="n_includes/breadcrumbs"}
+		    	<div class="row escuela-block hide-for-small">
+		    		<div class="small-12 medium-12 large-9 columns">
+							{embed="n_includes/escuelas-descripcion"}
+		    		</div>   		
+		    	</div>
+		    	<div class="row search-block mb-7-100 mt-28">
+	  	    	<div class="small-12 medium-9 large-9 columns full-width-for-portrait">
+	  	    		{embed="n_includes/buscador"}
+	  	    	</div>
+	  	    	<div class="medium-3 large-3 columns hide-for-portrait">
+	  	    		<!--<a href="#" class="button expand">Ingresa</a>-->
+	  	    	</div>
+	  	    </div>
+	  	    {if segment_1=='n_escuelas' AND segment_3==''}
+	  	    <div class="row movil-menu-secundario">
+	  	    	<div class="small-12 columns show-for-small-only">
+	  	    		{embed="n_includes/movil-menu-secundario"}
+	  	    	</div>
+	  	    </div>
+	  	    {/if}
+	  	    <div class="row">
+	  	    	<div class="small-12 medium-9 large-9 columns">
+	  	    		{embed="n_includes/filtro-tipo-contentido"}
+	  	    		
+	  	    		<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 grid-panels" id="isotope-container">
+								{embed="n_includes/loop-escuelas-contenido"}
+							</ul>
+	  	    		
+	  	    	</div>
+	  	    	<div class="hide-for-small medium-3 large-3 columns menu-secundario">
+	  	    		{embed="n_includes/menu-derecho"}
+	  	    	</div>
+	  	    </div>				
+				</div>
 			</div>
 		</div>
 		<!-- END:CANVAS-CONTAINER -->	

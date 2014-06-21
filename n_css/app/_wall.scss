@@ -4,11 +4,12 @@
 		@include thin;
 	}
 	h1 {
-		font-size: 4.4rem !important;
-		margin-top:-1rem !important;
+		/*font-size: 70px !important;*/
+		font-size: 3.9rem !important;
+		margin-top: -1rem !important;
 		text-transform: uppercase;
-		// letter-spacing: 3px;
-		// letter-spacing: rem(3);
+		line-height: 100%;
+		/*line-height: rem(10);*/
 	} 
 	h4 {
 		font-size: rem(28);
@@ -16,24 +17,24 @@
 	div:first-child {
 	}
 	div:last-child {
-		padding-top: 42px;
-		padding-top: rem(42);
+		padding-top: 70px;
+		padding-top: rem(70);
 		min-height: 180px;
 		border-left: 5px solid $gris-claro;		
 	}
 }
 
 .heading-link {
-	background: $gris;
-	color: white;
+	background: none;
+	color: $primary-color;
 	padding: 0 5px;
 	@include transition(all 0.3s ease);
-	font-size: 21px;
-	font-size: rem(21);
+	font-size: 35px;
+	font-size: rem(35);
 	@include thin;
 	&:hover {
-		background: $primary-color;
-		color: white;
+		background: none;
+		color: darken($primary-color, 14%);
 		@include transition(all 0.3s ease);
 	}	
 }

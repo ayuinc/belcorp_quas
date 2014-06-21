@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* 
 
   Description: EBM or Easy Box Model allows you to easily edit your UI box model margins and paddings 
@@ -8,7 +9,7 @@
   Version: 0.1
   GitHub: https://github.com/netpoe/EBM.git
 
-*/ 
+*/
 .p-7 {
   padding: 7px !important;
   padding: 0.4375rem !important; }
@@ -7681,8 +7682,8 @@ footer {
   background: #f6f6f7; }
 
 .breadcrumbs {
-  margin: 21px 21px 0 21px;
-  margin: 1.3125rem 1.3125rem 0rem 1.3125rem; }
+  margin: 21px 21px 0 7px;
+  margin: 1.3125rem 1.3125rem 0rem 0.4375rem; }
   .breadcrumbs li a {
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -8103,6 +8104,17 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   -webkit-transition: .7s ease all;
   transition: .7s ease all;
   background: white; }
+  #site-canvas.homepage-on {
+    -webkit-transform: translateX(231px);
+    transform: translateX(231px); }
+    @media only screen and (max-width: 40em) {
+      #site-canvas.homepage-on {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px); } }
+    @media only screen and (min-width: 40.063em) and (orientation: portrait) {
+      #site-canvas.homepage-on {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px); } }
   @media only screen and (max-width: 40em) {
     #site-canvas {
       -webkit-transform: translateX(0px);
@@ -8150,7 +8162,7 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
           padding: 28px 21px 14px 21px;
           padding: 1.75rem 1.3125rem 0.875rem 1.3125rem;
           border: none;
-          opacity: 0;
+          opacity: 1;
           -webkit-transition: all 0.5s ease;
           -moz-transition: all 0.5s ease;
           transition: all 0.5s ease; }
@@ -8235,32 +8247,35 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   font-weight: 100;
   font-style: normal; }
 .heading-block h1 {
-  font-size: 4.4rem !important;
+  /*font-size: 70px !important;*/
+  font-size: 3.9rem !important;
   margin-top: -1rem !important;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  line-height: 100%;
+  /*line-height: rem(10);*/ }
 .heading-block h4 {
   font-size: 1.75rem; }
 .heading-block div:last-child {
-  padding-top: 42px;
-  padding-top: 2.625rem;
+  padding-top: 70px;
+  padding-top: 4.375rem;
   min-height: 180px;
   border-left: 5px solid #909da8; }
 
 .heading-link {
-  background: #596c79;
-  color: white;
+  background: none;
+  color: #5a277d;
   padding: 0 5px;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  font-size: 21px;
-  font-size: 1.3125rem;
+  font-size: 35px;
+  font-size: 2.1875rem;
   font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
   font-weight: 100;
   font-style: normal; }
   .heading-link:hover {
-    background: #5a277d;
-    color: white;
+    background: none;
+    color: #331647;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease; }
@@ -8289,6 +8304,12 @@ h1, h2, h3, h4, h5, h6, p, ol {
   font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
   font-weight: 100;
   font-style: normal; }
+
+.medium-offset-1 {
+  margin-left: 4.333333% !important; }
+  @media only screen and (max-width: 40em) {
+    .medium-offset-1 {
+      margin-left: 0 !important; } }
 
 .clearfix {
   padding: 0;
