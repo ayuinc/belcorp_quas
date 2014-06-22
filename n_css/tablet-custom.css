@@ -220,7 +220,7 @@ a.not-underline:hover {
     font-size: 4rem; }
 
   ul.no-bullet li a {
-    font-size: 0.8rem; }
+    font-size: 0.7rem; }
 
   .menu .logo img.large {
     height: 62px;
@@ -245,10 +245,15 @@ a.not-underline:hover {
 
   .grid-panels .panel-body {
     height: 245px; }
+  .grid-panels h5 {
+    font-size: 0.85rem; }
 
   #filters li label {
-    padding: 0.4375rem 0.5rem;
-    font-size: 0.75rem; }
+    padding: 0.4375rem 0.2rem;
+    font-size: 0.65rem; }
+
+  .list-heading {
+    font-size: 0.9rem; }
 
   .search-canvas-overlay .searching .search-form form input {
     height: auto;
@@ -256,6 +261,13 @@ a.not-underline:hover {
     font-weight: 100;
     font-style: normal; }
 
+  .user-relocate-medium {
+    position: absolute;
+    left: 101px; }
+
   .search-block form input {
-    font-size: 1.1rem; } }
+    font-size: 1.1rem; }
+
+  footer a {
+    font-size: 0.8rem; } }
 /* min-width 641px, medium screens */

@@ -4,8 +4,8 @@
 		@include thin;
 	}
 	h1 {
-		/*font-size: 70px !important;*/
-		font-size: 3.9rem !important;
+		font-size: 70px !important;
+		font-size: rem(70) !important;
 		margin-top: -1rem !important;
 		text-transform: uppercase;
 		line-height: 100%;
@@ -29,12 +29,12 @@
 	color: $primary-color;
 	padding: 0 5px;
 	@include transition(all 0.3s ease);
-	font-size: 35px;
-	font-size: rem(35);
+	font-size: 30px;
+	font-size: rem(30);
 	@include thin;
 	&:hover {
 		background: none;
 		color: darken($primary-color, 14%);
 		@include transition(all 0.3s ease);
 	}	
-}
+}  

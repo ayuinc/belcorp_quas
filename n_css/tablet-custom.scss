@@ -116,10 +116,11 @@
 	ul.no-bullet {
 		li {
 			a {
-				font-size:0.8rem;
+				font-size:0.7rem;
 			}
 		}
-	}
+	} 
+	
 
 	.menu {
 		.logo {
@@ -164,15 +165,22 @@
 		.panel-body {
 			height:245px;
 		}
+		h5 {
+			font-size:0.85rem; 
+		}
 	}
 
 	#filters {
 		li {
 			label { 
-				padding:0.4375rem 0.5rem;
-				font-size:0.75rem;
+				padding:0.4375rem 0.2rem;
+				font-size:0.65rem;
 			}
 		}
+	}
+	
+	.list-heading {
+		font-size: 0.9rem; 
 	}
 
 	.search-canvas-overlay {
@@ -188,11 +196,22 @@
 		}
 	}
 	
+	.user-relocate-medium {
+		position: absolute;
+		left: 101px;
+	}	
+	
 	.search-block {
 		form {
 			input {
 				font-size: 1.1rem;
 			}
+		}
+	}
+	
+	footer {
+		a {
+			font-size: 0.8rem;
 		}
 	}
 

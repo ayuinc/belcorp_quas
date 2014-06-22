@@ -135,5 +135,17 @@
 		</script>
 		<!--END.SCROLL NAV CONVENIOS-->
 		
+		<!--FIXED POSITION ON SCROLL-->
+		<script>
+		$(window).scroll(function(){
+		    if($(this).scrollTop()>425) {
+		    	$("#fixed_on").addClass('fixed-on');
+		    } else {
+			    $("#fixed_on").removeClass('fixed-on');
+		    }
+		});
+		</script>
+		<!--END. FIXED POSITION ON SCROLL-->
+		
   </body>
 </html>

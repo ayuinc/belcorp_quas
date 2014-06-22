@@ -8247,8 +8247,8 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   font-weight: 100;
   font-style: normal; }
 .heading-block h1 {
-  /*font-size: 70px !important;*/
-  font-size: 3.9rem !important;
+  font-size: 70px !important;
+  font-size: 4.375rem !important;
   margin-top: -1rem !important;
   text-transform: uppercase;
   line-height: 100%;
@@ -8268,8 +8268,8 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  font-size: 35px;
-  font-size: 2.1875rem;
+  font-size: 30px;
+  font-size: 1.875rem;
   font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
   font-weight: 100;
   font-style: normal; }
@@ -8325,6 +8325,19 @@ h1, h2, h3, h4, h5, h6, p, ol {
   background: none;
   margin-bottom: 0;
   color: #898b8e; }
+
+.active {
+  color: #5a277d !important; }
+
+button, .button {
+  font-size: 0.8rem;
+  font-weight: 100; }
+
+.fixed-on {
+  position: fixed;
+  width: 237px;
+  top: 14.8rem;
+  right: 12.3rem; }
 
 .menu-convenios > li {
   padding-right: 1.5rem;
@@ -8395,6 +8408,10 @@ ul.inline-list.username li {
 .tab-bar-section.right {
   right: 77px;
   right: 4.8125rem; }
+
+.user-relocate {
+  position: absolute;
+  left: -102px; }
 
 .escuela-block h1, .escuela-block h4, .escuela-block p {
   font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;

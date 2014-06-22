@@ -18,7 +18,7 @@
 		<!-- CANVAS CONTAINER -->
 		<div class="row">
 			<div class="large-9 medium-9 medium-offset-1 columns">
-		    	{categories show_group="10" show="276|111|272|112|113|114|109|110|257"}
+		    	{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
 					{embed="n_includes/breadcrumbs" titulo="{title}" categoria="{category_name}"}
 					{/categories}
 		    	<div class="row escuela-block">
@@ -26,13 +26,13 @@
 							<h1>{title}</h1>						
 		    		</div>   		
 		    		
-		    		<div class="small-12 medium-12 columns mb-28 mt-28 show-for-large- hide-for-landscape">
+		    		<div class="small-12 medium-12 columns mb-28 mt-28 show-for-large hide-for-landscape">
 		          {if channel=="Cursos"}
 			          {if logged_in}
 				          {embed="includes/comerzar-curso"}
 				        {/if}
 				        {if logged_out}
-				        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand"  onClick="_gaq.push(['_trackEvent', 'Curso', 'Entrar-Curso', '{title}']);">Comenzar</a>
+				        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand">Comenzar</a>
 								{/if}  	
 								<div class="show-for-large-only">    
 		            {embed="includes/curso-detalles" 
@@ -48,11 +48,11 @@
 	            <!--CONTENIDOS-->
 	            {if channel=="Contenidos"}
 	              {if tipo-contenido-recurso=='Video' OR tipo-contenido-recurso=='Artículo' OR tipo-contenido-recurso=='Audio'}
-	              	<a href="{link-encuesta-lms}" id="start_course" class="explore button expand" onClick="_gaq.push(['_trackEvent', 'Encuesta', 'Entrar-Contenido', '{title}']);">ENCUESTA DE SATISFACCIÓN</a>
+	              	<a href="{link-encuesta-lms}" id="start_course" class="explore button expand ">ENCUESTA DE SATISFACCIÓN</a>
 	              {/if}	
 	              {if tipo-contenido-recurso=='Curso Externo'}
-	              	<a href="{link-recurso}" target="_blank" id="start_course" class="explore button expand" onClick="_gaq.push(['_trackEvent', 'Encuesta', 'Entrar-Contenido', '{title}-LINKEXTERNO']);">COMENZAR CURSO</a>
-	              	<a href="{link-encuesta-lms}"  id="start_course" class="explore button expand" onClick="_gaq.push(['_trackEvent', 'Encuesta', 'Entrar-Contenido', '{title}']);">ENCUESTA DE SATISFACCIÓN</a>
+	              	<a href="{link-recurso}" target="_blank" id="start_course" class="explore button expand ">COMENZAR CURSO</a>
+	              	<a href="{link-encuesta-lms}"  id="start_course" class="explore button expand ">ENCUESTA DE SATISFACCIÓN</a>
 	              {/if}
 	            {/if}		    		
 		    		</div>
@@ -64,7 +64,7 @@
 				          {embed="n_includes/comerzar-curso"}
 				        {/if}
 				        {if logged_out}
-				        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand"  onClick="_gaq.push(['_trackEvent', 'Curso', 'Entrar-Curso', '{title}']);">Comenzar</a>
+				        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand ">Comenzar</a>
 								{/if}  
 								<div class="show-for-large-only"> 	    	
 		            {embed="includes/curso-detalles" 
@@ -80,11 +80,11 @@
 	            <!--CONTENIDOS-->
 	            {if channel=="Contenidos"}
 	              {if tipo-contenido-recurso=='Video' OR tipo-contenido-recurso=='Artículo' OR tipo-contenido-recurso=='Audio'}
-	              	<a href="{link-encuesta-lms}" id="start_course" class="explore button expand" onClick="_gaq.push(['_trackEvent', 'Encuesta', 'Entrar-Contenido', '{title}']);">ENCUESTA DE SATISFACCIÓN</a>
+	              	<a href="{link-encuesta-lms}" id="start_course" class="explore button expand ">ENCUESTA DE SATISFACCIÓN</a>
 	              {/if}	
 	              {if tipo-contenido-recurso=='Curso Externo'}
-	              	<a href="{link-recurso}" target="_blank" id="start_course" class="explore button expand" onClick="_gaq.push(['_trackEvent', 'Encuesta', 'Entrar-Contenido', '{title}-LINKEXTERNO']);">COMENZAR CURSO</a>
-	              	<a href="{link-encuesta-lms}"  id="start_course" class="explore button expand" onClick="_gaq.push(['_trackEvent', 'Encuesta', 'Entrar-Contenido', '{title}']);">ENCUESTA DE SATISFACCIÓN</a>
+	              	<a href="{link-recurso}" target="_blank" id="start_course" class="explore button expand ">COMENZAR CURSO</a>
+	              	<a href="{link-encuesta-lms}"  id="start_course" class="explore button expand ">ENCUESTA DE SATISFACCIÓN</a>
 	              {/if}
 	            {/if}				    		
 		    		</div>	  
@@ -118,7 +118,7 @@
 					  
 	  	    	</div>
 	  	    	<!-- SEARCH OVERLAY TRIGGER ENDS -->
-	  	    	<div class="small-12 medium-3 large-3 columns hide-for-portrait">
+	  	    	<div class="small-12 medium-3 large-3 columns hide-for-portrait" id="fixed_on">
 	  	    		<!--CURSO-->
 		          {if channel=="Cursos"}
 			          {if logged_in}
@@ -141,11 +141,11 @@
 	            <!--CONTENIDOS-->
 	            {if channel=="Contenidos"}
 	              {if tipo-contenido-recurso=='Video' OR tipo-contenido-recurso=='Artículo' OR tipo-contenido-recurso=='Audio'}
-	              	<a href="{link-encuesta-lms}" id="start_course" class="explore button expand" onClick="_gaq.push(['_trackEvent', 'Encuesta', 'Entrar-Contenido', '{title}']);">ENCUESTA DE SATISFACCIÓN</a>
+	              	<a href="{link-encuesta-lms}" id="start_course" class="explore button expand ">ENCUESTA DE SATISFACCIÓN</a>
 	              {/if}	
 	              {if tipo-contenido-recurso=='Curso Externo'}
-	              	<a href="{link-recurso}" target="_blank" id="start_course" class="explore button expand" onClick="_gaq.push(['_trackEvent', 'Encuesta', 'Entrar-Contenido', '{title}-LINKEXTERNO']);">COMENZAR CURSO</a>
-	              	<a href="{link-encuesta-lms}"  id="start_course" class="explore button expand" onClick="_gaq.push(['_trackEvent', 'Encuesta', 'Entrar-Contenido', '{title}']);">ENCUESTA DE SATISFACCIÓN</a>
+	              	<a href="{link-recurso}" target="_blank" id="start_course" class="explore button expand ">COMENZAR CURSO</a>
+	              	<a href="{link-encuesta-lms}"  id="start_course" class="explore button expand ">ENCUESTA DE SATISFACCIÓN</a>
 	              {/if}
 	            {/if}				
 	  	    	</div>
