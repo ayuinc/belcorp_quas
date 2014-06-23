@@ -4,20 +4,20 @@
 				  {if segment_2!='plan-de-desarrollo-temas'}
 					  {if embed:categoria}
 					  <li>
-					  	<a href="{site_url}n_escuelas/{if embed:categoria=='Ventas'}ventas-temas{/if}{if embed:categoria=='Negocios'}negocios-temas{/if}{if embed:categoria=='Liderazgo y Cultura'}liderazgo-y-cultura-temas{/if}{if embed:categoria=='Innovación'}innovacion-temas{/if}{if embed:categoria=='Tecnología'}tecnologia-temas{/if}{if embed:categoria=='Operaciones'}operaciones-temas{/if}
+					  	<a href="{site_url}{if embed:categoria=='Destacados'}n_inicio{if:else}n_escuelas{/if}/{if embed:categoria=='Ventas'}ventas-temas{/if}{if embed:categoria=='Negocios'}negocios-temas{/if}{if embed:categoria=='Liderazgo y Cultura'}liderazgo-y-cultura-temas{/if}{if embed:categoria=='Innovación'}innovacion-temas{/if}{if embed:categoria=='Tecnología'}tecnologia-temas{/if}{if embed:categoria=='Operaciones'}operaciones-temas{/if}
 					  	">
-					  	Escuela de {embed:categoria}</a>
+					  	{if segment_2!='curso-destacados'}Escuela de {/if}{embed:categoria}</a>
 					  </li>
 					  {/if}	      
 				  {/if}
 				  <!--TIPO DE CURSO-->
-					{if segment_2!=''AND segment_1!='n_convenios' AND segment_1!='n_buscar' AND segment_1!='n_seccion' AND segment_2!='gracias' AND segment_2!='no_resultados' AND segment_2!='curso'}
+					{if segment_2!=''AND segment_1!='n_convenios' AND segment_1!='n_buscar' AND segment_1!='n_seccion' AND segment_2!='gracias' AND segment_2!='no_resultados' AND segment_2!='curso' AND segment_2!='curso-destacados'}
 				  <li {if segment_3==''}class="current"{/if}>
-				  	<a href="{site_url}n_escuelas/{segment_2}">{if segment_2!='plan-de-desarrollo-temas' AND segment_2!='tecnologia-temas' AND segment_2!='operaciones-temas' AND segment_2!='curso'}Escuela de{/if} {segment_2_category_name}</a>
+				  	<a href="{site_url}n_escuelas/{segment_2}">{if segment_2!='plan-de-desarrollo-temas' AND segment_2!='tecnologia-temas' AND segment_2!='operaciones-temas' AND segment_2!='curso' AND segment_2!='curso-destacados'}Escuela de{/if} {segment_2_category_name}</a>
 				  </li> 
 				  {/if}
 				  <!--NOMBRE DEL CURSO-->
-				  {if segment_3!='' AND segment_2!="curso" AND segment_2!='no_resultados'}
+				  {if segment_3!='' AND segment_2!="curso"  AND segment_2!="curso-destacados" AND segment_2!='no_resultados'}
 				  	<li	class="current">
 				  		{if segment_4!=''}
 				  		<a href="{site_url}n_escuelas/{segment_2}/{segment_3}">
@@ -53,7 +53,7 @@
 				  {if segment_1=='n_buscar'}
 				  	<li class="current">Buscar</li>
 				  {/if}			
-				  {if segment_2=='curso'}
+				  {if segment_2=='curso' OR segment_2=='curso-destacados'}
 				  	<li class="current">{embed:titulo}</li>
 				  {/if}					  				  				  					    
 				</ul>

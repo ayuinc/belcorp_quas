@@ -108,7 +108,8 @@
 			}
 			.no-bullet {
 				li {
-					margin-bottom: 7px;
+					padding: 7px 0;
+					border-bottom: 1px solid whitesmoke;
 					a {
 						font-size: 18px;
 					}

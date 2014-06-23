@@ -11,13 +11,13 @@
   sass --watch ebm.min.scss:ebm.min.css -t compressed
 
 */
-/*  
+/* 
 
   Description: EBM or Easy Box Model allows you to easily edit your UI box model margins and paddings 
   through the browser inspector "elements" tab and make your elements fit on their parent container without
   recurring to your CSS too often.
   
-  Author: @MadeByGus
+  Au thor: @MadeByGus
   Version: 0.1
   GitHub: https://github.com/netpoe/EBM.git
 
@@ -8103,15 +8103,24 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   transition: .7s ease all;
   background: white; }
   #site-canvas.homepage-on {
-    -webkit-transform: translateX(231px);
-    transform: translateX(231px); }
+    -webkit-transform: translateX(280px);
+    -moz-transform: translateX(280px);
+    -ms-transform: translateX(280px);
+    -o-transform: translateX(280px);
+    transform: translateX(280px); }
     @media only screen and (max-width: 40em) {
       #site-canvas.homepage-on {
         -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
         transform: translateX(0px); } }
     @media only screen and (min-width: 40.063em) and (orientation: portrait) {
       #site-canvas.homepage-on {
         -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
         transform: translateX(0px); } }
   @media only screen and (max-width: 40em) {
     #site-canvas {
@@ -8128,7 +8137,7 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   overflow-y: auto;
   overflow-x: hidden; }
   #site-menu.homepage-on {
-    background: #f6f6f7; }
+    background: white; }
     #site-menu.homepage-on .nav-container .list-group {
       position: relative; }
       #site-menu.homepage-on .nav-container .list-group a.list-group-item,
@@ -8323,9 +8332,6 @@ h1, h2, h3, h4, h5, h6, p, ol {
   background: none;
   margin-bottom: 0;
   color: #898b8e; }
-
-.active {
-  color: #5a277d !important; }
 
 button, .button {
   font-size: 0.8rem;

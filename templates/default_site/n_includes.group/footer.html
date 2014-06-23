@@ -23,15 +23,20 @@ Cualquier consulta comuníquese con Mesa de Ayuda opción “Soporte Técnico”
 				  $container.isotope({
 				    itemSelector: '.isotope-item'
 				  });
-				  
+				  console.log($('#filters #todos'));
 				  $checkboxes.change(function(){
 				    var filters = [];
-				    // get checked checkboxes values
-				    $checkboxes.filter(':checked').each(function(){
-				      filters.push( this.value );
-				    });
-				    filters = filters.join(', ');
-				    $container.isotope({ filter: filters });
+				    if($('#filters #todos').is(':checked')) {
+				    	// $('#filters #todos').attr('checked', 'unchecked');
+				    	console.log('checked');
+				    } else {
+					    // get checked checkboxes values
+					    $checkboxes.filter(':checked').each(function(){
+					      filters.push( this.value );
+					    });
+					    filters = filters.join(', ');
+					    $container.isotope({ filter: filters });
+				    }
 				  });
 		
 		    });
