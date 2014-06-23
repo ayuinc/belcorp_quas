@@ -24,20 +24,23 @@
   	    			<li>
    	    				{if interna-contenido}
 								  {if interna-contenido=="Pagina Interna"}
-						      	<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'ElMuro', '{title}']);">
+						      	<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper">
 						      {if:else}
-						        <a href="{link-recurso}" target="_blank" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'ElMuro', '{title}-LINKEXTERNO']);">
+						        <a href="{link-recurso}" target="_blank" class="link-wrapper">
 						      {/if}  
    	    				{if:else}
-   	    				<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper" onClick="_gaq.push(['_trackEvent', 'Contenido', 'ElMuro', '{title}']);">
+   	    				<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper">
    	    				{/if}	    				
 	  	    				<div class="panel-heading">
 								  	{if imagen-recurso}
-									  	{imagen-recurso}
-									    <img src="{image:url:medium}" alt="{title}" onClick="_gaq.push(['_trackEvent', 'Contenido', 'ElMuro', '{title}']);"/>
+									  	{imagen-recurso limit="1"}
+									    <img src="{image:url:medium}" alt="{title}"/>
 									    {/imagen-recurso}
-								    {if:else}
-								    	<img src="http://placehold.it/320x214" alt="{title}" onClick="_gaq.push(['_trackEvent', 'Contenido', 'ElMuro', '{title}-LINKEXTERNO']);">
+								    {/if}
+								    {if foto-curso}
+								    	{foto-curso limit="1"}
+								    	<img src="{image:url:medium}" alt="{title}">
+								    	{/foto-curso}
 								    {/if}
 								    {if tipo-contenido-recurso=="Video"}
 											<div class="video-clip"><img src="{site_url}img/play_icon.png" alt=""></div>

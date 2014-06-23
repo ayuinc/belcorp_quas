@@ -13,16 +13,14 @@
 							<div class="small-7 medium-4 large-7 columns text-center pt-14">
 								<h6 class="m-0 hide-for-medium hide-for-large">
 				      	{if segment_1=='n_escuelas'}
-					      	{if segment_2!='tecnologia-temas' OR segment_2!='operaciones-temas'}
-					      		{if segment_2!='curso'}
-										Escuela de
-					      		{/if}
-					      	{/if} 
-					      	{segment_2_category_name}
-					      	{if segment_3!=''}
-					      		<br><span>{segment_3_category_name}</span>
-					      	{/if}
+				      		{if segment_3==''}
+						      	{if segment_2!='plan-de-desarrollo-temas' AND segment_2!='tecnologia-temas' AND segment_2!='operaciones-temas'}
+											Escuela de 
+						      	{/if} 
+					      	{/if}	
+					      	{last_segment_category_name}
 				      	{/if}
+				      	
 				      	{if segment_1=='n_seccion'}
 				      		{if segment_2=='que-hace-la-ucb-por-ti'}
 				      			QUE HACE LA UCB POR TI

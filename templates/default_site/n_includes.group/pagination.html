@@ -1,0 +1,27 @@
+{exp:channel:entries channel="cursos|tendencias" limit="21" category="{last_segment_category_id}" dynamic="off" paginate="bottom"}
+{paginate}
+  {pagination_links}
+    <ul class="pagination large-6 large-centered columns pt-7-100">
+      {first_page}
+        <li><a href="{pagination_url}" class="page-first">Pág. 1</a></li>
+      {/first_page}
+
+      {previous_page}
+        <li><a href="{pagination_url}" class="page-previous"><i class="icon-typ-chevron-left-outline"></i></a></li>
+      {/previous_page}
+
+      {page}
+        <li><a href="{pagination_url}" class="page-{pagination_page_number} {if current_page}active{/if}">{pagination_page_number}</a></li>
+      {/page}
+
+      {next_page}
+        <li><a href="{pagination_url}" class="page-next"><i class="icon-typ-chevron-right-outline"></i></a></li>
+      {/next_page}
+
+      {last_page}
+        <li><a href="{pagination_url}" class="page-last">Última pág.</a></li>
+      {/last_page}
+    </ul>
+  {/pagination_links}
+{/paginate} 
+{/exp:channel:entries}

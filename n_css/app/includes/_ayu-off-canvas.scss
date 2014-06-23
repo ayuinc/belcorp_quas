@@ -46,6 +46,9 @@
   top: 0;
   left: 0;
   background: $primary-color;
+  @media #{$small-only} {
+  	background: white;
+  }
   overflow-y: auto;
   overflow-x: hidden;
   &.homepage-on {

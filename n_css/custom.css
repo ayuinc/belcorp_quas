@@ -1,9 +1,21 @@
-@charset "UTF-8";
+/* 
+
+  Description: EBM or Easy Box Model allows you to easily edit your UI box model margins and paddings, 
+  borders, backgrounds and borders through the browser inspector "elements" tab and make your elements 
+  fit on their parent container without recurring to your CSS too often.
+  
+  Author: @MadeByGus
+  Version: 1.0
+  GitHub: https://github.com/netpoe/EBM.git
+
+  sass --watch ebm.min.scss:ebm.min.css -t compressed
+
+*/
 /* 
 
   Description: EBM or Easy Box Model allows you to easily edit your UI box model margins and paddings 
   through the browser inspector "elements" tab and make your elements fit on their parent container without
-  recurring to your CSS too often.
+  recurring to your CSS too often. 
   
   Author: @MadeByGus
   Version: 0.1
@@ -46,10 +58,6 @@
   margin-bottom: 7px !important;
   margin-bottom: 0.4375rem !important; }
 
-.ml-7 {
-  margin-left: 7px !important;
-  margin-left: 0.4375rem !important; }
-
 .p-14 {
   padding: 14px !important;
   padding: 0.875rem !important; }
@@ -85,10 +93,6 @@
 .mb-14 {
   margin-bottom: 14px !important;
   margin-bottom: 0.875rem !important; }
-
-.ml-14 {
-  margin-left: 14px !important;
-  margin-left: 0.875rem !important; }
 
 .p-21 {
   padding: 21px !important;
@@ -126,10 +130,6 @@
   margin-bottom: 21px !important;
   margin-bottom: 1.3125rem !important; }
 
-.ml-21 {
-  margin-left: 21px !important;
-  margin-left: 1.3125rem !important; }
-
 .p-28 {
   padding: 28px !important;
   padding: 1.75rem !important; }
@@ -165,10 +165,6 @@
 .mb-28 {
   margin-bottom: 28px !important;
   margin-bottom: 1.75rem !important; }
-
-.ml-28 {
-  margin-left: 28px !important;
-  margin-left: 1.75rem !important; }
 
 .p-35 {
   padding: 35px !important;
@@ -206,10 +202,6 @@
   margin-bottom: 35px !important;
   margin-bottom: 2.1875rem !important; }
 
-.ml-35 {
-  margin-left: 35px !important;
-  margin-left: 2.1875rem !important; }
-
 .p-42 {
   padding: 42px !important;
   padding: 2.625rem !important; }
@@ -245,10 +237,6 @@
 .mb-42 {
   margin-bottom: 42px !important;
   margin-bottom: 2.625rem !important; }
-
-.ml-42 {
-  margin-left: 42px !important;
-  margin-left: 2.625rem !important; }
 
 .p-49 {
   padding: 49px !important;
@@ -286,10 +274,6 @@
   margin-bottom: 49px !important;
   margin-bottom: 3.0625rem !important; }
 
-.ml-49 {
-  margin-left: 49px !important;
-  margin-left: 3.0625rem !important; }
-
 .p-56 {
   padding: 56px !important;
   padding: 3.5rem !important; }
@@ -325,10 +309,6 @@
 .mb-56 {
   margin-bottom: 56px !important;
   margin-bottom: 3.5rem !important; }
-
-.ml-56 {
-  margin-left: 56px !important;
-  margin-left: 3.5rem !important; }
 
 .p-63 {
   padding: 63px !important;
@@ -366,10 +346,6 @@
   margin-bottom: 63px !important;
   margin-bottom: 3.9375rem !important; }
 
-.ml-63 {
-  margin-left: 63px !important;
-  margin-left: 3.9375rem !important; }
-
 .p-70 {
   padding: 70px !important;
   padding: 4.375rem !important; }
@@ -405,10 +381,6 @@
 .mb-70 {
   margin-bottom: 70px !important;
   margin-bottom: 4.375rem !important; }
-
-.ml-70 {
-  margin-left: 70px !important;
-  margin-left: 4.375rem !important; }
 
 .p-sm {
   padding: 5px !important;
@@ -490,6 +462,62 @@
   margin-left: 3px !important;
   margin-left: 0.1875rem !important; }
 
+.mh-70 {
+  min-height: 70px !important;
+  min-height: 4.375rem !important; }
+
+.mh-140 {
+  min-height: 140px !important;
+  min-height: 8.75rem !important; }
+
+.mh-210 {
+  min-height: 210px !important;
+  min-height: 13.125rem !important; }
+
+.mh-280 {
+  min-height: 280px !important;
+  min-height: 17.5rem !important; }
+
+.mh-350 {
+  min-height: 350px !important;
+  min-height: 21.875rem !important; }
+
+.mh-420 {
+  min-height: 420px !important;
+  min-height: 26.25rem !important; }
+
+.mh-490 {
+  min-height: 490px !important;
+  min-height: 30.625rem !important; }
+
+.mh-560 {
+  min-height: 560px !important;
+  min-height: 35rem !important; }
+
+.mh-630 {
+  min-height: 630px !important;
+  min-height: 39.375rem !important; }
+
+.mh-700 {
+  min-height: 700px !important;
+  min-height: 43.75rem !important; }
+
+.mh-770 {
+  min-height: 770px !important;
+  min-height: 48.125rem !important; }
+
+.mh-840 {
+  min-height: 840px !important;
+  min-height: 52.5rem !important; }
+
+.box-shadow {
+  -webkit-box-shadow: 0px 3px 3px 0px rgba(49, 50, 51, 0.15);
+  -moz-box-shadow: 0px 3px 3px 0px rgba(49, 50, 51, 0.15);
+  box-shadow: 0px 3px 3px 0px rgba(49, 50, 51, 0.15); }
+
+.rounded-borders {
+  border-radius: 3px; }
+
 .p-7-100 {
   padding: 7.0% !important; }
 
@@ -516,9 +544,6 @@
 
 .mb-7-100 {
   margin-bottom: 7.0% !important; }
-
-.ml-7-100 {
-  margin-left: 7.0% !important; }
 
 .p-14-100 {
   padding: 14.0% !important; }
@@ -547,9 +572,6 @@
 .mb-14-100 {
   margin-bottom: 14.0% !important; }
 
-.ml-14-100 {
-  margin-left: 14.0% !important; }
-
 .p-21-100 {
   padding: 21.0% !important; }
 
@@ -576,9 +598,6 @@
 
 .mb-21-100 {
   margin-bottom: 21.0% !important; }
-
-.ml-21-100 {
-  margin-left: 21.0% !important; }
 
 .p-28-100 {
   padding: 28.0% !important; }
@@ -607,9 +626,6 @@
 .mb-28-100 {
   margin-bottom: 28.0% !important; }
 
-.ml-28-100 {
-  margin-left: 28.0% !important; }
-
 .p-35-100 {
   padding: 35% !important; }
 
@@ -636,9 +652,6 @@
 
 .mb-35-100 {
   margin-bottom: 35% !important; }
-
-.ml-35-100 {
-  margin-left: 35% !important; }
 
 .p-42-100 {
   padding: 42.0% !important; }
@@ -667,9 +680,6 @@
 .mb-42-100 {
   margin-bottom: 42.0% !important; }
 
-.ml-42-100 {
-  margin-left: 42.0% !important; }
-
 .p-49-100 {
   padding: 49.0% !important; }
 
@@ -696,9 +706,6 @@
 
 .mb-49-100 {
   margin-bottom: 49.0% !important; }
-
-.ml-49-100 {
-  margin-left: 49.0% !important; }
 
 .p-56-100 {
   padding: 56.0% !important; }
@@ -727,9 +734,6 @@
 .mb-56-100 {
   margin-bottom: 56.0% !important; }
 
-.ml-56-100 {
-  margin-left: 56.0% !important; }
-
 .p-63-100 {
   padding: 63.0% !important; }
 
@@ -757,9 +761,6 @@
 .mb-63-100 {
   margin-bottom: 63.0% !important; }
 
-.ml-63-100 {
-  margin-left: 63.0% !important; }
-
 .p-70-100 {
   padding: 70% !important; }
 
@@ -786,9 +787,6 @@
 
 .mb-70-100 {
   margin-bottom: 70% !important; }
-
-.ml-70-100 {
-  margin-left: 70% !important; }
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /**
@@ -8129,6 +8127,9 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   background: #5a277d;
   overflow-y: auto;
   overflow-x: hidden; }
+  @media only screen and (max-width: 40em) {
+    #site-menu {
+      background: white; } }
   #site-menu.homepage-on {
     background: #f6f6f7; }
     #site-menu.homepage-on .nav-container .list-group {

@@ -5,14 +5,15 @@
 					  {if embed:categoria}
 					  <li>
 					  	<a href="{site_url}n_escuelas/{if embed:categoria=='Ventas'}ventas-temas{/if}{if embed:categoria=='Negocios'}negocios-temas{/if}{if embed:categoria=='Liderazgo y Cultura'}liderazgo-y-cultura-temas{/if}{if embed:categoria=='Innovación'}innovacion-temas{/if}{if embed:categoria=='Tecnología'}tecnologia-temas{/if}{if embed:categoria=='Operaciones'}operaciones-temas{/if}
-					  	">Escuelas de {embed:categoria}</a>
+					  	">
+					  	Escuela de {embed:categoria}</a>
 					  </li>
 					  {/if}	      
 				  {/if}
 				  <!--TIPO DE CURSO-->
 					{if segment_2!=''AND segment_1!='n_convenios' AND segment_1!='n_buscar' AND segment_1!='n_seccion' AND segment_2!='gracias' AND segment_2!='no_resultados' AND segment_2!='curso'}
 				  <li {if segment_3==''}class="current"{/if}>
-				  	<a href="{site_url}n_escuelas/{segment_2}">{if segment_2!='plan-de-desarrollo-temas' AND segment_2!='curso'}Escuela de{/if} {segment_2_category_name}</a>
+				  	<a href="{site_url}n_escuelas/{segment_2}">{if segment_2!='plan-de-desarrollo-temas' AND segment_2!='tecnologia-temas' AND segment_2!='operaciones-temas' AND segment_2!='curso'}Escuela de{/if} {segment_2_category_name}</a>
 				  </li> 
 				  {/if}
 				  <!--NOMBRE DEL CURSO-->
@@ -38,7 +39,6 @@
 				  	<li class="current">Preguntas Frecuentes</li>
 				  {/if}	
 				  {if segment_1=='n_seccion'}
-				  	<li><a href="{site_url}n_inicio">La UCB</a></li>
 				  	<li class="current">{embed:titulo}</li>
 				  {/if}	
 				  {if segment_1=='n_plan_de_desarrollo'}

@@ -18,15 +18,15 @@
 		<!-- CANVAS CONTAINER -->
 		<div class="row">
 			<div class="large-9 medium-9 medium-offset-1 columns">
-		    	{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
-					{embed="n_includes/breadcrumbs" titulo="{title}" categoria="{category_name}"}
+		    	{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="2"}
+						{embed="n_includes/breadcrumbs" titulo="{title}" categoria="{category_name}"}
 					{/categories}
 		    	<div class="row escuela-block">
 		    		<div class="small-12 medium-12 large-9 columns">
 							<h1>{title}</h1>						
 		    		</div>   		
 		    		
-		    		<div class="small-12 medium-12 columns mb-28 mt-28 show-for-large hide-for-landscape">
+		    		<div class="small-12 medium-12 columns mb-28 mt-28 show-for-large-only hide-for-landscape">
 		          {if channel=="Cursos"}
 			          {if logged_in}
 				          {embed="includes/comerzar-curso"}
@@ -57,6 +57,7 @@
 	            {/if}		    		
 		    		</div>
 		    		
+		    		<!--SOLO PARA MOVILES PORTRAIT-->
 		    		<div class="small-12 medium-6 medium-centered columns hide-for-landscape">
 	  	    		<!--CURSO-->
 		          {if channel=="Cursos"}
