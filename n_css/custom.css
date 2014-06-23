@@ -11,11 +11,11 @@
   sass --watch ebm.min.scss:ebm.min.css -t compressed
 
 */
-/* 
+/*  
 
   Description: EBM or Easy Box Model allows you to easily edit your UI box model margins and paddings 
   through the browser inspector "elements" tab and make your elements fit on their parent container without
-  recurring to your CSS too often. 
+  recurring to your CSS too often.
   
   Author: @MadeByGus
   Version: 0.1
@@ -8127,9 +8127,6 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   background: #5a277d;
   overflow-y: auto;
   overflow-x: hidden; }
-  @media only screen and (max-width: 40em) {
-    #site-menu {
-      background: white; } }
   #site-menu.homepage-on {
     background: #f6f6f7; }
     #site-menu.homepage-on .nav-container .list-group {
