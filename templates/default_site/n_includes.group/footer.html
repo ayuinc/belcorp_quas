@@ -1,8 +1,7 @@
 		<!--HERRAMIENTA DE CERTIFICACION-->
 		<div id="herramienta_de_certificacion" class="reveal-modal" data-reveal>
 		  <h2>Herramienta de Certificación</h2>
-		  <p>Puede acceder desde el icono en la Tablet de Escuela de Venta o desde este portal con su usuario de red y contraseña de red.
-Cualquier consulta comuníquese con Mesa de Ayuda opción “Soporte Técnico”.</p>
+		  <p>Puede acceder desde el icono en la Tablet de Escuela de Venta o desde este portal con su usuario de red y contraseña de red. Cualquier consulta comuníquese con Mesa de Ayuda opción “Soporte Técnico”.</p>
 		  <a href="http://ffvv.somosbelcorp.com/" class="button small">Acceder FFVV</a>
 		  <a href="http://ev.belcorp.biz/" class="button small">Acceder Portal Administrativos</a>
 		  <a class="close-reveal-modal">&#215;</a>
@@ -14,6 +13,7 @@ Cualquier consulta comuníquese con Mesa de Ayuda opción “Soporte Técnico”
     <script type="text/javascript" src="{site_url}n_js/ayu-off-canvas.js"></script>
     {if segment_1=='n_escuelas'}
     	<script src="{site_url}n_js/vendor/isotope.pkgd.min.js"></script>
+    	<script src="{site_url}n_js/vendor/jquery.sticky.js"></script>
 			<script>
 		    $(document).ready(function(){
 					var $container = $('#isotope-container'),
@@ -23,17 +23,36 @@ Cualquier consulta comuníquese con Mesa de Ayuda opción “Soporte Técnico”
 				  $container.isotope({
 				    itemSelector: '.isotope-item'
 				  });
-				  
+
+				  // $checkboxes.change(function(){
+				  //   var filters = [];
+				  //   // get checked checkboxes values
+				  //   $checkboxes.filter(':checked').each(function(){
+				  //     filters.push( this.value );
+				  //   });
+				  //   filters = filters.join(', ');
+				  //   console.log(filters);
+				  //   $container.isotope({ filter: filters });				    
+				  // });
 				  $checkboxes.change(function(){
 				    var filters = [];
-				    // get checked checkboxes values
-				    $checkboxes.filter(':checked').each(function(){
-				      filters.push( this.value );
-				    });
-				    filters = filters.join(', ');
-				    $container.isotope({ filter: filters });
+				    if($('#filters #todos').prop('checked')) {
+				    	$('#filters #todos').attr('checked', false);
+				    } else {
+				    	// get checked checkboxes values
+					    $checkboxes.filter(':checked').each(function(){
+					      filters.push( this.value );
+					    });
+					    filters = filters.join(', ');
+					    console.log(filters);
+					    $container.isotope({ filter: filters });
+				    }
 				  });
-		
+
+				  // $(".fixed-menu").sticky({topSpacing:0});
+				 //  $(".fixed-menu").pin({
+					//   containerSelector: ".menu-secundario"
+					// });
 		    });
 	    </script>
     {/if}
@@ -47,7 +66,7 @@ Cualquier consulta comuníquese con Mesa de Ayuda opción “Soporte Técnico”
     </script>
     
     <!--MOUSE OVER OFF-CANVAS-->
-    <script>
+    <!-- <script>
 		  $(document).ready(function(){
 		  	$('.off-canvas-trigger').on('mouseover', function(){
 		  		$('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'move-right');
@@ -74,11 +93,11 @@ Cualquier consulta comuníquese con Mesa de Ayuda opción “Soporte Técnico”
 				  $('html').css('overflow', 'auto');
 				});
 		  });		  
-    </script>
+    </script> -->
     <!--END.MOUSE OVER OFF-CANVAS-->
     
 		<!--BUSCADOR-->
-    <script>
+    <!-- <script>
     $(document).ready(function(){
     	var $searchOv = $('.search-canvas-overlay');
 
@@ -98,7 +117,7 @@ Cualquier consulta comuníquese con Mesa de Ayuda opción “Soporte Técnico”
     		}
     	});
     });
-    </script>
+    </script> -->
 		<!--END.BUSCADOR-->
 		
 		<!--SCROLL NAV CONVENIOS-->

@@ -23,11 +23,6 @@
 // Medium screens
 @media only screen and (min-width: 40.063em) and (orientation : portrait) { 
 	
-	.main-section {
-		padding:2.3rem 2rem 1.875rem 6.1875rem;
-		min-height:65rem;
-	}
-
 	.heading-block {
 		h1 {
 			margin: -0.5rem 0 0 0;
@@ -55,15 +50,6 @@
 		width:100% !important;
 	}
 	
-	.menu {
-		.logo {
-			img.large {
-				height: 62px;
-				margin: 0 4.5rem;
-			}	
-		}
-	}
-	
 	.grid-panels {
 		.panel-heading {
 			.video-clip {
@@ -87,15 +73,12 @@
 
 @media only screen and (min-width: 40.063em) and (orientation : landscape) { 
 
-	.main-section {
-		padding:2.3rem 2rem 1.875rem 6.1875rem;
-	}
 
 	.heading-block {
 		h1 {
 			margin:0;
-			font-size: 49px ;
-			font-size: rem(49) ;
+			font-size: 63px ;
+			font-size: rem(63);
 		}
 		h4 {
 			font-size:1.35rem;
@@ -116,45 +99,11 @@
 	ul.no-bullet {
 		li {
 			a {
-				font-size:0.7rem;
+				font-size: 12px;
+				font-size: rem(12px);
 			}
 		}
 	} 
-	
-
-	.menu {
-		.logo {
-			img.large {
-				height: 62px;
-				margin: 0 4.5rem;
-			}	
-		}	
-		ul {
-			li {
-				a {
-				padding:0.2rem 0;
-				font-size:1rem;
-				}
-			}
-		}
-	}
-
-	.tab-bar .menu-icon:last-child {
-		text-indent: 0;
-		line-height: 0;
-		padding: 7px 14px;
-		span:after {
-			box-shadow: 0 0px 0 1px $morado, 0 7px 0 1px $morado, 0 14px 0 1px $morado;
-		}
-		small {
-			color:$morado;
-			position: relative;
-			top: 13px;
-			left: 23px;
-			z-index: 1;
-			font-size: 0.7rem;
-		}
-	}
 
 	.grid-panels {
 		.panel-heading {
@@ -169,37 +118,10 @@
 			font-size:0.85rem; 
 		}
 	}
-
-	#filters {
-		li {
-			label { 
-				padding:0.4375rem 0.2rem;
-				font-size:0.65rem;
-			}
-		}
-	}
 	
 	.list-heading {
 		font-size: 0.9rem; 
 	}
-
-	.search-canvas-overlay {
-		.searching {
-			.search-form {
-				form { 
-					input {
-						height:auto;
-						@include thin;
-					}
-				}
-			}
-		}
-	}
-	
-	.user-relocate-medium {
-		position: absolute;
-		left: 101px;
-	}	
 	
 	.search-block {
 		form {

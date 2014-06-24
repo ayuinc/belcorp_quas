@@ -1,6 +1,9 @@
 // Bourbon sass tools
 @import "bourbon/bourbon"; 
 
+@import 
+  "foundation/components/global";
+
 // EBM - EasyBoxModel
 @import "EBM/ebm";  
 
@@ -16,7 +19,6 @@
  
 // Behold, here are all the Foundation components.
 @import
-  "foundation/components/global",
 	"foundation/settings",
 	"foundation/functions",
   "foundation/components/grid",
@@ -71,6 +73,7 @@
   "app/includes/search",
   "app/includes/list-heading",
   "app/includes/isotope-filters",
+  "app/includes/pin-menu",
   "app/includes/off-canvas-viejo",
   "app/includes/ayu-off-canvas";
 

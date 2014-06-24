@@ -16,23 +16,18 @@
   width: 100%;
   min-height: 990px;
   position: relative;
-  -webkit-transform: translateX(60px);
-  transform: translateX(60px);
+  @include transform(translateX(60px));
   &.homepage-on {
-  	-webkit-transform: translateX(231px);
-  	transform: translateX(231px);
+  	@include transform(translateX(248px));
   	@media #{$small-only} {
-  		-webkit-transform: translateX(0px);
-  		transform: translateX(0px);
+  		@include transform(translateX(0px));
   	}
   	@media only screen and (min-width: 40.063em) and (orientation : portrait) { 
-  		-webkit-transform: translateX(0px);
-  		transform: translateX(0px);
+  		@include transform(translateX(0px));
   	}
-  }
+  } 
   @media #{$small-only} {
-  	-webkit-transform: translateX(0px);
-  	transform: translateX(0px);
+  	@include transform(translateX(0px));
   } 
   -webkit-transition: .7s ease all;
   transition: .7s ease all;
@@ -40,7 +35,7 @@
 }
 
 #site-menu {
-  width: 280px;
+  width: 248px;
   height: 100%;
   position: fixed;
   top: 0;
@@ -49,7 +44,14 @@
   overflow-y: auto;
   overflow-x: hidden;
   &.homepage-on {
-  	background: $gray-lighter;
+  	background: white;
+  	z-index: 30;
+  	@media #{$small-only} {
+  		z-index: 0; 
+  	}
+  	.logo img {
+  		@include transform(translateX(12px));
+  	}
   	.nav-container {
   		.list-group {
   			position: relative;
@@ -96,10 +98,11 @@
   	padding: 14px 7px;
   	width: 100%;
   	background: white;
-  	border-bottom: 2px solid rgba($gray-darker, 0.1);
+  	border-bottom: 1px solid rgba($gray-darker, 0.1);
   	img {
   		width: 105px;
-  		height: auto;  		
+  		height: auto;
+  		@include transition(all 0.3s ease);	
   	}
   }
   .nav-container {
@@ -145,20 +148,24 @@
   }
 }
 
-#site-wrapper.show-nav {
-	#site-canvas {
-	  -webkit-transform: translateX(280px);
-	  transform: translateX(280px);
-	}
-	#site-menu {
-		z-index: 30;
-		@include transition(z-index 4.9s ease-in);
-		.list-group .list-group-item:first-child {
-			opacity: 1;
-			@include transition(all 0.5s ease);
-			&.hovered {
-				background: none;
+#site-wrapper {
+	&.show-nav {
+		#site-canvas {
+			@include transform(translateX(248px));
+		}
+		#site-menu {
+			@include transition(z-index 4.9s ease-in);
+			.list-group .list-group-item:first-child {
 				opacity: 1;
+				@include transition(all 0.5s ease);
+				&.hovered {
+					background: none;
+					opacity: 1;
+				}
+			}
+			.logo img {
+				@include transform(translateX(12px));
+				@include transition(all 0.3s ease);
 			}
 		}
 	}

@@ -7644,8 +7644,7 @@ a.not-underline:hover {
 
 header {
   height: 63px;
-  background: #f6f6f7;
-  border-left: 2px solid rgba(49, 50, 51, 0.1); }
+  background: white; }
   header .user {
     text-align: right;
     float: right;
@@ -7999,12 +7998,14 @@ ul.no-bullet li a {
       border-radius: 3px;
       border: 1px solid #f6f6f7;
       margin-right: 0; }
+      @media only screen and (min-width: 40.063em) and (max-width: 64em) {
+        #filters li label {
+          font-size: 10px;
+          font-size: 0.625em; } }
       #filters li label:hover, #filters li label.active {
         background: #f6f6f7; }
       #filters li label:after {
-        content: "\e600";
         margin-left: 14px;
-        font-family: "icomoon-typ";
         color: #898b8e; }
     #filters li input[type="checkbox"] {
       display: none; }
@@ -8014,6 +8015,18 @@ ul.no-bullet li a {
           content: "\e601";
           font-family: "icomoon-typ";
           margin-left: 14px; }
+
+.pin-frame {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 0; }
+  .pin-frame .pin-content {
+    position: relative; }
+    .pin-frame .pin-content .pin-menu {
+      position: absolute;
+      top: 210px;
+      right: 21%; }
 
 /*SECCIONES EN EL OFFCANVAS*/
 .move-right .exit-off-canvas {
@@ -8098,28 +8111,43 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   min-height: 990px;
   position: relative;
   -webkit-transform: translateX(60px);
+  -moz-transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  -o-transform: translateX(60px);
   transform: translateX(60px);
   -webkit-transition: .7s ease all;
   transition: .7s ease all;
   background: white; }
   #site-canvas.homepage-on {
-    -webkit-transform: translateX(231px);
-    transform: translateX(231px); }
+    -webkit-transform: translateX(248px);
+    -moz-transform: translateX(248px);
+    -ms-transform: translateX(248px);
+    -o-transform: translateX(248px);
+    transform: translateX(248px); }
     @media only screen and (max-width: 40em) {
       #site-canvas.homepage-on {
         -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
         transform: translateX(0px); } }
     @media only screen and (min-width: 40.063em) and (orientation: portrait) {
       #site-canvas.homepage-on {
         -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
         transform: translateX(0px); } }
   @media only screen and (max-width: 40em) {
     #site-canvas {
       -webkit-transform: translateX(0px);
+      -moz-transform: translateX(0px);
+      -ms-transform: translateX(0px);
+      -o-transform: translateX(0px);
       transform: translateX(0px); } }
 
 #site-menu {
-  width: 280px;
+  width: 248px;
   height: 100%;
   position: fixed;
   top: 0;
@@ -8128,7 +8156,17 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   overflow-y: auto;
   overflow-x: hidden; }
   #site-menu.homepage-on {
-    background: #f6f6f7; }
+    background: white;
+    z-index: 30; }
+    @media only screen and (max-width: 40em) {
+      #site-menu.homepage-on {
+        z-index: 0; } }
+    #site-menu.homepage-on .logo img {
+      -webkit-transform: translateX(12px);
+      -moz-transform: translateX(12px);
+      -ms-transform: translateX(12px);
+      -o-transform: translateX(12px);
+      transform: translateX(12px); }
     #site-menu.homepage-on .nav-container .list-group {
       position: relative; }
       #site-menu.homepage-on .nav-container .list-group a.list-group-item,
@@ -8172,10 +8210,13 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
     padding: 14px 7px;
     width: 100%;
     background: white;
-    border-bottom: 2px solid rgba(49, 50, 51, 0.1); }
+    border-bottom: 1px solid rgba(49, 50, 51, 0.1); }
     #site-menu .logo img {
       width: 105px;
-      height: auto; }
+      height: auto;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
   #site-menu .nav-container .list-group {
     position: relative; }
     #site-menu .nav-container .list-group a.list-group-item,
@@ -8217,10 +8258,12 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
           opacity: 1; }
 
 #site-wrapper.show-nav #site-canvas {
-  -webkit-transform: translateX(280px);
-  transform: translateX(280px); }
+  -webkit-transform: translateX(248px);
+  -moz-transform: translateX(248px);
+  -ms-transform: translateX(248px);
+  -o-transform: translateX(248px);
+  transform: translateX(248px); }
 #site-wrapper.show-nav #site-menu {
-  z-index: 30;
   -webkit-transition: z-index 4.9s ease-in;
   -moz-transition: z-index 4.9s ease-in;
   transition: z-index 4.9s ease-in; }
@@ -8232,6 +8275,15 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
     #site-wrapper.show-nav #site-menu .list-group .list-group-item:first-child.hovered {
       background: none;
       opacity: 1; }
+  #site-wrapper.show-nav #site-menu .logo img {
+    -webkit-transform: translateX(12px);
+    -moz-transform: translateX(12px);
+    -ms-transform: translateX(12px);
+    -o-transform: translateX(12px);
+    transform: translateX(12px);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
 
 @media only screen and (max-width: 40em) {
   .large-10 {
@@ -8245,9 +8297,9 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   font-weight: 100;
   font-style: normal; }
 .heading-block h1 {
-  font-size: 70px !important;
-  font-size: 4.375rem !important;
-  margin-top: -1rem !important;
+  font-size: 70px;
+  font-size: 4.375rem;
+  margin-top: -1rem;
   text-transform: uppercase;
   line-height: 100%;
   /*line-height: rem(10);*/ }
@@ -8323,9 +8375,6 @@ h1, h2, h3, h4, h5, h6, p, ol {
   background: none;
   margin-bottom: 0;
   color: #898b8e; }
-
-.active {
-  color: #5a277d !important; }
 
 button, .button {
   font-size: 0.8rem;

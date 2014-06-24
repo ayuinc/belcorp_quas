@@ -122,7 +122,7 @@ class Category_model extends CI_Model {
 
 		if ($include !== 0)
 		{
-			$this->db->where('(exclude_group = "0" OR exclude_group = "' . (int) $include . '")', NULL, FALSE);
+			$this->db->where('(exclude_group = 0 OR exclude_group = ' . (int) $include . ')', NULL, FALSE);
 		}
 
 		return $this->db->select('group_id, group_name, sort_order')

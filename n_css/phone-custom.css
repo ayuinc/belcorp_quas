@@ -227,6 +227,7 @@ a.not-underline:hover {
       background: white;
       z-index: 30; }
       .movil-menu-secundario .small-12 .no-bullet li {
-        margin-bottom: 7px; }
+        padding: 7px 0;
+        border-bottom: 1px solid whitesmoke; }
         .movil-menu-secundario .small-12 .no-bullet li a {
           font-size: 18px; } }

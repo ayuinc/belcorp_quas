@@ -4,9 +4,9 @@
 		@include thin;
 	}
 	h1 {
-		font-size: 70px !important;
-		font-size: rem(70) !important;
-		margin-top: -1rem !important;
+		font-size: 70px;
+		font-size: rem(70);
+		margin-top: -1rem;
 		text-transform: uppercase;
 		line-height: 100%;
 		/*line-height: rem(10);*/
