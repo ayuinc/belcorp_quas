@@ -1099,7 +1099,7 @@ class Playa_ft extends EE_Fieldtype {
 		$channels = $this->EE->db->query('SELECT c.channel_id AS `id`, c.channel_title AS `title`, s.site_label AS `group`
 		                                  FROM exp_channels c, exp_sites s
 		                                  WHERE s.site_id = c.site_id
-		                                        '.($this->msm ? '' : 'AND s.site_id = "'.$site_id.'"').'
+		                                        '.($this->msm ? '' : 'AND s.site_id = '.$site_id.'').'
 		                                  ORDER BY s.site_label, c.channel_title ASC')
 		                         ->result_array();
 
