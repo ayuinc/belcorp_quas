@@ -1179,11 +1179,11 @@ class Playa_ft extends EE_Fieldtype {
 	{
 		$site_id = $this->EE->config->item('site_id');
 
-		$authors = $this->EE->db->query('SELECT m.member_id AS `id`, m.screen_name AS `title`, mg.group_title AS `group`
+		$authors = $this->EE->db->query("SELECT m.member_id AS `id`, m.screen_name AS `title`, mg.group_title AS `group`
 		                                 FROM exp_members m, exp_member_groups mg
 		                                 WHERE m.group_id = mg.group_id
-		                                       AND mg.can_access_publish = y
-		                                       '.($this->msm ? '' : 'AND mg.site_id = '.$site_id.'').'
+		                                       AND mg.can_access_publish = 'y'
+		                                       ".($this->msm ? '' : 'AND mg.site_id = '.$site_id.'').'
 		                                 GROUP BY m.member_id
 		                                 ORDER BY mg.group_title, m.screen_name')
 		                        ->result_array();
@@ -1840,11 +1840,11 @@ class Playa_ft extends EE_Fieldtype {
 				//  Authors
 				// -------------------------------------------
 
-				$authors = $this->EE->db->query('SELECT m.member_id AS `id`, m.screen_name AS `title`, mg.group_title AS `group`
+				$authors = $this->EE->db->query("SELECT m.member_id AS `id`, m.screen_name AS `title`, mg.group_title AS `group`
 				                                 FROM exp_members m, exp_member_groups mg
 				                                 WHERE m.group_id = mg.group_id
-				                                       AND mg.can_access_publish = y
-				                                       '.($msm ? '' : 'AND mg.site_id = '.$site_id.'').'
+				                                       AND mg.can_access_publish = 'y'
+				                                       ".($msm ? '' : 'AND mg.site_id = '.$site_id.'').'
 				                                       '.($this->settings['authors'] ? 'AND m.member_id '.$this->helper->param2sql($this->settings['authors']) : '').'
 				                                 GROUP BY m.member_id
 				                                 ORDER BY mg.group_title, m.screen_name');
