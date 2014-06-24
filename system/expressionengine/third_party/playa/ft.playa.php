@@ -1099,7 +1099,7 @@ class Playa_ft extends EE_Fieldtype {
 		$channels = $this->EE->db->query('SELECT c.channel_id AS `id`, c.channel_title AS `title`, s.site_label AS `group`
 		                                  FROM exp_channels c, exp_sites s
 		                                  WHERE s.site_id = c.site_id
-		                                        '.($this->msm ? '' : 'AND s.site_id = '.$site_id.'').'
+		                                        '.($this->msm ? '' : 'AND s.site_id = "'.$site_id.'"').'
 		                                  ORDER BY s.site_label, c.channel_title ASC')
 		                         ->result_array();
 
@@ -1119,7 +1119,7 @@ class Playa_ft extends EE_Fieldtype {
 		$cats = $this->EE->db->query('SELECT c.cat_id AS `id`, c.cat_name AS `title`, c.parent_id, cg.group_name AS `group`
 		                              FROM exp_categories c, exp_category_groups cg
 		                              WHERE c.group_id = cg.group_id
-		                                    '.($this->msm ? '' : 'AND c.site_id = '.$site_id.'').'
+		                                    '.($this->msm ? '' : 'AND c.site_id = "'.$site_id.'"').'
 		                              ORDER BY cg.group_name, c.cat_order');
 
 		if ($cats->num_rows())
@@ -1179,11 +1179,11 @@ class Playa_ft extends EE_Fieldtype {
 	{
 		$site_id = $this->EE->config->item('site_id');
 
-		$authors = $this->EE->db->query("SELECT m.member_id AS `id`, m.screen_name AS `title`, mg.group_title AS `group`
+		$authors = $this->EE->db->query('SELECT m.member_id AS `id`, m.screen_name AS `title`, mg.group_title AS `group`
 		                                 FROM exp_members m, exp_member_groups mg
 		                                 WHERE m.group_id = mg.group_id
-		                                       AND mg.can_access_publish = 'y'
-		                                       ".($this->msm ? '' : 'AND mg.site_id = '.$site_id.'').'
+		                                       AND mg.can_access_publish = "y"
+		                                       '.($this->msm ? '' : 'AND mg.site_id = "'.$site_id.'"').'
 		                                 GROUP BY m.member_id
 		                                 ORDER BY mg.group_title, m.screen_name')
 		                        ->result_array();
@@ -1205,7 +1205,7 @@ class Playa_ft extends EE_Fieldtype {
 		                                  FROM exp_statuses s, exp_status_groups sg
 		                                  WHERE s.group_id = sg.group_id
 		                                        AND s.status NOT IN ("open", "closed")
-		                                        '.($this->msm ? '' : 'AND s.site_id = '.$site_id.'').'
+		                                        '.($this->msm ? '' : 'AND s.site_id = "'.$site_id.'"').'
 		                                  ORDER BY sg.group_name, s.status_order');
 
 		$rows = array_merge(array(
@@ -1793,7 +1793,7 @@ class Playa_ft extends EE_Fieldtype {
 				$channels = $this->EE->db->query('SELECT c.channel_id AS `id`, c.channel_title AS `title`, c.cat_group, c.status_group, s.site_label AS `group`
 				                                  FROM exp_channels c, exp_sites s
 				                                  WHERE s.site_id = c.site_id
-				                                        '.($msm ? '' : 'AND s.site_id = '.$site_id.'').'
+				                                        '.($msm ? '' : 'AND s.site_id = "'.$site_id.'"').'
 				                                        '.($this->settings['channels'] ? 'AND c.channel_id '.$this->helper->param2sql($this->settings['channels']) : '').'
 				                                  ORDER BY s.site_label, c.channel_title ASC')->result_array();
 
@@ -1840,11 +1840,11 @@ class Playa_ft extends EE_Fieldtype {
 				//  Authors
 				// -------------------------------------------
 
-				$authors = $this->EE->db->query("SELECT m.member_id AS `id`, m.screen_name AS `title`, mg.group_title AS `group`
+				$authors = $this->EE->db->query('SELECT m.member_id AS `id`, m.screen_name AS `title`, mg.group_title AS `group`
 				                                 FROM exp_members m, exp_member_groups mg
 				                                 WHERE m.group_id = mg.group_id
-				                                       AND mg.can_access_publish = 'y'
-				                                       ".($msm ? '' : 'AND mg.site_id = '.$site_id.'').'
+				                                       AND mg.can_access_publish = "y"
+				                                       '.($msm ? '' : 'AND mg.site_id = "'.$site_id.'"').'
 				                                       '.($this->settings['authors'] ? 'AND m.member_id '.$this->helper->param2sql($this->settings['authors']) : '').'
 				                                 GROUP BY m.member_id
 				                                 ORDER BY mg.group_title, m.screen_name');
@@ -1863,7 +1863,7 @@ class Playa_ft extends EE_Fieldtype {
 				                                  WHERE s.group_id = sg.group_id
 				                                        AND s.status NOT IN ("open", "closed")
 				                                        AND s.group_id '.$this->helper->param2sql($status_groups).'
-				                                        '.($msm ? '' : 'AND s.site_id = '.$site_id.'').'
+				                                        '.($msm ? '' : 'AND s.site_id = "'.$site_id.'"').'
 				                                  ORDER BY sg.group_name, s.status_order');
 
 				$statuses = array_merge(array(
