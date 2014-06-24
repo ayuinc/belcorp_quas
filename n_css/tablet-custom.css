@@ -1,4 +1,3 @@
-@charset "UTF-8";
 meta.foundation-version {
   font-family: "/5.2.3/"; }
 
@@ -16,7 +15,7 @@ meta.foundation-mq-large {
 
 meta.foundation-mq-xlarge {
   font-family: "/only screen and (min-width:90.063em)/";
-  width: 90.063em; }
+   width: 90.063em; }
 
 meta.foundation-mq-xxlarge {
   font-family: "/only screen and (min-width:120.063em)/";
@@ -171,10 +170,6 @@ a.not-underline:hover {
     line-height: 1.6; } }
 /*  ==============   */
 @media only screen and (min-width: 40.063em) and (orientation: portrait) {
-  .main-section {
-    padding: 2.3rem 2rem 1.875rem 6.1875rem;
-    min-height: 65rem; }
-
   .heading-block h1 {
     margin: -0.5rem 0 0 0;
     font-size: 49px !important;
@@ -191,10 +186,6 @@ a.not-underline:hover {
   .full-width-for-portrait {
     width: 100% !important; }
 
-  .menu .logo img.large {
-    height: 62px;
-    margin: 0 4.5rem; }
-
   .grid-panels .panel-body {
     height: 265px; }
 
@@ -202,13 +193,10 @@ a.not-underline:hover {
     font-size: 1.1rem; } }
 /* min-width 641px, medium screens */
 @media only screen and (min-width: 40.063em) and (orientation: landscape) {
-  .main-section {
-    padding: 2.3rem 2rem 1.875rem 6.1875rem; }
-
   .heading-block h1 {
     margin: 0;
-    font-size: 49px;
-    font-size: 3.0625rem; }
+    font-size: 63px;
+    font-size: 3.9375rem; }
   .heading-block h4 {
     font-size: 1.35rem; }
 
@@ -220,50 +208,16 @@ a.not-underline:hover {
     font-size: 4rem; }
 
   ul.no-bullet li a {
-    font-size: 0.7rem; }
-
-  .menu .logo img.large {
-    height: 62px;
-    margin: 0 4.5rem; }
-  .menu ul li a {
-    padding: 0.2rem 0;
-    font-size: 1rem; }
-
-  .tab-bar .menu-icon:last-child {
-    text-indent: 0;
-    line-height: 0;
-    padding: 7px 14px; }
-    .tab-bar .menu-icon:last-child span:after {
-      box-shadow: 0 0px 0 1px #5a277d, 0 7px 0 1px #5a277d, 0 14px 0 1px #5a277d; }
-    .tab-bar .menu-icon:last-child small {
-      color: #5a277d;
-      position: relative;
-      top: 13px;
-      left: 23px;
-      z-index: 1;
-      font-size: 0.7rem; }
+    font-size: 12px;
+    font-size: 0.75rem; }
 
   .grid-panels .panel-body {
     height: 245px; }
   .grid-panels h5 {
     font-size: 0.85rem; }
 
-  #filters li label {
-    padding: 0.4375rem 0.2rem;
-    font-size: 0.65rem; }
-
   .list-heading {
     font-size: 0.9rem; }
-
-  .search-canvas-overlay .searching .search-form form input {
-    height: auto;
-    font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
-    font-weight: 100;
-    font-style: normal; }
-
-  .user-relocate-medium {
-    position: absolute;
-    left: 101px; }
 
   .search-block form input {
     font-size: 1.1rem; }
