@@ -12,6 +12,10 @@
 		label {
 			padding: 7px 14px;
 			padding: rem(7) rem(14);
+			@media #{$medium-only} {
+				font-size: 10px;
+				font-size: em(10);
+			}
 			border-radius: 3px;
 			border: 1px solid $gray-lighter;
 			margin-right: 0;
@@ -20,9 +24,9 @@
 				background: $gray-lighter;
 			}
 			&:after {
-				content: "\e600";
+				// content: "\e600";
 				margin-left: 14px;
-				font-family: "icomoon-typ";
+				// font-family: "icomoon-typ";
 				color: $gray;
 			}
 		}

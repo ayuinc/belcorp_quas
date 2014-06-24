@@ -5,7 +5,7 @@ var $hoverToggle = $('.hover-toggle'),
 
 $(function() {
 
-  if ($(window).width() < 480) {
+  if ($(window).width() < 1025) {
     $linkToggle.click(toggleNav);
   } else {
     $hoverToggle.on('mouseover', toggleNav);
