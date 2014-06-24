@@ -11,13 +11,6 @@ $box-model-sides: padding, padding-top, padding-right, padding-bottom, padding-l
       @if $px-to-rems == true {
         #{nth($box-model-sides, $j)}: rem($i*$times) !important;
       }
-      @media #{$medium-only} {
-        $mobile: (($i*$times) - (($times / $times) + ($times * 2)));
-        #{nth($box-model-sides, $j)}: $mobile + px !important;
-        @if $px-to-rems == true {
-          #{nth($box-model-sides, $j)}: rem($mobile) !important;
-        }
-      }
     }
   }
 }
