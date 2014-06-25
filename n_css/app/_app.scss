@@ -4,7 +4,7 @@ body {
 	letter-spacing: 0.10px;
 }
 
-h1, h2, h3, h4, h5, h6, p, ol {
+h1, h2, h3, h4, h5, h6, p, ol, li, ul, b {
 	@include thin;
 }
 
@@ -86,7 +86,7 @@ button, .button {
 			}
 			span {
 				&:after {
-					content: "\e735";
+					content: "\e609";
 					font-family: "icomoon-typ";
 				} 
 			}

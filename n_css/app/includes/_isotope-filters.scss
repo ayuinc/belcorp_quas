@@ -12,22 +12,31 @@
 		label {
 			padding: 7px 14px;
 			padding: rem(7) rem(14);
+			line-height: 21px;
 			@media #{$medium-only} {
 				font-size: 10px;
 				font-size: em(10);
+				padding: 7px 2px;
+				padding: rem(7) rem(2);
 			}
 			border-radius: 3px;
 			border: 1px solid $gray-lighter;
-			margin-right: 0;
+			margin: 0 7px 14px 0;
 			&:hover,
 			&.active {
 				background: $gray-lighter;
 			}
 			&:after {
-				// content: "\e600";
+				content: "\e602";
 				margin-left: 14px;
-				// font-family: "icomoon-typ";
+				font-family: "icomoon-typ";
 				color: $gray;
+				display: block;
+				float: right;
+				font-size: 14px;
+				@media #{$medium-only} {
+					margin-left: 7px;
+				}
 			}
 		}
 		input[type="checkbox"] {
@@ -38,6 +47,9 @@
 					content: "\e601";
 					font-family: "icomoon-typ";
 					margin-left: 14px;
+					display: block;
+					float: right;
+					font-size: 14px;
 				}
 			}
 		}
