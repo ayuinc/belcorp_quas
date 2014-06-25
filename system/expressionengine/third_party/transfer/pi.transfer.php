@@ -64,11 +64,15 @@ class Transfer
     // END
 
     public function datatransf(){
+        $query_member_group = ee()->db->select('group_id')->get_where('exp_member_groups', array('group_title' => 'Members'));
+        $member_group = $query_member_group->result();
+        $group_id = $member_group[0]->group_id;
+        
         $str = "";
         ee()->db->select('*');
         $query = ee()->db->get('exp_usuarios');
 
-        ee()->db->delete('exp_members', array('group_id' => '3'));
+        ee()->db->delete('exp_members', array('group_id' => $group_id));
         echo ee()->db->affected_rows()." rows were deleted.";
 
         ee()->load->library('auth');
@@ -89,7 +93,7 @@ class Transfer
                 'join_date'     => ee()->localize->now,
                 'email'         => trim_nbs($row->CorreoBelcorp),
                 'screen_name'   => trim_nbs($row->Nombres . " " . $row->Apellidos),
-                'group_id'      => '3',
+                'group_id'      => $group_id,
 
                 // overridden below if used as optional fields
                 'language'      => (ee()->config->item('deft_lang')) ? 
