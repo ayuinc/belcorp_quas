@@ -9,7 +9,11 @@
 		.pin-menu {
 			position: absolute;
 			top: 210px;
-			right: 21%;
+			right: 18%;
+			@media #{$medium-only} {
+				top: 308px;
+				right: 5%;
+			}
 		}
 	}
 }

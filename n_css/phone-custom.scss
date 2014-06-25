@@ -48,9 +48,9 @@
 			min-height: rem(91);
 		}
 		h1 {
-			font-size: 3rem !important;
-			font-size: rem(3);
-			margin-top: 0rem !important;
+			font-size: 42px;
+			font-size: rem(42);
+			margin-top: 0;
 		}
 		h4 {
 			font-size: 21px;
@@ -117,46 +117,26 @@
 			}
 		}
 	}
+
+	.nav-container {
+		.form-button {
+			position: relative;
+			form {
+				position: absolute;
+				top: 14px;
+				left: 61px;
+				button {
+					margin: 0;
+					background: none;
+					color: gray;
+					padding: 3px;
+					font-size: 16px;
+				}
+			}		
+		}
+	}
 }
 	
-
-
-	// .show-for-small-only {
-	// 	h6 {
-	// 		font-size: 14px;
-	// 		font-size: rem(14);
-	// 		margin-bottom: 0;
-	// 		&:nth-child(n+2) {
-	// 			margin-top: 28px;
-	// 		}
-	// 	}
-	// 	ul {
-	// 		padding: 0 !important;
-	// 		li {
-	// 			padding: 7px 14px;
-	// 			background: white;
-	// 			border-bottom: 1px solid whitesmoke;
-	// 			text-align: center;
-	// 			.active {
-	// 				color: $primary-color;
-	// 			}
-	// 			a {
-	// 				font-size: 18px !important;
-	// 				font-size: rem(18) !important;
-	// 			}
-	// 		}
-	// 	}
-	// 	position: absolute;
-	// 	top: 0;
-	// 	bottom: 0;
-	// 	left: 0px;
-	// 	right: 0px;
-	// 	width: 100%;
-	// 	/*height: 3500px;*/
-	// 	background: white;
-	// 	z-index: 30;
-	// 	padding: 0;
-	// }
 
 
 

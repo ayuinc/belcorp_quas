@@ -1,9 +1,9 @@
 meta.foundation-version {
   font-family: "/5.2.3/"; }
- 
+
 meta.foundation-mq-small {
   font-family: "/only screen/";
-  width: 0em; }
+  width: 0em; } 
 
 meta.foundation-mq-medium {
   font-family: "/only screen and (min-width:40.063em)/";
@@ -189,9 +189,9 @@ a.not-underline:hover {
     min-height: 91px;
     min-height: 5.6875rem; }
   .heading-block h1 {
-    font-size: 3rem !important;
-    font-size: 0.1875rem;
-    margin-top: 0rem !important; }
+    font-size: 42px;
+    font-size: 2.625rem;
+    margin-top: 0; }
   .heading-block h4 {
     font-size: 21px;
     font-size: 1.3125rem; }
@@ -230,4 +230,17 @@ a.not-underline:hover {
         padding: 7px 0;
         border-bottom: 1px solid whitesmoke; }
         .movil-menu-secundario .small-12 .no-bullet li a {
-          font-size: 18px; } }
+          font-size: 18px; }
+
+  .nav-container .form-button {
+    position: relative; }
+    .nav-container .form-button form {
+      position: absolute;
+      top: 14px;
+      left: 61px; }
+      .nav-container .form-button form button {
+        margin: 0;
+        background: none;
+        color: gray;
+        padding: 3px;
+        font-size: 16px; } }
