@@ -13,7 +13,6 @@
   	    			<li><a href="{site_url}n_escuelas/{segment_2}/gerente-regional-ventas" {if segment_3=='gerente-regional-ventas'}class="active"{/if}>Gerente Regional</a></li>
   	    			<li><a href="{site_url}n_escuelas/{segment_2}/gerente-de-zona-ventas" {if segment_3=='gerente-de-zona-ventas'}class="active"{/if}>Gerente de Zona</a></li>
   	    			<li><a href="{site_url}n_escuelas/{segment_2}/retail-ventas" {if segment_3=='retail-ventas'}class="active"{/if}>Retail</a></li>
-  	    			<li><a href="" target="_blank">Manual Curso #1</a></li>
   	    		</ul>
   	    		{/if}
 
@@ -22,6 +21,7 @@
   	    		<ul class="no-bullet">
   	    			<li><a href="{site_url}n_escuelas/{segment_2}/marcas-negocios" {if segment_3=='marcas-negocios'}class="active"{/if}>Marcas</a></li>
   	    			<li><a href="{site_url}n_escuelas/{segment_2}/planeamiento-negocios" {if segment_3=='planeamiento-negocios'}class="active"{/if}>Planeamiento</a></li>
+  	    			<li><a href="{site_url}/n_escuelas/{segment_2}/conocimiento-y-competencia-negocios" {if segment_3=='conocimiento-y-competencia-negocios'}class="active"{/if}>Conocimiento y Competencia</a></li>
   	    		</ul>
   	    		{/if} 	    		
   	    		
@@ -29,9 +29,8 @@
 	  	    		{if segment_3!='principios-lide' AND segment_3!='valores-lidera'}
 	  	    		<h6 class="uppercase text-center">Contenido</h6>
 	  	    		<ul class="no-bullet">
-	  	    			<li><a href="{site_url}n_escuelas/{segment_2}/induccion-belcorp-lide" {if segment_3=='induccion-belcorp-lide'}class="active"{/if}>Inducción Belcorp</a></li>
-	  	    			<li><a href="{site_url}n_escuelas/{segment_2}/programa-de-liderazgo-lide" {if segment_3=='programa-de-liderazgo-lide'}class="active"{/if}>Programa Liderazgo</a></li>
-	  	    			<li><a href="{site_url}n_escuelas/{segment_2}/summa-lide" {if segment_3=='summa-lide'}class="active"{/if}>SUMMA</a></li> 		    			
+								<li><a href="{site_url}n_escuelas/{segment_2}/programa-de-liderazgo-lide" {if segment_3=='programa-de-liderazgo-lide'}class="active"{/if}>Liderazgo</a></li>
+								<li><a href="{site_url}n_escuelas/plan-de-desarrollo-temas" {if segment_2=='plan-de-desarrollo-temas'}class="active"{/if}>Principios y Valores</a></li> 		    			
 	  	    		</ul>
 	  	    		{/if}	    	
   	    		{/if}
@@ -39,13 +38,10 @@
   	    		{if segment_2=='tecnologia-temas'}
   	    		<h6 class="uppercase text-center">Contenido</h6>
   	    		<ul class="no-bullet">
-  	    			<li><a href="{site_url}n_escuelas/{segment_2}/app-tec" {if segment_3=='tipo-contenido-tec'}class="active"{/if}>App</a></li>
-  	    			<li><a href="{site_url}n_escuelas/{segment_2}/colaboracion-tec" {if segment_3=='colaboracion-tec'}class="active"{/if}>Colaboración</a></li>
-  	    			<li><a href="{site_url}n_escuelas/{segment_2}/marketing-digital-tec" {if segment_3=='marketing-digital-tec'}class="active"{/if}>Marketing Digital</a></li>
-  	    			<li><a href="{site_url}n_escuelas/{segment_2}/productividad-tec" {if segment_3=='productividad-tec'}class="active"{/if}>Productividad</a></li>
-  	    			<li><a href="{site_url}n_escuelas/{segment_2}/programacion-y-desarrollo-tec" {if segment_3=='programacion-y-desarrollo-tec'}class="active"{/if}>Programación y Desarrollo</a></li>
-  	    			<li><a href="{site_url}n_escuelas/{segment_2}/redes-e-infraestructura-tec" {if segment_3=='redes-e-infraestructura-tec'}class="active"{/if}>Redes e Infraestructura</a></li>
-  	    			<li><a href="{site_url}n_escuelas/{segment_2}/sap-tec" {if segment_3=='sap-tec'}class="active"{/if}>SAP</a></li>  	    			
+							<li><a href="{site_url}n_escuelas/{segment_2}/digital-tec" {if segment_3=='digital-tec'}class="active"{/if}>Digital</a></li>
+							<li><a href="{site_url}n_escuelas/{segment_2}/centro-soluciones-tec" {if segment_3=='centro-soluciones-tec'}class="active"{/if}>Centro de Soluciones</a></li>
+							<li><a href="{site_url}n_escuelas/{segment_2}/infraestructura-tec" {if segment_3=='infraestructura-tec'}class="active"{/if}>Infraestructura</a></li>
+							<li><a href="{site_url}n_escuelas/{segment_2}/productividad-apps-tec" {if segment_3=='productividad-apps-tec'}class="active"{/if}>Productividad y Apps</a></li>	
   	    		</ul>
   	    		{/if}  	    		
   	    		
@@ -93,10 +89,10 @@
 									</div>								
 								</div>
 							</li>
-							<li>
+							<li class="hide-for-small">
 								<h5 class="uppercase list-heading">Contenidos</h5>
 							</li>
-							<li>
+							<li class="hide-for-small">
 								<ul>
 									<li><a href="#" id="nav-postgrados">Post-grados</a></li>
 									<li><a href="#" id="nav-idiomas">Idiomas</a></li>						

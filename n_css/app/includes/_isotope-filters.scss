@@ -16,8 +16,8 @@
 			@media #{$medium-only} {
 				font-size: 10px;
 				font-size: em(10);
-				padding: 7px 2px;
-				padding: rem(7) rem(2);
+				padding: 7px 7px;
+				padding: rem(7) rem(7); 
 			}
 			border-radius: 3px;
 			border: 1px solid $gray-lighter;
@@ -27,9 +27,9 @@
 				background: $gray-lighter;
 			}
 			&:after {
-				content: "\e602";
+				// content: "\e602";
 				margin-left: 14px;
-				font-family: "icomoon-typ";
+				// font-family: "icomoon-typ";
 				color: $gray;
 				display: block;
 				float: right;
@@ -44,8 +44,8 @@
 			&:checked ~ label {
 				background: $gray-lighter;
 				&:after {
-					content: "\e601";
-					font-family: "icomoon-typ";
+					// content: "\e601";
+					// font-family: "icomoon-typ";
 					margin-left: 14px;
 					display: block;
 					float: right;

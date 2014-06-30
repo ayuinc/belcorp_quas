@@ -20,15 +20,12 @@
 						{if segment_2_category_name=="Plan de Desarrollo"}
 		    			{exp:channel:entries channel="escuelas" limit="1" disable="categories|member_data|pagination" entry_id="303" }
 		    			<h1>{segment_2_category_name}</h1>
-		    		{/if}				
-		    		{if segment_2_category_name=="Tecnología" OR segment_2_category_name=="Operaciones"} 	 
+		    		{/if}	
+		    		{if segment_2_category_name=="Tecnología" OR segment_2_category_name=="Operaciones" OR segment_2_category_name=="Inducción Belcorp" OR segment_2_category_name=="Gestión Humana"} 	 
     			  	<h1>{segment_2_category_name}</h1>
     			  {if:else}
     			  	{if segment_2_category_name!="Plan de Desarrollo"}  	    				    			 				    				    		
 							<h1>Escuela de {title}</h1>
-							{if descripcion_slide1_escuela}
-							<!--<div class="note-blockquote">{descripcion_slide1_escuela}</div>-->
-							{/if}
 							{/exp:channel:entries}
 							{/if}
 						{/if}

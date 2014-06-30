@@ -1,14 +1,9 @@
 					<!-- FOOTER -->
-					<footer class="mt-14-100 text-center pt-42 pb-35 thin row ">
-						<div class="small-12 medium-9 large-9 medium-offset-1 columns">
-							<div class="small-12 large-4 medium-4 columns mb-14">
-								<a href="{site_url}n_seccion/que-hace-la-ucb-por-ti" class="list-group-item  {if segment_2=='que-hace-la-ucb-por-ti'}active{/if}">Qué Hace la UCB Por Ti</a>
-							</div>
-							<div class="small-12 large-4 medium-4 columns mb-14">
-								<a href="{site_url}n_preguntas_frecuentes" class="list-group-item {if segment_1=='n_preguntas_frecuentes'}active{/if}">Preguntas Frecuentes</a>
-							</div>
-							<div class="small-12 large-4 medium-4 columns">
-								<a href="{site_url}n_contactos" class="list-group-item {if segment_1=='n_contactos'}active{/if}">Contáctanos</a>
+					<footer class="mt-14-100 text-center pt-42 pb-35 thin row">
+						<div class="small-12 {if segment_1=='n_inicio'} large-7 medium-7 {if:else} large-8 medium-8 {/if} columns">
+							<div class="small-12 large-12 medium-12 columns mb-14">
+								<a href="{site_url}n_seccion/que-hace-la-ucb-por-ti" class="list-group-item  {if segment_2=='que-hace-la-ucb-por-ti'}active{/if}">Qué Hace la UCB Por Ti</a> | 
+								<a href="{site_url}n_preguntas_frecuentes" class="list-group-item {if segment_1=='n_preguntas_frecuentes'}active{/if}">Preguntas Frecuentes</a> | <a href="{site_url}n_contactos" class="list-group-item {if segment_1=='n_contactos'}active{/if}">Contáctanos</a> | <a href="https://www.facebook.com/aprendeconlaucb" target="_blank" class="list-group-item hover-toggle">Facebook</a> | <a href="https://twitter.com/ubelcorp"  target="_blank" class="list-group-item hover-toggle">Twitter</a>
 							</div>
 						</div>
 					</footer>

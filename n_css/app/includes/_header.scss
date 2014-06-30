@@ -2,6 +2,21 @@
 header {
 	height: 63px;
 	background: white;
+	position: fixed;
+	width: 100%;
+	left: 63px; 
+	z-index: 36;
+	@include transition(all 0.7s ease);
+	@media #{$small-only} {
+		left: 0;
+	}
+	&.homepage-on {
+		@include transform(translateX(49px)!important);
+		z-index: 20;
+		@media #{$small-only} {
+			@include transform(translateX(0px)!important);
+		}
+	}
 	.user {
 		text-align: right;
 		float: right;

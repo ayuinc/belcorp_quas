@@ -17,6 +17,7 @@
   min-height: 990px;
   position: relative;
   @include transform(translateX(60px));
+  padding-top: 70px;
   &.homepage-on {
   	@include transform(translateX(248px));
   	@media #{$small-only} {
@@ -28,9 +29,9 @@
   } 
   @media #{$small-only} {
   	@include transform(translateX(0px));
+  	padding-top: 70px;
   } 
-  -webkit-transition: .7s ease all;
-  transition: .7s ease all;
+  @include transition(all 0.7s ease);
 	background: white;
 }
 
@@ -53,6 +54,7 @@
   		@include transform(translateX(12px));
   	}
   	.nav-container {
+  		@include thin;
   		.list-group {
   			position: relative;
   			a.list-group-item,
@@ -167,6 +169,10 @@
 				@include transform(translateX(12px));
 				@include transition(all 0.3s ease);
 			}
+		}
+		header {
+			@include transform(translateX(248px));
+			@include transition(all 0.7s ease);
 		}
 	}
 }

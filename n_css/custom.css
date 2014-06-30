@@ -7647,7 +7647,31 @@ a.not-underline:hover {
 
 header {
   height: 63px;
-  background: white; }
+  background: white;
+  position: fixed;
+  width: 100%;
+  left: 63px;
+  z-index: 36;
+  -webkit-transition: all 0.7s ease;
+  -moz-transition: all 0.7s ease;
+  transition: all 0.7s ease; }
+  @media only screen and (max-width: 40em) {
+    header {
+      left: 0; } }
+  header.homepage-on {
+    -webkit-transform: translateX(49px) !important;
+    -moz-transform: translateX(49px) !important;
+    -ms-transform: translateX(49px) !important;
+    -o-transform: translateX(49px) !important;
+    transform: translateX(49px) !important;
+    z-index: 20; }
+    @media only screen and (max-width: 40em) {
+      header.homepage-on {
+        -webkit-transform: translateX(0px) !important;
+        -moz-transform: translateX(0px) !important;
+        -ms-transform: translateX(0px) !important;
+        -o-transform: translateX(0px) !important;
+        transform: translateX(0px) !important; } }
   header .user {
     text-align: right;
     float: right;
@@ -7679,7 +7703,9 @@ header {
     font-size: 1.3125rem; }
 
 footer {
-  background: #d2d3d4; }
+  border-top: 1px solid whitesmoke; }
+  footer a {
+    line-height: 28px; }
 
 .breadcrumbs {
   margin: 21px 21px 0 7px;
@@ -8006,14 +8032,12 @@ ul.no-bullet li a {
         #filters li label {
           font-size: 10px;
           font-size: 0.625em;
-          padding: 7px 2px;
-          padding: 0.4375rem 0.125rem; } }
+          padding: 7px 7px;
+          padding: 0.4375rem 0.4375rem; } }
       #filters li label:hover, #filters li label.active {
         background: #f6f6f7; }
       #filters li label:after {
-        content: "\e602";
         margin-left: 14px;
-        font-family: "icomoon-typ";
         color: #898b8e;
         display: block;
         float: right;
@@ -8026,8 +8050,6 @@ ul.no-bullet li a {
       #filters li input[type="checkbox"]:checked ~ label {
         background: #f6f6f7; }
         #filters li input[type="checkbox"]:checked ~ label:after {
-          content: "\e601";
-          font-family: "icomoon-typ";
           margin-left: 14px;
           display: block;
           float: right;
@@ -8136,8 +8158,10 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   -ms-transform: translateX(60px);
   -o-transform: translateX(60px);
   transform: translateX(60px);
-  -webkit-transition: .7s ease all;
-  transition: .7s ease all;
+  padding-top: 70px;
+  -webkit-transition: all 0.7s ease;
+  -moz-transition: all 0.7s ease;
+  transition: all 0.7s ease;
   background: white; }
   #site-canvas.homepage-on {
     -webkit-transform: translateX(248px);
@@ -8165,7 +8189,8 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
       -moz-transform: translateX(0px);
       -ms-transform: translateX(0px);
       -o-transform: translateX(0px);
-      transform: translateX(0px); } }
+      transform: translateX(0px);
+      padding-top: 70px; } }
 
 #site-menu {
   width: 248px;
@@ -8188,45 +8213,49 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
       -ms-transform: translateX(12px);
       -o-transform: translateX(12px);
       transform: translateX(12px); }
-    #site-menu.homepage-on .nav-container .list-group {
-      position: relative; }
-      #site-menu.homepage-on .nav-container .list-group a.list-group-item,
-      #site-menu.homepage-on .nav-container .list-group a.hover-toggle {
-        display: block;
-        text-decoration: none;
-        position: relative;
-        padding: 14px 21px;
-        padding: 0.875rem 1.3125rem;
-        border-top: 1px solid #e4e5e5;
-        border-bottom: 1px solid #e4e5e5;
-        color: #898b8e;
-        margin: -1px;
-        font-weight: 100; }
-        #site-menu.homepage-on .nav-container .list-group a.list-group-item.hovered, #site-menu.homepage-on .nav-container .list-group a.list-group-item.active,
-        #site-menu.homepage-on .nav-container .list-group a.hover-toggle.hovered,
-        #site-menu.homepage-on .nav-container .list-group a.hover-toggle.active {
-          color: #5a277d;
-          background: #e4e5e5;
-          display: block; }
-        #site-menu.homepage-on .nav-container .list-group a.list-group-item:before,
-        #site-menu.homepage-on .nav-container .list-group a.hover-toggle:before {
-          font-size: 21px;
-          font-size: 1.3125rem;
-          margin-right: 21px; }
-        #site-menu.homepage-on .nav-container .list-group a.list-group-item:first-child,
-        #site-menu.homepage-on .nav-container .list-group a.hover-toggle:first-child {
-          text-transform: uppercase;
-          padding: 28px 21px 14px 21px;
-          padding: 1.75rem 1.3125rem 0.875rem 1.3125rem;
-          border: none;
-          opacity: 1;
-          -webkit-transition: all 0.5s ease;
-          -moz-transition: all 0.5s ease;
-          transition: all 0.5s ease; }
-          #site-menu.homepage-on .nav-container .list-group a.list-group-item:first-child.hovered,
-          #site-menu.homepage-on .nav-container .list-group a.hover-toggle:first-child.hovered {
-            background: none;
-            opacity: 1; }
+    #site-menu.homepage-on .nav-container {
+      font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+      font-weight: 100;
+      font-style: normal; }
+      #site-menu.homepage-on .nav-container .list-group {
+        position: relative; }
+        #site-menu.homepage-on .nav-container .list-group a.list-group-item,
+        #site-menu.homepage-on .nav-container .list-group a.hover-toggle {
+          display: block;
+          text-decoration: none;
+          position: relative;
+          padding: 14px 21px;
+          padding: 0.875rem 1.3125rem;
+          border-top: 1px solid #e4e5e5;
+          border-bottom: 1px solid #e4e5e5;
+          color: #898b8e;
+          margin: -1px;
+          font-weight: 100; }
+          #site-menu.homepage-on .nav-container .list-group a.list-group-item.hovered, #site-menu.homepage-on .nav-container .list-group a.list-group-item.active,
+          #site-menu.homepage-on .nav-container .list-group a.hover-toggle.hovered,
+          #site-menu.homepage-on .nav-container .list-group a.hover-toggle.active {
+            color: #5a277d;
+            background: #e4e5e5;
+            display: block; }
+          #site-menu.homepage-on .nav-container .list-group a.list-group-item:before,
+          #site-menu.homepage-on .nav-container .list-group a.hover-toggle:before {
+            font-size: 21px;
+            font-size: 1.3125rem;
+            margin-right: 21px; }
+          #site-menu.homepage-on .nav-container .list-group a.list-group-item:first-child,
+          #site-menu.homepage-on .nav-container .list-group a.hover-toggle:first-child {
+            text-transform: uppercase;
+            padding: 28px 21px 14px 21px;
+            padding: 1.75rem 1.3125rem 0.875rem 1.3125rem;
+            border: none;
+            opacity: 1;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            transition: all 0.5s ease; }
+            #site-menu.homepage-on .nav-container .list-group a.list-group-item:first-child.hovered,
+            #site-menu.homepage-on .nav-container .list-group a.hover-toggle:first-child.hovered {
+              background: none;
+              opacity: 1; }
   #site-menu .logo {
     padding: 14px 7px;
     width: 100%;
@@ -8305,10 +8334,16 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease; }
+#site-wrapper.show-nav header {
+  -webkit-transform: translateX(248px);
+  -moz-transform: translateX(248px);
+  -ms-transform: translateX(248px);
+  -o-transform: translateX(248px);
+  transform: translateX(248px);
+  -webkit-transition: all 0.7s ease;
+  -moz-transition: all 0.7s ease;
+  transition: all 0.7s ease; }
 
-@media only screen and (max-width: 40em) {
-  .large-10 {
-    background: white; } }
 .canvas-container {
   margin: 0 auto;
   min-height: 990px; }
@@ -8444,7 +8479,7 @@ button, .button {
     width: 120px; }
     .menu-convenios > li .columns ul li {
       border-right: none;
-      padding: 0 !important;
+      padding: 0;
       line-height: 50% !important; }
       .menu-convenios > li .columns ul li a {
         color: #596c79;

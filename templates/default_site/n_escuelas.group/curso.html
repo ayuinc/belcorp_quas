@@ -4,41 +4,12 @@
 	{if logged_in}
 	
 	<!--FLOAT BUTTONS-->
-	<div class="pin-frame hide-for-small">
+	<!--<div class="pin-frame hide-for-small">
 		<div class="pin-content">
 			<div class="pin-menu">
-				<!--CONTENIDOS-->
-	      {if channel=="Cursos"}
-	        {if logged_in}
-	          {embed="includes/comerzar-curso"}
-	        {/if}
-	        {if logged_out}
-	        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand">Comenzar</a>
-					{/if}  	
-					<div class="show-for-medium-up">    
-	        {embed="includes/curso-detalles" 
-	        	tiempo-duracion-horas-curso="{tiempo-duracion-horas-curso}"
-	        	tiempo-duracion-minutos-curso="{tiempo-duracion-minutos-curso}" 
-	        	cantidad-lecciones-curso="{cantidad-lecciones-curso}" 
-	        	cantidad-video-curso="{cantidad-video-curso}" link-curso="{link-curso}" 
-	        	cantidad-modulos-cursos="{cantidad-modulos-cursos}" 
-	        }
-					</div>
-	      {/if}	
-	      
-	      <!--CONTENIDOS-->
-	      {if channel=="Contenidos"}
-	        {if tipo-contenido-recurso=='Video' OR tipo-contenido-recurso=='Artículo' OR tipo-contenido-recurso=='Audio'}
-	        	<a href="{link-encuesta-lms}" id="start_course" class="explore button expand ">ENCUESTA DE SATISFACCIÓN</a>
-	        {/if}	
-	        {if tipo-contenido-recurso=='Curso Externo'}
-	        	<a href="{link-recurso}" target="_blank" id="start_course" class="explore button expand ">COMENZAR CURSO</a>
-	        	<a href="{link-encuesta-lms}"  id="start_course" class="explore button expand ">ENCUESTA DE SATISFACCIÓN</a>
-	        {/if}
-	      {/if}	
 			</div>
 		</div>
-	</div>
+	</div>-->
 	
 	<div id="site-wrapper">
 		<div id="content-frame">	  
@@ -46,10 +17,10 @@
 		<!--MENU LADO IZQUIERDO-->
 	  {embed="n_includes/menu-izquierdo"}
 
-		<div id="site-canvas">
-		
 	  <!--TOP BANNER-->  
 	  {embed="n_includes/top-banner"} 		
+		<div id="site-canvas">
+		
 
 		<!-- CANVAS CONTAINER -->
 		<div class="row">
@@ -132,7 +103,36 @@
 							<p>{contenido-recurso}</p>
 							{/if}    	    			    		  	    		
 		    		</div>
-		    		<div class="small-12 medium-3 large-3 columns hide-for-small"></div>
+		    		<div class="small-12 medium-3 large-3 columns hide-for-small">
+		          {if channel=="Cursos"}
+			          {if logged_in}
+				          {embed="includes/comerzar-curso"}
+				        {/if}
+				        {if logged_out}
+				        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand">Comenzar</a>
+								{/if}  	
+								<div class="show-for-medium-up">    
+		            {embed="includes/curso-detalles" 
+		            	tiempo-duracion-horas-curso="{tiempo-duracion-horas-curso}"
+		            	tiempo-duracion-minutos-curso="{tiempo-duracion-minutos-curso}" 
+		            	cantidad-lecciones-curso="{cantidad-lecciones-curso}" 
+		            	cantidad-video-curso="{cantidad-video-curso}" link-curso="{link-curso}" 
+		            	cantidad-modulos-cursos="{cantidad-modulos-cursos}" 
+		            }
+								</div>
+	            {/if}	
+	            
+	            <!--CONTENIDOS-->
+	            {if channel=="Contenidos"}
+	              {if tipo-contenido-recurso=='Video' OR tipo-contenido-recurso=='Artículo' OR tipo-contenido-recurso=='Audio'}
+	              	<a href="{link-encuesta-lms}" id="start_course" class="explore button expand ">ENCUESTA DE SATISFACCIÓN</a>
+	              {/if}	
+	              {if tipo-contenido-recurso=='Curso Externo'}
+	              	<a href="{link-recurso}" target="_blank" id="start_course" class="explore button expand ">COMENZAR CURSO</a>
+	              	<a href="{link-encuesta-lms}"  id="start_course" class="explore button expand ">ENCUESTA DE SATISFACCIÓN</a>
+	              {/if}
+	            {/if}	
+		    		</div>
 		    	</div>			  	   
 			</div>
 		</div>

@@ -73,7 +73,7 @@ $lang = array(
 'This site is currently inactive.',
 
 'not_authorized' =>
-'You are not authorized to perform this action',
+'Usted no está autorizado para realizar esta acción',
 
 'auto_redirection' =>
 'You will be redirected automatically in %x seconds',
@@ -82,10 +82,10 @@ $lang = array(
 'Click here if you are not redirected automatically',
 
 'return_to_previous' =>
-'Return to Previous Page',
+'Volver a la página anterior',
 
 'not_available' =>
-'Not available',
+'No disponible',
 
 'setting' =>
 'Setting',
@@ -93,8 +93,8 @@ $lang = array(
 'preference' =>
 'Preference',
 
-'pag_first_link' => '&lsaquo; First',
-'pag_last_link' => 'Last &rsaquo;',
+'pag_first_link' => '&lsaquo; Primero',
+'pag_last_link' => 'Ultimo &rsaquo;',
 
 //----------------------------
 // Errors
@@ -104,25 +104,25 @@ $lang = array(
 'Error',
 
 'invalid_url' =>
-'The URL you submitted is not valid.',
+'La URL que has enviado no es válida.',
 
 'submission_error' =>
-'The form you submitted contained the following errors',
+'El formulario que ha enviado contenía los siguientes errores',
 
 'general_error' =>
-'The following errors were encountered',
+'Se han encontrado los siguientes errores',
 
 'invalid_action' =>
 'The action you have requested is invalid.',
 
 'current_password_required' =>
-'Your current password is required.',
+'Se requiere su contraseña actual.',
 
 'current_password_incorrect' =>
-'Your current password was not submitted correctly.',
+'Su contraseña actual no se presentó correctamente.',
 
 'captcha_required' =>
-'You must submit the word that appears in the image',
+'Usted debe presentar la palabra que aparece en la imagen',
 
 'captcha_incorrect' =>
 'You did not submit the word exactly as it appears in the image',
