@@ -106,7 +106,7 @@
 		    		<div class="small-12 medium-3 large-3 columns hide-for-small">
 		          {if channel=="Cursos"}
 			          {if logged_in}
-				          {embed="includes/comerzar-curso"}
+				          {embed="includes/comerzar-curso" id_curso="{id-curso}"}
 				        {/if}
 				        {if logged_out}
 				        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand">Comenzar</a>
