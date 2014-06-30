@@ -1,10 +1,12 @@
-{exp:channel:entries channel="cursos|tendencias" limit="200" category="{embed:categoria}" pagination="bottom" parse="inward" dynamic="off"}
+
+{exp:channel:entries channel="cursos|tendencias" limit="{get:limit}" offset="{get:offset}" parse="inward" category="{last_segment_category_id}"}
   <li  class="isotope-item 
   	{categories show_group='10' show='not 108|115|276|111|272|112|113|114|109|110|257'}
   	        {category_url_title}
   	{/categories}
   	{segment_2}
   	">
+  	{segment_3}jj
   	
   		{if interna-contenido}
   	  {if interna-contenido=="Pagina Interna"}
@@ -36,6 +38,6 @@
         {/exp:char_limit}
   		</div>
   	</a>
-  </li>  
+  </li>
 
 {/exp:channel:entries}

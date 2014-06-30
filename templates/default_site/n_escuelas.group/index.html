@@ -7,10 +7,10 @@
 	    
 		<!--MENU LADO IZQUIERDO-->
 	  {embed="n_includes/menu-izquierdo"}
-		<div id="site-canvas">
-		
 	  <!--TOP BANNER-->  
 	  {embed="n_includes/top-banner"} 		
+		<div id="site-canvas">
+		
 
 		<!-- CANVAS CONTAINER -->
 		<div class="row">
@@ -31,7 +31,7 @@
 	  	    	</div>
 	  	    </div>
 	  	    {if segment_1=='n_escuelas' AND segment_3==''}
-	  	    <div class="row {if segment_2!='operaciones-temas'}movil-menu-secundario{/if} hide-for-large hide-for-medium">
+	  	    <div class="row {if segment_2!='operaciones-temas' AND segment_2!='induccion-belcorp-temas' AND segment_2!='gestion-humana-temas' AND segment_2!='gestion-humana-temas'}movil-menu-secundario{/if} hide-for-large hide-for-medium">
 	  	    	<div class="small-12 columns">
 	  	    		{embed="n_includes/movil-menu-secundario"}
 	  	    	</div>
@@ -41,13 +41,14 @@
 	  	    	<div class="small-12 medium-9 large-9 columns">
 	  	    		{embed="n_includes/filtro-tipo-contentido"}
 	  	    		
+
 	  	    		<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 grid-panels" id="isotope-container">
-								{embed="n_includes/loop-escuelas-contenido"}
+								{embed="n_includes/loop-escuelas-contenido" categoria='{last_segment_category_id}'}
 							</ul>
 	  	    		
 	  	    		<div>
-	  	    			{embed="n_includes/pagination"}
-	  	    		</div>
+	  	    			{embed="n_includes/pagination" categoria='{last_segment_category_id}'}
+	  	    		</div>	  	    		
 	  	    		
 	  	    	</div>
 	  	    	<div class="hide-for-small medium-3 large-3 columns">
@@ -75,3 +76,4 @@
 	{/if}		
 
 {embed="n_includes/footer"}
+

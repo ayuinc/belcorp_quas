@@ -14,7 +14,6 @@
 		<li><a href="{site_url}n_escuelas/{segment_2}/gerente-regional-ventas" {if segment_3=='gerente-regional-ventas'}class="active"{/if}>Gerente Regional</a></li>
 		<li><a href="{site_url}n_escuelas/{segment_2}/gerente-de-zona-ventas" {if segment_3=='gerente-de-zona-ventas'}class="active"{/if}>Gerente de Zona</a></li>
 		<li><a href="{site_url}n_escuelas/{segment_2}/retail-ventas" {if segment_3=='retail-ventas'}class="active"{/if}>Retail</a></li>
-		<li><a href="" target="_blank">Manual Curso #1</a></li>
 	</ul>
 	{/if}
 
@@ -23,6 +22,7 @@
 	<ul class="no-bullet pl-21">
 		<li><a href="{site_url}n_escuelas/{segment_2}/marcas-negocios" {if segment_3=='marcas-negocios'}class="active"{/if}>Marcas</a></li>
 		<li><a href="{site_url}n_escuelas/{segment_2}/planeamiento-negocios" {if segment_3=='planeamiento-negocios'}class="active"{/if}>Planeamiento</a></li>
+		<li><a href="{site_url}/n_escuelas/{segment_2}/conocimiento-y-competencia-negocios" {if segment_3=='conocimiento-y-competencia-negocios'}class="active"{/if}>Conocimiento y Competencia</a></li>
 	</ul>
 	{/if} 	    		
 	
@@ -30,9 +30,8 @@
 		{if segment_3!='principios-lide' AND segment_3!='valores-lidera'}
 		<h5 class="list-heading pl-14">Secciones</h5>
 		<ul class="no-bullet pl-21">
-			<li><a href="{site_url}n_escuelas/{segment_2}/induccion-belcorp-lide" {if segment_3=='induccion-belcorp-lide'}class="active"{/if}>Inducción Belcorp</a></li>
 			<li><a href="{site_url}n_escuelas/{segment_2}/programa-de-liderazgo-lide" {if segment_3=='programa-de-liderazgo-lide'}class="active"{/if}>Liderazgo</a></li>
-			<li><a href="{site_url}n_escuelas/{segment_2}/summa-lide" {if segment_3=='summa-lide'}class="active"{/if}>SUMMA</a></li> 		    			
+			<li><a href="{site_url}n_escuelas/plan-de-desarrollo-temas" {if segment_2=='plan-de-desarrollo-temas'}class="active"{/if}>Principios y Valores</a></li> 		    			
 		</ul>
 		{/if}	    	
 	{/if}
@@ -40,13 +39,10 @@
 	{if segment_2=='tecnologia-temas'}
 	<h5 class="list-heading pl-14">Secciones</h5>
 	<ul class="no-bullet pl-21">
-		<li><a href="{site_url}n_escuelas/{segment_2}/app-tec" {if segment_3=='tipo-contenido-tec'}class="active"{/if}>App</a></li>
-		<li><a href="{site_url}n_escuelas/{segment_2}/colaboracion-tec" {if segment_3=='colaboracion-tec'}class="active"{/if}>Colaboración</a></li>
-		<li><a href="{site_url}n_escuelas/{segment_2}/marketing-digital-tec" {if segment_3=='marketing-digital-tec'}class="active"{/if}>Marketing Digital</a></li>
-		<li><a href="{site_url}n_escuelas/{segment_2}/productividad-tec" {if segment_3=='productividad-tec'}class="active"{/if}>Productividad</a></li>
-		<li><a href="{site_url}n_escuelas/{segment_2}/programacion-y-desarrollo-tec" {if segment_3=='programacion-y-desarrollo-tec'}class="active"{/if}>Programación y Desarrollo</a></li>
-		<li><a href="{site_url}n_escuelas/{segment_2}/redes-e-infraestructura-tec" {if segment_3=='redes-e-infraestructura-tec'}class="active"{/if}>Redes e Infraestructura</a></li>
-		<li><a href="{site_url}n_escuelas/{segment_2}/sap-tec" {if segment_3=='sap-tec'}class="active"{/if}>SAP</a></li>  	    			
+		<li><a href="{site_url}n_escuelas/{segment_2}/digital-tec" {if segment_3=='digital-tec'}class="active"{/if}>Digital</a></li>
+		<li><a href="{site_url}n_escuelas/{segment_2}/centro-soluciones-tec" {if segment_3=='centro-soluciones-tec'}class="active"{/if}>Centro de Soluciones</a></li>
+		<li><a href="{site_url}n_escuelas/{segment_2}/infraestructura-tec" {if segment_3=='infraestructura-tec'}class="active"{/if}>Infraestructura</a></li>
+		<li><a href="{site_url}n_escuelas/{segment_2}/productividad-apps-tec" {if segment_3=='productividad-apps-tec'}class="active"{/if}>Productividad y Apps</a></li>	
 	</ul>
 	{/if}  	    		
 	
@@ -70,32 +66,8 @@
 	
 	{if segment_1=='n_convenios'}	    		
 	<ul class="no-bullet menu-convenios">
-		<!--<li class="pl-21 mb-14">
-			<a href="#" data-dropdown="drop1">País: <span> {segment_2_category_name} </span></a>
-			<div id="drop1" class="row f-dropdown content tiny clearfix">
-				<div class="large-6 columns clearfix">
-					<ul>
-					  <li><a href="{site_url}{segment_1}/bolivia">Bolivia</a></li>
-					  <li><a href="{site_url}{segment_1}/brasil">Brasil</a></li>
-					  <li><a href="{site_url}{segment_1}/chile">Chile</a></li>
-					  <li><a href="{site_url}{segment_1}/colombia">Colombia</a></li>
-					  <li><a href="{site_url}{segment_1}/costa-rica">Costa Rica</a></li>
-					  <li><a href="{site_url}{segment_1}/ecuador">Ecuador</a></li>
-					  <li><a href="{site_url}{segment_1}/el-salvador">El Salvador</a></li>
-					  <li><a href="{site_url}{segment_1}/guatemala">Guatemala</a></li>
-					  <li><a href="{site_url}{segment_1}/mexico">México</a></li>
-					  <li><a href="{site_url}{segment_1}/panama">Panamá</a></li>
-					  <li><a href="{site_url}{segment_1}/peru">Perú</a></li>
-					  <li><a href="{site_url}{segment_1}/puerto-rico">Puerto Rico</a></li>
-					  <li><a href="{site_url}{segment_1}/republica-dominicana">Rep. Dominicana</a></li>
-					  <li><a href="{site_url}{segment_1}/usa">USA</a></li>
-					  <li><a href="{site_url}{segment_1}/venezuela">Venezuela</a></li>
-					</ul>
-				</div>								
-			</div>
-		</li>-->
 		<li>
-			<h5 class="uppercase list-heading pl-14">Contenidos</h5>
+			<h5 class="uppercase list-heading pl-14">Categorías</h5>
 		</li>
 		<li>
 			<ul>
@@ -120,10 +92,11 @@
 	<h5 class="list-heading pl-14">Links de Interés</h5>
 	<ul class="no-bullet pl-21">
 		<li><a href="{site_url}n_escuelas/plan-de-desarrollo-temas" {if segment_2=='plan-de-desarrollo-temas'}class="active"{/if}>Plan de desarrollo</a></li>
-		<li><a href="{site_url}images/documentos/PDF_Backbone.pdf" target="_blank">Backbone</a></li>
-		<li><a href="#" target="_blank" data-reveal-id="herramienta_de_certificacion">Certificación Ventas</a></li>
+		<li><a href="{site_url}n_escuelas/summa-lide" {if segment_3=='summa-lide'}class="active"{/if}>SUMMA</a></li> 
+		<li><a href="{site_url}images/documentos/PDF_Backbone.pdf" target="_blank">Nuestro Backbone</a></li>
 		<li><a href="{site_url}n_convenios/peru" {if segment_1=='n_convenios'}class="active"{/if}>Convenios</a></li>
 		<li><a href="{site_url}n_quieres_crear_un_curso" {if segment_1=='n_quieres_crear_un_curso'}style="color:#5a277d;"{/if}>Crear un curso</a></li>
+		<li><a href="#" target="_blank" data-reveal-id="herramienta_de_certificacion">Certificación Ventas</a></li>
 	</ul>
 	{/if}
 </div>

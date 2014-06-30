@@ -1,27 +1,36 @@
 					<!-- HEADER -->
-					<header class="row">
-						<div class="header-container small-11 small-centered medium-9 large-11">
+					<header class="row {if segment_1=='n_inicio'}homepage-on{/if}">
+						<div class="header-container small-11 small-centered medium-9 {if segment_1=='n_inicio'} large-12 {if:else} large-9 {/if}">
 							<div class="small-3 medium-3 large-3 columns pt-21">
-				        {if segment_1=='n_escuelas' AND segment_3!=''}
-				        <a class="menu-icon hide-for-medium hide-for-large hide-for-small" href="javascript: history.go(-1)"><i class="icon-typ-left36"></i></a>
+				        {if segment_1=='n_escuelas' AND segment_3!='' AND segment_2!='curso' AND segment_2!='curso-destacados'}
+				        	<a class="menu-icon hide-for-medium hide-for-large " href="javascript: history.go(-1)"><i class="icon-typ-left36"></i></a>
 				        {/if}
-				        {if segment_2!='curso' AND segment_2!='curso-destacados'}
-								<a href="#" class="toggle-nav-link hide-for-large">
-									<i class="icon-typ-th-menu-outline"></i>
+				        {if segment_1!='n_inicio' AND segment_2!='curso' AND segment_2!='curso-destacados'}
+				        <a href="#" class="toggle-nav-link hide-for-large thin hide-for-small">
+									<i class="icon-typ-th-menu"></i>
+									MENÚ
 								</a>	
+								{/if}	
+				        {if segment_2=='curso' OR segment_2=='curso-destacados' OR segment_3==''}
+									<a href="#" class="toggle-nav-link hide-for-large thin hide-for-medium">
+										<i class="icon-typ-th-menu"></i>
+										<span class="hide-for-small">MENÚ</span>
+									</a>	
 								{/if}						
 							</div>
-							<div class="small-7 medium-4 large-7 columns text-center pt-14">
+							<div class="small-7 medium-4 large-6 columns text-center pt-14">
 								<h6 class="m-0 hide-for-medium hide-for-large">
 				      	{if segment_1=='n_escuelas'}
 				      		{if segment_3==''}
-						      	{if segment_2!='plan-de-desarrollo-temas' AND segment_2!='tecnologia-temas' AND segment_2!='operaciones-temas'}
+						      	{if segment_2!='plan-de-desarrollo-temas' AND segment_2!='tecnologia-temas' AND segment_2!='operaciones-temas' AND segment_2!='induccion-belcorp-temas' AND segment_2!='gestion-humana-temas' AND segment_2!='summa-lide'}
 											Escuela de 
 						      	{/if} 
 					      	{/if}	
 					      	{last_segment_category_name}
-				      	{/if}
-				      	
+					      	{if segment_2=='curso' OR segment_2=='curso-destacados'}
+										CURSO
+					      	{/if}				      	
+				      	{/if}				      	
 				      	{if segment_1=='n_seccion'}
 				      		{if segment_2=='que-hace-la-ucb-por-ti'}
 				      			QUÉ HACE LA UCB POR TI
@@ -40,7 +49,7 @@
 							</div>
 							
 							<!--ONLY FOR LARGE-->
-							<div class="small-2 medium-5 large-2 columns p-0 show-for-large-only">
+							<div class="small-2 medium-5 large-3 columns p-0 show-for-large-only">
 								<div class="user {if segment_1=='n_inicio'}user-relocate{/if} show-for-large-only">
 									<div class="hide-for-small">
 										<span>
@@ -59,7 +68,7 @@
 							</div>
 							
 							<!--ONLY FOR MEDIUM-->
-							<div class="small-2 medium-5 large-2 columns p-0">
+							<div class="small-2 medium-5 large-3 columns p-0">
 								<div class="user user-relocate-medium show-for-medium-only">
 									<div class="hide-for-small">
 										<span>
