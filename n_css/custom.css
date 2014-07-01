@@ -1,10 +1,10 @@
-meta.foundation-version {
+ meta.foundation-version {
   font-family: "/5.2.3/"; }
 
 meta.foundation-mq-small {
   font-family: "/only screen/";
   width: 0em; }
- 
+
 meta.foundation-mq-medium {
   font-family: "/only screen and (min-width:40.063em)/";
   width: 40.063em; }
@@ -8362,9 +8362,9 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
 .heading-block h4 {
   font-size: 1.75rem; }
 .heading-block div:last-child {
-  padding-top: 70px;
-  padding-top: 4.375rem;
-  min-height: 180px;
+  padding-top: 42px;
+  padding-top: 2.625rem;
+  min-height: 126px;
   border-left: 5px solid #909da8; }
 
 .heading-link {
