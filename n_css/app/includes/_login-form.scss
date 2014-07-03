@@ -44,5 +44,12 @@
 		background-color: $morado;
 		height: 768px;
 		height: rem(768);
+		background: url(/images/bg-login.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
 	}	
+}
+
+body.overflow-none {
+	overflow: hidden !important; 
 }

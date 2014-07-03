@@ -1,6 +1,7 @@
 // AYU OFF CANVAS 
 
-var $hoverToggle = $('.hover-toggle'),
+var $menuToggle = $('.toggle-nav'),
+    $hoverToggle =  $('.hover-toggle'),
     $linkToggle = $('.toggle-nav-link');
 
 $(function() {
@@ -8,9 +9,9 @@ $(function() {
   if ($(window).width() < 1025) {
     $linkToggle.click(toggleNav);
   } else {
-    $hoverToggle.on('mouseover', toggleNav);
-    $hoverToggle.on('mouseleave', toggleNav);
-    $hoverToggle.on('mouseover', hovered);
+    $menuToggle.on('mouseenter', toggleNav);
+    $menuToggle.on('mouseleave', toggleNav);
+    $hoverToggle.on('mouseenter', hovered);
     $hoverToggle.on('mouseleave', unhovered);
   }
 
@@ -36,14 +37,3 @@ function hovered(){
 function unhovered(){
   $(this).removeClass('hovered');
 }
-
-
-
-
-
-
-
-
-
-
-
