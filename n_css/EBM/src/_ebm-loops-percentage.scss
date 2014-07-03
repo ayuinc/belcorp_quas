@@ -2,48 +2,12 @@
 @mixin percent($percentage) {
   @if $percentage == true {
 		@for $i from 1 to 11 {
-		  // Padding shorthand percentage
-		  .#{nth($box-model-abbr, 1)}-#{$i*$times}-100 {
-		    #{nth($box-model-sides, 1)}: percentage(($i*($times/100))) !important;
-		  }
-		  // Padding top percentage
-		  .#{nth($box-model-abbr, 2)}-#{$i*$times}-100 {
-		    #{nth($box-model-sides, 2)}: percentage(($i*($times/100))) !important;
-		  }
-		  // Padding right percentage
-		  .#{nth($box-model-abbr, 3)}-#{$i*$times}-100 {
-		    #{nth($box-model-sides, 3)}: percentage(($i*($times/100))) !important;
-		  }
-		  // Padding bottom percentage
-		  .#{nth($box-model-abbr, 4)}-#{$i*$times}-100 {
-		    #{nth($box-model-sides, 4)}: percentage(($i*($times/100))) !important;
-		  }
-		  // Padding left percentage
-		  .#{nth($box-model-abbr, 5)}-#{$i*$times}-100 {
-		    #{nth($box-model-sides, 5)}: percentage(($i*($times/100))) !important;
-		  }
-
-		  // Margin shorthand percentage
-		  .#{nth($box-model-abbr, 6)}-#{$i*$times}-100 {
-		    #{nth($box-model-sides, 6)}: percentage(($i*($times/100))) !important;
-		  }
-		  // Margin top percentage
-		  .#{nth($box-model-abbr, 7)}-#{$i*$times}-100 {
-		    #{nth($box-model-sides, 7)}: percentage(($i*($times/100))) !important;
-		  }
-		  // Margin right percentage
-		  .#{nth($box-model-abbr, 8)}-#{$i*$times}-100 {
-		    #{nth($box-model-sides, 8)}: percentage(($i*($times/100))) !important;
-		  }
-		  // Margin bottom percentage
-		  .#{nth($box-model-abbr, 9)}-#{$i*$times}-100 {
-		    #{nth($box-model-sides, 9)}: percentage(($i*($times/100))) !important;
-		  }
-		  // Margin left percentage
-		  .#{nth($box-model-abbr, 10)}-#{$i*$times}-100 {
-		    #{nth($box-model-sides, 10)}: percentage(($i*($times/100))) !important;
-		  }
+			@for $j from 1 to length($box-model-sides) {
+			  .#{nth($box-model-abbr, $j)}-#{$i*$times}-100 {
+			    #{nth($box-model-sides, $j)}: percentage(($i*($times/100))) !important;
+			  }
+			}
 		}
-  }
+	}
 }
 @include percent($percentage);

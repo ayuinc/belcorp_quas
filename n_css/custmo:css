@@ -1,3 +1,4 @@
+@charset "utf-8";
 meta.foundation-version {
   font-family: "/5.2.3/"; }
 
@@ -8,7 +9,7 @@ meta.foundation-mq-small {
 meta.foundation-mq-medium {
   font-family: "/only screen and (min-width:40.063em)/";
   width: 40.063em; }
- 
+
 meta.foundation-mq-large {
   font-family: "/only screen and (min-width:64.063em)/";
   width: 64.063em; }
@@ -7768,13 +7769,7 @@ footer {
   .login-formulario .bg-morado {
     background-color: #5a277d;
     height: 768px;
-    height: 48rem;
-    background: url(/images/bg-login.jpg);
-    background-size: cover;
-    background-repeat: no-repeat; }
-
-body.overflow-none {
-  overflow: hidden !important; }
+    height: 48rem; }
 
 .grid-panels a.link-wrapper {
   display: block; }
@@ -8289,8 +8284,7 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
       border-bottom: 1px solid #6e2f98;
       color: #c49be0;
       margin: -1px;
-      font-weight: 100;
-      font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
+      font-weight: 100; }
       #site-menu .nav-container .list-group a.list-group-item.hovered, #site-menu .nav-container .list-group a.list-group-item.active,
       #site-menu .nav-container .list-group a.hover-toggle.hovered,
       #site-menu .nav-container .list-group a.hover-toggle.active {
@@ -8301,8 +8295,7 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
       #site-menu .nav-container .list-group a.hover-toggle:before {
         font-size: 21px;
         font-size: 1.3125rem;
-        margin-right: 21px;
-        font-family: "icomoon-typ"; }
+        margin-right: 21px; }
       #site-menu .nav-container .list-group a.list-group-item:first-child,
       #site-menu .nav-container .list-group a.hover-toggle:first-child {
         text-transform: uppercase;

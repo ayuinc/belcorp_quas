@@ -92,6 +92,9 @@
 			  			opacity: 1;
 			  		}
 		  		}
+		  		span { 
+			  		font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+		  		}
   			}
   		}
   	}
@@ -122,6 +125,7 @@
   			color: lighten($primary-color, 42%);
   			margin: -1px;
   			font-weight: 100;
+  			font-family: $body-font-family;
 	  		&.hovered,
 	  		&.active {
 	  			color: lighten($primary-color, 56%);
@@ -132,6 +136,7 @@
 	  			font-size: 21px;
 	  			font-size: rem(21);
 	  			margin-right: 21px;
+	  			font-family: "icomoon-typ";
 	  		}
 	  		&:first-child {
 					text-transform: uppercase;
