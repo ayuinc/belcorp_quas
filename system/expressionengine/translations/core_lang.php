@@ -33,10 +33,10 @@ $lang = array(
 'Submit',
 
 'update' => 
-'Update',
+'Actualizar',
 
 'thank_you' => 
-'Thank You!',
+'Gracias!',
 
 'page' => 
 'Page',
@@ -99,22 +99,22 @@ $lang = array(
 'Error',
 
 'invalid_url' => 
-'The URL you submitted is not valid.',
+'La URL que has enviado no es válida.',
 
 'submission_error' => 
-'The form you submitted contained the following errors',
+'El formulario que ha enviado contenía los siguientes errores',
 
 'general_error' => 
 'Se han encontrado los siguientes errores',
 
 'invalid_action' => 
-'The action you have requested is invalid.',
+'La acción que ha solicitado no es válida.',
 
 'current_password_required' => 
-'Your current password is required.',
+'Se requiere su contraseña actual.',
 
 'current_password_incorrect' => 
-'Your current password was not submitted correctly.',
+'Su contraseña actual no se presentó correctamente.',
 
 'captcha_required' => 
 'You must submit the word that appears in the image',

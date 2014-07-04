@@ -27,11 +27,14 @@
   	    		
   	    		{if segment_2=='liderazgo-y-cultura-temas'}
 	  	    		{if segment_3!='principios-lide' AND segment_3!='valores-lidera'}
-	  	    		<h6 class="uppercase text-center">Contenido</h6>
-	  	    		<ul class="no-bullet">
-								<li><a href="{site_url}n_escuelas/{segment_2}/programa-de-liderazgo-lide" {if segment_3=='programa-de-liderazgo-lide'}class="active"{/if}>Liderazgo</a></li>
-								<li><a href="{site_url}n_escuelas/plan-de-desarrollo-temas" {if segment_2=='plan-de-desarrollo-temas'}class="active"{/if}>Principios y Valores</a></li> 		    			
-	  	    		</ul>
+							<h5 class="list-heading pl-14">Liderazgo</h5>
+							<ul class="no-bullet pl-21">
+								<li><a href="{site_url}n_escuelas/{segment_2}/summa-lide" {if segment_3=='summa-lide'}class="active"{/if}>SUMMA</a></li>
+								<li><a href="{site_url}n_escuelas/{segment_2}/plan-de-desarrollo-temas" {if segment_3=='plan-de-desarrollo-temas'}class="active"{/if}>Plan de Desarrollo</a></li> 		    		</ul>
+							<h5 class="list-heading pl-14">Cultura</h5>
+							<ul class="no-bullet pl-21">	
+								<li><a href="{site_url}n_escuelas/{segment_2}/backbone-lc" target="_blank">Backbone</a></li>
+							</ul>
 	  	    		{/if}	    	
   	    		{/if}
   	    		
