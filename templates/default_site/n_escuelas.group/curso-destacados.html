@@ -38,7 +38,7 @@
 		    		<div class="small-12 medium-3 large-3 columns show-for-small-only">
 		          {if channel=="Cursos"}
 			          {if logged_in}
-				          {embed="includes/comerzar-curso"}
+				          {embed="n_includes/comerzar-curso" id_curso="{id-curso}"}
 				        {/if}
 				        {if logged_out}
 				        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand">Comenzar</a>
@@ -57,11 +57,11 @@
 	            <!--CONTENIDOS-->
 	            {if channel=="Contenidos"}
 	              {if tipo-contenido-recurso=='Video' OR tipo-contenido-recurso=='Artículo' OR tipo-contenido-recurso=='Audio'}
-	              	<a href="{link-encuesta-lms}" id="start_course" class="explore button expand ">ENCUESTA DE SATISFACCIÓN</a>
+	              	{embed="n_includes/comerzar-encuesta" id_curso="{id-encuesta}"}
 	              {/if}	
 	              {if tipo-contenido-recurso=='Curso Externo'}
 	              	<a href="{link-recurso}" target="_blank" id="start_course" class="explore button expand ">COMENZAR CURSO</a>
-	              	<a href="{link-encuesta-lms}"  id="start_course" class="explore button expand ">ENCUESTA DE SATISFACCIÓN</a>
+	              	{embed="n_includes/comerzar-encuesta" id_curso="{id-encuesta}"}
 	              {/if}
 	            {/if}	
 		    		</div>
@@ -106,7 +106,7 @@
 		    		<div class="small-12 medium-3 large-3 columns hide-for-small">
 		          {if channel=="Cursos"}
 			          {if logged_in}
-				          {embed="includes/comerzar-curso"}
+				          {embed="n_includes/comerzar-curso" id_curso="{id-curso}"}
 				        {/if}
 				        {if logged_out}
 				        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand">Comenzar</a>
@@ -125,11 +125,11 @@
 	            <!--CONTENIDOS-->
 	            {if channel=="Contenidos"}
 	              {if tipo-contenido-recurso=='Video' OR tipo-contenido-recurso=='Artículo' OR tipo-contenido-recurso=='Audio'}
-	              	<a href="{link-encuesta-lms}" id="start_course" class="explore button expand ">ENCUESTA DE SATISFACCIÓN</a>
+	              	{embed="n_includes/comerzar-encuesta" id_curso="{id-encuesta}"}
 	              {/if}	
 	              {if tipo-contenido-recurso=='Curso Externo'}
 	              	<a href="{link-recurso}" target="_blank" id="start_course" class="explore button expand ">COMENZAR CURSO</a>
-	              	<a href="{link-encuesta-lms}"  id="start_course" class="explore button expand ">ENCUESTA DE SATISFACCIÓN</a>
+	              	{embed="n_includes/comerzar-encuesta" id_curso="{id-encuesta}"}
 	              {/if}
 	            {/if}	
 		    		</div>
