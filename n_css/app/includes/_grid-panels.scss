@@ -82,32 +82,42 @@
 	// ESCUELAS Colors
 	.ventas-temas {
 		.panel-curso {
-			border-right: 10px solid $primary-color !important;
+			border-right: 10px solid rgb(30,33,107) !important;
 		}
 	}
 	.negocios-temas {
 		.panel-curso {
-			border-right: 10px solid $warning-color !important;
+			border-right: 10px solid rgb(239,62,66) !important;
 		}
 	}
 	.liderazgo-y-cultura-temas {
 		.panel-curso {
-			border-right: 10px solid $info-color !important;
+			border-right: 10px solid rgb(00,188,228) !important;
 		}
 	}
 	.innovacion-temas {
 		.panel-curso {
-			border-right: 10px solid $success-color !important;
+			border-right: 10px solid rgb(141, 198, 63) !important;
 		}
 	}
 	.tecnologia-temas {
 		.panel-curso {
-			border-right: 10px solid $alert-color !important;
+			border-right: 10px solid rgb(00,170,166) !important; 
 		}
 	}
 	.operaciones-temas {
 		.panel-curso {
-			border-right: 10px solid $secondary-color !important;
+			border-right: 10px solid rgb(255, 221, 00) !important;
+		}
+	}
+	.gestion-humana-temas {
+		.panel-curso {
+			border-right: 10px solid rgb(238,43,116) !important;
+		}
+	}
+	.induccion-belcorp-temas {
+		.panel-curso {
+			border-right: 10px solid rgb(75,94,170) !important;
 		}
 	}
 }

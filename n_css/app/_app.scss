@@ -158,4 +158,8 @@ ul.inline-list.username {
 	left: -102px;
 }
 
-
+.no-bullet {
+	li {
+		line-height: 24px;
+	}
+}

@@ -1,3 +1,4 @@
+@charset "utf-8";
 meta.foundation-version {
   font-family: "/5.2.3/"; }
 
@@ -8,7 +9,7 @@ meta.foundation-mq-small {
 meta.foundation-mq-medium {
   font-family: "/only screen and (min-width:40.063em)/";
   width: 40.063em; }
- 
+
 meta.foundation-mq-large {
   font-family: "/only screen and (min-width:64.063em)/";
   width: 64.063em; }
@@ -7738,7 +7739,15 @@ footer {
     font-style: normal;
     color: white;
     margin-top: 18rem;
-    font-size: 2rem; }
+    font-size: 2rem;
+    font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+    font-weight: 100;
+    font-style: normal;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 100%;
+    text-transform: uppercase; }
   .login-formulario p {
     color: #5a277d;
     font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
@@ -7771,7 +7780,8 @@ footer {
     height: 48rem;
     background: url(/images/bg-login.jpg);
     background-size: cover;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    background-position-x: -180px; }
 
 body.overflow-none {
   overflow: hidden !important; }
@@ -7859,7 +7869,7 @@ body.overflow-none {
   color: #596c79;
   font-size: 0.875rem; }
 .grid-panels .ventas-temas .panel-curso {
-  border-right: 10px solid #5a277d !important; }
+  border-right: 10px solid #1e216b !important; }
 .grid-panels .negocios-temas .panel-curso {
   border-right: 10px solid #ef3e42 !important; }
 .grid-panels .liderazgo-y-cultura-temas .panel-curso {
@@ -7867,9 +7877,13 @@ body.overflow-none {
 .grid-panels .innovacion-temas .panel-curso {
   border-right: 10px solid #8dc63f !important; }
 .grid-panels .tecnologia-temas .panel-curso {
-  border-right: 10px solid #e5ff36 !important; }
+  border-right: 10px solid #00aaa6 !important; }
 .grid-panels .operaciones-temas .panel-curso {
-  border-right: 10px solid #aa7bc9 !important; }
+  border-right: 10px solid #ffdd00 !important; }
+.grid-panels .gestion-humana-temas .panel-curso {
+  border-right: 10px solid #ee2b74 !important; }
+.grid-panels .induccion-belcorp-temas .panel-curso {
+  border-right: 10px solid #4b5eaa !important; }
 
 .search-block form input,
 .search-block form .input {
@@ -8018,6 +8032,8 @@ ul.no-bullet li a {
   font-size: 0.875rem;
   text-transform: uppercase; }
   ul.no-bullet li a:hover {
+    color: #481f66; }
+  ul.no-bullet li a.active {
     color: #481f66; }
 
 #filters {
@@ -8369,6 +8385,7 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   margin-top: -1rem;
   text-transform: uppercase;
   line-height: 100%;
+  color: #65686a;
   /*line-height: rem(10);*/ }
 .heading-block h4 {
   font-size: 1.75rem; }
@@ -8526,6 +8543,9 @@ ul.inline-list.username li {
 .user-relocate {
   position: absolute;
   left: -102px; }
+
+.no-bullet li {
+  line-height: 24px; }
 
 .escuela-block h1, .escuela-block h4, .escuela-block p {
   font-family: "museo-sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
