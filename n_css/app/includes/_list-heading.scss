@@ -17,6 +17,10 @@ ul.no-bullet {
 			font-size: 14px;
 			font-size: rem(14);
 			text-transform: uppercase;
+			&.active {
+				color: $morado-hover;
+			} 
+			
 		}
 	}
 }

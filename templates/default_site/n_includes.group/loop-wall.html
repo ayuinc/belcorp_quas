@@ -1,35 +1,15 @@
   	    		<h5 class="uppercase mb-7 text-primary">{embed:seccion}</h5>
   	    		<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3 grid-panels">
-  	    			{if embed:seccion=='Innovacion'}
-							{exp:channel:entries channel="cursos|tendencias" limit="3" dynamic="off" category="114"} 
-							{/if} 	
-  	    			{if embed:seccion=='Ventas'}
-							{exp:channel:entries channel="cursos|tendencias" limit="3" dynamic="off" category="111"} 
-							{/if} 			
-  	    			{if embed:seccion=='Negocios'}
-							{exp:channel:entries channel="cursos|tendencias" limit="3" dynamic="off" category="112"} 
-							{/if} 				
-  	    			{if embed:seccion=='Liderazgo y Cultura'}
-							{exp:channel:entries channel="cursos|tendencias" limit="3" dynamic="off" category="113"} 
-							{/if} 																	    		
-  	    			{if embed:seccion=='Tecnologia'}
-							{exp:channel:entries channel="cursos|tendencias" limit="3" dynamic="off" category="110"} 
-							{/if} 	
-  	    			{if embed:seccion=='Operaciones'}
-							{exp:channel:entries channel="cursos|tendencias" limit="3" dynamic="off" category="109"} 
-							{/if}
-  	    			{if embed:seccion=='Destacados'}
-							{exp:channel:entries channel="cursos|tendencias" limit="3" dynamic="off" category="257"} 
-							{/if}							 														
+							{exp:channel:entries channel="cursos|tendencias" limit="3" dynamic="off" category="257"}												
   	    			<li>
    	    				{if interna-contenido}
 								  {if interna-contenido=="Pagina Interna"}
-						      	<a href="{site_url}n_escuelas/curso-destacados/{url_title}" class="link-wrapper">
+						      	<a href="{site_url}n_escuelas/curso-destacados/{url_title}" class="link-wrapper" onclick="ga('send', 'event', 'inicio', 'destacados', '{title}');">
 						      {if:else}
-						        <a href="{link-recurso}" target="_blank" class="link-wrapper">
+						        <a href="{link-recurso}" target="_blank" class="link-wrapper" onclick="ga('send', 'event', 'inicio', 'destacados', '{title}');">
 						      {/if}  
    	    				{if:else}
-   	    				<a href="{site_url}n_escuelas/curso-destacados/{url_title}" class="link-wrapper">
+   	    				<a href="{site_url}n_escuelas/curso-destacados/{url_title}" class="link-wrapper" onclick="ga('send', 'event', 'inicio', 'destacados', '{title}');">
    	    				{/if}	    				
 	  	    				<div class="panel-heading">
 								  	{if imagen-recurso}

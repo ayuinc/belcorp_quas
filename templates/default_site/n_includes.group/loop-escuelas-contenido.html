@@ -8,12 +8,12 @@
   	
   		{if interna-contenido}
   	  {if interna-contenido=="Pagina Interna"}
-      	<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper">
+      	<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper" onclick="ga('send', 'event', 'escuelas', '{segment_2}', '{title}');">
       {if:else}
-        <a href="{link-recurso}" target="_blank" class="link-wrapper">
+        <a href="{link-recurso}" target="_blank" class="link-wrapper" onclick="ga('send', 'event', 'escuelas', '{segment_2}', '{title}');">
       {/if}  
   		{if:else}
-  		<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper">
+  		<a href="{site_url}n_escuelas/curso/{url_title}" class="link-wrapper" onclick="ga('send', 'escuelas', 'home', '{segment_2}', '{title}');">
   		{/if}
 
   		<div class="panel-curso">
