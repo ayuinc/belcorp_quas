@@ -7,7 +7,7 @@
           {embed="includes/comerzar-curso"}
         {/if}
         {if logged_out}
-        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand">Comenzar</a>
+        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand" onclick="ga('send', 'event', 'curso', 'comenzar');">Comenzar</a>
 				{/if}  	
 				<div class="show-for-medium-up">    
         {embed="includes/curso-detalles" 
@@ -23,11 +23,13 @@
       <!--CONTENIDOS-->
       {if channel=="Contenidos"}
         {if tipo-contenido-recurso=='Video' OR tipo-contenido-recurso=='Artículo' OR tipo-contenido-recurso=='Audio'}
-        	<a href="{link-encuesta-lms}" id="start_course" class="explore button expand ">ENCUESTA DE SATISFACCIÓN</a>
+        	{if segment_3!='descarga-tu-manual-curso-1'}
+        	<a href="{link-encuesta-lms}" id="start_course" class="explore button expand " onclick="ga('send', 'event', 'contenido', 'encuesta de satisfaccion');">ENCUESTA DE SATISFACCIÓN</a>
+        	{/if}
         {/if}	
         {if tipo-contenido-recurso=='Curso Externo'}
         	<a href="{link-recurso}" target="_blank" id="start_course" class="explore button expand ">COMENZAR CURSO</a>
-        	<a href="{link-encuesta-lms}"  id="start_course" class="explore button expand ">ENCUESTA DE SATISFACCIÓN</a>
+        	<a href="{link-encuesta-lms}"  id="start_course" class="explore button expand " onclick="ga('send', 'event', 'contenido', 'encuesta de satisfaccion');">ENCUESTA DE SATISFACCIÓN</a>
         {/if}
       {/if}	
 		</div>
