@@ -6,7 +6,7 @@ var $menuToggle = $('.toggle-nav'),
 
 $(function() {
 
-  if ($(window).width() < 1025) {
+  if ($(window).width() < 1281) {
     $linkToggle.click(toggleNav);
   } else {
     $menuToggle.on('mouseenter', toggleNav);
