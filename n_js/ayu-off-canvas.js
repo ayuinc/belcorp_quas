@@ -4,18 +4,20 @@ var $menuToggle = $('.toggle-nav'),
     $hoverToggle =  $('.hover-toggle'),
     $linkToggle = $('.toggle-nav-link');
 
-$(function() {
+(function() {
 
-  if ($(window).width() < 1281) {
-    $linkToggle.click(toggleNav);
-  } else {
-    $menuToggle.on('mouseenter', toggleNav);
-    $menuToggle.on('mouseleave', toggleNav);
-    $hoverToggle.on('mouseenter', hovered);
-    $hoverToggle.on('mouseleave', unhovered);
-  }
+    $(document).ready(function(){
+      if($(window).width() < 1281) {
+        $linkToggle.click(toggleNav);
+      } else {
+        $menuToggle.on('mouseenter', toggleNav);
+        $menuToggle.on('mouseleave', toggleNav);
+        $hoverToggle.on('mouseenter', hovered);
+        $hoverToggle.on('mouseleave', unhovered);
+      }
+    });
 
-});
+})();
 
 
 /*========================================

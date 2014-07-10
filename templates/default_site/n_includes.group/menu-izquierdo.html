@@ -1,8 +1,10 @@
 	<!-- MENU-IZQUIERDO -->
 	<div id="site-menu" class="toggle-nav {if segment_1=='n_inicio'}homepage-on{/if}">
-		<div class="logo">
-			<a href="{site_url}n_inicio" class="hover-toggle"><img src="{site_url}n_img/logo-header-nuevo.png"></a>
-		</div>
+		<a href="{site_url}n_inicio" class="hover-toggle block">
+			<div class="logo">
+				<img src="{site_url}n_img/logo-header-nuevo.png">
+			</div>
+		</a>
 		<div class="nav-container">
 			<div class="list-group hide-for-large hide-for-medium">
 				<a class="list-group-item nav-title hover-toggle">LINKS DE INTERÉS</a>
@@ -13,6 +15,11 @@
 				<a href="{site_url}n_quieres_crear_un_curso" class="list-group-item icon-typ-edit  hover-toggle {if segment_1=='n_quieres_crear_un_curso'}active{/if}"  onclick="ga('send', 'event', 'menu-izquierdo', 'crea un curso');"><span>Crea un curso</span></a>
 				<a href="#" class="list-group-item icon-typ-clipboard  hover-toggle hide-for-small" onclick="ga('send', 'event', 'menu-izquierdo', 'certificacion ventas');"><span>Certificación Ventas</span></a>
 			</div>
+			{if segment_1!='n_inicio'}
+			<div class="list-group">
+				<a class="list-group-item nav-title toggle-nav-link hover-toggle visible icon-typ-th-menu"><span>MENÚ</span></a>
+			</div>
+			{/if}
 			<div class="list-group">
 				<a class="list-group-item nav-title hover-toggle">CONTENIDOS</a>
 				<a href="{site_url}n_escuelas/induccion-belcorp-temas" class="list-group-item icon-typ-user-add-outline  hover-toggle {if segment_2=='induccion-belcorp-temas'}active{/if}" onclick="ga('send', 'event', 'menu-izquierdo', 'induccion belcorp');"><span>Inducción Belcorp</span></a>

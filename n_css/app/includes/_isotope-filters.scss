@@ -42,7 +42,7 @@
 		input[type="checkbox"] {
 			display: none;			
 			&:checked ~ label {
-				background: $gray-lighter;
+				background: $gray-light;
 				&:after {
 					// content: "\e601";
 					// font-family: "icomoon-typ";
