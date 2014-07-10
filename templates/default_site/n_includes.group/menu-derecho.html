@@ -31,10 +31,10 @@
 		<h5 class="list-heading pl-14">Liderazgo</h5>
 		<ul class="no-bullet pl-21">
 			<li><a href="{site_url}n_escuelas/{segment_2}/summa-lide" {if segment_3=='summa-lide'}class="active"{/if} onclick="ga('send', 'event', 'menu-secundario', 'liderazgo y cultura', 'summa');">SUMMA</a></li>
-			<li><a href="{site_url}n_escuelas/plan-de-desarrollo-temas" {if segment_3=='plan-de-desarrollo-temas'}class="active"{/if} onclick="ga('send', 'event', 'menu-izquierdo', 'plan de desarrollo');">Plan de Desarrollo</a></li> 		    		</ul>
+			<li><a href="{site_url}n_escuelas/{segment_2}/plan-de-desarrollo-lide" {if segment_3=='plan-de-desarrollo-lide'}class="active"{/if} onclick="ga('send', 'event', 'menu-izquierdo', 'plan de desarrollo');">Plan de Desarrollo</a></li> 		    		</ul>
 		<h5 class="list-heading pl-14">Cultura</h5>
 		<ul class="no-bullet pl-21">	
-			<li><a href="{site_url}n_escuelas/{segment_2}/backbone-lc" target="_blank" onclick="ga('send', 'event', 'menu-secundario', 'liderazgo y cultura', 'backbone');">Backbone</a></li>
+			<li><a href="{site_url}n_escuelas/{segment_2}/backbone-lc" onclick="ga('send', 'event', 'menu-secundario', 'liderazgo y cultura', 'backbone');">Backbone</a></li>
 		</ul>
 		{/if}	    	
 	{/if}
@@ -86,8 +86,10 @@
 	{if segment_1!='n_convenios'}
 	<h5 class="list-heading pl-14">Links de Interés</h5>
 	<ul class="no-bullet pl-21">
-		<li><a href="{site_url}n_escuelas/plan-de-desarrollo-temas" {if segment_2=='plan-de-desarrollo-temas'}class="active"{/if} onclick="ga('send', 'event', 'menu-secundario', 'diseña tu plan de desarrollo');">Plan de desarrollo</a></li>
+		{if segment_3!='plan-de-desarrollo-lide'}
+		<li><a href="{site_url}n_escuelas/liderazgo-y-cultura-temas/plan-de-desarrollo-lide" {if segment_3=='plan-de-desarrollo-lide'}class="active"{/if} onclick="ga('send', 'event', 'menu-secundario', 'plan de desarrollo');">Plan de desarrollo</a></li>
 		<li><a href="{site_url}n_escuelas/summa-lide" {if segment_3=='summa-lide'}class="active"{/if} onclick="ga('send', 'event', 'menu-secundario', 'summa: tu herramienta de gestion');">SUMMA</a></li> 
+		{/if}
 		<li><a href="{site_url}images/documentos/PDF_Backbone.pdf" target="_blank" onclick="ga('send', 'event', 'menu-secundario', 'nuestro backbone');">Nuestro Backbone</a></li>
 		<li><a href="{site_url}n_convenios/peru" {if segment_1=='n_convenios'}class="active"{/if} onclick="ga('send', 'event', 'menu-secundario', 'nuestros convenios');">Convenios</a></li>
 		<li><a href="{site_url}n_quieres_crear_un_curso" {if segment_1=='n_quieres_crear_un_curso'}style="color:#5a277d;"{/if} onclick="ga('send', 'event', 'menu-secundario', 'crear un curso');">Crea un curso</a></li>

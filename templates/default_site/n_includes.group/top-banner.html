@@ -5,15 +5,15 @@
 				        {if segment_1=='n_escuelas' AND segment_3!='' AND segment_2!='curso' AND segment_2!='curso-destacados'}
 				        	<a class="menu-icon hide-for-medium hide-for-large " href="javascript: history.go(-1)"><i class="icon-typ-left36"></i></a>
 				        {/if}
-				        {if segment_1!='n_inicio' AND segment_2!='curso' AND segment_2!='curso-destacados'}
-				        <a href="#" class="toggle-nav-link hide-for-large thin hide-for-small">
+				        {if segment_1!='n_inicio' AND segment_2!='curso' AND segment_2!='curso-destacados' AND segment_3!=''}
+				        <a href="#" class="toggle-nav-link hide-for-large thin hide-for-small hide-for-medium">
 									<i class="icon-typ-th-menu"></i>
 									MENÚ
 								</a>	
 								{/if}	
 				        {if segment_2=='curso' OR segment_2=='curso-destacados' OR segment_3==''}
-									<a href="#" class="toggle-nav-link thin hide-for-medium">
-										<i class="icon-typ-th-menu hide-for-large"></i>
+									<a href="#" class="toggle-nav-link thin hide-for-large hide-for-medium">
+										<i class="icon-typ-th-menu"></i>
 										<span class="hide-for-small">MENÚ</span>
 									</a>	
 								{/if}						

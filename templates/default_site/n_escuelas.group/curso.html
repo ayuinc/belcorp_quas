@@ -56,7 +56,9 @@
 	            <!--CONTENIDOS-->
 	            {if channel=="Contenidos"}
 	              {if tipo-contenido-recurso=='Video' OR tipo-contenido-recurso=='Artículo' OR tipo-contenido-recurso=='Audio'}
-	              	{embed="n_includes/comenzar-encuesta" id_curso="{id-encuesta}"}
+	              	{if segment_3!='descarga-tu-manual-curso-1'}
+	              		{embed="n_includes/comenzar-encuesta" id_curso="{id-encuesta}"}
+	              	{/if}
 	              {/if}	
 	              {if tipo-contenido-recurso=='Curso Externo'}
 	              	<a href="{link-recurso}" target="_blank" id="start_course" class="explore button expand ">COMENZAR CURSO</a>
@@ -106,7 +108,6 @@
 		    		<div class="small-12 medium-3 large-3 columns hide-for-small">
 		          {if channel=="Cursos"}
 			          {if logged_in}
-			         	  {id-curso}
 				          {embed="n_includes/comenzar-curso" id_curso="{id-curso}"}
 				        {/if}
 				        {if logged_out}
@@ -126,8 +127,10 @@
 	            <!--CONTENIDOS-->
 	            {if channel=="Contenidos"}
 	              {if tipo-contenido-recurso=='Video' OR tipo-contenido-recurso=='Artículo' OR tipo-contenido-recurso=='Audio'}
-	              	{embed="n_includes/comenzar-encuesta" id_curso="{id-encuesta}"}
-	              	<!--<a href="{link-encuesta-lms}" id="start_course" class="explore button expand ">ENCUESTA DE SATISFACCIÓN</a>-->
+	              	{if segment_3!='descarga-tu-manual-curso-1'}
+	              		{embed="n_includes/comenzar-encuesta" id_curso="{id-encuesta}"}
+										<!--<a href="{link-encuesta-lms}" id="start_course" class="explore button expand ">ENCUESTA DE SATISFACCIÓN</a>-->
+	              	{/if}
 	              {/if}	
 	              {if tipo-contenido-recurso=='Curso Externo'}
 	              	<a href="{link-recurso}" target="_blank" id="start_course" class="explore button expand ">COMENZAR CURSO</a>
