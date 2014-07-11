@@ -68,7 +68,7 @@ class Authlms
         //$username= "pellanoire";
         $id_curse= ee()->TMPL->fetch_param('id_curse');
         //instantiate the NuSOAP class and define the web service URL:
-        $client = new nusoap_client('http://miscursosucb.belcorp.biz/moodle/auth/belcorpws/belcorpws_server.php?wsdl', 'WSDL');
+        $client = new nusoap_client('http://miscursosucb.belcorp.biz/auth/belcorpws/belcorpws_server.php?wsdl', 'WSDL');
         //check if there were any instantiation errors, and if so stop execution with an error message:
         $error = $client->getError();
         if ($error) {
@@ -84,10 +84,10 @@ class Authlms
           print_r($client->getDebug());
           die();
         }
-        $url='http://miscursosucb.belcorp.biz/moodle/auth/belcorpws/client/client.php?usuario='.$username.'&token='.$answer.'&curso='.$id_curse;
+        $url='http://miscursosucb.belcorp.biz/auth/belcorpws/client/client.php?usuario='.$username.'&token='.$answer.'&curso='.$id_curse;
         //output the response (in the form of a multidimensional array) from the function call:
         return '{exp:redirecturl url="'.$url.'"}';
-        //header('Location: http://miscursosucb.belcorp.biz/moodle/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
+        //header('Location: http://miscursosucb.belcorp.biz/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
         /*
         $data_string = json_encode($data, true);
         $url = 'http://190.41.151.102/Infhotel/ServiceReservaWeb.svc/InsertReserva';
@@ -112,7 +112,7 @@ class Authlms
         //$username= "pechvillaran";
         $screen_name= ee()->TMPL->fetch_param('screen_name');
         //instantiate the NuSOAP class and define the web service URL:
-        $client = new nusoap_client('http://miscursosucb.belcorp.biz/moodle/auth/belcorpws/belcorpws_server.php?wsdl', 'WSDL');
+        $client = new nusoap_client('http://miscursosucb.belcorp.biz/auth/belcorpws/belcorpws_server.php?wsdl', 'WSDL');
         //check if there were any instantiation errors, and if so stop execution with an error message:
         $error = $client->getError();
         if ($error) {
@@ -128,11 +128,11 @@ class Authlms
           print_r($client->getDebug());
           die();
         }
-        $url='http://miscursosucb.belcorp.biz/moodle/auth/belcorpws/client/clientprofile.php?usuario='.$username.'&token='.$answer;
-        //$url='http://miscursosucb.belcorp.biz/moodle/auth/belcorpws/client/clientprofile.php?usuario=peppinedo&token='.$answer;
+        $url='http://miscursosucb.belcorp.biz/auth/belcorpws/client/clientprofile.php?usuario='.$username.'&token='.$answer;
+        //$url='http://miscursosucb.belcorp.biz/auth/belcorpws/client/clientprofile.php?usuario=peppinedo&token='.$answer;
         //output the response (in the form of a multidimensional array) from the function call:
         return '{exp:redirecturl url="'.$url.'"}';
-        //header('Location: http://miscursosucb.belcorp.biz/moodle/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
+        //header('Location: http://miscursosucb.belcorp.biz/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
         /*
         $data_string = json_encode($data, true);
         $url = 'http://190.41.151.102/Infhotel/ServiceReservaWeb.svc/InsertReserva';
@@ -157,7 +157,7 @@ class Authlms
         //$username= "pechvillaran";
         $screen_name= ee()->TMPL->fetch_param('screen_name');
         //instantiate the NuSOAP class and define the web service URL:
-        $client = new nusoap_client('http://miscursosucb.belcorp.biz/moodle/auth/belcorpws/belcorpws_server.php?wsdl', 'WSDL');
+        $client = new nusoap_client('http://miscursosucb.belcorp.biz/auth/belcorpws/belcorpws_server.php?wsdl', 'WSDL');
         //check if there were any instantiation errors, and if so stop execution with an error message:
         $error = $client->getError();
         if ($error) {   
@@ -173,11 +173,11 @@ class Authlms
           print_r($client->getDebug());
           die();
         }
-        $url='http://miscursosucb.belcorp.biz/moodle/auth/belcorpws/client/clientprofile.php?usuario='.$username.'&token='.$answer;
-        //$url='http://miscursosucb.belcorp.biz/moodle/auth/belcorpws/client/clientprofile.php?usuario=peppinedo&token='.$answer;
+        $url='http://miscursosucb.belcorp.biz/auth/belcorpws/client/clientprofile.php?usuario='.$username.'&token='.$answer;
+        //$url='http://miscursosucb.belcorp.biz/auth/belcorpws/client/clientprofile.php?usuario=peppinedo&token='.$answer;
         //output the response (in the form of a multidimensional array) from the function call:
         return '{exp:redirecturl url="'.$url.'"}';
-        //header('Location: http://miscursosucb.belcorp.biz/moodle/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
+        //header('Location: http://miscursosucb.belcorp.biz/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
         /*
         $data_string = json_encode($data, true);
         $url = 'http://190.41.151.102/Infhotel/ServiceReservaWeb.svc/InsertReserva';
