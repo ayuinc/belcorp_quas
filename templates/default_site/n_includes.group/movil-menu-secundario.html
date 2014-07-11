@@ -26,14 +26,15 @@
   	    		{/if} 	    		
   	    		
   	    		{if segment_2=='liderazgo-y-cultura-temas'}
-	  	    		{if segment_3!='principios-lide' AND segment_3!='valores-lidera'}
-							<h5 class="list-heading pl-14">Liderazgo</h5>
+	  	    		{if segment_3!='principios-lide' AND segment_3!='valores-lidera' AND segment_3!='plan-de-desarrollo-lide'}
+							<h5 class="list-heading pl-14">Secciones</h5>
+							<h6 class="pl-21">Liderazgo</h6>
 							<ul class="no-bullet pl-21">
 								<li><a href="{site_url}n_escuelas/{segment_2}/summa-lide" {if segment_3=='summa-lide'}class="active"{/if} onclick="ga('send', 'event', 'menu-secundario', 'liderazgo y cultura', 'summa');">SUMMA</a></li>
-								<li><a href="{site_url}n_escuelas/{segment_2}/plan-de-desarrollo-temas" {if segment_3=='plan-de-desarrollo-temas'}class="active"{/if} onclick="ga('send', 'event', 'menu-secundario', 'liderazgo y cultura', 'plan de desarrollo');">Plan de Desarrollo</a></li> 		    		</ul>
-							<h5 class="list-heading pl-14">Cultura</h5>
+								<li><a href="{site_url}n_escuelas/{segment_2}/plan-de-desarrollo-lide" {if segment_3=='plan-de-desarrollo-lide'}class="active"{/if} onclick="ga('send', 'event', 'menu-izquierdo', 'plan de desarrollo');">Plan de Desarrollo</a></li> 		    		</ul>
+							<h6 class="pl-21">Cultura</h6>
 							<ul class="no-bullet pl-21">	
-								<li><a href="{site_url}n_escuelas/{segment_2}/backbone-lc" target="_blank" onclick="ga('send', 'event', 'menu-secundario', 'liderazgo y cultura', 'backbone');">Backbone</a></li>
+								<li><a href="{site_url}n_escuelas/{segment_2}/backbone-lc" onclick="ga('send', 'event', 'menu-secundario', 'liderazgo y cultura', 'backbone');">Backbone</a></li>
 							</ul>
 	  	    		{/if}	    	
   	    		{/if}
@@ -48,7 +49,7 @@
   	    		</ul>
   	    		{/if}  	    		
   	    		
-  	    		{if segment_2=='plan-de-desarrollo-temas'}
+  	    		{if segment_3=='plan-de-desarrollo-lide'}
 	  	    		<h6 class="uppercase text-center">Principios</h6>
 	  	    		<ul class="no-bullet">
 	  	    			<li><a href="{site_url}n_escuelas/{segment_2}/principios-lide/enfoca-la-energia-lide" {if segment_4=='enfoca-la-energia-lide'}class="active"{/if} onclick="ga('send', 'event', 'menu-secundario', 'plan de desarrollo', 'enfoca la energia');">Enfoca la Energía</a></li>
