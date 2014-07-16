@@ -1,15 +1,15 @@
-		<!--HERRAMIENTA DE CERTIFICACION-->
-		<div id="herramienta_de_certificacion" class="reveal-modal" data-reveal>
+		<div id="herramienta_de_certificacion" class="reveal-modal" data-reveal="" style="display: none; opacity: 1; visibility: hidden; top: -521px;">
 		  <h2>Herramienta de Certificación</h2>
 		  <p>Puede acceder desde el icono en la Tablet de Escuela de Venta o desde este portal con su usuario de red y contraseña de red. Cualquier consulta comuníquese con Mesa de Ayuda opción “Soporte Técnico”.</p>
 		  <a href="http://ffvv.somosbelcorp.com/" class="button small">Acceder FFVV</a>
 		  <a href="http://ev.belcorp.biz/" class="button small">Acceder Portal Administrativos</a>
-		  <a class="close-reveal-modal">&#215;</a>
+		  <a class="close-reveal-modal">×</a>
 		</div>
 
     <!-- SCRIPTS-->
     <script src="{site_url}n_js/vendor/jquery.js"></script>
     <script src="{site_url}n_js/foundation.min.js"></script>
+    <script type="text/javascript" src="{site_url}n_js/vendor/wurfl.js"></script>
     <script type="text/javascript" src="{site_url}n_js/ayu-off-canvas.js"></script>
     {if segment_1=='n_escuelas'}
     	<script src="{site_url}n_js/vendor/isotope.pkgd.min.js"></script>
@@ -23,17 +23,6 @@
 				  $container.isotope({
 				    itemSelector: '.isotope-item'
 				  });
-
-				  // $checkboxes.change(function(){
-				  //   var filters = [];
-				  //   // get checked checkboxes values
-				  //   $checkboxes.filter(':checked').each(function(){
-				  //     filters.push( this.value );
-				  //   });
-				  //   filters = filters.join(', ');
-				  //   console.log(filters);
-				  //   $container.isotope({ filter: filters });				    
-				  // });
 				  $checkboxes.change(function(){
 				    var filters = [];
 				    if($('#filters #todos').prop('checked')) {
@@ -48,122 +37,20 @@
 					    $container.isotope({ filter: filters });
 				    }
 				  });
-
-				  // $(".fixed-menu").sticky({topSpacing:0});
-				 //  $(".fixed-menu").pin({
-					//   containerSelector: ".menu-secundario"
-					// });
 		    });
 	    </script>
     {/if}
-    <script>
-      $(document).foundation({
-			  offcanvas : {
-			    open_method: 'move', // Sets method in which offcanvas opens, can also be 'overlap'
-			    close_on_click : true
+		
+		<script>
+	    $(document).foundation({
+			  dropdown: {
+			    // specify the class used for active dropdowns
+			    active_class: 'open'
 			  }
-		  });
-    </script>
-    
-    <!--MOUSE OVER OFF-CANVAS-->
-    <!-- <script>
-		  $(document).ready(function(){
-		  	$('.off-canvas-trigger').on('mouseover', function(){
-		  		$('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'move-right');
-		  	});
-		  });
-		  $(document).ready(function(){
-		  	if($(window).width() > 420) {
-			  	$('.off-canvas-list .large-2').on('mouseover', function(){
-			  		$('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'move-right');
-			  	});
-		  	}
-			  $(document).on('open', '[data-offcanvas]', function() {
-				  $('.off-canvas-list .large-2').addClass("off-canvas-open");
-				  $('.off-canvas-trigger').addClass("off-canvas-open");
-				  $('.off-canvas-list .large-2').removeClass("off-canvas-close");
-				  $('.off-canvas-trigger').removeClass("off-canvas-close");
-				  $('html').css('overflow', 'hidden');
-				});
-				$(document).on('close', '[data-offcanvas]', function() {
-				  $('.off-canvas-list .large-2').removeClass("off-canvas-open");
-				  $('.off-canvas-trigger').removeClass("off-canvas-open");
-				  $('.off-canvas-list .large-2').addClass("off-canvas-close");
-				  $('.off-canvas-trigger').addClass("off-canvas-close");
-				  $('html').css('overflow', 'auto');
-				});
-		  });		  
-    </script> -->
-    <!--END.MOUSE OVER OFF-CANVAS-->
-    
-		<!--BUSCADOR-->
-    <!-- <script>
-    $(document).ready(function(){
-    	var $searchOv = $('.search-canvas-overlay');
-
-    	$('.search-form-trigger').click(function(e) {
-    		e.preventDefault();
-    		$searchOv.addClass('searching fadeInDown');
-    	});
-    	$('.search-canvas-overlay .close').click(function(e) {
-    		if($searchOv.hasClass("fadeInDown")) {
-    			$searchOv.removeClass('fadeInDown');
-    			$searchOv.addClass('fadeOutUpBig');
-    			setTimeout(function(){
-    				$searchOv.removeClass('searching fadeOutUpBig');
-    			}, 1000);
-    		} else {
-    			$searchOv.removeClass('fadeOutUpBig');
-    		}
-    	});
-    });
-    </script> -->
-		<!--END.BUSCADOR-->
-		
-		<!--SCROLL NAV CONVENIOS-->
-		<script>
-		$(document).ready (function(){
-      $( "#nav_postgrados" ).click(function( event ) {
-        event.preventDefault();
-          $("html, body").animate({scrollTop:$("#104").offset().top -20});
-          $(".text-primary").removeClass("active");
-          $(this).addClass("active");
-      });
-
-      $( "#nav_idiomas" ).click(function( event ) {
-        event.preventDefault();
-          $("html, body").animate({scrollTop:$("#105").offset().top -20});
-          $(".text-primary").removeClass("active");
-          $(this).addClass("active");
-      });
-
-      $( "#nav_tecnologia" ).click(function( event ) {
-        event.preventDefault();
-          $("html, body").animate({scrollTop:$("#106").offset().top -20});
-          $(".text-primary").removeClass("active");
-          $(this).addClass("active");
-      });
-
-      $( "#nav_otros" ).click(function( event ) {
-        event.preventDefault();
-          $("html, body").animate({scrollTop:$("#107").offset().top -20});
-          $(".text-primary").removeClass("active");
-          $(this).addClass("active");
-      });
-		});		
+			});
 		</script>
-		<!--END.SCROLL NAV CONVENIOS-->
 		
-		<!--FIXED POSITION ON SCROLL-->
-		<script>
-		$(window).scroll(function(){
-		    if($(this).scrollTop()>425) {
-		    	$("#fixed_on").addClass('fixed-on');
-		    } else {
-			    $("#fixed_on").removeClass('fixed-on');
-		    }
-		});
-		</script>
+
 		<!--END. FIXED POSITION ON SCROLL-->
 		
 		<!--CRAZY EGG-->

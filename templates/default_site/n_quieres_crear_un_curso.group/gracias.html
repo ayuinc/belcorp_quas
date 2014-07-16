@@ -1,0 +1,52 @@
+{embed="n_includes/header"}
+
+	{if logged_in}
+
+	<div id="site-wrapper">
+		<div id="content-frame">	  
+	    
+		<!--MENU LADO IZQUIERDO-->
+	  {embed="n_includes/menu-izquierdo"}
+
+	  <!--TOP BANNER-->  
+	  {embed="n_includes/top-banner"} 		
+		<div id="site-canvas">
+		
+
+		<!-- CANVAS CONTAINER -->
+		<div class="row">
+			<div class="large-9 medium-9 medium-offset-1 columns">
+				<div class="canvas-container">
+					{embed="n_includes/breadcrumbs"}
+		    	<div class="row escuela-block">
+		    		<div class="small-12 medium-12 large-12 columns">
+							<h1>Gracias por contactarte con nosotros</h1> 
+		    		</div>   		
+		    	</div>
+					<div class="row">
+	  	    	<div class="small-8 medium-9 large-9 columns full-width-for-portrait">
+	  	    		<p>Tu mensaje fue enviado correctamente.<br>Si esta página no redirecciona, regresar al <a href="{site_url}n_wall">wall</a></p>
+	  	    	</div>
+	  	    	<div class="small-4 medium-3 large-3 columns hide-for-portrait"></div>
+	  	    </div>
+				</div>
+			</div>
+		</div>
+		<!-- END:CANVAS-CONTAINER -->	
+		
+		{embed="n_includes/footer-nav"}
+			
+		</div>
+	
+	  </div>
+	</div>
+	
+	{if:else}		
+		<div class="row">
+			<div class="small-12 medium-12 large-12 columns">	
+			<h3 class="text-center">Necesita ingresar al sistema. <a href="{site_url}">Regresar al inicio</a></h3>
+			</div>
+		</div>
+	{/if}		
+
+{embed="n_includes/footer"}

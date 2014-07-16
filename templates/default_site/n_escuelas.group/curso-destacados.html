@@ -38,10 +38,14 @@
 		    		<div class="small-12 medium-3 large-3 columns show-for-small-only">
 		          {if channel=="Cursos"}
 			          {if logged_in}
-				          {embed="n_includes/comenzar-curso" id_curso="{id-curso}"}
+			          	{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
+				          {embed="n_includes/comenzar-curso" id_curso="{id-curso}" escuela="{category_name}" titulo_curso="{title}"}
+				          {/categories}
 				        {/if}
 				        {if logged_out}
-				        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand">Comenzar</a>
+				        	{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
+				        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand" onclick="ga('send', 'event', 'comenzar-curso', '{category_name}', '{title}');">Comenzar Curso</a>
+				        	{/categories}
 								{/if}  	
 								<div class="show-for-medium-up">    
 		            {embed="includes/curso-detalles" 
@@ -57,11 +61,19 @@
 	            <!--CONTENIDOS-->
 	            {if channel=="Contenidos"}
 	              {if tipo-contenido-recurso=='Video' OR tipo-contenido-recurso=='Artículo' OR tipo-contenido-recurso=='Audio'}
-	              	{embed="n_includes/comenzar-encuesta" id_curso="{id-encuesta}"}
+	              		{if id-encuesta}
+	              			{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
+											{embed="n_includes/comenzar-encuesta" id_curso="{id-encuesta}" escuela="{category_name}" titulo_curso="{title}"}
+											{/categories}
+	              		{/if}
 	              {/if}	
 	              {if tipo-contenido-recurso=='Curso Externo'}
-	              	<a href="{link-recurso}" target="_blank" id="start_course" class="explore button expand ">COMENZAR CURSO</a>
-	              	{embed="n_includes/comenzar-encuesta" id_curso="{id-encuesta}"}
+				        	{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
+				        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand" onclick="ga('send', 'event', 'comenzar-curso', '{category_name}', '{title}');">Comenzar Curso</a>
+				        	{/categories}
+            			{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
+									{embed="n_includes/comenzar-encuesta" id_curso="{id-encuesta}" escuela="{category_name}" titulo_curso="{title}"}
+									{/categories}
 	              {/if}
 	            {/if}	
 		    		</div>
@@ -106,7 +118,9 @@
 		    		<div class="small-12 medium-3 large-3 columns hide-for-small">
 		          {if channel=="Cursos"}
 			          {if logged_in}
-				          {embed="n_includes/comenzar-curso" id_curso="{id-curso}"}
+			          	{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
+				          {embed="n_includes/comenzar-curso" id_curso="{id-curso}" escuela="{category_name}" titulo_curso="{title}"}
+				          {/categories}
 				        {/if}
 				        {if logged_out}
 				        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand">Comenzar</a>
@@ -125,11 +139,17 @@
 	            <!--CONTENIDOS-->
 	            {if channel=="Contenidos"}
 	              {if tipo-contenido-recurso=='Video' OR tipo-contenido-recurso=='Artículo' OR tipo-contenido-recurso=='Audio'}
-	              	{embed="n_includes/comenzar-encuesta" id_curso="{id-encuesta}"}
+              		{if id-encuesta}
+              			{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
+										{embed="n_includes/comenzar-encuesta" id_curso="{id-encuesta}" escuela="{category_name}" titulo_curso="{title}"}
+										{/categories}
+              		{/if}
 	              {/if}	
 	              {if tipo-contenido-recurso=='Curso Externo'}
 	              	<a href="{link-recurso}" target="_blank" id="start_course" class="explore button expand ">COMENZAR CURSO</a>
-	              	{embed="n_includes/comenzar-encuesta" id_curso="{id-encuesta}"}
+              			{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
+										{embed="n_includes/comenzar-encuesta" id_curso="{id-encuesta}" escuela="{category_name}" titulo_curso="{title}"}
+										{/categories}
 	              {/if}
 	            {/if}	
 		    		</div>

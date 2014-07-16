@@ -3,6 +3,6 @@
   	<input type="hidden" name="XID" value="{XID_HASH}" /> 
   	<input type="hidden" name="username" value="{username}">
   	<input type="hidden" name="id_curse" value="{embed:id_curso}">
-  	<button type="submit" id="start_course" class="explore button expand">ENCUESTA DE SATISFACCIÓN</button>
+  	<button type="submit" id="start_course" class="explore button expand" onclick="ga('send', 'event', 'encuesta-de-satisfaccion', '{embed:escuela}', '{embed:titulo_curso}');">ENCUESTA DE SATISFACCIÓN</button>
   </form>
 {/exp:member:custom_profile_data}

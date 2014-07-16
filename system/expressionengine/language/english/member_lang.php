@@ -36,10 +36,10 @@ $lang = array(
 'Settings Update Form',
 
 'your_current_un_pw' =>
-'Your existing username and password',
+'Su nombre de usuario y contraseña',
 
 'access_notice' =>
-'Important notice: The administrator has changed the access requirements for this site as follows:',
+'Aviso importante: El administrador ha cambiado los requisitos de acceso a este sitio de la siguiente manera:',
 
 'choose_new_un' =>
 'Please choose a new username',
@@ -54,31 +54,31 @@ $lang = array(
 'Your existing username',
 
 'un_len' =>
-'Usernames must be at least %s characters in length',
+'Los nombres de usuario deben ser de al menos % caracteres de longitud',
 
 'pw_len' =>
-'Passwords must be at least %s characters in length',
+'Las contraseñas deben tener al menos % caracteres de longitud',
 
 'yun_len' =>
-'Your username is currently %s characters long',
+'Su nombre de usuario es actualmente de % caracteres',
 
 'ypw_len' =>
-'Your password is currently %s characters long',
+'Su contraseña es actualmente de % caracteres',
 
 'existing_username' =>
-'Your Existing Username',
+'Su nombre de usuario existente',
 
 'existing_password' =>
-'Your Current Password',
+'Tu contraseña actual',
 
 'all_fields_required' =>
-'You must submit all fields',
+'Debe presentar todos los campos',
 
 'invalid_existing_un_pw' =>
-'The existing username and/or password you submitted are not valid',
+'El nombre de usuario y / o contraseña existente que ha enviado no son válidos',
 
 'unpw_updated' =>
-'Your settings have been updated.  You may now log-in.',
+'Su configuración ha sido actualizado. Ahora puede acceder al sistema.',
 
 'return_to_login' =>
 'Return to login page',
@@ -108,10 +108,10 @@ $lang = array(
 'No Photo',
 
 'no_info_available' =>
-'Information is not available',
+'La información no está disponible',
 
 'max_characters' =>
-'Characters',
+'carácter',
 
 'kb' =>
 'KB',

@@ -75,16 +75,16 @@
 		</li>
 		<li>
 			<ul>
-				<li><a href="#" id="nav_postgrados">Post-grados</a></li>
-				<li><a href="#" id="nav_idiomas">Idiomas</a></li>						
-				<li><a href="#" id="nav_tecnologia">Tecnología</a></li>
-				<li><a href="#" id="nav_otros">Otros</a></li>						
+				<li><a href="#" id="nav_postgrados" onclick="ga('send', 'event', 'menu-secundario', 'post-grados');">Post-grados</a></li>
+				<li><a href="#" id="nav_idiomas" onclick="ga('send', 'event', 'menu-secundario', 'idiomas');">Idiomas</a></li>						
+				<li><a href="#" id="nav_tecnologia" onclick="ga('send', 'event', 'menu-secundario', 'tecnologia');">Tecnología</a></li>
+				<li><a href="#" id="nav_otros" onclick="ga('send', 'event', 'menu-secundario', 'otros');">Otros</a></li>						
 			</ul>
 		</li>
 	</ul>
 	{/if}
 
-	{if segment_1!='n_convenios' AND segment_3!='plan-de-desarrollo-lide'}
+	{if segment_1!='n_convenios' AND segment_3==''}
 	<h5 class="list-heading pl-14">Links de Interés</h5>
 	<ul class="no-bullet pl-21">
 		{if segment_2!='liderazgo-y-cultura-temas'}
