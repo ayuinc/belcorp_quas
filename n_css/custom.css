@@ -2278,8 +2278,8 @@ th {
     border-color: #7aad33;
     color: white; }
   .alert-box.alert {
-    background-color: #e5ff36;
-    border-color: #dfff0b;
+    background-color: red;
+    border-color: #db0000;
     color: white; }
   .alert-box.secondary {
     background-color: #aa7bc9;
@@ -2693,11 +2693,11 @@ button, .button {
     button.success:hover, button.success:focus, .button.success:hover, .button.success:focus {
       color: white; }
   button.alert, .button.alert {
-    background-color: #e5ff36;
-    border-color: #d7f700;
+    background-color: red;
+    border-color: #cc0000;
     color: white; }
     button.alert:hover, button.alert:focus, .button.alert:hover, .button.alert:focus {
-      background-color: #d7f700; }
+      background-color: #cc0000; }
     button.alert:hover, button.alert:focus, .button.alert:hover, .button.alert:focus {
       color: white; }
   button.large, .button.large {
@@ -2772,18 +2772,18 @@ button, .button {
       button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
         background-color: #8dc63f; }
     button.disabled.alert, button[disabled].alert, .button.disabled.alert, .button[disabled].alert {
-      background-color: #e5ff36;
-      border-color: #d7f700;
+      background-color: red;
+      border-color: #cc0000;
       color: white;
       cursor: default;
       opacity: 0.7;
       box-shadow: none; }
       button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
-        background-color: #d7f700; }
+        background-color: #cc0000; }
       button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
         color: white; }
       button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
-        background-color: #e5ff36; }
+        background-color: red; }
 
 @media only screen and (min-width: 40.063em) {
   button, .button {
@@ -3667,7 +3667,7 @@ fieldset {
   font-size: 0.75rem;
   font-weight: normal;
   font-style: italic;
-  background: #e5ff36;
+  background: red;
   color: white; }
 [data-abide] span.error, [data-abide] small.error {
   display: none; }
@@ -3680,7 +3680,7 @@ span.error, small.error {
   font-size: 0.75rem;
   font-weight: normal;
   font-style: italic;
-  background: #e5ff36;
+  background: red;
   color: white; }
 
 .error input,
@@ -3692,7 +3692,7 @@ span.error, small.error {
   margin-bottom: 1rem; }
 .error label,
 .error label.error {
-  color: #e5ff36; }
+  color: red; }
 .error small.error {
   display: block;
   padding: 0.375rem 0.5625rem 0.5625rem;
@@ -3701,7 +3701,7 @@ span.error, small.error {
   font-size: 0.75rem;
   font-weight: normal;
   font-style: italic;
-  background: #e5ff36;
+  background: red;
   color: white; }
 .error > label > small {
   color: #676767;
@@ -3720,7 +3720,7 @@ textarea.error {
   margin-bottom: 0; }
 
 label.error {
-  color: #e5ff36; }
+  color: red; }
 
 .inline-list {
   margin: 0 auto 1.0625rem auto;
@@ -3921,7 +3921,7 @@ kbd {
   .label.round {
     border-radius: 1000px; }
   .label.alert {
-    background-color: #e5ff36;
+    background-color: red;
     color: white; }
   .label.success {
     background-color: #8dc63f;
@@ -4388,7 +4388,7 @@ ul.pagination {
     height: 100%;
     display: block; }
   .progress.alert .meter {
-    background: #e5ff36;
+    background: red;
     height: 100%;
     display: block; }
   .progress.radius {
@@ -5151,7 +5151,7 @@ small {
 code {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-weight: bold;
-  color: #c4e200; }
+  color: #ba0000; }
 
 /* Lists */
 ul,
@@ -5691,11 +5691,11 @@ meta.foundation-mq-topbar {
         .top-bar-section ul li > a.button.success:hover, .top-bar-section ul li > a.button.success:focus {
           color: white; }
       .top-bar-section ul li > a.button.alert {
-        background-color: #e5ff36;
-        border-color: #d7f700;
+        background-color: red;
+        border-color: #cc0000;
         color: white; }
         .top-bar-section ul li > a.button.alert:hover, .top-bar-section ul li > a.button.alert:focus {
-          background-color: #d7f700; }
+          background-color: #cc0000; }
         .top-bar-section ul li > a.button.alert:hover, .top-bar-section ul li > a.button.alert:focus {
           color: white; }
     .top-bar-section ul li > button {
@@ -5726,11 +5726,11 @@ meta.foundation-mq-topbar {
         .top-bar-section ul li > button.success:hover, .top-bar-section ul li > button.success:focus {
           color: white; }
       .top-bar-section ul li > button.alert {
-        background-color: #e5ff36;
-        border-color: #d7f700;
+        background-color: red;
+        border-color: #cc0000;
         color: white; }
         .top-bar-section ul li > button.alert:hover, .top-bar-section ul li > button.alert:focus {
-          background-color: #d7f700; }
+          background-color: #cc0000; }
         .top-bar-section ul li > button.alert:hover, .top-bar-section ul li > button.alert:focus {
           color: white; }
     .top-bar-section ul li:hover:not(.has-form) > a {
@@ -9672,6 +9672,27 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   padding: 9px 9px 9px 3px;
   padding: 0.5625rem 0.5625rem 0.5625rem 0.1875rem;
   text-align: center; }
+
+/*!
+ * BootstrapValidator (http://bootstrapvalidator.com)
+ * The best jQuery plugin to validate form fields. Designed to use with Bootstrap 3
+ *
+ * @version     v0.5.0, built on 2014-07-14 4:31:02 PM
+ * @author      https://twitter.com/nghuuphuoc
+ * @copyright   (c) 2013 - 2014 Nguyen Huu Phuoc
+ * @license     MIT
+ */
+.bv-form .help-block {
+  margin-bottom: 0; }
+
+.bv-form .tooltip-inner {
+  text-align: left; }
+
+.nav-tabs li.bv-tab-success > a {
+  color: #3c763d; }
+
+.nav-tabs li.bv-tab-error > a {
+  color: #a94442; }
 
 /* OFF CANVAS  */
 #site-wrapper {

@@ -15,13 +15,13 @@
     			</div>
     			<div class="row">
     				<div class="small-12 medium-6 medium-centered large-12 columns">
-    					{exp:member:login_form return="{site_url}n_inicio/index"}
+    					{exp:member:login_form return="{site_url}n_inicio/index" form_id="user-login-form"}
     						<div class="row">
     							<div class="small-2 medium-2 large-2 columns icono clearfix">
     								<div class="icon-container"><i class="icon-typ-user-outline"></i></div>
     							</div>
     							<div class="small-10 medium-10 large-10 columns clearfix">
-    								<input type="text" name="username" value="" placeholder="Usuario de Red">
+    								<input type="text" name="username" value="" minlength="2" placeholder="Usuario de Red" required>
     							</div>
     						</div>
     						<div class="row">
@@ -29,7 +29,7 @@
     								<div class="icon-container"><i class="icon-typ-key-outline"></i></div>
     							</div>
     							<div class="small-10 medium-10 large-10 columns clearfix">
-    								<input type="password" name="password" value="" placeholder="Documento de Identidad">
+    								<input type="password" name="password" value="" minlength="2" placeholder="Documento de Identidad" required>
     							</div>
     						</div>
     						<div class="row">
