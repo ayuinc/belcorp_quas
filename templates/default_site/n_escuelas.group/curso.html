@@ -43,7 +43,7 @@
 				        {/if}
 				        {if logged_out}
 				        	{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
-				        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand" onclick="ga('send', 'event', 'comenzar-curso', '{category_name}', '{title}');">Comenzar</a>
+				        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand" onclick="ga('send', 'event', 'comenzar-curso', '{category_name}', '{title}');">COMENZAR</a>
 				        	{/categories}
 								{/if}  	
 								<div class="show-for-medium-up">    
@@ -126,7 +126,7 @@
 				        {/if}
 				        {if logged_out}
 				        	{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
-				        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand" onclick="ga('send', 'event', 'comenzar-curso', '{category_name}', '{title}');">Comenzar</a>
+				        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand" onclick="ga('send', 'event', 'comenzar-curso', '{category_name}', '{title}');">COMENZAR</a>
 				        	{/categories}
 								{/if}  	
 								<div class="show-for-medium-up">    
@@ -151,9 +151,9 @@
 	              		{/if}
 	              	{/if}
 	              {/if}	
-	              {if tipo-contenido-recurso=='Curso Externo'}
+	              {if tipo-contenido-recurso=='Curso Externo' OR tipo-contenido-recurso=='Archivo'}
 				        	{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
-				        	<a href="{link-curso}" target="_blank" id="start_course" class="explore button expand" onclick="ga('send', 'event', 'comenzar-curso', '{category_name}', '{title}');">Comenzar</a>
+				        	<a href="{link-recurso}" target="_blank" id="start_course" class="explore button expand" onclick="ga('send', 'event', 'comenzar-curso', '{category_name}', '{title}');">COMENZAR</a>
 				        	{/categories}
             			{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
 									{embed="n_includes/comenzar-encuesta" id_curso="{id-encuesta}" escuela="{category_name}" titulo_curso="{title}"}
