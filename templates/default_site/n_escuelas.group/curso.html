@@ -63,7 +63,7 @@
 	              	{if segment_3!='descarga-tu-manual-curso-1'}
 	              		{if id-encuesta}
 	              			{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
-											{embed="n_includes/comenzar-encuesta" id_curso="{id-encuesta}" escuela="{category_name}" titulo_curso="{title}"}
+											{embed="n_includes/comenzar-encuesta" id_curso="{id-encuesta}" escuela="{category_name}" titulo_curso="{title}"}c
 											{/categories}
 	              		{/if}
 	              	{/if}
@@ -72,9 +72,11 @@
 	              	{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
 	              	<a href="{link-recurso}" target="_blank" id="start_course" class="explore button expand" onclick="ga('send', 'event', 'comenzar-curso', '{category_name}', '{title}');">COMENZAR CURSO</a>
 	              	{/categories}
-            			{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
-									{embed="n_includes/comenzar-encuesta" id_curso="{id-encuesta}" escuela="{category_name}" titulo_curso="{title}"}
-									{/categories}
+              		{if id-encuesta}
+              			{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
+										{embed="n_includes/comenzar-encuesta" id_curso="{id-encuesta}" escuela="{category_name}" titulo_curso="{title}"}
+										{/categories}
+              		{/if}	
 	              {/if}
 	            {/if}	
 		    		</div>
@@ -155,9 +157,11 @@
 				        	{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
 				        	<a href="{link-recurso}" target="_blank" id="start_course" class="explore button expand" onclick="ga('send', 'event', 'comenzar-curso', '{category_name}', '{title}');">COMENZAR</a>
 				        	{/categories}
-            			{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
-									{embed="n_includes/comenzar-encuesta" id_curso="{id-encuesta}" escuela="{category_name}" titulo_curso="{title}"}
-									{/categories}
+              		{if id-encuesta}
+              			{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
+										{embed="n_includes/comenzar-encuesta" id_curso="{id-encuesta}" escuela="{category_name}" titulo_curso="{title}"}
+										{/categories}
+              		{/if}									
 	              {/if}
 	            {/if}	
 		    		</div>

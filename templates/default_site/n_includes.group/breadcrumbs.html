@@ -1,23 +1,60 @@
 				<ul class="breadcrumbs">
 				  <li><a href="{site_url}n_inicio" onclick="ga('send', 'event', 'breadcrumb', 'inicio');">Inicio</a></li>
 				  <!--ESCUELAS-->
-				  {if segment_2!='plan-de-desarrollo-temas' OR segment_2!='induccion-belcorp-temas' OR segment_2!='gestion-humana-temas' OR segment_2!='summa-lide'}
+				  {if 
+				  	segment_2!='plan-de-desarrollo-temas' OR 	 
+				  	segment_2!='induccion-belcorp-temas' OR 
+				  	segment_2!='gestion-humana-temas' OR 
+				  	segment_2!='summa-lide'
+				  }
 					  {if embed:categoria}
 					  <li>
 					  	<a href="{site_url}{if embed:categoria=='Destacados'}n_inicio{if:else}n_escuelas{/if}/{if embed:categoria=='Ventas'}ventas-temas{/if}{if embed:categoria=='Negocios'}negocios-temas{/if}{if embed:categoria=='Liderazgo y Cultura'}liderazgo-y-cultura-temas{/if}{if embed:categoria=='Innovación'}innovacion-temas{/if}{if embed:categoria=='Tecnología'}tecnologia-temas{/if}{if embed:categoria=='Operaciones'}operaciones-temas{/if}
 					  	" onclick="ga('send', 'event', 'breadcrumb', 'escuela', '{embed:categoria}');">
-					  	{if segment_2!='curso-destacados'}Escuela de {/if}{embed:categoria}</a>
+						  	{if segment_2!='curso-destacados'}
+						  		Escuela de 
+						  	{/if}
+						  	{embed:categoria}
+					  	</a>
 					  </li>
 					  {/if}	      
 				  {/if}
 				  <!--TIPO DE CURSO-->
-					{if segment_2!=''AND segment_1!='n_convenios' AND segment_1!='n_buscar' AND segment_1!='n_seccion' AND segment_2!='gracias' AND segment_2!='no_resultados' AND segment_2!='curso' AND segment_2!='curso-destacados'}
+					{if 
+						segment_2!=''AND 
+						segment_1!='n_convenios' AND 
+						segment_1!='n_buscar' AND 
+						segment_1!='n_seccion' AND 
+						segment_2!='gracias' AND 
+						segment_2!='no_resultados' AND 
+						segment_2!='curso' AND 
+						segment_2!='curso-destacados'
+					}
 				  <li {if segment_3==''}class="current"{/if}>
-				  	<a href="{site_url}n_escuelas/{segment_2}" onclick="ga('send', 'event', 'breadcrumb', 'escuela', '{segment_2_category_name}');">{if segment_2!='plan-de-desarrollo-temas' AND segment_2!='gestion-humana-temas' AND segment_2!='induccion-belcorp-temas' AND segment_2!='tecnologia-temas' AND segment_2!='operaciones-temas' AND segment_2!='curso' AND segment_2!='curso-destacados' AND segment_2!='summa-lide'}Escuela de{/if} {segment_2_category_name}</a>
+				  	<a href="{site_url}n_escuelas/{segment_2}" onclick="ga('send', 'event', 'breadcrumb', 'escuela', '{segment_2_category_name}');">
+				  	{if 
+				  		segment_2!='plan-de-desarrollo-temas' AND 
+				  		segment_2!='gestion-humana-temas' AND 
+				  		segment_2!='induccion-belcorp-temas' AND 
+				  		segment_2!='tecnologia-temas' AND 
+				  		segment_2!='operaciones-temas' AND 
+				  		segment_2!='curso' AND 
+				  		segment_2!='curso-destacados' AND 
+				  		segment_2!='summa-lide'
+				  	}
+				  		Escuela de
+				  	{/if} 
+				  	{segment_2_category_name}
+				  	</a>
 				  </li> 
 				  {/if}
 				  <!--NOMBRE DEL CURSO-->
-				  {if segment_3!='' AND segment_2!="curso"  AND segment_2!="curso-destacados" AND segment_2!='no_resultados'}
+				  {if 
+				  	segment_3!='' AND 
+				  	segment_2!="curso" AND 
+				  	segment_2!="curso-destacados" AND 
+				  	segment_2!='no_resultados'
+				  }
 				  	<li	class="current">
 				  		{if segment_4!=''}
 				  		<a href="{site_url}n_escuelas/{segment_2}/{segment_3}"  onclick="ga('send', 'event', 'breadcrumb', 'curso', '{segment_3_category_name}');">
@@ -31,6 +68,9 @@
 				  {if segment_4!=''}
 				  	<li class="current">{segment_4_category_name}</li>
 				  {/if}		
+				  {if segment_5!=''}
+				  	<li class="current">{segment_5_category_name}</li>
+				  {/if}						  
 				  {if segment_1=='n_convenios'}
 				  	<li><a href="{site_url}n_convenios/peru">Convenios</a></li>
 				  	<li class="current">{segment_2_category_name}</li>

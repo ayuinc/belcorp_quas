@@ -65,14 +65,14 @@
 	  	    </div>  	    
 	  	    <div class="row">
 	  	    	<div class="small-12 medium-9 large-9 columns full-width-for-portrait">
-	  	    		{exp:child_categories 
-							  parent="{last_segment_category_id}"
-								site="1" 
-								child_categories_sort_by="custom" 
-								child_categories_sort_direction="asc"
-							}
+  	    		{exp:child_categories 
+						  parent="{last_segment_category_id}"
+							site="1" 
+							child_categories_sort_by="name" 
+							child_categories_sort_direction="asc"
+						}
 							{child_category_start}
-								<h5 class="uppercase mb-21 text-primary" id="{child_category_id}">{child_category_name}</h5>
+								<h5 class="uppercase mb-21 text-primary pt-70" id="{child_category_id}">{child_category_name}</h5>
 								{embed="n_includes/loop-convenios" categoria_hija="{child_category_id}"}
 							{child_category_end}
 						{/exp:child_categories}

@@ -153,25 +153,25 @@ $lang = array(
 'Search',
 
 'search_path_error' =>
-'The search path contains an error.  Please contact the system administrator.',
+'La ruta de búsqueda contiene un error. Por favor, póngase en contacto con el administrador del sistema.',
 
 'search_not_allowed' =>
-'You are not permitted to use the search engine.',
+'No se le permite utilizar el motor de búsqueda.',
 
 'search_no_keywords' =>
-'You did not submit a search term',
+'Usted no presentó un término de búsqueda',
 
 'search_min_length' =>
-'Search terms must be at least %x characters in length',
+'Los términos de búsqueda deben tener al menos %x caracteres de longitud',
 
 'search_result_heading' =>
-'Search Results:',
+'Resultados de búsqueda:',
 
 'search_no_result' =>
-'Your search did not return any results.',
+'Su búsqueda no ha obtenido ningún resultado.',
 
 'search_time_not_expired' =>
-'You are only allowed to search every %x seconds.',
+'Sólo se le permite de buscar cada %x segundos.',
 
 'search_results' =>
 'Search Results',
@@ -180,7 +180,7 @@ $lang = array(
 'Search Type',
 
 'none_of_these_words' =>
-'None of these words',
+'Ninguna de estas palabras',
 
 'search_in' =>
 'Search In',

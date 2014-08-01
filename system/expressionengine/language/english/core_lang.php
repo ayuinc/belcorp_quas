@@ -113,7 +113,7 @@ $lang = array(
 'Se han encontrado los siguientes errores',
 
 'invalid_action' =>
-'The action you have requested is invalid.',
+'La acción que ha solicitado no es válida.',
 
 'current_password_required' =>
 'Se requiere su contraseña actual.',
@@ -125,10 +125,10 @@ $lang = array(
 'Usted debe presentar la palabra que aparece en la imagen',
 
 'captcha_incorrect' =>
-'You did not submit the word exactly as it appears in the image',
+'Usted no presentó la palabra tal y como aparece en la imagen',
 
 'nonexistent_page' =>
-'The page you requested was not found',
+'La página solicitada no fue encontrada',
 
 'unable_to_load_field_type' =>
 'Unable to load requested field type file:  %s.<br />
@@ -159,10 +159,10 @@ Confirm the fieldtype file is located in the expressionengine/third_party/ direc
 //----------------------------
 
 'error_tag_syntax' =>
-'The following tag has a syntax error:',
+'La siguiente etiqueta tiene un error de sintaxis:',
 
 'error_fix_syntax' =>
-'Please correct the syntax in your template.',
+'Corrija la sintaxis de la plantilla.',
 
 'error_tag_module_processing' =>
 'The following tag cannot be processed:',
@@ -184,16 +184,16 @@ Confirm the fieldtype file is located in the expressionengine/third_party/ direc
 'If this email address is associated with an account, instructions for resetting your password have just been emailed to you.',
 
 'error_sending_email' =>
-'Unable to send email at this time.',
+'No se puede enviar correo electrónico en este momento.',
 
 'no_email_found' =>
-'The email address you submitted was not found in the database.',
+'La dirección de correo electrónico que ha enviado no se encontró en la base de datos.',
 
 'your_new_login_info' =>
-'Login information',
+'Información de acceso',
 
 'password_has_been_reset' =>
-'Your password was reset and a new one has been emailed to you.',
+'Su contraseña se ha restablecido y uno nuevo se ha enviado por correo electrónico.',
 
 //----------------------------
 // Date
