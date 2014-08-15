@@ -45,11 +45,15 @@
     		</div>
     	</div>
     	<div class="small-12 medium-8 large-8 columns show-for-large-up">
-    		<div class="row bg-morado">
+    		{exp:channel:entries channel="secciones" limit="1" category="13"}
+    		{imagenes-seccion}
+    		<div class="row bg-morado" style=" background-image:url('{image:url}');">
+    		{/imagenes-seccion}
     			<div class="small-12 medium-12 large-12 columns">
-	    			<h1 class="text-center">Bienvenido a la UCB, donde encontrarás todo lo que necesitas para poder desarrollarte, crecer y cumplir tus objetivos</h1>
+	    			<h1 class="text-center">{texto-descriptivo-seccion}</h1>
     			</div>
-    		</div>	
+    		</div>
+    		{/exp:channel:entries}	
     	</div>
     </div> 
 	{/if}    

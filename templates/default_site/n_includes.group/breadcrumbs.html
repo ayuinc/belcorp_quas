@@ -1,5 +1,11 @@
 				<ul class="breadcrumbs">
 				  <li><a href="{site_url}n_inicio" onclick="ga('send', 'event', 'breadcrumb', 'inicio');">Inicio</a></li>
+				  
+				  <!--CASO SOLO PARA PLAN DE DESARROLLO-->
+				  {if embed:categoria=='Plan de Desarrollo'}
+				  <li><a href="{site_url}n_escuelas/liderazgo-y-cultura-temas">Escuela de Liderazgo y Cultura</a></li>
+				  {/if}
+				  
 				  <!--ESCUELAS-->
 				  {if 
 				  	segment_2!='plan-de-desarrollo-temas' OR 	 
@@ -9,10 +15,10 @@
 				  }
 					  {if embed:categoria}
 					  <li>
-					  	<a href="{site_url}{if embed:categoria=='Destacados'}n_inicio{if:else}n_escuelas{/if}/{if embed:categoria=='Ventas'}ventas-temas{/if}{if embed:categoria=='Negocios'}negocios-temas{/if}{if embed:categoria=='Liderazgo y Cultura'}liderazgo-y-cultura-temas{/if}{if embed:categoria=='Innovación'}innovacion-temas{/if}{if embed:categoria=='Tecnología'}tecnologia-temas{/if}{if embed:categoria=='Operaciones'}operaciones-temas{/if}
+					  	<a href="{site_url}{if embed:categoria=='Destacados'}n_inicio{if:else}n_escuelas{/if}/{if embed:categoria=='Ventas'}ventas-temas{/if}{if embed:categoria=='Negocios'}negocios-temas{/if}{if embed:categoria=='Liderazgo y Cultura'}liderazgo-y-cultura-temas{/if}{if embed:categoria=='Innovación'}innovacion-temas{/if}{if embed:categoria=='Tecnología'}tecnologia-temas{/if}{if embed:categoria=='Operaciones'}operaciones-temas{/if}{if embed:categoria=='Plan de Desarrollo'}liderazgo-y-cultura-temas/plan-de-desarrollo-lide{/if}
 					  	" onclick="ga('send', 'event', 'breadcrumb', 'escuela', '{embed:categoria}');">
-						  	{if segment_2!='curso-destacados'}
-						  		Escuela de 
+						  	{if segment_2!='curso-destacados' AND embed:categoria!='Plan de Desarrollo'}
+						  		Escuela de
 						  	{/if}
 						  	{embed:categoria}
 					  	</a>
