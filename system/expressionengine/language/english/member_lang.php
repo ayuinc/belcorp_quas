@@ -75,7 +75,7 @@ $lang = array(
 'Debe presentar todos los campos',
 
 'invalid_existing_un_pw' =>
-'El nombre de usuario y / o contraseña existente que ha enviado no son válidos',
+'El nombre de usuario y / o contraseña existente que ha enviado no son válidos. Si olvidaste o no conoces tu usuario y /o contraseña puedes llamarnos al 4444 o enviar un email a <a href="mailto:soporteucb@belcorp.biz">soporteucb@belcorp.biz</a>',
 
 'unpw_updated' =>
 'Su configuración ha sido actualizado. Ahora puede acceder al sistema.',
