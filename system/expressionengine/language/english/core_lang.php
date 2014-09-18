@@ -110,7 +110,7 @@ $lang = array(
 'El formulario que ha enviado contenía los siguientes errores',
 
 'general_error' =>
-'Se han encontrado los siguientes errores',
+'HOLA, HEMOS ENCONTRADO QUE:',
 
 'invalid_action' =>
 'La acción que ha solicitado no es válida.',
