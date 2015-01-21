@@ -1,0 +1,189 @@
+<style>
+.accordion {
+letter-spacing: 0.046rem;
+}
+
+#school_panel_1 dd a {
+line-height: 125%;
+}
+
+.course h5 {
+margin-bottom: 1rem;
+line-height: 115%;
+}
+
+.course h6 {
+letter-spacing: 0.045rem;
+}
+
+@media only screen and (max-width: 40em) { 
+	#navbar {
+		position:inherit;
+	}
+	
+	#navbar a {
+		font-size: 0.9rem;
+	}
+	
+	#new_homepage .headline, #summa .headline {
+		width:100%;
+	}
+	
+	#new_homepage .headline h1, #summa .headline h1 {
+		margin-top:1.25rem;
+		font-size: 2rem;
+		margin-bottom:0px;
+	}
+	
+	#new_homepage{
+		min-height:390px;
+	}
+	#new_homepage .headline h4, #summa .headline h4 {
+		font-size: 1.1rem;
+		margin-bottom:-1rem
+	}
+	
+	#summa {
+		min-height:340px;
+	}
+	
+	#sub_navbar {
+		position:inherit;
+		top:0rem;
+		height: 7.1rem;
+	}
+	
+	#sub_navbar .inline-list {
+		width:100%;
+	}
+	
+	#sub_navbar .inline-list li {
+		width:100%;
+		float:none;
+		margin-left:0rem;
+		text-align: center;
+		border-bottom: 1px solid #FFF;
+	}
+	
+	#sub_navbar .inline-list li a {
+		margin:0.3rem 0;
+	}
+	
+	#destacados .title {
+		font-size: 2rem;
+		margin-bottom:0px;
+	}
+	#destacados .course h3 {
+	    font-size: 1rem;
+	    margin-bottom: 2rem;
+	}	
+	
+	#escuelas .title {
+		font-size: 2rem;
+		margin-bottom:0px;
+	}
+	.nuestras-escuelas div {
+		margin-bottom:2rem;
+	}
+	
+	#contacto .title {
+		font-size: 2rem;
+		margin-bottom:0px;
+	}
+	#menu_title {
+		font-weight: 300;
+		font-size: 0.9rem;
+		bottom: -0.4rem;
+		color:#596C79;
+		text-transform: uppercase;
+	}
+	.menu_title_catalogo {
+		top: -0.5rem;
+		font-size:1.75rem !important;
+	}
+	#courses_menu {
+		height:8rem;
+	}
+	#catalogo_content {
+		margin-top:9rem;
+	}
+
+} /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+  	#navbar {
+		position:inherit;
+	}
+	#sub_navbar {
+		position:inherit;
+		top:0rem;
+		height: 0rem;
+		margin-bottom:-4rem;
+	}
+	#new_homepage .headline, #summa .headline {
+		width:50%;
+	}
+	#new_homepage, #summa {
+		min-height:500px;
+	}
+	.nuestras-escuelas div {
+		margin-bottom:2rem;
+	}
+	#article_header, #article_content {
+		width:92%;
+		margin-left:70px;
+		padding:1.25rem 1.25rem;
+	}
+	#article_header .article_title {
+		width:95%;
+		margin:0 auto;
+	}
+	.inline-list > li {
+		margin-left:0.5rem
+	}
+	.heading-pocket .inline-list {
+		margin-left:-10px;
+	}
+	.heading-pocket .inline-list li a {
+		font-size: 0.7rem;
+		padding:0.2rem 0.3rem;
+	}
+	#details_header {
+		width: 83.2%;
+	}
+
+}
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {
+  	#navbar {
+		position:inherit;
+	}
+	#sub_navbar {
+		position:inherit;
+		top:0rem;
+		height: 0rem;
+		margin-bottom:-4rem;
+	}
+	#new_homepage .headline, #summa .headline {
+		width:50%;
+	}
+	#new_homepage, #summa {
+		min-height:500px;
+	}
+	.nuestras-escuelas div {
+		margin-bottom:2rem;
+	}
+	#article_header, #article_content {
+		width:93%;
+		margin-left:70px;
+		padding:1.25rem 1.25rem;
+	}
+	#article_header .article_title {
+		width:95%;
+		margin:0 auto;
+	}	
+	#details_header {
+		width: 87.2%;
+	}
+}
+</style>
