@@ -48,7 +48,12 @@ class Channel_images
 		if ($this->EE->TMPL->fetch_param('url_title') != FALSE)
 		{
 			$entry_id = 9999999;
-			$query = $this->EE->db->query("SELECT entry_id FROM exp_channel_titles WHERE url_title = '".$this->EE->TMPL->fetch_param('url_title')."' LIMIT 1");
+			if ($this->EE->TMPL->fetch_param('channel_id')) {
+				$query = $this->EE->db->query("SELECT entry_id FROM exp_channel_titles WHERE url_title = '".$this->EE->TMPL->fetch_param('url_title')."' AND channel_id = '".$this->EE->TMPL->fetch_param('channel_id')."' LIMIT 1");
+			} else {
+				$query = $this->EE->db->query("SELECT entry_id FROM exp_channel_titles WHERE url_title = '".$this->EE->TMPL->fetch_param('url_title')."' LIMIT 1");
+			}
+
 			if ($query->num_rows() > 0) $entry_id = $query->row('entry_id');
 		}
 
@@ -158,8 +163,7 @@ class Channel_images
 			}
 
 			// Get Field Settings!
-			$settings = $this->EE->channel_images_model->get_field_settings($image->field_id);
-			$settings = $settings['channel_images'];
+			$settings = $this->EE->image_helper->grabFieldSettings($image->field_id);
 
 			//----------------------------------------
 			// Load Location
@@ -213,9 +217,19 @@ class Channel_images
 				$image_url = str_replace('http://', 'https://', $image_url);
 			}
 
+			$arr = array();
+			$arr['{IMG_DESC}'] = $image->description;
+			$arr['{IMG_TITLE}'] = $image->title;
+			$arr['{IMG_CATEGORY}'] = $image->category;
+			$arr['{IMG_FIELD_1}'] = $image->cifield_1;
+			$arr['{IMG_FIELD_2}'] = $image->cifield_2;
+			$arr['{IMG_FIELD_3}'] = $image->cifield_3;
+			$arr['{IMG_FIELD_4}'] = $image->cifield_4;
+			$arr['{IMG_FIELD_5}'] = $image->cifield_5;
+
 			// Lets parse Description and Title once again in suffix/prefix
-			$imgprefix = str_replace(array('{IMG_DESC}', '{IMG_TITLE}', '{IMG_CATEGORY}'), array($image->description, $image->title, $image->category), $img_prefix);
-			$imgsuffix = str_replace(array('{IMG_DESC}', '{IMG_TITLE}', '{IMG_CATEGORY}'), array($image->description, $image->title, $image->category), $img_suffix);
+			$imgprefix = str_replace(array_keys($arr), array_values($arr), $img_prefix);
+			$imgsuffix = str_replace(array_keys($arr), array_values($arr), $img_suffix);
 
 			$this->EE->TMPL->tagdata = str_replace(
 						array(	LD.$this->prefix.$count.':id'.RD,
@@ -432,8 +446,7 @@ class Channel_images
 				}
 
 				// Get Field Settings!
-				$settings = $this->EE->channel_images_model->get_field_settings($image->field_id);
-				$settings = $settings['channel_images'];
+				$settings = $this->EE->image_helper->grabFieldSettings($image->field_id);
 
 				//----------------------------------------
 				// Load Location
@@ -792,8 +805,7 @@ class Channel_images
 		}
 
 		// Get Field Settings!
-		$settings = $this->EE->channel_images_model->get_field_settings($image->field_id);
-		$settings = $settings['channel_images'];
+		$settings = $this->EE->image_helper->grabFieldSettings($image->field_id);
 
 		//----------------------------------------
 		// Load Location
@@ -915,11 +927,17 @@ class Channel_images
 		// Increase all types of limits!
 		// -----------------------------------------
 		@set_time_limit(0);
-		@ini_set('memory_limit', '64M');
-		@ini_set('memory_limit', '96M');
-		@ini_set('memory_limit', '128M');
-		@ini_set('memory_limit', '160M');
-		@ini_set('memory_limit', '192M');
+		$conf = $this->EE->config->item('channel_images');
+		if (is_array($conf) === false) $conf = array();
+
+		if (isset($conf['infinite_memory']) === FALSE || $conf['infinite_memory'] == 'yes')
+		{
+			@ini_set('memory_limit', '64M');
+			@ini_set('memory_limit', '96M');
+			@ini_set('memory_limit', '128M');
+			@ini_set('memory_limit', '160M');
+			@ini_set('memory_limit', '192M');
+		}
 
 		error_reporting(E_ALL);
 		@ini_set('display_errors', 1);
@@ -1021,8 +1039,7 @@ class Channel_images
 		foreach ($tfields as $field_id)
 		{
 			// Get Field Settings!
-			$settings = $this->EE->image_helper->grab_field_settings($field_id);
-			$settings = $settings['channel_images'];
+			$settings = $this->EE->image_helper->grabFieldSettings($field_id);
 
 			if ($settings['upload_location'] != 'local') continue;
 
@@ -1144,39 +1161,41 @@ class Channel_images
 
 	// ********************************************************************************* //
 
-	public function channel_images_router()
+	public function channel_images_router($mcp_task=false)
 	{
 		@header('Access-Control-Allow-Origin: *');
-		@header('Access-Control-Allow-Credentials: true');
+		//@header('Access-Control-Allow-Credentials: true');
         @header('Access-Control-Max-Age: 86400');
         @header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-        @header('Access-Control-Allow-Headers: Keep-Alive, Content-Type, User-Agent, Cache-Control, X-Requested-With, X-File-Name, X-File-Size');
+        @header('Access-Control-Allow-Headers: Keep-Alive, Content-Type, User-Agent, Cache-Control, Origin, X-Requested-With, X-File-Name, X-File-Size, X-EEXID');
 
+        if ($this->EE->input->server('REQUEST_METHOD') == 'OPTIONS') exit();
 
-		// -----------------------------------------
-		// Ajax Request?
-		// -----------------------------------------
-		if ( $this->EE->input->get_post('ajax_method') != FALSE OR (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') )
-		{
-			// Load Library
-			if (class_exists('Channel_Images_AJAX') != TRUE) include 'ajax.channel_images.php';
+        // Task
+        $task = $this->EE->input->get_post('ajax_method');
 
-			$AJAX = new Channel_Images_AJAX();
+        if ($mcp_task !== false) {
+            $task = $mcp_task;
+        }
 
-			// Shoot the requested method
-			$method = $this->EE->input->get_post('ajax_method');
-			echo $AJAX->$method();
-			exit();
-		}
+        if (!$task) {
+        	// If nothing of the above is true...
+			exit('This is the ACT URL for Channel Images');
+        }
 
+		// Load Library
+		if (class_exists('Channel_Images_AJAX') != TRUE) include 'ajax.channel_images.php';
+		$AJAX = new Channel_Images_AJAX();
 
-		// If nothing of the above is true...
-		exit('This is the ACT URL for Channel Images');
+		// Shoot the requested method
+		echo $AJAX->$task();
+		exit();
+
 	}
 
 	// ********************************************************************************* //
 
-	public function locked_image_url()
+    public function locked_image_url()
 	{
 		// -----------------------------------------
 		// We need our Key
@@ -1237,8 +1256,7 @@ class Channel_images
 		// -----------------------------------------
 		// Get Field Settings
 		// -----------------------------------------
-		$settings = $this->EE->channel_images_model->get_field_settings($image->field_id);
-		$settings = $settings['channel_images'];
+		$settings = $this->EE->image_helper->grabFieldSettings($image->field_id);
 
 		//----------------------------------------
 		// Load Location
@@ -1330,10 +1348,14 @@ class Channel_images
 
 	public function simple_image_url()
 	{
+		error_reporting(E_ALL);
+		@ini_set('display_errors', 1);
+
 		$field_id = $this->EE->input->get('fid');
 		$dir = $this->EE->input->get('d');
 		$file = $this->EE->security->sanitize_filename($this->EE->input->get('f'));
 		$temp_dir = $this->EE->input->get('temp_dir');
+
 
 		// Must be an INT
 		if ($this->EE->image_helper->is_natural_number($dir) == FALSE || $this->EE->image_helper->is_natural_number($field_id) == FALSE)
@@ -1364,6 +1386,22 @@ class Channel_images
 			if ($extension == 'png') $filemime = 'image/png';
 			elseif ($extension == 'gif') $filemime = 'image/gif';
 
+			// Windows?
+			$os = $this->EE->config->item('host_os'); // Custom in config file
+			if ($os == 'windows') {
+				$file = APPPATH.'\\cache\\channel_images\\field_'.$field_id.'\\'.$dir.'\\'.$file;
+			} else {
+				$file = $this->EE->channel_images->cache_path.'channel_images/field_'.$field_id.'/'.$dir.'/'.$file;
+			}
+
+			if (file_exists($file) == FALSE) {
+				if ($this->EE->session->userdata('group_id') == 1) {
+					echo $file . '<br>';
+				}
+
+				exit('FILE NOT FOUND!');
+			}
+
 			/** ----------------------------------------
 			/**  For Local Files we STREAM
 			/** ----------------------------------------*/
@@ -1374,27 +1412,13 @@ class Channel_images
 			header('Expires: Sat, 12 Dec 1990 11:00:00 GMT'); // Date in the past
 			//header('X-Robots-Tag: noindex'); // Tell google not to index
 
-			// Windows?
-			$os = $this->EE->config->item('host_os'); // Custom in config file
-			if ($os == 'windows' OR ( isset($_SERVER['SERVER_SOFTWARE']) == TRUE && strpos($_SERVER['SERVER_SOFTWARE'], 'IIS') !== FALSE) )
-			{
-				$file = APPPATH.'\\cache\\channel_images\\field_'.$field_id.'\\'.$dir.'\\'.$file;
-			}
-			else
-			{
-				$file = $this->EE->channel_images->cache_path.'channel_images/field_'.$field_id.'/'.$dir.'/'.$file;
-			}
-
-			if (file_exists($file) == FALSE)
-			{
-				exit('FILE NOT FOUND!');
-			}
-
 			header('Content-Length: ' . @filesize($file));
 
-			@ob_clean();
-    		@flush();
     		@readfile($file);
+    		@ob_flush();
+			@flush();
+			@ob_end_flush();
+			@ob_start();
 
 			exit;
 		}
@@ -1402,16 +1426,15 @@ class Channel_images
 		// -----------------------------------------
 		// Load Settings
 		// -----------------------------------------
-		$settings = $this->EE->channel_images_model->get_field_settings($field_id);
+		$settings = $this->EE->image_helper->grabFieldSettings($field_id);
 
-		if (isset($settings['channel_images']) == FALSE)
+
+		if (empty($settings) == true)
 		{
 			$this->EE->output->set_status_header(404);
 			echo '<html><head><title>404 Page Not Found</title></head><body><h1>Status: 404 Page Not Found</h1></body></html>';
 			exit();
 		}
-
-		$settings = $settings['channel_images'];
 
 		// -----------------------------------------
 		// Load Location
@@ -1490,10 +1513,12 @@ class Channel_images
 
 			header('Content-Length: ' . @filesize($file));
 
-			@ob_clean();
-    		@flush();
-    		@readfile($file);
 
+			@readfile($file);
+	    	@ob_flush();
+			@flush();
+			@ob_end_flush();
+			@ob_start();
 			exit;
 		}
 

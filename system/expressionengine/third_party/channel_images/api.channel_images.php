@@ -12,6 +12,7 @@
 class Channel_Images_API
 {
 	private $valid_mime = array('jpg' => 'image/jpeg', 'png' => 'image/png', 'gif' => 'image/gif');
+	private $LOCS = array();
 
 	public $last_error = array();
 
@@ -45,8 +46,7 @@ class Channel_Images_API
 		if (isset($image->field_id) == FALSE) return FALSE;
 
 		// Grab the field settings
-		$settings = $this->EE->channel_images_model->get_field_settings($image->field_id);
-		$settings = $settings['channel_images'];
+		$settings = $this->EE->image_helper->grabFieldSettings($image->field_id);
 
 		// Location
 		$location_type = $settings['upload_location'];
@@ -118,8 +118,18 @@ class Channel_Images_API
 
 	public function process_field_string($string)
 	{
-		$string = $this->EE->security->xss_clean($string);
+		$conf = $this->EE->config->item('channel_images');
+
+		//$this->EE->firephp->log('BEFORE: '.$string);
+
+		// Disable XSS?
+		if (isset($conf['xss_field_strings']) === true && $conf['xss_field_strings'] == 'yes') {
+			$string = $this->EE->security->xss_clean($string);
+		}
+
+		//$this->EE->firephp->log('AFTER XSS: '.$string);
 		$string = htmlentities($string, ENT_QUOTES, "UTF-8");
+		//$this->EE->firephp->log('AFTER HTML ENTITIES: '.$string);
 
 		return $string;
 	}
@@ -184,16 +194,13 @@ class Channel_Images_API
    		// -----------------------------------------
 		// Load Settings
 		// -----------------------------------------
-		$settings = $this->EE->channel_images_model->get_field_settings($data['field_id']);
-		if (isset($settings['channel_images']['upload_location']) == FALSE)
+		$settings = $this->EE->image_helper->grabFieldSettings($data['field_id']);
+		if (isset($settings['upload_location']) == FALSE)
 		{
 			$error = "Couldn't Find Upload Location?? It's Not Set.";
 			return false;
 			return FALSE;
 		}
-
-		$settings = $settings['channel_images'];
-		$settings = $this->EE->image_helper->array_extend($this->EE->config->item('ci_defaults'), $settings);
 
 		//----------------------------------------
 		// Image URL
@@ -359,14 +366,11 @@ class Channel_Images_API
 		// -----------------------------------------
 		// Load Settings
 		// -----------------------------------------
-		$settings = $this->EE->channel_images_model->get_field_settings($field_id);
-		if (isset($settings['channel_images']['upload_location']) == FALSE)
+		$settings = $this->EE->image_helper->grabFieldSettings($field_id);
+		if (isset($settings['upload_location']) == FALSE)
 		{
 			return FALSE;
 		}
-
-		$settings = $settings['channel_images'];
-		$settings = $this->EE->image_helper->array_extend($this->EE->config->item('ci_defaults'), $settings);
 
 		// -----------------------------------------
 		// Load Actions :O
@@ -433,14 +437,11 @@ class Channel_Images_API
 		// -----------------------------------------
 		// Load Settings
 		// -----------------------------------------
-		$settings = $this->EE->channel_images_model->get_field_settings($field_id);
-		if (isset($settings['channel_images']['upload_location']) == FALSE)
+		$settings = $this->EE->image_helper->grabFieldSettings($field_id);
+		if (isset($settings['upload_location']) == FALSE)
 		{
 			return FALSE;
 		}
-
-		$settings = $settings['channel_images'];
-		$settings = $this->EE->image_helper->array_extend($this->EE->config->item('ci_defaults'), $settings);
 
 		// Tempdir?
 		if ($temp_dir != FALSE) $this->temp_dir = $temp_dir;
@@ -524,6 +525,151 @@ class Channel_Images_API
            				'SOZsozYYuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy');
 
     	return $filename;
+	}
+
+	// ********************************************************************************* //
+
+	public function convertUrlsToTags($data)
+	{
+		$url = $this->EE->image_helper->get_router_url('url', 'simple_image_url');
+		$urls = array();
+
+		preg_match_all("#<img.+?src=[\"'](.+?)[\"'].+?>#s", $data, $matches);
+
+		if (isset($matches[1]) === false || empty($matches[1]) === true) return $data;
+
+		foreach ($matches[1] as $url) {
+			$item = array();
+			$item['original'] = $url;
+
+			$query = parse_url($url, PHP_URL_QUERY);
+			$query = str_replace('&amp;', '&', $query);
+
+			parse_str($query, $output);
+			$item['parts'] = $output;
+
+			$urls[] = $item;
+		}
+
+		// General Vars
+		foreach ($urls as $item) {
+			$var = '{ci_image';
+
+			if (isset($item['parts']['d']) === false && isset($item['parts']['f']) === false) {
+				continue;
+			}
+
+			// Temp Dir ?
+			if (isset($item['parts']['temp_dir']) === true && $item['parts']['temp_dir'] == 'yes') {
+				$item['parts']['d'] = 0;
+			}
+
+			if (isset($item['parts']['fid']) === true) {
+				$var .= " field_id='{$item['parts']['fid']}'";
+			}
+
+			if (isset($item['parts']['d']) === true) {
+				$var .= " entry_id='{$item['parts']['d']}'";
+			}
+
+			if (isset($item['parts']['f']) === true) {
+				$var .= " filename='{$item['parts']['f']}'";
+			}
+
+			$var .= '}';
+
+			$data = str_replace($item['original'], $var, $data);
+		}
+
+		return $data;
+	}
+
+	// ********************************************************************************* //
+
+	public function generateUrlsFromTags($data, $entry_id=0, $template=false)
+	{
+		$vars = array();
+		preg_match_all("/{ci_image (.*?)}/s", $data, $varMatches);
+
+		if (isset($varMatches[1]) === false || empty($varMatches[1]) === true) return $data;
+
+		foreach ($varMatches[0] as $key => $val) {
+			$matches = array();
+			$inner = $varMatches[1][$key];
+
+			$inner = str_replace('&#039;', '\'', $inner);
+			$inner = str_replace('&quot;', '"', $inner);
+
+			preg_match_all("/(\S+?)\s*=\s*(\042|\047)([^\\2]*?)\\2/is", $inner, $matches, PREG_SET_ORDER);
+
+			if (isset($matches[0][3]) === false) continue;
+
+			$item = array();
+			$item['original'] = $val;
+			$item['params'] = array();
+
+			foreach($matches as $match) {
+				$item['params'][$match[1]] = (trim($match[3]) == '') ? $match[3] : trim($match[3]);
+			}
+
+			$vars[] = $item;
+		}
+
+		$url = $this->EE->image_helper->get_router_url('url', 'simple_image_url');
+
+		foreach ($vars as $var) {
+			$imgurl = $url;
+
+			if (isset($var['params']['entry_id']) === true) {
+				if ($var['params']['entry_id'] == false) $var['params']['entry_id'] = $entry_id;
+				$imgurl .= '&amp;d=' . $var['params']['entry_id'];
+			}
+
+			if (isset($var['params']['field_id']) === true) {
+				$imgurl .= '&amp;fid=' . $var['params']['field_id'];
+			}
+
+			if (isset($var['params']['filename']) === true) {
+				$imgurl .= '&amp;f=' . $var['params']['filename'];
+			}
+
+			if ($template) {
+
+				$field_id = $var['params']['field_id'];
+
+				// Get the field settings
+				$settings = $this->EE->image_helper->grabFieldSettings($field_id);
+
+				//----------------------------------------
+				// Load Location
+				//----------------------------------------
+				if (isset($this->LOCS[$field_id]) === FALSE)
+				{
+					$location_type = $settings['upload_location'];
+					$location_class = 'CI_Location_'.$location_type;
+					$location_settings = $settings['locations'][$location_type];
+
+					// Load Main Class
+					if (class_exists('Image_Location') == FALSE) require PATH_THIRD.'channel_images/locations/image_location.php';
+
+					// Try to load Location Class
+					if (class_exists($location_class) == FALSE)
+					{
+						$location_file = PATH_THIRD.'channel_images/locations/'.$location_type.'/'.$location_type.'.php';
+						require $location_file;
+					}
+
+					// Init!
+					$this->LOCS[$field_id] = new $location_class($location_settings);
+				}
+
+				$imgurl = $this->LOCS[$field_id]->parse_image_url($var['params']['entry_id'], $var['params']['filename']);
+			}
+
+			$data = str_replace($var['original'], $imgurl, $data);
+		}
+
+		return $data;
 	}
 
 	// ********************************************************************************* //

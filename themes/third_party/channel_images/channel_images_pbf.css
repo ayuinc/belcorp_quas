@@ -1,5 +1,5 @@
 .CIField {margin:5px 0; padding:0; width:auto; position: relative;}
-.CIField .hidden {display:none}
+.CIField .cihidden {display:none}
 
 /* ClearFix */
 *+html .CIField .clearfix {min-height:1%;}
@@ -57,6 +57,7 @@
 .CIField .SearchImages .entries {background:#fff; padding:5px; height:175px; overflow:scroll;}
 .CIField .SearchImages .entries a {text-decoration:none; display:block;}
 .CIField .SearchImages .entryimages {border:1px solid #B6C0C2; border-radius:3px 3px 3px 3px; width:50%; vertical-align:top; padding:0;}
+.CIField .SearchImages .entryimages h4 {margin:0 !important;}
 .CIField .SearchImages .images {padding:5px 0 5px 5px; height:175px; overflow:scroll;}
 .CIField .SearchImages .images .img {float:left; margin:0 5px 5px 0; position:relative;}
 .CIField .SearchImages .images .img span.add {height:16px; width:16px; display:block; background:url(img/add.png) no-repeat; outline:0; text-indent:-9999px; position:absolute; bottom:0; right:0}
@@ -87,6 +88,7 @@
 .CIField .Image .ImageLinked {background: url(img/break_link.png) no-repeat !important;}
 .CIField .Image .ImageReplace {background: url(img/refresh.png) no-repeat;}
 
+.CIField .TileBased .AssignedImages {list-style:none; margin:0; padding:0;}
 .CIField .TileBased .Image {z-index:50; width:100px; padding:2px 2px 0; height:119px;margin:0 5px 5px 0;position:relative; float:left; border:2px solid transparent}
 .CIField .TileBased .Image a {width:100px;height:100px;display:block;}
 .CIField .TileBased .Image a img {width:100px;height:100px;border-radius:5px 5px 0 0;}
@@ -103,7 +105,7 @@
 .CIField .TileBased .Image:hover .actions {display:block;}
 .CIField .TileBased .PrimaryImage {border:2px solid orange; padding:0;border-radius:7px 7px 7px 7px;}
 .CIField .TileBased .PrimaryImage .filename {}
-.CIField .TileBased .image_title {background:none;}
+.CIField .TileBased .image_title {background:none; }
 
 .ChannelImagesSubmitWait {padding:0 0 0 20px; background:url(img/spinner.gif) no-repeat; text-align: left; font-weight:bold; color:green;}
 
@@ -116,11 +118,11 @@
 
 /* Import Files */
 .CIField .ImportImagesBtn {position:relative; cursor:pointer; color:#fff; padding: 5px 20px 6px; background-color:#0064cd; background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd)); background-image: -moz-linear-gradient(top, #049cdb, #0064cd); background-image: -ms-linear-gradient(top, #049cdb, #0064cd); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd)); background-image: -webkit-linear-gradient(top, #049cdb, #0064cd); background-image: -o-linear-gradient(top, #049cdb, #0064cd); background-image: linear-gradient(top, #049cdb, #0064cd); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#049cdb', endColorstr='#0064cd', GradientType=0); text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); border-color: #0064cd #0064cd #003f81; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); font-size: 13px; line-height: normal; border: 1px solid #ccc; border-bottom-color: #bbb; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); -webkit-transition: 0.1s linear all; -moz-transition: 0.1s linear all; -ms-transition: 0.1s linear all; -o-transition: 0.1s linear all; transition: 0.1s linear all;}
-.CIField .ImportImagesBtn span {display:none; position:absolute; left:-18px; background:url(img/spinner.gif) no-repeat; width:16px; height:16px;}
+.CIField .ImportImagesBtn span {display:none; position:absolute; right:-18px; background:url(img/spinner.gif) no-repeat; width:16px; height:16px;}
 
 /* WYGWAM */
 .WCI_Images {}
-.WCI_Images ul.tabs {border-bottom:1px solid #ccc;}
+.WCI_Images ul.tabs {border-bottom:1px solid #ccc; background:none;}
 .WCI_Images ul.tabs li.ui-tabs-selected {background:none;}
 .WCI_Images .CImage {height:60px; overflow:hidden; float:left; border:5px solid #fff;}
 .WCI_Images .CImage:hover {border-color:#eee;}
