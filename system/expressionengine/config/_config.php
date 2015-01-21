@@ -1,4 +1,5 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 $ip_de_la_pagina='http://192.241.228.248/';
 $path_de_la_pagina='/opt/site/html/';
