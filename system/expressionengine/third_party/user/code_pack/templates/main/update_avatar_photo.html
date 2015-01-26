@@ -1,0 +1,100 @@
+{embed="%prefix%inc/index" page_title="Update Avatar &amp; Photo"}
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="account"}
+
+		<div class="container" style="margin-top:30px;">
+
+			<div class="page-header">
+				<h1>Update Avatar &amp; Photo</h1>
+				<p class="lead">This page allows the currently logged in user to add/change/remove their avatar or profile photo.</p>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12">
+				{if segment_3 == "avatar_updated"}
+					<div class="alert alert-success" role="alert">
+						<p class="lead">You've successfully updated your avatar!</p>
+					</div>
+				{/if}
+				{if segment_3 == "photo_updated"}
+					<div class="alert alert-success" role="alert">
+						<p class="lead">You've successfully updated your profile photo!</p>
+					</div>
+				{/if}
+				</div>
+			</div>
+
+			<div class="row">
+{if logged_in} {!-- START - Make sure the user is logged in for updating account --}
+				<div class="col-sm-6">
+					{exp:user:edit
+						return="%prefix%main/update_avatar_photo/avatar_updated"
+						override_return="%prefix%main/update_avatar_photo/avatar_updated"
+						screen_name_password_required="no"
+						error_page="%prefix%inc/error_template"
+					}
+					<h4>Avatar</h4>
+					<p>
+						{if avatar_filename}
+							<label>Current Avatar</label>
+							<img src="{avatar_url}{avatar_filename}" width="{avatar_width}" height="{avatar_height}" class="img-responsive img-rounded" style="display:block;" />
+						{if:else}
+							You currently do not have an avatar uploaded.
+						{/if}
+					</p>
+					<p>
+						<label for="avatar_filename">Upload a New Avatar</label>
+						<input type="file" name="avatar_filename" id="avatar_filename" />
+					</p>
+					<p>
+						<button type="submit" class="btn btn-md btn-success" style="margin-right:10px;">Update</button> <button type="submit" name="remove_avatar" class="btn btn-md btn-danger">Remove</button>
+					</p>
+					{/exp:user:edit}
+				</div>
+
+				<div class="col-sm-6">
+					{exp:user:edit
+						return="%prefix%main/update_avatar_photo/photo_updated"
+						override_return="%prefix%main/update_avatar_photo/photo_updated"
+						screen_name_password_required="no"
+						error_page="%prefix%inc/error_template"
+					}
+					<h4>Profile Photo</h4>
+					<p>
+						{if photo_filename}
+							<label>Current Profile Photo</label>
+							<img src="{photo_url}{photo_filename}" width="{photo_width}" height="{photo_height}" class="img-responsive img-rounded" style="display:block;" />
+						{if:else}
+							You currently do not have a profile photo uploaded.
+						{/if}
+					</p>
+					<p>
+						<label for="photo_filename">Upload a New Profile Photo</label>
+						<input type="file" name="photo_filename" id="photo_filename" />
+					</p>
+					<p>
+						<button type="submit" class="btn btn-md btn-success" style="margin-right:10px;">Update</button> <button type="submit" name="remove_photo" class="btn btn-md btn-danger">Remove</button>
+					</p>
+					{/exp:user:edit}
+				</div>
+{/if} {!-- END - Make sure the user is logged in for updating account --}
+{if logged_out} {!-- START - If logged out, show the Login form --}
+				<div class="col-xs-12">
+					{embed="%prefix%inc/login"}
+				</div>
+{/if} {!-- END - If logged out, show the Login form --}
+      		</div>
+
+			<div class="well" style="margin-top:30px;">
+				<h2 style="margin-top:5px;">About This Page</h2>
+				<p>The "Update Avatar/Photo" page allows the currently logged in user to add/change/remove their avatar or profile photo.</p>
+				<p>It makes use of the following tags:</p>
+				<ul>
+					<li><a href="http://www.solspace.com/docs/user/edit/">User:Edit</a> to edit profile information.</li>
+				</ul>
+			</div>
+
+{embed="%prefix%inc/footer"}

@@ -1,0 +1,109 @@
+{embed="%prefix%inc/index" page_title="Update Settings"}
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="account"}
+
+		<div class="container" style="margin-top:30px;">
+
+			<div class="page-header">
+				<h1>Update Settings</h1>
+				<p class="lead">This page allows the currently logged in user to edit their account settings.</p>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12">
+				{if segment_3 == "updated"}
+					<div class="alert alert-success" role="alert">
+						<p class="lead">Your account settings have been successfully updated!</p>
+					</div>
+				{/if}
+				</div>
+			</div>
+
+			<div class="row">
+{if logged_in} {!-- START - Make sure the user is logged in for updating account --}
+				{exp:user:edit
+					return="%prefix%main/update_settings/updated"
+					error_page="%prefix%inc/error_template"
+				}
+				<div class="col-sm-6">
+					<h4>Localization Settings</h4>
+					<p>
+						<label for="timezone">Time Zone</label>
+						{user:timezone_menu
+							id="timezone_select_wrapper"
+							timezone:id="timezone_id"
+							timezone:class="form-control"
+							country:id="country_id"
+							country:class="form-control"
+						}
+					</p>
+					<p>
+						<label for="time_format">Time Formatting</label>
+						<select name="time_format" id="time_format" class="form-control">
+							{time_formats}
+								<option value="{time_format_name}" {selected}>{time_format_label}</option>
+							{/time_formats}
+						</select>
+					</p>
+					<p>
+						<label for="language">Language</label>
+						<select name="language" id="language" class="form-control">
+							{languages}
+								<option value="{language_name}" {selected}>{language_label}</option>
+							{/languages}
+						</select>
+					</p>
+				</div>
+				<div class="col-sm-6">
+					<h4>Email Notifications</h4>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" name="accept_admin_email" value="y" {if accept_admin_email == "y"}checked="checked"{/if} /> Accept email from site administrators
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" name="accept_user_email" value="y" {if accept_user_email == "y"}checked="checked"{/if} /> Accept email from other members of this site
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" name="notify_by_default" value="y" {if notify_by_default == "y"}checked="checked"{/if} /> Enable email notifications by default when you post messages
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" name="notify_of_pm" value="y" {if notify_of_pm == "y"}checked="checked"{/if} /> Notify me via email when someone sends me a private message
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" name="smart_notifications" value="y" {if smart_notifications == "y"}checked="checked"{/if} /> Enable Smart Notifications
+						</label>
+					</div>
+					<p>
+						<button type="submit" class="btn btn-lg btn-success">Update</button>
+					</p>
+				</div>
+				{/exp:user:edit}
+{/if} {!-- END - Make sure the user is logged in for updating account --}
+{if logged_out} {!-- START - If logged out, show the Login form --}
+				<div class="col-xs-12">
+					{embed="%prefix%inc/login"}
+				</div>
+{/if} {!-- END - If logged out, show the Login form --}
+      		</div>
+
+			<div class="well" style="margin-top:30px;">
+				<h2 style="margin-top:5px;">About This Page</h2>
+				<p>The "Update Settings" page allows the currently logged in user to adjust account settings like notifications and localization.</p>
+				<p>It makes use of the following tags:</p>
+				<ul>
+					<li><a href="http://www.solspace.com/docs/user/edit/">User:Edit</a> to edit profile information.</li>
+				</ul>
+			</div>
+
+{embed="%prefix%inc/footer"}

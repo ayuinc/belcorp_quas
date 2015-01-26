@@ -1,0 +1,79 @@
+{embed="%prefix%inc/index" page_title="Update Account"}
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="account"}
+
+		<div class="container" style="margin-top:30px;">
+
+			<div class="page-header">
+				<h1>Update Account</h1>
+				<p class="lead">This page allows the currently logged in user to edit sensitive account information.</p>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12">
+					{if segment_3 == "updated"}
+						<div class="alert alert-success" role="alert">
+							<p class="lead">Your account has been successfully updated!</p>
+						</div>
+					{/if}
+					<h4>Edit the fields below to update your account:</h4>
+				</div>
+			</div>
+
+			<div class="row">
+{if logged_in} {!-- START - Make sure the user is logged in for updating account --}
+				{exp:user:edit
+					return="%prefix%main/update_account/updated"
+					screen_name_password_required="no"
+					error_page="%prefix%inc/error_template"
+				}
+				<div class="col-sm-6">
+					<p>
+						<label for="username">Username:</label>
+						<input type="text" name="username" id="username" value="{username}" class="form-control" />
+					</p>
+					<p>
+						<label for="password">New Password:</label>
+						<input type="password" name="password" id="password" placeholder="Enter new password here" class="form-control" />
+					</p>
+					<p>
+						<label for="password_confirm">Confirm New Password:</label>
+						<input type="password" name="password_confirm" id="password_confirm" placeholder="Confirm new password here" class="form-control" />
+					</p>
+				</div>
+
+				<div class="col-sm-6">
+					<p>
+						<label for="email">Email:</label>
+						<input type="text" name="email" id="email" value="{email}" placeholder="Enter your email address here" class="form-control" />
+					</p>
+					<p>
+						<label for="current_password">In order to update this page, you have to submit the current password:</label>
+						<input type="password" name="current_password" id="current_password" placeholder="Enter your current password here" class="form-control" />
+					</p>
+					<p>
+						<button type="submit" class="btn btn-lg btn-success">Update</button>
+					</p>
+				</div>
+				{/exp:user:edit}
+{/if} {!-- END - Make sure the user is logged in for updating account --}
+{if logged_out} {!-- START - If logged out, show the Login form --}
+				<div class="col-xs-12">
+					{embed="%prefix%inc/login"}
+				</div>
+{/if} {!-- END - If logged out, show the Login form --}
+      		</div>
+
+			<div class="well" style="margin-top:30px;">
+				<h2 style="margin-top:5px;">About This Page</h2>
+				<p>The "Update Account" page allows the currently logged in user to edit sensitive account information.</p>
+				<p>It makes use of the following tags:</p>
+				<ul>
+					<li><a href="http://www.solspace.com/docs/user/edit/">User:Edit</a> to edit profile information.</li>
+				</ul>
+			</div>
+
+{embed="%prefix%inc/footer"}

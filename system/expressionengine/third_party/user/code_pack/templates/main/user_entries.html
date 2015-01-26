@@ -1,0 +1,102 @@
+{embed="%prefix%inc/index" page_title="{if logged_in_member_id == "{segment_3}"}My{if:else}Users'{/if} Entries"}
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="account"}
+
+		<div class="container" style="margin-top:30px;">
+
+			<div class="page-header">
+				<h1>{if logged_in_member_id == "{segment_3}"}My{if:else}Users'{/if} Entries</h1>
+				<p class="lead">This page displays a list of entries authored by the given user.</p>
+			</div>
+
+		{if segment_3} {!-- Make sure there's a member ID in the URI --}
+			<div class="row">
+				{exp:user:stats
+					member_id="{segment_3}"
+					limit="1"
+				}
+				<div class="col-sm-3">
+					{embed="%prefix%inc/profile_column" member_id="{member_id}"}
+				</div>
+				{/exp:user:stats}
+
+				<div class="col-sm-9">
+					<h2 style="margin-bottom:20px;">{exp:user:stats member_id="{segment_3}" limit="1"}{if logged_in_member_id == "{segment_3}"}My{if:else}{screen_name}'s{/if} Entries <span class="label label-warning">{total_entries}{/exp:user:stats}</span></h2>
+					{exp:channel:entries
+						author_id="{segment_3}"
+						dynamic="no"
+						limit="15"
+						paginate="bottom"
+					}
+						{if count == "1"}
+							<p>The following are entries posted by this user:</p>
+							<div class="list-group">
+						{/if}
+							<a href="{comment_url_title_auto_path}" class="list-group-item">
+								<span class="badge">{entry_date format="%F %j, %Y"}</span>
+								{title}
+							</a>
+						{if count == total_results}</div>{/if}
+						{if no_results}
+							<p>This user has not posted any entries.</p>
+						{/if}
+						{paginate}
+							<ul class="pagination pagination-md">
+							{pagination_links}
+							{first_page}
+								<li><a href="{pagination_url}">First</a></li>
+							{/first_page}
+							{previous_page}
+								<li><a href="{pagination_url}">&larr; Previous</a></li>
+							{/previous_page}
+							{page}
+								<li{if current_page} class="active"{/if}><a href="{pagination_url}">{pagination_page_number}</a></li>
+							{/page}
+							{next_page}
+								<li><a href="{pagination_url}">Next &raquo;</a></li>
+							{/next_page}
+							{last_page}
+								<li><a href="{pagination_url}">Last</a></li>
+							{/last_page}
+							{/pagination_links}
+							</ul>
+						{/paginate}
+					{/exp:channel:entries}
+				</div>
+				{exp:user:stats
+					member_id="{segment_3}"
+					limit="1"
+				}
+				{if no_results}
+					<div class="col-xs-12">
+						<div class="alert alert-danger" role="alert">
+							<p class="lead"><strong>Error!</strong> The account you specified does not exist.</p>
+						</div>
+					</div>
+				{/if}
+				{/exp:user:stats}
+      		</div>
+		{if:else} {!-- Error if there's no member ID in the URI --}
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="alert alert-danger" role="alert">
+						<p class="lead"><strong>Error!</strong> You have not specified a member ID.</p>
+					</div>
+				</div>
+			</div>
+		{/if}
+
+			<div class="well" style="margin-top:30px;">
+				<h2 style="margin-top:5px;">About This Page</h2>
+				<p>The "Entries" page displays a list of entries authored by the given user.</p>
+				<p>It makes use of the following tags:</p>
+				<ul>
+					<li><a href="http://www.solspace.com/docs/user/stats/">User:Stats</a> to show profile information.</li>
+					<li><a href="https://ellislab.com/expressionengine/user-guide/add-ons/channel/channel_entries.html">Channel:Entries</a> to show a list of entries authored by the given user.</li>
+				</ul>
+			</div>
+
+{embed="%prefix%inc/footer"}

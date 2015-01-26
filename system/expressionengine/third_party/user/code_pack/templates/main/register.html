@@ -1,0 +1,114 @@
+{embed="%prefix%inc/index" page_title="Register"}
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="account"}
+
+		<div class="container" style="margin-top:30px;">
+
+			<div class="page-header">
+				<h1>Register</h1>
+				<p class="lead">This page allows users to sign up for a member account.</p>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+{if segment_3 == "success"} {!-- Load this content if the user has successfully completed the register form --}
+					<div class="alert alert-success" role="alert">
+						<h4>You've successfully created an account!</h4>
+						<p>
+							Depending on this site's Member Activation settings, you'll either be able to begin using your account immediately, receive
+							a confirmation email to self activate your account, or an Administrator will need to approve your account manually.
+						</p>
+					</div>
+{if:else} {!-- Otherwise, show the register form --}
+					<h2>Create a New Account</h2>
+					<p style="margin-bottom:20px;">To create a new account, just fill in the form below:</p>
+					{exp:user:register
+						return="%prefix%main/register/success"
+						error_page="%prefix%inc/error_template"
+					{if segment_3 == "key"} {!-- If this is a registration from a Key Invite --}
+						require_key="yes" key_email_match="yes"
+					{/if}
+						form:class="form-horizontal"
+					}
+						<div class="form-group">
+							<label for="email" class="col-sm-3 col-md-2 control-label">Email Address</label>
+							<div class="col-sm-7 col-lg-6">
+								<input type="email" name="email" id="email" placeholder="Enter your email address here" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="username" class="col-sm-3 col-md-2 control-label">Username</label>
+							<div class="col-sm-7 col-lg-6">
+								<input type="text" name="username" id="username" placeholder="Enter your username here" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="screen_name" class="col-sm-3 col-md-2 control-label">Screen Name</label>
+							<div class="col-sm-7 col-lg-6">
+								<input type="text" name="screen_name" id="screen_name" placeholder="Enter your screen name here" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-sm-3 col-md-2 control-label">Password</label>
+							<div class="col-sm-7 col-lg-6">
+								<input type="password" name="password" id="password" placeholder="Enter your password here" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password_confirm" class="col-sm-3 col-md-2 control-label">Confirm Password</label>
+							<div class="col-sm-7 col-lg-6">
+								<input type="password" name="password_confirm" id="password_confirm" placeholder="Re-type your password again here" class="form-control">
+							</div>
+						</div>
+					{if segment_3 == "key"} {!-- If this is a registration from a Key Invite --}
+						<div class="form-group">
+							<label for="key" class="col-sm-3 col-md-2 control-label">Invite Key</label>
+							<div class="col-sm-7 col-lg-6">
+								<input type="text" name="key" id="key" value="{key}" placeholder="Enter the key from your invite here" class="form-control">
+							</div>
+						</div>
+					{/if}
+					{if captcha}
+						<div class="form-group">
+							<label for="captcha" class="col-sm-3 col-md-2 control-label">{captcha}</label>
+							<div class="col-sm-7 col-lg-6">
+								<input type="text" name="captcha" id="captcha" placeholder="Enter the word you see on the left" class="form-control">
+							</div>
+						</div>
+					{/if}
+						<div class="form-group">
+							<div class="col-sm-offset-3 col-sm-offset-2 col-sm-7 col-lg-6">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="accept_terms" id="accept_terms" value="y" /> Accept Terms?
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-3 col-sm-offset-2 col-sm-7 col-lg-6">
+								<button type="submit" class="btn btn-lg btn-success">Register</button>
+							</div>
+						</div>
+					{if user_no_results}
+						<div class="alert alert-warning" role="alert">
+							<p>You're currently logged in, and must be logged out to register a new account.</p>
+						</div>
+					{/if}
+					{/exp:user:register}
+{/if} {!-- END Register/Success check --}
+				</div>
+      		</div>
+
+			<div class="well" style="margin-top:30px;">
+				<h2 style="margin-top:5px;">About This Page</h2>
+				<p>The "Register" page allows users to sign up for a member account. This form respects native EE Member registration preferences.</p>
+				<p>It makes use of the following tags:</p>
+				<ul>
+					<li><a href="http://www.solspace.com/docs/user/register/">User:Register</a> to allow users to register for member accounts.</li>
+				</ul>
+			</div>
+
+{embed="%prefix%inc/footer"}
