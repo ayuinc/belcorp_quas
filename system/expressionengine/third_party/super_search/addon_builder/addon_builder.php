@@ -4,14 +4,14 @@
  * Addon Builder - Base Class
  *
  * A class that helps with the building of ExpressionEngine Add-Ons
- * Supports EE 2.4.0+
+ * Supports EE 2.5.5+
  *
  * @package		Solspace:Addon Builder
  * @author		Solspace, Inc.
- * @copyright	Copyright (c) 2008-2013, Solspace, Inc.
+ * @copyright	Copyright (c) 2008-2014, Solspace, Inc.
  * @link		http://solspace.com/docs/
  * @license		http://www.solspace.com/license_agreement/
- * @version		1.4.4
+ * @version		1.5.7
  * @filesource 	addon_builder/addon_builder.php
  */
 
@@ -36,7 +36,7 @@ class Addon_builder_super_search
 	 *
 	 * @var string
 	 */
-	static $class_version		= '1.4.4';
+	static $class_version		= '1.5.7';
 
 	/**
 	 * Current EE version
@@ -455,10 +455,23 @@ class Addon_builder_super_search
 		// Important Cached Vars - Used in Both Extensions and Modules
 		//--------------------------------------------
 
-		$this->cached_vars['XID_SECURE_HASH'] 	= (
-			! defined('XID_SECURE_HASH')
-		) ? '' : XID_SECURE_HASH;
+		//CSRF_TOKEN is the new XID in EE 2.8
+		if (version_compare($this->version, '2.8.0', '>='))
+		{
+			$this->cached_vars['XID_SECURE_HASH']	= $this->get_csrf_token();
+			$this->cached_vars['CSRF_TOKEN']		= $this->get_csrf_token();
+		}
+		//since its just names, lets add both so we can make legacy stuff work
+		else
+		{
+			$this->cached_vars['XID_SECURE_HASH'] 	= (
+				! defined('XID_SECURE_HASH')
+			) ? '' : XID_SECURE_HASH;
+			$this->cached_vars['CSRF_TOKEN']		= $this->cached_vars['XID_SECURE_HASH'];
+		}
 
+		$this->cached_vars['csrf_hidden_name']	= $this->sc->csrf_name;
+		$this->cached_vars['csrf_js_name']		= $this->sc->csrf_js_name;
 		$this->cached_vars['page_crumb']		= '';
 		$this->cached_vars['page_title']		= '';
 		$this->cached_vars['text_direction']	= 'ltr';
@@ -637,7 +650,7 @@ class Addon_builder_super_search
 	 * @return	object
 	 */
 
-	public function generate_shortcuts ()
+	public function generate_shortcuts()
 	{
 		if (defined('URL_THIRD_THEMES'))
 		{
@@ -663,6 +676,8 @@ class Addon_builder_super_search
 			);
 		}
 
+		//most of these are holdovers from the EE 1.x and 2.x dual support
+		//now these must stay until all such are removed.
 		return (object) array(
 			'db'	=> (object) array(
 				'channel_name'			=> 'channel_name',
@@ -686,9 +701,15 @@ class Addon_builder_super_search
 			'theme_path'				=> $theme_path,
 			'addon_theme_url'			=> $theme_url . $this->lower_name . '/',
 			'addon_theme_path'			=> $theme_path . $this->lower_name . '/',
+			'csrf_name'					=> (
+				version_compare($this->ee_version, '2.8', '>=')
+			) ? 'csrf_token' : 'XID',
+			'csrf_js_name'					=> (
+				version_compare($this->ee_version, '2.8', '>=')
+			) ? 'CSRF_TOKEN' : 'XID',
 		);
 	}
-	/* END generate_shortcuts() */
+	// END generate_shortcuts
 
 
 	// --------------------------------------------------------------------
@@ -929,7 +950,7 @@ class Addon_builder_super_search
 	 * @return	bool	Whether the extensions are allowed
 	 */
 
-	public function extensions_allowed ()
+	public function extensions_allowed()
 	{
 		return $this->check_yes(ee()->config->item('allow_extensions'));
 	}
@@ -950,7 +971,7 @@ class Addon_builder_super_search
 	 * @return	bool	Whether the comparison is TRUE or FALSE
 	 */
 
-	public function version_compare ($v1, $operator, $v2)
+	public function version_compare($v1, $operator, $v2)
 	{
 		// Allowed operators
 		if ( ! in_array($operator, array('>', '<', '>=', '<=', '==', '!=')))
@@ -1021,7 +1042,7 @@ class Addon_builder_super_search
 	 * @param	array
 	 * @return	void
 	 */
-	public function ee_cp_view ($view)
+	public function ee_cp_view($view)
 	{
 		//--------------------------------------------
 		// Build Crumbs!
@@ -1042,120 +1063,6 @@ class Addon_builder_super_search
 	// --------------------------------------------------------------------
 
 	/**
-	 * Javascript/CSS File View Request
-	 *
-	 * Outputs a View file as if it were a Javascript file
-	 *
-	 * @access	public
-	 * @param	array
-	 * @return	void
-	 */
-	public function file_view ($view, $modification_time = '')
-	{
-		//--------------------------------------------
-		// Auto-detect the Type
-		//--------------------------------------------
-
-		if (preg_match("/\.([cjs]{2,3})$/i", $view, $match) AND
-			in_array($match[1], array('css', 'js')))
-		{
-			switch($match[1])
-			{
-				case 'css'	:
-					$type = 'css';
-				break;
-				case 'js'	:
-					$type = 'javascript';
-				break;
-			}
-		}
-		else
-		{
-			exit;
-		}
-
-		//--------------------------------------------
-		// Load View Path, Call View File
-		//--------------------------------------------
-
-		$output = $this->view($view, array(), TRUE);
-
-		//--------------------------------------------
-		// EE 1.x, We Add Secure Form Hashes and Output Content to Browser
-		//--------------------------------------------
-
-		if ($type == 'javascript' AND stristr($output, '{XID_SECURE_HASH}'))
-		{
-			$output = str_replace('{XID_SECURE_HASH}', '{XID_HASH}', $output);
-		}
-
-		if ($type == 'javascript')
-		{
-			$output = ee()->functions->add_form_security_hash($output);
-		}
-
-		//----------------------------------------
-		// Generate HTTP headers
-		//----------------------------------------
-
-		if (ee()->config->item('send_headers') == 'y')
-		{
-			$ext = pathinfo($view, PATHINFO_EXTENSION);
-			$file = ($ext == '') ? $view.EXT : $view;
-			$path = $this->view_path.$file;
-
-			$max_age			= 5184000;
-			$modification_time	= ($modification_time != '') ? $modification_time : filemtime($path);
-			$modified_since		= ee()->input->server('HTTP_IF_MODIFIED_SINCE');
-
-			if ( ! ctype_digit($modification_time))
-			{
-				$modification_time	= filemtime($path);
-			}
-
-			// Remove anything after the semicolon
-
-			if ($pos = strrpos($modified_since, ';') !== FALSE)
-			{
-				$modified_since = substr($modified_since, 0, $pos);
-			}
-
-			// Send a custom ETag to maintain a useful cache in
-			// load-balanced environments
-
-			header("ETag: ".md5($modification_time.$path));
-
-			// If the file is in the client cache, we'll
-			// send a 304 and be done with it.
-
-			if ($modified_since AND (strtotime($modified_since) == $modification_time))
-			{
-				ee()->output->set_status_header(304);
-				exit;
-			}
-
-			ee()->output->set_status_header(200);
-			@header("Cache-Control: max-age={$max_age}, must-revalidate");
-			@header('Vary: Accept-Encoding');
-			@header('Last-Modified: '.gmdate('D, d M Y H:i:s', $modification_time).' GMT');
-			@header('Expires: '.gmdate('D, d M Y H:i:s', time() + $max_age).' GMT');
-			@header('Content-Length: '.strlen($output));
-		}
-
-		//----------------------------------------
-		// Send JavaScript/CSS Header and Output
-		//----------------------------------------
-
-		@header("Content-type: text/".$type);
-
-		exit($output);
-	}
-	// END ee_cp_view()
-
-
-	// --------------------------------------------------------------------
-
-	/**
 	 * View File Loader
 	 *
 	 * Takes a file from the filesystem and loads it so that we can parse PHP within it just
@@ -1169,7 +1076,7 @@ class Addon_builder_super_search
 	 * @return		string
 	 */
 
-	public function view ($view, $vars = array(), $return = FALSE, $path='')
+	public function view($view, $vars = array(), $return = FALSE, $path='')
 	{
 		//--------------------------------------------
 		// Determine File Name and Extension for Requested File
@@ -1274,7 +1181,7 @@ class Addon_builder_super_search
 	 * @return	null
 	 */
 
-	public function add_crumbs ($array)
+	public function add_crumbs($array)
 	{
 		if ( is_array($array))
 		{
@@ -1305,7 +1212,7 @@ class Addon_builder_super_search
 	 * @return	null
 	 */
 
-	public function add_crumb ($text, $link='')
+	public function add_crumb($text, $link='')
 	{
 		$this->crumbs[] = ($link == '') ? array($text) : array($text, $link);
 	}
@@ -1489,106 +1396,6 @@ class Addon_builder_super_search
 	// --------------------------------------------------------------------
 
 	/**
-	 * Retrieve Remote File and Cache It
-	 *
-	 * @access public
-	 * @param  string  $url				URL to be retrieved
-	 * @param  integer $cache_length	How long to cache the result, if successful retrieval
-	 * @param  string  $path			path to cache
-	 * @param  string  $file			file name to cache
-	 * @return bool						Success or failure.  Data result stored in $this->remote_data
-	 */
-
-	public function retrieve_remote_file($url, $cache_length = 24, $path='', $file='')
-	{
-		$path		= ($path == '') ? PATH_CACHE.'addon_builder/' : rtrim($path, '/').'/';
-		$file		= ($file == '') ? md5($url).'.txt' : $file;
-		$file_path	= $path.$file;
-
-		// --------------------------------------------
-		//  Check for Cached File
-		// --------------------------------------------
-
-		if ( ! file_exists($file_path) OR
-			(time() - filemtime($file_path)) > (60 * 60 * round($cache_length))
-		)
-		{
-			@unlink($file_path);
-		}
-		elseif (($this->remote_data = file_get_contents($file_path)) === FALSE)
-		{
-			@unlink($file_path);
-		}
-		else
-		{
-			return TRUE;
-		}
-
-		// --------------------------------------------
-		//  Validate and Create Cache Directory
-		// --------------------------------------------
-
-		ee()->load->helper('string');
-
-		if ( ! is_dir($path))
-		{
-			$dirs = explode('/', trim(reduce_double_slashes($path), '/'));
-
-			$path = '/';
-
-			foreach ($dirs as $dir)
-			{
-				if ( ! @is_dir($path.$dir))
-				{
-					if ( ! @mkdir($path.$dir, 0777))
-					{
-						$this->errors[] = 'Unable to Create Directory: '.$path.$dir;
-						return;
-					}
-
-					@chmod($path.$dir, 0777);
-				}
-
-				$path .= $dir.'/';
-			}
-		}
-
-		if ($this->is_really_writable($path) === FALSE)
-		{
-			$this->errors[] = 'Cache Directory is Not Writable: '.$path;
-			return FALSE;
-		}
-
-		// --------------------------------------------
-		//  Retrieve Our URL
-		// --------------------------------------------
-
-		$this->remote_data = $this->fetch_url($url);
-
-		if ($this->remote_data == '')
-		{
-			$this->errors[] = 'Unable to Retrieve URL: '.$url;
-			return FALSE;
-		}
-
-		// --------------------------------------------
-		//  Write Cache File
-		// --------------------------------------------
-
-		if ( ! $this->write_file($file_path, $this->remote_data))
-		{
-			$this->errors[] = 'Unable to Write File to Cache';
-			return FALSE;
-		}
-
-		return TRUE;
-	}
-	// END retrieve_remote_file
-
-
-	// --------------------------------------------------------------------
-
-	/**
 	 * Fetch the Data for a URL
 	 *
 	 * @access public
@@ -1598,7 +1405,7 @@ class Addon_builder_super_search
 	 * @param  boolean $password	Password to go with the username
 	 * @return string				url data
 	 */
-	public function fetch_url ($url, $post = array(), $username = FALSE, $password = FALSE)
+	public function fetch_url($url, $post = array(), $username = FALSE, $password = FALSE)
 	{
 		$data = '';
 
@@ -1772,7 +1579,7 @@ class Addon_builder_super_search
 
 		return trim($data);
 	}
-	/* END fetch_url() */
+	// END fetch_url
 
 
 	// --------------------------------------------------------------------
@@ -1850,7 +1657,6 @@ class Addon_builder_super_search
 	 * @return	bool
 	 */
 
-
 	public static function is_really_writable($file, $remove = FALSE)
 	{
 		// is_writable() returns TRUE on Windows servers
@@ -1892,7 +1698,7 @@ class Addon_builder_super_search
 	 *	@return		bool
 	 */
 
-	public function check_captcha ()
+	public function check_captcha()
 	{
 		if ( ee()->config->item('captcha_require_members') == 'y'  OR
 			(ee()->config->item('captcha_require_members') == 'n' AND
@@ -1944,8 +1750,14 @@ class Addon_builder_super_search
 	 *	@return		bool
 	 */
 
-	public function check_secure_forms ($xid = FALSE)
+	public function check_secure_forms($xid = FALSE)
 	{
+		//no longer relevant in EE 2.8 as everything has completly changed.
+		if (version_compare($this->ee_version, '2.8.0', '>='))
+		{
+			return true;
+		}
+
 		if ( ! $xid)
 		{
 			$xid = ee()->input->get_post('XID');
@@ -2020,7 +1832,7 @@ EOT;
 	 * @return	array
 	 */
 
-	public function balance_uri ( $uri )
+	public function balance_uri( $uri )
 	{
 		$uri = '/'.trim($uri, '/').'/';
 
@@ -2044,7 +1856,7 @@ EOT;
 	 * @return	array
 	 */
 
-	public function fetch_themes ($path)
+	public function fetch_themes($path)
 	{
 		$themes = array();
 
@@ -2079,7 +1891,7 @@ EOT;
 	 * @param	string
 	 * @return	bool
 	 */
-	public function allowed_group ($which = '')
+	public function allowed_group($which = '')
 	{
 		if ( is_object(ee()->cp))
 		{
@@ -2115,10 +1927,11 @@ EOT;
 		else if (REQ == 'CP')
 		{
 			// -------------------------------------
-			//	auto restore XID? (ee 2.7 only)
+			//	auto restore XID? (ee 2.7 only, 2.8 removed)
 			// -------------------------------------
 
-			if (version_compare($this->ee_version, '2.7', '>='))
+			if (version_compare($this->ee_version, '2.7', '>=') &&
+				version_compare($this->ee_version, '2.8', '<'))
 			{
 				$errors = is_array($message) ? $message : array($message);
 
@@ -2168,7 +1981,7 @@ EOT;
 	 *	@return		bool
 	 */
 
-	function check_yes ($which)
+	function check_yes($which)
 	{
 		if (is_string($which))
 		{
@@ -2192,7 +2005,7 @@ EOT;
 	 *	@return		bool
 	 */
 
-	function check_no ($which)
+	function check_no($which)
 	{
 		if (is_string($which))
 		{
@@ -2214,7 +2027,7 @@ EOT;
 	 *	@return		string
 	 */
 
-	public function json_encode ($data)
+	public function json_encode($data)
 	{
 		if (function_exists('json_encode'))
 		{
@@ -2242,7 +2055,7 @@ EOT;
 	 *	@return		object
 	 */
 
-	public function json_decode ($data, $associative = FALSE)
+	public function json_decode($data, $associative = FALSE)
 	{
 		if (function_exists('json_decode'))
 		{
@@ -2280,7 +2093,7 @@ EOT;
 	 *	@return		array
 	 */
 
-	public function universal_pagination ( $input_data )
+	public function universal_pagination($input_data)
 	{
 		// -------------------------------------
 		//	prep input data
@@ -2525,6 +2338,10 @@ EOT;
 				ee()->pagination->initialize($config);
 
 				$return_data['pagination_links'] = ee()->pagination->create_links();
+
+				//this has to be reset for some stupid reason or the links
+				//will always think they are on page one. Wat.
+				ee()->pagination->initialize($config);
 				$return_data['pagination_array'] = ee()->pagination->create_link_array();
 
 				$return_data['base_url'] = ee()->pagination->base_url;
@@ -2595,7 +2412,7 @@ EOT;
 	 * @return	tagdata
 	 */
 
-	public function parse_pagination ($options = array())
+	public function parse_pagination($options = array())
 	{
 		// -------------------------------------
 		//	prep input data
@@ -2603,21 +2420,21 @@ EOT;
 
 		//set defaults for optional items
 		$defaults	= array(
-			'prefix' 			=> '',
-			'tagdata' 			=> ((isset(ee()->TMPL) and is_object(ee()->TMPL)) ?
+			'prefix'			=> '',
+			'tagdata'			=> ((isset(ee()->TMPL) and is_object(ee()->TMPL)) ?
 									ee()->TMPL->tagdata : ''),
-			'paginate'  		=> FALSE,
-			'page_next' 		=> '',
-			'page_previous' 	=> '',
-			'p_page' 			=> 0,
-			'current_page' 		=> 0,
-			'pagination_links' 	=> '',
+			'paginate'			=> FALSE,
+			'page_next'			=> '',
+			'page_previous'		=> '',
+			'p_page'			=> 0,
+			'current_page'		=> 0,
+			'pagination_links'	=> '',
 			'pagination_array'	=> '',
-			'basepath' 			=> '',
-			'total_pages' 		=> '',
-			'paginate_data' 	=> '',
-			'page_count' 		=> '',
-			'auto_paginate' 	=> $this->auto_paginate
+			'basepath'			=> '',
+			'total_pages'		=> '',
+			'paginate_data'		=> '',
+			'page_count'		=> '',
+			'auto_paginate'		=> $this->auto_paginate
 		);
 
 		//array2 overwrites any duplicate key from array1
@@ -2630,17 +2447,17 @@ EOT;
 		if ($options['auto_paginate'])
 		{
 			$options = array_merge($options, array(
-				'paginate'  		=> $this->paginate,
-				'page_next' 		=> $this->page_next,
-				'page_previous' 	=> $this->page_previous,
-				'p_page' 			=> $this->p_page,
-				'current_page' 		=> $this->current_page,
-				'pagination_links' 	=> $this->pagination_links,
+				'paginate'			=> $this->paginate,
+				'page_next'			=> $this->page_next,
+				'page_previous'		=> $this->page_previous,
+				'p_page'			=> $this->p_page,
+				'current_page'		=> $this->current_page,
+				'pagination_links'	=> $this->pagination_links,
 				'pagination_array'	=> $this->pagination_array,
-				'basepath' 			=> $this->basepath,
-				'total_pages' 		=> $this->total_pages,
-				'paginate_data' 	=> $this->paginate_data,
-				'page_count' 		=> $this->page_count,
+				'basepath'			=> $this->basepath,
+				'total_pages'		=> $this->total_pages,
+				'paginate_data'		=> $this->paginate_data,
+				'page_count'		=> $this->page_count,
 			));
 		}
 
@@ -2715,6 +2532,18 @@ EOT;
 
 		if ( ! empty($pagination_array))
 		{
+
+			//remove first or last page links where appropriate
+			if ($current_page == 1)
+			{
+				$pagination_array['first_page'] = array();
+			}
+
+			if ($total_pages == $current_page)
+			{
+				$pagination_array['last_page'] = array();
+			}
+
 			//if we don't do this first, parse_pagination
 			//will attempt to convert the array to a string to compare
 			$paginate_data	= ee()->functions->prep_conditionals(
@@ -2920,7 +2749,7 @@ EOT;
 	 * @return	string 	tag data with prefix changed out
 	 */
 
-	public function pagination_prefix_replace ($prefix = '', $tagdata = '', $reverse = FALSE)
+	public function pagination_prefix_replace($prefix = '', $tagdata = '', $reverse = FALSE)
 	{
 		if ($prefix == '')
 		{
@@ -2939,6 +2768,41 @@ EOT;
 		{
 			return $tagdata;
 		}
+
+		// -------------------------------------
+		//	Fix subtag previous and next pages
+		//	nested in addon_pagination_links
+		// -------------------------------------
+
+		$tpl = $prefix . 'pagination_links';
+
+		if (preg_match(
+				"/" . LD . $tpl . RD .
+					"(.*)?" .
+				LD . preg_quote('/', '/') . $tpl . RD . "/ims",
+				$tagdata,
+				$matches
+			)
+		)
+		{
+			$fix_pp_np = preg_replace(
+				array(
+					"/\bnext_page\b/is",
+					"/\bprevious_page\b/is"
+				),
+				array(
+					$prefix . "next_page",
+					$prefix . "previous_page"
+				),
+				$matches[1]
+			);
+
+			$tagdata = str_replace($matches[1], $fix_pp_np, $tagdata);
+		}
+
+		// -------------------------------------
+		//	prefix and replace
+		// -------------------------------------
 
 		$hash 	= 'e2c518d61874f2d4a14bbfb9087a7c2d';
 
@@ -3002,8 +2866,16 @@ EOT;
 	 * @return	string
 	 */
 
-	public function create_xid ()
+	public function create_xid()
 	{
+		//no longer relevant in EE 2.8 as everything has completly changed.
+		//only one token per user and its the same throughout the session
+		//rather than getting removed on every check
+		if (version_compare($this->ee_version, '2.8.0', '>='))
+		{
+			return $this->get_csrf_token();
+		}
+
 		if (is_callable(array(ee()->security, 'generate_xid')))
 		{
 			return ee()->security->generate_xid();
@@ -3026,6 +2898,46 @@ EOT;
 	// --------------------------------------------------------------------
 
 	/**
+	 * Get CSRF Token (EE 2.8+ only)
+	 *
+	 * @access	public
+	 * @return	string	40 char CSRF hash token
+	 */
+
+	public function get_csrf_token()
+	{
+		//backup
+		if (version_compare($this->ee_version, '2.8', '<'))
+		{
+			return defined('XID_SECURE_HASH') ? XID_SECURE_HASH : '{XID_HASH}';
+		}
+
+		if (defined('CSRF_TOKEN'))
+		{
+			return CSRF_TOKEN;
+		}
+		//csrf needs a session to work.
+		//this is generally only ever hit on ACT
+		//or m=Javascript
+		else if ($this->session_obj_set())
+		{
+			ee()->load->library('csrf');
+			return ee()->csrf->get_user_token();
+		}
+		//this means we are in sessions_start or _end so hopefully
+		//whatever happens here gets parsed out later. It's this or a
+		//blank string which is just as likely to fail if not parsed.
+		else
+		{
+			return '{csrf_token}';
+		}
+	}
+	//END get_csrf_token
+
+
+	// --------------------------------------------------------------------
+
+	/**
 	 * cacheless_query
 	 *
 	 * this sends a query to the db non-cached
@@ -3039,7 +2951,6 @@ EOT;
 		$reset = FALSE;
 
 		// Disable DB caching if it's currently set
-
 		if (ee()->db->cache_on == TRUE)
 		{
 			ee()->db->cache_off();
@@ -3068,7 +2979,7 @@ EOT;
 	 * @return	string
 	 */
 
-	public function _imploder ($arguments)
+	public function _imploder($arguments)
 	{
 		return md5(serialize($arguments));
 	}
@@ -3091,7 +3002,7 @@ EOT;
 	 * @return	mixed
 	 */
 
-	public function prepare_keyed_result ( $query, $key = '', $val = '' )
+	public function prepare_keyed_result($query, $key = '', $val = '')
 	{
 		if ( ! is_object( $query )  OR $key == '' ){ return FALSE; }
 
@@ -3105,7 +3016,7 @@ EOT;
 		{
 			if ( isset( $row[$key] ) === FALSE ){ continue; }
 
-			$data[ $row[$key] ]	= ( $val != '' AND isset( $row[$val] ) ) ? $row[$val]: $row;
+			$data[ $row[$key] ]	= ( $val != '' AND isset($row[$val])) ? $row[$val]: $row;
 		}
 
 		return ( empty( $data ) ) ? FALSE : $data;
@@ -3123,7 +3034,7 @@ EOT;
 	 * @param	mixed	bool or array of items to check against
 	 * @return	mixed
 	 */
-	public function either_or_base ($args = array(), $test = FALSE)
+	public function either_or_base($args = array(), $test = FALSE)
 	{
 		foreach ($args as $arg)
 		{
@@ -3250,7 +3161,7 @@ EOT;
 	 * @return	bool	Whether the extensions are allowed
 	 */
 
-	public function has_hooks ()
+	public function has_hooks()
 	{
 		//is it there? is it array? is it empty?
 		//Such are life's unanswerable questions, until now.
@@ -3280,7 +3191,7 @@ EOT;
 	 * @return	obj		updater object for module
 	 */
 
-	public function updater ()
+	public function updater()
 	{
 		if ( ! is_object($this->updater) )
 		{
@@ -3320,7 +3231,7 @@ EOT;
 	 * @return	bool	Whether the extensions are enabled if need be
 	 */
 
-	public function extensions_enabled ( $check_all_enabled = FALSE )
+	public function extensions_enabled($check_all_enabled = FALSE)
 	{
 		if ( ! $this->has_hooks() ) return TRUE;
 		//we don't want to end on this as it would confuse users
@@ -3364,7 +3275,7 @@ EOT;
 	 * @return boolean
 	 */
 
-	public function is_ajax_request ()
+	public function is_ajax_request()
 	{
 		// --------------------------------------------
 		//  Headers indicate this is an AJAX Request
@@ -3435,7 +3346,7 @@ EOT;
 	 * @return	void
 	 */
 
-	public function send_ajax_response ($msg, $error = FALSE, $cache_bust = TRUE)
+	public function send_ajax_response($msg, $error = FALSE, $cache_bust = TRUE)
 	{
 		ee()->output->enable_profiler(FALSE);
 
@@ -3490,7 +3401,7 @@ EOT;
 	 *	@return		array  $vars - Contains two keys good/bad of,
 	 *								what else, good and bad emails
 	 */
-	public function validate_emails ($emails)
+	public function validate_emails($emails)
 	{
 		ee()->load->helper('email');
 
@@ -3545,7 +3456,7 @@ EOT;
 	 *	@return		string url for action
 	 */
 
-	public function get_action_url ($method_name)
+	public function get_action_url($method_name)
 	{
 		$action_q	= ee()->db->where(array(
 			'class'		=> $this->class_name,
@@ -3554,7 +3465,7 @@ EOT;
 
 		if ($action_q->num_rows() == 0)
 		{
-			return false;
+			return '';
 		}
 
 		$action_id = $action_q->row('action_id');
@@ -4337,5 +4248,275 @@ EOT;
 		}
 	}
 	//END _lib_mod_loader
+
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Get CP URL Base
+	 *
+	 * @access	public
+	 * @return	string	url base
+	 */
+
+	public function get_cp_url_base()
+	{
+		if (REQ != 'CP')
+		{
+			$base = ee()->config->item('cp_url', FALSE) . '?D=cp';
+		}
+		else
+		{
+			//BASE is not set until AFTER sessions_end
+			//remove the s= from BASE as we are adding session ID to it
+			$base = defined('BASE') ? preg_replace('/\bS=[a-zA-Z0-9]+(&amp;|&)/', '', BASE) : SELF . '?D=cp';
+		}
+
+		$base .=  AMP . 'S=' . $this->get_session_id();
+
+		return $base;
+	}
+	//END get_cp_base
+
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Get Session ID
+	 *
+	 * @access	public
+	 * @return	int		session id, fingerprint, or 0 if not findable
+	 */
+
+	public function get_session_id()
+	{
+		if ( ! $this->session_obj_set())
+		{
+			$s = 0;
+		}
+		//EE 2.8+
+		else if (version_compare($this->ee_version, '2.8', '>='))
+		{
+			$s = ee()->session->session_id();
+		}
+		//EE 2.7.x and below
+		else
+		{
+			$admin_session_type = ee()->config->item('admin_session_type');
+
+			if (
+				$admin_session_type == 's' &&
+				isset(ee()->session->userdata['session_id'])
+			)
+			{
+				$s = ee()->session->userdata['session_id'];
+			}
+
+			else if (
+				$admin_session_type == 'cs' &&
+				isset(ee()->session->userdata['fingerprint'])
+			)
+			{
+				$s = ee()->session->userdata['fingerprint'];
+			}
+
+			else
+			{
+				$s = 0;
+			}
+		}
+
+		return $s;
+	}
+	//END get_session_id
+
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Add Pagination Object to Channel object
+	 *
+	 * @access	public
+	 * @param	object	$obj	Incoming channel object
+	 * @return	object	$obj	returns object sent due to deprecation of
+	 * 							arguments passed by reference.
+	 */
+
+	public function add_pag_to_channel($obj)
+	{
+		ee()->load->library('pagination');
+
+		//this is already done in the contructor of the Channel object
+		//in EE 2.8, but it won't hurt to redo it and this might
+		//help future proof us as they tend to change this. A lot.
+		if (version_compare($this->ee_version, '2.8.0', '>='))
+		{
+			$obj->pagination = ee()->pagination->create();
+		}
+		//EE 2.4+ (we don't support anything more than 3 versions back anyway)
+		else
+		{
+			$obj->pagination = new Pagination_object('Channel');
+			// Used by pagination to determine whether we're coming from the cache
+			$obj->pagination->dynamic_sql = FALSE;
+		}
+
+		return $obj;
+	}
+	//END add_pag_to_channel
+
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Removes Pagination tags from tagdata
+	 *
+	 * @access	public
+	 * @param	object	$obj	Incoming channel object
+	 * @return	object	$obj	returns object sent due to deprecation of
+	 * 							arguments passed by reference.
+	 */
+
+	public function fetch_pagination_data($ojb)
+	{
+		if (version_compare($this->ee_version, '2.8.0', '>='))
+		{
+			ee()->TMPL->tagdata = $ojb->pagination->prepare(ee()->TMPL->tagdata);
+		}
+		else
+		{
+			$ojb->pagination->get_template();
+		}
+
+		return $ojb;
+	}
+	//END fetch_pagination_data
+
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Adds rendered pagination back to ending channel return data
+	 *
+	 * @access	public
+	 * @param	object	$obj	Incoming channel object
+	 * @return	object	$obj	returns object sent due to deprecation of
+	 * 							arguments passed by reference.
+	 */
+
+	public function add_pagination_data($obj)
+	{
+		//this has remained the same since EE 2.4 thusfar
+		$obj->return_data = $obj->pagination->render($obj->return_data);
+
+		return $obj;
+	}
+	//END add_pagination_data
+
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Set cookie	with legacy support
+	 *
+	 * @access	public
+	 * @param	string	cookie name
+	 * @param	string	cookie value
+	 * @param	string	expire time
+	 * @return	void
+	 */
+	public function set_cookie($name = '', $value = '', $expire = '')
+	{
+		$class = (
+			version_compare($this->ee_version, '2.8.0', '>=')
+		) ? 'input' : 'functions';
+
+		return ee()->$class->set_cookie($name, $value, $expire);
+	}
+	//END set_cookie
+
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Delete Cookie 	with legacy support
+	 *
+	 * @access	public
+	 * @param	string	cookie name
+	 * @return	void
+	 */
+	public function delete_cookie($name = '')
+	{
+		if (version_compare($this->ee_version, '2.8.0', '>='))
+		{
+			return ee()->input->delete_cookie($name);
+		}
+		else
+		{
+			return ee()->functions->set_cookie(
+				$name,
+				'',
+				ee()->localize->now - 86500
+			);
+		}
+	}
+	//END delete_cookie
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * dd()
+	 */
+	public function dd($data)
+	{
+		print_r($data); exit();
+	}
+	//End dd()
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * CSRF Protection Enabled
+	 *
+	 * @access	public
+	 * @return	boolean
+	 */
+
+	public function csrf_enabled()
+	{
+		if (version_compare($this->ee_version, '2.8.0', '>='))
+		{
+			//default is n
+			return ! $this->check_yes(ee()->config->item('disable_csrf_protection'));
+		}
+		else
+		{
+			//default is y
+			return ! $this->check_no(ee()->config->item('secure_forms'));
+		}
+	}
+	//END csrf_enabled
+
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Session Object Set
+	 *
+	 * @access	public
+	 * @return	boolean		is the dang thing set correctly? >_<
+	 */
+
+	public function session_obj_set()
+	{
+		return (
+			isset(ee()->session) &&
+			is_object(ee()->session) &&
+			//Some buttwipe addons initiate session as stdClass by setting
+			//session->cache before session is instantiated.
+			get_class(ee()->session) != 'stdClass'
+		);
+	}
+	//END session_obj_set
 }
 // END Addon_builder Class

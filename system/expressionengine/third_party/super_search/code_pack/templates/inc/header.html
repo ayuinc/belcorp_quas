@@ -1,31 +1,29 @@
-<div id="header">
-
-	<div id="logo"></div>
-
-	<div id="smallmenu">
-		<ul>
-{if logged_out}
-			<li class="first"><a href="{path='login'}/">Login</a></li>
-{/if}
-{if logged_in}
-			<li class="first"><a href="{path='member/profile'}/">My Profile</a> ({logged_in_screen_name})</li>
-			<li><a href="{path='LOGOUT'}">Log out</a></li>
-{/if}
-		</ul>
-	</div>
-</div>
-
-<div class="spacer"></div>
-
-<div id="wrapper">
-
-	<div id="mainmenu">
-		<ul>
-			<li><a href="{path='%prefix%main'}/">Home</a></li>
-			<li><a href="{path='%prefix%main'}/">Search Forms</a></li>
-			<li><a href="{path='%prefix%main/cloud'}/">Popular Search Terms</a></li>
-		</ul>
-	</div>
-	
-	<div id="content">
-	
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="{path='%prefix%main'}/">Super Search Demo</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li{if embed:page == "search"} class="active"{/if}><a href="{path='%prefix%main'}/">Search Forms</a></li>
+						<li{if embed:page == "cloud"} class="active"{/if}><a href="{path='%prefix%main/cloud'}/">Popular Search Terms</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="http://solspace.com/">Solspace.com</a></li>
+								<li><a href="http://solspace.com/docs/super_search/">Documentation</a></li>
+								<li><a href="http://solspace.com/support/">Support</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>

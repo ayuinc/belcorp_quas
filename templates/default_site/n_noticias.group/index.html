@@ -1,0 +1,46 @@
+{embed="n_includes/header"}
+	{exp:user:edit}
+	 
+	<p>Vicepresidencia <input name="Vicepresidencia" value="{Vicepresidencia}" /></p>
+	 
+	<p>Email <input name="email" value="{email}" /></p>
+	<p>Username <input name="username" value="{username}" /></p>
+	<p>Screen Name <input name="screen_name" value="{screen_name}" /></p>
+	 
+	<fieldset>
+		<label><input type="checkbox" id="field_tag_1" value="Competencia">&nbsp;Competencia</label>
+		<label><input type="checkbox" id="field_tag_2" value="Creatividad">&nbsp;Creatividad</label>
+		<label><input type="checkbox" id="field_tag_3" value="Emprendimiento">&nbsp;Emprendimiento</label>
+		<label><input type="checkbox" id="field_tag_4" value="Innovación">&nbsp;Innovación</label>
+		<label><input type="checkbox" id="field_tag_5" value="Negocios &amp; insights">&nbsp;Negocios &amp; insights</label>
+		<label><input type="checkbox" id="field_tag_6" value="Planificación y Proyectos">&nbsp;Planificación y Proyectos</label>
+		<label><input type="checkbox" id="field_tag_7" value="UCB">&nbsp;UCB</label>
+		<label><input type="checkbox" id="field_tag_8" value="Ventas">&nbsp;Ventas</label>
+	</fieldset>
+	<input type="hidden" id="field_tags" name="Preferencias" value="{Preferencias}" />
+	<p>Tags: {Preferencias}</p>
+	
+	<p><input type="submit" value="Submit" /></p>
+	{/exp:user:edit}
+	
+{embed="n_includes/footer"}
+<script>
+	{exp:user:stats}
+	var tagsArr = '{Preferencias}'.split(',');
+	{/exp:user:stats}
+	tagsArr.forEach(function(tag) {
+		$('input[value="' + tag + '"]').prop('checked', true);
+	});
+	
+	$('#member_form').submit(function() {
+		var checkedItems = $(this).find('input:checked');
+		var checkedValues = [];
+		if(checkedItems.length) {
+			checkedItems.each(function() {
+				checkedValues.push($(this).val());
+			});
+			$('#field_tags').val(checkedValues.join(','));
+		}
+		return true;
+	});
+</script>

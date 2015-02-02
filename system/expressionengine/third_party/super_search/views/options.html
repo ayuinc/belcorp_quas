@@ -1,7 +1,7 @@
 <?php echo $this->view('header.html'); ?>
 
 <form action="<?=$form_url?>" method="post">
-<input type="hidden" name="XID" value="<?=$XID_SECURE_HASH?>" />
+<input type="hidden" name="<?=$csrf_hidden_name?>"	value="<?=$CSRF_TOKEN?>" />
 
 	<?php $i = 0; ?>
 

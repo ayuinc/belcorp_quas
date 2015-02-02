@@ -30,10 +30,6 @@
 
 <?php if (count($errors) > 0) : ?>
 
-	<h4 style="margin-bottom:10px;">
-		<?=$code_pack_label?>
-	</h4>
-
 	<table id="entries" class="template-table mainTable padTable" border="0" cellspacing="0" cellpadding="0">
 <?php $i = 0; foreach ($errors as $val) : $i++; ?>
 			<tr class="<?=$caller->cycle('odd', 'even')?>">
@@ -62,10 +58,6 @@
 		</table>
 <?php endif; ?>
 <?php if (count($errors) == 0 AND count($success) > 0) :?>
-
-	<h4 style="margin-bottom:10px;">
-		<?=$code_pack_label?>
-	</h4>
 
 	<table id="entries" class="template-table mainTable padTable" border="0" cellspacing="0" cellpadding="0">
 <?php $i = 0; foreach ($success as $val) : $i++; ?>

@@ -14,7 +14,7 @@
 
 		<form action="<?=$form_url?>" method="POST">
 
-			<input type="hidden" name="XID" value="<?=XID_SECURE_HASH?>"/>
+			<input type="hidden" name="<?=$csrf_hidden_name?>"	value="<?=$CSRF_TOKEN?>" />
 			<input type="hidden" name="filter" value="yes"/>
 
 			<label for="search_term">
@@ -153,7 +153,7 @@
 				<td class="search_item_more">
 					<?php
 					$first = TRUE;
-					foreach( $log_item['extra'] as $extra => $val ) : 
+					foreach( $log_item['extra'] as $extra => $val ) :
 						if( !$first )
 						{
 							echo( ', ' );
@@ -200,10 +200,10 @@
 	<?=$pagination?>
 	<span class="pagination" id="filter_pagination"></span>
 	<form action="<?=$form_url?>" method="POST">
-		<input type="hidden" name="XID" value="<?=XID_SECURE_HASH?>"/>
+		<input type="hidden" name="<?=$csrf_hidden_name?>"	value="<?=$CSRF_TOKEN?>" />
 		<input type="hidden" name="clear_log" value="y" />
-		<p><input style="float:right;" 
-					type="submit" name="submit" 
+		<p><input style="float:right;"
+					type="submit" name="submit"
 					value="<?=lang('clear_log')?>" class="submit"  /></p>
 	</form>
 

@@ -5,10 +5,10 @@
  *
  * @package		Solspace:Super Search
  * @author		Solspace, Inc.
- * @copyright	Copyright (c) 2009-2013, Solspace, Inc.
+ * @copyright	Copyright (c) 2009-2015, Solspace, Inc.
  * @link		http://solspace.com/docs/super_search
  * @license		http://www.solspace.com/license_agreement
- * @version		2.1.3
+ * @version		2.2.2
  * @filesource	super_search/language/english/lang.super_search.php
  */
 
@@ -28,7 +28,7 @@ $lang = $L = array(
 'Super Search',
 
 'super_search_module_description'		=>
-'Greatly improves search functionality in ExpressionEngine',
+'Powerful and flexible searching across channel entries',
 
 'update_super_search_module' =>
 'Update the Super Search add-on',
@@ -168,7 +168,7 @@ $lang = $L = array(
 'Manage Preferences',
 
 'ignore_common_word_list'				=>
-'Ignore common words from searches?',
+'Ignore common words from Keyword searches?',
 
 'ignore_common_word_list_subtext'		=>
 'The wordlist is completely editable, and can be overridden at template level with the <a href="http://www.solspace.com/docs/super_search/results/#use_ignore_word_list">use_ignore_word_list</a> parameter.',
@@ -178,7 +178,7 @@ $lang = $L = array(
 
 
 'ignore_word_list_subtext'				=>
-'If enabled, the following words will be ignored in any searches:',
+'If enabled, the following words will be ignored in any Keyword searches:',
 
 
 'ignore_word_list_input_placeholder'	=>
@@ -279,7 +279,7 @@ The first run may take some time, but only needs to run once.',
 'Build Spelling Suggestions',
 
 'suggestions_explain' =>
-'We build up a suggestion set for words that have been searched on, but don\'t exist in you leixcon and try and find the most likely variation for these terms. The suggestions are then cached for use in normal searches. <br/><br/>
+'We build up a suggestion set for words that have been searched on, but don\'t exist in your lexicon and try and find the most likely variation for these terms. The suggestions are then cached for use in normal searches. <br/><br/>
 	Suggestions can automatically be built as needed during searches, but this will incur a delay in the search handling the first time a new unique term is required. <a href="#">Usage ###NEEDS PROPER LINK###</a><br/>
 	 The recommended way to handle search suggestions is to have a cron job hit the a url which will calculate any new suggestions requried. <a href="#">Usage ###NEEDS PROPER LINK###</a>',
 

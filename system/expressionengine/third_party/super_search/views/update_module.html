@@ -2,7 +2,7 @@
 
 	<form action='<?=$form_url?>' method='post'>
 
-			<input type="hidden" name="XID" value="<?php echo $XID_SECURE_HASH;?>" />
+			<input type="hidden" name="<?=$csrf_hidden_name?>"	value="<?=$CSRF_TOKEN?>" />
 			<input type="hidden" name="run_update" value="y" />
 
 			<p><strong><?php echo lang('super_search_update_message'); ?></strong></p>

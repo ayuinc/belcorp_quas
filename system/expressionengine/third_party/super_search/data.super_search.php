@@ -5,10 +5,10 @@
  *
  * @package		Solspace:Super Search
  * @author		Solspace, Inc.
- * @copyright	Copyright (c) 2009-2013, Solspace, Inc.
+ * @copyright	Copyright (c) 2009-2015, Solspace, Inc.
  * @link		http://solspace.com/docs/super_search
  * @license		http://www.solspace.com/license_agreement
- * @version		2.1.3
+ * @version		2.2.2
  * @filesource	super_search/data.super_search.php
  */
 

@@ -385,20 +385,6 @@ class SuperSearchCodePack
 			}
 		}
 
-		if ($this->system == 'ee')
-		{
-			$lPacks = $this->getLegacyCodePacks();
-
-			//lets not override anything newer
-			foreach ($lPacks as $key => $value)
-			{
-				if ( ! isset($packs[$key]))
-				{
-					$packs[$key] = $value;
-				}
-			}
-		}
-
 		return $packs;
 	}
 	//END getCodePacks
@@ -496,68 +482,6 @@ class SuperSearchCodePack
 		return $return;
 	}
 	//END detectNameFromPath
-
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Get Legacy Code Packs
-	 *
-	 * @access public
-	 * @return array	array of legacy EE code packs if any
-	 */
-	public function getLegacyCodePacks()
-	{
-		$packs = array();
-
-		if ($this->system !== 'ee')
-		{
-			return $packs;
-		}
-
-		$EE =& get_instance();
-
-		//Get old last call, because EE doesn't clear it
-		//after the extension is done, even though it's now
-		//useless outside of a hook call.
-		$oldEELastCall = $EE->extensions->last_call;
-
-		foreach ($this->solspaceLegacyPacks as $packName)
-		{
-			$lPath = $this->addonsFolder . $packName;
-			$ePath = $lPath . '/ext.' . $packName . '.php';
-			$pClass = ucfirst($packName) . '_ext';
-
-			if (is_dir($lPath) && file_exists($ePath))
-			{
-				if (! class_exists($pClass))
-				{
-					require_once $ePath;
-				}
-
-				$item = new $pClass();
-
-				//we have to fake last call or it borks
-				$EE->extensions->last_call = $packs;
-
-				//does the merge for us
-				$packs = $item->code_pack_list($packs);
-			}
-		}
-
-		//Reset old last call for whatever reason.
-		//Best to leave it how we found it.
-		$EE->extensions->last_call = $oldEELastCall;
-
-		//its legacy stuff, lets name it so
-		foreach ($packs as $key => $value)
-		{
-			$packs[$key]['legacy'] = true;
-		}
-
-		return $packs;
-	}
-	//END getLegacyCodePacks
 
 
 	// --------------------------------------------------------------------
@@ -1267,8 +1191,7 @@ class SuperSearchCodePack
 			return $folders;
 		}
 
-		//sexy?
-		if ($this->isPhp53)
+		if (class_exists('FilesystemIterator'))
 		{
 			$iterator = new FilesystemIterator(
 				$path,
@@ -1277,7 +1200,7 @@ class SuperSearchCodePack
 				FilesystemIterator::FOLLOW_SYMLINKS
 			);
 
-			foreach ($iterator as $fileinfo)
+			foreach (iterator_to_array($iterator) as $fileinfo)
 			{
 				if ($fileinfo->isDir() AND
 					substr($fileinfo->getFilename(), 0, 1) != '.')
@@ -1286,7 +1209,6 @@ class SuperSearchCodePack
 				}
 			}
 		}
-		//es no sexy :(
 		//we will remove this way when we remove PHP 5.2 support
 		else
 		{
@@ -1336,8 +1258,7 @@ class SuperSearchCodePack
 			return $files;
 		}
 
-		//sexy?
-		if ($this->isPhp53)
+		if (class_exists('FilesystemIterator') && version_compare(phpversion(), '5.3.6', '>='))
 		{
 			$iterator = new FilesystemIterator(
 				$path,
@@ -1346,7 +1267,7 @@ class SuperSearchCodePack
 				FilesystemIterator::FOLLOW_SYMLINKS
 			);
 
-			foreach ($iterator as $fileinfo)
+			foreach (iterator_to_array($iterator) as $fileinfo)
 			{
 				if ($fileinfo->isFile() AND
 					(
@@ -1363,7 +1284,6 @@ class SuperSearchCodePack
 				}
 			}
 		}
-		//es no sexy :(
 		//we will remove this way when we remove PHP 5.2 support
 		else
 		{
@@ -1459,12 +1379,26 @@ class SuperSearchCodePack
 		$path = rtrim($path, '/') . '/';
 		$url = rtrim($url, '/') . '/';
 
-		$glob_path = preg_quote($path, '[]');
+		//because crappy non-unix systems just CANT handle glob() *SIIIIGHHHH*
+		$results = array();
 
-		$results = glob(
-			$glob_path . '{meta,resources,img,images}/screenshot\.{jpg,jpeg,png,gif}',
-			GLOB_BRACE
-		);
+		foreach($this->getFolders($path) as $folder)
+		{
+			$f_path = $path . $folder . '/';
+
+			if (in_array($folder, array('meta','resources','img','images')))
+			{
+				$files = $this->getFiles($f_path, array('jpg','jpeg','png','gif'));
+
+				foreach ($files as $filename)
+				{
+					if (preg_match('/^screenshot\./', $filename))
+					{
+						$results[] = $f_path . $filename;
+					}
+				}
+			}
+		}
 
 		if (! empty($results))
 		{
