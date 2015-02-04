@@ -66,7 +66,7 @@ class News
         $res = $preferences[0]->m_field_id_2;
         
         $variables[] = array(
-	        'preferences' => str_replace(',', '|', $res)
+	        'preferences' => str_replace(',', '+', $res)
 		);
 		
 		$tagdata = $this->EE->TMPL->tagdata;
