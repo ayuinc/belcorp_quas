@@ -487,10 +487,10 @@ content associated with your account will also be deleted.',
 'Your membership account has not been activated yet.',
 
 'mbr_you_are_logged_in' =>
-'You are now logged in.',
+'Has ingresado con éxito, espera un momento.',
 
 'mbr_you_are_logged_out' =>
-'You are now logged out.',
+'Has salido con éxito, espera un momento.',
 
 'mbr_no_reset_id' =>
 'The ID number you submitted does not appear to be valid.  Please check the link you followed.',

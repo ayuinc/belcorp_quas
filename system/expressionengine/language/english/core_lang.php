@@ -40,7 +40,7 @@ $lang = array(
 'Update',
 
 'thank_you' =>
-'Thank You!',
+'Gracias!',
 
 'page' =>
 'Page',

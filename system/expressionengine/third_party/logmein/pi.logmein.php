@@ -49,7 +49,7 @@ class Logmein
 		// check if username was submitted
 		if (!$username = $this->EE->TMPL->fetch_param('username'))
 		{
-			if ($this->debug)
+			if ($this->EE->TMPL->fetch_param('errors') AND $this->EE->TMPL->fetch_param('errors') == "true")
 			{
 				$this->EE->output->show_user_error('general', 'LogMeIn requires a username');
 			}
@@ -66,7 +66,7 @@ class Logmein
 		// if invalid username		
 		if (!$row = $query->row())
 		{
-			if ($this->debug)
+			if ($this->EE->TMPL->fetch_param('errors') AND $this->EE->TMPL->fetch_param('errors') == "true")
 			{
 				$this->EE->output->show_user_error('general', 'Username does not exist');
 			}
@@ -86,9 +86,9 @@ class Logmein
 		// set default cookie expiration to one day
 		$expire = $this->EE->TMPL->fetch_param('expire') ? $this->EE->TMPL->fetch_param('expire') : 60*60*24;
 		$sess->remember_me($expire);
-		
-		
+				
 		// start session		
+
 		$sess->start_session();
 	}
 	
