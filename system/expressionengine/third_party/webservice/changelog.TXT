@@ -1,0 +1,213 @@
+4.1.2
+	Added: API overview
+	Added: setting field for the testing tool url
+	Added: author_id, cat_id, cat_name, cat_description and cat_[custom_field] params to the search_entry and read_entry method
+	Bugfix: where some admin checks goes wrong
+	Bugfix: where the assigned categories where removed with an update
+
+4.1.1
+	Added: stop_before param for the entry
+	Added: start_on param for the entry
+	Updated: remove some files that not needed
+	Bugfix: undefined format when doing a post on the rest service
+
+4.1
+	Added: new metdata response field, this add metadata like ID, Limit, offset, total_resuls, absolute_results
+	Added: version nummer to the apis
+	Added: Show Query option in the logging (CP)
+	Updated: logging saved with base64 encoding
+	Updated: Make the entry_date modifiable
+	Updated: Public method return messages confirm the other services
+	Bugfix: in the Matrix/grid Search
+	Bugfix: when there where no channels assigned, the module gives an error
+	Deprecated: ID Response field, instead use the metadata field
+
+4.0
+	Added : strict site_id settings for strict site_id usage
+	Added : member create notifications in the Member API
+	Added : config read API
+	Added : webservice_read_entry_grid and webservice_read_entry_matrix to override the result
+	Added : possibility to search in Grid and Matrix fields
+	Added : webservice_modify_search hook to extend the search (Webservice_gridmatrix_rel extension)
+	Updated : entry limit default to 99999
+	Updated : better update for third_party hooks in the entry_api_entry_row
+	Updated : MSM support for the entry, category_group and channel API
+	Updated: all error messages
+	Changed : read_channel behave the same as search_channel
+	Removed: code from the response array
+	Bugfix: not authorized error in the testing tool
+	Bugfix: MySql strict errors
+	Bugfix : where the search method trigger an error when there is a multi array
+	Bugfix : where the post_save() method not getting the data from the save() method
+	Bugfix: where the entry_api shows an PHP error when there was no channel_field attached to a channel
+
+3.5 
+	Bugfix : Better Fieldtype integration
+	Bugfix : Undefined ee()->TMPL in the search method
+	Bugfix : Where the logging was not working on a clean install of the Entry API
+	Bugfix : minor
+	Updated : site_id is no longer required. Is the site_id is not filled in, then we assume we have to use site_id=1
+	Updated : every api will return an id(s) of the items affected
+	Updated : better validate method
+	Updated : APIs are standalone packages. This is for preparation that other devs can create their own api in the future.
+	Updated : disabled the free apis on user level. No need for that, just only on the settings page
+	Updated : searching on entries, the entry_id and channel_id are always exact match
+	*Changed : read_entry is accept now the same parameters as the search_entry because those are the same now
+	Added : show_children=yes to the read_category_group to get also all category children
+	Added : sort and orderby param in the search method of the entry
+	Added : new Member API (password/username update method excluded)
+	Added : Adman support for only the {exp:adman:show} method
+	Added : custom API (without any services) in the testing tool
+	Added : some channel data values (channel_name, channel_title) in the search_entry
+	Added : entry_id support in the search_entry method
+	Added : entry_api_entry_row hook that is triggered in the read as search method on per entry row
+
+3.4.1
+	Bugfix : small MSM issues, you can now use the param site_id to select a specific site.
+	Bugfix : where the error message was wrong when the entry is not exists
+	Updated : reduce the queries
+	Added : datetime in the logging
+
+3.4
+	Bugfix : better check on no auth data
+	Bugfix : the search method throws an error on the fieldtypes
+	Added : show ID in the logging
+	Added : on all entry methods response message has now a key "ID" with the associated entry_id(s) 
+	Added : DashEE Widget for showing the latest logs
+
+3.3.2
+	Bugfix : where all field where validate and not the fields associated with the channel
+
+3.3.1
+	Added : super admin API key
+	Removed : the entry_api_parent_rel extension as a seperated extension
+
+3.3
+	Added : Zoo Visitor support
+	Added : $entry_id to the validate api function
+	Added : fieldtype api method entry_api_post_delete, this will called after the entry is deleted
+	Changed : the fieldtype api method entry_api_delete is now called before the entry is delete
+	Bugfix : where the fieldtype api got not the correct value for $is_new
+	Bugfix : where in some cases the url for the soap service cannot be found
+
+3.2.1
+	Added : entry_api_create_entry_start hook
+	Added : entry_api_read_entry_start hook
+	Added : entry_api_update_entry_start hook
+	Added : entry_api_delete_entry_start hook
+	Added : entry_api_search_entry_start hook
+
+3.2
+	Bugfix : where the install script was not working in MySQL strict
+	Bugfix : where the site_id was missing in the testing_tool
+	Bugfix : where the extra post data give an error on the rest services in the testing_tool
+	Bugfix : Where the session was not correctly destroyed
+	Bugfix : where in some case the return message was malformed due the license error
+	Bugfix : where the url_trigger was not working in the testing tool
+	Bugfix : where in some case mysql throws an error by giving the wrong API Key
+	Updated : entry_api_read_entry_end hook to modify the actual entry_data array
+	Added : entry_api_search_entry_per_entry that will called by getting the entry from the search
+	Added : get Relationship/Playa parent extension (ext.entry_api_parent_rel)
+
+3.1
+	Bugfix : where there whas an undefined variable error for validate_errors in the create_entry method
+	Added : url trigger
+	Added : license check
+
+3.0
+	Bugfix : where there whas a php error by fetching the members in the CP
+	Bugfix : seaching on only a channel name throws an error
+	Bugfix : global debug setting works now
+	Bugfix : lot of small issues
+	Bugfix : where sometimes the channel_id was not set by an insert
+	Added : Api Keys for easy access
+	Added : support for categories in the entry CRUD methods category => '1|2|3'
+	Added : new testing tool in the CP
+	Added : IP Blacklist
+	Added : free access Method on member level and global level for the read_entry() & search_entry()
+	Added : new logging table
+	Added : brand new Fieldtype API for other fieldtypes to adopt Entry Api
+	Added : File compatible in the read methods
+	Added : Membergroup assignment for the usage of the API
+	Added : Relationship support
+	Added : Playa support
+	Added : basic Matrix support (not supporting special fieldtype with database tables, for now)
+	Added : basic Grid support (not supporting special fieldtype with database tables, for now)
+	Added : site_id var in the create method, this is now an require field. (almost MSM compatible now :-))
+	Added : Auth API
+	Changed : only one member can be choosen
+	Changed : Credentials must be include in an array
+	Updated : simplify the rest service
+	Updated : Better File read, it will return an array with options of the file
+	Updated : text fields are now validate on their length as well
+	Updated : better CP UI
+	Updated : codebase to be compatible with EE 2.7+
+	Updated : min require EE version < 2.6 
+	Removed : the unit tester due its inefficiency 
+	Removed : Omnilog support
+
+2.2.1
+	Bugfix : PHP error in all category_group methods
+
+2.2
+	Added: Entry hooks: entry_api_create_entry_end, entry_api_update_entry_end, entry_api_delete_entry_end, entry_api_search_entry_end
+	Added: Category Group hooks: entry_api_create_category_group_end, entry_api_read_category_group_end, entry_api_update_category_group_end, entry_api_delete_category_group_end
+	Added Category hooks: entry_api_create_category_end, entry_api_read_category_end, entry_api_update_category_end, entry_api_delete_category_end
+	Added: Status Check page
+	bugfix: small bugfixes in the unit tester
+	Bugfix: small bugfixes in the services.
+	Bugfix: where the Control Panel give an error with the message : Undefined index: no_inlog_channel
+	Updated : Better PHP check on install in case the PHP version is below 5.3
+
+2.1
+	Added: search method for the Entry API in the XML-RPC/SOAP/REST services
+	Added: category group API
+	Added: Unit Tester for debugging and test all services and methods (domain.com/entry_api/test/?username=test&password=Test123&channel=news&membergroup=6)
+	Modify: the return values of the XMLRPC READ method are changed. The values are located in the [data]array([0]) to confirm with the search method
+	Modify: the return values of the SOAP READ method are changed. The values are located in the [data]array([0]) to confirm with the search method
+	Modify: the return values of the REST READ method are changed. The values are located in the [data]array([0]) to confirm with the search method
+	Modify: the log saves now only the username in the extend data and not the full request.
+	Updated: the Slim rest server to V2.0.0
+	Updated: min specs to PHP 5.3
+	Bugfix: the rest services was setting SOAP request to the log
+	Bugfix: database prefix was missing in the queries
+	Bugfix: where the code suggest some wrong methods
+	Bugfix: where the category API methods delete() and update() gives an PHP error
+	Disabled: Temporary disable the services debug setting because this setting is not yet implemented.
+	Optimized: The services are optimized for better performance
+
+2.0.1
+	Added: Al create function of the services return an ID of the created entry/category.
+
+2.0 
+	Rewrite: the control panel so the services is build uppon a member and not a channel
+	Rewrite: the services for better customization
+	Update: the return codes
+	Added: category CRUD API
+
+1.2.1
+	Bugfix: Where the authentication goes wrong.
+
+1.2 
+	Added: REST support.
+	Added: Debug field for enable debugging.
+	Updated: A fresh new documentation for the services file is added.
+	Changed: The method names are changed for more CRUD purpose.
+	Changed: Response codes are more HTTP friendly.
+	Bugfix: lot of minor bugs fixes.
+
+1.1.2
+	Bug fix: Where to log wasn`t working in some cases.
+
+1.1.1
+	Changed: The url is now changed to work without the ACT uri. 
+	Bugfix: Error message was always showing when the image field is empty.
+	Bugfix: Delete channel wasn`t working.
+
+1.1
+	Added: Upload files through the services.
+	Bugfix: The type data of a custom field was wrong.
+	Bugfix: The service give a PHP error when not selecting a channel.
+
+1.0
+	Init release.

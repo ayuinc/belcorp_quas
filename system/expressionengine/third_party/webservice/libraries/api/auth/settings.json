@@ -1,0 +1,25 @@
+{
+    "name" : "auth",
+    "label": "Auth",
+    "auth": false,
+    "public": true,
+    "enabled": true,
+    "version" : "1.0",
+    "methods": [
+        {
+            "method": "authenticate_username",
+            "name": "Authenticate by username",
+			"soap": [
+				{
+					"name": "data",
+					"type": "tns:ObjectList"
+				},
+				{
+					"name": "id",
+					"type": "xsd:string"
+				}
+			]
+        }
+
+    ]
+}

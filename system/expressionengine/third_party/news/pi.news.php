@@ -23,30 +23,11 @@ class News
 {
 
     var $return_data = "";
-    // --------------------------------------------------------------------
 
-        /**
-         * Memberlist
-         *
-         * This function returns a list of members
-         *
-         * @access  public
-         * @return  string
-         */
     public function __construct(){
         $this->EE =& get_instance();
     }
 
-    // --------------------------------------------------------------------
-
-    /**
-     * Usage
-     *
-     * This function describes how the plugin is used.
-     *
-     * @access  public
-     * @return  string
-     */
     public static function usage()
     {
         ob_start();  ?>
@@ -57,22 +38,28 @@ class News
         return $buffer;
     }
     // END
-
-    public function get_preferences(){
-	    $member_id = ee()->session->userdata('member_id');
+    
+    public function entries_by_preferences() {
+	    $preferences = $this->preferences();
+	    $preferences = split(',', $preferences);
 	    
+	    $query_categories = ee()->db->select('cat_id')->get_where();
+    }
+    
+    public function entries_by_vp() {
+	    
+    }
+    
+    public function all_entries() {
+	    
+    }
+    
+    public function preferences() {
+	    $member_id = ee()->session->userdata('member_id');
 	    $query_preferences = ee()->db->select('m_field_id_2')->get_where('exp_member_data', array('member_id' => $member_id));
         $preferences = $query_preferences->result();
         $res = $preferences[0]->m_field_id_2;
         
-        $variables[] = array(
-	        'preferences' => str_replace(',', '|', $res)
-		);
-		
-		$tagdata = $this->EE->TMPL->tagdata;
-
-    	return $this->EE->TMPL->parse_variables($tagdata, $variables);
+        return $res;
     }
-} 
-/* End of file pi.rating.php */
-/* Location: ./system/expressionengine/third_party/rating/pi.rating.php */
+}

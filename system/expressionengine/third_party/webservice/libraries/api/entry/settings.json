@@ -1,0 +1,133 @@
+{
+    "name" : "entry",
+    "label": "Entry",
+    "auth": true,
+    "public": false,
+    "enabled": true,
+    "version" : "1.0",
+    "methods": [
+        {
+            "method": "create_entry",
+            "name": "Create a new entry",
+            "soap": [
+                {
+                    "name": "id",
+                    "type": "xsd:string"
+                }
+            ]
+        },
+        {
+            "method": "read_entry",
+            "name": "Read an entry",
+            "free_api": true,
+            "soap": [
+                {
+                    "name": "data",
+                    "type": "tns:ObjectList"
+                },
+                {
+                    "name": "id",
+                    "type": "xsd:string"
+                }
+            ]
+        },
+        {
+            "method": "update_entry",
+            "name": "Update an entry",
+            "soap": [
+                {
+                    "name": "id",
+                    "type": "xsd:string"
+                }
+            ]
+        },
+        {
+            "method": "delete_entry",
+            "name": "Delete an entry",
+            "soap": [
+                {
+                    "name": "id",
+                    "type": "xsd:string"
+                }
+            ]
+        },
+        {
+            "method": "search_entry",
+            "name": "Search entries",
+            "free_api": true,
+            "soap": [
+                {
+                    "name": "data",
+                    "type": "tns:ObjectList"
+                },
+                {
+                    "name": "id",
+                    "type": "xsd:string"
+                }
+            ]
+        }
+    ],
+	"test":
+	{
+		"enabled": true,
+		"create_entry": [
+			{
+				"name": "channel_name",
+				"type": "form_dropdown",
+				"value": "call::webservice_model::get_channel_names"
+			},
+			{
+				"name": "title",
+				"type": "form_input",
+				"value": "Test page"
+			},
+			{
+				"name": "status",
+				"type": "form_input",
+				"value": "Open"
+			},
+			{
+				"name": "extra",
+				"type": "form_textarea"
+			}
+		],
+		"read_entry": [
+			{
+				"name": "entry_id",
+				"type": "form_input"
+			}
+		],
+		"update_entry": [
+			{
+				"name": "entry_id",
+				"type": "form_input"
+			},
+			{
+				"name": "title",
+				"type": "form_input",
+				"value": "Test page"
+			},
+			{
+				"name": "status",
+				"type": "form_input",
+				"value": "Open"
+			},
+			{
+				"name": "extra",
+				"type": "form_textarea"
+			}
+		],
+		"delete_entry": [
+			{
+				"name": "entry_id",
+				"type": "form_input"
+			}
+		],
+		"search_entry": [
+			{
+				"name": "entry_id",
+				"type": "form_input"
+			}
+		]
+	}
+}

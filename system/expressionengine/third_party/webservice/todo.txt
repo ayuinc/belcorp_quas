@@ -1,0 +1,106 @@
+
+
+
+
+Short time
+- Filemanager api
+- member group api
+- in the entry api, set the field you want to select
+
+
+Longer time (4.0)
+- oAuth2.0
+
+
+array(
+	'publisher_lang_id' => 1,
+	'publisher_status'  => 'draft|open' 
+);
+
+array(
+	'publisher_lang_id' => 2,
+	'publisher_status' => 'draft'
+);
+
+//example
+'file_field' => array(
+	'filedata' => base64_encode(@file_get_contents($_FILES['file_field']['tmp_name'])),
+	'filename' => $_FILES['file_field']['name']
+),
+
+array(
+	'playa' => array(
+		2,3,4,5
+	),
+);
+
+array(
+	'relationship' => array(
+		2,3,4,5
+	),
+);
+
+//zoo visitor
+array(
+	'member_account' => array(
+		'email' => 'djrein86@hotmail.com',
+		'username' => 'Rein de Vries',
+		'password' => 'test123',
+		'screen_name' => 'Rein de Vries',
+		'group_id' => '4',			
+	),
+);
+
+array(
+	'grid' => array(
+		'rows' => array(
+			array(
+				'cell_1' => 'row 1',
+				'cell_2' => 'row 11'
+			),
+			array(
+				'cell_1' => 'row 2',
+				'cell_2' => 'row 22'
+			),
+		),
+	),
+);
+
+array(
+	'matrix' => array(
+		'rows' => array(
+			array(
+				'cell_1' => 'row 1',
+				'cell_2' => 'row 11',
+			),
+			array(
+				'cell_1' => 'row 2',
+				'cell_2' => 'row 22'
+			)
+		),
+		'trigger_revisions' => 1
+	)
+);
+
+array('gmaps' => array(
+	'markers' => array(
+		array(
+			'lat' =>'52.3909176',
+			'lng' =>'6.049638',
+			'title' => 'test',
+			'icon' => null
+		)
+	),
+	'map' => array(
+		'map_type' => 'roadmap',
+		'map_types' => array(
+			'hybrid',
+			'roadmap',
+			'satellite',
+			'terrain'
+		)
+	),
+	'polylines' => array(),
+	'polygons' => array(),
+	
+));
