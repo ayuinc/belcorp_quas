@@ -37,8 +37,8 @@
 	color: #333333;
 }
 .ui-widget-header {
-	border: 1px solid #e78f08;
-	background: #f6a828 url("../assets/icons/ui-bg_gloss-wave_35_f6a828_500x100.png") 50% 50% repeat-x;
+	border: 1px solid $brand-primary;
+	background: $brand-primary;
 	color: #ffffff;
 	font-weight: bold;
 }
@@ -68,8 +68,8 @@
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-	border: 1px solid #fbcb09;
-	background: #fdf5ce url("../assets/icons/ui-bg_glass_100_fdf5ce_1x400.png") 50% 50% repeat-x;
+	border: 1px solid white;
+	background-color: rgba(112,50,124,0.7);
 	font-weight: bold;
 	color: #c77405;
 }

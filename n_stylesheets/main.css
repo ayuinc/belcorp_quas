@@ -703,7 +703,7 @@ address {
   .row:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .posts-grid > li .info .right, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, #tabs .content .externo, #tabs .content .propio, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .posts-grid > li .info .left, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, #tabs .content .categoria, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .posts-grid > li .info .right, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, #tabs .content .externo, #tabs .content .propio, .content-vista, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .posts-grid > li .info .left, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, #tabs .content .categoria, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -1022,7 +1022,7 @@ address {
   .col-sm-offset-12 {
     margin-left: 100%; } }
 @media (min-width: 992px) {
-  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, #tabs .content .externo, #tabs .content .propio, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, #tabs .content .categoria {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, #tabs .content .externo, #tabs .content .propio, .content-vista, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, #tabs .content .categoria {
     float: left; }
 
   .col-md-1 {
@@ -1040,7 +1040,7 @@ address {
   .col-md-5 {
     width: 41.66667%; }
 
-  .col-md-6, #tabs .content .externo, #tabs .content .propio {
+  .col-md-6, #tabs .content .externo, #tabs .content .propio, .content-vista {
     width: 50%; }
 
   .col-md-7 {
@@ -3750,8 +3750,8 @@ body .ui-tooltip {
   color: #333333; }
 
 .ui-widget-header {
-  border: 1px solid #e78f08;
-  background: #f6a828 url("images/ui-bg_gloss-wave_35_f6a828_500x100.png") 50% 50% repeat-x;
+  border: 1px solid #70327c;
+  background: #70327c;
   color: #ffffff;
   font-weight: bold; }
 
@@ -3780,8 +3780,8 @@ body .ui-tooltip {
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-  border: 1px solid #fbcb09;
-  background: #fdf5ce url("images/ui-bg_glass_100_fdf5ce_1x400.png") 50% 50% repeat-x;
+  border: 1px solid white;
+  background: #70327c;
   font-weight: bold;
   color: #c77405; }
 
@@ -3793,7 +3793,7 @@ body .ui-tooltip {
 .ui-state-focus a:hover,
 .ui-state-focus a:link,
 .ui-state-focus a:visited {
-  color: #c77405;
+  color: white;
   text-decoration: none; }
 
 .ui-state-active,
@@ -3881,10 +3881,6 @@ body .ui-tooltip {
   background-image: url("images/ui-icons_ffffff_256x240.png"); }
 
 .ui-state-default .ui-icon {
-  background-image: url("images/ui-icons_ef8c08_256x240.png"); }
-
-.ui-state-hover .ui-icon,
-.ui-state-focus .ui-icon {
   background-image: url("images/ui-icons_ef8c08_256x240.png"); }
 
 .ui-state-active .ui-icon {
@@ -4504,8 +4500,8 @@ body .ui-tooltip {
   color: #333333; }
 
 .ui-widget-header {
-  border: 1px solid #e78f08;
-  background: #f6a828 url("../assets/icons/ui-bg_gloss-wave_35_f6a828_500x100.png") 50% 50% repeat-x;
+  border: 1px solid #70327c;
+  background: #70327c;
   color: #ffffff;
   font-weight: bold; }
 
@@ -4534,8 +4530,8 @@ body .ui-tooltip {
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-  border: 1px solid #fbcb09;
-  background: #fdf5ce url("../assets/icons/ui-bg_glass_100_fdf5ce_1x400.png") 50% 50% repeat-x;
+  border: 1px solid white;
+  background-color: rgba(112, 50, 124, 0.7);
   font-weight: bold;
   color: #c77405; }
 

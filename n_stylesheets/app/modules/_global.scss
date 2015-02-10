@@ -425,4 +425,5 @@ input[type=checkbox]:checked + .grid-noticias {
 
 .content-vista {
 	border: 1px solid $gray;
+	@extend .col-md-6;
 }
