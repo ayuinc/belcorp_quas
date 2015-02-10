@@ -6,7 +6,12 @@
 	<p>Email <input name="email" value="{email}" /></p>
 	<p>Username <input name="username" value="{username}" /></p>
 	<p>Screen Name <input name="screen_name" value="{screen_name}" /></p>
-	 
+	
+	{exp:channel:categories style="linear" category_group="18"}
+		<label><input type="checkbox" value="{category_id}">&nbsp;{category_name}</label>		
+	{/exp:channel:categories}
+		
+<!--
 	<fieldset>
 		<label><input type="checkbox" id="field_tag_1" value="Competencia">&nbsp;Competencia</label>
 		<label><input type="checkbox" id="field_tag_2" value="Creatividad">&nbsp;Creatividad</label>
@@ -17,6 +22,7 @@
 		<label><input type="checkbox" id="field_tag_7" value="UCB">&nbsp;UCB</label>
 		<label><input type="checkbox" id="field_tag_8" value="Ventas">&nbsp;Ventas</label>
 	</fieldset>
+-->
 	<input type="hidden" id="field_tags" name="Preferencias" value="{Preferencias}" />
 	<p>Tags: {Preferencias}</p>
 	
