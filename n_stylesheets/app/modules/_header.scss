@@ -1,0 +1,29 @@
+header {
+	height: $header-height-control;
+	border-bottom: 1px solid $gray-lighter;
+	@include flex-space-between;
+	@include normalize-text;
+	.left,
+	.center,
+	.right {
+		@include flex-middle-center;
+	}
+	.left {}
+	.center {}
+	.right {}
+}
+
+.center {
+	ul {
+		li {
+			.left {}
+			.center {}
+			.right {
+				padding-bottom: 0 !important;
+				span {
+					font-size: 12px !important;
+				}
+			}
+		}
+	}
+}

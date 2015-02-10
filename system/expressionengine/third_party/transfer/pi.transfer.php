@@ -113,6 +113,7 @@ class Transfer
 
             // Insert custom fields
             $cust_fields['member_id'] = $member_id;
+            $cust_fields['m_field_id_3'] = $row->PaisSociedad;
 
             ee()->db->query(ee()->db->insert_string('exp_member_data', $cust_fields));
 
