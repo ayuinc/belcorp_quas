@@ -1,11 +1,11 @@
 {embed="n_includes/header"}
 	{if logged_in}
 		<div class="container">
-    	<div class="row heading-block">
-    		<div class="small-12 medium-7 large-6 columns text-gradient">
+			<div class="row">
+				<div class="col-sm-6 minh-140 flex-middle text-gradient">
 					<h1>BIENVENIDO <br>A LA UCB</h1>
-    		</div>
-    		<div class="small-12 medium-5 large-6 columns">
+				</div>
+				<div class="col-sm-6 minh-140 flex-middle-center">
 					{exp:member:custom_profile_data}
 					<h4 class="mt-0">
 						{if logged_in}
@@ -13,8 +13,8 @@
 				    {/if}
 					</h4>
 					{/exp:member:custom_profile_data}
-    		</div>	    		
-    	</div>
+				</div>
+			</div>
     	<div class="row search-block mb-28 mt-28">
 	    	<div class="small-12 medium-9 large-9 columns full-width-for-portrait">
 	    		{embed="n_includes/buscador"}
