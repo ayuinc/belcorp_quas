@@ -48,7 +48,14 @@
             <h3>Titulo</h3>
           </div>
           <div class="right">
-            <span>usuario</span>
+            {exp:member:custom_profile_data}
+              <form action="/?/test/testsoap2" method="POST">
+                <input type="hidden" name="XID" value="{XID_HASH}" /> 
+                <input type="hidden" name="username" value="{username}">
+                <input type="hidden" name="screen_name" value="{screen_name}">
+                <button type="submit" id="start_course">{screen_name}</button>
+              </form>
+            {/exp:member:custom_profile_data}
           </div>
         </header> <!-- END:Header -->
 
