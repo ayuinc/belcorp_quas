@@ -37,6 +37,29 @@
   // "modules/videocover",
   "modules/footer";
 
+@import 
+  // "includes/utilities-custom",
+  // "includes/type-custom",
+  // "includes/icons-typ",
+  "includes/flag-icon.min.scss",
+  // "includes/header",
+  "includes/footer",
+  "includes/breadcrumbs",
+  "includes/login-form",
+  "includes/grid-panels",
+  "includes/search",
+  "includes/list-heading",
+  "includes/isotope-filters",
+  "includes/pin-menu",
+  "includes/off-canvas-viejo",
+  "includes/bootstrapValidator.min", 
+  "includes/ayu-off-canvas";
+
 // APP Views
-// @import 
+@import 
   // VIEW NAME
+  "views/canvas-container",
+  "views/wall",
+  "views/cursos",
+  "views/app",
+  "views/escuelas";

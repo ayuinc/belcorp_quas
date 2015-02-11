@@ -57,6 +57,8 @@
 /*========================================
 =             APP CUSTOM                 =
 ========================================*/
-
-
+@import 
+  "foundation/components/global",
+  "foundation/functions",
+  "foundation/settings";
 @import "app/app";

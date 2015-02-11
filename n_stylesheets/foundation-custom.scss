@@ -1,26 +1,13 @@
-// Bourbon sass tools
-@import "bourbon/bourbon"; 
+// sass --watch foundation-custom.scss:foundation-custom.css -t compressed
 
+// FOUNDATIONS
 @import 
   "foundation/components/global";
 
-// EBM - EasyBoxModel
-@import "EBM/ebm";  
-
-// Normalize 
-@import "normalize";
-
-// Foundation by ZURB
-// foundation.zurb.com
-// Licensed under MIT Open Source
-
-// Make sure the charset is set appropriately
-@charset "UTF-8";  
- 
 // Behold, here are all the Foundation components.
 @import
-	"foundation/settings",
-	"foundation/functions",
+  "foundation/settings",
+  "foundation/functions",
   "foundation/components/grid",
   // "foundation/components/accordion",
   // "foundation/components/alert-boxes",
@@ -57,55 +44,3 @@
   // "foundation/components/type",
   // "foundation/components/offcanvas",
   "foundation/components/visibility";
-
-// APP Custom
-// APP Includes
-@import 
-  "foundation/settings",
-  "app/includes/utilities-custom",
-  "app/includes/type-custom",
-  "app/includes/icons-typ",
-  "app/includes/flag-icon.min.scss",
-  "app/includes/header",
-  "app/includes/footer",
-  "app/includes/breadcrumbs",
-  "app/includes/login-form",
-  "app/includes/grid-panels",
-  "app/includes/search",
-  "app/includes/list-heading",
-  "app/includes/isotope-filters",
-  "app/includes/pin-menu",
-  "app/includes/off-canvas-viejo",
-  "app/includes/bootstrapValidator.min", 
-  "app/includes/ayu-off-canvas";
-
-// APP Views
-@import 
-  "app/canvas-container",
-  "app/wall",
-  "app/cursos",
-  "app/app",
-  "app/escuelas";
-
-
-  // Animations
-// http://daneden.github.io/animate.css/
-
-@import
-"animate/animate-init",
-"animate/animation-delays";
-
-@import
-// "animate/attention",
-// "animate/bounce-in",
-// "animate/bounce-out",
-"animate/fade-in",
-"animate/fade-out";
-// "animate/flippers",
-// "animate/lightspeed",
-// "animate/rotate-in",
-// "animate/rotate-out",
-// "animate/sliders",
-// "animate/specials";
-  
-  

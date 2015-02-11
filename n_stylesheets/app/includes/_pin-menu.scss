@@ -1,0 +1,19 @@
+// PINNED MENU & LINK IN CURSOS
+.pin-frame {
+	position: fixed;
+	z-index: 100;
+	width: 100%;
+	height: 0;
+	.pin-content {
+		position: relative;
+		.pin-menu {
+			position: absolute;
+			top: 210px;
+			right: 18%;
+			@media #{$medium-only} {
+				top: 308px;
+				right: 5%;
+			}
+		}
+	}
+}

@@ -18,7 +18,7 @@ $px-to-rems: true;    // True if you want them on rems
 $em-base: 14px; 
 
 // Include EBM in "%" units?
-$percentage: true;
+$percentage: false;
 
 // Include and determine border radius:
 $rounded-borders: true;  // If no bootstrap
@@ -37,18 +37,18 @@ $rounded-borders: true;  // If no bootstrap
   
 @import 
   "easy-box-model",
-  "ebm-loops-small",
+  // "ebm-loops-small",
   "min-heights",
   // "min-heights_deprecated",
   "box-shadow",
-  "horizontal-rules",
-  "borders",
+  // "horizontal-rules",
+  // "borders",
   "color-control",
-  "z-index",
+  // "z-index",
   "positions",
   "flexbox", 
   "displays",
-  "gbo",
+  // "gbo",
   "grid-lists",
-  "separators",
+  // "separators",
   "containers-custom";
