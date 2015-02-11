@@ -283,3 +283,8 @@ $last-child-float: $opposite-direction !default;
     }
   }
 }
+
+// OVERRIDE ROW BEHAVIOR
+.row {
+  @include grid-row($behavior: nest);
+}
