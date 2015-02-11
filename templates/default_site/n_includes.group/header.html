@@ -54,14 +54,23 @@
                 <input type="hidden" name="XID" value="{XID_HASH}" /> 
                 <input type="hidden" name="username" value="{username}">
                 <input type="hidden" name="screen_name" value="{username}">
-                <input type="image" id="start_course" src="http://ucb.belcorp.biz/images/user.jpg" width="42" height="42">
                 <button type="submit" id="start_course">{screen_name}</button>
               </form>
             {/exp:member:custom_profile_data}
             <a href="http://ucb.belcorp.biz/?ACT=15">Salir</a>
             </span>
           </div>
-          
+          <div>
+          {exp:member:custom_profile_data}
+            <form action="/?/test/testsoap2" method="POST">
+              <input type="hidden" name="XID" value="{XID_HASH}" /> 
+              <input type="hidden" name="username" value="{username}">
+              <input type="hidden" name="screen_name" value="{screen_name}">
+              <input type="image" id="start_course" src="{site_url}images/user.jpg" width="42" height="42">
+              <!--<button type="submit" id="start_course">{screen_name}</button>-->
+            </form>
+          {/exp:member:custom_profile_data}
+          </div>
         </header> <!-- END:Header -->
 
 
