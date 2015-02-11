@@ -1,4 +1,5 @@
 // sass --watch foundation-custom.scss:foundation-custom.css -t compressed
+// sass --watch foundation-custom.scss:foundation-custom.css 
 
 // FOUNDATIONS
 @import 
@@ -6,7 +7,7 @@
 
 // Behold, here are all the Foundation components.
 @import
-  "foundation/settings",
+  // "foundation/settings",
   "foundation/functions",
   "foundation/components/grid",
   // "foundation/components/accordion",
