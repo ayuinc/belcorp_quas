@@ -55,7 +55,33 @@
 // $rem-base: 16px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
-@import "foundation/functions";
+@import "functions";
+
+// We use these as default colors throughout
+$primary-color: #5a277d !default; // morado
+$secondary-color: #AA7BC9 !default;
+$alert-color: red !default;
+$success-color: #8dc63f !default; // verde
+$warning-color: #ef3e42 !default;  // rojo
+$info-color: #00bce4 !default; // azul
+
+// Grayscale
+$gray-darker:            lighten(#313233, 0%) !default; // #222
+$gray-dark:              lighten(#313233, 21%) !default;   // #333
+$gray:                   lighten(#313233, 35%) !default; // #555
+$gray-light:             lighten(#313233, 63%) !default;   // #999
+$gray-lighter:           lighten(#313233, 77%) !default; // #eee
+
+// Others
+$morado: #5a277d;
+$morado-hover: #481F66;
+$morado-claro: #A679B2;
+$morado-lista: #5F4566;
+$gris: #596c79;
+$gris-medio: #999;
+$gris-claro: #909DA8;
+$gris-background: #ecf0f1;
+$blanco: #FFF;
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
