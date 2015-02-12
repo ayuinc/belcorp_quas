@@ -329,10 +329,11 @@ input[type=checkbox]:checked + .grid-noticias {
 			.right {
 				min-height: 49px;
 				@include flex-middle;
+				@extend .col-xs-4;
 				padding: 0;
 			}
 			.left {
-				@extend .col-xs-10;
+				@extend .col-xs-8;
 			}
 			.right {
 				@extend .col-xs-4;
