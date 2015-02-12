@@ -427,3 +427,10 @@ input[type=checkbox]:checked + .grid-noticias {
 	border: 1px solid $gray;
 	@extend .col-md-6;
 }
+
+.btn-header {
+	margin: 0;
+	background: none;
+	color: gray;
+	padding: 3px;
+}
