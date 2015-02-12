@@ -122,15 +122,6 @@ $user-card-width: 70px;
 		background-color: white;
 		margin-left: $site-menu-width-control;
 		@include calc(width, "100% - #{$site-menu-width-control}");
-		.right {
-			@extend .col-xs-4;
-			span {
-				@extend .col-xs-6;		
-			}
-			.header-right{
-				@extend .col-xs-6;
-			}
-		}
 	}
 	// MENU INTERACTION
 	&.menu-on {
