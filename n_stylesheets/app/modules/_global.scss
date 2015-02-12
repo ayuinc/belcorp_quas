@@ -122,6 +122,9 @@ $user-card-width: 70px;
 		background-color: white;
 		margin-left: $site-menu-width-control;
 		@include calc(width, "100% - #{$site-menu-width-control}");
+		.right {
+			@extend .col-xs-4;
+		}
 	}
 	// MENU INTERACTION
 	&.menu-on {
@@ -329,14 +332,13 @@ input[type=checkbox]:checked + .grid-noticias {
 			.right {
 				min-height: 49px;
 				@include flex-middle;
-				@extend .col-xs-4;
 				padding: 0;
 			}
 			.left {
-				@extend .col-xs-8;
+				@extend .col-xs-10;
 			}
 			.right {
-				@extend .col-xs-4;
+				@extend .col-xs-2;
 			}
 		}
 	}
