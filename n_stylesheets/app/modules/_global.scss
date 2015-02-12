@@ -438,3 +438,16 @@ input[type=checkbox]:checked + .grid-noticias {
 		color: gray;
 	}
 }
+
+header {
+	.user-header {
+		text-align: right;
+		float: right;
+		padding-top: 12px;
+		.hide-for-small {
+			button {
+				font-size: 13px !important;
+			}
+		}
+	}
+}

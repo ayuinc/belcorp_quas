@@ -8529,6 +8529,13 @@ input[type=checkbox]:checked + .grid-noticias {
     background: none;
     color: gray; }
 
+header .user-header {
+  text-align: right;
+  float: right;
+  padding-top: 12px; }
+  header .user-header .hide-for-small button {
+    font-size: 13px !important; }
+
 /*
  * jQuery FlexSlider v2.2.0
  * http://www.woothemes.com/flexslider/
