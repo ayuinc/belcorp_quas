@@ -433,4 +433,8 @@ input[type=checkbox]:checked + .grid-noticias {
 	background: none;
 	color: gray;
 	padding: 3px;
+	&:hover {
+		background: none;
+		color: gray;
+	}
 }

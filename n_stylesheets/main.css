@@ -8525,6 +8525,9 @@ input[type=checkbox]:checked + .grid-noticias {
   background: none;
   color: gray;
   padding: 3px; }
+  .btn-header:hover {
+    background: none;
+    color: gray; }
 
 /*
  * jQuery FlexSlider v2.2.0
