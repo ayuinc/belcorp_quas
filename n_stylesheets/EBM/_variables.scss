@@ -8,7 +8,7 @@
 //## Gray and brand colors for use across Bootstrap.
 
 // EBM:REF
-$gray-base: #262624;
+$gray-base: #5b707d;
 
 $gray-darker:            lighten($gray-base, 0%) !default; // #222
 $gray-dark:              lighten($gray-base, 21%) !default;   // #333
@@ -16,8 +16,8 @@ $gray:                   lighten($gray-base, 35%) !default; // #555
 $gray-light:             lighten($gray-base, 63%) !default;   // #999
 $gray-lighter:           lighten($gray-base, 77%) !default; // #eee
 
-$brand-primary:         #70327c !default;
-$brand-success:         #5cb85c !default;
+$brand-primary:         #9667a5 !default;
+$brand-success:         #9a6dad !default;
 $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
