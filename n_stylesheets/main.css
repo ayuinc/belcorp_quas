@@ -10487,7 +10487,7 @@ body.overflow-none {
       height: auto;
       display: inline-block; }
 .grid-panels .panel-body {
-  background: white;
+  background: #f6f6f7;
   position: relative;
   padding: 14px;
   padding: 1rem;
@@ -10506,7 +10506,7 @@ body.overflow-none {
     font-size: 14px;
     font-size: 1rem; }
   .grid-panels .panel-body p {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     color: #596c79;
     font-family: "museo-sans", Helvetica, Arial, sans-serif !important;
     font-weight: 300;
