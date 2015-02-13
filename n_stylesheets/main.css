@@ -11468,63 +11468,6 @@ a.not-underline:hover {
 .flag-icon-zw.flag-icon-squared {
   background-image: url(../flags/1x1/zw.svg); }
 
-header {
-  height: 63px;
-  background: white;
-  position: fixed;
-  width: 100%;
-  left: 63px;
-  z-index: 36;
-  -webkit-transition: all 0.7s ease;
-  -moz-transition: all 0.7s ease;
-  transition: all 0.7s ease; }
-  @media only screen and (max-width: 40em) {
-    header {
-      left: 0; } }
-  header.homepage-on {
-    -webkit-transform: translateX(49px) !important;
-    -moz-transform: translateX(49px) !important;
-    -ms-transform: translateX(49px) !important;
-    -o-transform: translateX(49px) !important;
-    transform: translateX(49px) !important;
-    z-index: 20; }
-    @media only screen and (max-width: 40em) {
-      header.homepage-on {
-        -webkit-transform: translateX(0px) !important;
-        -moz-transform: translateX(0px) !important;
-        -ms-transform: translateX(0px) !important;
-        -o-transform: translateX(0px) !important;
-        transform: translateX(0px) !important; } }
-  header .user {
-    text-align: right;
-    float: right;
-    padding-top: 12px; }
-    header .user div {
-      float: left; }
-    header .user div:first-child {
-      margin-right: 7px; }
-      header .user div:first-child span {
-        display: block; }
-      header .user div:first-child a {
-        font-size: 12px;
-        font-size: 0.85714rem; }
-      header .user div:first-child button {
-        margin: 0;
-        background: none;
-        color: gray;
-        padding: 3px; }
-    header .user img {
-      width: 42px;
-      width: 3rem;
-      height: auto; }
-      @media only screen and (max-width: 40em) {
-        header .user img {
-          width: 35px;
-          width: 2.5rem; } }
-  header .toggle-nav-link {
-    font-size: 21px;
-    font-size: 1.5rem; }
-
 footer {
   border-top: 1px solid whitesmoke; }
   footer a {
