@@ -1455,10 +1455,6 @@ select {
   overflow: hidden;
   margin-left: 0;
   list-style: none;
-  border-style: solid;
-  border-width: 1px;
-  background-color: #f4f4f4;
-  border-color: gainsboro;
   border-radius: 3px; }
   .breadcrumbs > * {
     margin: 0;
