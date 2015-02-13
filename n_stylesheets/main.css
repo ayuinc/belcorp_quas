@@ -8858,6 +8858,81 @@ header {
   .center ul li .right span {
     font-size: 12px !important; }
 
+.mh-70 {
+  min-height: 5em !important; }
+
+.mh-140 {
+  min-height: 10em !important; }
+
+.mh-210 {
+  min-height: 15em !important; }
+
+.mh-280 {
+  min-height: 20em !important; }
+
+.mh-350 {
+  min-height: 25em !important; }
+
+.mh-420 {
+  min-height: 30em !important; }
+
+.mh-490 {
+  min-height: 35em !important; }
+
+.mh-560 {
+  min-height: 40em !important; }
+
+.mh-630 {
+  min-height: 45em !important; }
+
+.mh-700 {
+  min-height: 50em !important; }
+
+.mh-770 {
+  min-height: 55em !important; }
+
+.mh-840 {
+  min-height: 60em !important; }
+
+.vh-100 {
+  height: 100vh; }
+
+.box-shadow {
+  -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15); }
+
+.z-index10 {
+  z-index: 10 !important; }
+
+.z-index20 {
+  z-index: 20 !important; }
+
+.z-index30 {
+  z-index: 30 !important; }
+
+.absolute {
+  position: absolute; }
+
+.relative {
+  position: relative; }
+
+.block {
+  display: block; }
+
+.inline-block {
+  display: inline-block; }
+
+.select-override {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  text-indent: 1px;
+  text-overflow: ""; }
+  .select-override.input-lg {
+    line-height: 28px;
+    background: white url(/img/arrow-down.svg) no-repeat 98%; }
+
 .thin {
   font-family: "museo-sans", Helvetica, Arial, sans-serif !important;
   font-weight: 100;
@@ -11571,7 +11646,6 @@ body.overflow-none {
   padding: 1rem;
   height: 185px !important;
   -webkit-box-shadow: inset 0 0 5px #dfe4e7;
-  -moz-box-shadow: inset 0 0 5px #dfe4e7;
   box-shadow: inset 0 0 5px #dfe4e7; }
   .grid-panels .panel-body .panel-badge {
     position: absolute;
