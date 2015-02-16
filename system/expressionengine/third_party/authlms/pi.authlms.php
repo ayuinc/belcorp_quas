@@ -104,7 +104,7 @@ include_once 'nusoap/lib/nusoap.php';
         $url = 'http://qasucb.cyzone.com/moodlecolaboradores/auth/belcorpsso/login/login.php?usuario=' . $username . '&token=' . $token . '&course=' . $id_course;
         
         //output the response (in the form of a multidimensional array) from the function call:
-        //return '{exp:redirecturl url="'.$url.'"}';
+        return '{exp:redirecturl url="'.$url.'"}';
         //header('Location: http://miscursosucb.belcorp.biz/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
         /*
         $data_string = json_encode($data, true);
