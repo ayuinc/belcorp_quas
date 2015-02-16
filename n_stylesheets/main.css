@@ -11787,19 +11787,21 @@ body.overflow-none {
   font-weight: 300;
   font-style: normal; }
 
-ul.no-bullet li a {
-  letter-spacing: 0.10px;
-  font-family: "museo-sans", Helvetica, Arial, sans-serif !important;
-  font-weight: 100;
-  font-style: normal;
-  color: #909DA8;
-  font-size: 14px;
-  font-size: 1rem;
-  text-transform: uppercase; }
-  ul.no-bullet li a:hover {
-    color: #481F66; }
-  ul.no-bullet li a.active {
-    color: #481F66; }
+ul.no-bullet {
+  list-style: none; }
+  ul.no-bullet li a {
+    letter-spacing: 0.10px;
+    font-family: "museo-sans", Helvetica, Arial, sans-serif !important;
+    font-weight: 100;
+    font-style: normal;
+    color: #909DA8;
+    font-size: 14px;
+    font-size: 1rem;
+    text-transform: uppercase; }
+    ul.no-bullet li a:hover {
+      color: #481F66; }
+    ul.no-bullet li a.active {
+      color: #481F66; }
 
 #filters {
   padding: 14px 0;
