@@ -64,18 +64,29 @@ class Transfer
     // END
 
     public function datatransf(){
-        $query_member_group = ee()->db->select('group_id')->get_where('exp_member_groups', array('group_title' => 'Members'));
+        $query_member_group = ee()->db
+        							->select('group_id')
+        							->get_where('exp_member_groups', array('group_title' => 'Members'));
+        							
         $member_group = $query_member_group->result();
         $group_id = $member_group[0]->group_id;
-        
-        $str = "";
-        ee()->db->select('*');
-        $query = ee()->db->get('exp_usuarios');
 
+		$query_member_ids = ee()->db
+								->select('member_id')
+								->get_where('exp_members', array('group_id' => $group_id));
+		$member_ids = array();
+		foreach($query_member_ids->result() as $row) {
+			array_push($member_ids, $row->member_id);
+		}
+
+		ee()->db->where_in('member_id', $member_ids)->delete('exp_member_data');
+		echo ee()->db->affected_rows()." rows were deleted from exp_member_data.\n";
+		
         ee()->db->delete('exp_members', array('group_id' => $group_id));
-        echo ee()->db->affected_rows()." rows were deleted.";
+		echo ee()->db->affected_rows()." rows were deleted from exp_members.\n";
 
         ee()->load->library('auth');
+        $query = ee()->db->get('exp_usuarios');
 
         foreach($query->result() as $row) {
             ee()->extensions->call('member_member_register_start');
@@ -111,8 +122,31 @@ class Transfer
             ee()->extensions->call('member_member_register', $data, $member_id);
             if (ee()->extensions->end_script === TRUE) return;
 
+			// Define if the user belongs to CORPORACION or PAIS
+			$pub = $row->PaisGasto == 'Corporación' ? $row->PaisGasto : 'País';
+			$vp = str_replace("Vicepresidente", "", $row->Vicepresidencia);
+			$vp = utf8_decode(trim($vp));
+			
+			if(is_null($vp) || $vp == 'Error silla 2451' || $vp == 'Gerente en Entrenamiento') {
+				$vp = 'None';
+			}
+			
+			if(is_null($row->PaisSociedad)) {
+				$country = 'None';
+			} else {
+				$country = $row->PaisSociedad;
+			}
+			
+			// Remove accents
+			/* $vp = $this->transliterateString($vp); */
+			
             // Insert custom fields
-            $cust_fields['member_id'] = $member_id;
+            $cust_fields = array(
+            				'member_id' => $member_id,
+            				'm_field_id_1' => $vp,
+            				'm_field_id_3' => $country,
+            				'm_field_id_4' => $pub
+            			   );
 
             ee()->db->query(ee()->db->insert_string('exp_member_data', $cust_fields));
 
@@ -124,7 +158,14 @@ class Transfer
                                     array('member_id' => $member_id)));
 
         }
+        
+        print_r($this->transliterateString('aéíó'));
     }
+    
+    private function transliterateString($txt) {
+	    $transliterationTable = array('á' => 'a', 'é' => 'e', 'í' => 'i', 'ó' => 'o', 'ú' => 'u');
+	    return str_replace(array_keys($transliterationTable), array_values($transliterationTable), $txt);
+	}
 } 
 /* End of file pi.rating.php */
 /* Location: ./system/expressionengine/third_party/rating/pi.rating.php */

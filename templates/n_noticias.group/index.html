@@ -1,0 +1,40 @@
+{embed="n_includes/header"}
+	{exp:user:edit}
+	 
+	<p>Vicepresidencia <input name="Vicepresidencia" value="{Vicepresidencia}" /></p>
+	 
+	<p>Email <input name="email" value="{email}" /></p>
+	<p>Username <input name="username" value="{username}" /></p>
+	<p>Screen Name <input name="screen_name" value="{screen_name}" /></p>
+	
+	{exp:channel:categories style="linear" category_group="18"}
+		<label><input type="checkbox" value="{category_id}">&nbsp;{category_name}</label>		
+	{/exp:channel:categories}
+
+	<input type="hidden" id="field_tags" name="Preferencias" value="{Preferencias}" />
+	<p>Tags: {Preferencias}</p>
+	
+	<p><input type="submit" value="Submit" /></p>
+	{/exp:user:edit}
+	
+{embed="n_includes/footer"}
+<script>
+	{exp:user:stats}
+	var tagsArr = '{Preferencias}'.split(',');
+	{/exp:user:stats}
+	tagsArr.forEach(function(tag) {
+		$('input[value="' + tag + '"]').prop('checked', true);
+	});
+	
+	$('#member_form').submit(function() {
+		var checkedItems = $(this).find('input:checked');
+		var checkedValues = [];
+		if(checkedItems.length) {
+			checkedItems.each(function() {
+				checkedValues.push($(this).val());
+			});
+			$('#field_tags').val(checkedValues.join(','));
+		}
+		return true;
+	});
+</script>
