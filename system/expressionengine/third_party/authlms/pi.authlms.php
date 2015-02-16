@@ -63,7 +63,8 @@ class Authlms
     // END
 
     public function auth_lms_first(){
-        include_once 'nusoap/lib/nusoap.php';
+        /*
+include_once 'nusoap/lib/nusoap.php';
         $username= ee()->TMPL->fetch_param('username');
         //$username= "pellanoire";
         $id_curse= ee()->TMPL->fetch_param('id_curse');
@@ -85,6 +86,23 @@ class Authlms
           die();
         }
         $url='http://miscursosucb.belcorp.biz/auth/belcorpws/client/client.php?usuario='.$username.'&token='.$answer.'&curso='.$id_curse;
+*/
+		
+		$username= ee()->TMPL->fetch_param('username');
+		$id_course= ee()->TMPL->fetch_param('id_curse');
+		
+		$query = ee()->db
+	    				->select('DNI')
+	    				->where('UsuarioRed', $username)
+						->get('exp_usuarios');
+		$user = $query->row();
+		$dni = $user->DNI;
+
+        $useragent = $_SERVER['HTTP_USER_AGENT'];
+        $date = date("d-H:i");
+        $token = hash('sha256', $dni.$useragent.$date);
+        $url = 'http://qasucb.cyzone.com/moodlecolaboradores/auth/belcorpsso/login/login.php?usuario=' . $username . '&token=' . $token . '&course=' . $id_course;
+        
         //output the response (in the form of a multidimensional array) from the function call:
         return '{exp:redirecturl url="'.$url.'"}';
         //header('Location: http://miscursosucb.belcorp.biz/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
