@@ -40,47 +40,55 @@ class News
     // END
     
     public function entries_by_preferences() {
-	    $preferences = $this->get_user_preferences();
-	    $preferences = explode(',', $preferences);
+    	$member_fields = $this->get_member_fields();
 	    
-	    $q_categories_names = ee()->db->select('cat_name')->where_in('cat_id', $preferences)->get('exp_categories');
-	    $categories_names = array();
+	    $entries_by_country = array();
+	    $entries_by_prefs = array();
+	    $entries_by_vp = array();
+	    $entries_by_user_type = array();
 	    
-	    foreach($q_categories_names->result() as $row) {
-		    array_push($categories_names, $row->cat_name);
+	    if(isset($member_fields['preferences'])) {
+		    $preferences = explode(',', $member_fields['preferences']);
+			$entries_by_prefs = $this->get_entries_by_preferences($preferences);
 	    }
-	    			    
-	    $q_entries_id = ee()->db->where_in('cat_id', $preferences)->get('exp_category_posts');
-	    $entries_id = array();
-	    foreach ($q_entries_id->result() as $row)
-		{
-			array_push($entries_id, $row->entry_id);
-		}
-		
-		print_r($categories_names);
-				
-		$q_entries_data = ee()->db
-								->select('exp_channel_data.entry_id, title, field_id_85, field_id_86')
-								->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
-								->where_in('exp_channel_data.entry_id', $entries_id)
-								->or_where_in('exp_channel_data.field_id_86', $categories_names)
-								->get('exp_channel_data');
-				
-		$variables = array();
-
-		foreach ($q_entries_data->result() as $row)
-		{	
-		    $variable_row = array(
-		        'title'  => $row->title,
-		        'noticias_url'    => $row->field_id_85,
-		        'noticias_categoria_principal' => $row->field_id_86,
-		        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id)
-		    );
-		
-		    $variables[] = $variable_row;
-		}
-		
-		print_r($variables);
+	    
+	    if(!is_null($member_fields['country'])) {
+		    $country = $this->get_country_id($member_fields['country']);
+			$entries_by_country = $this->get_entries_by_country($country);
+	    }
+	    
+	    if(!is_null($member_fields['vp']) || $member_fields['country'] == 'None') {
+		    $vp = $this->get_vp_id($member_fields['vp']);
+		    $entries_by_vp = $this->get_entries_by_vp($vp);
+	    }
+	    
+	    if(isset($member_fields['type'])) {
+		  	$user_type = $this->get_user_type_id($member_fields['type']);
+		  	$entries_by_user_type = $this->get_entries_by_user_type($user_type);
+	    }
+	    
+	    $entries_id = array_intersect($entries_by_country, $entries_by_prefs, $entries_by_vp, $entries_by_user_type);
+	    
+	    $variables = array();
+	    
+	    if(!empty($entries_id)) {
+		    $q_entries_data = ee()->db
+									->select('exp_channel_data.entry_id, title, field_id_85, field_id_86')
+									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
+									->where_in('exp_channel_data.entry_id', $entries_id)
+									->get('exp_channel_data');
+	
+			foreach ($q_entries_data->result() as $row) {	
+			    $variable_row = array(
+			        'title'  => $row->title,
+			        'noticias_url'    => $row->field_id_85,
+			        'noticias_categoria_principal' => $row->field_id_86,
+			        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id)
+			    );
+			
+			    $variables[] = $variable_row;
+			}
+	    }
 		
 		return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
     }
@@ -108,22 +116,127 @@ class News
 	    return $cats;
     }
     
-    private function get_user_preferences() {
+    private function get_member_fields() {
 	    $member_id = ee()->session->userdata('member_id');
-	    $query_preferences = ee()->db
-	    							->select('m_field_id_2')
-	    							->get_where('exp_member_data', array('member_id' => $member_id));
-        $preferences = $query_preferences->result();
-        $res = $preferences[0]->m_field_id_2;
-        
-        return $res;
+	    $query_preferences = ee()->db->get_where('exp_member_data', array('member_id' => $member_id));
+	    $row = $query_preferences->row();
+	    
+        return array(
+        			'vp' => $row->m_field_id_1,
+        			'preferences' => $row->m_field_id_2,
+        			'country' => $row->m_field_id_3,
+        			'type' => $row->m_field_id_4
+        		);
     }
     
-    private function get_country() {
-	    
+    private function get_country_id($country) {
+	    $query = ee()->db
+	    				->select('cat_id')
+	    				->where('cat_name', $country)
+	    				->where('group_id', 19)
+	    				->get('exp_categories');
+	    				
+	    $row = $query->row();
+	    return $row->cat_id;
     }
     
-    private function get_vp() {
+    private function get_vp_id($vp) {
+	    $query = ee()->db
+	    				->select('cat_id')
+	    				->where('cat_name', $vp)
+	    				->where('group_id', 20)
+	    				->get('exp_categories');
+	    				
+	    $row = $query->row();
+	    return $row->cat_id;
+    }
+    
+    private function get_user_type_id($type) {
+	    $query = ee()->db
+	    				->select('cat_id')
+	    				->where('cat_name', $type)
+	    				->where('group_id', 21)
+	    				->get('exp_categories');
+	    				
+	    $row = $query->row();
+	    return $row->cat_id;
+    }
+    
+    private function get_entries_by_country($country) {
+	    $query = ee()->db
+	    				->select('entry_id')
+	    				->where('cat_id', $country)
+						->get('exp_category_posts');
+		$arr = array();
+		
+		foreach($query->result() as $row) {
+			array_push($arr, $row->entry_id);
+		}
+
+		return array_unique($arr);
+    }
+    
+    private function get_entries_by_vp($vp) {
+	    $query = ee()->db
+	    				->select('entry_id')
+	    				->where('cat_id', $vp)
+						->get('exp_category_posts');
+		$arr = array();
+		
+		foreach($query->result() as $row) {
+			array_push($arr, $row->entry_id);
+		}
+
+		return array_unique($arr);
+    }
+    
+    private function get_entries_by_user_type($type) {
+	    $query = ee()->db
+	    				->select('entry_id')
+	    				->where('cat_id', $type)
+						->get('exp_category_posts');
+		$arr = array();
+		
+		foreach($query->result() as $row) {
+			array_push($arr, $row->entry_id);
+		}
+
+		return array_unique($arr);
+    }
+    
+    private function get_entries_by_preferences($preferences) {
+	    $q_tags = ee()->db
+						->select('entry_id')
+	    				->where_in('cat_id', $preferences)
+	    				->get('exp_category_posts');
+	    							    
+	    $entries_tags = array();
+	    foreach ($q_tags->result() as $row) {
+			array_push($entries_tags, $row->entry_id);
+		}
+		
+		$q_categories_names = ee()->db
+	    							->select('cat_name')
+	    							->where_in('cat_id', $preferences)
+	    							->get('exp_categories');
+	    $categories_names = array();
 	    
+	    foreach ($q_categories_names->result() as $row) {
+		    array_push($categories_names, $row->cat_name);
+	    }
+	    
+	    var_dump($categories_names);
+		
+		$q_prefs = ee()->db
+						->select('entry_id')
+						->where_in('field_id_86', $categories_names)
+						->get('exp_channel_data');
+								
+		$entries_prefs = array();
+		foreach($q_prefs->result() as $row) {
+			array_push($entries_prefs, $row->entry_id);
+		}
+		
+		return array_unique(array_merge($entries_tags, $entries_prefs));
     }
 }
