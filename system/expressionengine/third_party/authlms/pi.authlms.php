@@ -99,12 +99,12 @@ include_once 'nusoap/lib/nusoap.php';
 		$dni = $user->DNI;
 
         $useragent = $_SERVER['HTTP_USER_AGENT'];
-        $date = date("d-H:i");
+        $date = date("d-H");
         $token = hash('sha256', $dni.$useragent.$date);
         $url = 'http://qasucb.cyzone.com/moodlecolaboradores/auth/belcorpsso/login/login.php?usuario=' . $username . '&token=' . $token . '&course=' . $id_course;
         
         //output the response (in the form of a multidimensional array) from the function call:
-        return '{exp:redirecturl url="'.$url.'"}';
+        //return '{exp:redirecturl url="'.$url.'"}';
         //header('Location: http://miscursosucb.belcorp.biz/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
         /*
         $data_string = json_encode($data, true);
@@ -124,32 +124,51 @@ include_once 'nusoap/lib/nusoap.php';
     }
 
     public function auth_lms_access_profile(){
-        include_once 'nusoap/lib/nusoap.php';
-        $username= ee()->TMPL->fetch_param('username');
-        //$username= "mariagomez";
-        //$username= "pechvillaran";
-        $screen_name= ee()->TMPL->fetch_param('screen_name');
-        //instantiate the NuSOAP class and define the web service URL:
-        $client = new nusoap_client('http://miscursosucb.belcorp.biz/auth/belcorpws/belcorpws_server.php?wsdl', 'WSDL');
-        //check if there were any instantiation errors, and if so stop execution with an error message:
-        $error = $client->getError();
-        if ($error) {
-          die("client construction error: {$error}\n");
-        }
-        $param = array('username' => $username);
-        //perform a function call without parameters:
-        $answer = $client->call('login_usuario', $param);
-        //check if there were any call errors, and if so stop execution with some error messages:
-        $error = $client->getError();
-        if ($error) {
-          print_r($client->response);
-          print_r($client->getDebug());
-          die();
-        }
-        $url='http://miscursosucb.belcorp.biz/auth/belcorpws/client/clientprofile.php?usuario='.$username.'&token='.$answer;
-        //$url='http://miscursosucb.belcorp.biz/auth/belcorpws/client/clientprofile.php?usuario=peppinedo&token='.$answer;
+        // include_once 'nusoap/lib/nusoap.php';
+        // $username= ee()->TMPL->fetch_param('username');
+        // //$username= "mariagomez";
+        // //$username= "pechvillaran";
+        // $screen_name= ee()->TMPL->fetch_param('screen_name');
+        // //instantiate the NuSOAP class and define the web service URL:
+        // $client = new nusoap_client('http://miscursosucb.belcorp.biz/auth/belcorpws/belcorpws_server.php?wsdl', 'WSDL');
+        // //check if there were any instantiation errors, and if so stop execution with an error message:
+        // $error = $client->getError();
+        // if ($error) {
+        //   die("client construction error: {$error}\n");
+        // }
+        // $param = array('username' => $username);
+        // //perform a function call without parameters:
+        // $answer = $client->call('login_usuario', $param);
+        // //check if there were any call errors, and if so stop execution with some error messages:
+        // $error = $client->getError();
+        // if ($error) {
+        //   print_r($client->response);
+        //   print_r($client->getDebug());
+        //   die();
+        // }
+        // $url='http://miscursosucb.belcorp.biz/auth/belcorpws/client/clientprofile.php?usuario='.$username.'&token='.$answer;
+        // //$url='http://miscursosucb.belcorp.biz/auth/belcorpws/client/clientprofile.php?usuario=peppinedo&token='.$answer;
+        // //output the response (in the form of a multidimensional array) from the function call:
+        // return '{exp:redirecturl url="'.$url.'"}';
+
+
+    	$username= ee()->TMPL->fetch_param('username');
+		
+		$query = ee()->db
+	    				->select('DNI')
+	    				->where('UsuarioRed', $username)
+						->get('exp_usuarios');
+		$user = $query->row();
+		$dni = $user->DNI;
+
+        $useragent = $_SERVER['HTTP_USER_AGENT'];
+        $date = date("d-H");
+        $token = hash('sha256', $dni.$useragent.$date);
+        $url = 'http://qasucb.cyzone.com/moodlecolaboradores/auth/belcorpsso/login/login.php?usuario=' . $username . '&token=' . $token;
+        
         //output the response (in the form of a multidimensional array) from the function call:
         return '{exp:redirecturl url="'.$url.'"}';
+
         //header('Location: http://miscursosucb.belcorp.biz/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
         /*
         $data_string = json_encode($data, true);
@@ -169,32 +188,50 @@ include_once 'nusoap/lib/nusoap.php';
     }
 
     public function auth_lms_access_profile_head(){
-        include_once 'nusoap/lib/nusoap.php';
-        $username= ee()->TMPL->fetch_param('username');
-        //$username= "kcastro";
-        //$username= "pechvillaran";
-        $screen_name= ee()->TMPL->fetch_param('screen_name');
-        //instantiate the NuSOAP class and define the web service URL:
-        $client = new nusoap_client('http://miscursosucb.belcorp.biz/auth/belcorpws/belcorpws_server.php?wsdl', 'WSDL');
-        //check if there were any instantiation errors, and if so stop execution with an error message:
-        $error = $client->getError();
-        if ($error) {   
-          die("client construction error: {$error}\n");
-        }
-        $param = array('username' => $username);
-        //perform a function call without parameters:
-        $answer = $client->call('login_usuario', $param);
-        //check if there were any call errors, and if so stop execution with some error messages:
-        $error = $client->getError();
-        if ($error) {
-          print_r($client->response);
-          print_r($client->getDebug());
-          die();
-        }
-        $url='http://miscursosucb.belcorp.biz/auth/belcorpws/client/clientprofile.php?usuario='.$username.'&token='.$answer;
-        //$url='http://miscursosucb.belcorp.biz/auth/belcorpws/client/clientprofile.php?usuario=peppinedo&token='.$answer;
+        // include_once 'nusoap/lib/nusoap.php';
+        // $username= ee()->TMPL->fetch_param('username');
+        // //$username= "kcastro";
+        // //$username= "pechvillaran";
+        // $screen_name= ee()->TMPL->fetch_param('screen_name');
+        // //instantiate the NuSOAP class and define the web service URL:
+        // $client = new nusoap_client('http://miscursosucb.belcorp.biz/auth/belcorpws/belcorpws_server.php?wsdl', 'WSDL');
+        // //check if there were any instantiation errors, and if so stop execution with an error message:
+        // $error = $client->getError();
+        // if ($error) {   
+        //   die("client construction error: {$error}\n");
+        // }
+        // $param = array('username' => $username);
+        // //perform a function call without parameters:
+        // $answer = $client->call('login_usuario', $param);
+        // //check if there were any call errors, and if so stop execution with some error messages:
+        // $error = $client->getError();
+        // if ($error) {
+        //   print_r($client->response);
+        //   print_r($client->getDebug());
+        //   die();
+        // }
+        // $url='http://miscursosucb.belcorp.biz/auth/belcorpws/client/clientprofile.php?usuario='.$username.'&token='.$answer;
+        // //$url='http://miscursosucb.belcorp.biz/auth/belcorpws/client/clientprofile.php?usuario=peppinedo&token='.$answer;
+        // //output the response (in the form of a multidimensional array) from the function call:
+        // return '{exp:redirecturl url="'.$url.'"}';
+
+    	$username= ee()->TMPL->fetch_param('username');
+		
+		$query = ee()->db
+	    				->select('DNI')
+	    				->where('UsuarioRed', $username)
+						->get('exp_usuarios');
+		$user = $query->row();
+		$dni = $user->DNI;
+
+        $useragent = $_SERVER['HTTP_USER_AGENT'];
+        $date = date("d-H");
+        $token = hash('sha256', $dni.$useragent.$date);
+        $url = 'http://qasucb.cyzone.com/moodlecolaboradores/auth/belcorpsso/login/login.php?usuario=' . $username . '&token=' . $token;
+        
         //output the response (in the form of a multidimensional array) from the function call:
         return '{exp:redirecturl url="'.$url.'"}';
+
         //header('Location: http://miscursosucb.belcorp.biz/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
         /*
         $data_string = json_encode($data, true);

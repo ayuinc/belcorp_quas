@@ -1,5 +1,10 @@
 {exp:channel:entries channel="cursos|tendencias" limit="1" }
 {embed="n_includes/header" titulo="{title} | Curso"}
+	{exp:get_post_vars parse="inward"}
+		{if get_username}
+			{exp:logmein:now username="{get_username}" expire="{get_expire}"}
+		{/if}
+	{/exp:get_post_vars}
 
 	{if logged_in}
 	
