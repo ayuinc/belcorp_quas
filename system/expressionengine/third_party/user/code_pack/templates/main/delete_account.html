@@ -1,0 +1,58 @@
+{embed="%prefix%inc/index" page_title="Delete Account"}
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="account"}
+
+		<div class="container" style="margin-top:30px;">
+
+			<div class="page-header">
+				<h1>Delete Account</h1>
+				<p class="lead">This page allows the currently logged in user to delete their own account, as long as their member group has permissions to delete their own account, and they are not a Super Admin.</p>
+			</div>
+
+			<div class="row">
+{if logged_in} {!-- START - Make sure the user is logged in for updating account --}
+				<div class="col-xs-12">
+					{if segment_3 == "removed"}
+						<div class="alert alert-success" role="alert">
+							<p class="lead">Your account has been successfully deleted!</p>
+						</div>
+					{/if}
+					{exp:user:delete_form
+						return="%prefix%main/delete_account/removed"
+						error_page="%prefix%inc/error_template"
+					}
+						<h4>You must confirm your password to complete this action</h4>
+						<p class="text-danger">
+							<strong>WARNING: THIS ACTION CANNOT BE UNDONE!</strong><br />
+							Are you sure you wish to delete your account? All entries, posts, comments, and other content associated with your account will also be deleted.
+						</p> 
+						<p>
+							<label for="password">Current Password</label>
+							<input type="password" name="password" id="password" placeholder="Enter your current password here" class="form-control" />
+						</p>
+						<p>
+							<button type="submit" class="btn btn-lg btn-danger">Remove Account</button>
+						</p>
+					{/exp:user:delete_form}
+				</div>
+{/if} {!-- END - Make sure the user is logged in for updating account --}
+{if logged_out} {!-- START - If logged out, show the Login form --}
+				<div class="col-xs-12">
+					{embed="%prefix%inc/login"}
+				</div>
+{/if} {!-- END - If logged out, show the Login form --}
+			</div>
+
+			<div class="well" style="margin-top:30px;">
+				<h2 style="margin-top:5px;">About This Page</h2>
+				<p>The "Delete Account" page allows the currently logged in user to delete their own account, as long as their member group has permissions to delete their own account, and they are not a Super Admin.</p>
+				<p>It makes use of the following tags:</p>
+				<ul>
+					<li><a href="http://www.solspace.com/docs/user/delete_form/">User:Delete_Form</a> to delete member accounts.</li>
+				</ul>
+			</div>
+
+{embed="%prefix%inc/footer"}

@@ -1,0 +1,118 @@
+{embed="%prefix%inc/index" page_title="{if segment_2 == "" OR segment_2 == logged_in_member_id}My {/if}Profile"}
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="account"}
+
+		<div class="container" style="margin-top:30px;">
+
+			<div class="page-header">
+				<h1>{if segment_2 == "" OR segment_2 == logged_in_member_id}My {/if}Profile</h1>
+				<p class="lead">This page shows the profile of a given member.</p>
+			</div>
+			<div class="row">
+{if logged_in} {!-- START - Make sure the user is logged in before displaying profiles --}
+				{exp:user:stats
+				{if segment_2}
+					member_id="{segment_2}"
+				{/if}
+				}
+				<div class="col-sm-3">
+					{embed="%prefix%inc/profile_column" member_id="{member_id}" profile_active="yes"}
+				</div>
+				<div class="col-sm-9">
+					<h2 style="margin-bottom:20px;">{screen_name}</h2>
+					<div class="panel panel-default">
+						<div class="panel-heading"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> &nbsp; Stats</div>
+						<ul class="list-group">
+							<li class="list-group-item">
+								<strong>Birthday:</strong> &nbsp;
+								{if bday_m}
+									{if bday_m == "01"}January{if:elseif bday_m == "02"}February{if:elseif bday_m == "03"}March{if:elseif bday_m == "04"}April{if:elseif bday_m == "05"}May{if:elseif bday_m == "06"}June{if:elseif bday_m == "07"}July{if:elseif bday_m == "08"}August{if:elseif bday_m == "09"}September{if:elseif bday_m == "10"}October{if:elseif bday_m == "11"}November{if:elseif bday_m == "12"}December{if:else}{/if}
+								{/if}
+								{if bday_d}{bday_d}{/if}{if bday_y AND bday_d}, {/if}
+								{if bday_y}{bday_y}{/if}
+							</li>
+							<li class="list-group-item">
+								<strong>Join Date:</strong> &nbsp;
+								{join_date format="%F %j, %Y"}
+							</li>
+							<li class="list-group-item">
+								<strong>Last Activity:</strong> &nbsp;
+								{last_activity format="%F %j, %Y"}
+							</li>
+							<li class="list-group-item">
+								<strong>Total Entries:</strong> &nbsp;
+								{if last_entry_date == "0"}
+									This user has not published any entries yet.
+								{if:else}
+									{total_entries} &nbsp; <i>(last published: {last_entry_date format="%F %j, %Y"})</i>
+								{/if}
+									&nbsp; <a href="{path='%prefix%main/user_entries'}/{member_id}/">view all &rarr;</a>
+							</li>
+							<li class="list-group-item">
+								<strong>Total Comments:</strong> &nbsp;
+								{if last_comment_date == "0"}
+									This user has not posted any comments yet.
+								{if:else}
+									{total_comments} &nbsp; <i>(last posted: {last_comment_date format="%F %j, %Y"})</i>
+								{/if}
+									&nbsp; <a href="{path='%prefix%main/user_comments'}/{member_id}/">view all &rarr;</a>
+							</li>
+						</ul>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> &nbsp; Profile</div>
+						<ul class="list-group">
+							{if url}
+								<li class="list-group-item">
+									<strong>Website:</strong> &nbsp;
+									<a href="{url}">{url}</a>
+								</li>
+							{/if}
+							<li class="list-group-item">
+								<strong>Location:</strong> &nbsp;
+								{location}
+							</li>
+							<li class="list-group-item">
+								<strong>Occupation:</strong> &nbsp;
+								{occupation}
+							</li>
+							<li class="list-group-item">
+								<strong>Interests:</strong> &nbsp;
+								{interests}
+							</li>
+							<li class="list-group-item">
+								<strong>Bio:</strong>
+								{bio}
+							</li>
+						</ul>
+					</div>
+				</div>
+				{if no_results}
+					<div class="col-xs-12">
+						<div class="alert alert-danger" role="alert">
+							<p class="lead"><strong>Error!</strong> The account you specified does not exist.</p>
+						</div>
+					</div>
+				{/if}
+				{/exp:user:stats}
+{/if} {!-- END - Make sure the user is logged in before displaying profiles --}
+{if logged_out} {!-- START - If logged out, show the Login form --}
+				<div class="col-xs-12">
+					{embed="%prefix%inc/login"}
+				</div>
+{/if} {!-- END - If logged out, show the Login form --}
+      		</div>
+
+			<div class="well" style="margin-top:30px;">
+				<h2 style="margin-top:5px;">About This Page</h2>
+				<p>The "Profile" page shows the profile of a given member. Additionally, a special "Profile" menu on the left is called, which creates a shortcut for sending a private message, and links to view that users' comments and entries.</p>
+				<p>It makes use of the following tags:</p>
+				<ul>
+					<li><a href="http://www.solspace.com/docs/user/stats/">User:Stats</a> to show profile information.</li>
+				</ul>
+			</div>
+
+{embed="%prefix%inc/footer"}

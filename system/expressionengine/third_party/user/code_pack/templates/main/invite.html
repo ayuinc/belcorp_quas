@@ -1,0 +1,90 @@
+{embed="%prefix%inc/index" page_title="Send Invite (Admins Only)"}
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="account"}
+
+		<div class="container" style="margin-top:30px;">
+
+			<div class="page-header">
+				<h1>Send Invite (Admins Only)</h1>
+				<p class="lead">This page allows site admins to send an email notification to people they'd like to invite to join the site.</p>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12">
+					{if segment_3 == "success"}
+						<div class="alert alert-success" role="alert">
+							<p class="lead">Invitation key successfully sent!</p>
+						</div>
+					{/if}
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							This form allows admins to invite others to join this site. Recipients will receive an email notification with
+							instructions on how to register on this site. They will be taken to a special registration form to handle this feature.
+						</div>
+					</div>
+				</div>
+			</div>
+{if logged_in_group_id == "1"} {!-- Make sure the person viewing this page is a Super Admin --}
+			<div class="row">
+				{exp:user:key
+					return="%prefix%main/invite/success"
+					error_page="%prefix%inc/error_template"
+					template="%prefix%notifications/key_invite"
+					html="no" parse="none" word_wrap="no"
+				}
+				<div class="col-sm-6">
+					<p>
+						<label for="sender_name">From Name:</label>
+						<input type="text" name="sender_name" id="sender_name" value="{site_name}" placeholder="Enter the name you want the email to appear from" class="form-control" />
+					</p>
+					<p>
+						<label for="sender_email">From Email:</label>
+						<input type="text" name="sender_email" id="sender_email" value="{webmaster_email}" placeholder="Enter the email address you want the email to appear from" class="form-control" />
+					</p>
+					<p>
+						<label for="subject">Subject:</label>
+						<input type="text" name="subject" id="subject" value="Invitation to join {site_name}!" placeholder="Enter the subject line for the email notification" class="form-control" />
+					</p>
+				</div>
+
+				<div class="col-sm-6">
+					<p>
+						<label for="recipient_email">Recipient Email:</label>
+						<input type="text" name="recipient_email" id="recipient_email" placeholder="Enter the recipients email address here" class="form-control" />
+					</p>
+					<p>
+						<label for="group_id">Member Group:</label>
+						<select name="group_id" id="group_id" class="form-control">
+							{member_groups}
+							<option value="{group_id}">{group_title}</option>
+							{/member_groups}
+						</select>
+					</p>
+					<p>
+						<button type="submit" class="btn btn-lg btn-success">Invite!</button>
+					</p>
+				</div>
+				{/exp:user:key}
+      		</div>
+{if:else} {!-- If not a Super Admin, show error --}
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="alert alert-warning" role="alert">
+						<p class="lead"><strong>Error!</strong> You must be a site administrator to view this page.</p>
+					</div>
+				</div>
+			</div>
+{/if} {!-- END check to see if Super Admin --}
+			<div class="well" style="margin-top:30px;">
+				<h2 style="margin-top:5px;">About This Page</h2>
+				<p>The "Send Invite" page allows site admins to send an email notification to people they'd like to invite to join the site. A member group can be pre-designated as well, so upon signup from the recipient, they'll automatically be assigned to that member group.</p>
+				<p>It makes use of the following tags:</p>
+				<ul>
+					<li><a href="http://www.solspace.com/docs/user/key/">User:Key Invite</a> to allow admins to send site invitations.</li>
+				</ul>
+			</div>
+
+{embed="%prefix%inc/footer"}

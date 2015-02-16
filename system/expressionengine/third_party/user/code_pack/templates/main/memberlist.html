@@ -1,0 +1,222 @@
+{embed="%prefix%inc/index" page_title="{if segment_3 == "results"}Member Search Results{if:else}Member List / Search{/if}"}
+	</head>
+
+	<body role="document">
+
+{embed="%prefix%inc/header" page="member"}
+
+		<div class="container" style="margin-top:30px;">
+
+			<div class="page-header">
+				<h1>{if segment_3 == "results"}Member Search Results{if:else}Member List / Search{/if}</h1>
+				<p class="lead">This page displays all members of the site. It also contains a member search column and this page doubles to display search results when a search is performed.</p>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-3">
+					<h2>Search</h2>
+					<p style="margin-bottom:20px;">Use the following fields below to perform a search on the member list. Each field searched on generates an inclusive filter.</p>
+					{exp:user:search
+						return="%prefix%main/memberlist/results"
+						error_page="%prefix%inc/error_template"
+					}
+						<p>
+							<label for="keywords">Keywords (all fields):</label>
+							<input type="text" name="keywords" id="keywords" placeholder="Enter keywords here" class="form-control input-lg" />
+						</p>
+						<p>
+							<label for="screen_name">Screen Name:</label>
+							<input type="text" name="screen_name" id="screen_name" placeholder="Enter screen name terms here" class="form-control" />
+						</p>
+						<p>
+							<label for="location">Location:</label>
+							<input type="text" name="location" id="location" placeholder="Enter location terms here" class="form-control" />
+						</p>
+						<p>
+							<label for="occupation">Occupation:</label>
+							<input type="text" name="occupation" id="occupation" placeholder="Enter occupation terms here" class="form-control" />
+						</p>
+						<p>
+							<label for="interests">Interests:</label>
+							<input type="text" name="interests" id="interests" placeholder="Enter interests terms here" class="form-control" />
+						</p>
+						<p>
+							<button type="submit" class="btn btn-lg btn-success">
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp; Search
+							</button>
+						</p>
+					{/exp:user:search}
+				</div>
+
+				<div class="col-sm-9">
+
+{if segment_3 == "results"} {!-- Show this content if using this page to load Search Results --}
+
+					<h2 style="margin-bottom:20px;">Member Search Results</h2>
+					<div class="alert alert-info" role="alert">
+						<p class="lead">
+							<strong>{total_results}</strong>
+							result(s) for
+							<strong>{keywords}</strong>
+							<a href="{path='%prefix%main/memberlist'}" class="alert-link pull-right" style="font-size:14px;">Clear Search <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+						</p>
+					</div>
+
+					{exp:user:results
+						orderby="screen_name"
+						sort="asc"
+						limit="10"
+						paginate="bottom"
+					}
+						{if count == "1"}
+							<div class="list-group">
+						{/if}
+							<a href="{path='%prefix%main'}/{member_id}/" class="list-group-item">
+								<img src="{if avatar_filename}{avatar_url}{avatar_filename}{if:else}{exp:user:theme_folder_url}code_pack/images/icon_profile.gif{/if}" height="50" width="50" alt="{screen_name}'s avatar" class="img-rounded" /> &nbsp;
+								<b>{screen_name}</b>
+								<span class="badge">Joined {join_date format="%F %j, %Y"}</span>
+							</a>
+						{if count == total_results}</div>{/if}
+						{if user_no_results}
+							<div class="alert alert-warning" role="alert">
+								<p>Sorry, no members were found for your search query.</p>
+							</div>
+						{/if}
+						{user_paginate}
+							<ul class="pagination pagination-md">
+							{user_pagination_links}
+							{first_page}
+								<li><a href="{pagination_url}">First</a></li>
+							{/first_page}
+							{previous_page}
+								<li><a href="{pagination_url}">&larr; Previous</a></li>
+							{/previous_page}
+							{page}
+								<li{if current_page} class="active"{/if}><a href="{pagination_url}">{pagination_page_number}</a></li>
+							{/page}
+							{next_page}
+								<li><a href="{pagination_url}">Next &raquo;</a></li>
+							{/next_page}
+							{last_page}
+								<li><a href="{pagination_url}">Last</a></li>
+							{/last_page}
+							{/user_pagination_links}
+							</ul>
+						{/user_paginate}
+					{/exp:user:results}
+
+
+{if:else} {!-- If not Search Results, then we display regular Member List --}
+
+					<h2 style="margin-bottom:20px;">Member List</h2>
+
+				{if segment_3 == "screen_name" AND segment_4 != ""}
+					<div class="alert alert-info" role="alert">
+						<p class="lead">
+                        	Filtered by members beginning with:
+							<strong class="text-uppercase">{segment_4}</strong>
+							<a href="{path='%prefix%main/memberlist'}" class="alert-link pull-right" style="font-size:14px;">Clear Search <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+						</p>
+					</div>
+				{/if}
+
+					<div class="text-center" style="margin-bottom:20px;">
+						Starts with: &nbsp;
+						<div class="btn-group btn-group-xs" role="group" aria-label="...">
+							<a href="{path='%prefix%main/memberlist/screen_name'}/a/" class="btn btn-default{if segment_4 == "a"} btn-primary{/if}">A</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/b/" class="btn btn-default{if segment_4 == "b"} btn-primary{/if}">B</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/c/" class="btn btn-default{if segment_4 == "c"} btn-primary{/if}">C</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/d/" class="btn btn-default{if segment_4 == "d"} btn-primary{/if}">D</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/e/" class="btn btn-default{if segment_4 == "e"} btn-primary{/if}">E</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/f/" class="btn btn-default{if segment_4 == "f"} btn-primary{/if}">F</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/g/" class="btn btn-default{if segment_4 == "g"} btn-primary{/if}">G</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/h/" class="btn btn-default{if segment_4 == "h"} btn-primary{/if}">H</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/i/" class="btn btn-default{if segment_4 == "i"} btn-primary{/if}">I</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/j/" class="btn btn-default{if segment_4 == "j"} btn-primary{/if}">J</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/k/" class="btn btn-default{if segment_4 == "k"} btn-primary{/if}">K</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/l/" class="btn btn-default{if segment_4 == "l"} btn-primary{/if}">L</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/m/" class="btn btn-default{if segment_4 == "m"} btn-primary{/if}">M</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/n/" class="btn btn-default{if segment_4 == "n"} btn-primary{/if}">N</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/o/" class="btn btn-default{if segment_4 == "o"} btn-primary{/if}">O</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/p/" class="btn btn-default{if segment_4 == "p"} btn-primary{/if}">P</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/q/" class="btn btn-default{if segment_4 == "q"} btn-primary{/if}">Q</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/r/" class="btn btn-default{if segment_4 == "r"} btn-primary{/if}">R</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/s/" class="btn btn-default{if segment_4 == "s"} btn-primary{/if}">S</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/t/" class="btn btn-default{if segment_4 == "t"} btn-primary{/if}">T</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/u/" class="btn btn-default{if segment_4 == "u"} btn-primary{/if}">U</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/v/" class="btn btn-default{if segment_4 == "v"} btn-primary{/if}">V</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/w/" class="btn btn-default{if segment_4 == "w"} btn-primary{/if}">W</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/x/" class="btn btn-default{if segment_4 == "x"} btn-primary{/if}">X</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/y/" class="btn btn-default{if segment_4 == "y"} btn-primary{/if}">Y</a>
+							<a href="{path='%prefix%main/memberlist/screen_name'}/z/" class="btn btn-default{if segment_4 == "z"} btn-primary{/if}">Z</a>
+						</div>
+						{if segment_3 == "screen_name"}
+						<div class="btn-group btn-group-xs" role="group" aria-label="...">
+							<a href="{path='%prefix%main/memberlist'}/" class="btn btn-info">Clear</a>
+						</div>
+						{/if}
+					</div>
+
+					{exp:user:users
+						orderby="screen_name"
+						sort="asc"
+						limit="10"
+						paginate="bottom"
+					{if segment_3 == "screen_name"}
+						search:screen_name="{segment_4}%"
+					{/if}
+					}
+						{if count == "1"}
+							<div class="list-group">
+						{/if}
+							<a href="{path='%prefix%main'}/{member_id}/" class="list-group-item">
+								<img src="{if avatar_filename}{avatar_url}{avatar_filename}{if:else}{exp:user:theme_folder_url}code_pack/images/icon_profile.gif{/if}" height="50" width="50" alt="{screen_name}'s avatar" class="img-rounded" /> &nbsp;
+								<b>{screen_name}</b>
+								<span class="badge">Joined {join_date format="%F %j, %Y"}</span>
+							</a>
+						{if count == total_results}</div>{/if}
+						{if user_no_results}
+							<div class="alert alert-warning" role="alert">
+								<p>Sorry, no members were found.</p>
+							</div>
+						{/if}
+						{user_paginate}
+							<ul class="pagination pagination-md">
+							{user_pagination_links}
+							{first_page}
+								<li><a href="{pagination_url}">First</a></li>
+							{/first_page}
+							{previous_page}
+								<li><a href="{pagination_url}">&larr; Previous</a></li>
+							{/previous_page}
+							{page}
+								<li{if current_page} class="active"{/if}><a href="{pagination_url}">{pagination_page_number}</a></li>
+							{/page}
+							{next_page}
+								<li><a href="{pagination_url}">Next &raquo;</a></li>
+							{/next_page}
+							{last_page}
+								<li><a href="{pagination_url}">Last</a></li>
+							{/last_page}
+							{/user_pagination_links}
+							</ul>
+						{/user_paginate}
+					{/exp:user:users}
+
+{/if} {!-- END Search Results vs Member List check --}
+
+				</div>
+      		</div>
+
+			<div class="well" style="margin-top:30px;">
+				<h2 style="margin-top:5px;">About This Page</h2>
+				<p>The "Member List" page shows all members of the site. You can further filter this list of members by member group ID, etc. It also contains a member search column and this page doubles to display search results when a search is performed.</p>
+				<p>It makes use of the following tags:</p>
+				<ul>
+					<li><a href="http://www.solspace.com/docs/user/users/">User:Users</a> to display a list of all site members.</li>
+					<li><a href="http://www.solspace.com/docs/user/search/">User:Search</a> to perform a search on site members.</li>
+					<li><a href="http://www.solspace.com/docs/user/results/">User:Results</a> to display a list of site members that match search terms provided.</li>
+				</ul>
+			</div>
+
+{embed="%prefix%inc/footer"}

@@ -1,0 +1,75 @@
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="{path='%prefix%main'}/">User Demo</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+					{if logged_in}
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <span class="caret"></span></a>
+							<ul class="dropdown-menu{if embed:page == "account"} active{/if}" role="menu">
+								<li><a href="{path='%prefix%main'}/">View My Profile</a></li>
+								<li class="divider"></li>
+								<li><a href="{path='%prefix%main/update_profile'}/">Update My Profile</a></li>
+								<li><a href="{path='%prefix%main/update_avatar_photo'}/">Update Avatar/Photo</a></li>
+								<li><a href="{path='%prefix%main/update_settings'}/">Update Settings</a></li>
+								<li><a href="{path='%prefix%main/update_account'}/">Update Account</a></li>
+								<li><a href="{path='%prefix%main/delete_account'}/">Delete Account</a></li>
+								<li class="divider"></li>
+								<li><a href="{path='logout'}">Logout</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Messages <span class="badge">{private_messages}</span> <span class="caret"></span></a>
+							<ul class="dropdown-menu{if embed:page == "messages"} active{/if}" role="menu">
+								<li><a href="{path='member/messages/compose'}/">Compose New</a></li>
+								<li class="divider"></li>
+								<li><a href="{path=member/messages/view_folder}/1/"><b>Inbox</b> ({private_messages} new)</a></li>
+								<li><a href="{path=member/messages/view_folder}/2/">Sent</a></li>
+								<li><a href="{path=member/messages/view_folder}/deleted/">Trash</a></li>
+							</ul>
+						</li>
+					{/if}
+					{if logged_out}
+						<li>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="{path='%prefix%main/login'}/">Login</a></li>
+								<li><a href="{path='%prefix%main/register'}/">Create Account</a></li>
+								<li class="divider"></li>
+								<li><a href="{path='%prefix%main/forgot_password'}/">Forgot Password</a></li>
+								<li><a href="{path='%prefix%main/forgot_password'}/">Forgot Username</a></li>
+							</ul>
+						</li>
+					{/if}
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Members <span class="caret"></span></a>
+							<ul class="dropdown-menu{if embed:page == "member"} active{/if}" role="menu">
+								<li><a href="{path='%prefix%main/memberlist'}/">Member List</a></li>
+								<li><a href="{path='%prefix%main/memberlist'}/">Member Search</a></li>
+							{if logged_in_group_id == "1"}
+								<li><a href="{path='%prefix%main/invite'}">Invite (Admins Only)</a></li>
+							{/if}
+							</ul>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="http://solspace.com/">Solspace.com</a></li>
+								<li><a href="http://solspace.com/docs/user/">Documentation</a></li>
+								<li><a href="http://solspace.com/support/">Support</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
