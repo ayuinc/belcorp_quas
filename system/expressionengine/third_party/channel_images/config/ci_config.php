@@ -25,6 +25,7 @@ $config['ci_defaults']['no_sizes'] = 'no';
 $config['ci_defaults']['keep_original'] = 'yes';
 $config['ci_defaults']['upload_location'] = 'local';
 $config['ci_defaults']['categories'] = array();
+$config['ci_defaults']['default_category'] = '';
 $config['ci_defaults']['show_stored_images'] = 'no';
 $config['ci_defaults']['stored_images_by_author'] = 'no';
 $config['ci_defaults']['stored_images_search_type'] = 'entry';
@@ -46,6 +47,8 @@ $config['ci_defaults']['parse_exif'] = 'no';
 $config['ci_defaults']['parse_xmp'] = 'no';
 $config['ci_defaults']['parse_iptc'] = 'no';
 $config['ci_defaults']['cover_first'] = 'yes';
+$config['ci_defaults']['wysiwyg_output'] = 'image_url';
+$config['ci_defaults']['max_filesize'] = '';
 $config['ci_defaults']['locations']['local']['location'] = 0;
 $config['ci_defaults']['locations']['s3']['key'] = '';
 $config['ci_defaults']['locations']['s3']['secret_key'] = '';
@@ -60,12 +63,12 @@ $config['ci_defaults']['locations']['cloudfiles']['api'] = '';
 $config['ci_defaults']['locations']['cloudfiles']['container'] = '';
 $config['ci_defaults']['locations']['cloudfiles']['region'] = 'us';
 $config['ci_defaults']['locations']['cloudfiles']['cdn_uri'] = '';
+$config['ci_defaults']['columns'] = $config['ci_columns'];
+$config['ci_defaults']['columns_default'] = array();
 
-
-// Upload Locations
-$config['ci_upload_locs']['local']	= $this->EE->lang->line('ci:local');
-$config['ci_upload_locs']['s3']		= $this->EE->lang->line('ci:s3');
-$config['ci_upload_locs']['cloudfiles'] = $this->EE->lang->line('ci:cloudfiles');
+foreach ($config['ci_columns'] as $col => $val) {
+    $config['ci_defaults']['columns_default'][$col] = '';
+}
 
 // S3
 $config['ci_s3_regions']['us-east-1']   = 'REGION_US_E1';
@@ -77,6 +80,15 @@ $config['ci_s3_regions']['ap-southeast-2']  = 'REGION_APAC_SE2';
 $config['ci_s3_regions']['ap-northeast-1']  = 'REGION_APAC_NE1';
 $config['ci_s3_regions']['sa-east-1']  = 'REGION_SA_E1';
 
+$config['ci_s3_endpoints']['us-east-1'] = 's3-us-east-1.amazonaws.com';
+$config['ci_s3_endpoints']['us-west-1'] = 's3-us-west-2.amazonaws.com';
+$config['ci_s3_endpoints']['us-west-2'] = 's3-us-west-1.amazonaws.com';
+$config['ci_s3_endpoints']['eu'] = 's3-eu-west-1.amazonaws.com';
+$config['ci_s3_endpoints']['ap-southeast-1'] = 's3-ap-southeast-1.amazonaws.com';
+$config['ci_s3_endpoints']['ap-southeast-2'] = 's3-ap-southeast-2.amazonaws.com';
+$config['ci_s3_endpoints']['ap-northeast-1'] = 's3-ap-northeast-1.amazonaws.com';
+$config['ci_s3_endpoints']['sa-east-1'] = 's3-sa-east-1.amazonaws.com';
+
 $config['ci_s3_acl']['private']	= 'ACL_PRIVATE';
 $config['ci_s3_acl']['public-read']	= 'ACL_PUBLIC';
 $config['ci_s3_acl']['authenticated-read']	= 'ACL_AUTH_READ';
@@ -86,6 +98,14 @@ $config['ci_s3_storage']['reduced']	= 'STORAGE_REDUCED';
 // S3 Request Headers
 //$config['ci_s3_headers']['Cache-Control'] = 'max-age=' . (30* 24 * 60 * 60);
 //$config['ci_s3_headers']['Expires'] = gmdate("D, d M Y H:i:s T", strtotime('+1 month') );
+
+// Special Config
+//$config['channel_images']['infinite_memory'] = 'yes';
+//$config['channel_images']['ascii_filename'] = 'yes';
+//$config['channel_images']['utf8_encode_fields_for_json'] = 'yes';
+//$config['channel_images_act_url']['channel_images_router'] = '';
+//$config['channel_images']['xss_field_strings'] = 'no';
+
 
 // Cloudfiles
 $config['ci_cloudfiles_regions']['us']	= 'US_AUTHURL';

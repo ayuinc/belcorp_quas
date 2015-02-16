@@ -84,8 +84,14 @@ class CI_Location_local extends Image_Location
 	{
 		$loc = $this->get_location_prefs($this->lsettings['location']);
 
+		$full_target = $loc['server_path'] . $dest_folder . '/' . $dest_filename;
+
+		if (file_exists($full_target) === true) {
+			@chmod($full_target, 0777);
+		}
+
 		// Move file
-		if (copy($source_file, $loc['server_path'] . $dest_folder . '/' . $dest_filename) === FALSE)
+		if (copy($source_file, $full_target) === FALSE)
     	{
     		$o['body'] = $this->EE->lang->line('ci:file_upload_error');
 	   		exit( $this->EE->image_helper->generate_json($o) );
@@ -124,11 +130,17 @@ class CI_Location_local extends Image_Location
 		$loc = $this->get_location_prefs($this->lsettings['location']);
 
 		// Does it starts with / ?
-		if (strpos($loc['url'], '/') === 0)
+		if (strpos($loc['url'], '/') === 0 && strpos($loc['url'], '//') !== 0)
 		{
 			// This may fail if using MSM
 			$loc['url'] = 'http://' .$_SERVER['HTTP_HOST'] . '/' . $loc['url'];
-			$loc['url'] = $this->EE->functions->remove_double_slashes($loc['url']); // Remove double slashes
+
+			if (function_exists('reduce_double_slashes')) {
+				$loc['url'] = reduce_double_slashes($loc['url']); // Remove double slashes
+			} else {
+				$loc['url'] = $this->EE->functions->remove_double_slashes($loc['url']); // Remove double slashes
+			}
+
 		}
 
 		// Is SSL?
@@ -165,6 +177,17 @@ class CI_Location_local extends Image_Location
 
 		$o = '<strong style="color:orange">PATH:</strong> ' . $dir . '<br />';
 
+		if (function_exists('posix_getpwuid')) {
+			$userid = posix_getuid();
+			$user = posix_getpwuid($userid);
+			$o .= '<strong style="color:orange">PHP User:</strong> ' . @$user['name'] ." ({$userid})<br />";
+		} else {
+			$user = getenv('USERNAME');
+			$o .= '<strong style="color:orange">PHP User:</strong> ' . $user . '<br />';
+		}
+
+		$o .= '<hr>';
+
 		// Check for Safe Mode?
 		$safemode = strtolower(@ini_get('safe_mode'));
 		if ($safemode == 'on' || $safemode == 'yes' || $safemode == 'true' ||  $safemode == 1)	$o .= "PHP Safe Mode (OFF): <span style='color:red'>Failed</span> <br>";
@@ -193,8 +216,20 @@ class CI_Location_local extends Image_Location
 
 		// CREATE TEST DIR
 		$tempdir = 'temp_' . $this->EE->localize->now;
-		if (@mkdir($dir.$tempdir) === TRUE) $o .= "Create Test DIR: <span style='color:green'>Passed</span> <br>";
-		else $o .= "Create Test DIR: <span style='color:red'>Failed</span> <br>";
+		if (@mkdir($dir.$tempdir, 0777, true) === TRUE) {
+			@chmod($dir.$tempdir, 0777);
+			$o .= "Create Test DIR: <span style='color:green'>Passed</span>";
+
+			if (function_exists('posix_getpwuid')) {
+				$user_id = fileowner($dir.$tempdir);
+				$user = posix_getpwuid($user_id);
+				$o .= ' - User: ' . @$user['name'] ." ({$user_id})";
+			}
+
+			$o .= '<br/>';
+		}
+		else $o .= "Create Test DIR: <span style='color:red'>Failed</span><br>";
+
 
 		// RENAME TEST DIR
 		if (@rename($dir.$tempdir, $dir.$tempdir.'temp') === TRUE) $o .= "Rename Test DIR: <span style='color:green'>Passed</span> <br>";
@@ -204,7 +239,9 @@ class CI_Location_local extends Image_Location
 		if (@rmdir($dir.$tempdir.'temp') === TRUE) $o .= "Delete Test DIR: <span style='color:green'>Passed</span> <br>";
 		else $o .= "Delete Test DIR: <span style='color:red'>Failed</span> <br>";
 
-		$o .= "<br /> Even if all tests PASS, uploading can still<br /> fail due Apache/htaccess misconfiguration";
+		$o .= '<hr>';
+
+		$o .= "Even if all tests PASS, uploading can still<br /> fail due Apache/htaccess misconfiguration";
 
 		return $o;
 	}
@@ -220,6 +257,7 @@ class CI_Location_local extends Image_Location
 	 */
 	public function get_location_prefs($location_id)
 	{
+
 		$location = array();
 
 		if (isset($this->EE->session->cache['upload_prefs'][$location_id]) === FALSE)
@@ -230,6 +268,7 @@ class CI_Location_local extends Image_Location
 		{
 			$location = $this->EE->session->cache['upload_prefs'][$location_id];
 		}
+
 
 		// Relative path?
 		if (substr($location['server_path'], 0, 1) != "/")

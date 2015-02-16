@@ -112,6 +112,7 @@ $lang = array(
 
 'ci:fieldtype_settings'	=>	'Fieldtype Settings',
 'ci:categories'	=>	'Categories',
+'ci:default_category'   => 'Default Category',
 'ci:categories_explain'=>	'Separate each category with a comma.',
 'ci:keep_original'	=>	'Keep Original Image',
 'ci:keep_original_exp'	=>	'WARNING: If you do not upload the original image you will not be able to change the size of your existing images again.',
@@ -146,6 +147,9 @@ $lang = array(
 'ci:save_data_in_field_exp'	=>	'When you enable this Channel Images will store image titles/desc/etc in the Custom Field so it can be searched. <br>Note: It takes more space in your database.',
 'ci:disable_cover'		=>	'Disable Cover button',
 'ci:convert_jpg'        =>  'Convert all uploaded images to JPG',
+'ci:wysiwyg_output' => 'WYSIWYG Output',
+'ci:static_image:var' => 'Static Image Variables',
+'ci:image_url'      => 'Image URL',
 
 'ci:embedded_data' => 'Embedded Data',
 'ci:parse_iptc'    => 'Parse IPTC',
@@ -156,7 +160,7 @@ $lang = array(
 
 // Field Columns
 'ci:field_columns'		=>	'Field Columns',
-'ci:field_columns_exp'	=>	'Specify a label for each column, leave the field blank to disable the column.',
+'ci:field_columns_exp'	=>	'Specify a label for each column, leave the "Field Label" blank to disable the column.',
 'ci:row_num'		=>	'#',
 'ci:id'				=>	'ID',
 'ci:image'			=>	'Image',
@@ -177,7 +181,7 @@ $lang = array(
 'ci:cifield_3'		=>	'Field 3',
 'ci:cifield_4'		=>	'Field 4',
 'ci:cifield_5'		=>	'Field 5',
-'c:filesize'		=>	'Filesize',
+'ci:filesize'		=>	'Filesize',
 
 // PBF
 'ci:upload_images'	=>	'Upload Images',
@@ -201,7 +205,7 @@ $lang = array(
 'ci:json:unlink_file'		=> 'Are you sure you want to unlink this file?',
 'ci:json:del_file_all'          => 'Are you sure you want to delete ALL files?',
 'ci:json:linked_force_del'	=> "This file is linked with other entries, are you sure you want to delete it? \n The other references will also be deleted!",
-'ci:json:submitwait'		=> 'You have uploaded file(s), those files are now being send to their final destination. This can take a while depending on the amount of files..',
+'ci:json:submitwait'		=> 'Your uploaded files are being stored. This may take a while, depending on the size of the files.',
 
 'ci:add_image'		=>	'Add Image',
 'ci:caption_text'	=>	'Image Caption:',
@@ -238,7 +242,7 @@ $lang = array(
 'ci:rotate_right'=>  'Rotate Right',
 'ci:flip_hor'=>  'Flip Horizontally',
 'ci:flip_ver'=>  'Flip Vertically',
-'ci:image_scaled_note'  =>  '<storng>Note:</storng> This is a scaled representation of the actual image size.',
+'ci:image_scaled_note'  =>  '<b>Note:</b> This is a scaled representation of the actual image size.',
 'ci:regen_sizes'    =>  'Regenerate All Sizes',
 'ci:apply_crop'     =>  'Apply Crop',
 'ci:cancel_crop'    =>  'Cancel Crop',
@@ -481,19 +485,22 @@ But it should be at a minimum 1 or better still 2 times the sigma.
 'ci:resize:upsizing'=>  'Allow Upsizing',
 'ci:resize:exp'     =>  'Resizes an image to be no larger than WIDTH or HEIGHT. If either param is set to zero, then that dimension will not be considered as a part of the resize. Additionally, if ALLOW_UPSIZING is set to YES (NO by default), then this function will also scale the image up to the maximum dimensions provided.',
 
+'ci:im:thumb_crop' => 'Creates a fixed size thumbnail by first scaling the image up or down and cropping a specified area from the center.',
 
 
 
 
 
-
-
-
-
-
-
-
-
+//----------------------------------------
+// MCP NEW
+//----------------------------------------
+'ci:batch_actions' => 'Batch Actions',
+'ci:image_list' => 'Image List',
+'ci:total_images' => 'Total Images',
+'ci:transfer_to' => 'Transfer To',
+'ci:progress' => 'Progress',
+'ci:start' => 'Start',
+'ci:start_tip' => 'Tip: You can click "Start" multiple times..',
 
 // END
 ''=>''

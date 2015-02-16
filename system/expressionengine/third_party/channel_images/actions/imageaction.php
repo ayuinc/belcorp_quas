@@ -179,7 +179,7 @@ class ImageAction
 		if ($resource == FALSE)
 		{
 			$resource =& $this->EE->channel_images->image;
-			$extension = $this->EE->channel_images->image_ext;
+			if (!$extension) $extension = $this->EE->channel_images->image_ext;
 		}
 
 		if ($this->image_jpeg_quality == FALSE)
@@ -210,6 +210,39 @@ class ImageAction
 		// We don't do image destory because we might work on it..
 
 		return TRUE;
+	}
+
+	// ********************************************************************************* //
+
+	public function getImageDetails($file)
+	{
+		$info = array();
+
+		$data = @getimagesize($file);
+		if (!$data) return FALSE;
+
+		$info['width'] = $data[0];
+		$info['height'] = $data[1];
+
+		// Get the image extension
+		$this->EE->channel_images->image_ext = '';
+
+		switch ($data[2])
+		{
+			case IMAGETYPE_GIF:
+				$info['ext'] = 'gif';
+				break;
+			case IMAGETYPE_PNG:
+				$info['ext'] = 'png';
+				break;
+			case IMAGETYPE_JPEG:
+				$info['ext'] = 'jpg';
+				break;
+			default:
+				return FALSE;
+		}
+
+		return $info;
 	}
 
 	// ********************************************************************************* //
