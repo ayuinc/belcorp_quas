@@ -137,6 +137,19 @@ class Transfer
 				$country = $row->PaisSociedad;
 			}
 			
+			if(is_null($row->GrupoFuncional)) {
+				$fg = 'None';
+			} else {
+				if(in_array($row->GrupoFuncional, array('Adm', 'Adm FFVV', 'Adm Planta', 'Adm Retail'))) {
+					$fg = 'Administrativos';
+				}
+				
+				if($row->GrupoFuncional == 'FFVV') { $fg = 'Fuerza de Ventas'; }
+				if($row->GrupoFuncional == 'Planta') { $fg = 'Operarios'; }
+				if($row->GrupoFuncional == 'Retail') { $fg = 'Retail'; }
+			}
+			
+			
 			// Remove accents
 			/* $vp = $this->transliterateString($vp); */
 			
@@ -145,7 +158,8 @@ class Transfer
             				'member_id' => $member_id,
             				'm_field_id_1' => $vp,
             				'm_field_id_3' => $country,
-            				'm_field_id_4' => $pub
+            				'm_field_id_4' => $pub,
+            				'm_field_id_5' => $fg
             			   );
 
             ee()->db->query(ee()->db->insert_string('exp_member_data', $cust_fields));

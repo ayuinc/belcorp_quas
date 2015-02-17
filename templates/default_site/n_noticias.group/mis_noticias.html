@@ -1,0 +1,23 @@
+{embed="n_includes/header"}
+{exp:news:get_preferences parse="inward"}
+	{preferences}
+	<hr>
+	
+	{super_search_total_results} results for the keyword search: "{super_search_keywords}"
+	
+	<hr>
+	
+	
+	{exp:super_search:results search="category=326+327&channel=noticias" inclusive_categories="yes"}
+		<div>
+			{title}
+			{noticias_link}
+			{noticias_categoria_principal}
+			{noticias_otros_tags}
+		</div>
+	{/exp:super_search:results}
+{/exp:news:get_preferences}
+{embed="n_includes/footer"}
+
+<!-- search="{preferences}"  -->
+<!-- search_in="noticias_categoria_principal|noticias_otros_tags" -->

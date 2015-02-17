@@ -1,0 +1,15 @@
+{embed="n_includes/header"}
+{exp:channel:entries channel="noticias"}
+<div class="row">
+	<div class="large-6 columns">
+		{exp:opengraph:query url="{noticias_link}"}
+			<a href="{og_url}">{og_title}</a>
+			<img src="{og_image}" />
+		{/exp:opengraph:query}
+		<p>{noticias_categoria_principal}</p>
+		<p>{noticias_otros_tags}</p>
+		<p>{noticias_categorias}</p>
+	</div>
+</div>
+{/exp:channel:entries}
+{embed="n_includes/footer"}
