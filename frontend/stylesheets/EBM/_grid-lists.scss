@@ -1,0 +1,56 @@
+// GRID LISTS
+$grid-list-item-height: 350px;
+ul.grid-list {
+	@include clearfix;
+	padding: 0;
+	margin: 0;
+	@include list-unstyled;
+	> li {
+		float: left;
+		padding: $grid-gutter-width / 2;
+		padding: rem($grid-gutter-width / 2);
+	}
+	&.grid-list-item-height {
+		> li {
+			min-height: $grid-list-item-height;
+		}
+	}
+	@for $i from 1 through 12 {
+		&.grid-list-#{$i} {
+			> li {
+				width: percentage(1/$i) - 0.30;
+			}
+		}
+	}
+	@for $i from 1 through 12 {
+		@for $k from 1 through length($breakpoints-sufix-list) {
+	    @media #{nth($media-control-list, $k)} {
+				&.grid-list-#{$i}-#{nth($breakpoints-sufix-list, $k)} {
+					> li {
+						$mobile-width: percentage(1/$i);
+						width: $mobile-width;
+					}
+				}
+	    }
+	  }
+	}
+	&.grid-list-centered {
+		text-align: center;
+		> li {
+			float: none;
+			display: inline-block;
+		}
+	}
+	&.grid-list-right {
+		> li {
+			float: right;
+		}
+	}
+	&.grid-list-anchors {
+		> li {
+			a {
+				display: block;
+			}
+		}
+	}
+}
