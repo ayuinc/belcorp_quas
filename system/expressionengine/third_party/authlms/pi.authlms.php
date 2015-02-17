@@ -99,23 +99,12 @@ include_once 'nusoap/lib/nusoap.php';
 		$dni = $user->DNI;
 
         $useragent = $_SERVER['HTTP_USER_AGENT'];
-        $date = date("d-H");
+        // $date = date("d-H");
         $token = hash('sha256', $dni.$useragent.$date);
         $url = 'http://qasucb.cyzone.com/moodlecolaboradores/auth/belcorpsso/login/login.php?usuario=' . $username . '&token=' . $token . '&course=' . $id_course;
         
-        print_r($dni);
-        echo "<br>";
-        print_r($useragent);
-        echo "<br>";
-        print_r($date);
-        echo "<br>";
-        print_r($id_course);
-        
-        echo "<br>";
-        print_r($url);
-        
         //output the response (in the form of a multidimensional array) from the function call:
-        //return '{exp:redirecturl url="'.$url.'"}';
+        return '{exp:redirecturl url="'.$url.'"}';
         //header('Location: http://miscursosucb.belcorp.biz/auth/belcorpws/client/client.php?usuario=peppinedo&token=ABCD&curso=24' );
         /*
         $data_string = json_encode($data, true);
@@ -173,7 +162,7 @@ include_once 'nusoap/lib/nusoap.php';
 		$dni = $user->DNI;
 
         $useragent = $_SERVER['HTTP_USER_AGENT'];
-        $date = date("d-H");
+        // $date = date("d-H");
         $token = hash('sha256', $dni.$useragent.$date);
         $url = 'http://qasucb.cyzone.com/moodlecolaboradores/auth/belcorpsso/login/login.php?usuario=' . $username . '&token=' . $token;
         
@@ -236,7 +225,7 @@ include_once 'nusoap/lib/nusoap.php';
 		$dni = $user->DNI;
 
         $useragent = $_SERVER['HTTP_USER_AGENT'];
-        $date = date("d-H");
+        // $date = date("d-H");
         $token = hash('sha256', $dni.$useragent.$date);
         $url = 'http://qasucb.cyzone.com/moodlecolaboradores/auth/belcorpsso/login/login.php?usuario=' . $username . '&token=' . $token;
         

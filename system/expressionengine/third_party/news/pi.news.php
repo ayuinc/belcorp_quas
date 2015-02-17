@@ -15,7 +15,7 @@ $plugin_info = array(
     'pi_version'      => '1.0',
     'pi_author'       => 'Ricardo Díaz',
     'pi_author_url'   => 'http://www.ayuinc.com/',
-    'pi_description'  => 'Allows states qualify Friends',
+    'pi_description'  => 'News module for Belcorp LMS',
     'pi_usage'        => News::usage()
 );
             
@@ -31,7 +31,10 @@ class News
     public static function usage()
     {
         ob_start();  ?>
-            {exp:news}
+        Use
+            {exp:news:entries_by_preferences}
+            	{vars}
+            {/exp:news:entries_by_preferences}
             <?php
         $buffer = ob_get_contents();
         ob_end_clean();
