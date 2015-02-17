@@ -258,9 +258,9 @@ input[type=checkbox]:checked + .grid-noticias {
 	color: white;
 	padding: 7px 33px !important;
 	border-radius: 0 !important;
-	@media (min-width: $screen-xs-max) {
-		margin-top: 7px !important;
-	}
+	// @media #{$landscape} {
+	// 	margin-top: 7px !important;
+	// }
 	&:hover {
 		color: white;
 		opacity: 0.8;
@@ -282,12 +282,24 @@ input[type=checkbox]:checked + .grid-noticias {
 			height: 18px;
 			z-index: 100;
 			right: -221px;
+			@media #{$portrait} {
+				right: -123px;
+			}
+			// @media #{$landscape} {
+			// 	right: -173px;
+			// }
 			&.selected-input {
 				bottom: -32px;
 				position: relative;
 				right: -220px;
 				width: 18px;
 				height: 18px;
+				@media #{$portrait} {
+					right: -123px;
+				}
+				// @media #{$landscape} {
+				// 	right: -173px;
+				// }
 			}
 		}
 		.content {
@@ -299,7 +311,6 @@ input[type=checkbox]:checked + .grid-noticias {
 	}
 }
 
-
 //POST GRID 
 .posts-grid {
 	> li {
@@ -308,6 +319,55 @@ input[type=checkbox]:checked + .grid-noticias {
 		.info {
 
 		}
+		.pic {
+			@include bg-img-control;
+			height: $post-grid-height-control;
+			position: relative;
+			.category-label {
+				@include position(absolute, null null 0 0 $container-fluid);
+				padding: ($container-fluid / 2) $container-fluid;
+				padding: rem($container-fluid / 2) rem($container-fluid);
+				background: $brand-primary;
+				color: white;
+			}
+		}
+		.content {
+			border: 1px solid darken($gray-lighter, 3%);
+			background-color: #eee;
+			color: $gray;
+			text-transform: uppercase;
+			min-height: 100px;
+			padding: $container-fluid;
+			padding: rem($container-fluid);
+		}
+		.info {
+			border: 1px solid darken($gray-lighter, 3%);
+			@include clearfix;
+			@include flex-space-between;
+			.left,
+			.right {
+				min-height: 49px;
+				@include flex-middle;
+				padding: 0;
+			}
+			.left {
+				@extend .col-xs-10;
+			}
+			.right {
+				@extend .col-xs-2;
+			}
+		}
+	}
+}
+
+.post-preliminar {
+	> li {
+		@media #{$portrait} {
+			width: 35.7% !important;
+		}
+		.pic,
+		.content,
+		.info {}
 		.pic {
 			@include bg-img-control;
 			height: $post-grid-height-control;
@@ -450,4 +510,19 @@ input[type=checkbox]:checked + .grid-noticias {
 input[type="checkbox"]:checked ~ label {
   background-color: $brand-primary;
   color: white;
+}
+
+.carousel-caption {
+  // @media #{$landscape} {
+  //   bottom: 8px;
+  //   left: 9%;
+		// right: 58%;
+		// padding: 14px;
+  // }
+  @media #{$portrait} {
+    left: 9%;
+		right: 57%;
+		padding: 10px;
+		bottom: 5px;
+  }
 }

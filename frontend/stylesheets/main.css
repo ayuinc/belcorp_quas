@@ -703,19 +703,19 @@ address {
   .row:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .posts-grid > li .info .right, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, #tabs .content .externo, #tabs .content .propio, .content-vista, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .posts-grid > li .info .left, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, #tabs .content .categoria, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .posts-grid > li .info .right, .post-preliminar > li .info .right, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, #tabs .content .externo, #tabs .content .propio, .content-vista, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .posts-grid > li .info .left, .post-preliminar > li .info .left, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, #tabs .content .categoria, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px; }
 
-.col-xs-1, .col-xs-2, .posts-grid > li .info .right, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .posts-grid > li .info .left, .col-xs-11, .col-xs-12 {
+.col-xs-1, .col-xs-2, .posts-grid > li .info .right, .post-preliminar > li .info .right, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .posts-grid > li .info .left, .post-preliminar > li .info .left, .col-xs-11, .col-xs-12 {
   float: left; }
 
 .col-xs-1 {
   width: 8.33333%; }
 
-.col-xs-2, .posts-grid > li .info .right {
+.col-xs-2, .posts-grid > li .info .right, .post-preliminar > li .info .right {
   width: 16.66667%; }
 
 .col-xs-3 {
@@ -739,7 +739,7 @@ address {
 .col-xs-9 {
   width: 75%; }
 
-.col-xs-10, .posts-grid > li .info .left {
+.col-xs-10, .posts-grid > li .info .left, .post-preliminar > li .info .left {
   width: 83.33333%; }
 
 .col-xs-11 {
@@ -8399,9 +8399,6 @@ input[type=checkbox]:checked + .grid-noticias {
   color: white;
   padding: 7px 33px !important;
   border-radius: 0 !important; }
-  @media (min-width: 767px) {
-    .btn-purple {
-      margin-top: 7px !important; } }
   .btn-purple:hover {
     color: white;
     opacity: 0.8; }
@@ -8417,12 +8414,18 @@ input[type=checkbox]:checked + .grid-noticias {
   height: 18px;
   z-index: 100;
   right: -221px; }
+  @media only screen and (orientation: portrait) {
+    .seleccion-grid > li input {
+      right: -123px; } }
   .seleccion-grid > li input.selected-input {
     bottom: -32px;
     position: relative;
     right: -220px;
     width: 18px;
     height: 18px; }
+    @media only screen and (orientation: portrait) {
+      .seleccion-grid > li input.selected-input {
+        right: -123px; } }
 .seleccion-grid > li .content {
   display: -webkit-box;
   display: -moz-box;
@@ -8517,6 +8520,92 @@ input[type=checkbox]:checked + .grid-noticias {
     clear: both; }
   .posts-grid > li .info .left,
   .posts-grid > li .info .right {
+    min-height: 49px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    padding: 0; }
+
+@media only screen and (orientation: portrait) {
+  .post-preliminar > li {
+    width: 35.7% !important; } }
+.post-preliminar > li .pic {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 140px;
+  position: relative; }
+  .post-preliminar > li .pic .category-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 7.5px 15px;
+    padding: 0.53571rem 1.07143rem;
+    background: #70327c;
+    color: white; }
+.post-preliminar > li .content {
+  border: 1px solid #f6f8f9;
+  background-color: #eee;
+  color: #b8c4cb;
+  text-transform: uppercase;
+  min-height: 100px;
+  padding: 15px;
+  padding: 1.07143rem; }
+.post-preliminar > li .info {
+  border: 1px solid #f6f8f9;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+  padding-left: 0;
+  list-style: none;
+  margin: 0; }
+  .post-preliminar > li .info:before, .post-preliminar > li .info:after {
+    content: " ";
+    display: table; }
+  .post-preliminar > li .info:after {
+    clear: both; }
+  .post-preliminar > li .info .left,
+  .post-preliminar > li .info .right {
     min-height: 49px;
     display: -webkit-box;
     display: -moz-box;
@@ -8643,6 +8732,13 @@ input[type=checkbox]:checked + .grid-noticias {
 input[type="checkbox"]:checked ~ label {
   background-color: #70327c;
   color: white; }
+
+@media only screen and (orientation: portrait) {
+  .carousel-caption {
+    left: 9%;
+    right: 57%;
+    padding: 10px;
+    bottom: 5px; } }
 
 /*
  * jQuery FlexSlider v2.2.0
