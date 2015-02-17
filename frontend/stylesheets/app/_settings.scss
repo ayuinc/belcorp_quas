@@ -1,0 +1,106 @@
+//
+// CUSTOM MIXINS & VARIABLES FOR OVERALL STYLING
+// --------------------------------------------------
+
+// EBM:REF
+// LIST UNSTYLED
+@mixin list-unstyled {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+// EBM:REF
+// CONTROL FULL WIDTH BG IMAGES
+@mixin bg-img-control {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+// EBM:REF
+// $gray-base: #262624;
+
+// EBM:REF
+// $brand-inverse: 				#081A26 !default;
+
+// // EBM:REF
+// // SOCIAL COLORS
+// $color-facebook: 		#3B5998 !default;
+// $color-twitter: 		#34CCFE !default;
+// $color-pinterest: 	#D02420 !default;
+// $color-google-plus: #DC4335 !default;
+// $color-linkedin: 		#1C87BD !default;
+// $color-youtube: 		#F23030 !default;
+// $color-instagram: 	#4187FB !default;
+
+// // COLOR LISTS
+// // EBM:REF
+// $grayscale-list: 
+// 	$gray-darker, 
+// 	$gray-dark, 
+// 	$gray, 
+// 	$gray-light, 
+// 	$gray-lighter, 
+// 	#fff;
+
+// $brand-colors-list: 
+// 	$brand-primary, 
+// 	$brand-success, 
+// 	$brand-info, 
+// 	$brand-warning, 
+// 	$brand-danger;
+
+// $social-colors-list: 
+// 	$color-facebook,
+// 	$color-twitter, 	
+// 	$color-pinterest, 
+// 	$color-google-plus,
+// 	$color-youtube,
+// 	$color-instagram,
+// 	$color-linkedin; 	
+
+// // COLOR SUFIX's
+// // EBM:REF
+// $grayscale-sufix-list: 
+// 	'gray-darker', 
+// 	'gray-dark', 
+// 	'gray', 
+// 	'gray-light', 
+// 	'gray-lighter', 
+// 	'white';
+
+// $brand-colors-sufix-list: 
+// 	'primary', 
+// 	'success', 
+// 	'info', 
+// 	'warning', 
+// 	'danger';
+
+// $social-colors-sufix-list: 
+// 	'facebook',
+// 	'twitter',	
+// 	'pinterest',
+// 	'google-plus',
+// 	'youtube',
+// 	'instagram',
+// 	'linkedin';
+
+// // EBM:REF
+// $breakpoints-sufix-list:  
+// 	'xs', 
+// 	'sm', 
+// 	'md', 
+// 	'lg';
+
+// EBM:REF
+// GLOBAL BG COLOR
+// $body-bg:               $blue;
+
+// ALT FONT for FONTS_CUSTOM
+$font-family-alt:         "alt-name", $font-family-sans-serif;
+
+// EBM:REF
+// CUSTOM CONTAINER VARIABLE
+$container-xs: 								((480px + $grid-gutter-width)) !default;
+$container-fluid: 						 $grid-gutter-width / 2; 
