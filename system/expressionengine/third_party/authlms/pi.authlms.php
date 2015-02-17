@@ -99,7 +99,7 @@ include_once 'nusoap/lib/nusoap.php';
 		$dni = $user->DNI;
 
         $useragent = $_SERVER['HTTP_USER_AGENT'];
-        $date = date("d-H");
+        // $date = date("d-H");
         $token = hash('sha256', $dni.$useragent.$date);
         $url = 'http://qasucb.cyzone.com/moodlecolaboradores/auth/belcorpsso/login/login.php?usuario=' . $username . '&token=' . $token . '&course=' . $id_course;
         
@@ -162,7 +162,7 @@ include_once 'nusoap/lib/nusoap.php';
 		$dni = $user->DNI;
 
         $useragent = $_SERVER['HTTP_USER_AGENT'];
-        $date = date("d-H");
+        // $date = date("d-H");
         $token = hash('sha256', $dni.$useragent.$date);
         $url = 'http://qasucb.cyzone.com/moodlecolaboradores/auth/belcorpsso/login/login.php?usuario=' . $username . '&token=' . $token;
         
@@ -225,7 +225,7 @@ include_once 'nusoap/lib/nusoap.php';
 		$dni = $user->DNI;
 
         $useragent = $_SERVER['HTTP_USER_AGENT'];
-        $date = date("d-H");
+        // $date = date("d-H");
         $token = hash('sha256', $dni.$useragent.$date);
         $url = 'http://qasucb.cyzone.com/moodlecolaboradores/auth/belcorpsso/login/login.php?usuario=' . $username . '&token=' . $token;
         
