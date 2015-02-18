@@ -21,13 +21,13 @@
 						<label for="ossm" class="content block menu-trigger">
 							<h3 class="thin text-center">{category_name}</h3>
 						</label>	
-					</div>								
+					</div>
 				</li>
 			{/exp:channel:categories}
 		</ul>
 		<div class="text-center mt-35">
 			<div class="form-group">
-				<a href="noticias-preferencias.html"class="btn btn-gray">Continuar</a>
+				<button type="submit" class="btn btn-gray">Continuar</button>
 		  </div>	
 		</div>
 	</div>
@@ -38,8 +38,7 @@
 
 	<input type="hidden" id="field_tags" name="Preferencias" value="{Preferencias}" />
 	<!-- <p>Tags: {Preferencias}</p> -->
-	
-	<p><input type="submit" value="Submit" /></p>
+
 	{/exp:user:edit}
 	
 {embed="n_includes/footer"}
