@@ -1,18 +1,43 @@
 {embed="n_includes/header"}
 	{exp:user:edit}
 	 
-	<p>Vicepresidencia <input name="Vicepresidencia" value="{Vicepresidencia}" /></p>
+<!-- 	<p>Vicepresidencia <input name="Vicepresidencia" value="{Vicepresidencia}" /></p>
 	 
 	<p>Email <input name="email" value="{email}" /></p>
 	<p>Username <input name="username" value="{username}" /></p>
-	<p>Screen Name <input name="screen_name" value="{screen_name}" /></p>
-	
-	{exp:channel:categories style="linear" category_group="18"}
+	<p>Screen Name <input name="screen_name" value="{screen_name}" /></p> -->
+
+	<div class="container pb-56 heading-block">
+	  <div class="pl-14">
+			<h1 class="thin text-gradient">BIENVENIDO</h1>
+			<h3 class="thin mb-21">ESTÁS EN LA NUEVA SECCIÓN DE NOTICIAS DE LA UCB</h3>
+			<p class="lead thin">Para darte la mejor experiencia, selecciona las categorias de tu preferencia. Las noticias que te <br> presentaremos serán en función de tu selección.</p>
+	  </div> 
+		<ul class="grid-list grid-list-4 grid-list-1-xs isotope-grid seleccion-grid normalize-text">
+			{exp:channel:categories style="linear" category_group="18"}
+				<li>
+					<div>
+						<input type="checkbox" value="{category_id}">
+						<label for="ossm" class="content block menu-trigger">
+							<h3 class="thin text-center">{category_name}</h3>
+						</label>	
+					</div>								
+				</li>
+			{/exp:channel:categories}
+		</ul>
+		<div class="text-center mt-35">
+			<div class="form-group">
+				<a href="noticias-preferencias.html"class="btn btn-gray">Continuar</a>
+		  </div>	
+		</div>
+	</div>
+
+	<!-- {exp:channel:categories style="linear" category_group="18"}
 		<label><input type="checkbox" value="{category_id}">&nbsp;{category_name}</label>		
-	{/exp:channel:categories}
+	{/exp:channel:categories} -->
 
 	<input type="hidden" id="field_tags" name="Preferencias" value="{Preferencias}" />
-	<p>Tags: {Preferencias}</p>
+	<!-- <p>Tags: {Preferencias}</p> -->
 	
 	<p><input type="submit" value="Submit" /></p>
 	{/exp:user:edit}
