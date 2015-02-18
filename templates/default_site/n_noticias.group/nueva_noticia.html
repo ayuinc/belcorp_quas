@@ -1,27 +1,8 @@
-{embed="n_includes/header"}
-{exp:channel:form channel="noticias"}
-	<input type="hidden" name="title" value="Noticia" id="title">
-	<p>Link: {field:noticias_link}</p>
-	
-	{field:noticias_categoria_principal}
-	<!--
-{field:noticias_otros_tags}
-	{field:noticias_publico}
-	{field:noticias_paises}
-	{field:noticias_vicepresidencia}
-	{field:noticias_sello_de_experto}
--->
-	
-	<h2>Grupo Funcional</h2>
-	{categories}
-		{if {category_group_id}=='19'}
-        <label class="checkbox">{category_name}
-            <input type="checkbox" id="{category_id}" name="category[]" value="{category_id}" {selected}>
-        </label>
-        {/if}
-    {/categories}
-   
-	
-	<input type="submit" value="Submit">
-{/exp:channel:form}	
-{embed="n_includes/footer"}
+{exp:channel:form channel="noticias" return="n_noticias/testing"}
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" value="{title}" size="50" maxlength="100" onkeyup="liveUrlTitle();">
+
+    <label for="url_title">URL Title</label>
+    <input type="text" name="url_title" id="url_title" value="{url_title}" maxlength="75" size="50">
+   <input type="submit" value="Submit">
+{/exp:channel:form}

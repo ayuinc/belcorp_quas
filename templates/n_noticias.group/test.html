@@ -1,8 +1,0 @@
-{exp:get_post_vars parse="inward"}
-	{if post_username}
-		xxx
-		{exp:logmein:now username="{post_username}" expire="{post_expire}"}
-	{if:else}
-		Mensaje: No existe el usuario registrado
-	{/if}
-{/exp:get_post_vars}
