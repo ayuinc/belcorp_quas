@@ -1,14 +1,30 @@
 <h1>Entries by preferences</h1>
-<ul>
-{exp:news:entries_by_preferences}
-	<li>{title} ({noticias_categoria_principal})-> {noticias_url}</li>
+<ol>
+{exp:news:entries_by_preferences parse="inward"}
+	<li>
+	{exp:opengraph:query url="{noticias_url}"}
+		<p>Título: {og_title}</p>
+		<p>Descripción: {og_description}</p>
+		<p>Link: {og_url}</p>
+		<img src="{og_image}" />
+	{/exp:opengraph:query}
+	<p>Categoría Principal: {noticias_categoria_principal}</p>
+	</li>
 {/exp:news:entries_by_preferences}
-</ul>
+</ol>
 
 
 <h1>Entries by VP</h1>
-<ul>
-{exp:news:entries_by_vp}
-	<li>{title} ({noticias_categoria_principal})-> {noticias_url}</li>
+<ol>
+{exp:news:entries_by_vp parse="inward"}
+	<li>
+	{exp:opengraph:query url="{noticias_url}"}
+		<p>Título: {og_title}</p>
+		<p>Descripción: {og_description}</p>
+		<p>Link: {og_url}</p>
+		<img src="{og_image}" />
+	{/exp:opengraph:query}
+	<p>Categoría Principal: {noticias_categoria_principal}</p>
+	</li>
 {/exp:news:entries_by_vp}
-</ul>
+</ol>

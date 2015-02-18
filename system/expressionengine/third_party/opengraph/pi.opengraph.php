@@ -79,10 +79,15 @@ class Opengraph
 		    $rmetas[$property] = $content;
 		}
 		
+		if (!isset($rmetas['og:url'])) {
+			$rmetas['og:url'] = $url;
+		}
+		
 		if (!preg_match("~^(?:f|ht)tps?://~i", $rmetas['og:image'])) {
 			$parsedUrl = parse_url($rmetas['og:url']);
         	$rmetas['og:image'] = $parsedUrl["scheme"] . "://" . $parsedUrl["host"] . "/" . $rmetas['og:image'];
     	}
+    	
     	
 		$variables[] = array(
 	        'og_title' => $rmetas['og:title'],
