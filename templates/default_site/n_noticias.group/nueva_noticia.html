@@ -1,8 +1,11 @@
-{exp:channel:form channel="noticias" return="n_noticias/testing"}
+{exp:channel:form
+	channel="noticias"
+	return="n_noticias/testing"
+}
     <label for="title">Title</label>
     <input type="text" name="title" id="title" value="{title}" size="50" maxlength="100" onkeyup="liveUrlTitle();">
 
     <label for="url_title">URL Title</label>
     <input type="text" name="url_title" id="url_title" value="{url_title}" maxlength="75" size="50">
-   <input type="submit" value="Submit">
+	<input type="submit" value="Submit">
 {/exp:channel:form}
