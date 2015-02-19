@@ -8740,6 +8740,10 @@ input[type="checkbox"]:checked ~ label {
     padding: 10px;
     bottom: 5px; } }
 
+.text-size {
+  font-size: 70px;
+  font-size: 4.375rem; }
+
 /*
  * jQuery FlexSlider v2.2.0
  * http://www.woothemes.com/flexslider/
