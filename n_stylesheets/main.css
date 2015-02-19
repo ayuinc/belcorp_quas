@@ -8413,7 +8413,7 @@ input[type=checkbox]:checked + .grid-noticias {
   width: 18px;
   height: 18px;
   z-index: 100;
-  right: -221px; }
+  right: -204px; }
   @media only screen and (orientation: portrait) {
     .seleccion-grid > li input {
       right: -123px; } }
