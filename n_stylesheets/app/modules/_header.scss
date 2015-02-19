@@ -1,0 +1,42 @@
+header {
+	height: $header-height-control;
+	border-bottom: 1px solid $gray-lighter;
+	@include flex-space-between;
+	@include normalize-text;
+	.left,
+	.center,
+	.right {
+		@include flex-middle-center;
+	}
+	.left {}
+	.center {}
+	.right {}
+}
+
+.center {
+	ul {
+		li {
+			.left {}
+			.center {}
+			.right {
+				padding-bottom: 0 !important;
+				span {
+					font-size: 12px !important;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .text-gradient {
+    background: -webkit-linear-gradient(left, #70327c, #5bc0de, #5cb85c) repeat;
+    background: linear-gradient(to right, #70327c, #5bc0de, #5cb85c) repeat;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    text-fill-color: transparent; 
+  } 
+}
