@@ -15360,10 +15360,12 @@ ul.grid-list {
     display: table; }
   ul.grid-list:after {
     clear: both; }
-  ul.grid-list > li {
+  ul.grid-list > li,
+  ul.grid-list > a {
     float: left;
     padding: 15px;
-    padding: 1.07143rem; }
+    padding: 1.07143rem;
+    display: block; }
   ul.grid-list.grid-list-item-height > li {
     min-height: 350px; }
   ul.grid-list.grid-list-1 > li {

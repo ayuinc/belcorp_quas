@@ -5,10 +5,12 @@ ul.grid-list {
 	padding: 0;
 	margin: 0;
 	@include list-unstyled;
-	> li {
+	> li,
+	> a {
 		float: left;
 		padding: $grid-gutter-width / 2;
 		padding: rem($grid-gutter-width / 2);
+		display: block;
 	}
 	&.grid-list-item-height {
 		> li {
