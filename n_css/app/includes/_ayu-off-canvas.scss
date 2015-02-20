@@ -1,5 +1,7 @@
 /* OFF CANVAS  */
 
+$site-menu-width: 248px;
+
 #site-wrapper {
 	position: relative;
 	overflow: hidden;
@@ -19,7 +21,7 @@
   @include transform(translateX(60px));
   padding-top: 70px;
   &.homepage-on {
-  	@include transform(translateX(248px));
+  	@include transform(translateX($site-menu-width));
   	@media #{$small-only} {
   		@include transform(translateX(0px));
   	}
@@ -36,7 +38,7 @@
 }
 
 #site-menu {
-  width: 248px;
+  width: $site-menu-width;
   height: 100%;
   position: fixed;
   top: 0;
@@ -161,7 +163,7 @@
 #site-wrapper {
 	&.show-nav {
 		#site-canvas {
-			@include transform(translateX(248px));
+			@include transform(translateX($site-menu-width));
 		}
 		#site-menu {
 			@include transition(z-index 4.9s ease-in);
@@ -179,7 +181,7 @@
 			}
 		}
 		header {
-			@include transform(translateX(248px));
+			@include transform(translateX($site-menu-width));
 			@include transition(all 0.7s ease);
 		}
 	}
