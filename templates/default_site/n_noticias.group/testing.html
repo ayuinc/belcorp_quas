@@ -43,7 +43,7 @@
 				  </div>
 				  <h4 class="mt-49 pl-14">CONTENIDO SEGÚN PREFERENCIAS</h4>
 					<ul class="grid-list grid-list-4 grid-list-1-xs isotope-grid posts-grid">
-						{exp:news:entries_by_preferences parse="inward" limit="5"}
+						{exp:news:entries_by_preferences parse="inward" limit="4"}
 							{if noticias_titulo==""}
 							<li>
 								{exp:opengraph:query url="{noticias_url}"}
@@ -107,7 +107,7 @@
 
 					<h4 class="mt-49 pl-14">CONTENIDO RELEVANTE PARA VENTAS</h4>
 					<ul class="grid-list grid-list-4 grid-list-1-xs isotope-grid posts-grid">
-						{exp:news:entries_by_vp parse="inward" limit="5"}
+						{exp:news:entries_by_vp parse="inward" limit="4"}
 						
 							{if noticias_titulo==""}
 							<li>
@@ -173,7 +173,7 @@
 
 					<h4 class="mt-49 pl-14">OTRO CONTENIDO QUE TE PUEDE INTERESAR</h4>
 					<ul class="grid-list grid-list-4 grid-list-1-xs isotope-grid posts-grid">
-						{exp:news:all_entries parse="inward" limit="5"}
+						{exp:news:all_entries parse="inward" limit="4"}
 							
 							{if noticias_titulo==""}
 							<li>
