@@ -351,10 +351,10 @@ input[type=checkbox]:checked + .grid-noticias {
 				padding: 0;
 			}
 			.left {
-				@extend .col-xs-10;
+				@extend .col-xs-9;
 			}
 			.right {
-				@extend .col-xs-2;
+				@extend .col-xs-3;
 			}
 		}
 	}
