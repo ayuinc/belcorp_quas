@@ -8479,8 +8479,6 @@ input[type=checkbox]:checked + .grid-noticias {
     color: white; }
 .posts-grid > li .content {
   border: 1px solid #f6f8f9;
-  background-color: #eee;
-  color: #b8c4cb;
   text-transform: uppercase;
   min-height: 100px;
   padding: 15px;

@@ -333,8 +333,6 @@ input[type=checkbox]:checked + .grid-noticias {
 		}
 		.content {
 			border: 1px solid darken($gray-lighter, 3%);
-			background-color: #eee;
-			color: $gray;
 			text-transform: uppercase;
 			min-height: 100px;
 			padding: $container-fluid;
