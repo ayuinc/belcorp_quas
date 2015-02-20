@@ -85,6 +85,7 @@ $lang = array(
 'ci:s3:region:us-west-1'       => 'USA-West (Northern California)',
 'ci:s3:region:us-west-2'       => 'USA-West 2 (Oregon)',
 'ci:s3:region:eu'              => 'Europe (Ireland)',
+'ci:s3:region:eu-central-1'    => 'Europe (Frankfurt)',
 'ci:s3:region:ap-southeast-1'  => 'Asia Pacific (Singapore)',
 'ci:s3:region:ap-southeast-2'  => 'Asia Pacific (Sydney, Australia)',
 'ci:s3:region:ap-northeast-1'  => 'Asia Pacific (Tokyo, Japan)',

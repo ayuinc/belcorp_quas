@@ -140,6 +140,14 @@
 			</td>
 		</tr>
 		<tr>
+			<td>Direct URL to Image Previews</td>
+			<td>
+				<input name="channel_images[direct_url]" <?php if (isset($override['direct_url'])):?>disabled="disabled"<?php endif;?> type="radio" value="yes" <?php if ($direct_url == 'yes') echo 'checked'?>> <?=lang('ci:yes')?>&nbsp;&nbsp;
+				<input name="channel_images[direct_url]" <?php if (isset($override['direct_url'])):?>disabled="disabled"<?php endif;?> type="radio" value="no" <?php if ($direct_url == 'no') echo 'checked'?>> <?=lang('ci:no')?>
+				<br><small>If your images are above the webroot, this setting should be set to "no"</small>
+			</td>
+		</tr>
+		<tr>
 			<td>File Size Limit (in KB)</td>
 			<td>
 				<input type="text" name="channel_images[max_filesize]" <?php if (isset($override['max_filesize']) === true):?>disabled<?php endif;?> value="<?=$max_filesize?>" style="border:1px solid #ccc; width:80px;">

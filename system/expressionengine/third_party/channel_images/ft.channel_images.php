@@ -80,6 +80,7 @@ class Channel_images_ft extends EE_Fieldtype
     function display_field($data)
     {
         $conf = $this->EE->config->item('channel_images');
+        $locs = array();
 
         //----------------------------------------
         // Global Vars
@@ -273,6 +274,7 @@ class Channel_images_ft extends EE_Fieldtype
 
                 // Get settings for that field..
                 $temp_settings = $this->EE->channel_images_model->get_field_settings($image->field_id);
+                $temp_settings = $temp_settings['channel_images'];
 
                 $act_url_params = "&amp;fid={$image->field_id}&amp;d={$image->entry_id}";
 
@@ -310,13 +312,18 @@ class Channel_images_ft extends EE_Fieldtype
                 // ReAssign Field ID (WE NEED THIS)
                 $image->field_id = $this->field_id;
 
-                $image->title = html_entity_decode( str_replace('&quot;', '"', $image->title), ENT_QUOTES);
-                $image->description = html_entity_decode( str_replace('&quot;', '"', $image->description), ENT_QUOTES);
-                $image->cifield_1 = html_entity_decode( str_replace('&quot;', '"', $image->cifield_1), ENT_QUOTES);
-                $image->cifield_2 = html_entity_decode( str_replace('&quot;', '"', $image->cifield_2), ENT_QUOTES);
-                $image->cifield_3 = html_entity_decode( str_replace('&quot;', '"', $image->cifield_3), ENT_QUOTES);
-                $image->cifield_4 = html_entity_decode( str_replace('&quot;', '"', $image->cifield_4), ENT_QUOTES);
-                $image->cifield_5 = html_entity_decode( str_replace('&quot;', '"', $image->cifield_5), ENT_QUOTES);
+                $image->title = html_entity_decode( str_replace('&quot;', '"', $image->title), ENT_QUOTES, 'UTF-8');
+                $image->description = html_entity_decode( str_replace('&quot;', '"', $image->description), ENT_QUOTES, 'UTF-8');
+                $image->cifield_1 = html_entity_decode( str_replace('&quot;', '"', $image->cifield_1), ENT_QUOTES, 'UTF-8');
+                $image->cifield_2 = html_entity_decode( str_replace('&quot;', '"', $image->cifield_2), ENT_QUOTES, 'UTF-8');
+                $image->cifield_3 = html_entity_decode( str_replace('&quot;', '"', $image->cifield_3), ENT_QUOTES, 'UTF-8');
+                $image->cifield_4 = html_entity_decode( str_replace('&quot;', '"', $image->cifield_4), ENT_QUOTES, 'UTF-8');
+                $image->cifield_5 = html_entity_decode( str_replace('&quot;', '"', $image->cifield_5), ENT_QUOTES, 'UTF-8');
+
+                //$image->description = EncodingCI::toUTF8($image->description);
+
+                //$image->title = utf8_encode($image->title);
+                //$image->description = utf8_encode($image->description);
 
                 // On some systems characters are not passed on as UTF-8, json_encode only works with UTF-8 chars.
                 // This "hack" forces utf-8 encoding, good for swedisch chars etc
@@ -330,16 +337,70 @@ class Channel_images_ft extends EE_Fieldtype
                     $image->cifield_5 = utf8_encode($image->cifield_5);
                 }
 
+                //$from = mb_detect_encoding($image->title);
+                //$image->title = mb_convert_encoding($image->title, 'UTF-8', $from);
+                //$image->description = mb_convert_encoding($image->description, 'UTF-8', $from);
+
+                if (isset($conf['utf8_multibyte_fields_for_json']) === true && $conf['utf8_multibyte_fields_for_json'] == 'yes') {
+                    $from = mb_detect_encoding($image->title);
+                    $image->title = mb_convert_encoding($image->title, 'UTF-8', $from);
+                    $image->description = mb_convert_encoding($image->description, 'UTF-8', $from);
+                    $image->cifield_1 = mb_convert_encoding($image->cifield_1, 'UTF-8', $from);
+                    $image->cifield_2 = mb_convert_encoding($image->cifield_2, 'UTF-8', $from);
+                    $image->cifield_3 = mb_convert_encoding($image->cifield_3, 'UTF-8', $from);
+                    $image->cifield_4 = mb_convert_encoding($image->cifield_4, 'UTF-8', $from);
+                    $image->cifield_5 = mb_convert_encoding($image->cifield_5, 'UTF-8', $from);
+                }
+
 
                 // Fix utf chars once and for all
-                // $image->title = base64_encode($image->title);
-                // $image->description = base64_encode($image->description);
-                // $image->cifield_1 = base64_encode($image->cifield_1);
-                // $image->cifield_2 = base64_encode($image->cifield_2);
-                // $image->cifield_3 = base64_encode($image->cifield_3);
-                // $image->cifield_4 = base64_encode($image->cifield_4);
-                // $image->cifield_5 = base64_encode($image->cifield_5);
+                //$image->title = base64_encode($image->title);
+                //$image->description = base64_encode($image->description);
+                //$image->cifield_1 = base64_encode($image->cifield_1);
+                //$image->cifield_2 = base64_encode($image->cifield_2);
+                //$image->cifield_3 = base64_encode($image->cifield_3);
+                //$image->cifield_4 = base64_encode($image->cifield_4);
+                //$image->cifield_5 = base64_encode($image->cifield_5);
+                //$image->category = base64_encode($image->category);
+                //$image->cover = base64_encode($image->cover);
 
+                if ($settings['direct_url'] == 'yes') {
+                    if (isset($locs[$image->field_id]) === false) {
+                        $location_type = $temp_settings['upload_location'];
+                        $location_class = 'CI_Location_'.$location_type;
+
+                        // Load Settings
+                        if (isset($temp_settings['locations'][$location_type]) == false) {
+                            $o['body'] = $this->EE->lang->line('ci:location_settings_failure');
+                            exit( $this->EE->image_helper->generate_json($o) );
+                        }
+
+                        $location_settings = $temp_settings['locations'][$location_type];
+
+                        // Load Main Class
+                        if (class_exists('Image_Location') == false) require PATH_THIRD.'channel_images/locations/image_location.php';
+
+                        // Try to load Location Class
+                        if (class_exists($location_class) == false)
+                        {
+                            $location_file = PATH_THIRD.'channel_images/locations/'.$location_type.'/'.$location_type.'.php';
+
+                            if (file_exists($location_file) == false)
+                            {
+                                $o['body'] = $this->EE->lang->line('ci:location_load_failure');
+                                exit( $this->EE->image_helper->generate_json($o) );
+                            }
+
+                            require $location_file;
+                        }
+
+                        // Init
+                        $locs[$image->field_id] = new $location_class($location_settings);
+                    }
+
+                    $image->small_img_url = $locs[$image->field_id]->parse_image_url($image->entry_id, $small_filename);
+                    $image->big_img_url = $locs[$image->field_id]->parse_image_url($image->entry_id, $big_filename);
+                }
 
 
                 $vData['assigned_images'][] = $image;
@@ -423,13 +484,15 @@ class Channel_images_ft extends EE_Fieldtype
                     $image->field_id = $this->field_id;
 
                     // Fix utf chars once and for all
-                    // $image->title = base64_encode($image->title);
-                    // $image->description = base64_encode($image->description);
-                    // $image->cifield_1 = base64_encode($image->cifield_1);
-                    // $image->cifield_2 = base64_encode($image->cifield_2);
-                    // $image->cifield_3 = base64_encode($image->cifield_3);
-                    // $image->cifield_4 = base64_encode($image->cifield_4);
-                    // $image->cifield_5 = base64_encode($image->cifield_5);
+                    $image->cover = base64_decode($image->cover);
+                    $image->title = base64_decode($image->title);
+                    $image->description = base64_decode($image->description);
+                    $image->cifield_1 = base64_decode($image->cifield_1);
+                    $image->cifield_2 = base64_decode($image->cifield_2);
+                    $image->cifield_3 = base64_decode($image->cifield_3);
+                    $image->cifield_4 = base64_decode($image->cifield_4);
+                    $image->cifield_5 = base64_decode($image->cifield_5);
+                    $image->category = base64_decode($image->category);
 
                     $vData['assigned_images'][] = $image;
 
@@ -497,6 +560,18 @@ class Channel_images_ft extends EE_Fieldtype
                 {
                     $file = $this->EE->image_helper->decode_json($file['data']);
                     if (isset($file->delete) === true) continue;
+
+                    $file->title = base64_decode($file->title);
+                    $file->description = base64_decode($file->description);
+                    $file->url_title = base64_decode($file->url_title);
+                    $file->category = base64_decode($file->category);
+                    $file->cifield_1 = base64_decode($file->cifield_1);
+                    $file->cifield_2 = base64_decode($file->cifield_2);
+                    $file->cifield_3 = base64_decode($file->cifield_3);
+                    $file->cifield_4 = base64_decode($file->cifield_4);
+                    $file->cifield_5 = base64_decode($file->cifield_5);
+
+                    $file->cover = base64_decode($file->cover);
 
                     $field_data .= "{$file->filename} - {$file->title}\n{$file->description} {$file->cifield_1} {$file->cifield_2} {$file->cifield_3} {$file->cifield_4} {$file->cifield_5}\n\n";
                 }
@@ -1474,10 +1549,11 @@ class Channel_images_ft extends EE_Fieldtype
                     continue;
                 }
 
-                if ($file->image_id > 0)
-                {
+                //if ($file->image_id > 0) {
+                if ($file->image_id > 0 && $entry_id == $file->entry_id) {
                     continue;
                 }
+
 
                 //Extension
                 $extension = substr( strrchr($file->filename, '.'), 1);
@@ -1499,7 +1575,7 @@ class Channel_images_ft extends EE_Fieldtype
                 // Lets grab original width/height/field_id/channel_id/entry_id
                 if ($file->link_image_id > 0)
                 {
-                    $imgquery = $this->EE->db->query("SELECT entry_id, field_id, channel_id, filesize, width, height FROM exp_channel_images WHERE image_id = {$file->link_image_id} ");
+                    $imgquery = $this->EE->db->query("SELECT entry_id, field_id, channel_id, filesize, width, height, sizes_metadata FROM exp_channel_images WHERE image_id = {$file->link_image_id} ");
                     $file->link_entryid = $imgquery->row('entry_id');
                     $file->link_channelid = $imgquery->row('channel_id');
                     $file->link_fieldid = $imgquery->row('field_id');
@@ -1897,6 +1973,298 @@ class Channel_images_ft extends EE_Fieldtype
 
         } // if
     }
+}
+
+
+
+class EncodingCI {
+
+  protected static $win1252ToUtf8 = array(
+        128 => "\xe2\x82\xac",
+
+        130 => "\xe2\x80\x9a",
+        131 => "\xc6\x92",
+        132 => "\xe2\x80\x9e",
+        133 => "\xe2\x80\xa6",
+        134 => "\xe2\x80\xa0",
+        135 => "\xe2\x80\xa1",
+        136 => "\xcb\x86",
+        137 => "\xe2\x80\xb0",
+        138 => "\xc5\xa0",
+        139 => "\xe2\x80\xb9",
+        140 => "\xc5\x92",
+
+        142 => "\xc5\xbd",
+
+
+        145 => "\xe2\x80\x98",
+        146 => "\xe2\x80\x99",
+        147 => "\xe2\x80\x9c",
+        148 => "\xe2\x80\x9d",
+        149 => "\xe2\x80\xa2",
+        150 => "\xe2\x80\x93",
+        151 => "\xe2\x80\x94",
+        152 => "\xcb\x9c",
+        153 => "\xe2\x84\xa2",
+        154 => "\xc5\xa1",
+        155 => "\xe2\x80\xba",
+        156 => "\xc5\x93",
+
+        158 => "\xc5\xbe",
+        159 => "\xc5\xb8"
+  );
+
+    protected static $brokenUtf8ToUtf8 = array(
+        "\xc2\x80" => "\xe2\x82\xac",
+
+        "\xc2\x82" => "\xe2\x80\x9a",
+        "\xc2\x83" => "\xc6\x92",
+        "\xc2\x84" => "\xe2\x80\x9e",
+        "\xc2\x85" => "\xe2\x80\xa6",
+        "\xc2\x86" => "\xe2\x80\xa0",
+        "\xc2\x87" => "\xe2\x80\xa1",
+        "\xc2\x88" => "\xcb\x86",
+        "\xc2\x89" => "\xe2\x80\xb0",
+        "\xc2\x8a" => "\xc5\xa0",
+        "\xc2\x8b" => "\xe2\x80\xb9",
+        "\xc2\x8c" => "\xc5\x92",
+
+        "\xc2\x8e" => "\xc5\xbd",
+
+
+        "\xc2\x91" => "\xe2\x80\x98",
+        "\xc2\x92" => "\xe2\x80\x99",
+        "\xc2\x93" => "\xe2\x80\x9c",
+        "\xc2\x94" => "\xe2\x80\x9d",
+        "\xc2\x95" => "\xe2\x80\xa2",
+        "\xc2\x96" => "\xe2\x80\x93",
+        "\xc2\x97" => "\xe2\x80\x94",
+        "\xc2\x98" => "\xcb\x9c",
+        "\xc2\x99" => "\xe2\x84\xa2",
+        "\xc2\x9a" => "\xc5\xa1",
+        "\xc2\x9b" => "\xe2\x80\xba",
+        "\xc2\x9c" => "\xc5\x93",
+
+        "\xc2\x9e" => "\xc5\xbe",
+        "\xc2\x9f" => "\xc5\xb8"
+  );
+
+  protected static $utf8ToWin1252 = array(
+       "\xe2\x82\xac" => "\x80",
+
+       "\xe2\x80\x9a" => "\x82",
+       "\xc6\x92"     => "\x83",
+       "\xe2\x80\x9e" => "\x84",
+       "\xe2\x80\xa6" => "\x85",
+       "\xe2\x80\xa0" => "\x86",
+       "\xe2\x80\xa1" => "\x87",
+       "\xcb\x86"     => "\x88",
+       "\xe2\x80\xb0" => "\x89",
+       "\xc5\xa0"     => "\x8a",
+       "\xe2\x80\xb9" => "\x8b",
+       "\xc5\x92"     => "\x8c",
+
+       "\xc5\xbd"     => "\x8e",
+
+
+       "\xe2\x80\x98" => "\x91",
+       "\xe2\x80\x99" => "\x92",
+       "\xe2\x80\x9c" => "\x93",
+       "\xe2\x80\x9d" => "\x94",
+       "\xe2\x80\xa2" => "\x95",
+       "\xe2\x80\x93" => "\x96",
+       "\xe2\x80\x94" => "\x97",
+       "\xcb\x9c"     => "\x98",
+       "\xe2\x84\xa2" => "\x99",
+       "\xc5\xa1"     => "\x9a",
+       "\xe2\x80\xba" => "\x9b",
+       "\xc5\x93"     => "\x9c",
+
+       "\xc5\xbe"     => "\x9e",
+       "\xc5\xb8"     => "\x9f"
+    );
+
+  static function toUTF8($text){
+  /**
+   * Function Encoding::toUTF8
+   *
+   * This function leaves UTF8 characters alone, while converting almost all non-UTF8 to UTF8.
+   *
+   * It assumes that the encoding of the original string is either Windows-1252 or ISO 8859-1.
+   *
+   * It may fail to convert characters to UTF-8 if they fall into one of these scenarios:
+   *
+   * 1) when any of these characters:   ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞß
+   *    are followed by any of these:  ("group B")
+   *                                    ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶•¸¹º»¼½¾¿
+   * For example:   %ABREPRESENT%C9%BB. «REPRESENTÉ»
+   * The "«" (%AB) character will be converted, but the "É" followed by "»" (%C9%BB)
+   * is also a valid unicode character, and will be left unchanged.
+   *
+   * 2) when any of these: àáâãäåæçèéêëìíîï  are followed by TWO chars from group B,
+   * 3) when any of these: ðñòó  are followed by THREE chars from group B.
+   *
+   * @name toUTF8
+   * @param string $text  Any string.
+   * @return string  The same string, UTF8 encoded
+   *
+   */
+
+    if(is_array($text))
+    {
+      foreach($text as $k => $v)
+      {
+        $text[$k] = self::toUTF8($v);
+      }
+      return $text;
+    } elseif(is_string($text)) {
+
+      if ( function_exists('mb_strlen') && ((int) ini_get('mbstring.func_overload')) & 2) {
+         $max = mb_strlen($text,'8bit');
+      } else {
+         $max = strlen($text);
+      }
+
+      $buf = "";
+      for($i = 0; $i < $max; $i++){
+          $c1 = $text{$i};
+          if($c1>="\xc0"){ //Should be converted to UTF8, if it's not UTF8 already
+            $c2 = $i+1 >= $max? "\x00" : $text{$i+1};
+            $c3 = $i+2 >= $max? "\x00" : $text{$i+2};
+            $c4 = $i+3 >= $max? "\x00" : $text{$i+3};
+              if($c1 >= "\xc0" & $c1 <= "\xdf"){ //looks like 2 bytes UTF8
+                  if($c2 >= "\x80" && $c2 <= "\xbf"){ //yeah, almost sure it's UTF8 already
+                      $buf .= $c1 . $c2;
+                      $i++;
+                  } else { //not valid UTF8.  Convert it.
+                      $cc1 = (chr(ord($c1) / 64) | "\xc0");
+                      $cc2 = ($c1 & "\x3f") | "\x80";
+                      $buf .= $cc1 . $cc2;
+                  }
+              } elseif($c1 >= "\xe0" & $c1 <= "\xef"){ //looks like 3 bytes UTF8
+                  if($c2 >= "\x80" && $c2 <= "\xbf" && $c3 >= "\x80" && $c3 <= "\xbf"){ //yeah, almost sure it's UTF8 already
+                      $buf .= $c1 . $c2 . $c3;
+                      $i = $i + 2;
+                  } else { //not valid UTF8.  Convert it.
+                      $cc1 = (chr(ord($c1) / 64) | "\xc0");
+                      $cc2 = ($c1 & "\x3f") | "\x80";
+                      $buf .= $cc1 . $cc2;
+                  }
+              } elseif($c1 >= "\xf0" & $c1 <= "\xf7"){ //looks like 4 bytes UTF8
+                  if($c2 >= "\x80" && $c2 <= "\xbf" && $c3 >= "\x80" && $c3 <= "\xbf" && $c4 >= "\x80" && $c4 <= "\xbf"){ //yeah, almost sure it's UTF8 already
+                      $buf .= $c1 . $c2 . $c3;
+                      $i = $i + 2;
+                  } else { //not valid UTF8.  Convert it.
+                      $cc1 = (chr(ord($c1) / 64) | "\xc0");
+                      $cc2 = ($c1 & "\x3f") | "\x80";
+                      $buf .= $cc1 . $cc2;
+                  }
+              } else { //doesn't look like UTF8, but should be converted
+                      $cc1 = (chr(ord($c1) / 64) | "\xc0");
+                      $cc2 = (($c1 & "\x3f") | "\x80");
+                      $buf .= $cc1 . $cc2;
+              }
+          } elseif(($c1 & "\xc0") == "\x80"){ // needs conversion
+                if(isset(self::$win1252ToUtf8[ord($c1)])) { //found in Windows-1252 special cases
+                    $buf .= self::$win1252ToUtf8[ord($c1)];
+                } else {
+                  $cc1 = (chr(ord($c1) / 64) | "\xc0");
+                  $cc2 = (($c1 & "\x3f") | "\x80");
+                  $buf .= $cc1 . $cc2;
+                }
+          } else { // it doesn't need conversion
+              $buf .= $c1;
+          }
+      }
+      return $buf;
+    } else {
+      return $text;
+    }
+  }
+
+  static function toWin1252($text) {
+    if(is_array($text)) {
+      foreach($text as $k => $v) {
+        $text[$k] = self::toWin1252($v);
+      }
+      return $text;
+    } elseif(is_string($text)) {
+      return utf8_decode(str_replace(array_keys(self::$utf8ToWin1252), array_values(self::$utf8ToWin1252), self::toUTF8($text)));
+    } else {
+      return $text;
+    }
+  }
+
+  static function toISO8859($text) {
+    return self::toWin1252($text);
+  }
+
+  static function toLatin1($text) {
+    return self::toWin1252($text);
+  }
+
+  static function fixUTF8($text){
+    if(is_array($text)) {
+      foreach($text as $k => $v) {
+        $text[$k] = self::fixUTF8($v);
+      }
+      return $text;
+    }
+
+    $last = "";
+    while($last <> $text){
+      $last = $text;
+      $text = self::toUTF8(utf8_decode(str_replace(array_keys(self::$utf8ToWin1252), array_values(self::$utf8ToWin1252), $text)));
+    }
+    $text = self::toUTF8(utf8_decode(str_replace(array_keys(self::$utf8ToWin1252), array_values(self::$utf8ToWin1252), $text)));
+    return $text;
+  }
+
+  static function UTF8FixWin1252Chars($text){
+    // If you received an UTF-8 string that was converted from Windows-1252 as it was ISO8859-1
+    // (ignoring Windows-1252 chars from 80 to 9F) use this function to fix it.
+    // See: http://en.wikipedia.org/wiki/Windows-1252
+
+    return str_replace(array_keys(self::$brokenUtf8ToUtf8), array_values(self::$brokenUtf8ToUtf8), $text);
+  }
+
+  static function removeBOM($str=""){
+    if(substr($str, 0,3) == pack("CCC",0xef,0xbb,0xbf)) {
+      $str=substr($str, 3);
+    }
+    return $str;
+  }
+
+  public static function normalizeEncoding($encodingLabel)
+  {
+    $encoding = strtoupper($encodingLabel);
+    $enc = preg_replace('/[^a-zA-Z0-9\s]/', '', $encoding);
+    $equivalences = array(
+        'ISO88591' => 'ISO-8859-1',
+        'ISO8859'  => 'ISO-8859-1',
+        'ISO'      => 'ISO-8859-1',
+        'LATIN1'   => 'ISO-8859-1',
+        'LATIN'    => 'ISO-8859-1',
+        'UTF8'     => 'UTF-8',
+        'UTF'      => 'UTF-8',
+        'WIN1252'  => 'ISO-8859-1',
+        'WINDOWS1252' => 'ISO-8859-1'
+    );
+
+    if(empty($equivalences[$encoding])){
+      return 'UTF-8';
+    }
+
+    return $equivalences[$encoding];
+  }
+
+  public static function encode($encodingLabel, $text)
+  {
+    $encodingLabel = self::normalizeEncoding($encodingLabel);
+    if($encodingLabel == 'UTF-8') return Encoding::toUTF8($text);
+    if($encodingLabel == 'ISO-8859-1') return Encoding::toLatin1($text);
+  }
+
 }
 
 /* End of file ft.channel_images.php */

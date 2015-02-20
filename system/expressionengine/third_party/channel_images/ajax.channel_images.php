@@ -1179,7 +1179,7 @@ class Channel_Images_AJAX
 		$image->big_img_url = "{$preview_url}&amp;f={$filename_big}&amp;fid={$image->field_id}&amp;d={$image->entry_id}";
 
 		$image->link_image_id = $image->image_id;
-		$image->image_id = 0;
+		//$image->image_id = 0;
 		$image->cover = 0;
 		$image->field_id = $field_id;
 
@@ -1204,6 +1204,7 @@ class Channel_Images_AJAX
 	public function refresh_images()
 	{
 		$out = array('success' => 'no', 'images'=>array());
+		$conf = $this->EE->config->item('channel_images');
 
 		$field_id = $this->EE->input->post('field_id');
 		$entry_id = $this->EE->input->post('entry_id');
@@ -1285,13 +1286,25 @@ class Channel_Images_AJAX
 			// ReAssign Field ID (WE NEED THIS)
 			$image->field_id = $field_id;
 
-			$image->title = str_replace('&quot;', '"', $image->title);
-			$image->description = str_replace('&quot;', '"', $image->description);
-			$image->cifield_1 = str_replace('&quot;', '"', $image->cifield_1);
-			$image->cifield_2 = str_replace('&quot;', '"', $image->cifield_2);
-			$image->cifield_3 = str_replace('&quot;', '"', $image->cifield_3);
-			$image->cifield_4 = str_replace('&quot;', '"', $image->cifield_4);
-			$image->cifield_5 = str_replace('&quot;', '"', $image->cifield_5);
+            $image->title = html_entity_decode( str_replace('&quot;', '"', $image->title), ENT_QUOTES);
+            $image->description = html_entity_decode( str_replace('&quot;', '"', $image->description), ENT_QUOTES);
+            $image->cifield_1 = html_entity_decode( str_replace('&quot;', '"', $image->cifield_1), ENT_QUOTES);
+            $image->cifield_2 = html_entity_decode( str_replace('&quot;', '"', $image->cifield_2), ENT_QUOTES);
+            $image->cifield_3 = html_entity_decode( str_replace('&quot;', '"', $image->cifield_3), ENT_QUOTES);
+            $image->cifield_4 = html_entity_decode( str_replace('&quot;', '"', $image->cifield_4), ENT_QUOTES);
+            $image->cifield_5 = html_entity_decode( str_replace('&quot;', '"', $image->cifield_5), ENT_QUOTES);
+
+            // On some systems characters are not passed on as UTF-8, json_encode only works with UTF-8 chars.
+            // This "hack" forces utf-8 encoding, good for swedisch chars etc
+            if (isset($conf['utf8_encode_fields_for_json']) === true && $conf['utf8_encode_fields_for_json'] == 'yes') {
+                $image->title = utf8_encode($image->title);
+                $image->description = utf8_encode($image->description);
+                $image->cifield_1 = utf8_encode($image->cifield_1);
+                $image->cifield_2 = utf8_encode($image->cifield_2);
+                $image->cifield_3 = utf8_encode($image->cifield_3);
+                $image->cifield_4 = utf8_encode($image->cifield_4);
+                $image->cifield_5 = utf8_encode($image->cifield_5);
+            }
 
 			$out['images'][] = $image;
 
@@ -2885,7 +2898,7 @@ class Channel_Images_AJAX
 		// -----------------------------------------
 		// Load Actions :O
 		// -----------------------------------------
-		$actions = &$this->EE->image_helper->get_actions();
+		$actions = $this->EE->image_helper->get_actions();
 
 		$limit_sizes = array();
 		if (isset($_POST['sizes'][$field_id]) === true) {

@@ -61,9 +61,13 @@ class Channel_images_ext
 		// Check if our toolbar button has been added
         $include_btn = FALSE;
 
+        if (isset($config['toolbar']) === false) {
+        	return $config;
+        }
+
         foreach ($config['toolbar'] as $tbgroup)
         {
-            if (in_array('ChannelImages', $tbgroup))
+            if (is_array($tbgroup) && in_array('ChannelImages', $tbgroup))
             {
                 $include_btn = TRUE;
                 break;

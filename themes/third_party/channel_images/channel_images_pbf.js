@@ -46,11 +46,6 @@ ChannelImages.Init = function(){
 		ChannelImages.CFields.find(':input').not('.ImageData').trigger('blur').trigger('change');
 	});
 
-	ChannelImages.CFields.delegate('.Image select', 'change', ChannelImages.TriggerChangeFile);
-	ChannelImages.CFields.delegate('.Image textarea, .Image input', 'keyup', ChannelImages.TriggerChangeFile);
-	ChannelImages.CFields.delegate('.Image input', 'keyup', function(event){ if (event.keyCode == 13) return false;  });
-
-
 	if (typeof(Bwf) != 'undefined'){
 		Bwf.bind('channel_images', 'previewClose', function(){
 			ChannelImages.RefreshImages(Bwf._transitionInstance.draftExists);
@@ -104,6 +99,10 @@ ChannelImages.InitFields = function(){
 
 	ChannelImages.CFields.delegate('.StoredImages', 'click', ChannelImages.OpenStoredImages);
 	ChannelImages.CFields.delegate('.ImportImages', 'click', ChannelImages.OpenImportFiles);
+
+	ChannelImages.CFields.delegate('.Image select', 'change', ChannelImages.TriggerChangeFile);
+	ChannelImages.CFields.delegate('.Image textarea, .Image input', 'keyup', ChannelImages.TriggerChangeFile);
+	ChannelImages.CFields.delegate('.Image input', 'keyup', function(event){ if (event.keyCode == 13) return false;  });
 };
 
 //********************************************************************************* //
@@ -180,7 +179,7 @@ ChannelImages.AddNewFile = function(JSONOBJ, FIELD_ID, Sync){
 	if (!JSONOBJ.cifield_5) JSONOBJ.cifield_5 = '';
 	if (!JSONOBJ.cover) JSONOBJ.cover = '0';
 	if (!JSONOBJ.link_image_id) JSONOBJ.link_image_id = '0';
-
+//console.log(JSONOBJ.title);
 	var jsonData = $.extend(true,{},JSONOBJ);
 	jsonData.title = jsonData.title ? $.base64Encode(jsonData.title) : '';
 	jsonData.description = jsonData.description ? $.base64Encode(jsonData.description) : '';
@@ -343,6 +342,8 @@ ChannelImages.SyncOrderNumbers = function(FIELD_ID){
 			// In some cases field_id is not available, lets make sure it's there
 			var obj = JSON.parse(FILETR.find('textarea.ImageData').html());
 			obj.field_id = FIELD_ID;
+			obj.title = $.base64Decode(obj.title);
+			obj.description = $.base64Decode(obj.description);
 
 			ChannelImages.Fields['Field_'+FIELD_ID].wimages.push( obj );
 		}
@@ -679,8 +680,8 @@ ChannelImages.HTML5.UploadStart = function(FIELD_ID) {
 	xhr.open('post', UploadURL, true);
 	xhr.setRequestHeader('Cache-Control', 'no-cache');
 	xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-	xhr.setRequestHeader('X-File-Name', File.name);
-	xhr.setRequestHeader('X-File-Size', File.fileSize);
+	//xhr.setRequestHeader('X-File-Name', File.name);
+	//xhr.setRequestHeader('X-File-Size', File.fileSize);
 
 
 	//xhr.setRequestHeader("Content-Type", "multipart/form-data");
@@ -1413,10 +1414,15 @@ ChannelImages.OpenImageEdit = function(e){
 	var FIELD_ID = $(e.target).closest('div.CIField').data('fieldid');
 
 	var PostParams = {XID: EE.XID};
-	PostParams.entry_id = $('input[name=entry_id]').val();
 	PostParams.site_id = ChannelImages.site_id;
 	PostParams.field_id = FIELD_ID;
 	PostParams.key = ChannelImages.Fields['Field_'+FIELD_ID].key;
+
+	var imgdat = $.parseJSON(
+		$(e.target).closest('.Image').find('textarea.ImageData').html()
+	);
+
+	PostParams.entry_id = (typeof imgdat.entry_id != 'undefined') ? imgdat.entry_id : $('input[name=entry_id]').val();
 
 	$('.EditImageWrapper').remove();
 

@@ -1,0 +1,414 @@
+Channel Images 5.4.19 - (2015-02-20)
+- ADDED: {image:index}, same as {image:count} but the count starts at 0 instead of 1
+- BUG: Base64encoded data in the custom field if save_in_field was enabled.
+- BUG: Category selection was not being preserved when the form returned from error
+- BUG: In some specific circumstances editing an image would produce a PHP error. Thanks to: (Bradlay Law, Digital Media)
+- BUG: The WYGWAM extension expects an array which in certain conditions turned out to be a string.
+
+Channel Images 5.4.18 - (2014-07-03)
+- CHANGED: EE addons that allow POST keys to be used as variables in templates tend to break when POST keys are arrays. (CI Edit Image Save)
+- BUG: Double encoding when using Better Workflow
+
+Channel Images 5.4.17 - (2014-04-08)
+- IMPROVED: The WYGWAM plugin no longer needs to be uploaded separately.
+- CHANGED: Disabled XSS filter on individual fields by default. Turn it on with $config['channel_images']['xss_field_strings']="yes";
+- BUG: Replace image no longer gives deprecation warnings in EE 2.8
+- BUG: URL title was being base64 encoded
+
+Channel Images 5.4.16 - (2014-03-26)
+- IMPROVED: Recoded the Channel Images plugin for Editor
+- BUG: Cover image was not sticking in tile mode
+
+Channel Images 5.4.15 - (2014-03-03)
+- BUG: Small cache bug for EE 2.8
+
+Channel Images 5.4.14 - (2014-02-24)
+- BUG: Prevented categories & cover image status to be saved
+
+Channel Images 5.4.11 - (2014-02-15)
+- ADDED: Import IPTC/EXIF data from images directly in the field. (Field Settings -> Field columns -> Default Content)
+- ADDED: Import from File fields
+- ADDED: Filesize limit option
+- ADDED: Auto Rotate iPhone/Andriod pics (thanks to Stuart Barker)
+- IMPROVED: WYSIWYG image links should render the full image URL
+- BUG: In some cases S3 regeneration would not work
+- BUG: Some CSS style fixes for SAEF
+
+Channel Images 5.4.10 - (2013-11-19)
+- BUG: Replace image now works in EE 2.7
+- BUG: Convert to JPG option in some cases did not save the image in the correct format
+- BUG: PHP error when submitting an empty CI field in Channel Form
+- BUG: In some cases, CI would replace image url's that where not uploaded through CI
+
+Channel Images 5.4.9 - (2013-11-06)
+- ADDED: Entry ID filter for image regeneration
+- ADDED: Choose Individual Sizes Regeneration
+- ADDED: Static Image Variables output for WYGWAM
+- ADDED: Images urls in a WYGSIWYG field (wygwam,editor) are now being converted to variables. Shout-out to Pixel & Tonic.
+- BUG: Flash based uploads didn't work on EE 2.7.0+
+
+Channel Images 5.4.8 - (2013-07-15)
+- ADDED: exclude_category="" parameter
+- BUG: Fixed a small bug that caused column settings to be reset
+
+Channel Images 5.4.7 - (2013-07-15)
+- IMPROVEMENT: Import Images (Matrix) now has error ajax reporting
+
+Channel Images 5.4.6 - (2013-06-19)
+- BUG: PHP error when publisher was not installed
+
+Channel Images 5.4.5 - (2013-06-18)
+- ADDED: Publisher support
+- ADDED: CE Image Watermark action
+- IMPROVED: Updated colorbox.js to v1.4.19
+- IMRPOVED: redactor.js 9 support
+
+Channel Images 5.4.4 - (2013-05-06)
+- ADDED: Imagick: Resize Image action
+- IMPROVED: Edit image button is disabled if the store original image option is set to no
+- IMPROVED: Size metadata is now being regenerated when editing an image & using single actions
+
+Channel Images 5.4.3 - (2013-04-12)
+- ADDED: When you upload a image with a filename that already exists a number will be added to the end of the filename
+- ADDED: config.php option to disable running filenames through ascii filter
+- ADDED: is_draft="" override parameter, thanks to: James Spibey
+- ADDED: Batch mode for image regeneration
+- ADDED: IS_EMPTY variable to category=""
+- ADDED: Default category option
+- BUG: When changing the channel of an entry, the channel_id for the images should change too
+- BUG: Small tweak to support for url_third_themes config override
+
+Channel Images 5.4.2 - (2013-02-20)
+- ADDED: Option to disable Cover First functionality
+- CHANGE: Tiles view mode is now the default mode for new fields
+
+Channel Images 5.4.1 - (2013-02-18)
+- ADDED: {image:absolute_count} and {image:absolute_total}
+- BUG: Small CSS tweak to the border of image tiles
+
+Channel Images 5.4.0 - (2013-02-18)
+- ADDED: Support for a Tiles View mode of the fieldtype
+- ADDED: Support for EXIF & IPTC AND XMP data!
+- ADDED: Support for replacing an existing image
+- ADDED: Image covers are now moved to the first position of the image list
+- ADDED: Hotkey to delete all images in a field at once. (hold shift while deleting one image)
+
+Channel Images 5.3.9 - (2013-01-12)
+- ADDED: Repeat option to gaussian blur action
+- ADDED: Imagick: Change Image Resolution (DPI/PPI) action
+- BUG: Strip percent symbol from filenames
+
+Channel Images 5.3.8 - (2012-12-13)
+- ADDED: Support for url_third_themes config override
+- ADDED: Changed Image actions directory structure
+- ADDED: Filter: Colorize action
+- ADDED: Convert to JPEG option in fieldtype settings
+- CHANGED: Field JSON is now base64encoded because of SAEF/Safecracker unicode/quotes issues
+- BUG: In some cases actions without settings would disappear from the actions list
+
+Channel Images 5.3.7 - (2012-11-20)
+- CHANGE: Removed Wyvern directory
+- BUG: Channel="" parameter was ignoring site_id
+- BUG: New line characters where not working in SAEF
+
+Channel Images 5.3.6 - (2012-11-12)
+- ADDED: Updated Cloudfiles SDK
+- CHANGED: Editor button will now display a warning if Channel Images is not present
+- BUG: Double quotes in image titles where being removed
+
+Channel Images 5.3.5 - (2012-10-23)
+- ADDED: Updated Amazon S3 SDK Version
+- ADDED: Sydney, Brazil & Oregon support in S3
+- BUG: RTE plugin image filename regex issue
+- BUG: Images added via stored image would not grab the correct size in wygwam
+
+Channel Images 5.3.4 - (2012-10-17)
+- BUG: A possible security issue if you have access to the SAEF/CP and crafted something correctly
+
+Channel Images 5.3.3 - (2012-10-10)
+- ADDED: Edit Image Crop coordinates
+- BUG: SAEF was unescaping quotes in JSON
+- BUG: PHP error with the greyscale action with GIF images
+- BUG: Image regeneration ignored field_id
+- BUG: Stored images would show raw image data if clicked upon
+- BUG: Image regeneration would fail if filename has uppercase extension
+
+Channel Images 5.3.2 - (2012-10-03)
+- CHANGED: Version numbered js/css links
+- BUG: Edit Image wouldn't work on recently uploaded files which where not saved yet
+
+Channel Images 5.3.1 - (2012-10-03)
+- ADDED: Cancel Edit Image & Cancel Crop Buttons
+- BUG: Edit Image was not working for linked images
+
+Channel Images 5.3.0 - (2012-09-09)
+- ADDED: Image Edit (Crop/Rotate/Flip)
+- ADDED: Zenbu Integration
+- ADDED: Support for the 'cache_path' config override
+- CHANGE: All image metadata fields can now be edited without clicking on the field first
+
+Channel Images 5.2.6 - (2012-08-15)
+- ADDED: Redesigned the Regenerate Images Page
+- ADDED: Fieldtype option to remove the "Cover" button
+- ADDED: decode decode_html_entities="" to the image tag
+- ADDED: size="" parameter to the zip tag.
+- ADDED: "JPEG Adjust Quality" action
+- ADDED: "Imagick: Sharpen" action
+- ADDED: "Imagick: Unsharp Mask" action
+- CHANGE: Filenames with a plus '+' character will now be cleaned
+- BUG: UTF-8 Characters where being malformed on SAEF (EE-BUG)
+- BUG: Temp directories where not properly being removed when doing Regenerate Sizes
+
+Channel Images 5.2.5 - (2012-08-15)
+- ADDED: Fieldtype option to disable Original Image Option in WYSIWYG
+- ADDED: Fieldtype option to save Image Metadata in the Custom Field
+- CHANGED: Image previews are enabled again for Imaegs that where uploaded above the webroot
+- BUG: Image Titles/Desc & Custom fields where not being saved while in draft mode in Better Workflow
+- BUG: Image meta-data where not properly being copied to the draft entries in Better Workflow
+- BUG: Multiple Channel images fields with better workflow would attach the upload handler twice.
+
+Channel Images 5.2.4 - (2012-07-12)
+- ADDED: ci_image_preview_size config option
+- CHANGED: Stored images entry filter now uses AJAX
+- BUG: Wrong image sizes in WYGWAM where being selected.
+
+Channel Images 5.2.3 - (2012-06-29)
+- ADDED: Cloudfront domain option in fieldtype settings
+- ADDED: encode_html_entities="yes" parameter to the images tag
+- ADDED: Support for Amazon S3 request headers (example in config file)
+- CHANGE: Cloudfiles will use it's own internal CA bundle instead of the system bundle
+- CHANGE: Deleting an image will now be processed before processing new images. (Allows for replace)
+- BUG: (Better Workflow) On new entries. Pressing the save & preview button and closing it again, images would disappear.
+- BUG: Recently uploaded Images added via the RTE tools would fail to load
+- BUG: Images with parentheses in their filename would fail to render in WYGWAM
+- BUG: Deleting existing images would not make the field blank
+- BUG: WYWGWAM Images order where reversed
+
+Channel Images 5.2.2 - (2012-06-08)
+- ADDED: Progressive JPEG option
+- ADDED: member_id="" to {exp:channel_images:images}
+- BUG: If the fieldtype was hidden by default (for example in a tab), the wysiwyg plugins didn't work
+- BUG: When using the EE autosave functions, items where being displayed that belonged to another entry
+- BUG: Deleting an image was not updating the image limit count
+- BUG: In SAEF temp images would not recover if a submission error occured
+
+Channel Images 5.2.1 - (2012-05-09)
+- ADDED: Import Files/Images option from local server.
+- BUG: A JS error occured in EE 2.3.1 when binding the stored images event button
+- BUG: In certain template configuration, using next_prev tags would result in a PHP error
+- BUG: Fixed an error in IE in the RTE tool.
+
+Channel Images 5.2 - (2012-04-30)
+- ADDED: Hybrid Upload! If your browser supports HTML5 Upload, the new HTML5 File API will be used, if not Flash based upload will be used. Completely transparent!
+- ADDED: Multiple Channel Images fields are now allowed in the same publish form!
+- ADDED: Better Workflow Integration
+- ADDED: ExpressionEngine Rich Text Editor tool for Channel Images (EE 2.5+ Only)
+- ADDED: Native fieldtype parsing. You can now parse channel images by using it's field name in exp:channel:entries. Example: {my_ci_field cover_only="yes"} ALL CI Variables and Parameters {/my_ci_field}
+- ADDED: CDN URI Override option for Rackspace CloudFiles
+- ADDED: The Image Actions in the Fieldtype Settings are now more compact
+- ADDED: Crossdomain detection warning
+- ADDED: Garbage Collection on temp upload dirs
+- ADDED: Deleting the Channel Images field will also delete all images on the server associated with that field.
+- BUG: If you removed all Actions groups, adding a new action group would not work
+- BUG: In IE8 uploading failed if the flash file was loaded from cache
+
+Channel Images 5.1.7 - (2012-03-24)
+- CHANGED: Trying a different method for replacing filenames with accents.
+- BUG: Having an submissions error in SAEF would not bring back the Channel Images field state.
+
+Channel Images 5.1.6 - (2012-02-27)
+- NEW: Support for (local) File Preferences config overrides // http://expressionengine.com/user_guide/cp/content/files/file_upload_preferences.html#overriding-upload-paths-and-urls-using-configuration-variables
+- NEW: Added experimental support for (local) upload paths
+- CHANGE: Removed the HTTP (200 status code for locked image url)
+- BUG: Leaving category="" empty would show all images.
+
+Channel Images 5.1.5 - (2012-02-08)
+- NEW: Added Field Editor Compatibility
+- NEW: Added {image:cover}
+- CHANGE: with cover_only, and no cover selected, respect image_order (Thanks to: G. Dalenoort)
+- CHANGE: Added some additional security checks for submitted data (Thanks to: G. Dalenoort)
+- BUG: Deleting entries should now correctly delete all images files on the server
+- BUG: When no actions have been defined, an error would occur saving the fieldtype settings
+
+Channel Images 5.1.4 - (2011-12-15)
+- ADDED: Support for subdirectory upload in S3
+
+Channel Images 5.1.3 - (2011-12-15)
+- ADDED: force_cover=""
+- BUG: Channel="" now should correctly limit all images to the specified channel(s)
+- Updated Amazon S3 SDK
+
+Channel Images 5.1.2 - (2011-10-06)
+- BUG: (in IE9) Clicking on the Upload Images button would cause a JS error
+Future Reference: http://code.google.com/p/swfupload/issues/detail?id=348
+
+Channel Images 5.1.1 - (2011-10-02)
+- Added {image:entry_id}, {image:channel_id}
+- Fixed a bug where the image URL_TITLE was not applied correctly when adding new images to an existing entry.
+
+Channel Images 5.1 - (2011-09-21)
+- Added Basic Next/Prev tags: {exp:channel_images:next_image} {exp:channel_images:prev_image}
+- Added {exp:channel_images:zip} to generate a .zip from local files (PHP 5.2+ with php_zip extension enabled)
+
+Channel Images 5.0.6 - (2011-08-23)
+- Channel Images now supports being hidden by default (also in Tab)
+
+Channel Images 5.0.5 - (2011-08-08)
+- Revamped Stored Images (Two search modes: Entry & Image bases)
+- category="" now accepts multiple categories, separate by |
+
+Channel Images 5.0.4 - (2011-07-21)
+- Improved error recognition on uploads
+- Fixed a bug in {exp:channel_images:grouped_images} where the image url's where handled incorrectly
+- Adjusted the JS for the inplace editor for categories, so the onblur event doesn't trigger while choosing a category
+- Fixed a bug where filenames with accents would not upload. (now: filename gets converted to plain ascii)
+- Fixed a bug where a PHP error would occur with the resize adaptive action if "Keep Original" image was turned off
+
+Channel Images 5.0.3 - (2011-06-28)
+- Fixed a bug when submitting a new entry with images used in wygwam, the image url was incorrect.
+
+Channel Images 5.0.2 - (2011-06-23)
+- Fixed a bug in EE 2.2 where the fieldtype settings would not load due how jQuery 1.6.1 changed the attr() method.
+
+Channel Images 5.0.1 - (2011-06-21)
+- Fixed a bug where the Stored Images fieldtype option was not being applied
+- Fixed a bug where the Image Limit counter was not working.
+- Fixed a bug where images_static was not parsing correctly all variables
+- Fixed a bug where relative paths where not being parsed correctly (also during regeneration)
+- Fixed a bug where using the Watermark Image action was triggering a PHP error.
+- Adjusted some CSS to override styles set by NSM Override.css (but still too much is getting overridden)
+
+Channel Images 5.0.0 - (2011-06-16)
+- Redesigned/recoded the Fieldtype Settings
+- Redesigned/recoded the Fieldtype Publish Field
+- Redesigned/recoded the Stored Images Feature
+- Added Amazon S3 & Cloudfiles Support
+- Added 19 Image Upload Actions
+- Added "Per Image Action" in the Publish Field (can be turned off)
+- Removed the "Upload Images" button. Upload now starts automatically
+- Added a "Stop Upload" button, which will stop the upload and clear the queue
+- Added a Fieldtype option to allow you to choose the trigger for the "Edit In Place" feature (click or hover)
+- For each "Image Size" you can now choose if it's allowed to be selected in WYGSIWYG
+- You can now choose which "Image Size" to use for all previews.
+- WYSIWYG Image URL's will not link directly to the image, but to an reference URL. (prevents images from breaking when changing location settings)
+- entry_id is not required when using the tag outside of a channel entry
+- Added channel="", channel_id="" and field_id="" parameters to allow image filtering
+- All image sizes metadata like filesize/width/height are now stored in the DB.
+- Added {image:upload_date format=""}
+
+Channel Images 4.2.5 - (2011-05-03)
+- Added NSM Addon Updater Support
+- Changed the edit_in_place plugin to save the contents when clicking outside of the area
+- Fixed a bug where on SAEF forms clicking on the Move button would send you to the sites homepage
+- Fixed a bug where stored images sometimes would not render the image URL correctly
+
+Channel Images 4.2.1 - (2011-04-26)
+- Fixed Wygwam integration for multiple plugins
+
+Channel Images 4.2 - (2011-04-06)
+- Added image_id="" (seperate multiple with | )
+- Added fieldtype setting to prevent upscaling images
+- Added fieldtype setting to limit Browse Image by author
+- Added fieldtype setting to limit the amount of images to be uploaded.
+- Added a warning to the Fieldtype if the site is Offline.
+- All images after being uploaded are chmodded to 777 to ensure functionality
+- Fixed a bug where the images_static tag would not return anything if there where no images
+
+Channel Images 4.0.2 - (2011-03-05)
+- Added compatibility for Wyvern
+
+Channel Images 4.0.1 - (2011-02-24)
+- Fixed a bug where an php error would occur: (Undefined Variable: out)
+- Fixed a bug where adding a new size would result in a duplicate somewhere else
+- Added {IMG_CATEGORY} to img_prefix/img_suffix to {exp:channel_images:images_static}
+
+Channel Images 4.0 - (2011-02-23)
+- Added WYGWAM Integration
+- Added five custom fields to Channel Images
+- Added ability to hide unwanted Columns in the Publish Form field.
+- Added ability to hide stored images feature
+- Added a new image URL_TITLE field
+- Added {image:locked_url}, {image:SIZE:locked_url} // Generates a obscured url to the image.
+- Added ACT URL to the fieldtype settings.
+- Added backspace="" to {exp:channel_images:images}
+- Disable Category Column if no categories are defined
+- Image url's should render https if needed {image:url}, {image:secure_url} still works tho.
+- Optimized the fieldtype saving routine
+- When a Channel Images field is deleted, all DB entries are now deleted too
+
+Channel Images 3.3 - (2011-01-27)
+- Channel Images is now compatible with SAEF (Safecracker)
+
+Channel Images 3.2.3 - (2011-01-02)
+- Fixed a where in some occasion an javascript error would occur when adding a new linked image
+- Added a missing jquery.execute.js in the themes folder
+
+Channel Images 3.2.2 - (2010-12-24)
+- Adjusted the Channel Images Model to work with EE 2.1.1 And EE 2.1.3, due to big changes in ExpressionEngine
+
+Channel Images 3.2.1 - (2010-12-24)
+- Fixed a bug where the grouped images tag failed to parse the image dimensions
+- Fixed a bug where test watermark images would not render
+- Adjust our Model library to work with EE 2.1.2
+
+Channel Images 3.2 - (2010-12-24)
+- Redesigned the Stored Images feature
+- Linked/Reused images have a seperate "Unlink" icon instead of an Delete icon
+- Fixed a bug where assigned categories could not be removed
+- Fixed a bug where you could not remove the "Cover" status of an image
+
+Channel Images 3.1 - (2010-12-24)
+- Added {image:width}, {image:height}, {image:width:SIZE}, {image:height:SIZE}
+- Added wrapper tags (with css classes) to all pagination sections. CSS Classes: ci_paginate_links, ci_paginate_first, ci_paginate_last, ci_paginate_current, ci_paginate_next, ci_paginate_prev, ci_paginate_num
+- Changed the way the AJAX url gets constructed. Removed index.php check
+- Fixed a bug where deleting an entry was not deleting "linked images"
+- Fixed a bug where PNG uploads would present a bug on some installations
+- Fixed a bug where memory calculations would fail (workaround in place)
+- Fixed a bug where first_page & last_page links would not render out correctly
+- Fixed a small language typo
+
+Channel Images 3.0 - (2010-12-24)
+- Added ability to use already uploaded images! (Re-usable images)
+- Added {exp:channel_images:images_static} // This tag allows you to find/replace premade tags in your post body and replace them with Image Urls/Tags/Desc/Title etc
+- Added {exp:channel_images:grouped_images} // Works the same as {exp:channel_images:images group_by_category="yes"}, but this tag is the prefered way to do it
+- Added Watermarking!
+- Added Crop! (a.k.a adaptiveResize: This function attempts to get the image to as close to the provided dimensions as possible, and then crops the remaining overflow (from the center) to get the image to be the size specified)
+- Added pagination!  - {exp:channel_images:images}
+- Added orderby="random" - {exp:channel_images:images}
+- Added sort="" // Default "asc" - {exp:channel_images:images}
+- Added {image:switch="one|two|three"} - {exp:channel_images:images}
+- Added {image:filename:SIZE} - {exp:channel_images:images}
+- Added: {image:filesize}, {image:filesize_bytes}, {image:mimetype} ||| Example For Sizes: {image:filesize:small} {image:filesize_bytes:small}
+- Changed the way cover_only="yes" works. (If TRUE and a cover image is not assigned within an entry, the first image will be used instead)
+
+Channel Images 2.1.6 - (2010-12-24)
+- Added: {images:secure_url}, {images:file_path}, {images:file_path_secure}
+- Added a workaround for some installations that where having problems with .htaccess due to an empty "index page" setting.
+- Modified the CI saving routine so it is possible to use an conditional on the ChannelImages Field itself
+
+Channel Images 2.1.5 - (2010-12-24)
+- Fixed a bug where in EE 2.1 the first image size was not rendered.
+- Fixed a bug where in rare cases the built in JSON encoder was not present in PHP5.
+- Fixed  some undeclared variables errors
+
+Channel Images 2.1.4 - (2010-12-24)
+- Fixed a bug where images that where uploaded in .png where not deleted.
+- Fixed a bug where in rare cases updating the entry would make image descriptions go away.
+- Fixed a bug where png images where not properly linked to in the templates.
+
+Channel Images 2.1.3 - (2010-12-24)
+- Recoded the server response to reduce the actual response lenght. This due a a bug in Adobe Flash for MAC OSX and Linux
+
+Channel Images 2.1.2 - (2010-12-24)
+- Multiple Bug Fixes for ExpressionEngine 2.0.2
+
+Channel Images 2.1.1 - (2010-12-24)
+- Fixed a bug where settings of deleted weblogs would still show up
+- Fixed a bug where in some occasion the AJAX routine for the Settings page would not complete (loading icon keeps spinning)
+
+Channel Images 2.1.0 - (2010-12-24)
+- Grayscale Support
+- Original Image Uploaded
+
+Channel Images 2.0.0 - (2010-12-24)
+- Commercial Release
