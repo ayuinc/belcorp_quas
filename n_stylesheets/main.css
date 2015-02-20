@@ -8993,38 +8993,15 @@ html[xmlns] .slides {
     opacity: 1;
     right: 10px; } }
 header {
-  height: 70px;
-  border-bottom: 1px solid white;
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -moz-box-orient: horizontal;
-  box-orient: horizontal;
-  -webkit-flex-direction: row;
-  -moz-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-direction: row;
-  -webkit-box-pack: justify;
-  -moz-box-pack: justify;
-  box-pack: justify;
-  -webkit-justify-content: space-between;
-  -moz-justify-content: space-between;
-  -ms-justify-content: space-between;
-  -o-justify-content: space-between;
-  justify-content: space-between;
-  -ms-flex-pack: justify;
-  padding-left: 0;
-  list-style: none;
-  margin: 0; }
-  header h1, header h2, header h3, header h4, header h5, header h6,
-  header .h1, header .h2, header .h3, header .h4, header .h5, header .h6,
-  header p, header .p {
-    margin: 0; }
+  height: 63px;
+  background: white;
+  position: fixed;
+  width: 100%;
+  left: 63px;
+  z-index: 36;
+  -webkit-transition: all 0.7s ease;
+  -moz-transition: all 0.7s ease;
+  transition: all 0.7s ease; }
   header .left,
   header .center,
   header .right {
