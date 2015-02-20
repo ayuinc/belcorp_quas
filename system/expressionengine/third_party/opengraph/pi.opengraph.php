@@ -65,6 +65,7 @@ class Opengraph
 
     public function query(){
 	    $url = ee()->TMPL->fetch_param('url');
+        var_dump($url);
 	    $html = file_get_contents($url);
 
 		libxml_use_internal_errors(true); // Yeah if you are so worried about using @ with warnings
