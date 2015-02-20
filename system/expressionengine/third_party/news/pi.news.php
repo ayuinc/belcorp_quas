@@ -98,6 +98,7 @@ class News
 	
 			foreach ($q_entries_data->result() as $row) {	
 			    $variable_row = array(
+			    	'noticias_entry_id' => $row->entry_id,
 			        'title'  => $row->title,
 			        'noticias_url'    => $row->field_id_85,
 			        'noticias_categoria_principal' => $row->field_id_86,
@@ -167,6 +168,7 @@ class News
 	
 			foreach ($q_entries_data->result() as $row) {	
 			    $variable_row = array(
+			    	'noticias_entry_id' => $row->entry_id,
 			        'title'  => $row->title,
 			        'noticias_url'    => $row->field_id_85,
 			        'noticias_categoria_principal' => $row->field_id_86,
@@ -237,6 +239,7 @@ class News
 	
 			foreach ($q_entries_data->result() as $row) {	
 			    $variable_row = array(
+			    	'noticias_entry_id' => $row->entry_id,
 			        'title'  => $row->title,
 			        'noticias_url'    => $row->field_id_85,
 			        'noticias_categoria_principal' => $row->field_id_86,
