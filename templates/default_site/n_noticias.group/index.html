@@ -65,7 +65,7 @@
 	var tagsArr = '{Preferencias}'.split(',');
 	{/exp:user:stats}
 	tagsArr.forEach(function(tag) {
-		$('input[value="' + tag + '"]').prop('checked', true);
+		$('input[name="' + tag + '"]').prop('checked', true);
 	});
 	
 	$('#member_form').submit(function() {
@@ -73,7 +73,7 @@
 		var checkedValues = [];
 		if(checkedItems.length) {
 			checkedItems.each(function() {
-				checkedValues.push($(this).val());
+				checkedValues.push($(this).attr('name'));
 			});
 			$('#field_tags').val(checkedValues.join(','));
 		}
