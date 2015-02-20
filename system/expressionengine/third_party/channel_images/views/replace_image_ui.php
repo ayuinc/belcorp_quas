@@ -12,6 +12,7 @@ $formdata = array();
 $formdata['enctype'] = 'multi';
 $formdata['hidden_fields'] = $hidden_fields;
 $formdata['action'] = $ajax_url.AMP.'ajax_method=upload_file';
+$formdata['secure'] = false;
 echo $this->functions->form_declaration($formdata);
 ?>
 

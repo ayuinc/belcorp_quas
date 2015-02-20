@@ -1,0 +1,16 @@
+{
+    "schema_version": "1.0",
+    "name" : "channel_images",
+    "label": "Channel Images",
+    "version": "5.4.19",
+    "types": ["module","fieldtype","extension","rte"],
+    "paths": {
+        "system": [
+            "system/expressionengine/third_party/channel_images"
+        ],
+        "themes": [
+            "themes/third_party/channel_images",
+            "themes/third_party/wygwam"
+        ]
+    }
+}

@@ -997,7 +997,7 @@ class Channel_images
 				$groups = $this->EE->TMPL->fetch_param('field');
 			}
 
-			$this->EE->db->join('exp_channel_fields cf', 'cf.field_id = exp_channel_files.field_id', 'left');
+			$this->EE->db->join('exp_channel_fields cf', 'cf.field_id = exp_channel_images.field_id', 'left');
 			$this->EE->db->where_in('cf.field_name', $groups);
 		}
 
