@@ -91,6 +91,7 @@ class News
 									->select('exp_channel_data.entry_id, title, field_id_85, field_id_86')
 									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
 									->where_in('exp_channel_data.entry_id', $entries_id)
+									->order_by("entry_id", "desc")
 									->limit(5)
 									->get('exp_channel_data');
 	
@@ -158,6 +159,8 @@ class News
 									->select('exp_channel_data.entry_id, title, field_id_85, field_id_86')
 									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
 									->where_in('exp_channel_data.entry_id', $entries_id)
+									->order_by("entry_id", "desc")
+									->limit(5)
 									->get('exp_channel_data');
 	
 			foreach ($q_entries_data->result() as $row) {	
@@ -176,7 +179,72 @@ class News
     }
     
     public function all_entries() {
+	    $member_fields = $this->get_member_fields();
 	    
+	    $entries_by_country = array();
+	    // $entries_by_prefs = array();
+	    // $entries_by_vp = array();
+	    // $entries_by_user_type = array();
+	    // $entries_by_f_group = array();
+	    
+	    // if(isset($member_fields['preferences'])) {
+		//     $preferences = explode(',', $member_fields['preferences']);
+		//     $entries_by_prefs = $this->get_entries_by_preferences($preferences);
+	    // }
+	    
+	    if(!is_null($member_fields['country'])) {
+		    $country = $this->get_country_id($member_fields['country']);
+			$entries_by_country = $this->get_entries_by_country($country);
+	    }
+	    
+	    /* if(!is_null($member_fields['vp']) || $member_fields['country'] == 'None') {
+		    $vp = $this->get_vp_id($member_fields['vp']);
+		    $entries_by_vp = $this->get_entries_by_vp($vp);
+	    }
+	    
+	    if(isset($member_fields['type'])) {
+		  	$user_type = $this->get_user_type_id($member_fields['type']);
+		  	$entries_by_user_type = $this->get_entries_by_user_type($user_type);
+	    }
+	    
+	    if(isset($member_fields['f_group'])) {
+		    $f_group = $this->get_functional_group($member_fields['f_group']);
+		    $entries_by_f_group = $this->get_entries_by_functional_group($f_group);
+	    } */
+	    
+	    /* $entries_id = array_intersect(
+	    				$entries_by_country,
+	    				// $entries_by_prefs,
+	    				$entries_by_vp,
+	    				$entries_by_user_type,
+	    				$entries_by_f_group
+	    			); */
+	    $entries_id = $entries_by_country;
+	    
+	    $variables = array();
+	    
+	    if(!empty($entries_id)) {
+		    $q_entries_data = ee()->db
+									->select('exp_channel_data.entry_id, title, field_id_85, field_id_86')
+									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
+									->where_in('exp_channel_data.entry_id', $entries_id)
+									->order_by("entry_id", "desc")
+									->limit(5)
+									->get('exp_channel_data');
+	
+			foreach ($q_entries_data->result() as $row) {	
+			    $variable_row = array(
+			        'title'  => $row->title,
+			        'noticias_url'    => $row->field_id_85,
+			        'noticias_categoria_principal' => $row->field_id_86,
+			        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id)
+			    );
+			
+			    $variables[] = $variable_row;
+			}
+	    }
+		
+		return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
     }
     
     private function get_other_tags($entry_id) {

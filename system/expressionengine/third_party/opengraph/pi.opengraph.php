@@ -90,7 +90,7 @@ class Opengraph
     	
 		$variables[] = array(
 	        'og_title' => $rmetas['og:title'],
-	        'og_title_resume' => substr($rmetas['og:title'], -40) . '...',
+	        'og_title_resume' => substr($rmetas['og:title'], 0, 35) . '...',
 	        'og_description' => $rmetas['og:description'],
 	        'og_image' => $rmetas['og:image'],
 	        'og_url' => $rmetas['og:url'],
