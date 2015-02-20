@@ -325,10 +325,12 @@ input[type=checkbox]:checked + .grid-noticias {
 			position: relative;
 			.category-label {
 				@include position(absolute, null null 0 0 $container-fluid);
-				padding: ($container-fluid / 2) $container-fluid;
-				padding: rem($container-fluid / 2) rem($container-fluid);
-				background: $brand-primary;
+				padding: 3.5px 9px;
+				background-color: $brand-primary;
 				color: white;
+				span {
+					font-size: 12px;
+				}
 			}
 		}
 		.content {
@@ -337,6 +339,7 @@ input[type=checkbox]:checked + .grid-noticias {
 			min-height: 100px;
 			padding: $container-fluid;
 			padding: rem($container-fluid);
+			background-color: $gray-light;
 		}
 		.info {
 			border: 1px solid darken($gray-lighter, 3%);
@@ -436,6 +439,7 @@ input[type=checkbox]:checked + .grid-noticias {
 		}
 		span {
 			color: $gray;
+			font-size: 12px;
 		}
 	}
 	&.user-card-round {

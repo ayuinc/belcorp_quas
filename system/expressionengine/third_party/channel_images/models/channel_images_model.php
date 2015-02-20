@@ -74,6 +74,9 @@ class Channel_images_model
 
 	public function get_images($entry_id=FALSE, $field_id=FALSE, $params=array(), $tagdata='')
 	{
+		$this->EE->db->_reset_select();
+		$this->EE->db->flush_cache();
+
 		// Limit
 		$limit = isset($params['limit']) ? $params['limit'] : 30;
 		if (strpos($tagdata, LD.'/'."{$this->prefix}paginate".RD) === FALSE) $this->EE->db->limit($limit);
@@ -737,28 +740,29 @@ class Channel_images_model
 		//----------------------------------------
 		if ($this->encode_html)
 		{
-			$image->title = htmlentities($image->title, ENT_QUOTES);
-			$image->description = htmlentities($image->description, ENT_QUOTES);
-			$image->cifield_1 = htmlentities($image->cifield_1, ENT_QUOTES);
-			$image->cifield_2 = htmlentities($image->cifield_2, ENT_QUOTES);
-			$image->cifield_3 = htmlentities($image->cifield_3, ENT_QUOTES);
-			$image->cifield_4 = htmlentities($image->cifield_4, ENT_QUOTES);
-			$image->cifield_5 = htmlentities($image->cifield_5, ENT_QUOTES);
+			$image->title = htmlentities($image->title, ENT_QUOTES, 'UTF-8');
+			$image->description = htmlentities($image->description, ENT_QUOTES, 'UTF-8');
+			$image->cifield_1 = htmlentities($image->cifield_1, ENT_QUOTES, 'UTF-8');
+			$image->cifield_2 = htmlentities($image->cifield_2, ENT_QUOTES, 'UTF-8');
+			$image->cifield_3 = htmlentities($image->cifield_3, ENT_QUOTES, 'UTF-8');
+			$image->cifield_4 = htmlentities($image->cifield_4, ENT_QUOTES, 'UTF-8');
+			$image->cifield_5 = htmlentities($image->cifield_5, ENT_QUOTES, 'UTF-8');
 		}
 
 		if ($this->decode_html)
 		{
-			$image->title = html_entity_decode($image->title, ENT_QUOTES);
-			$image->description = html_entity_decode($image->description, ENT_QUOTES);
-			$image->cifield_1 = html_entity_decode($image->cifield_1, ENT_QUOTES);
-			$image->cifield_2 = html_entity_decode($image->cifield_2, ENT_QUOTES);
-			$image->cifield_3 = html_entity_decode($image->cifield_3, ENT_QUOTES);
-			$image->cifield_4 = html_entity_decode($image->cifield_4, ENT_QUOTES);
-			$image->cifield_5 = html_entity_decode($image->cifield_5, ENT_QUOTES);
+			$image->title = html_entity_decode($image->title, ENT_QUOTES, 'UTF-8');
+			$image->description = html_entity_decode($image->description, ENT_QUOTES, 'UTF-8');
+			$image->cifield_1 = html_entity_decode($image->cifield_1, ENT_QUOTES, 'UTF-8');
+			$image->cifield_2 = html_entity_decode($image->cifield_2, ENT_QUOTES, 'UTF-8');
+			$image->cifield_3 = html_entity_decode($image->cifield_3, ENT_QUOTES, 'UTF-8');
+			$image->cifield_4 = html_entity_decode($image->cifield_4, ENT_QUOTES, 'UTF-8');
+			$image->cifield_5 = html_entity_decode($image->cifield_5, ENT_QUOTES, 'UTF-8');
 		}
 
 		$vars = array();
 		$vars[$this->prefix.'count'] = $count + 1;
+		$vars[$this->prefix.'index'] = $count; // Zero based count
 		$vars[$this->prefix.'absolute_count'] = $this->image_position[$image->image_id];
 		$vars[$this->prefix.'total'] = $this->total_images;
 		$vars[$this->prefix.'absolute_total'] = $this->absolute_total_images;

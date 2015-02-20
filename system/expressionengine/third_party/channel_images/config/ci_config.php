@@ -21,6 +21,7 @@ $config['ci_columns']['cifield_5']	= '';
 
 // Defaults
 $config['ci_defaults']['view_mode'] = 'table';
+$config['ci_defaults']['direct_url'] = 'yes';
 $config['ci_defaults']['no_sizes'] = 'no';
 $config['ci_defaults']['keep_original'] = 'yes';
 $config['ci_defaults']['upload_location'] = 'local';
@@ -75,6 +76,7 @@ $config['ci_s3_regions']['us-east-1']   = 'REGION_US_E1';
 $config['ci_s3_regions']['us-west-1']   = 'REGION_US_W1';
 $config['ci_s3_regions']['us-west-2']   = 'REGION_US_W2';
 $config['ci_s3_regions']['eu']          = 'REGION_EU_W1';
+$config['ci_s3_regions']['eu-central-1']    = 'REGION_EU_C1';
 $config['ci_s3_regions']['ap-southeast-1']  = 'REGION_APAC_SE1';
 $config['ci_s3_regions']['ap-southeast-2']  = 'REGION_APAC_SE2';
 $config['ci_s3_regions']['ap-northeast-1']  = 'REGION_APAC_NE1';
@@ -84,6 +86,7 @@ $config['ci_s3_endpoints']['us-east-1'] = 's3-us-east-1.amazonaws.com';
 $config['ci_s3_endpoints']['us-west-1'] = 's3-us-west-2.amazonaws.com';
 $config['ci_s3_endpoints']['us-west-2'] = 's3-us-west-1.amazonaws.com';
 $config['ci_s3_endpoints']['eu'] = 's3-eu-west-1.amazonaws.com';
+$config['ci_s3_endpoints']['eu-central-1'] = 's3-eu-central-1.amazonaws.com';
 $config['ci_s3_endpoints']['ap-southeast-1'] = 's3-ap-southeast-1.amazonaws.com';
 $config['ci_s3_endpoints']['ap-southeast-2'] = 's3-ap-southeast-2.amazonaws.com';
 $config['ci_s3_endpoints']['ap-northeast-1'] = 's3-ap-northeast-1.amazonaws.com';
