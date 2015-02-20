@@ -8450,7 +8450,6 @@ input[type=checkbox]:checked + .grid-noticias {
   background-color: #dfe4e7;
   height: 210px;
   position: relative;
-  display: block;
   margin: 0; }
 
 .posts-grid > li .pic {
