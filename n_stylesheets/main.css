@@ -8449,7 +8449,9 @@ input[type=checkbox]:checked + .grid-noticias {
   -ms-flex-align: center;
   background-color: #dfe4e7;
   height: 210px;
-  position: relative; }
+  position: relative;
+  display: block;
+  margin: 0; }
 
 .posts-grid > li .pic {
   background-repeat: no-repeat;
