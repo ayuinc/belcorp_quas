@@ -35,7 +35,7 @@
   <h4 class="mt-49 pl-14">CONTENIDO SEGÚN PREFERENCIAS</h4>
 	<ul class="grid-list grid-list-5 grid-list-1-xs isotope-grid posts-grid">
 		{exp:news:entries_by_preferences parse="inward"}
-		
+			{if noticias_titulo==""}
 			<li>
 				{exp:opengraph:query url="{noticias_url}"}
 				<div class="pic" style="background-image: url('{og_image}');">
@@ -63,8 +63,33 @@
 				</div>
 				{/exp:opengraph:query}
 			</li>
-		
-		
+			{if:else}
+				<li>
+					<div class="pic" style="background-image: url('{noticias_imagen}');">
+						<div class="category-label">
+							<span class="text-uppercase">{noticias_categoria_principal}</span>
+						</div>
+					</div>
+					<div class="content">
+						<a href="{noticias_titulo}">{noticias_titulo}</a>
+					</div>
+					<div class="info">
+						<div class="left">
+							<div class="user-card user-card-round size xs">
+		    				<div class="user-pic">			        					
+		    					<img src="{site_url}n_img/user.jpg" alt="">
+		    				</div>
+		    				<div class="user-info">
+		    					<span>Julio Rosal</span>
+		    				</div>
+		    			</div>
+						</div>
+						<div class="right">
+							<span class="icon-typ-eye">15</span>
+						</div>								
+					</div>
+				</li>
+			{/if}
 		{/exp:news:entries_by_preferences}					
 	</ul>
 	<div class="text-right mh-35">
@@ -75,6 +100,7 @@
 	<ul class="grid-list grid-list-5 grid-list-1-xs isotope-grid posts-grid">
 		{exp:news:entries_by_vp parse="inward"}
 		
+			{if noticias_titulo==""}
 			<li>
 				{exp:opengraph:query url="{noticias_url}"}
 				<div class="pic" style="background-image: url('{og_image}');">
@@ -83,7 +109,7 @@
 					</div>
 				</div>
 				<div class="content">
-					<a href="{og_url}">{og_title_resume}</a>
+					<a href="{noticias_url}">{og_title_resume}</a>
 				</div>
 				<div class="info">
 					<div class="left">
@@ -92,7 +118,7 @@
 	    					<img src="{site_url}n_img/user.jpg" alt="">
 	    				</div>
 	    				<div class="user-info">
-	    					<span>Eduardo Belmont</span>
+	    					<span>Julio Rosal</span>
 	    				</div>
 	    			</div>
 					</div>
@@ -102,6 +128,33 @@
 				</div>
 				{/exp:opengraph:query}
 			</li>
+			{if:else}
+				<li>
+					<div class="pic" style="background-image: url('{noticias_imagen}');">
+						<div class="category-label">
+							<span class="text-uppercase">{noticias_categoria_principal}</span>
+						</div>
+					</div>
+					<div class="content">
+						<a href="{noticias_titulo}">{noticias_titulo}</a>
+					</div>
+					<div class="info">
+						<div class="left">
+							<div class="user-card user-card-round size xs">
+		    				<div class="user-pic">			        					
+		    					<img src="{site_url}n_img/user.jpg" alt="">
+		    				</div>
+		    				<div class="user-info">
+		    					<span>Julio Rosal</span>
+		    				</div>
+		    			</div>
+						</div>
+						<div class="right">
+							<span class="icon-typ-eye">15</span>
+						</div>								
+					</div>
+				</li>
+			{/if}
 		
 		{/exp:news:entries_by_vp}
 	</ul>
@@ -110,6 +163,70 @@
 	</div>
 
 	<h4 class="mt-49 pl-14">OTRO CONTENIDO QUE TE PUEDE INTERESAR</h4>
+	<ul class="grid-list grid-list-5 grid-list-1-xs isotope-grid posts-grid">
+		{exp:news:all_entries parse="inward"}
+			
+			{if noticias_titulo==""}
+			<li>
+				{exp:opengraph:query url="{noticias_url}"}
+				<div class="pic" style="background-image: url('{og_image}');">
+					<div class="category-label">
+						<span class="text-uppercase">{noticias_categoria_principal}</span>
+					</div>
+				</div>
+				<div class="content">
+					<a href="{noticias_url}">{og_title_resume}</a>
+				</div>
+				<div class="info">
+					<div class="left">
+						<div class="user-card user-card-round size xs">
+	    				<div class="user-pic">			        					
+	    					<img src="{site_url}n_img/user.jpg" alt="">
+	    				</div>
+	    				<div class="user-info">
+	    					<span>Julio Rosal</span>
+	    				</div>
+	    			</div>
+					</div>
+					<div class="right">
+						<span class="icon-typ-eye">15</span>
+					</div>								
+				</div>
+				{/exp:opengraph:query}
+			</li>
+			{if:else}
+				<li>
+					<div class="pic" style="background-image: url('{noticias_imagen}');">
+						<div class="category-label">
+							<span class="text-uppercase">{noticias_categoria_principal}</span>
+						</div>
+					</div>
+					<div class="content">
+						<a href="{noticias_titulo}">{noticias_titulo}</a>
+					</div>
+					<div class="info">
+						<div class="left">
+							<div class="user-card user-card-round size xs">
+		    				<div class="user-pic">			        					
+		    					<img src="{site_url}n_img/user.jpg" alt="">
+		    				</div>
+		    				<div class="user-info">
+		    					<span>Julio Rosal</span>
+		    				</div>
+		    			</div>
+						</div>
+						<div class="right">
+							<span class="icon-typ-eye">15</span>
+						</div>								
+					</div>
+				</li>
+			{/if}
+			
+		{/exp:news:all_entries}
+	</ul>
+	<div class="text-right mh-35">
+		<a href="#" class="text-primary"> VER TODOS <span class="icon-typ-chevron-right"></span>	</a>
+	</div>
 </div>
 
 
