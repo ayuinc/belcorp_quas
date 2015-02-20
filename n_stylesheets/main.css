@@ -8473,16 +8473,18 @@ input[type=checkbox]:checked + .grid-noticias {
     position: absolute;
     bottom: 0;
     left: 0;
-    padding: 7.5px 15px;
-    padding: 0.53571rem 1.07143rem;
-    background: #70327c;
+    padding: 3.5px 9px;
+    background-color: #70327c;
     color: white; }
+    .posts-grid > li .pic .category-label span {
+      font-size: 12px; }
 .posts-grid > li .content {
   border: 1px solid #f6f8f9;
   text-transform: uppercase;
   min-height: 100px;
   padding: 15px;
-  padding: 1.07143rem; }
+  padding: 1.07143rem;
+  background-color: #dfe4e7; }
 .posts-grid > li .info {
   border: 1px solid #f6f8f9;
   display: -webkit-box;
@@ -8698,7 +8700,8 @@ input[type=checkbox]:checked + .grid-noticias {
     .user-card .user-info > ul, .user-card .user-info > ol, .user-card .user-info > section, .user-card .user-info > small {
       display: block; }
     .user-card .user-info span {
-      color: #b8c4cb; }
+      color: #b8c4cb;
+      font-size: 12px; }
   .user-card.user-card-round .user-pic img {
     border-radius: 50%; }
 
