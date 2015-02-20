@@ -329,7 +329,7 @@ class News
 		    array_push($categories_names, $row->cat_name);
 	    }
 	    
-	    var_dump($categories_names);
+	    // var_dump($categories_names);
 		
 		$q_prefs = ee()->db
 						->select('entry_id')
