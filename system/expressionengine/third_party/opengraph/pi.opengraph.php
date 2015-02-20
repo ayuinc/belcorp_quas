@@ -88,12 +88,12 @@ class Opengraph
         	$rmetas['og:image'] = $parsedUrl["scheme"] . "://" . $parsedUrl["host"] . "/" . $rmetas['og:image'];
     	}
     	
-    	
 		$variables[] = array(
 	        'og_title' => $rmetas['og:title'],
+	        'og_title_resume' => substr($rmetas['og:title'], -40) . '...',
 	        'og_description' => $rmetas['og:description'],
 	        'og_image' => $rmetas['og:image'],
-	        'og_url' => $rmetas['og:url']
+	        'og_url' => $rmetas['og:url'],
 		);
 		
 		$tagdata = $this->EE->TMPL->tagdata;

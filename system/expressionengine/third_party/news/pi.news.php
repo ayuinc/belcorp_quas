@@ -91,6 +91,7 @@ class News
 									->select('exp_channel_data.entry_id, title, field_id_85, field_id_86')
 									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
 									->where_in('exp_channel_data.entry_id', $entries_id)
+									->limit(5)
 									->get('exp_channel_data');
 	
 			foreach ($q_entries_data->result() as $row) {	

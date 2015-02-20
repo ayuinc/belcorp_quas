@@ -1,11 +1,139 @@
+{embed="n_includes/header"}
+
 {exp:channel:form
 	channel="noticias"
 	return="n_noticias/testing"
+	datepicker="no"
 }
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title" value="{title}" size="50" maxlength="100" onkeyup="liveUrlTitle();">
+	<input type="hidden" name="title" value="Noticia" id="title">
 
-    <label for="url_title">URL Title</label>
-    <input type="text" name="url_title" id="url_title" value="{url_title}" maxlength="75" size="50">
+	{custom_fields}
+	  <label for="{field_name}">{if required}* {/if}{field_label}</label>
+	  {field_instructions}
+	  {formatting_buttons}
+	
+	  {if error}
+	    <p class="error">{error}</p>
+	  {/if}
+	
+	  {if textarea}
+	    <textarea id="{field_name}" name="{field_name}" dir="{text_direction}" rows="{rows}">{field_data}</textarea>
+	  {/if}
+	
+	  {if text}
+	    <input type="text" dir="{text_direction}" id="{field_name}" name="{field_name}" value="{field_data}" maxlength="{maxlength}" size="50">
+	  {/if}
+	
+	  {if select}
+	    <select id="{field_name}" name="{field_name}">
+	      {options}<option value="{option_value}"{selected}>{option_name}</option>{/options}
+	    </select>
+	  {/if}
+	
+	  {if date}
+	    <input type="text" id="{field_name}" name="{field_name}" value="{field_data}" size="50">
+	  {/if}
+	
+	  {if checkbox}
+	    {options}
+	      <label class="checkbox">{option_value}
+	        <input type="checkbox" id="{field_name}" name="{field_name}[]" value="{option_value}"{checked}>
+	      </label>
+	    {/options}
+	  {/if}
+	
+	  {if radio}
+	    {options}
+	      <label class="checkbox">{option_value}
+	        <input type="radio" id="{field_name}" name="{field_name}" value="{option_value}"{checked}>
+	      </label>
+	    {/options}
+	  {/if}
+	
+	  {if file}
+	    {display_field}
+	  {/if}
+	
+	  {if relationships}
+	    {if allow_multiple}
+	      <ul style="list-style: none">
+	        {options}
+	        <li>
+	          <input type="text" name="{field_name}[sort][]" value="{option_order}" style="width: 25px">
+	          <label class="checkbox">
+	          <input type="checkbox" name="{field_name}[data][]" value="{option_value}"{checked}> {option_name}
+	          </label>
+	        </li>
+	        {/options}
+	      </ul>
+	    {if:else}
+	        <select id="{field_name}" name="{field_name}[data][]">
+	        {options}
+	          <option value="{option_value}"{selected}>{option_name}</option>
+	        {/options}
+	        </select>
+	    {/if}
+	  {/if}
+	
+	  {if grid}
+	    {display_field}
+	  {/if}
+	
+	  {if multiselect}
+	    <select id="{field_name}" name="{field_name}[]" multiple="multiple">
+	      {options}
+	        <option value="{option_value}"{selected}>{option_name}</option>
+	      {/options}
+	    </select>
+	  {/if}
+	{/custom_fields}
+	<br>
+	<h3>Otros tags</h3>
+	{categories}
+		{if {category_group_id}=='18'}
+        <label class="checkbox">{category_name}
+            <input type="checkbox" id="{category_id}" name="category[]" value="{category_id}" {selected}>
+        </label>
+        {/if}
+    {/categories}
+    
+    <h3>Público</h3>
+	{categories}
+		{if {category_group_id}=='21'}
+        <label class="checkbox">{category_name}
+            <input type="checkbox" id="{category_id}" name="category[]" value="{category_id}" {selected}>
+        </label>
+        {/if}
+    {/categories}
+    
+    <h3>Países</h3>
+	{categories}
+		{if {category_group_id}=='19'}
+        <label class="checkbox">{category_name}
+            <input type="checkbox" id="{category_id}" name="category[]" value="{category_id}" {selected}>
+        </label>
+        {/if}
+    {/categories}
+    
+    <h3>Grupo Funcional</h3>
+	{categories}
+		{if {category_group_id}=='22'}
+        <label class="checkbox">{category_name}
+            <input type="checkbox" id="{category_id}" name="category[]" value="{category_id}" {selected}>
+        </label>
+        {/if}
+    {/categories}
+    
+    <h3>Vicepresidencia</h3>
+	{categories}
+		{if {category_group_id}=='20'}
+        <label class="checkbox">{category_name}
+            <input type="checkbox" id="{category_id}" name="category[]" value="{category_id}" {selected}>
+        </label>
+        {/if}
+    {/categories}
 	<input type="submit" value="Submit">
 {/exp:channel:form}
+
+{embed="n_includes/footer"}
+<script type="text/javascript">$('#publishForm').get(0).setAttribute('action', window.location.origin);</script>
