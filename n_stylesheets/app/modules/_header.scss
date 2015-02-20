@@ -1,8 +1,13 @@
 header {
-	height: $header-height-control;
-	border-bottom: 1px solid $gray-lighter;
-	@include flex-space-between;
-	@include normalize-text;
+	height: 63px;
+	background: white;
+	position: fixed;
+	width: 100%;
+	left: 63px;
+	z-index: 36;
+	-webkit-transition: all 0.7s ease;
+	-moz-transition: all 0.7s ease;
+	transition: all 0.7s ease;
 	.left,
 	.center,
 	.right {
