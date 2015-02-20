@@ -44,6 +44,7 @@ class News
     
     public function entries_by_preferences() {
     	$member_fields = $this->get_member_fields();
+    	$limit = ee()->TMPL->fetch_param('limit');
 	    
 	    $entries_by_country = array();
 	    $entries_by_prefs = array();
@@ -92,7 +93,7 @@ class News
 									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
 									->where_in('exp_channel_data.entry_id', $entries_id)
 									->order_by("entry_id", "desc")
-									->limit(5)
+									->limit($limit)
 									->get('exp_channel_data');
 	
 			foreach ($q_entries_data->result() as $row) {	
@@ -112,6 +113,7 @@ class News
     
     public function entries_by_vp() {
 	    $member_fields = $this->get_member_fields();
+	    $limit = ee()->TMPL->fetch_param('limit');
 	    
 	    $entries_by_country = array();
 	    // $entries_by_prefs = array();
@@ -160,7 +162,7 @@ class News
 									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
 									->where_in('exp_channel_data.entry_id', $entries_id)
 									->order_by("entry_id", "desc")
-									->limit(5)
+									->limit($limit)
 									->get('exp_channel_data');
 	
 			foreach ($q_entries_data->result() as $row) {	
@@ -180,6 +182,7 @@ class News
     
     public function all_entries() {
 	    $member_fields = $this->get_member_fields();
+	    $limit = ee()->TMPL->fetch_param('limit');
 	    
 	    $entries_by_country = array();
 	    // $entries_by_prefs = array();
@@ -229,7 +232,7 @@ class News
 									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
 									->where_in('exp_channel_data.entry_id', $entries_id)
 									->order_by("entry_id", "desc")
-									->limit(5)
+									->limit($limit)
 									->get('exp_channel_data');
 	
 			foreach ($q_entries_data->result() as $row) {	
