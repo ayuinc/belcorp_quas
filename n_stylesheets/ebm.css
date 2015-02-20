@@ -15395,145 +15395,145 @@ ul.grid-list {
   @media only screen and (max-width: 480px) {
     ul.grid-list.grid-list-1-xs > li {
       width: 100%; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 480px) and (max-width: 768px) {
     ul.grid-list.grid-list-1-sm > li {
       width: 100%; } }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
     ul.grid-list.grid-list-1-md > li {
       width: 100%; } }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
     ul.grid-list.grid-list-1-lg > li {
       width: 100%; } }
   @media only screen and (max-width: 480px) {
     ul.grid-list.grid-list-2-xs > li {
       width: 50%; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 480px) and (max-width: 768px) {
     ul.grid-list.grid-list-2-sm > li {
       width: 50%; } }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
     ul.grid-list.grid-list-2-md > li {
       width: 50%; } }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
     ul.grid-list.grid-list-2-lg > li {
       width: 50%; } }
   @media only screen and (max-width: 480px) {
     ul.grid-list.grid-list-3-xs > li {
       width: 33.33333%; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 480px) and (max-width: 768px) {
     ul.grid-list.grid-list-3-sm > li {
       width: 33.33333%; } }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
     ul.grid-list.grid-list-3-md > li {
       width: 33.33333%; } }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
     ul.grid-list.grid-list-3-lg > li {
       width: 33.33333%; } }
   @media only screen and (max-width: 480px) {
     ul.grid-list.grid-list-4-xs > li {
       width: 25%; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 480px) and (max-width: 768px) {
     ul.grid-list.grid-list-4-sm > li {
       width: 25%; } }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
     ul.grid-list.grid-list-4-md > li {
       width: 25%; } }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
     ul.grid-list.grid-list-4-lg > li {
       width: 25%; } }
   @media only screen and (max-width: 480px) {
     ul.grid-list.grid-list-5-xs > li {
       width: 20%; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 480px) and (max-width: 768px) {
     ul.grid-list.grid-list-5-sm > li {
       width: 20%; } }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
     ul.grid-list.grid-list-5-md > li {
       width: 20%; } }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
     ul.grid-list.grid-list-5-lg > li {
       width: 20%; } }
   @media only screen and (max-width: 480px) {
     ul.grid-list.grid-list-6-xs > li {
       width: 16.66667%; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 480px) and (max-width: 768px) {
     ul.grid-list.grid-list-6-sm > li {
       width: 16.66667%; } }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
     ul.grid-list.grid-list-6-md > li {
       width: 16.66667%; } }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
     ul.grid-list.grid-list-6-lg > li {
       width: 16.66667%; } }
   @media only screen and (max-width: 480px) {
     ul.grid-list.grid-list-7-xs > li {
       width: 14.28571%; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 480px) and (max-width: 768px) {
     ul.grid-list.grid-list-7-sm > li {
       width: 14.28571%; } }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
     ul.grid-list.grid-list-7-md > li {
       width: 14.28571%; } }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
     ul.grid-list.grid-list-7-lg > li {
       width: 14.28571%; } }
   @media only screen and (max-width: 480px) {
     ul.grid-list.grid-list-8-xs > li {
       width: 12.5%; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 480px) and (max-width: 768px) {
     ul.grid-list.grid-list-8-sm > li {
       width: 12.5%; } }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
     ul.grid-list.grid-list-8-md > li {
       width: 12.5%; } }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
     ul.grid-list.grid-list-8-lg > li {
       width: 12.5%; } }
   @media only screen and (max-width: 480px) {
     ul.grid-list.grid-list-9-xs > li {
       width: 11.11111%; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 480px) and (max-width: 768px) {
     ul.grid-list.grid-list-9-sm > li {
       width: 11.11111%; } }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
     ul.grid-list.grid-list-9-md > li {
       width: 11.11111%; } }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
     ul.grid-list.grid-list-9-lg > li {
       width: 11.11111%; } }
   @media only screen and (max-width: 480px) {
     ul.grid-list.grid-list-10-xs > li {
       width: 10%; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 480px) and (max-width: 768px) {
     ul.grid-list.grid-list-10-sm > li {
       width: 10%; } }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
     ul.grid-list.grid-list-10-md > li {
       width: 10%; } }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
     ul.grid-list.grid-list-10-lg > li {
       width: 10%; } }
   @media only screen and (max-width: 480px) {
     ul.grid-list.grid-list-11-xs > li {
       width: 9.09091%; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 480px) and (max-width: 768px) {
     ul.grid-list.grid-list-11-sm > li {
       width: 9.09091%; } }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
     ul.grid-list.grid-list-11-md > li {
       width: 9.09091%; } }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
     ul.grid-list.grid-list-11-lg > li {
       width: 9.09091%; } }
   @media only screen and (max-width: 480px) {
     ul.grid-list.grid-list-12-xs > li {
       width: 8.33333%; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 480px) and (max-width: 768px) {
     ul.grid-list.grid-list-12-sm > li {
       width: 8.33333%; } }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
     ul.grid-list.grid-list-12-md > li {
       width: 8.33333%; } }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
     ul.grid-list.grid-list-12-lg > li {
       width: 8.33333%; } }
   ul.grid-list.grid-list-centered {

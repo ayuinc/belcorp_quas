@@ -26,7 +26,7 @@ ul.grid-list {
 	}
 	@for $i from 1 through 12 {
 		@for $k from 1 through length($breakpoints-sufix-list) {
-	    @media #{nth($media-control-list, $k)} {
+	    @media #{nth($media-only-list, $k)} {
 				&.grid-list-#{$i}-#{nth($breakpoints-sufix-list, $k)} {
 					> li {
 						$mobile-width: percentage(1/$i);
