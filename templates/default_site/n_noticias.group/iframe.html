@@ -1,0 +1,19 @@
+{embed="n_includes/header"}
+	{if logged_in}
+	
+	<div id="site-wrapper">
+		<div id="content-frame">	  
+	    
+		<!--MENU LADO IZQUIERDO-->
+
+			{embed="n_includes/menu-izquierdo"}
+		  	{embed="n_includes/top-banner"} 
+
+		  	{exp:channel:entries entry_id="{segment_3}" dynamic="off"}
+		  		<iframe src="{noticias_url}"></iframe>
+			{/exp:channel:entries}
+
+		</div>
+	</div>
+	{/if}
+{embed="n_includes/footer"}
