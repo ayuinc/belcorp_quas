@@ -20,7 +20,7 @@ ul.grid-list {
 	@for $i from 1 through 12 {
 		&.grid-list-#{$i} {
 			> li {
-				width: percentage(1/$i) - 0.30;
+				width: percentage(1/$i) - 0.40;
 			}
 		}
 	}
