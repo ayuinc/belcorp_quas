@@ -275,32 +275,31 @@ input[type=checkbox]:checked + .grid-noticias {
 //SELECCION GRID NOTICIAS 
 .seleccion-grid {
 	> li {
-		input {
-			bottom: -32px;
+		> div {
 			position: relative;
-			width: 18px;
-			height: 18px;
+		}
+		input {
+			@include position(absolute, 7px 7px null null);			
 			z-index: 100;
-			right: -204px;
-			@media #{$portrait} {
-				right: -123px;
-			}
+			// @media #{$portrait} {
+			// 	right: -123px;
+			// }
 			// @media #{$landscape} {
 			// 	right: -173px;
 			// }
-			&.selected-input {
-				bottom: -32px;
-				position: relative;
-				right: -220px;
-				width: 18px;
-				height: 18px;
-				@media #{$portrait} {
-					right: -123px;
-				}
-				// @media #{$landscape} {
-				// 	right: -173px;
-				// }
-			}
+			// &.selected-input {
+			// 	bottom: -32px;
+			// 	position: relative;
+			// 	right: -220px;
+			// 	width: 18px;
+			// 	height: 18px;
+			// 	@media #{$portrait} {
+			// 		right: -123px;
+			// 	}
+			// 	// @media #{$landscape} {
+			// 	// 	right: -173px;
+			// 	// }
+			// }
 		}
 		.content {
 			@include flex-middle-center;

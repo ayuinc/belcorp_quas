@@ -8407,25 +8407,13 @@ input[type=checkbox]:checked + .grid-noticias {
   border-radius: 0 !important;
   padding: 7px 30px !important; }
 
+.seleccion-grid > li > div {
+  position: relative; }
 .seleccion-grid > li input {
-  bottom: -32px;
-  position: relative;
-  width: 18px;
-  height: 18px;
-  z-index: 100;
-  right: -204px; }
-  @media only screen and (orientation: portrait) {
-    .seleccion-grid > li input {
-      right: -123px; } }
-  .seleccion-grid > li input.selected-input {
-    bottom: -32px;
-    position: relative;
-    right: -220px;
-    width: 18px;
-    height: 18px; }
-    @media only screen and (orientation: portrait) {
-      .seleccion-grid > li input.selected-input {
-        right: -123px; } }
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  z-index: 100; }
 .seleccion-grid > li .content {
   display: -webkit-box;
   display: -moz-box;
