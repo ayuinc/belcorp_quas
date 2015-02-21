@@ -12,29 +12,30 @@
 				<div class="container pb-56">
 				  <div class="flexslider m-0">
 				    <ul class="slides">
+				    	{exp:channel:entries channel="noticias_portada"}
 				  		<li>
-				  			<a href="#">
+				  			<a href="{site_url}n_noticias/iframe/{entry_id}">
 				        	<div class="item active">
-							      <img src="{site_url}n_img/bg-slider.jpg">
-							      <div class="carousel-caption pl-21 normalize-text">
-									    <h1 class="text-gradient thin">POR QUÉ EL<br>
-									    TRABAJO NO<br>
-									    SUCEDE EN EL<br> 
-									    TRABAJO</h1>
-											<h4 class="thin mlp-49"><span class="icon-typ-eye h4"></span>15</h4>
-									  </div>
-							    </div>
-				      	</a>
-				      </li>
-				      <li>
-				      	<img src="{site_url}n_img/bg-slider2.jpg">
-				      </li>
-				      <li>
-								<img src="{site_url}n_img/bg-slider3.jpg">
-				      </li>
-				      <li>
-				      	<img src="{site_url}n_img/bg-slider2.jpg">
-				      </li>
+				        		{noticias_portada_imagen}
+				        			<img src="{image:url}">
+    							{/noticias_portada_imagen}
+							    <div class="carousel-caption pl-21 normalize-text">
+									<h1 class="text-gradient thin">{title}</h1>
+									<h4 class="thin mlp-49"><span class="icon-typ-eye h4"></span>{view_count_one}</h4>
+								</div>
+							</div>
+							</a>
+					  	</li>
+					  	{/exp:channel:entries}
+					  	<li>
+				      		<img src="{site_url}n_img/bg-slider2.jpg">
+					  	</li>
+					  	<li>
+							<img src="{site_url}n_img/bg-slider3.jpg">
+						</li>
+						<li>
+				      		<img src="{site_url}n_img/bg-slider2.jpg">
+					  	</li>
 				    </ul>
 				  </div> 
 				  <div class="text-right mt-14">
