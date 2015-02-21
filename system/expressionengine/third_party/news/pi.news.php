@@ -103,7 +103,8 @@ class News
 			        'noticias_url'    => $row->field_id_85,
 			        'noticias_categoria_principal' => $row->field_id_86,
 			        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id),
-			        'noticias_titulo' => $row->field_id_89
+			        'noticias_titulo' => $row->field_id_89,
+			        'noticias_imagen' => $row->field_id_88
 			    );
 			
 			    $variables[] = $variable_row;
@@ -174,7 +175,8 @@ class News
 			        'noticias_url'    => $row->field_id_85,
 			        'noticias_categoria_principal' => $row->field_id_86,
 			        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id),
-			        'noticias_titulo' => $row->field_id_89
+			        'noticias_titulo' => $row->field_id_89,
+			        'noticias_imagen' => $row->field_id_88
 			    );
 			
 			    $variables[] = $variable_row;
@@ -246,7 +248,8 @@ class News
 			        'noticias_url'    => $row->field_id_85,
 			        'noticias_categoria_principal' => $row->field_id_86,
 			        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id),
-			        'noticias_titulo' => $row->field_id_89
+			        'noticias_titulo' => $row->field_id_89,
+			        'noticias_imagen' => $row->field_id_88
 			    );
 			
 			    $variables[] = $variable_row;
