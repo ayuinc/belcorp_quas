@@ -8979,8 +8979,8 @@ input[type="checkbox"]:checked ~ label {
       position: absolute;
       top: 0;
       left: 9%;
-      background-color: rgba(184, 196, 203, 0.5);
-      padding: 14px;
+      background-color: rgba(184, 196, 203, 0.9);
+      padding: 15px;
       width: 350px;
       min-height: 210px; }
       .gallery.js-flickity .gallery-cell .wrapper .caption .bottom {
@@ -8988,7 +8988,9 @@ input[type="checkbox"]:checked ~ label {
         right: 0;
         bottom: 0;
         left: 0;
-        width: 100%; }
+        width: 100%;
+        padding: 15px;
+        color: #b8c4cb; }
 
 header,
 .header {
