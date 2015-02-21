@@ -13,9 +13,9 @@
 					<p>Si deseas modificar el título o la imagen, dale clic en EDITAR</p>
 					<div class="preview-box">
 						<ul class="grid-list grid-list-2 grid-list-1-xs posts-grid">
-							{last_segment}
 							{exp:channel:entries channel="noticias" entry_id="{last_segment}" parse="inward" limit="1"}
 							<li>
+								{exp:opengraph:query url="{noticias_url}"}
 								<div class="pic" style="background-image: url('{og_image}');">
 									<div class="category-label">
 										<span class="text-uppercase">{noticias_categoria_principal}</span>
@@ -31,14 +31,15 @@
 					    					<img src="{site_url}n_img/user.jpg" alt="">
 					    				</div>
 					    				<div class="user-info">
-					    					<span>Julio Rosal</span>
+					    					<span>{author}</span>
 					    				</div>
 					    			</div>
 									</div>
 									<div class="right">
-										<span class="icon-typ-eye">15</span>
+										<span class="icon-typ-eye">{view_count_one}</span>
 									</div>								
 								</div>
+								{/exp:opengraph:query}
 							</li>
 							{/exp:channel:entries}
 							<li>
