@@ -8535,6 +8535,8 @@ input[type=checkbox]:checked + .grid-noticias {
     justify-content: center;
     -ms-flex-pack: center;
     padding: 0; }
+  .posts-grid > li .info .right span {
+    color: #b8c4cb; }
 
 @media only screen and (orientation: portrait) {
   .post-preliminar > li {

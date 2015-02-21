@@ -356,6 +356,9 @@ input[type=checkbox]:checked + .grid-noticias {
 			}
 			.right {
 				@extend .col-xs-3;
+				span {
+					color: $gray;
+				}
 			}
 		}
 	}
