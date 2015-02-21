@@ -33,7 +33,7 @@ $z-index-control: 30;
   width: 100%;
   min-height: 990px;
   padding-top: $header-height-control + 7;
-  @include calc(padding-right, "100% - #{$site-menu-width-narrow}");
+  padding-right: $site-menu-width-narrow;
   &.homepage-on {
   	@include transform(translateX($site-menu-width-wide));
   	@media #{$sm-only} {

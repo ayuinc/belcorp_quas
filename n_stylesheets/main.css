@@ -9233,8 +9233,7 @@ header,
   width: 100%;
   min-height: 990px;
   padding-top: 70px;
-  padding-right: -webkit-calc(100% - 60px);
-  padding-right: calc(100% - 60px);
+  padding-right: 60px;
   -webkit-transition: all 0.7s ease;
   -moz-transition: all 0.7s ease;
   transition: all 0.7s ease;
