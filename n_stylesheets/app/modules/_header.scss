@@ -24,7 +24,9 @@ header,
 		text-decoration: none;
 		width: $header-height-control;
 		height: $header-height-control;
-		@include bg-img-control-left;
+		background-repeat: no-repeat;
+		background-size: 125px;
+		background-position: 3px center;
 	}
 }
 
