@@ -92,7 +92,7 @@ class News
 									->select('exp_channel_data.entry_id, title, author_id, view_count_one, field_id_85, field_id_86, field_id_87, field_id_89, field_id_88, field_id_90')
 									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
 									->where_in('exp_channel_data.entry_id', $entries_id)
-									->where('field_id_80', 0)
+									->where('field_id_90', '0')
 									->order_by("entry_id", "desc")
 									->limit($limit)
 									->get('exp_channel_data');
@@ -118,6 +118,52 @@ class News
 		return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
     }
     
+    public function entrie_accept(){
+    	$entry_id = ee()->TMPL->fetch_param('entry_id');
+
+	    if(!empty($entry_id)) {
+		    $q_entries_data = ee()->db
+							->update('exp_channel_data',
+								array('field_id_90' => '0'),
+								array('entry_id' => $entry_id));
+		}
+    }
+
+    public function entrie_preview(){
+    	$entry_id = ee()->TMPL->fetch_param('entry_id');
+
+	    if(!empty($entry_id)) {
+		    $q_entries_data = ee()->db
+							->select('exp_channel_data.entry_id, title, author_id, view_count_one, field_id_85, field_id_86, field_id_87, field_id_89, field_id_88, field_id_90')
+							->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
+							->where_in('exp_channel_data.entry_id', $entry_id)
+							->order_by("entry_id", "desc")
+							->limit(1)
+							->get('exp_channel_data');
+	
+			foreach ($q_entries_data->result() as $row) {	
+			    $variable_row = array(
+			    	'noticias_entry_id' => $row->entry_id,
+			        'title'  => $row->title,
+			        'noticias_autor' => $this->get_member_name($row->author_id),
+			        'noticias_vistas' => $row->view_count_one,
+			        'noticias_url'    => $row->field_id_85,
+			        'noticias_categoria_principal' => $row->field_id_86,
+			        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id),
+			        'noticias_contenido' => $row->field_id_87,
+			        'noticias_titulo' => $row->field_id_89,
+			        'noticias_imagen' => $row->field_id_88
+			    );
+			
+			    $variables[] = $variable_row;
+			}
+
+	    }
+		
+		return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
+
+    }
+
     public function entries_by_vp() {
 	    $member_fields = $this->get_member_fields();
 	    $limit = ee()->TMPL->fetch_param('limit');
@@ -168,7 +214,7 @@ class News
 									->select('exp_channel_data.entry_id, title, author_id, view_count_one, field_id_85, field_id_86, field_id_87, field_id_89, field_id_88, field_id_90')
 									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
 									->where_in('exp_channel_data.entry_id', $entries_id)
-									->where('field_id_80', 0)
+									->where('field_id_90', '0')
 									->order_by("entry_id", "desc")
 									->limit($limit)
 									->get('exp_channel_data');
@@ -245,7 +291,7 @@ class News
 									->select('exp_channel_data.entry_id, title, author_id, view_count_one, field_id_85, field_id_86, field_id_87, field_id_89, field_id_88, field_id_90')
 									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
 									->where_in('exp_channel_data.entry_id', $entries_id)
-									->where('field_id_80', 0)
+									->where('field_id_90', '0')
 									->order_by("entry_id", "desc")
 									->limit($limit)
 									->get('exp_channel_data');

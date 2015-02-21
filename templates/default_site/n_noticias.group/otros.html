@@ -12,10 +12,10 @@
 				<div class="container pb-56">
 					<div class="contenido-ventas pl-14 heading-block text-gradient">
 					  <a href="{site_url}n_noticias/testing"><span class="icon-typ-chevron-left"></span> Atrás</a>
-					  <h2 class="thin">Contenido relevante para tus preferencias</h2>
+					  <h2 class="thin">Otro contenido que te puede interesar</h2>
 					</div> 
 					<ul class="grid-list grid-list-4 grid-list-1-xs grid-list-2-sm isotope-grid posts-grid mt-35">
-						{exp:news:entries_by_preferences parse="inward" limit="100"}
+						{exp:news:all_entries parse="inward" limit="100"}
 							<li>
 								{exp:opengraph:query url="{noticias_url}"}
 								<div class="pic" style="background-image: url('{og_image}');">
@@ -43,7 +43,7 @@
 								</div>
 								{/exp:opengraph:query}
 							</li>
-						{/exp:news:entries_by_preferences}
+						{/exp:news:all_entries}
 					</ul>
 				</div>
 			</div>
