@@ -13,7 +13,7 @@
 					<p>Si deseas modificar el título o la imagen, dale clic en EDITAR</p>
 					<div class="preview-box">
 						<ul class="grid-list grid-list-2 grid-list-1-xs posts-grid">
-							{exp:news:entrie_preview entry_id="{last_segment}" parse="inward" limit="1"}
+							{exp:channel:entries entry_id="{last_segment}" parse="inward" limit="1"}
 							<li>
 								<div class="pic" style="background-image: url('{og_image}');">
 									<div class="category-label">
@@ -39,7 +39,7 @@
 									</div>								
 								</div>
 							</li>
-							{/exp:news:entrie_preview}
+							{/exp:channel:entries}
 							<li>
 								<div class="pic">
 									<a href="#" class="btn uppercase block mb-7 btn-gray form-control">Editar</a>
