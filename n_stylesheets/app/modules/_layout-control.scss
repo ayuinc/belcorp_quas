@@ -1,0 +1,12 @@
+/* Layout Control */
+$z-index-control: 30;
+#site-wrapper {}
+#site-menu {
+	z-index: $z-index-control;
+}
+.header {
+	z-index: $z-index-control - 1;
+}
+#site-canvas {
+	z-index: $z-index-control - 2;
+}
