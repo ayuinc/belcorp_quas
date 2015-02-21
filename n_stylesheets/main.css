@@ -2537,6 +2537,47 @@ tbody.collapse.in {
   -moz-box-shadow: 0px 3px 3px 0px rgba(49, 50, 51, 0.15);
   box-shadow: 0px 3px 3px 0px rgba(49, 50, 51, 0.15); }
 
+/* Background image blocks */
+.bg-img-block {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+.bg-img-block-center {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+.bg-img-block-center-x {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center; }
+
+.bg-img-block-center-y {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center; }
+
+.bg-img-block-bottom {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: bottom; }
+
+.bg-img-block-top {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: top; }
+
+.bg-img-block-left {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: left; }
+
+.bg-img-block-right {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: right; }
+
 .flex-middle {
   display: -webkit-box;
   display: -moz-box;
@@ -8469,7 +8510,6 @@ input[type=checkbox]:checked + .grid-noticias {
 
 .posts-grid > li .pic {
   background-repeat: no-repeat;
-  background-position: center center;
   background-size: cover;
   height: 140px;
   position: relative; }
@@ -8557,7 +8597,6 @@ input[type=checkbox]:checked + .grid-noticias {
     width: 35.7% !important; } }
 .post-preliminar > li .pic {
   background-repeat: no-repeat;
-  background-position: center center;
   background-size: cover;
   height: 140px;
   position: relative; }
@@ -9139,6 +9178,15 @@ header,
     align-items: center;
     -ms-flex-align: center;
     height: 63px; }
+  header .logo,
+  .header .logo {
+    display: block;
+    text-decoration: none;
+    width: 63px;
+    height: 63px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: left; }
 
 .center ul li .right {
   padding-bottom: 0 !important; }
@@ -9157,12 +9205,12 @@ header,
     text-fill-color: transparent; } }
 /* Layout Control */
 #site-menu {
-  z-index: 30; }
+  z-index: 28; }
 
 .header {
-  z-index: 29; }
+  z-index: 30; }
 
 #site-canvas {
-  z-index: 28; }
+  z-index: 29; }
 
 /*# sourceMappingURL=main.css.map */

@@ -2,11 +2,11 @@
 $z-index-control: 30;
 #site-wrapper {}
 #site-menu {
-	z-index: $z-index-control;
+	z-index: $z-index-control - 2;
 }
 .header {
-	z-index: $z-index-control - 1;
+	z-index: $z-index-control;
 }
 #site-canvas {
-	z-index: $z-index-control - 2;
+	z-index: $z-index-control - 1;
 }

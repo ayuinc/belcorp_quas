@@ -19,6 +19,13 @@ header,
 	.left {}
 	.center {}
 	.right {}
+	.logo {
+		display: block;
+		text-decoration: none;
+		width: $header-height-control;
+		height: $header-height-control;
+		@include bg-img-control-left;
+	}
 }
 
 .center {
