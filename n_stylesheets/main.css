@@ -9551,12 +9551,12 @@ a.not-underline:hover {
   text-decoration: none; }
 
 .text-primary {
-  color: #008CBA !important; }
+  color: #5a277d !important; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   .text-gradient {
-    background: -webkit-linear-gradient(left, #596c79, #909DA8, #008CBA) repeat;
-    background: linear-gradient(to right, #596c79, #909DA8, #008CBA) repeat;
+    background: -webkit-linear-gradient(left, #596c79, #909DA8, #5a277d) repeat;
+    background: linear-gradient(to right, #596c79, #909DA8, #5a277d) repeat;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
@@ -9565,8 +9565,8 @@ a.not-underline:hover {
     text-fill-color: transparent; }
 
   .escuela-block h1, .escuela-block p {
-    background: -webkit-linear-gradient(left, #596c79, #909DA8, #008CBA) repeat;
-    background: linear-gradient(to right, #596c79, #909DA8, #008CBA) repeat;
+    background: -webkit-linear-gradient(left, #596c79, #909DA8, #5a277d) repeat;
+    background: linear-gradient(to right, #596c79, #909DA8, #5a277d) repeat;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
@@ -9578,8 +9578,8 @@ a.not-underline:hover {
     font-family: "museo-sans", Helvetica, Arial, sans-serif !important;
     font-weight: 100;
     font-style: normal;
-    background: -webkit-linear-gradient(left, #596c79, #909DA8, #008CBA) repeat;
-    background: linear-gradient(to right, #596c79, #909DA8, #008CBA) repeat;
+    background: -webkit-linear-gradient(left, #596c79, #909DA8, #5a277d) repeat;
+    background: linear-gradient(to right, #596c79, #909DA8, #5a277d) repeat;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
@@ -12237,7 +12237,7 @@ body.overflow-none {
     left: 0;
     display: block;
     padding: 3px 14px;
-    background: #008CBA;
+    background: #5a277d;
     color: white;
     font-size: 14px;
     font-size: 1rem; }
@@ -12327,13 +12327,13 @@ body.overflow-none {
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease; }
   #search-button button.search-form-trigger:hover {
-    box-shadow: 0 0 5px #008CBA;
-    color: #008CBA;
+    box-shadow: 0 0 5px #5a277d;
+    color: #5a277d;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease; }
 #search-button .search-icon {
-  background: #008CBA;
+  background: #5a277d;
   text-align: center;
   padding-top: 14px;
   padding-top: 1rem;
@@ -12379,16 +12379,16 @@ body.overflow-none {
       font-style: normal; }
     .search-canvas-overlay.searching .search-form form button {
       background: transparent;
-      border: 3px solid #91e4ff;
-      color: #91e4ff;
+      border: 3px solid #c49be0;
+      color: #c49be0;
       font-size: 28px;
       font-size: 2rem;
       -webkit-transition: all 0.3s ease;
       -moz-transition: all 0.3s ease;
       transition: all 0.3s ease; }
       .search-canvas-overlay.searching .search-form form button:hover {
-        border: 3px solid #00a7de;
-        color: #00a7de;
+        border: 3px solid #6e2f98;
+        color: #6e2f98;
         -webkit-transition: all 0.3s ease;
         -moz-transition: all 0.3s ease;
         transition: all 0.3s ease; }
@@ -12613,7 +12613,7 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
 
 .heading-link {
   background: none;
-  color: #008CBA;
+  color: #5a277d;
   padding: 0 5px;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -12625,19 +12625,19 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   font-style: normal; }
   .heading-link:hover {
     background: none;
-    color: #005673;
+    color: #331647;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease; }
 
 .length-panel {
-  border-left: 4px solid #008CBA;
+  border-left: 4px solid #5a277d;
   background: white;
   padding: 14px 0px 12px 14px; }
 
 .details_info {
   background: white;
-  border-left: 5px solid #008CBA;
+  border-left: 5px solid #5a277d;
   padding: 12px;
   padding: 0.85714rem; }
   .details_info p {
@@ -12699,7 +12699,7 @@ button, .button {
     -o-transition: 0.2s;
     transition: 0.2s; }
     .menu-convenios > li a:hover {
-      color: #005673; }
+      color: #331647; }
     .menu-convenios > li a span {
       font-size: 0.7rem;
       letter-spacing: 0.06rem;
@@ -12740,7 +12740,7 @@ button, .button {
       text-transform: none;
       font-size: 1.1rem !important; }
   .convenio-list li h4 {
-    color: #008CBA; }
+    color: #5a277d; }
   .convenio-list li h5 {
     color: #999; }
     .convenio-list li h5 span {
@@ -12868,7 +12868,7 @@ ul.inline-list.username li {
       .nav-container .form-button form button {
         margin: 0;
         background: none;
-        color: #91e4ff;
+        color: #c49be0;
         padding: 3px;
         font-size: 16px; }
 
