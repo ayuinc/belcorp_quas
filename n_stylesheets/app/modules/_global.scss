@@ -552,3 +552,28 @@ input[type="checkbox"]:checked ~ label {
 		width: 100%;
 	}
 }
+
+
+// FLICKITY GALLERY 
+$gallery-item-height: 350px;
+.gallery.js-flickity {
+	.gallery-cell {
+		height: $gallery-item-height;
+		width: 100%;
+		.wrapper {
+			position: relative;
+			.pic {}
+			.caption {
+				@include position(absolute, 0 null null 9%);
+				background-color: rgba($gray, 0.5);
+				padding: 14px;
+				width: $gallery-item-height;
+				min-height: $gallery-item-height - 140;
+				.bottom {
+					@include position(absolute, null 0 0 0);
+					width: 100%;
+				}
+			}
+		}
+	}
+}
