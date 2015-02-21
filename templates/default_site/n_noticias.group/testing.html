@@ -10,33 +10,25 @@
 		  {embed="n_includes/top-banner"} 		
 			<div id="site-canvas" class="{if segment_1=='n_inicio'}homepage-on{/if}">
 				<div class="container pb-56">
-				  <div class="flexslider m-0">
-				    <ul class="slides">
-				  		<li>
-				  			<a href="#">
-				        	<div class="item active">
-							      <img src="{site_url}n_img/bg-slider.jpg">
-							      <div class="carousel-caption pl-21 normalize-text">
-									    <h1 class="text-gradient thin">POR QUÉ EL<br>
-									    TRABAJO NO<br>
-									    SUCEDE EN EL<br> 
-									    TRABAJO</h1>
-											<h4 class="thin mlp-49"><span class="icon-typ-eye h4"></span>15</h4>
-									  </div>
-							    </div>
-				      	</a>
-				      </li>
-				      <li>
-				      	<img src="{site_url}n_img/bg-slider2.jpg">
-				      </li>
-				      <li>
-								<img src="{site_url}n_img/bg-slider3.jpg">
-				      </li>
-				      <li>
-				      	<img src="{site_url}n_img/bg-slider2.jpg">
-				      </li>
-				    </ul>
-				  </div> 
+					<div class="gallery js-flickity">
+						{exp:channel:entries channel="noticias_portada"}
+					  <div class="gallery-cell">
+					  	<div class="wrapper" data-href="{site_url}n_noticias/iframe/{entry_id}">
+					  		{if noticias_portada_imagen}
+					  		<div class="pic" style="background-image: url({image:url})"></div>
+					  		{if:else}
+					  		<div class="pic" style="background-image: url({site_url}n_img/bg-slider.jpg)"></div>
+					  		{/noticias_portada_imagen}
+					  		<div class="caption">
+					  			<h3 class="text-gradient thin">{title}</h3>
+					  			<div class="bottom text-right">
+					  				<span class="icon-typ-eye">{view_count_one}</span>
+					  			</div>
+					  		</div>
+					  	</div>
+					  </div>
+					  {/exp:channel:entries}
+					</div>
 				  <div class="text-right mt-14">
 				  	<a href="publicar-link.html"  class="pv-7 ph-14 link-edit"><img src="{site_url}n_img/edit3.png" alt=""></a> 
 				  	<a href="actualizar-seleccion.html" class="pv-7 ph-14 link-config"><img src="{site_url}n_img/configurar3.png" alt=""></a>	
