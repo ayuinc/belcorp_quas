@@ -11,7 +11,7 @@
 			<div id="site-canvas" class="{if segment_1=='n_inicio'}homepage-on{/if}">
 				<div class="container pb-56">
 					<div class="gallery js-flickity">
-						{exp:channel:entries channel="noticias_portada"}
+						{exp:channel:entries channel="noticias_portada" limit="5"}
 					  <div class="gallery-cell">
 					  	<div class="wrapper">
 					  		{noticias_portada_imagen}
