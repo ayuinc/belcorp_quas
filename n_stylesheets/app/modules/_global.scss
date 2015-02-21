@@ -562,9 +562,9 @@ $gallery-item-height: 350px;
 		width: 100%;
 		.wrapper {
 			position: relative;
-			height: $gallery-item-height:
+			height: $gallery-item-height;
 			.pic {
-				height: $gallery-item-height:
+				height: $gallery-item-height;
 			}
 			.caption {
 				@include position(absolute, 0 null null 9%);
