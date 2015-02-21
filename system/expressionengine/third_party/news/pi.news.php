@@ -127,6 +127,7 @@ class News
 								array('field_id_90' => '0'),
 								array('entry_id' => $entry_id));
 		}
+		return '{exp:redirecturl url="{site_url}n_noticias/testing"}';
     }
 
     public function entrie_preview(){
@@ -161,7 +162,7 @@ class News
 			return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
 	    }
 		
-		return "";
+		return '{exp:redirecturl url="{site_url}n_noticias/testing"}';
 
     }
 
