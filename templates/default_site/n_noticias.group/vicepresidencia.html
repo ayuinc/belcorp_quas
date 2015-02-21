@@ -1,8 +1,20 @@
-
-		  	Contenido relevante para {exp:user:stats}{Vicepresidencia}{/exp:user:stats}
-		  	
-		  				{exp:news:entries_by_vp parse="inward" limit="4"}
-
+{embed="n_includes/header"}
+	
+	{if logged_in}
+	
+	<div id="site-wrapper">
+		<div id="content-frame">	  
+	    
+		<!--MENU LADO IZQUIERDO-->
+		  {embed="n_includes/menu-izquierdo"}
+		  {embed="n_includes/top-banner"} 		
+			<div id="site-canvas" class="{if segment_1=='n_inicio'}homepage-on{/if}">
+				<div class="container pb-56">
+					<div class="contenido-ventas pl-14 heading-block text-gradient">
+					  <h2 class="thin">Contenido relevante para {exp:user:stats}{Vicepresidencia}{/exp:user:stats}</h2>
+					</div> 
+					<ul class="grid-list grid-list-4 grid-list-1-xs grid-list-2-sm isotope-grid posts-grid mt-35">
+						{exp:news:entries_by_vp parse="inward" limit="4"}
 							<li>
 								{exp:opengraph:query url="{noticias_url}"}
 								<div class="pic" style="background-image: url('{og_image}');">
@@ -30,5 +42,12 @@
 								</div>
 								{/exp:opengraph:query}
 							</li>
-						
 						{/exp:news:entries_by_vp}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{/if}
+{embed="n_includes/footer"}
