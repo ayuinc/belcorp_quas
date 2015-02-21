@@ -236,7 +236,11 @@
 {embed="n_includes/footer"}
 
 <script type="text/javascript" charset="utf-8">
- $(window).load(function() {
-   $('.flexslider').flexslider();
+ $(document).ready(function(){
+ 	$('.js-flickity').flickity({
+ 		contain: true,
+ 		wrapAround: true,
+ 		cellAlign: 'left'
+ 	});
  });
 </script>

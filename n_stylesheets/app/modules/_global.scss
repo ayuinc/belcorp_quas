@@ -576,7 +576,7 @@ $gallery-item-height: 350px;
 					@include position(absolute, null 0 0 0);
 					width: 100%;
 					padding: $container-fluid;
-					color: $gray;
+					color: $gray-dark;
 				}
 			}
 		}
