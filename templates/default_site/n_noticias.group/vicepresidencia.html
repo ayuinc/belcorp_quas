@@ -1,16 +1,34 @@
-{embed="n_includes/header"}
-	{if logged_in}
-	
-	<div id="site-wrapper">
-		<div id="content-frame">	  
-	    
-		<!--MENU LADO IZQUIERDO-->
-		  	{embed="n_includes/menu-izquierdo"}
-		  	{embed="n_includes/top-banner"} 
-		  
-		  
-		  
-		</div>
-	</div>
-	{/if}
-{embed="n_includes/footer"}
+
+		  	Contenido relevante para {exp:user:stats}{Vicepresidencia}{/exp:user:stats}
+		  	
+		  				{exp:news:entries_by_vp parse="inward" limit="4"}
+
+							<li>
+								{exp:opengraph:query url="{noticias_url}"}
+								<div class="pic" style="background-image: url('{og_image}');">
+									<div class="category-label">
+										<span class="text-uppercase">{noticias_categoria_principal}</span>
+									</div>
+								</div>
+								<div class="content">
+									<a href="{site_url}n_noticias/iframe/{noticias_entry_id}">{og_title_resume}</a>
+								</div>
+								<div class="info">
+									<div class="left">
+										<div class="user-card user-card-round size xs">
+					    				<div class="user-pic">			        					
+					    					<img src="{site_url}n_img/user.jpg" alt="">
+					    				</div>
+					    				<div class="user-info">
+					    					<span>Julio Rosal</span>
+					    				</div>
+					    			</div>
+									</div>
+									<div class="right">
+										<span class="icon-typ-eye">15</span>
+									</div>								
+								</div>
+								{/exp:opengraph:query}
+							</li>
+						
+						{/exp:news:entries_by_vp}
