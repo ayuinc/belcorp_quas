@@ -13,12 +13,12 @@
 					<div class="gallery js-flickity">
 						{exp:channel:entries channel="noticias_portada"}
 					  <div class="gallery-cell">
-					  	<div class="wrapper" data-href="{site_url}n_noticias/iframe/{entry_id}">
+					  	<div class="wrapper">
 					  		{noticias_portada_imagen}
 					  		<div class="pic" style="background-image: url({image:url})"></div>
 					  		{/noticias_portada_imagen}
 					  		<div class="caption">
-					  			<h3 class="text-gradient thin">{title}</h3>
+					  			<h3 class="text-gradient light"><a href="{site_url}n_noticias/iframe/{entry_id}">{title}</a></h3>
 					  			<div class="bottom text-right">
 					  				<span class="icon-typ-eye">{view_count_one}</span>
 					  			</div>

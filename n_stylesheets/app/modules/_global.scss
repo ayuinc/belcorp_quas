@@ -568,13 +568,15 @@ $gallery-item-height: 350px;
 			}
 			.caption {
 				@include position(absolute, 0 null null 9%);
-				background-color: rgba($gray, 0.5);
-				padding: 14px;
+				background-color: rgba($gray, 0.9);
+				padding: $container-fluid;
 				width: $gallery-item-height;
 				min-height: $gallery-item-height - 140;
 				.bottom {
 					@include position(absolute, null 0 0 0);
 					width: 100%;
+					padding: $container-fluid;
+					color: $gray;
 				}
 			}
 		}
