@@ -9236,6 +9236,9 @@ header,
     .header .center:after,
     .header .right:after {
       clear: both; }
+  header .left,
+  .header .left {
+    padding: 0; }
   header .logo,
   .header .logo {
     display: block;
