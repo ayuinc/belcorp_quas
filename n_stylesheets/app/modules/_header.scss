@@ -13,7 +13,7 @@ header,
 	.left,
 	.center,
 	.right {
-		// @include flex-middle-center;
+		@include flex-middle;
 		height: $header-height-control;
 		@extend .col-xs-4;
 		@include clearfix;	
@@ -69,6 +69,7 @@ header,
 			display: block;
 			&:first-child {
 				@extend .col-xs-10;
+				padding: 0;
 			}
 			&:last-child {
 				@extend .col-xs-2;
