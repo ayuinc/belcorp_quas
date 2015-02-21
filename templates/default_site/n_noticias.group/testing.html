@@ -15,10 +15,12 @@
 					  <div class="gallery-cell">
 					  	<div class="wrapper" data-href="{site_url}n_noticias/iframe/{entry_id}">
 					  		{if noticias_portada_imagen}
+					  			{noticias_portada_imagen}
 					  		<div class="pic" style="background-image: url({image:url})"></div>
+					  			{/noticias_portada_imagen}
 					  		{if:else}
 					  		<div class="pic" style="background-image: url({site_url}n_img/bg-slider.jpg)"></div>
-					  		{/noticias_portada_imagen}
+					  		{/if}
 					  		<div class="caption">
 					  			<h3 class="text-gradient thin">{title}</h3>
 					  			<div class="bottom text-right">
