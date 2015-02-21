@@ -92,7 +92,7 @@ class News
 									->select('exp_channel_data.entry_id, title, author_id, view_count_one, field_id_85, field_id_86, field_id_87, field_id_89, field_id_88, field_id_90')
 									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
 									->where_in('exp_channel_data.entry_id', $entries_id)
-									->where(array('t.field_id_80' => '0'))
+									->where('field_id_80', 0)
 									->order_by("entry_id", "desc")
 									->limit($limit)
 									->get('exp_channel_data');
@@ -168,7 +168,7 @@ class News
 									->select('exp_channel_data.entry_id, title, author_id, view_count_one, field_id_85, field_id_86, field_id_87, field_id_89, field_id_88, field_id_90')
 									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
 									->where_in('exp_channel_data.entry_id', $entries_id)
-									->where(array('t.field_id_80' => '0'))
+									->where('field_id_80', 0)
 									->order_by("entry_id", "desc")
 									->limit($limit)
 									->get('exp_channel_data');
@@ -245,7 +245,7 @@ class News
 									->select('exp_channel_data.entry_id, title, author_id, view_count_one, field_id_85, field_id_86, field_id_87, field_id_89, field_id_88, field_id_90')
 									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
 									->where_in('exp_channel_data.entry_id', $entries_id)
-									->where(array('t.field_id_80' => '0'))
+									->where('field_id_80', 0)
 									->order_by("entry_id", "desc")
 									->limit($limit)
 									->get('exp_channel_data');
