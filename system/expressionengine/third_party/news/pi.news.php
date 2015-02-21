@@ -89,7 +89,7 @@ class News
 	    
 	    if(!empty($entries_id)) {
 		    $q_entries_data = ee()->db
-									->select('exp_channel_data.entry_id, title, field_id_85, field_id_86')
+									->select('exp_channel_data.entry_id, title, field_id_85, field_id_86, field_id_89')
 									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
 									->where_in('exp_channel_data.entry_id', $entries_id)
 									->order_by("entry_id", "desc")
@@ -102,7 +102,8 @@ class News
 			        'title'  => $row->title,
 			        'noticias_url'    => $row->field_id_85,
 			        'noticias_categoria_principal' => $row->field_id_86,
-			        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id)
+			        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id),
+			        'noticias_titulo' => $row->field_id_89
 			    );
 			
 			    $variables[] = $variable_row;
@@ -159,7 +160,7 @@ class News
 	    
 	    if(!empty($entries_id)) {
 		    $q_entries_data = ee()->db
-									->select('exp_channel_data.entry_id, title, field_id_85, field_id_86')
+									->select('exp_channel_data.entry_id, title, field_id_85, field_id_86, field_id_89')
 									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
 									->where_in('exp_channel_data.entry_id', $entries_id)
 									->order_by("entry_id", "desc")
@@ -172,7 +173,8 @@ class News
 			        'title'  => $row->title,
 			        'noticias_url'    => $row->field_id_85,
 			        'noticias_categoria_principal' => $row->field_id_86,
-			        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id)
+			        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id),
+			        'noticias_titulo' => $row->field_id_89
 			    );
 			
 			    $variables[] = $variable_row;
@@ -230,7 +232,7 @@ class News
 	    
 	    if(!empty($entries_id)) {
 		    $q_entries_data = ee()->db
-									->select('exp_channel_data.entry_id, title, field_id_85, field_id_86')
+									->select('exp_channel_data.entry_id, title, field_id_85, field_id_86, field_id_89')
 									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
 									->where_in('exp_channel_data.entry_id', $entries_id)
 									->order_by("entry_id", "desc")
@@ -243,7 +245,8 @@ class News
 			        'title'  => $row->title,
 			        'noticias_url'    => $row->field_id_85,
 			        'noticias_categoria_principal' => $row->field_id_86,
-			        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id)
+			        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id),
+			        'noticias_titulo' => $row->field_id_89
 			    );
 			
 			    $variables[] = $variable_row;
