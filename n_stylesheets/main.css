@@ -9093,7 +9093,10 @@ header,
     height: 63px;
     background-repeat: no-repeat;
     background-size: 125px;
-    background-position: 3px center; }
+    background-position: 3px center;
+    -webkit-transition: width 0.7s ease;
+    -moz-transition: width 0.7s ease;
+    transition: width 0.7s ease; }
 
 .center ul li .right {
   padding-bottom: 0 !important; }
@@ -9308,10 +9311,10 @@ header,
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease; }
-#site-wrapper.show-nav .header {
+#site-wrapper.show-nav .header .logo {
   width: 248px;
-  -webkit-transition: all 0.7s ease;
-  -moz-transition: all 0.7s ease;
-  transition: all 0.7s ease; }
+  -webkit-transition: width 0.7s ease;
+  -moz-transition: width 0.7s ease;
+  transition: width 0.7s ease; }
 
 /*# sourceMappingURL=main.css.map */
