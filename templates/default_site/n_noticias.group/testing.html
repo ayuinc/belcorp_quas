@@ -41,7 +41,7 @@
 				  	<a href="publicar-link.html"  class="pv-7 ph-14 link-edit"><img src="{site_url}n_img/edit3.png" alt=""></a> 
 				  	<a href="actualizar-seleccion.html" class="pv-7 ph-14 link-config"><img src="{site_url}n_img/configurar3.png" alt=""></a>	
 				  </div>
-				  <h4 class="mt-49 pl-14">CONTENIDO SEGÚN PREFERENCIAS</h4>
+				  <h4 class="mt-49 uppercase pl-14">CONTENIDO SEGÚN PREFERENCIAS</h4>
 					<ul class="grid-list grid-list-4 grid-list-1-xs isotope-grid posts-grid">
 						{exp:news:entries_by_preferences parse="inward" limit="4"}
 							{if noticias_titulo==""}
@@ -105,7 +105,7 @@
 						<a href="#" class="text-primary"> VER TODOS <span class="icon-typ-chevron-right"></span>	</a>
 					</div>
 
-					<h4 class="mt-49 pl-14">CONTENIDO RELEVANTE PARA VENTAS</h4>
+					<h4 class="mt-49 uppercase pl-14">CONTENIDO RELEVANTE PARA VENTAS</h4>
 					<ul class="grid-list grid-list-4 grid-list-1-xs isotope-grid posts-grid">
 						{exp:news:entries_by_vp parse="inward" limit="4"}
 						
@@ -171,7 +171,7 @@
 						<a href="#" class="text-primary"> VER TODOS <span class="icon-typ-chevron-right"></span>	</a>
 					</div>
 
-					<h4 class="mt-49 pl-14">OTRO CONTENIDO QUE TE PUEDE INTERESAR</h4>
+					<h4 class="mt-49 uppercase pl-14">OTRO CONTENIDO QUE TE PUEDE INTERESAR</h4>
 					<ul class="grid-list grid-list-4 grid-list-1-xs isotope-grid posts-grid">
 						{exp:news:all_entries parse="inward" limit="4"}
 							
