@@ -27,6 +27,7 @@ header,
 		background-repeat: no-repeat;
 		background-size: 125px;
 		background-position: 3px center;
+		@include transition(width 0.7s ease);
 	}
 }
 

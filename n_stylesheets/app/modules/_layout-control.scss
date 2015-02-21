@@ -194,8 +194,10 @@ $z-index-control: 30;
 			}
 		}
 		.header {
-			width: $site-menu-width-wide;
-			@include transition(all 0.7s ease);
+			.logo {
+				width: $site-menu-width-wide;
+				@include transition(width 0.7s ease);
+			}
 		}
 		// header {
 		// 	@include transform(translateX($site-menu-width-wide));
