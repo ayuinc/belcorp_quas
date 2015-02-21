@@ -40,11 +40,11 @@ $user-card-width: 70px;
 		&.user-card {
 			// margin-bottom: $container-fluid - 3;
 			.user-pic {
-				width: $user-card-height - 14;
-				// height: $user-card-height - 14;
+				width: $user-card-height - 7;
+				height: $user-card-height - 7;
 			}
 			.user-info {
-				min-height: $user-card-height - 14;
+				min-height: $user-card-height - 7;
 			}
 		}
 	}
@@ -424,8 +424,13 @@ input[type=checkbox]:checked + .grid-noticias {
 	}
 	.user-pic {
 		width: $user-card-width;
+		height: $user-card-width;
+		background-image: url(../img/sun-icon.png);
+		background-size: cover;
+		text-align: center;
+		@include flex-middle-center;
 		img {
-			width: 100%;
+			width: 75%;
 			height: auto;
 			border-radius: $border-radius-base;
 		}
