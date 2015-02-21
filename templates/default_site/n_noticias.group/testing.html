@@ -64,12 +64,13 @@
 							</li>
 							{if:else}
 								<li>
-									{noticias_imagen}
+									{exp:parse_file_paths}
 									<div class="pic" style="background-image: url('{noticias_imagen}');">
 										<div class="category-label">
 											<span class="text-uppercase">{noticias_categoria_principal}</span>
 										</div>
 									</div>
+									{/exp:parse_file_paths}
 									<div class="content">
 										<a href="{site_url}n_noticias/iframe/{noticias_entry_id}">{noticias_contenido}</a>
 									</div>
@@ -129,11 +130,13 @@
 							</li>
 							{if:else}
 								<li>
+									{exp:parse_file_paths}
 									<div class="pic" style="background-image: url('{noticias_imagen}');">
 										<div class="category-label">
 											<span class="text-uppercase">{noticias_categoria_principal}</span>
 										</div>
 									</div>
+									{/exp:parse_file_paths}
 									<div class="content">
 										<a href="{site_url}n_noticias/iframe/{noticias_entry_id}">{noticias_contenido}</a>
 									</div>
