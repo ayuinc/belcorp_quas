@@ -11,6 +11,7 @@
 			<div id="site-canvas" class="{if segment_1=='n_inicio'}homepage-on{/if}">
 				<div class="container pb-56">
 					<div class="contenido-ventas pl-14 heading-block text-gradient">
+					  <a href="{site_url}n_noticias/testing"><span class="icon-typ-chevron-left"></span> Atrás</a>
 					  <h2 class="thin">Contenido relevante para tus preferencias</h2>
 					</div> 
 					<ul class="grid-list grid-list-4 grid-list-1-xs grid-list-2-sm isotope-grid posts-grid mt-35">
@@ -32,12 +33,12 @@
 					    					<img src="{site_url}n_img/user.jpg" alt="">
 					    				</div>
 					    				<div class="user-info">
-					    					<span>Julio Rosal</span>
+					    					<span>{noticias_autor}</span>
 					    				</div>
 					    			</div>
 									</div>
 									<div class="right">
-										<span class="icon-typ-eye">15</span>
+										<span class="icon-typ-eye">{noticias_vistas}</span>
 									</div>								
 								</div>
 								{/exp:opengraph:query}
