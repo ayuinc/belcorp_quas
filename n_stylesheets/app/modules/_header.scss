@@ -18,7 +18,9 @@ header,
 		@extend .col-xs-4;
 		@include clearfix;	
 	}
-	.left {}
+	.left {
+		padding: 0;
+	}
 	.center {}
 	.right {}
 	.logo {
