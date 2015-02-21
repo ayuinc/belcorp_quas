@@ -177,6 +177,7 @@ $z-index-control: 30;
 	&.show-nav {
 		#site-canvas {
 			@include transform(translateX($site-menu-width-wide));
+			padding-right: $site-menu-width-wide;
 		}
 		#site-menu {
 			@include transition(z-index 4.9s ease-in);

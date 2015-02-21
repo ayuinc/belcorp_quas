@@ -9414,7 +9414,8 @@ header,
   -moz-transform: translateX(248px);
   -ms-transform: translateX(248px);
   -o-transform: translateX(248px);
-  transform: translateX(248px); }
+  transform: translateX(248px);
+  padding-right: 248px; }
 #site-wrapper.show-nav #site-menu {
   -webkit-transition: z-index 4.9s ease-in;
   -moz-transition: z-index 4.9s ease-in;
