@@ -1,0 +1,57 @@
+// HEADER STYLES
+header {
+	height: 63px;
+	background: white;
+	position: fixed;
+	width: 100%;
+	left: 63px; 
+	z-index: 36;
+	@include transition(all 0.7s ease);
+	@media #{$small-only} {
+		left: 0;
+	}
+	&.homepage-on {
+		@include transform(translateX(49px)!important);
+		z-index: 20;
+		@media #{$small-only} {
+			@include transform(translateX(0px)!important);
+		}
+	}
+	.user {
+		text-align: right;
+		float: right;
+		padding-top: 12px;
+		div {
+			float: left;
+		}
+		div:first-child {
+			margin-right: 7px;
+			span {
+				display: block;
+			}
+			a {
+				font-size: 12px;
+				font-size: rem(12);
+			}
+			button {
+				margin: 0;
+				background: none;
+				color: gray;
+				padding: 3px;
+			}
+		}
+		img {
+			width: 42px;
+			width: rem(42);
+			height: auto;
+			@media #{$small-only} {
+				width: 35px;
+				width: rem(35);
+			}
+		}
+	}
+	.toggle-nav-link {
+		font-size: 21px;
+		font-size: rem(21);
+	}
+}

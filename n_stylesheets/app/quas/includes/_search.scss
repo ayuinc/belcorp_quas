@@ -1,0 +1,138 @@
+	// Search Block
+.search-block {
+	form {
+		input,
+		.input {
+			height: 52px;
+			height: rem(52);
+			font-size: 21px;
+			font-size: rem(21);
+			@include thin;
+			color: $gris-claro;
+		}
+		button i {
+			color: white;
+			font-size: 28px;
+			font-size: rem(28);
+		}
+	}
+}
+
+// SEARCH TRIGGER Button
+#search-button {
+	.search-icon,
+	button.search-form-trigger {		
+		height: 52px;
+		height: rem(52);
+	}
+	button.search-form-trigger {
+		border: 1px solid $gray-lighter;
+		background: white;
+		color: $gray-light;
+		width: 100%;
+		box-shadow: 0 0 5px #ccc;
+		@include thin;
+		font-size: 21px;
+		font-size: rem(21);
+		padding-top: 13px;
+		padding-top: rem(13);
+		@include transition(all 0.3s ease);
+		&:hover {
+			box-shadow: 0 0 5px $primary-color;
+			color: $primary-color;
+			@include transition(all 0.3s ease);
+		}
+	}
+	.search-icon {
+		background: $primary-color;
+		text-align: center;
+		padding-top: 14px;
+		padding-top: rem(14);
+		color: white;
+		font-size: 21px;
+		font-size: rem(21);
+	}
+}
+
+.search-canvas-overlay {
+	display: none;
+	position: absolute;
+	z-index: 1002;
+	background: rgba($gray-lighter, 0.7);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: auto;
+	height: auto;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	@include transition(display 0.7s ease-in);
+	&.searching {
+		display: block;
+		position: fixed;
+		z-index: 1002;
+		background: rgba($gray-lighter, 0.9);
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: auto;
+		height: auto;
+		overflow-y: hidden;
+		overflow-x: hidden;
+		.search-form {
+			form {
+				input,
+				button {
+					height: 56px;
+					height: rem(56);
+					@include thin;
+				}
+				button {
+					background: transparent;
+					border: 3px solid lighten($primary-color, 42%);
+					color: lighten($primary-color, 42%);
+					font-size: 28px;
+					font-size: rem(28);
+					@include transition(all 0.3s ease);
+					&:hover {
+						border: 3px solid lighten($primary-color, 7%);
+						color: lighten($primary-color, 7%);
+						@include transition(all 0.3s ease);
+					}
+				}
+				input {
+					background: none;
+					font-size: 42px;
+					font-size: rem(42);
+					text-align: center;
+					margin: 21px 0;
+					margin: rem(21) 0;
+					border: none;
+					&:focus {
+						border: none;
+						box-shadow: none;
+					}
+				}
+			}
+		}
+		.close {
+			font-size: 28px;
+			font-size: rem(28);
+			color: $gray;
+			text-transform: uppercase;
+			text-decoration: none;
+			@include thin;
+			position: absolute;
+			right: 21px;
+			top: 21px;
+		}
+	}	
+}
+
+#form_search button[type="submit"] {
+	padding: 10px;
+	padding: rem(10);
+	text-align: center;
+}

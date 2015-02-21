@@ -1,0 +1,60 @@
+// Min-Heights
+@for $i from 1 to 13 {
+  .mh-#{($i*7)*10} {
+    min-height: em(($i*7)*10)!important;
+  }
+}
+
+.vh-100 {
+  height: 100vh;
+}
+
+
+// Box Shadows
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+          box-shadow: $shadow;
+}
+.box-shadow {
+  @include box-shadow(0 3px 3px 0 rgba(0,0,0,0.15));
+}
+// END:BOX-SHADOW
+
+// Z-Index
+@for $i from 1 to 4 {
+  .z-index#{($i)*10} {
+    z-index: ($i)*10!important;
+  }
+}
+
+// Positions
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+// Displays
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+// Form overrides 
+.select-override {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  text-indent: 1px;
+  text-overflow: "";
+  &.input-lg {
+    line-height: 28px;
+    background: white url(/img/arrow-down.svg) no-repeat 98%;
+  }
+}

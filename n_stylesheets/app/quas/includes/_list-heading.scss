@@ -1,0 +1,26 @@
+	// list-heading
+.list-heading {
+	border-left: 4px solid $gris-claro;
+	text-transform: uppercase;
+	@include light;
+}
+
+ul.no-bullet {
+	li {
+		a {
+			letter-spacing: 0.10px;
+			@include thin;
+			color: $gris-claro;
+			&:hover {
+				color: $morado-hover;
+			}
+			font-size: 14px;
+			font-size: rem(14);
+			text-transform: uppercase;
+			&.active {
+				color: $morado-hover;
+			} 
+			
+		}
+	}
+}

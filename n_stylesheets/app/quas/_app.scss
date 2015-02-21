@@ -1,0 +1,182 @@
+body {
+	@include thin;
+	position: relative;
+	letter-spacing: 0.10px;
+}
+
+h1, h2, h3, h4, h5, h6, p, ol, li, ul, b {
+	@include thin;
+}
+
+.medium-offset-1 {
+	margin-left: 4.333333% !important;
+	@media #{$small-only} {
+		margin-left: 0 !important;
+	}
+}
+
+.clearfix {
+	padding:0;
+	margin:0;
+}
+
+.bg-gris {
+	background-color: $gray-lighter;
+}
+
+.tab-bar-section #start_course {
+	padding: 0;
+	font-size: 16px;
+	font-size: rem(16);
+	background: none;
+	margin-bottom: 0;
+	color: $gray;
+}
+
+// .active {
+// 	color:$morado !important; 
+// }
+
+button, .button {
+	font-size: 0.8rem;
+	font-weight: 100;
+} 
+
+.fixed-on {
+	position:fixed;
+	width:237px;
+	top:14.8rem;
+	right:12.3rem;
+}
+
+
+// SHOW PAGE
+	
+	// Menu Convenios
+.menu-convenios {
+	> li {		
+	  padding-right: 1.5rem;
+	  line-height: 100%;
+		a {
+			text-transform: uppercase;
+	    font-weight: 300;
+	    font-size: 0.9rem;
+	    letter-spacing: 0.03rem;
+	    -webkit-transition: 0.2s;
+	    -moz-transition: 0.2s;
+	    -o-transition: 0.2s;
+	    transition: 0.2s;
+			&:hover {
+				color: darken($primary-color, 14%);
+			}
+			span {				
+	      font-size: 0.7rem;
+	      letter-spacing: 0.06rem;
+	      text-rendering: optimizeLegibility;
+			}
+		}
+		&:first-child {
+			a {
+				font-size: 18px;
+				font-size: rem(18);
+				@include medium;
+			}
+			span {
+				font-size: 16px;
+			}
+			span {
+				&:after {
+					content: "\e609";
+					font-family: "icomoon-typ";
+				} 
+			}
+		}
+		&:last-child {
+			border-right: none;
+		}
+		.columns {
+			ul {
+				margin: 0 !important;
+    		list-style: none;
+    		width:120px;
+				li {
+					border-right: none;
+		      padding: 0;
+		      line-height: 50% !important;
+					a {
+						color: #596c79;
+        		font-size: 0.7rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+.convenio-list {
+	li {
+		margin-bottom: 21px;
+		margin-bottom: rem(21);
+		p {
+			line-height: 28px;
+			line-height: rem(28);
+			a {
+				color:$morado;
+				text-transform: none;
+				font-size: 1.1rem !important;
+			}
+		}
+		h4 {
+			color: $primary-color;
+		}
+		h5 {
+			color: $gris-medio;
+			span {
+				color: $gray-darker;
+			}
+		}
+	}
+}
+
+ul.inline-list.username {
+	li {
+		min-width: 170px;
+		min-width: rem(170);
+		a {
+			color: $gray;
+		}
+	}
+}
+
+.tab-bar-section.right {
+	right: 77px;
+	right: rem(77);
+}
+
+.user-relocate {
+	position: absolute;
+	left: -102px;
+}
+
+.no-bullet {
+	li {
+		line-height: 24px;
+	}
+}
+
+.bg-gray-light {
+	color:$gray;
+}
+
+.hp-footer {
+	color:$gray-light !important;
+	font-size: rem(14);
+	@include thin;
+	margin-top:8rem;
+	a {
+		color:$gray-lighter; 
+		&:hover {
+			opacity:0.7;
+		}
+	}
+}
