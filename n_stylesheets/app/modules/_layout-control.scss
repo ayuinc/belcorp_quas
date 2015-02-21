@@ -193,6 +193,10 @@ $z-index-control: 30;
 				@include transition(all 0.3s ease);
 			}
 		}
+		.header {
+			width: $site-menu-width-wide;
+			@include transition(all 0.7s ease);
+		}
 		// header {
 		// 	@include transform(translateX($site-menu-width-wide));
 		// 	@include transition(all 0.7s ease);
