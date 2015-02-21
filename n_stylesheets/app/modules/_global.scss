@@ -565,6 +565,7 @@ $gallery-item-height: 350px;
 			height: $gallery-item-height;
 			.pic {
 				height: $gallery-item-height;
+				@include bg-img-control;
 			}
 			.caption {
 				@include position(absolute, 0 null null 9%);

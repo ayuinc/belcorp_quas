@@ -21,6 +21,10 @@
 // Override some default variables:
 @import "app/settings";
 
+@import 
+  "foundation/components/global",
+  "foundation/settings";
+
 
 /*========================================
 =                  BOURBON               =

@@ -41,3 +41,34 @@
 // APP Views
 // @import 
   // VIEW NAME
+
+@import 
+  // "foundation/settings",
+  "quas/includes/utilities-custom",
+  "quas/includes/type-custom",
+  "quas/includes/icons-typ",
+  "quas/includes/flag-icon.min.scss",
+  "quas/includes/header",
+  "quas/includes/footer",
+  "quas/includes/breadcrumbs",
+  "quas/includes/login-form",
+  "quas/includes/grid-panels",
+  "quas/includes/search",
+  "quas/includes/list-heading",
+  "quas/includes/isotope-filters",
+  "quas/includes/pin-menu",
+  "quas/includes/off-canvas-viejo",
+  "quas/includes/bootstrapValidator.min", 
+  "quas/includes/ayu-off-canvas";
+
+// APP Views
+@import 
+  "quas/canvas-container",
+  "quas/wall",
+  "quas/cursos",
+  "quas/app",
+  "quas/escuelas";
+
+@import 
+  "phone-custom",
+  "tablet-custom";

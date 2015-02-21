@@ -1,0 +1,171 @@
+
+/*  Phone custom  */
+
+@media #{$small-only} {
+	.login-formulario img {
+		margin:2rem 0 1rem 0;
+	}
+	.menu-icon {
+		font-size: 28px;
+	}
+	
+	ul.no-bullet li ul, ul.no-bullet li ol {
+		margin-left:0;
+	}
+	
+	.grid-panels { 
+		.panel-body {
+			height:120px !important;
+		}
+	}		
+
+
+	.heading-block {
+		div:last-child {
+			border-left:none;
+			padding-top: 14px;
+			padding-top: rem(14);
+			min-height: 91px;
+			min-height: rem(91);
+		}
+		h1 {
+			font-size: 42px;
+			font-size: rem(42);
+			margin-top: 0;
+		}
+		h4 {
+			font-size: 21px;
+			font-size: rem(21);
+		}
+	}
+	#search-button {
+		button.search-form-trigger {
+			font-size: 14px;
+			font-size: rem(14);
+		}	
+	}
+	
+	.search-block {
+		form {
+			input[type=text] {
+				font-size: 1rem;
+			}
+		}
+	}	
+	
+
+	.breadcrumbs {
+		display:none;
+	}
+	.escuela-block {
+		h1 {
+			font-size: 2rem; 
+		}
+		form {
+			margin-bottom:0; 
+		}
+	}
+
+	.icon-container {
+		padding: 10px 0; 
+	}
+
+	.list-heading {
+		border: none;
+		padding: 0 !important;
+	}
+	
+	// MOVIL MENU SECUNDARIO
+	.movil-menu-secundario {
+		position: relative;
+		text-align: center;
+		.small-12 {
+			position: absolute;
+			height: 2000px;
+			background: white;
+			z-index: 30;
+			h6 {
+				
+			}
+			.no-bullet {
+				li {
+					padding: 7px 0;
+					border-bottom: 1px solid whitesmoke;
+					a {
+						font-size: 18px;
+					}
+				}
+			}
+		}
+	}
+
+	.nav-container {
+		.form-button {
+			position: relative;
+			form {
+				position: absolute;
+				top: 14px;
+				left: 61px;
+				button {
+					margin: 0;
+					background: none;
+					color: lighten($primary-color, 42%);
+					padding: 3px;
+					font-size: 16px;
+				}
+			}		
+		}
+	}
+
+	.menu-convenios > li .columns ul {
+		width: 100%;
+	}
+	.menu-convenios > li .columns ul li {
+		padding: 7px 0;
+	}
+	.f-dropdown.content {
+		padding: 3px;
+	}
+	.f-dropdown {
+		border: none;
+	}
+}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,119 @@
+/* Tablet custom */
+// Medium screens
+@media only screen and (min-width: 40.063em) and (orientation : portrait) { 
+	
+	.heading-block {
+		h1 {
+			margin: -0.5rem 0 0 0;
+			font-size: 49px !important;
+			font-size: rem(49) !important;
+		}
+		h4 {
+			font-size:1rem;
+		}
+	}
+	
+	.escuela-block {
+		h1 {
+			margin-bottom:0;
+		}
+	}	
+	
+	.list-heading {
+		h5 {
+			font-size: 1rem;
+		}
+	}
+	
+	.full-width-for-portrait {
+		width:100% !important;
+	}
+	
+	.grid-panels {
+		.panel-heading {
+			.video-clip {
+				// width:45px; 
+			}
+		}
+		.panel-body {
+			height:265px;
+		}
+	}	
+	
+	.search-block {
+		form {
+			input {
+				font-size: 1.1rem;
+			}
+		}
+	}	
+
+} /* min-width 641px, medium screens */
+
+@media only screen and (min-width: 40.063em) and (orientation : landscape) { 
+
+
+	.heading-block {
+		h1 {
+			margin:0;
+			font-size: 63px ;
+			font-size: rem(63);
+		}
+		h4 {
+			font-size:1.35rem;
+		}
+	}
+	
+	.full-width-for-landscape {
+		width:100% !important;
+	}	
+
+	.escuela-block {
+		h1 {
+			margin:0 0 2rem;
+			font-size:4rem;
+		}
+	}
+
+	ul.no-bullet {
+		li {
+			a {
+				font-size: 12px;
+				font-size: rem(12px);
+			}
+		}
+	} 
+
+	.grid-panels {
+		.panel-heading {
+			.video-clip {
+				// width:45px;
+			}
+		}
+		.panel-body {
+			height:245px;
+		}
+		h5 {
+			font-size:0.85rem; 
+		}
+	}
+	
+	.list-heading {
+		font-size: 0.9rem; 
+	}
+	
+	.search-block {
+		form {
+			input {
+				font-size: 1.1rem;
+			}
+		}
+	}
+	
+	footer {
+		a {
+			font-size: 0.8rem;
+		}
+	}
+
+}
