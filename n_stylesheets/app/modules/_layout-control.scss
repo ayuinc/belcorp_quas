@@ -36,6 +36,7 @@ $z-index-control: 30;
   padding-right: $site-menu-width-narrow;
   &.homepage-on {
   	@include transform(translateX($site-menu-width-wide));
+		padding-right: $site-menu-width-wide;
   	@media #{$sm-only} {
   		@include transform(translateX(0px));
   	}

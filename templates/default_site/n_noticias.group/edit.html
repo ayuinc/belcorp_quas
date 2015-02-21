@@ -1,0 +1,166 @@
+{embed="n_includes/header"}
+  
+  {if logged_in}
+  
+  <div id="site-wrapper">
+    <div id="content-frame">    
+      
+    <!--MENU LADO IZQUIERDO-->
+      {embed="n_includes/menu-izquierdo"}
+      {embed="n_includes/top-banner"}     
+      <div id="site-canvas" class="{if segment_1=='n_inicio'}homepage-on{/if}">
+        <div class="container pb-56">
+
+            {exp:channel:form
+            	channel="noticias"
+            	return="n_noticias/vista_previa/ENTRY_ID"
+            	datepicker="no"
+            	entry_id="{last_segment}"
+            }
+            <input type="hidden" name="is_preview" value="1" id="is_preview" dir="ltr" field_content_type="all" maxlength="1">
+            
+            <section class="minhp-100 pv-14"> <!-- MAIN CONTENT -->
+              <div class="container pb-56">
+              	<input type="hidden" name="title" value="Noticia" id="title">
+                <div id="tabs" class="tabs">
+                  <nav>
+                    <h4>1. CONTENIDO</h4>
+                    <ul>
+                      <li><a href="#section-1" class=""><span>Externo</span></a></li>
+                      <li><a href="#section-2" class=""><span>Propio</span></a></li>
+                    </ul>
+                  </nav>
+                  <div class="content">
+                    <section id="section-1">
+                      <!-- LINK -->
+                      <div class="externo">
+                        <div class="form-group">
+                            <span>*</span> <label for="link" class="h4 thin">Coloca el link del contenido aquí</label>
+            			  	{field:noticias_url}
+                        </div>
+                      </div>
+                    </section>
+                    <section id="section-2">
+                      <div class="propio">
+                        <div class="form-group">
+                          <span>*</span><label for="link" class="h4 thin">Subir imagen</label>
+                          {field:noticias_imagen} 
+                        </div>
+                        <div class="form-group">
+                          <span>*</span><label for="link" class="h4 thin">Titulo</label>
+                          <input type="text" class="form-control" name="noticias_titulo" id="title" placeholder="Escribe el link de tu noticia aquí ">
+                        </div>
+                        <div class="form-group">
+                          <span>*</span><label for="link" class="h4 thin">Texto</label>
+                          {field:noticias_contenido}
+                        </div>
+                      </div>
+                    </section>
+                  </div><!-- /content -->
+                </div><!-- /tabs -->
+                
+                <div class="content">
+                  <div class="categoria">
+                    <hr>
+                    <h4>2. CATEGORIZACIÓN</h4>
+                    <form action="">
+                      <div class="form-group">
+                        <h4 class="thin"><span>*</span>CATEGORÍA PRINCIPAL</h4>
+                        {field:noticias_categoria_principal}
+                      </div>
+                      <div class="form-group">	
+                        <h4 class="thin"><span>*</span>OTROS TAGS</h4>
+                        <ul class="grid-list grid-list-5 grid-list-2-xs grid-list-3-sm">
+                          {categories}
+                          <li class="grid-list-item">
+                             {if {category_group_id}=='18'}
+                              <label class="checkbox-inline">
+                                <input type="checkbox" id="{category_id}" name="category[]" value="{category_id}" {selected}> {category_name}
+                              </label>
+                            {/if}
+                          </li>
+                          {/categories}                      
+                        </ul>
+                      </div>
+                      <div class="form-group text-purple">
+                        <h4 class="thin">PÚBLICO</h4>
+                        <h4><span>*</span>Tipo</h4>
+                        <ul class="grid-list grid-list-5 grid-list-2-xs grid-list-3-sm">
+                          {categories}
+                          <li class="grid-list-item">
+              					     {if {category_group_id}=='21'}
+                              <label class="checkbox-inline">
+                              	<input type="checkbox" id="{category_id}" name="category[]" value="{category_id}" {selected}> {category_name}
+                              </label>
+                      			{/if}
+                          </li>
+              			      {/categories}                      
+                        </ul>
+                      </div>
+                      <div class="form-group text-purple">
+                        <h4><span>*</span>Países</h4>
+                        <ul class="grid-list grid-list-5 grid-list-2-xs grid-list-3-sm">
+                          {categories}
+                          <li class="grid-list-item">
+                             {if {category_group_id}=='19'}
+                              <label class="checkbox-inline">
+                                <input type="checkbox" id="{category_id}" name="category[]" value="{category_id}" {selected}> {category_name}
+                              </label>
+                            {/if}
+                          </li>
+                          {/categories}                      
+                        </ul>
+                      </div>
+                      <div class="form-group text-purple">
+                        <h4><span>*</span>Grupo funcional</h4>
+                        <ul class="grid-list grid-list-5 grid-list-2-xs grid-list-3-sm">
+                          {categories}
+                          <li class="grid-list-item">
+                             {if {category_group_id}=='22'}
+                              <label class="checkbox-inline">
+                                <input type="checkbox" id="{category_id}" name="category[]" value="{category_id}" {selected}> {category_name}
+                              </label>
+                            {/if}
+                          </li>
+                          {/categories}                      
+                        </ul>
+                      </div>
+                      <div class="form-group text-purple">
+                        <h4><span>*</span>Vicepresidencia</h4>
+                        <ul class="grid-list grid-list-5 grid-list-2-xs grid-list-3-sm">
+                          {categories}
+                          <li class="grid-list-item">
+                             {if {category_group_id}=='20'}
+                              <label class="checkbox-inline">
+                                <input type="checkbox" id="{category_id}" name="category[]" value="{category_id}" {selected}> {category_name}
+                              </label>
+                            {/if}
+                          </li>
+                          {/categories}                      
+                        </ul>
+                      </div>
+                      <hr>
+                      <div class="form-group">
+                      	<button type="submit" class="btn btn-gray">Continuar</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </section> <!-- END:Main content -->
+          {/exp:channel:form}
+        </div>
+      </div>
+    </div>
+{embed="n_includes/footer"}
+<script type="text/javascript">
+	$('#publishForm').get(0).setAttribute('action', window.location.origin);
+	new CBPFWTabs( document.getElementById( 'tabs' ) );
+	
+	$(function() {
+		var cats = '{exp:news:get_entry_categories entry_id="{last_segment}"}'.split(',');
+		cats.forEach(function(tag) {
+			$('input#' + tag).prop('checked', true);
+		});
+	});
+</script>
