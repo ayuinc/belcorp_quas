@@ -16,8 +16,8 @@
 					<h2 class="thin mb-21">ESTÁS EN LA NUEVA SECCIÓN DE NOTICIAS DE LA UCB</h2>
 					<p class="lead thin">Para darte la mejor experiencia, selecciona las categorias de tu preferencia. Las noticias que te <br> presentaremos serán en función de tu selección.</p>
 			  </div> 
+    		{exp:user:edit return="n_noticias/testing"}
 				<ul class="grid-list grid-list-4 grid-list-1-xs grid-list-2-sm isotope-grid seleccion-grid normalize-text">
-    			{exp:user:edit return="n_noticias/testing"}
 					{exp:channel:categories style="linear" category_group="18"}
 						<li>
 							<div>
@@ -29,8 +29,8 @@
 						</li>
 					{/exp:channel:categories}
 					<input type="hidden" id="field_tags" name="Preferencias" value="{Preferencias}" />
-					{/exp:user:edit}
 				</ul>
+				{/exp:user:edit}
 				<div class="text-center mt-35">
 					<div class="form-group">
 						<button type="submit" class="btn btn-gray">Continuar</button>
