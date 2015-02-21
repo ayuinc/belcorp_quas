@@ -1,20 +1,20 @@
-header {
-	height: 63px;
-	background: white;
-	position: fixed;
+$header-height-control: 63px;
+
+header,
+.header {
+	@include position(fixed, 0 0 null 0);
+	@include transition(all 0.7s ease);
+	@include flex-space-between;
+	@include normalize-text;
+	height: $header-height-control;
+	background-color: white;
 	width: 100%;
-	left: 63px;
-	@media #{$sm-down} {
-		left: 0;
-	}
 	z-index: 36;
-	-webkit-transition: all 0.7s ease;
-	-moz-transition: all 0.7s ease;
-	transition: all 0.7s ease;
 	.left,
 	.center,
 	.right {
 		@include flex-middle-center;
+		height: $header-height-control;
 	}
 	.left {}
 	.center {}

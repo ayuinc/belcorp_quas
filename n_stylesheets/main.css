@@ -9044,22 +9044,69 @@ html[xmlns] .slides {
   .flex-direction-nav .flex-next {
     opacity: 1;
     right: 10px; } }
-header {
-  height: 63px;
-  background: white;
+header,
+.header {
   position: fixed;
-  width: 100%;
-  left: 63px;
-  z-index: 36;
+  top: 0;
+  right: 0;
+  left: 0;
   -webkit-transition: all 0.7s ease;
   -moz-transition: all 0.7s ease;
-  transition: all 0.7s ease; }
-  @media only screen and (max-width: 768px) {
-    header {
-      left: 0; } }
+  transition: all 0.7s ease;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+  height: 63px;
+  background-color: white;
+  width: 100%;
+  z-index: 36; }
+  header h1, header h2, header h3, header h4, header h5, header h6,
+  header .h1, header .h2, header .h3, header .h4, header .h5, header .h6,
+  header p, header .p,
+  .header h1,
+  .header h2,
+  .header h3,
+  .header h4,
+  .header h5,
+  .header h6,
+  .header .h1,
+  .header .h2,
+  .header .h3,
+  .header .h4,
+  .header .h5,
+  .header .h6,
+  .header p,
+  .header .p {
+    margin: 0; }
   header .left,
   header .center,
-  header .right {
+  header .right,
+  .header .left,
+  .header .center,
+  .header .right {
     display: -webkit-box;
     display: -moz-box;
     display: box;
@@ -9091,7 +9138,8 @@ header {
     -ms-align-items: center;
     -o-align-items: center;
     align-items: center;
-    -ms-flex-align: center; }
+    -ms-flex-align: center;
+    height: 63px; }
 
 .center ul li .right {
   padding-bottom: 0 !important; }
