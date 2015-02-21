@@ -4,13 +4,13 @@
 		<a href="{site_url}n_inicio" class="hover-toggle logo" style="background-image: url({site_url}n_img/logo-header-nuevo.png)"></a>
 	</div>
 	<div class="center"></div>
-	<div class="right">
+	<div class="right user">
 		{if logged_in}
 			{embed="n_includes/head_profile_lms"}
-			{exp:member:custom_profile_data}
+				{exp:member:custom_profile_data}
 				<a href="{path='logout'}">Salir</a>
 			{/exp:member:custom_profile_data}
+			{embed="n_includes/image_profile_lms"}
 		{/if}
-		{embed="n_includes/image_profile_lms"}
 	</div>
 </header> <!-- END:Header -->
