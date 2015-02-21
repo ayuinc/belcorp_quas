@@ -13,8 +13,10 @@ header,
 	.left,
 	.center,
 	.right {
-		@include flex-middle-center;
+		// @include flex-middle-center;
 		height: $header-height-control;
+		@extend .col-xs-4;
+		@include clearfix;	
 	}
 	.left {}
 	.center {}
@@ -57,4 +59,30 @@ header,
     -moz-text-fill-color: transparent;
     text-fill-color: transparent; 
   } 
+}
+
+// HEADER USER
+.header {
+	.user {
+		text-align: right;
+		form {
+			display: block;
+			&:first-child {
+				@extend .col-xs-11;
+			}
+			&:last-child {
+				@extend .col-xs-1;
+			}
+		}
+		a {
+			display: block;
+			padding-right: 35px;
+		}
+		button {
+			background-color: transparent;
+			margin: 0;
+			padding: 0;
+			font-size: $font-size-base;
+		}
+	}
 }

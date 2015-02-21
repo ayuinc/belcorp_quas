@@ -583,3 +583,8 @@ $gallery-item-height: 350px;
 		}
 	}
 }
+
+// NO BULLET
+.no-bullet {
+	@extend .list-unstyled;
+}
