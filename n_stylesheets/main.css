@@ -8787,6 +8787,15 @@ input[type="checkbox"]:checked ~ label {
   font-size: 70px;
   font-size: 4.375rem; }
 
+.preview-box {
+  border: 1px solid #70327c;
+  padding: 21px;
+  padding: 1.5rem;
+  width: 50%; }
+  @media only screen and (max-width: 768px) {
+    .preview-box {
+      width: 100%; } }
+
 /*
  * jQuery FlexSlider v2.2.0
  * http://www.woothemes.com/flexslider/
@@ -9045,6 +9054,9 @@ header {
   -webkit-transition: all 0.7s ease;
   -moz-transition: all 0.7s ease;
   transition: all 0.7s ease; }
+  @media only screen and (max-width: 768px) {
+    header {
+      left: 0; } }
   header .left,
   header .center,
   header .right {

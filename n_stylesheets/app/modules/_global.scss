@@ -541,3 +541,14 @@ input[type="checkbox"]:checked ~ label {
 	font-size: 70px;
 	font-size: 4.375rem;
 }
+
+// PREVIEW BOX
+.preview-box {
+	border: 1px solid $brand-primary;
+	padding: 21px;
+	padding: rem(21px);
+	width: 50%;
+	@media #{$sm-down} {
+		width: 100%;
+	}
+}

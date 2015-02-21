@@ -4,6 +4,9 @@ header {
 	position: fixed;
 	width: 100%;
 	left: 63px;
+	@media #{$sm-down} {
+		left: 0;
+	}
 	z-index: 36;
 	-webkit-transition: all 0.7s ease;
 	-moz-transition: all 0.7s ease;
