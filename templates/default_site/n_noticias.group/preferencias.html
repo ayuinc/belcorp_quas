@@ -16,6 +16,7 @@
 					</div> 
 					<ul class="grid-list grid-list-4 grid-list-1-xs grid-list-2-sm isotope-grid posts-grid mt-35">
 						{exp:news:entries_by_preferences parse="inward" limit="100"}
+							{if noticias_titulo==""}
 							<li>
 								{exp:opengraph:query url="{noticias_url}"}
 								<div class="pic" style="background-image: url('{og_image}');">
@@ -43,6 +44,35 @@
 								</div>
 								{/exp:opengraph:query}
 							</li>
+							{if:else}
+								<li>
+									{exp:parse_file_paths}
+									<div class="pic" style="background-image: url('{noticias_imagen}');">
+										<div class="category-label">
+											<span class="text-uppercase">{noticias_categoria_principal}</span>
+										</div>
+									</div>
+									{/exp:parse_file_paths}
+									<div class="content">
+										<a href="{site_url}n_noticias/iframe/{noticias_entry_id}">{noticias_contenido}</a>
+									</div>
+									<div class="info">
+										<div class="left">
+											<div class="user-card user-card-round size xs">
+						    				<div class="user-pic">			        					
+						    					<img src="{site_url}n_img/user.jpg" alt="">
+						    				</div>
+						    				<div class="user-info">
+						    					<span>{noticias_autor}</span>
+						    				</div>
+						    			</div>
+										</div>
+										<div class="right">
+											<span class="icon-typ-eye">{noticias_vistas}</span>
+										</div>								
+									</div>
+								</li>
+							{/if}
 						{/exp:news:entries_by_preferences}
 					</ul>
 				</div>
