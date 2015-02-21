@@ -9081,8 +9081,7 @@ header,
   margin: 0;
   height: 63px;
   background-color: white;
-  width: 100%;
-  z-index: 36; }
+  width: 100%; }
   header h1, header h2, header h3, header h4, header h5, header h6,
   header .h1, header .h2, header .h3, header .h4, header .h5, header .h6,
   header p, header .p,
@@ -9156,5 +9155,14 @@ header,
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
     text-fill-color: transparent; } }
+/* Layout Control */
+#site-menu {
+  z-index: 30; }
+
+.header {
+  z-index: 29; }
+
+#site-canvas {
+  z-index: 28; }
 
 /*# sourceMappingURL=main.css.map */
