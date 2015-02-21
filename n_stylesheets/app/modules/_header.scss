@@ -13,7 +13,7 @@ header,
 	.left,
 	.center,
 	.right {
-		// @include flex-middle-center;
+		@include flex-middle;
 		height: $header-height-control;
 		@extend .col-xs-4;
 		@include clearfix;	
@@ -68,16 +68,18 @@ header,
 		form {
 			display: block;
 			&:first-child {
-				@extend .col-xs-11;
+				@extend .col-xs-10;
+				padding: 0;
 			}
 			&:last-child {
-				@extend .col-xs-1;
+				@extend .col-xs-2;
+				padding: 0;
 			}
 		}
-		a {
-			display: block;
-			padding-right: 35px;
-		}
+		// a {
+		// 	display: block;
+		// 	padding-right: 35px;
+		// }
 		button {
 			background-color: transparent;
 			margin: 0;
