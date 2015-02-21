@@ -89,7 +89,7 @@ class News
 	    
 	    if(!empty($entries_id)) {
 		    $q_entries_data = ee()->db
-									->select('exp_channel_data.entry_id, title, field_id_85, field_id_86, field_id_87, field_id_89, field_id_88')
+									->select('exp_channel_data.entry_id, title, author_id, field_id_85, field_id_86, field_id_87, field_id_89, field_id_88')
 									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
 									->where_in('exp_channel_data.entry_id', $entries_id)
 									->order_by("entry_id", "desc")
@@ -100,6 +100,7 @@ class News
 			    $variable_row = array(
 			    	'noticias_entry_id' => $row->entry_id,
 			        'title'  => $row->title,
+			        'noticias_autor' => $this->get_member_name($row->author_id),
 			        'noticias_url'    => $row->field_id_85,
 			        'noticias_categoria_principal' => $row->field_id_86,
 			        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id),
@@ -162,7 +163,7 @@ class News
 	    
 	    if(!empty($entries_id)) {
 		    $q_entries_data = ee()->db
-									->select('exp_channel_data.entry_id, title, field_id_85, field_id_86, field_id_87, field_id_89, field_id_88')
+									->select('exp_channel_data.entry_id, title, author_id, field_id_85, field_id_86, field_id_87, field_id_89, field_id_88')
 									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
 									->where_in('exp_channel_data.entry_id', $entries_id)
 									->order_by("entry_id", "desc")
@@ -173,6 +174,7 @@ class News
 			    $variable_row = array(
 			    	'noticias_entry_id' => $row->entry_id,
 			        'title'  => $row->title,
+			        'noticias_autor' => $this->get_member_name($row->author_id),
 			        'noticias_url'    => $row->field_id_85,
 			        'noticias_categoria_principal' => $row->field_id_86,
 			        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id),
@@ -236,7 +238,7 @@ class News
 	    
 	    if(!empty($entries_id)) {
 		    $q_entries_data = ee()->db
-									->select('exp_channel_data.entry_id, title, field_id_85, field_id_86, field_id_87, field_id_89, field_id_88')
+									->select('exp_channel_data.entry_id, title, author_id, field_id_85, field_id_86, field_id_87, field_id_89, field_id_88')
 									->join('exp_channel_titles', 'exp_channel_data.entry_id = exp_channel_titles.entry_id')
 									->where_in('exp_channel_data.entry_id', $entries_id)
 									->order_by("entry_id", "desc")
@@ -247,6 +249,7 @@ class News
 			    $variable_row = array(
 			    	'noticias_entry_id' => $row->entry_id,
 			        'title'  => $row->title,
+			        'noticias_autor' => $this->get_member_name($row->author_id),
 			        'noticias_url'    => $row->field_id_85,
 			        'noticias_categoria_principal' => $row->field_id_86,
 			        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id),
@@ -275,6 +278,13 @@ class News
 	    }
 	    
 	    return $cats;
+    }
+    
+    private function get_member_name($member_id) {
+	    $query_name = ee()->db->get_where('exp_members', array('member_id' => $member_id));
+	    $row = $query_name->row();
+	    
+	    return $row->screen_name;
     }
     
     private function get_member_fields() {
