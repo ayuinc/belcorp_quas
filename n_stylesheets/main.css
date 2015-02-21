@@ -703,29 +703,29 @@ address {
   .row:after {
     clear: both; }
 
-.col-xs-1, .header .user form:last-child, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .post-preliminar > li .info .right, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .posts-grid > li .info .right, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, header .left,
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .post-preliminar > li .info .right, .header .user form:last-child, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .posts-grid > li .info .right, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, header .left,
 header .center,
 header .right,
 .header .left,
 .header .center,
-.header .right, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, #tabs .content .externo, #tabs .content .propio, .content-vista, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .posts-grid > li .info .left, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .post-preliminar > li .info .left, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .header .user form:first-child, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, #tabs .content .categoria, .col-lg-12 {
+.header .right, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, #tabs .content .externo, #tabs .content .propio, .content-vista, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .posts-grid > li .info .left, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .post-preliminar > li .info .left, .header .user form:first-child, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, #tabs .content .categoria, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px; }
 
-.col-xs-1, .header .user form:last-child, .col-xs-2, .post-preliminar > li .info .right, .col-xs-3, .posts-grid > li .info .right, .col-xs-4, header .left,
+.col-xs-1, .col-xs-2, .post-preliminar > li .info .right, .header .user form:last-child, .col-xs-3, .posts-grid > li .info .right, .col-xs-4, header .left,
 header .center,
 header .right,
 .header .left,
 .header .center,
-.header .right, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .posts-grid > li .info .left, .col-xs-10, .post-preliminar > li .info .left, .col-xs-11, .header .user form:first-child, .col-xs-12 {
+.header .right, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .posts-grid > li .info .left, .col-xs-10, .post-preliminar > li .info .left, .header .user form:first-child, .col-xs-11, .col-xs-12 {
   float: left; }
 
-.col-xs-1, .header .user form:last-child {
+.col-xs-1 {
   width: 8.33333%; }
 
-.col-xs-2, .post-preliminar > li .info .right {
+.col-xs-2, .post-preliminar > li .info .right, .header .user form:last-child {
   width: 16.66667%; }
 
 .col-xs-3, .posts-grid > li .info .right {
@@ -754,10 +754,10 @@ header .right,
 .col-xs-9, .posts-grid > li .info .left {
   width: 75%; }
 
-.col-xs-10, .post-preliminar > li .info .left {
+.col-xs-10, .post-preliminar > li .info .left, .header .user form:first-child {
   width: 83.33333%; }
 
-.col-xs-11, .header .user form:first-child {
+.col-xs-11 {
   width: 91.66667%; }
 
 .col-xs-12 {
@@ -9245,9 +9245,8 @@ header,
   text-align: right; }
   .header .user form {
     display: block; }
-  .header .user a {
-    display: block;
-    padding-right: 35px; }
+    .header .user form:last-child {
+      padding: 0; }
   .header .user button {
     background-color: transparent;
     margin: 0;
