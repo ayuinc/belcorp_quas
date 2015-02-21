@@ -158,9 +158,10 @@ class News
 			    $variables[] = $variable_row;
 			}
 
+			return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
 	    }
 		
-		return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
+		return "";
 
     }
 
