@@ -15,7 +15,7 @@
 					  <h2 class="thin">Contenido relevante para {exp:user:stats}{Vicepresidencia}{/exp:user:stats}</h2>
 					</div> 
 					<ul class="grid-list grid-list-4 grid-list-1-xs grid-list-2-sm isotope-grid posts-grid mt-35">
-						{exp:news:entries_by_vp parse="inward" limit="4"}
+						{exp:news:entries_by_vp parse="inward" limit="100"}
 							<li>
 								{exp:opengraph:query url="{noticias_url}"}
 								<div class="pic" style="background-image: url('{og_image}');">
