@@ -306,6 +306,7 @@ input[type=checkbox]:checked + .grid-noticias {
 			background-color: $gray-light;
 			height: $seleccion-grid-height-control;
 			position: relative;
+			margin: 0;
 		}
 	}
 }
