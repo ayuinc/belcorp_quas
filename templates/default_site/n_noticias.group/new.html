@@ -74,11 +74,16 @@
                           {if {category_group_id}=='18'}
                           <li class="grid-list-item">
                               <label class="checkbox-inline">
-                                <input type="checkbox" id="{category_id}" name="category[]" value="{category_id}" {selected}> {category_name}
+                                <input type="checkbox" data-group-id="{category_group_id}" id="{category_id}" name="category[]" value="{category_id}" {selected}> {category_name}
                               </label>
                           </li>
                           {/if}
-                          {/categories}                      
+                          {/categories}
+                          <li class="grid-list-item">
+                              <label class="checkbox-inline">
+                                <input type="checkbox" id="group-id-18"> Todos
+                              </label>
+                          </li>
                         </ul>
                       </div>
                       <div class="form-group text-purple">
@@ -89,12 +94,17 @@
                           {if {category_group_id}=='21'}
                           <li class="grid-list-item">
                               <label class="checkbox-inline">
-                              	<input type="checkbox" id="{category_id}" name="category[]" value="{category_id}" {selected}> {category_name}
+                              	<input type="checkbox" data-group-id="{category_group_id}" id="{category_id}" name="category[]" value="{category_id}" {selected}> {category_name}
                               </label>
                       			
                           </li>
                           {/if}
-              			  {/categories}                      
+              			  {/categories}
+              			  <li class="grid-list-item">
+                              <label class="checkbox-inline">
+                                <input type="checkbox" id="group-id-21"> Todos
+                              </label>
+                          </li>                    
                         </ul>
                       </div>
                       <div class="form-group text-purple">
@@ -104,11 +114,16 @@
                           {if {category_group_id}=='19'}
                           <li class="grid-list-item">
                               <label class="checkbox-inline">
-                                <input type="checkbox" id="{category_id}" name="category[]" value="{category_id}" {selected}> {category_name}
+                                <input type="checkbox" data-group-id="{category_group_id}" id="{category_id}" name="category[]" value="{category_id}" {selected}> {category_name}
                               </label>
                           </li>
                           {/if}
-                          {/categories}                      
+                          {/categories}
+                          <li class="grid-list-item">
+                              <label class="checkbox-inline">
+                                <input type="checkbox" id="group-id-19"> Todos
+                              </label>
+                          </li>              
                         </ul>
                       </div>
                       <div class="form-group text-purple">
@@ -119,11 +134,16 @@
                           <li class="grid-list-item">
                              
                               <label class="checkbox-inline">
-                                <input type="checkbox" id="{category_id}" name="category[]" value="{category_id}" {selected}> {category_name}
+                                <input type="checkbox" data-group-id="{category_group_id}" id="{category_id}" name="category[]" value="{category_id}" {selected}> {category_name}
                               </label>
                           </li>
                           {/if}
-                          {/categories}                      
+                          {/categories}
+                          <li class="grid-list-item">
+                              <label class="checkbox-inline">
+                                <input type="checkbox" id="group-id-22"> Todos
+                              </label>
+                          </li>               
                         </ul>
                       </div>
                       <div class="form-group text-purple">
@@ -133,11 +153,16 @@
                           {if {category_group_id}=='20'}
                           <li class="grid-list-item">
                               <label class="checkbox-inline">
-                                <input type="checkbox" id="{category_id}" name="category[]" value="{category_id}" {selected}> {category_name}
+                                <input type="checkbox" data-group-id="{category_group_id}" id="{category_id}" name="category[]" value="{category_id}" {selected}> {category_name}
                               </label>
                           </li>
                           {/if}
-                          {/categories}                      
+                          {/categories}
+                          <li class="grid-list-item">
+                              <label class="checkbox-inline">
+                                <input type="checkbox" id="group-id-20"> Todos
+                              </label>
+                          </li>
                         </ul>
                       </div>
                       <hr>
@@ -157,4 +182,17 @@
 <script type="text/javascript">
 	$('#publishForm').get(0).setAttribute('action', window.location.origin);
 	new CBPFWTabs( document.getElementById( 'tabs' ) );
+	
+	$(function() {
+		var cat_groups = [18, 19, 20, 21, 22];
+		cat_groups.forEach(function(el) {
+			$('#group-id-'+el).click(function() {
+				if(this.checked) {
+					$('input[data-group-id="' + el + '"]').prop('checked', true);
+				} else {
+					$('input[data-group-id="' + el + '"]').prop('checked', false);
+				}
+			});
+		});
+	});
 </script>

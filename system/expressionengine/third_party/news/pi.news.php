@@ -52,27 +52,29 @@ class News
 	    $entries_by_user_type = array();
 	    $entries_by_f_group = array();
 	    
-	    if(isset($member_fields['preferences'])) {
+	    if(!empty($member_fields['preferences'])) {
 		    $preferences = explode(',', $member_fields['preferences']);
 			$entries_by_prefs = $this->get_entries_by_preferences($preferences);
+	    } else {
+	    	return 'Aún no has registrado tus preferencias.';
 	    }
 	    
-	    if(!is_null($member_fields['country'])) {
+	    if(!empty($member_fields['country'])) {
 		    $country = $this->get_country_id($member_fields['country']);
 			$entries_by_country = $this->get_entries_by_country($country);
 	    }
 	    
-	    if(!is_null($member_fields['vp']) || $member_fields['country'] == 'None') {
+	    if(!empty($member_fields['vp']) || $member_fields['country'] == 'None') {
 		    $vp = $this->get_vp_id($member_fields['vp']);
 		    $entries_by_vp = $this->get_entries_by_vp($vp);
 	    }
 	    
-	    if(isset($member_fields['type'])) {
+	    if(!empty($member_fields['type'])) {
 		  	$user_type = $this->get_user_type_id($member_fields['type']);
 		  	$entries_by_user_type = $this->get_entries_by_user_type($user_type);
 	    }
 	    
-	    if(isset($member_fields['f_group'])) {
+	    if(!empty($member_fields['f_group'])) {
 		    $f_group = $this->get_functional_group($member_fields['f_group']);
 		    $entries_by_f_group = $this->get_entries_by_functional_group($f_group);
 	    }
@@ -181,12 +183,12 @@ class News
 		//     $entries_by_prefs = $this->get_entries_by_preferences($preferences);
 	    // }
 	    
-	    if(!is_null($member_fields['country'])) {
+	    if(!empty($member_fields['country'])) {
 		    $country = $this->get_country_id($member_fields['country']);
 			$entries_by_country = $this->get_entries_by_country($country);
 	    }
 	    
-	    if(!is_null($member_fields['vp']) || $member_fields['country'] == 'None') {
+	    if(!empty($member_fields['vp']) || $member_fields['country'] == 'None') {
 		    $vp = $this->get_vp_id($member_fields['vp']);
 		    $entries_by_vp = $this->get_entries_by_vp($vp);
 	    }
@@ -257,12 +259,12 @@ class News
 		//     $entries_by_prefs = $this->get_entries_by_preferences($preferences);
 	    // }
 	    
-	    if(!is_null($member_fields['country'])) {
+	    if(!empty($member_fields['country'])) {
 		    $country = $this->get_country_id($member_fields['country']);
 			$entries_by_country = $this->get_entries_by_country($country);
 	    }
 	    
-	    /* if(!is_null($member_fields['vp']) || $member_fields['country'] == 'None') {
+	    /* if(!empty($member_fields['vp']) || $member_fields['country'] == 'None') {
 		    $vp = $this->get_vp_id($member_fields['vp']);
 		    $entries_by_vp = $this->get_entries_by_vp($vp);
 	    }
