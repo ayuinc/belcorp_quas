@@ -9117,7 +9117,7 @@ input[type="checkbox"]:checked ~ label {
       position: absolute;
       top: 0;
       left: 9%;
-      background-color: rgba(168, 182, 191, 0.9);
+      background-color: white;
       padding: 15px;
       width: 350px;
       min-height: 210px; }
