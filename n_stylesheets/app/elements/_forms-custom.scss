@@ -91,3 +91,14 @@
 .file_existing {
 	display: none; 
 }
+
+textarea {
+	@extend .form-control;
+}
+
+.required {
+	&:before {
+		content: "*";
+		margin-right: 7px;
+	}
+}
