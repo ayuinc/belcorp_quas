@@ -67,40 +67,55 @@ class Opengraph
 	    $url = ee()->TMPL->fetch_param('url');
         if ($url != ""){
             //var_dump($url);
-    	    $html = file_get_contents($url);
+    	    try{
+                $html = file_get_contents($url);
 
-    		libxml_use_internal_errors(true); // Yeah if you are so worried about using @ with warnings
-    		$doc = new DomDocument();
-    		$doc->loadHTML($html);
-    		$xpath = new DOMXPath($doc);
-    		$query = '//*/meta[starts-with(@property, \'og:\')]';
-    		$metas = $xpath->query($query);
-    		foreach ($metas as $meta) {
-    		    $property = $meta->getAttribute('property');
-    		    $content = $meta->getAttribute('content');
-    		    $rmetas[$property] = $content;
-    		}
-    		
-    		if (!isset($rmetas['og:url'])) {
-    			$rmetas['og:url'] = $url;
-    		}
-    		
-    		if (!preg_match("~^(?:f|ht)tps?://~i", $rmetas['og:image'])) {
-    			$parsedUrl = parse_url($rmetas['og:url']);
-            	$rmetas['og:image'] = $parsedUrl["scheme"] . "://" . $parsedUrl["host"] . "/" . $rmetas['og:image'];
-        	}
-        	
-    		$variables[] = array(
-    	        'og_title' => $rmetas['og:title'],
-    	        'og_title_resume' => substr($rmetas['og:title'], 0, 50) . '...',
-    	        'og_description' => $rmetas['og:description'],
-    	        'og_image' => $rmetas['og:image'],
-    	        'og_url' => $rmetas['og:url'],
-    		);
-    		
-    		$tagdata = $this->EE->TMPL->tagdata;
+        		libxml_use_internal_errors(true); // Yeah if you are so worried about using @ with warnings
+        		$doc = new DomDocument();
+        		$doc->loadHTML($html);
+        		$xpath = new DOMXPath($doc);
+        		$query = '//*/meta[starts-with(@property, \'og:\')]';
+        		$metas = $xpath->query($query);
+        		foreach ($metas as $meta) {
+        		    $property = $meta->getAttribute('property');
+        		    $content = $meta->getAttribute('content');
+        		    $rmetas[$property] = $content;
+        		}
+        		
+        		if (!isset($rmetas['og:url'])) {
+        			$rmetas['og:url'] = $url;
+        		}
+        		
+        		if (!preg_match("~^(?:f|ht)tps?://~i", $rmetas['og:image'])) {
+        			$parsedUrl = parse_url($rmetas['og:url']);
+                	$rmetas['og:image'] = $parsedUrl["scheme"] . "://" . $parsedUrl["host"] . "/" . $rmetas['og:image'];
+            	}
+            	
+        		$variables[] = array(
+        	        'og_title' => $rmetas['og:title'],
+        	        'og_title_resume' => substr($rmetas['og:title'], 0, 50) . '...',
+        	        'og_description' => $rmetas['og:description'],
+        	        'og_image' => $rmetas['og:image'],
+        	        'og_url' => $rmetas['og:url'],
+        		);
+        		
+        		$tagdata = $this->EE->TMPL->tagdata;
 
-        	return $this->EE->TMPL->parse_variables($tagdata, $variables);
+            	return $this->EE->TMPL->parse_variables($tagdata, $variables);
+            }
+            catch {
+                $variables[] = array(
+                    'og_title' => "Título no disponible",
+                    'og_title_resume' => 'Informacion no disponible ...',
+                    'og_description' => 'Descripción no disponible',
+                    'og_image' => '',
+                    'og_url' => '#',
+                );
+                
+                $tagdata = $this->EE->TMPL->tagdata;
+
+                return $this->EE->TMPL->parse_variables($tagdata, $variables); 
+            }
         }
             return "";  
     }
