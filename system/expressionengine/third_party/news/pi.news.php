@@ -115,12 +115,14 @@ class News
 				
 				    $variables[] = $variable_row;
 				}
+				
+				return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
 			} else {
 				return 'Aún no hay noticias que correspondan a tus preferencias.';
 			}
 	    }
-		
-		return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
+	    
+	    return 'Aún no hay noticias que correspondan a tus preferencias.';
     }
     
     public function entrie_accept(){
@@ -243,12 +245,15 @@ class News
 				
 				    $variables[] = $variable_row;
 				}
+				
+				return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
+				
 			} else {
 				return 'Aún no hay noticias que correspondan a tus preferencias.';
 			}
 	    }
-		
-		return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
+	    
+	    return 'Aún no hay noticias que correspondan a tus preferencias.';
     }
     
     public function all_entries() {
@@ -324,12 +329,15 @@ class News
 				
 				    $variables[] = $variable_row;
 				}
+				
+				return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
+				
 			} else {
 				return 'Aún no hay noticias que correspondan a tus preferencias.';
 			}
 	    }
-		
-		return ee()->TMPL->parse_variables(ee()->TMPL->tagdata, $variables);
+	    
+	    return 'Aún no hay noticias que correspondan a tus preferencias.';
     }
     
     public function get_entry_categories() {
