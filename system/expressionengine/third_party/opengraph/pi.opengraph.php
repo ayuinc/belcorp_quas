@@ -70,7 +70,7 @@ class Opengraph
     	    try{
                 $html = file_get_contents($url);
                 var_dump($html);
-        		if($html == false ){
+        		if($html){
                     libxml_use_internal_errors(true); // Yeah if you are so worried about using @ with warnings
             		$doc = new DomDocument();
             		$doc->loadHTML($html);
