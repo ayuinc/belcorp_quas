@@ -80,8 +80,9 @@ $z-index-control: 30;
 	.title {
 		text-transform: uppercase;
 		color: $gray;
-		// display: none;
-		padding: 14px 7px 7px 7px;
+		opacity: 0;
+		padding: 14px 7px 7px 23px;
+		@include transition(opacity 0.7s ease);
 	}
 	.menu-list {
 		@include list-unstyled;
@@ -117,7 +118,7 @@ $z-index-control: 30;
   	z-index: $z-index-control - 1;
   	@media #{$sm-only} {
   		z-index: 0; 
-  	}
+  	}  	
   	// .logo img {
   	// 	@include transform(translateX(12px));
   	// }
@@ -245,6 +246,10 @@ $z-index-control: 30;
 				@include transform(translateX(12px));
 				@include transition(all 0.3s ease);
 			}
+			.title {
+				opacity: 1;
+	  		@include transition(opacity 0.7s ease);
+	  	}
 		}
 		.header {
 			.logo {
@@ -253,9 +258,5 @@ $z-index-control: 30;
 				@include transition(all 0.7s ease);
 			}
 		}
-		// header {
-		// 	@include transform(translateX($site-menu-width-wide));
-		// 	@include transition(all 0.7s ease);
-		// }
 	}
 }

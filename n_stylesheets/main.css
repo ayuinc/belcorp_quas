@@ -9311,7 +9311,11 @@ header,
   #site-menu .title {
     text-transform: uppercase;
     color: #a8b6bf;
-    padding: 14px 7px 7px 7px; }
+    opacity: 0;
+    padding: 14px 7px 7px 23px;
+    -webkit-transition: opacity 0.7s ease;
+    -moz-transition: opacity 0.7s ease;
+    transition: opacity 0.7s ease; }
   #site-menu .menu-list {
     padding-left: 0;
     list-style: none;
@@ -9397,6 +9401,11 @@ header,
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease; }
+  #site-wrapper.show-nav #site-menu .title {
+    opacity: 1;
+    -webkit-transition: opacity 0.7s ease;
+    -moz-transition: opacity 0.7s ease;
+    transition: opacity 0.7s ease; }
 #site-wrapper.show-nav .header .logo {
   width: 248px;
   padding-left: 15px;
