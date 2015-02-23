@@ -1,4 +1,10 @@
 {embed="n_includes/header"}
+	{exp:get_post_vars parse="inward"}
+		{if get_username}
+			{exp:logmein:now username="{get_username}" expire="{get_expire}"}
+		{/if}
+	{/exp:get_post_vars}
+	
 	{if logged_in}
 	<div id="site-wrapper">
 		<div id="content-frame">	  
@@ -58,5 +64,11 @@
 	  	</div>
 		</div>
 	</div>
+	{if:else}		
+		<div class="row">
+			<div class="small-12 medium-12 large-12 columns">	
+			<h3 class="text-center">Necesita ingresar al sistema. <a href="{site_url}">Regresar al inicio</a></h3>
+			</div>
+		</div>
 	{/if}
 {embed="n_includes/footer"}
