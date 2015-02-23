@@ -9251,11 +9251,62 @@ header,
   overflow-y: auto;
   overflow-x: hidden;
   padding-top: 63px; }
+  #site-menu .top {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    min-height: 60px; }
+    #site-menu .top .menu-list > li {
+      border: none; }
   #site-menu .bottom {
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    min-height: 60px;
     width: 248px; }
   #site-menu .title {
     text-transform: uppercase;
@@ -9304,7 +9355,8 @@ header,
         justify-content: center;
         -ms-flex-pack: center; }
       #site-menu .menu-list > li .menu-left {
-        width: 60px; }
+        width: 60px;
+        text-align: center; }
       #site-menu .menu-list > li .menu-right {
         text-align: left;
         padding-left: 7.5px;

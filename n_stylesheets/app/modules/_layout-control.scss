@@ -61,12 +61,20 @@ $z-index-control: 30;
   overflow-x: hidden;
   padding-top: $header-height-control;
   .top {
-
+  	@include flex-middle;
+  	min-height: $site-menu-width-narrow;
+		.menu-list {
+			> li {
+				border: none;
+			}
+		}
   }
   .center {
 	}
   .bottom {
 		@include position(absolute, null 0 0 0);
+		@include flex-middle;
+  	min-height: $site-menu-width-narrow;
 		width: $site-menu-width-wide;
   }
 	.title {
@@ -93,6 +101,7 @@ $z-index-control: 30;
 			}
 			.menu-left {
 				width: $site-menu-width-narrow;
+				text-align: center;
 			}
 			.menu-right {
 				text-align: left;
