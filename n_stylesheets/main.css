@@ -12552,23 +12552,6 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
   font-size: 21px;
   font-size: 1.5rem; }
 
-/*END.SECCIONES EN EL OFFCANVAS*/
-.icono {
-  background-color: #5a277d; }
-  .icono .icon-user, .icono .icon-key {
-    color: #A679B2;
-    font-size: 2rem;
-    padding: 0.5rem 1rem;
-    min-height: 3rem;
-    max-height: 3rem; }
-
-.icon-container {
-  font-size: 28px;
-  color: white;
-  padding: 9px 9px 9px 3px;
-  padding: 0.64286rem 0.64286rem 0.64286rem 0.21429rem;
-  text-align: center; }
-
 /*!
  * BootstrapValidator (http://bootstrapvalidator.com)
  * The best jQuery plugin to validate form fields. Designed to use with Bootstrap 3
