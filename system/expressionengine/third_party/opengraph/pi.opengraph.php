@@ -66,7 +66,7 @@ class Opengraph
     public function query(){
 	    $url = ee()->TMPL->fetch_param('url');
         if ($url != ""){
-            $html = file_get_contents($url);
+            $html = @file_get_contents($url);
     		if($html){
                 libxml_use_internal_errors(true); // Yeah if you are so worried about using @ with warnings
         		$doc = new DomDocument();
