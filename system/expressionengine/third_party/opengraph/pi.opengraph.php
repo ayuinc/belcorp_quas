@@ -95,6 +95,7 @@ class Opengraph
         	        'og_description' => $rmetas['og:description'],
         	        'og_image' => $rmetas['og:image'],
         	        'og_url' => $rmetas['og:url'],
+                    'og_available' => 'yes',
         		);
         		
         		$tagdata = $this->EE->TMPL->tagdata;
@@ -108,6 +109,7 @@ class Opengraph
                     'og_description' => 'Descripción no disponible',
                     'og_image' => '{site_url}images/imagenes-noticias/imgen-no-disponible.png',
                     'og_url' => '#',
+                    'og_available' => 'no',
                 );
                 
                 $tagdata = $this->EE->TMPL->tagdata;
