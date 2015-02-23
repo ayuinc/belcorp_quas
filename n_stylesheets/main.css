@@ -1407,7 +1407,7 @@ output {
   line-height: 1.42857;
   color: #a8b6bf; }
 
-.form-control, textarea {
+.form-control, form input[type="text"], form input[type="password"], form input[type="email"], .form-custom textarea {
   display: block;
   width: 100%;
   height: 34px;
@@ -1424,24 +1424,24 @@ output {
   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
-  .form-control:focus, textarea:focus {
+  .form-control:focus, form input[type="text"]:focus, form input[type="password"]:focus, form input[type="email"]:focus, .form-custom textarea:focus {
     border-color: #66afe9;
     outline: 0;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
-  .form-control::-moz-placeholder, textarea::-moz-placeholder {
+  .form-control::-moz-placeholder, form input[type="text"]::-moz-placeholder, form input[type="password"]::-moz-placeholder, form input[type="email"]::-moz-placeholder, .form-custom textarea::-moz-placeholder {
     color: #999;
     opacity: 1; }
-  .form-control:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  .form-control:-ms-input-placeholder, form input[type="text"]:-ms-input-placeholder, form input[type="password"]:-ms-input-placeholder, form input[type="email"]:-ms-input-placeholder, .form-custom textarea:-ms-input-placeholder {
     color: #999; }
-  .form-control::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  .form-control::-webkit-input-placeholder, form input[type="text"]::-webkit-input-placeholder, form input[type="password"]::-webkit-input-placeholder, form input[type="email"]::-webkit-input-placeholder, .form-custom textarea::-webkit-input-placeholder {
     color: #999; }
-  .form-control[disabled], textarea[disabled], .form-control[readonly], textarea[readonly], fieldset[disabled] .form-control, fieldset[disabled] textarea {
+  .form-control[disabled], form input[disabled][type="text"], form input[disabled][type="password"], form input[disabled][type="email"], .form-custom textarea[disabled], .form-control[readonly], form input[readonly][type="text"], form input[readonly][type="password"], form input[readonly][type="email"], .form-custom textarea[readonly], fieldset[disabled] .form-control, fieldset[disabled] form input[type="text"], form fieldset[disabled] input[type="text"], fieldset[disabled] form input[type="password"], form fieldset[disabled] input[type="password"], fieldset[disabled] form input[type="email"], form fieldset[disabled] input[type="email"], fieldset[disabled] .form-custom textarea, .form-custom fieldset[disabled] textarea {
     cursor: not-allowed;
     background-color: white;
     opacity: 1; }
 
-textarea.form-control, textarea {
+textarea.form-control, .form-custom textarea {
   height: auto; }
 
 input[type="search"] {
@@ -1551,7 +1551,7 @@ textarea.input-sm,
 select[multiple].input-sm {
   height: auto; }
 
-.form-group-sm .form-control, .form-group-sm textarea {
+.form-group-sm .form-control, .form-group-sm form input[type="text"], form .form-group-sm input[type="text"], .form-group-sm form input[type="password"], form .form-group-sm input[type="password"], .form-group-sm form input[type="email"], form .form-group-sm input[type="email"], .form-group-sm .form-custom textarea, .form-custom .form-group-sm textarea {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -1560,7 +1560,7 @@ select[multiple].input-sm {
 .form-group-sm select.form-control {
   height: 30px;
   line-height: 30px; }
-.form-group-sm textarea.form-control, .form-group-sm textarea,
+.form-group-sm textarea.form-control, .form-group-sm .form-custom textarea, .form-custom .form-group-sm textarea,
 .form-group-sm select[multiple].form-control {
   height: auto; }
 .form-group-sm .form-control-static {
@@ -1584,7 +1584,7 @@ textarea.input-lg,
 select[multiple].input-lg {
   height: auto; }
 
-.form-group-lg .form-control, .form-group-lg textarea {
+.form-group-lg .form-control, .form-group-lg form input[type="text"], form .form-group-lg input[type="text"], .form-group-lg form input[type="password"], form .form-group-lg input[type="password"], .form-group-lg form input[type="email"], form .form-group-lg input[type="email"], .form-group-lg .form-custom textarea, .form-custom .form-group-lg textarea {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
@@ -1593,7 +1593,7 @@ select[multiple].input-lg {
 .form-group-lg select.form-control {
   height: 46px;
   line-height: 46px; }
-.form-group-lg textarea.form-control, .form-group-lg textarea,
+.form-group-lg textarea.form-control, .form-group-lg .form-custom textarea, .form-custom .form-group-lg textarea,
 .form-group-lg select[multiple].form-control {
   height: auto; }
 .form-group-lg .form-control-static {
@@ -1604,7 +1604,7 @@ select[multiple].input-lg {
 
 .has-feedback {
   position: relative; }
-  .has-feedback .form-control, .has-feedback textarea {
+  .has-feedback .form-control, .has-feedback form input[type="text"], form .has-feedback input[type="text"], .has-feedback form input[type="password"], form .has-feedback input[type="password"], .has-feedback form input[type="email"], form .has-feedback input[type="email"], .has-feedback .form-custom textarea, .form-custom .has-feedback textarea {
     padding-right: 42.5px; }
 
 .form-control-feedback {
@@ -1636,11 +1636,11 @@ select[multiple].input-lg {
 .has-success .radio-inline,
 .has-success .checkbox-inline, .has-success.radio label, .has-success.checkbox label, .has-success.radio-inline label, .has-success.checkbox-inline label {
   color: #3c763d; }
-.has-success .form-control, .has-success textarea {
+.has-success .form-control, .has-success form input[type="text"], form .has-success input[type="text"], .has-success form input[type="password"], form .has-success input[type="password"], .has-success form input[type="email"], form .has-success input[type="email"], .has-success .form-custom textarea, .form-custom .has-success textarea {
   border-color: #3c763d;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
-  .has-success .form-control:focus, .has-success textarea:focus {
+  .has-success .form-control:focus, .has-success form input[type="text"]:focus, form .has-success input[type="text"]:focus, .has-success form input[type="password"]:focus, form .has-success input[type="password"]:focus, .has-success form input[type="email"]:focus, form .has-success input[type="email"]:focus, .has-success .form-custom textarea:focus, .form-custom .has-success textarea:focus {
     border-color: #2b542c;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168; }
@@ -1658,11 +1658,11 @@ select[multiple].input-lg {
 .has-warning .radio-inline,
 .has-warning .checkbox-inline, .has-warning.radio label, .has-warning.checkbox label, .has-warning.radio-inline label, .has-warning.checkbox-inline label {
   color: #8a6d3b; }
-.has-warning .form-control, .has-warning textarea {
+.has-warning .form-control, .has-warning form input[type="text"], form .has-warning input[type="text"], .has-warning form input[type="password"], form .has-warning input[type="password"], .has-warning form input[type="email"], form .has-warning input[type="email"], .has-warning .form-custom textarea, .form-custom .has-warning textarea {
   border-color: #8a6d3b;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
-  .has-warning .form-control:focus, .has-warning textarea:focus {
+  .has-warning .form-control:focus, .has-warning form input[type="text"]:focus, form .has-warning input[type="text"]:focus, .has-warning form input[type="password"]:focus, form .has-warning input[type="password"]:focus, .has-warning form input[type="email"]:focus, form .has-warning input[type="email"]:focus, .has-warning .form-custom textarea:focus, .form-custom .has-warning textarea:focus {
     border-color: #66512c;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b; }
@@ -1680,11 +1680,11 @@ select[multiple].input-lg {
 .has-error .radio-inline,
 .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
   color: #a94442; }
-.has-error .form-control, .has-error textarea {
+.has-error .form-control, .has-error form input[type="text"], form .has-error input[type="text"], .has-error form input[type="password"], form .has-error input[type="password"], .has-error form input[type="email"], form .has-error input[type="email"], .has-error .form-custom textarea, .form-custom .has-error textarea {
   border-color: #a94442;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
-  .has-error .form-control:focus, .has-error textarea:focus {
+  .has-error .form-control:focus, .has-error form input[type="text"]:focus, form .has-error input[type="text"]:focus, .has-error form input[type="password"]:focus, form .has-error input[type="password"]:focus, .has-error form input[type="email"]:focus, form .has-error input[type="email"]:focus, .has-error .form-custom textarea:focus, .form-custom .has-error textarea:focus {
     border-color: #843534;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483; }
@@ -1711,7 +1711,7 @@ select[multiple].input-lg {
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle; }
-  .form-inline .form-control, .form-inline textarea {
+  .form-inline .form-control, .form-inline form input[type="text"], form .form-inline input[type="text"], .form-inline form input[type="password"], form .form-inline input[type="password"], .form-inline form input[type="email"], form .form-inline input[type="email"], .form-inline .form-custom textarea, .form-custom .form-inline textarea {
     display: inline-block;
     width: auto;
     vertical-align: middle; }
@@ -1723,9 +1723,16 @@ select[multiple].input-lg {
     .form-inline .input-group .input-group-addon,
     .form-inline .input-group .input-group-btn,
     .form-inline .input-group .form-control,
-    .form-inline .input-group textarea {
+    .form-inline .input-group form input[type="text"],
+    form .form-inline .input-group input[type="text"],
+    .form-inline .input-group form input[type="password"],
+    form .form-inline .input-group input[type="password"],
+    .form-inline .input-group form input[type="email"],
+    form .form-inline .input-group input[type="email"],
+    .form-inline .input-group .form-custom textarea,
+    .form-custom .form-inline .input-group textarea {
       width: auto; }
-  .form-inline .input-group > .form-control, .form-inline .input-group > textarea {
+  .form-inline .input-group > .form-control, .form-inline form .input-group > input[type="text"], form .form-inline .input-group > input[type="text"], .form-inline form .input-group > input[type="password"], form .form-inline .input-group > input[type="password"], .form-inline form .input-group > input[type="email"], form .form-inline .input-group > input[type="email"], .form-inline .form-custom .input-group > textarea, .form-custom .form-inline .input-group > textarea {
     width: 100%; }
   .form-inline .control-label {
     margin-bottom: 0;
@@ -8169,7 +8176,10 @@ li {
 
 a.btn.form-control,
 button.btn.form-control,
-input[type="submit"].btn.form-control {
+input[type="submit"].btn.form-control,
+form input[type="submit"].btn[type="text"],
+form input[type="submit"].btn[type="password"],
+form input[type="submit"].btn[type="email"] {
   height: auto; }
 a.btn.borderless,
 button.btn.borderless,
@@ -8484,7 +8494,7 @@ input[type="submit"].btn.btn-white.btn-outline {
 .file_existing {
   display: none; }
 
-.required:before {
+.form-custom .required:before {
   content: "*";
   margin-right: 7px; }
 
