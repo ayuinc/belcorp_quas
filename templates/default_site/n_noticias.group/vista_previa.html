@@ -45,9 +45,7 @@
 										<span class="icon-typ-eye">{view_count_one}</span>
 									</div>								
 								</div>
-								{/exp:opengraph:query}
 							</li>
-							{/exp:channel:entries}
 							<li>
 								<div class="pic">
 									<a href="{site_url}n_noticias/editar_noticia/{last_segment}" class="btn uppercase block mb-7 btn-gray form-control">Editar</a>
@@ -55,9 +53,15 @@
 								</div>
 								<div class="content bg-white borderless"></div>
 								<div class="info">
-									<a href="{site_url}n_noticias/verify_entry/{last_segment}" class="btn uppercase block btn-lg btn-primary form-control">Publicar</a>
+									{if og_available == 'yes'}
+										<a href="{site_url}n_noticias/verify_entry/{last_segment}" class="btn uppercase block btn-lg btn-primary form-control">Publicar</a>
+									{if:elseif og_available == 'no'}
+										<a href="#" class="btn uppercase block btn-lg btn-primary form-control disabled">Publicar</a>
+									{/if}
 								</div>
+							{/exp:opengraph:query}
 							</li>
+						{/exp:channel:entries}
 						</ul>
 					</div>
 	  		</div>
