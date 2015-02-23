@@ -11,6 +11,9 @@
 		  {embed="n_includes/menu-izquierdo"}
 		  {embed="n_includes/top-banner"} 
 		  <div id="site-canvas" class="{if segment_1=='n_inicio'}homepage-on{/if}">
+		  	<div class="container pv-21">
+		  		<a href="{site_url}n_noticias/mis_noticias"><span class="icon-typ-chevron-left"></span> Atrás</a>
+		  	</div>
 			  {exp:channel:entries entry_id="{segment_3}" dynamic="off" track_views="one"}
 			     {if {channel_id} == "13"}
 				 	<iframe src="{noticias_portada_url}" width="100%" height="1500px"></iframe>
