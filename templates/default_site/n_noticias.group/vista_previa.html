@@ -57,6 +57,7 @@
 										<a href="{site_url}n_noticias/verify_entry/{last_segment}" class="btn uppercase block btn-lg btn-primary form-control">Publicar</a>
 									{if:elseif og_available == 'no'}
 										<a href="#" class="btn uppercase block btn-lg btn-primary form-control disabled">Publicar</a>
+										<span>"Esta noticia no puede ser publicada, edítala."</span>
 									{/if}
 								</div>
 							{/exp:opengraph:query}
