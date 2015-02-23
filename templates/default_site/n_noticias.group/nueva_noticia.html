@@ -14,7 +14,7 @@
       {embed="n_includes/menu-izquierdo"}
       {embed="n_includes/top-banner"}     
       <div id="site-canvas" class="{if segment_1=='n_inicio'}homepage-on{/if}">
-        <div class="container pb-56">
+        <div class="container pb-56 form-custom">
             {exp:channel:form
             	channel="noticias"
             	return="n_noticias/vista_previa/ENTRY_ID"
@@ -81,8 +81,8 @@
                   </ul>
                 </div>
                 <div class="form-group">
-                  <label>Público</label>
-                  <h5 class="required">Tipo</h5>
+                  <label for="publico" class="required">Público</label>
+                  <h5>Tipo</h5>
                   <ul class="grid-list grid-list-5 grid-list-2-xs grid-list-3-sm">
                     {categories}
                       {if {category_group_id}=='21'}
