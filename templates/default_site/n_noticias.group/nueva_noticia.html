@@ -14,7 +14,7 @@
       {embed="n_includes/menu-izquierdo"}
       {embed="n_includes/top-banner"}     
       <div id="site-canvas" class="{if segment_1=='n_inicio'}homepage-on{/if}">
-        <div class="container">
+        <div class="container pb-56">
             {exp:channel:form
             	channel="noticias"
             	return="n_noticias/vista_previa/ENTRY_ID"
@@ -48,7 +48,7 @@
                     <input type="text" class="form-control" name="noticias_titulo" id="title" placeholder="Escribe el link de tu noticia aquí ">
                   </div>
                   <div class="form-group">
-                    <label for="link" class="h4 thin">Texto</label>
+                    <label for="link">Texto</label>
                     {field:noticias_contenido}
                   </div>
                 </section>
