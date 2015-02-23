@@ -107,7 +107,7 @@ class Opengraph
                         'og_title' => "Título no disponible",
                         'og_title_resume' => 'Informacion no disponible ...',
                         'og_description' => 'Descripción no disponible',
-                        'og_image' => '',
+                        'og_image' => '{url_site}images/imagenes-noticias/imgen-no-disponible.png',
                         'og_url' => '#',
                     );
                     
