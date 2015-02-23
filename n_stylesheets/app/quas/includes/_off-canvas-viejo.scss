@@ -66,25 +66,3 @@ ul.off-canvas-list {
 		}
 	}
 }
-
-
-/*END.SECCIONES EN EL OFFCANVAS*/
-
-.icono {
-	background-color: $morado;
-	.icon-user, .icon-key {
-		color: $morado-claro;
-		font-size: 2rem;
-		padding: 0.5rem 1rem;;
-		min-height: 3rem;
-		max-height: 3rem;
-	}
-}
-
-.icon-container {
-	font-size: 28px;
-	color: white;
-	padding: 9px 9px 9px 3px;
-	padding: rem(9) rem(9) rem(9) rem(3);
-	text-align: center;
-}
