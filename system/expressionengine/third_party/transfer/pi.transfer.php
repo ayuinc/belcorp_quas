@@ -159,7 +159,8 @@ class Transfer
             				'm_field_id_1' => $vp,
             				'm_field_id_3' => $country,
             				'm_field_id_4' => $pub,
-            				'm_field_id_5' => $fg
+            				'm_field_id_5' => $fg,
+                            'm_field_id_6' => '0'
             			   );
 
             ee()->db->query(ee()->db->insert_string('exp_member_data', $cust_fields));
