@@ -5,38 +5,44 @@
 		{/if}
 	{/exp:get_post_vars}
 	{if logged_in}
-	<div id="site-wrapper">
-		<div id="content-frame">	  
-	  {embed="n_includes/menu-izquierdo"}
-	  {embed="n_includes/top-banner"} 		
-		<div id="site-canvas" class="{if segment_1=='n_inicio'}homepage-on{/if}">
-			<div class="container pb-56">
-			  <div class="pl-14">
-					<h1 class="thin text-gradient text-size">BIENVENIDO</h1>
-					<h2 class="thin mb-21">ESTÁS EN LA NUEVA SECCIÓN DE NOTICIAS DE LA UCB</h2>
-					<p class="lead thin">Para darte la mejor experiencia, selecciona las categorias de tu preferencia. Las noticias que te <br> presentaremos serán en función de tu selección.</p>
-			  </div> 
-    		{exp:user:edit return="n_noticias/mis_noticias"}
-					<ul class="grid-list grid-list-4 grid-list-1-xs grid-list-2-sm isotope-grid seleccion-grid normalize-text">
-						{exp:channel:categories style="linear" category_group="18"}
-							<li>
-								<div>
-									<input type="checkbox" name="{category_id}" id="{category_id}">
-									<label for="{category_id}" class="content">
-										<h3 class="thin text-center">{category_name}</h3>
-									</label>	
+	{exp:member:custom_profile_data}
+		{if flagCategories == '0'}
+			<div id="site-wrapper">
+				<div id="content-frame">	  
+			  {embed="n_includes/menu-izquierdo"}
+			  {embed="n_includes/top-banner"} 		
+				<div id="site-canvas" class="{if segment_1=='n_inicio'}homepage-on{/if}">
+					<div class="container pb-56">
+					  <div class="pl-14">
+							<h1 class="thin text-gradient text-size">BIENVENIDO</h1>
+							<h2 class="thin mb-21">ESTÁS EN LA NUEVA SECCIÓN DE NOTICIAS DE LA UCB</h2>
+							<p class="lead thin">Para darte la mejor experiencia, selecciona las categorias de tu preferencia. Las noticias que te <br> presentaremos serán en función de tu selección.</p>
+					  </div> 
+		    		{exp:user:edit return="n_noticias/mis_noticias"}
+							<ul class="grid-list grid-list-4 grid-list-1-xs grid-list-2-sm isotope-grid seleccion-grid normalize-text">
+								{exp:channel:categories style="linear" category_group="18"}
+									<li>
+										<div>
+											<input type="checkbox" name="{category_id}" id="{category_id}">
+											<label for="{category_id}" class="content">
+												<h3 class="thin text-center">{category_name}</h3>
+											</label>	
+										</div>
+									</li>
+								{/exp:channel:categories}
+								<input type="hidden" id="field_tags" name="Preferencias" value="{Preferencias}" />
+							</ul>
+							<div class="text-center mt-35">
+								<div class="form-group">
+									<button type="submit" class="btn btn-gray">Continuar</button>
+							  </div>	
 								</div>
-							</li>
-						{/exp:channel:categories}
-						<input type="hidden" id="field_tags" name="Preferencias" value="{Preferencias}" />
-					</ul>
-					<div class="text-center mt-35">
-						<div class="form-group">
-							<button type="submit" class="btn btn-gray">Continuar</button>
-					  </div>	
+						{/exp:user:edit}
 					</div>
-				{/exp:user:edit}
-			</div>
+			{if:else}
+				{redirect="n_noticias/mis_noticias"}
+			{/if}
+		{/exp:member:custom_profile_data}
 	{if:else}		
 		<div class="row">
 			<div class="small-12 medium-12 large-12 columns">	
