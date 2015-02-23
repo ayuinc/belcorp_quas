@@ -216,8 +216,6 @@ class News
 	    
 	    $variables = array();
 	    
-	    var_dump($member_fields);
-	    
 	    if(!empty($entries_id)) {
 		    $q_entries_data = ee()->db
 									->select('exp_channel_data.entry_id, title, author_id, view_count_one, field_id_85, field_id_86, field_id_87, field_id_89, field_id_88, field_id_90')
@@ -228,21 +226,25 @@ class News
 									->limit($limit)
 									->get('exp_channel_data');
 	
-			foreach ($q_entries_data->result() as $row) {	
-			    $variable_row = array(
-			    	'noticias_entry_id' => $row->entry_id,
-			        'title'  => $row->title,
-			        'noticias_autor' => $this->get_member_name($row->author_id),
-			        'noticias_vistas' => $row->view_count_one,
-			        'noticias_url'    => $row->field_id_85,
-			        'noticias_categoria_principal' => $row->field_id_86,
-			        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id),
-			        'noticias_contenido' => $row->field_id_87,
-			        'noticias_titulo' => $row->field_id_89,
-			        'noticias_imagen' => $row->field_id_88
-			    );
-			
-			    $variables[] = $variable_row;
+			if($q_entries_data->num_rows() > 0) {
+				foreach ($q_entries_data->result() as $row) {
+				    $variable_row = array(
+				    	'noticias_entry_id' => $row->entry_id,
+				        'title'  => $row->title,
+				        'noticias_autor' => $this->get_member_name($row->author_id),
+				        'noticias_vistas' => $row->view_count_one,
+				        'noticias_url'    => $row->field_id_85,
+				        'noticias_categoria_principal' => $row->field_id_86,
+				        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id),
+				        'noticias_contenido' => $row->field_id_87,
+				        'noticias_titulo' => $row->field_id_89,
+				        'noticias_imagen' => $row->field_id_88
+				    );
+				
+				    $variables[] = $variable_row;
+				}
+			} else {
+				return 'Aún no hay noticias que correspondan a tus preferencias.';
 			}
 	    }
 		
@@ -305,21 +307,25 @@ class News
 									->limit($limit)
 									->get('exp_channel_data');
 	
-			foreach ($q_entries_data->result() as $row) {	
-			    $variable_row = array(
-			    	'noticias_entry_id' => $row->entry_id,
-			        'title'  => $row->title,
-			        'noticias_autor' => $this->get_member_name($row->author_id),
-			        'noticias_vistas' => $row->view_count_one,
-			        'noticias_url'    => $row->field_id_85,
-			        'noticias_categoria_principal' => $row->field_id_86,
-			        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id),
-			        'noticias_contenido' => $row->field_id_87,
-			        'noticias_titulo' => $row->field_id_89,
-			        'noticias_imagen' => $row->field_id_88
-			    );
-			
-			    $variables[] = $variable_row;
+			if($q_entries_data->num_rows() > 0) {
+				foreach ($q_entries_data->result() as $row) {
+				    $variable_row = array(
+				    	'noticias_entry_id' => $row->entry_id,
+				        'title'  => $row->title,
+				        'noticias_autor' => $this->get_member_name($row->author_id),
+				        'noticias_vistas' => $row->view_count_one,
+				        'noticias_url'    => $row->field_id_85,
+				        'noticias_categoria_principal' => $row->field_id_86,
+				        'noticias_otras_categorias' => $this->get_other_tags($row->entry_id),
+				        'noticias_contenido' => $row->field_id_87,
+				        'noticias_titulo' => $row->field_id_89,
+				        'noticias_imagen' => $row->field_id_88
+				    );
+				
+				    $variables[] = $variable_row;
+				}
+			} else {
+				return 'Aún no hay noticias que correspondan a tus preferencias.';
 			}
 	    }
 		
