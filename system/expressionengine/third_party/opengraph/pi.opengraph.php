@@ -66,7 +66,6 @@ class Opengraph
     public function query(){
 	    $url = ee()->TMPL->fetch_param('url');
         if ($url != ""){
-            //var_dump($url);
     	    try{
                 $html = file_get_contents($url);
         		if($html){
@@ -122,7 +121,7 @@ class Opengraph
                     'og_title' => "Título no disponible",
                     'og_title_resume' => 'Informacion no disponible ...',
                     'og_description' => 'Descripción no disponible',
-                    'og_image' => '',
+                    'og_image' => '{url_site}images/imagenes-noticias/imgen-no-disponible.png',
                     'og_url' => '#',
                 );
                 
