@@ -103,7 +103,7 @@ class Opengraph
 
             	return $this->EE->TMPL->parse_variables($tagdata, $variables);
             }
-            catch {
+            catch (Exception $e){
                 $variables[] = array(
                     'og_title' => "Título no disponible",
                     'og_title_resume' => 'Informacion no disponible ...',
