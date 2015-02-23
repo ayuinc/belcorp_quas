@@ -9251,27 +9251,32 @@ header,
   overflow-y: auto;
   overflow-x: hidden;
   padding-top: 63px; }
-  #site-menu .center .title {
+  #site-menu .bottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 248px; }
+  #site-menu .title {
     text-transform: uppercase;
     color: #a8b6bf;
-    display: none;
     padding: 14px 7px 7px 7px; }
-  #site-menu .center .menu-list {
+  #site-menu .menu-list {
     padding-left: 0;
     list-style: none;
     margin: 0; }
-    #site-menu .center .menu-list > li {
+    #site-menu .menu-list > li {
       color: #c49be0;
-      border-bottom: 1px solid white; }
-      #site-menu .center .menu-list > li:before, #site-menu .center .menu-list > li:after {
+      border-bottom: 1px solid #6e2f98; }
+      #site-menu .menu-list > li:before, #site-menu .menu-list > li:after {
         content: " ";
         display: table; }
-      #site-menu .center .menu-list > li:after {
+      #site-menu .menu-list > li:after {
         clear: both; }
-      #site-menu .center .menu-list > li:hover {
-        color: #5a277d; }
-      #site-menu .center .menu-list > li .menu-left,
-      #site-menu .center .menu-list > li .menu-right {
+      #site-menu .menu-list > li:hover {
+        color: #e4d1f1; }
+      #site-menu .menu-list > li .menu-left,
+      #site-menu .menu-list > li .menu-right {
         float: left;
         display: block;
         min-height: 30px;
@@ -9298,20 +9303,14 @@ header,
         -o-justify-content: center;
         justify-content: center;
         -ms-flex-pack: center; }
-      #site-menu .center .menu-list > li .menu-left {
+      #site-menu .menu-list > li .menu-left {
         width: 60px; }
-      #site-menu .center .menu-list > li .menu-right {
+      #site-menu .menu-list > li .menu-right {
         text-align: left;
         padding-left: 7.5px;
         padding-bottom: 0;
         width: -webkit-calc(100% - 60px);
         width: calc(100% - 60px); }
-  #site-menu .bottom {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 248px; }
   #site-menu.homepage-on {
     background-color: white;
     z-index: 29; }

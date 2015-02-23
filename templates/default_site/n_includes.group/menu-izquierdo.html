@@ -1,13 +1,18 @@
 <!-- MENU-IZQUIERDO -->
 <div id="site-menu" class="{if segment_1=='n_inicio'}homepage-on{/if}">
 	<div class="top">
-		{if segment_1!='n_inicio'}
-			<div class="hidden-xs hidden-sm">
-				<a class="toggle-nav-link icon-typ-th-menu">
+		<ul class="menu-list">
+			<li class="hidden-xs hidden-sm">
+				<div class="menu-left">
+					{if segment_1!='n_inicio'}
+					<span class="toggle-nav-link icon-typ-th-menu"></span>
+					{/if}
+				</div>
+				<div class="menu-right">
 					<span>MENÚ</span>
-				</a>
-			</div>
-		{/if}
+				</div>
+			</li>
+		</ul>
 		<!-- <div class="menu-trigger">
 			<img src="{site_url}n_img/logo-header-nuevo.png"  class="img-responsive">
 		</div> -->
