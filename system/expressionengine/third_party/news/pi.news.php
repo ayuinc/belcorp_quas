@@ -79,8 +79,6 @@ class News
 		    $entries_by_f_group = $this->get_entries_by_functional_group($f_group);
 	    }
 	    
-	    var_dump($member_fields);
-	    
 	    $entries_id = array_intersect(
 	    				$entries_by_country,
 	    				$entries_by_prefs,
