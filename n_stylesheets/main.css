@@ -9130,6 +9130,22 @@ input[type="checkbox"]:checked ~ label {
         padding: 15px;
         color: #8a9eaa; }
 
+.icono {
+  background-color: #5a277d; }
+  .icono .icon-user, .icono .icon-key {
+    color: #A679B2;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    min-height: 3rem;
+    max-height: 3rem; }
+
+.icon-container {
+  font-size: 28px;
+  color: white;
+  text-align: center;
+  height: 48px;
+  height: 3.42857rem; }
+
 header,
 .header {
   position: fixed;

@@ -588,3 +588,23 @@ $gallery-item-height: 350px;
 .no-bullet {
 	@extend .list-unstyled;
 }
+
+// Icon container
+.icono {
+	background-color: $morado;
+	.icon-user, .icon-key {
+		color: $morado-claro;
+		font-size: 2rem;
+		padding: 0.5rem 1rem;;
+		min-height: 3rem;
+		max-height: 3rem;
+	}
+}
+
+.icon-container {
+	font-size: 28px;
+	color: white;
+	text-align: center;
+	height: 48px;
+	height: 3.42857rem;
+}
