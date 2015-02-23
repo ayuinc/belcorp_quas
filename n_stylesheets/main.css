@@ -9251,38 +9251,8 @@ header,
   overflow-y: auto;
   overflow-x: hidden;
   padding-top: 63px; }
-  #site-menu .top {
-    display: -webkit-box;
-    display: -moz-box;
-    display: box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -moz-box-orient: vertical;
-    box-orient: vertical;
-    -webkit-flex-direction: column;
-    -moz-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-direction: column;
-    -webkit-box-pack: center;
-    -moz-box-pack: center;
-    box-pack: center;
-    -webkit-justify-content: center;
-    -moz-justify-content: center;
-    -ms-justify-content: center;
-    -o-justify-content: center;
-    justify-content: center;
-    -ms-flex-pack: center;
-    min-height: 60px; }
-    #site-menu .top .menu-list > li {
-      border: none; }
+  #site-menu .top,
   #site-menu .bottom {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
     display: -webkit-box;
     display: -moz-box;
     display: box;
@@ -9308,6 +9278,14 @@ header,
     -ms-flex-pack: center;
     min-height: 60px;
     width: 248px; }
+    #site-menu .top .menu-list > li,
+    #site-menu .bottom .menu-list > li {
+      border: none; }
+  #site-menu .bottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0; }
   #site-menu .title {
     text-transform: uppercase;
     color: #a8b6bf;
@@ -9373,6 +9351,8 @@ header,
     @media only screen and (min-width: 480px) and (max-width: 768px) {
       #site-menu.homepage-on {
         z-index: 0; } }
+    #site-menu.homepage-on .menu-list > li {
+      border-bottom: 1px solid white; }
 
 #site-wrapper.show-nav #site-canvas {
   -webkit-transform: translateX(248px);

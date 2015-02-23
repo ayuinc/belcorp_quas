@@ -60,9 +60,11 @@ $z-index-control: 30;
   overflow-y: auto;
   overflow-x: hidden;
   padding-top: $header-height-control;
-  .top {
+  .top,
+  .bottom {
   	@include flex-middle;
   	min-height: $site-menu-width-narrow;
+  	width: $site-menu-width-wide;
 		.menu-list {
 			> li {
 				border: none;
@@ -73,9 +75,6 @@ $z-index-control: 30;
 	}
   .bottom {
 		@include position(absolute, null 0 0 0);
-		@include flex-middle;
-  	min-height: $site-menu-width-narrow;
-		width: $site-menu-width-wide;
   }
 	.title {
 		text-transform: uppercase;
@@ -118,7 +117,12 @@ $z-index-control: 30;
   	z-index: $z-index-control - 1;
   	@media #{$sm-only} {
   		z-index: 0; 
-  	}  	
+  	}
+  	.menu-list {
+  		> li {
+  			border-bottom: 1px solid $gray-lighter;
+  		}
+  	}
   	// .logo img {
   	// 	@include transform(translateX(12px));
   	// }

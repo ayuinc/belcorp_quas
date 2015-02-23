@@ -2,16 +2,16 @@
 <div id="site-menu" class="{if segment_1=='n_inicio'}homepage-on{/if}">
 	<div class="top">
 		<ul class="menu-list">
-			<li class="hidden-xs hidden-sm">
-				<div class="menu-left">
-					{if segment_1!='n_inicio'}
-					<span class="toggle-nav-link icon-typ-th-menu"></span>
-					{/if}
-				</div>
-				<div class="menu-right">
-					<span>MENÚ</span>
-				</div>
-			</li>
+			{if segment_1!='n_inicio'}
+				<li class="hidden-xs hidden-sm">
+					<div class="menu-left">
+						<span class="toggle-nav-link icon-typ-th-menu"></span>
+					</div>
+					<div class="menu-right">
+						<span>MENÚ</span>
+					</div>
+				</li>
+			{/if}
 		</ul>
 		<!-- <div class="menu-trigger">
 			<img src="{site_url}n_img/logo-header-nuevo.png"  class="img-responsive">
