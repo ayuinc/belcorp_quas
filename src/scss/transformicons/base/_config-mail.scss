@@ -1,0 +1,5 @@
+$tcon-envelope-size: 40px !default;
+$tcon-envelope-morph: (
+  transform: .2s transform ease-in-out
+) !default;
+$tcon-envelope-transition: map-values($tcon-envelope-morph) !default;

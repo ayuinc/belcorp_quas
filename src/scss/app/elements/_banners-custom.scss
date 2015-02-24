@@ -1,0 +1,50 @@
+// BANNERS
+/* I created a global sufix var in _settings.scss to experiment with HTML5 elements. 
+	See its use on the experimental.html file.
+ */
+#{$global-sufix}banner,
+.banner {
+	@include clearfix;
+	.banner-pic,
+	.banner-content {
+		position: relative;
+	}
+	#{$global-sufix}banner-pic,
+	.banner-pic {
+		@include bg-img-control;
+		min-height: $banner-height;
+		@media #{$sm-up} {
+			padding: 0;
+		}
+		// img {
+		// 	width: 100%;
+		// 	height: auto;
+		// }
+	}
+	.banner-label {
+		@include position(absolute, -14px null null $container-fluid);
+		text-align: center;
+		padding: 3px 7px;
+		span {
+			text-transform: uppercase;
+		}
+	}
+	#{$global-sufix}banner-content,
+	.banner-content {
+		min-height: $banner-height;
+		min-height: rem($banner-height);
+		@include flex-middle;
+		padding: 0 $container-fluid * 2;
+		@media #{$sm-down} {
+			min-height: $banner-height / 2;
+			min-height: rem($banner-height / 2);
+			padding: 0 $container-fluid;
+		}
+	}
+	&.banner-label-bottom {
+		.banner-label {
+			@include position(absolute, null null 0 $container-fluid); 
+			top: inherit;
+		}
+	}
+}

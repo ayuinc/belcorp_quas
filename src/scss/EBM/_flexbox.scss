@@ -1,0 +1,58 @@
+// VERTICAL DISTRIBUTION SHORTHANDS
+@mixin flex-middle {
+	@include display(flex);
+	@include flex-direction(column);
+	@include justify-content(center);
+}
+.flex-middle {
+	@include flex-middle;
+}
+@mixin flex-middle-center {
+	@include display(flex);
+	@include flex-direction(column);
+	@include justify-content(center);
+	@include align-items(center);
+}
+.flex-middle-center {
+	@include flex-middle-center;
+}
+@mixin flex-middle-end {
+	@include display(flex);
+	@include flex-direction(column);
+	@include justify-content(flex-end);
+	@include align-items(center);
+}
+.flex-middle-end {
+	@include flex-middle-end;
+}
+
+// HORIZONTAL DISTRIBUTION SHORTHANDS
+@mixin flex-space-between {
+	@include display(flex);
+	@include flex-direction(row);
+	@include justify-content(space-between);
+	// @include list-unstyled;
+}
+@mixin flex-row {
+	@include display(flex);
+	@include flex-direction(row);
+	// @include list-unstyled;
+}
+.flex-row {
+	@include flex-row;
+}
+@mixin space-between-break {
+	@include display(flex);
+	@include flex-direction(column);
+	// @include list-unstyled;	
+}
+.flex-space-between {
+	@include flex-space-between;
+}
+@for $i from 1 through length($media-control-list) {
+	@media #{nth($media-control-list, $i)} {
+		.flex-space-between-break-#{nth($breakpoints-sufix-list, $i)} {
+			@include space-between-break;
+		}
+	}
+}

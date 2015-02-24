@@ -1,0 +1,10 @@
+$tcon-vidplay-size: $tcon-size !default;
+$tcon-vidplay-color: black !default;
+$tcon-vidplay-settings: (
+	transition: .375s all ease-in-out,
+	transform-origin: center center
+) !default;
+$tcon-vidplay-transformation: (
+	background: $tcon-vidplay-color,
+	transform: rotate(-360deg)
+) !default;

@@ -1,0 +1,69 @@
+// Prevent layout breakage on unsupporting browsers
+html {
+	&.no-js {
+		.flex-space-between {
+			@include clearfix;
+			.left {
+				float: left;
+			}
+			.right {
+				float: right;
+			}
+		}
+	}
+} 
+
+html,
+body {
+	min-height: 100%;
+	height: 100%;
+	background-color: $body-bg;
+	// overflow-x: hidden;
+	&::-webkit-scrollbar { 
+    display: none; 
+	}
+}
+
+// SIZE CONTROL VARS
+$size-control-placeholder: 530px;
+	// Banners
+$banner-height: 350px;
+	// Site menu
+$site-menu-width-control: 101px;
+$menu-list-icons-width: 35px;
+	// Header
+$header-height-control: 70px;
+	// Mobile header
+$mobile-navbar-height: 56px;
+	// Hero Unit and Videocover
+$video-bg-height: 491px;
+	// User cards
+$user-card-height: 42px;
+$user-card-width: 70px;
+
+.site-wrapper,
+.site-content {
+	min-height: 100%;
+	height: 100%;
+	position: relative;
+}
+
+// HERO UNIT
+.hero-unit {
+	position: relative;
+	height: $video-bg-height;
+	@include bg-img-control;
+	&.video-bg {
+		overflow: hidden;
+		height: $video-bg-height;
+	}
+	.overlay {
+		@include position(absolute, 0 0 0 0);
+		height: $video-bg-height;
+	}
+}
+
+// CLICKABLE DIV
+[data-href]{
+	cursor: pointer;
+}

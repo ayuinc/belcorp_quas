@@ -1,0 +1,32 @@
+//
+// CUSTOM MIXINS & VARIABLES FOR OVERALL STYLING
+// --------------------------------------------------
+
+/*========================================
+=          GLOBAL SUFIX DEFINITION      =
+========================================*/
+
+$global-sufix: 							"ebm-" !default;
+
+// Add !important value to all EBM : Experimental, look on _type-custom.scss for usage
+$importantize: 							"!important" 		!default;
+
+// EBM:REF
+// LIST UNSTYLED
+@mixin list-unstyled {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+// ALT FONT for FONTS_CUSTOM
+$font-family-alt:         "alt-name", $font-family-sans-serif;
+
+// EBM:REF
+// CUSTOM CONTAINER VARIABLE
+$container-xs: 								((480px + $grid-gutter-width)) !default;
+$container-fluid: 						 $grid-gutter-width / 2; 
+
+.container-fluid {
+	width: 100%;
+}

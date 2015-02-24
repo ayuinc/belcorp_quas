@@ -1,0 +1,28 @@
+.tcon-menu--xcross {
+  width: auto;
+
+  &.#{$tcon-jstransform} {
+
+    .tcon-menu__lines {
+      background: transparent;
+
+      &::before,
+      &::after {
+        transform-origin: 50% 50%;
+        top: 0;
+        width: $tcon-size;
+      }
+
+      &::before {
+        transform: rotate3d(0, 0, 1, 45deg);
+      }
+
+      &::after {
+        transform: rotate3d(0, 0, 1, -45deg);
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,49 @@
+/*========================================
+=             APP CUSTOM                 =
+========================================*/
+@import 
+  // GLOBAL STYLES DEFINITION
+  "modules/global";
+
+// APP Includes
+@import 
+
+  // TYPE
+  "elements/fonts-custom",
+  "elements/text-responsive",
+  "elements/type-custom",
+  "elements/icons",
+
+  // BUTTONS & LINKS
+  "elements/buttons-custom",
+
+  // BANNERS
+  // "elements/banners-custom",
+
+  // FORMS
+  // "elements/forms-custom",
+  // "elements/forms-multiuser",
+
+  // USER CARD
+  "elements/user-card";
+
+  // NAVS
+
+  // PANELS
+  // "elements/panels-custom";
+
+// APP Modules
+@import 
+
+  // LAYOUT
+  "modules/header",
+  "modules/size-control",
+  // "modules/videocover",
+  // "modules/dashboard-wrapper",
+  // "modules/mobile-menu",
+  // "modules/section-scroll",
+  "modules/footer";
+
+// APP Views
+// @import 
+  // VIEW NAME

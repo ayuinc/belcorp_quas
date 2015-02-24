@@ -1,0 +1,29 @@
+@media #{$sm-up} {
+	.container-xs {
+		width: $container-xs;
+		padding-left: $container-fluid;
+		padding-right: $container-fluid;
+		margin: 0 auto;
+	}
+	.container-sm {
+		width: $container-sm;
+		padding-left: $container-fluid;
+		padding-right: $container-fluid;
+		margin: 0 auto;
+	}	
+}
+@media #{$xs-only} {
+	.container-xs {
+		width: 100%;
+		padding-left: $container-fluid;
+		padding-right: $container-fluid;
+		margin: 0 auto;
+	}
+	.container-sm {
+		width: 100%;
+		padding-left: $container-fluid;
+		padding-right: $container-fluid;
+		margin: 0 auto;
+	}		
+}
+

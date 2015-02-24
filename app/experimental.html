@@ -1,0 +1,71 @@
+<!-- 
+	IMAGE SRCSET 
+	http://www.webkit.org/demos/srcset/
+-->
+<img src="image-src.png" srcset="image-1x.png 1x, image-2x.png 2x,
+                                 image-3x.png 3x, image-4x.png 4x">
+
+<!-- 
+	PICTURE TAG 
+	http://www.html5rocks.com/en/tutorials/responsive/picture-element/
+-->
+<style>
+  img {display: block; margin: 0 auto;}
+</style>
+
+<picture>
+  <source 
+    media="(min-width: 650px)"
+    srcset="images/kitten-stretching.png">
+  <source 
+    media="(min-width: 465px)"
+    srcset="images/kitten-sitting.png">
+  <img 
+    src="images/kitten-curled.png" 
+    alt="a cute kitten">
+</picture>
+	
+	<!-- Combinando con PIXEL DENSITY srcset -->
+<picture>
+  <source 
+    media="(min-width: 650px)" 
+    srcset="images/kitten-stretching.png,
+            images/kitten-stretching@1.5x.png 1.5x,  
+            images/kitten-stretching@2x.png 2x">
+  <source 
+    media="(min-width: 465px)" 
+    srcset="images/kitten-sitting.png,
+            images/kitten-sitting@1.5x.png 1.5x
+            images/kitten-sitting@2x.png 2x">
+  <img 
+    src="images/kitten-curled.png" 
+    srcset="images/kitten-curled@1.5x.png 1.5x,
+            images/kitten-curled@2x.png 2x"
+    alt="a cute kitten">
+</picture>
+
+
+<!-- HTML5 Custom elements -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- APP STYLES 
+      *Compress/Minify stylesheets on production
+      <link rel="stylesheet" href="stylesheets/main.pkgd.min.css">
+    -->
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <script>
+      document.registerElement('ebm-banner');
+    </script>
+  </head>
+  <body>
+    <ebm-banner>
+      <div class="banner-pic col-sm-3" style="background-image: url(assets/img/img.png)"></div>
+      <div class="banner-content col-sm-9">
+        <h3>Banner title</h3>
+      </div>
+    </ebm-banner>
+  </body>
+</html>

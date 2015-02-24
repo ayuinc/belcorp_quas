@@ -1,0 +1,137 @@
+/* 
+
+	EBM:REF
+	Mobile Menu
+
+*/
+
+.mobile-navbar {
+	@include position(fixed, 0 0 null 0);
+	z-index: 1000;
+	width: 100%;
+	height: $mobile-navbar-height;
+	background: white;
+	border-bottom: 1px solid $gray-lighter;
+	@include flex-space-between;
+	padding: 0 $container-fluid;
+	.left,
+	.right {
+		height: $mobile-navbar-height;
+		@include flex-middle;
+	}
+	.left {}
+	.right {}
+	.logo {
+		@include bg-img-control;
+		width: $mobile-navbar-height - 7;
+		height: $mobile-navbar-height - 7;
+	}
+	.menu-trigger {
+		background-color: $brand-primary;
+		width: $mobile-navbar-height - 14;
+		height: $mobile-navbar-height - 14;
+		text-align: center;
+		color: white;
+		font-size: $font-size-h1;
+	}
+}
+
+.mobile-menu {
+	@include position(fixed, 0 0 0 null);
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	background: $gray-lighter;
+	@include transform(translateX(100%));
+	@include transition(transform 0.2s ease-in-out);
+	z-index: 900;
+	padding-top: $mobile-navbar-height;
+	.mobile-nav-display-triggers {
+		> ul {
+			@include list-unstyled;
+			> li {
+				a {
+					display: block;
+					padding: $container-fluid;
+					text-transform: uppercase;
+					font-size: 21px;
+					color: $gray-dark;
+				}
+				&:nth-child(odd) {
+					background-color: $gray-light;
+				}
+				&:nth-child(even) {
+					background-color: $gray-lighter;
+				}
+			}
+		}
+	}
+	.mobile-nav-display {
+		@include position(fixed, 0 0 0 null);
+		width: 100%;
+		height: 100%;
+		min-height: 100%;
+		background: $gray-lighter;
+		@include transform(translateX(100%));
+		@include transition(transform 0.2s ease-in-out);
+		z-index: 901;
+		padding-top: $mobile-navbar-height;
+		overflow-y: scroll;
+		.top {
+			padding: $container-fluid;
+		}
+		.center {
+			> ul {
+				@include list-unstyled;
+				li {
+					a {
+						display: block;
+						text-transform: uppercase;
+						padding: ($container-fluid - 2) $container-fluid;
+						color: $gray-darker;
+						font-size: $font-size-base;
+						span {
+							// display: block;
+							// color: $brand-primary;
+						}
+					}
+					&:nth-child(odd) {
+						background-color: $gray-lighter;
+					}
+					&:nth-child(even) {
+						background-color: $gray-light;
+					}
+				}
+			}
+		}
+		.bottom {}
+		.back {
+			display: block;
+			&:hover {
+				cursor: pointer;
+			}
+			// &:before {
+			// 	content: "\e60b";
+			// 	font-family: 'icomoon';
+			// 	margin-right: 7px;
+			// }
+		}
+	}
+}
+
+.site-wrapper {
+	&.menu-on {
+		.mobile-menu {
+			@include transform(translateX(0px));
+			@include transition(transform 0.2s ease-in-out);
+		}
+	}
+	@for $i from 1 through 10 {
+		&.display.mobile-nav-display-#{$i} {
+			#mobile-nav-display-#{$i} {
+				@include transition(transform 0.2s ease-in-out);
+				@include transform(translateX(0px));
+			}
+		}
+	}
+}

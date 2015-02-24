@@ -1,0 +1,41 @@
+.tcon-plus--circle {
+  border: ($tcon-size / 12) solid $tcon-plus-color;
+  border-radius: $tcon-circle-radius;
+  position: relative;
+  background: $tcon-plus-bg;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    transition: .3s all ease-in-out;
+    border-radius: $tcon-plus-radius;
+    top: 50%;
+    transform: translate(50%, -50%) rotate(0);
+    width: 50%;
+    height: ($tcon-size / 12);
+    background: $tcon-plus-color;
+  }
+
+  &:after {
+    top: 50%;
+    width: 50%;
+    height: $tcon-size/12;
+    transform: translate(50%, -50%) rotate(90deg);
+  }
+
+  &.#{$tcon-jstransform} {
+
+    &::before {
+      transform: translate(50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(50%, -50%) rotate(-45deg);
+    }
+
+  }
+
+}

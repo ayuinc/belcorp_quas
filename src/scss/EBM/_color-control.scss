@@ -1,0 +1,231 @@
+/* 
+  =================
+  Backgrounds
+  =================
+*/
+/* EBM:Brand colors */
+@for $i from 1 through length($brand-colors-list) {
+  .bg-#{nth($brand-colors-sufix-list, $i)} {background-color: #{nth($brand-colors-list, $i)}};
+  .bg-#{nth($brand-colors-sufix-list, $i)}-shade {background-color: #{darken(nth($brand-colors-list, $i), 21%)};}
+}
+// Grayscale
+@for $i from 1 through length($grayscale-list) {
+  .bg-#{nth($grayscale-sufix-list, $i)} {background-color: #{nth($grayscale-list, $i)}};
+  .bg-#{nth($grayscale-sufix-list, $i)}-shade {background-color: #{darken(nth($grayscale-list, $i), 21%)};}
+}
+// Social colors
+@for $i from 1 through length($social-colors-list) {
+  .bg-#{nth($social-colors-sufix-list, $i)} {background-color: #{nth($social-colors-list, $i)}};
+  .bg-#{nth($social-colors-sufix-list, $i)}-shade {background-color: #{darken(nth($social-colors-list, $i), 21%)};}
+}
+
+// RGBA Backgrounds
+@for $i from 1 through length($brand-colors-list) {
+  .bg-#{nth($brand-colors-sufix-list, $i)}-op {background-color: #{rgba(nth($brand-colors-list, $i), 0.7)}};
+}
+// Grayscale
+@for $i from 1 through length($grayscale-list) {
+  .bg-#{nth($grayscale-sufix-list, $i)}-op {background-color: #{rgba(nth($grayscale-list, $i), 0.7)}}; 
+}
+// Social colors
+@for $i from 1 through length($social-colors-list) {
+  .bg-#{nth($social-colors-sufix-list, $i)}-op {background-color: #{rgba(nth($social-colors-list, $i), 0.7)}};
+}
+
+/* 
+  =================
+  TEXT COLOR
+  =================
+*/
+
+// Contextual emphasis
+@for $i from 1 through length($brand-colors-list) {
+  .text-#{nth($brand-colors-sufix-list, $i)} {
+    a:not(.btn) {
+      color: #{nth($brand-colors-list, $i)};
+      &:hover {
+        color: #{darken(nth($brand-colors-list, $i), 21%)};
+      }
+    }
+    color: #{nth($brand-colors-list, $i)};
+  }
+  a.text-#{nth($brand-colors-sufix-list, $i)}:not(.btn) { 
+    &:hover {
+      color: #{darken(nth($brand-colors-list, $i), 21%)};
+    }
+  }
+}
+
+@for $i from 1 through length($grayscale-list) {
+  .text-#{nth($grayscale-sufix-list, $i)} {
+    a:not(.btn) {
+      color: #{nth($grayscale-list, $i)};
+      &:hover {
+        color: #{darken(nth($grayscale-list, $i), 21%)};
+      }
+    }
+    color: #{nth($grayscale-list, $i)};
+  }
+  a.text-#{nth($grayscale-sufix-list, $i)}:not(.btn) {
+    &:hover {
+      color: #{darken(nth($grayscale-list, $i), 21%)};
+    }
+  }
+}
+
+@for $i from 1 through length($social-colors-list) {
+  .text-#{nth($social-colors-sufix-list, $i)} {
+    a:not(.btn) {
+      color: #{nth($social-colors-list, $i)};
+      &:hover {
+        color: #{darken(nth($social-colors-list, $i), 21%)};
+      }
+    }
+    color: #{nth($social-colors-list, $i)};
+  }
+  a.text-#{nth($social-colors-sufix-list, $i)}:not(.btn) {
+    &:hover {
+      color: #{darken(nth($social-colors-list, $i), 21%)};
+    }
+  }
+}
+
+/* 
+  =================
+  TEXT HOVER COLOR
+  =================
+*/
+
+// Contextual emphasis hover
+@for $i from 1 through length($brand-colors-list) {
+  .text-hover-#{nth($brand-colors-sufix-list, $i)} {
+    a:not(.btn) {
+      &:hover {
+        color: #{darken(nth($brand-colors-list, $i), 12%)};
+      }    
+    }
+    &:hover {
+      color: #{darken(nth($brand-colors-list, $i), 12%)};
+    }
+  }
+  a.text-hover-#{nth($brand-colors-sufix-list, $i)}:not(.btn) {
+    &:hover {
+      color: #{darken(nth($brand-colors-list, $i), 12%)};
+    }
+  }
+}
+
+@for $i from 1 through length($grayscale-list) {
+  .text-hover-#{nth($grayscale-sufix-list, $i)} {
+    a:not(.btn) {
+      &:hover {
+        color: #{darken(nth($grayscale-list, $i), 12%)};
+      }
+    }
+    &:hover {
+      color: #{darken(nth($grayscale-list, $i), 12%)};
+    }
+  }
+  a.text-hover-#{nth($grayscale-sufix-list, $i)}:not(.btn) {
+    &:hover {
+      color: #{darken(nth($grayscale-list, $i), 12%)};
+    }
+  }
+}
+
+@for $i from 1 through length($social-colors-list) {
+  .text-hover-#{nth($social-colors-sufix-list, $i)} {
+    a:not(.btn) {
+      &:hover {
+        color: #{darken(nth($social-colors-list, $i), 12%)};
+      }
+    }
+    &:hover {
+      color: #{darken(nth($social-colors-list, $i), 12%)};
+    }
+  }
+  a.text-hover-#{nth($social-colors-sufix-list, $i)}:not(.btn) {
+    &:hover {
+      color: #{darken(nth($social-colors-list, $i), 12%)};
+    }
+  }
+}
+
+// Contextual emphasis hover
+@for $i from 1 through length($brand-colors-list) {
+  .bg-hover-#{nth($brand-colors-sufix-list, $i)} {
+    a:not(.btn) {
+      &:hover {
+        background-color: #{darken(nth($brand-colors-list, $i), 12%)};
+      }
+    }
+    &:hover {
+      background-color: #{darken(nth($brand-colors-list, $i), 12%)};
+    }
+  }
+  a.bg-hover-#{nth($brand-colors-sufix-list, $i)}:not(.btn),
+  .btn.bg-hover-#{nth($brand-colors-sufix-list, $i)} {
+    &:hover {
+      background-color: #{darken(nth($brand-colors-list, $i), 12%)};
+    }
+  }
+}
+
+@for $i from 1 through length($grayscale-list) {
+  .bg-hover-#{nth($grayscale-sufix-list, $i)} {
+    a:not(.btn) {
+      &:hover {
+        background-color: #{darken(nth($grayscale-list, $i), 12%)};
+      }
+    }
+    &:hover {
+      background-color: #{darken(nth($grayscale-list, $i), 12%)};
+    }
+  } 
+  a.bg-hover-#{nth($grayscale-sufix-list, $i)}:not(.btn),
+  .btn.bg-hover-#{nth($grayscale-sufix-list, $i)} {
+    &:hover {
+      background-color: #{darken(nth($grayscale-list, $i), 12%)};
+    }
+  }
+}
+
+@for $i from 1 through length($social-colors-list) {
+  .bg-hover-#{nth($social-colors-sufix-list, $i)} {
+    a:not(.btn) {
+      &:hover {
+        background-color: #{darken(nth($social-colors-list, $i), 12%)};
+      }
+    }
+    &:hover {
+      background-color: #{darken(nth($social-colors-list, $i), 12%)};
+    }
+  }
+  a.bg-hover-#{nth($social-colors-sufix-list, $i)}:not(.btn),
+  .btn.bg-hover-#{nth($social-colors-sufix-list, $i)} {
+    &:hover {
+      background-color: #{darken(nth($social-colors-list, $i), 12%)};
+    }
+  }
+}
+
+// CHILDREN TEXT ELEMENTS COLOR CONTROL
+@for $i from 1 through length($text-elements-list) {
+  @for $z from 1 through length($brand-colors-list) {
+    .#{nth($text-elements-list, $i)}-ch-#{nth($brand-colors-sufix-list, $z)} {
+      #{nth($text-elements-list, $i)} {
+        color: #{nth($brand-colors-list, $z)};
+      }
+    }
+  }
+}
+
+@for $i from 1 through length($text-elements-list) {
+  @for $z from 1 through length($grayscale-list) {
+    .#{nth($text-elements-list, $i)}-ch-#{nth($grayscale-sufix-list, $z)} {
+      #{nth($text-elements-list, $i)} {
+        color: #{nth($grayscale-list, $z)};
+      }
+    }
+  }
+}

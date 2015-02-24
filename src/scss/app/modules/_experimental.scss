@@ -1,0 +1,38 @@
+// EXPERIMENTAL CLASSES that need vendor prefixes
+@mixin fit-content {
+	.fit-content {
+		width: -moz-fit-content; 
+		width: -webkit-fit-content; 
+		width: fit-content
+	}
+}
+@include fit-content;
+// http://demosthenes.info/blog/975/Little-Big-Using-CSS-fit-content
+
+@mixin max-content {
+	.max-content {
+		max-width: -moz-max-content;
+		max-width: -webkit-max-content;
+		max-width: max-content;
+	}
+}
+@include max-content;
+// http://demosthenes.info/blog/894/Shrink-Wrap-HTML-containers-with-max-content
+
+@mixin min-content {
+	.min-content {
+		width: -moz-min-content; 
+		width: -webkit-min-content; 
+		width: min-content;
+	}
+}
+@include min-content;
+// http://demosthenes.info/blog/662/Design-From-the-Inside-Out-With-CSS-Min-Content
+
+// Text Shadow
+color: #1e3966;
+text-shadow: 
+	rgba(255,255,255,0.25) // Color
+	0 // Eje x
+	1px // Eje Y
+	0; // Blur

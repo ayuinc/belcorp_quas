@@ -1,0 +1,14 @@
+{
+  "name": "easyboxmodel",
+  "version": "1.0.0",
+  "dependencies": {
+    "modernizr": "latest",
+    "jquery": "latest",
+    "respond": "latest",
+    "html5shiv": "latest",
+    "flickity": "latest",
+    "imagesloaded": "latest",
+    "isotope": "latest",
+    "ScrollMagic": "latest"
+  }
+}

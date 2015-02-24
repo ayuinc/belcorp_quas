@@ -1,0 +1,55 @@
+/* 
+
+  Description: EBM or Easy Box Model allows you to easily edit your UI box model margins and paddings 
+  through the browser inspector "elements" tab and make your elements fit on their parent container without
+  recurring to your CSS too often.
+  
+  Author: @MadeByGus
+  Version: 0.5
+  GitHub: https://github.com/netpoe/EBM.git
+
+*/
+
+// Set the global measure (range: 1 - 9)
+$times: 7; 
+
+// Define the em-base for rems to px conversion
+$px-to-rems: true;    // True if you want them on rems 
+$em-base: 14px; 
+
+// Include EBM in "%" units?
+$percentage: true;
+
+// Include and determine border radius:
+$rounded-borders: true;  // If no bootstrap
+
+@import 
+  "helpers/times-range",
+  "helpers/strip-units",
+  "helpers/px-to-rems",
+  "helpers/rule-of-three",
+  "helpers/prefixer",
+  "helpers/clearfix",
+  "helpers/list-unstyled",
+  "helpers/vertical-align",
+  "helpers/children-elements",
+  "helpers/media-queries"; 
+  
+@import 
+  "easy-box-model",
+  "ebm-loops-small",
+  "min-heights",
+  // "min-heights_deprecated",
+  "box-shadow",
+  "bg-img-control",
+  "horizontal-rules",
+  "borders",
+  "color-control",
+  "z-index",
+  "positions",
+  "flexbox", 
+  "displays",
+  "gbo",
+  "grid-lists",
+  "separators",
+  "containers-custom";

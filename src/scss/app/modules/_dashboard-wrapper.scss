@@ -1,0 +1,126 @@
+header {
+	height: $header-height-control;
+	border-bottom: 1px solid $gray-lighter;
+	@include flex-space-between;
+	@include normalize-text;
+	.left,
+	.center,
+	.right {
+		@include flex-middle-center;
+	}
+	.left {}
+	.center {}
+	.right {}
+}
+
+.site-wrapper {
+	.site-menu,
+	.site-content {
+		float: left;
+	}
+	.site-menu {
+		width: $site-menu-width-control;
+		@include position(fixed, 0 null 0 0);
+		height: 100%;
+		z-index: 1000;
+	}
+	.site-content {
+		background-color: white;
+		margin-left: $site-menu-width-control;
+		@include calc(width, "100% - #{$site-menu-width-control}");
+	}
+	// MENU INTERACTION
+	&.menu-on {
+		.site-menu {
+			width: $site-menu-width-control * 2;
+			.center {
+				.title {
+					display: block;
+				}
+				.menu-list {
+					> li {
+						.left,
+						.right {
+							float: left;
+						}
+						.left {
+							width: $menu-list-icons-width;
+						}
+						.right {
+							text-align: left;
+							padding-left: $container-fluid / 2;
+							padding-bottom: 0;
+							@include calc(width, "100% - #{$menu-list-icons-width}");
+						}
+					}
+				}
+			}
+		}
+		.site-content {
+			@include calc(width, "100% - #{$site-menu-width-control * 2}");
+			margin-left: $site-menu-width-control * 2;
+		}
+	}
+}
+
+// SITE MENU
+.site-menu {
+	background-color: white;
+	&.site-menu-dark {
+		background-color: $gray-darker;
+	}
+	.top,
+	.center,
+	.bottom {
+
+	}
+	.top {
+		height: $header-height-control;
+		text-align: center;
+		border-bottom: 1px solid $gray-lighter;
+		@include flex-middle-center;
+		cursor: pointer;
+	}
+	.center {
+		.title {
+			text-transform: uppercase;
+			color: $gray;
+			display: none;
+			padding: 14px 7px 7px 7px;
+		}
+		.menu-list {
+			@include list-unstyled;
+			> li {
+				@include clearfix;
+				border-bottom: 1px solid $gray-lighter;
+				text-align: center;
+				&:hover {
+					.left,
+					.right {
+						background-color: $gray-lighter;
+					}
+				}
+				.left,
+				.right {
+					display: block;
+					min-height: $menu-list-icons-width;
+					@include flex-middle;
+				}
+				.left {
+					// background-color: $gray-lighter;
+					text-align: center;
+				}
+				.right {
+					padding-bottom: $container-fluid / 2;
+					// margin-left: $menu-list-icons-width;
+					// background-color: $gray-light;
+				}
+			}
+		}
+	}
+	.bottom {}
+	.menu-trigger {
+		color: $gray;
+		text-transform: uppercase;
+	}
+}

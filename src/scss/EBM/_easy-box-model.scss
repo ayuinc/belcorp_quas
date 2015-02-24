@@ -1,0 +1,347 @@
+// Box Model abbreviations list
+$box-model-abbr: 
+  'p', 
+  'pt', 
+  'pr', 
+  'pb', 
+  'pl', 
+  'm', 
+  'mt', 
+  'mr', 
+  'mb', 
+  'ml';
+
+$box-model-sides: 
+  'padding', 
+  'padding-top', 
+  'padding-right', 
+  'padding-bottom', 
+  'padding-left', 
+  'margin', 
+  'margin-top', 
+  'margin-right', 
+  'margin-bottom', 
+  'margin-left';
+
+$box-model-ch-abbr: 
+  'p-ch', 
+  'pt-ch', 
+  'pr-ch', 
+  'pb-ch', 
+  'pl-ch', 
+  'm-ch', 
+  'mt-ch', 
+  'mr-ch', 
+  'mb-ch', 
+  'ml-ch';
+
+$box-model-ch-abbr-percentage: 
+  'pp-ch', 
+  'ptp-ch', 
+  'prp-ch', 
+  'pbp-ch', 
+  'plp-ch', 
+  'mp-ch', 
+  'mtp-ch', 
+  'mrp-ch', 
+  'mbp-ch', 
+  'mlp-ch';
+
+// Change for empty string to remove !important
+$importantize: "!important";
+
+@for $i from 0 through 10 {
+  @for $j from 1 through length($box-model-sides) {
+    .#{nth($box-model-abbr, $j)}-#{$i*$times} {
+      // For <IE8
+      #{nth($box-model-sides, $j)}: ($i*$times) + px #{$importantize};
+      // REMs for modern browsers
+      @if $px-to-rems == true {
+        #{nth($box-model-sides, $j)}: rem($i*$times) #{$importantize};
+      }
+    }
+    
+    @for $k from 1 through length($breakpoints-sufix-list) {
+      @media #{nth($media-control-list, $k)} {
+        .#{nth($box-model-abbr, $j)}-#{$i*$times}-#{nth($breakpoints-sufix-list, $k)} {          
+          // For <IE8
+          #{nth($box-model-sides, $j)}: ($i*$times) + px #{$importantize};
+          // REMs for modern browsers
+          @if $px-to-rems == true {
+            #{nth($box-model-sides, $j)}: rem($i*$times) #{$importantize};
+          }
+        }
+        @if $percentage == true {
+          .#{nth($box-model-abbr, $j)}p-#{$i*$times}-#{nth($breakpoints-sufix-list, $k)} {
+            #{nth($box-model-sides, $j)}: percentage(($i*($times/100))) #{$importantize}; 
+          }
+        }
+      }
+    }
+
+    @if $percentage == true {
+      .#{nth($box-model-abbr, $j)}p-#{$i*$times} {
+        #{nth($box-model-sides, $j)}: percentage(($i*($times/100))) #{$importantize};
+      }
+    }
+  }
+}
+
+// BEFORE & AFTER pseudoclasses margins
+@for $i from 0 through 10 {
+  @for $j from 6 through length($box-model-sides) {
+    .#{nth($box-model-abbr, $j)}-#{$i*$times}-bf {
+      &:before {
+        #{nth($box-model-sides, $j)}: ($i*$times) + px #{$importantize};
+        // REMs for modern browsers
+        @if $px-to-rems == true {
+          #{nth($box-model-sides, $j)}: rem($i*$times) #{$importantize};
+        }
+      }
+    }
+    
+    @for $k from 1 through length($breakpoints-sufix-list) {
+      @media #{nth($media-control-list, $k)} {
+        .#{nth($box-model-abbr, $j)}-#{$i*$times}-#{nth($breakpoints-sufix-list, $k)}-bf {       
+          &:before {
+            #{nth($box-model-sides, $j)}: ($i*$times) + px #{$importantize};
+            // REMs for modern browsers
+            @if $px-to-rems == true {
+              #{nth($box-model-sides, $j)}: rem($i*$times) #{$importantize};
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
+// BOX MODEL CHILDREN ELEMENTS
+@for $i from 0 through 10 {
+  @for $j from 1 through length($box-model-sides) {
+
+    .#{nth($box-model-ch-abbr, $j)}-#{$i*$times} {
+      #{$children-elements} {
+        // For <IE8
+        #{nth($box-model-sides, $j)}: ($i*$times) + px #{$importantize};
+        // REMs for modern browsers
+        @if $px-to-rems == true {
+          #{nth($box-model-sides, $j)}: rem($i*$times) #{$importantize};
+        }
+      }
+    }
+    @if $percentage == true {
+      .#{nth($box-model-ch-abbr-percentage, $j)}-#{$i*$times} {
+        #{$children-elements} {
+          #{nth($box-model-sides, $j)}: percentage(($i*($times/100))) #{$importantize};
+        }
+      }
+    }
+
+    @for $k from 1 through length($breakpoints-sufix-list) {
+      @media #{nth($media-control-list, $k)} {
+        .#{nth($box-model-ch-abbr, $j)}-#{$i*$times}-#{nth($breakpoints-sufix-list, $k)} {
+          #{$children-elements} {
+            // For <IE8
+            #{nth($box-model-sides, $j)}: ($i*$times) + px #{$importantize};
+            // REMs for modern browsers
+            @if $px-to-rems == true {
+              #{nth($box-model-sides, $j)}: rem($i*$times) #{$importantize};
+            }
+          }
+        }
+        @if $percentage == true {
+          .#{nth($box-model-ch-abbr-percentage, $j)}-#{$i*$times}-#{nth($breakpoints-sufix-list, $k)} {
+            #{$children-elements} {
+              #{nth($box-model-sides, $j)}: percentage(($i*($times/100))) #{$importantize};
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// PADDING VERTICAL & HORIZONTAL
+@for $i from 0 through 20 {
+  .pv-#{$i*$times} {
+    padding-top: ($i*$times) + px #{$importantize};
+    padding-bottom: ($i*$times) + px #{$importantize};
+    padding-top: rem($i*$times) #{$importantize};
+    padding-bottom: rem($i*$times) #{$importantize};
+  }
+  .pv-ch-#{$i*$times} {
+    #{$children-elements} {
+      padding-top: ($i*$times) + px #{$importantize};
+      padding-bottom: ($i*$times) + px #{$importantize};
+      padding-top: rem($i*$times) #{$importantize};
+      padding-bottom: rem($i*$times) #{$importantize};
+    }
+  }
+  @for $k from 1 through length($breakpoints-sufix-list) {
+    @media #{nth($media-control-list, $k)} {
+      .pv-#{$i*$times}-#{nth($breakpoints-sufix-list, $k)} {
+        padding-top: ($i*$times) + px #{$importantize};
+        padding-bottom: ($i*$times) + px #{$importantize};
+        padding-top: rem($i*$times) #{$importantize};
+        padding-bottom: rem($i*$times) #{$importantize};
+      }
+      .pv-ch-#{$i*$times}-#{nth($breakpoints-sufix-list, $k)} {
+        #{$children-elements} {
+          padding-top: ($i*$times) + px #{$importantize};
+          padding-bottom: ($i*$times) + px #{$importantize};
+          padding-top: rem($i*$times) #{$importantize};
+          padding-bottom: rem($i*$times) #{$importantize};
+        }
+      }
+      .pvp-#{$i*$times}-#{nth($breakpoints-sufix-list, $k)} {
+        padding-top: percentage(($i*($times/100))) #{$importantize};
+        padding-bottom: percentage(($i*($times/100))) #{$importantize};
+      }
+    }
+  }
+  @if $percentage == true {
+    .pvp-#{$i*$times} {
+      padding-top: percentage(($i*($times/100))) #{$importantize};
+      padding-bottom: percentage(($i*($times/100))) #{$importantize};
+    }
+  }
+}
+
+@for $i from 0 through 10 {
+  .ph-#{$i*$times} {
+    padding-left: ($i*$times) + px #{$importantize};
+    padding-right: ($i*$times) + px #{$importantize};
+    padding-left: rem($i*$times) #{$importantize};
+    padding-right: rem($i*$times) #{$importantize};
+  }
+  .ph-ch-#{$i*$times} {
+    #{$children-elements} {
+      padding-left: ($i*$times) + px #{$importantize};
+      padding-right: ($i*$times) + px #{$importantize};
+      padding-left: rem($i*$times) #{$importantize};
+      padding-right: rem($i*$times) #{$importantize};
+    }
+  }
+  @for $k from 1 through length($breakpoints-sufix-list) {
+    @media #{nth($media-control-list, $k)} {
+      .ph-#{$i*$times}-#{nth($breakpoints-sufix-list, $k)} {
+        padding-left: ($i*$times) + px #{$importantize};
+        padding-right: ($i*$times) + px #{$importantize};
+        padding-left: rem($i*$times) #{$importantize};
+        padding-right: rem($i*$times) #{$importantize};
+      }
+      .ph-ch-#{$i*$times}-#{nth($breakpoints-sufix-list, $k)} {
+        #{$children-elements} {
+          padding-left: ($i*$times) + px #{$importantize};
+          padding-right: ($i*$times) + px #{$importantize};
+          padding-left: rem($i*$times) #{$importantize};
+          padding-right: rem($i*$times) #{$importantize};
+        }
+      }
+      .php-#{$i*$times}-#{nth($breakpoints-sufix-list, $k)} {
+        padding-left: percentage(($i*($times/100))) #{$importantize};
+        padding-right: percentage(($i*($times/100))) #{$importantize};
+      }
+    }
+  }
+  @if $percentage == true {
+    .php-#{$i*$times} {
+      padding-left: percentage(($i*($times/100))) #{$importantize};
+      padding-right: percentage(($i*($times/100))) #{$importantize};
+    }
+  }
+}
+
+// MARGIN VERTICAL & HORIZONTAL
+@for $i from 0 through 10 {
+  .mv-#{$i*$times} {
+    margin-top: ($i*$times) + px #{$importantize};
+    margin-bottom: ($i*$times) + px #{$importantize};
+    margin-top: rem($i*$times) #{$importantize};
+    margin-bottom: rem($i*$times) #{$importantize};
+  }
+  .mv-ch-#{$i*$times} {
+    #{$children-elements} {
+      margin-top: ($i*$times) + px #{$importantize};
+      margin-bottom: ($i*$times) + px #{$importantize};
+      margin-top: rem($i*$times) #{$importantize};
+      margin-bottom: rem($i*$times) #{$importantize};
+    }
+  }
+  @for $k from 1 through length($breakpoints-sufix-list) {
+    @media #{nth($media-control-list, $k)} {
+      .mv-#{$i*$times}-#{nth($breakpoints-sufix-list, $k)} {
+        margin-top: ($i*$times) + px #{$importantize};
+        margin-bottom: ($i*$times) + px #{$importantize};
+        margin-top: rem($i*$times) #{$importantize};
+        margin-bottom: rem($i*$times) #{$importantize};
+      }
+      .mv-ch-#{$i*$times}-#{nth($breakpoints-sufix-list, $k)} {
+        #{$children-elements} {
+          margin-top: ($i*$times) + px #{$importantize};
+          margin-bottom: ($i*$times) + px #{$importantize};
+          margin-top: rem($i*$times) #{$importantize};
+          margin-bottom: rem($i*$times) #{$importantize};
+        }
+      }
+      .mvp-#{$i*$times}-#{nth($breakpoints-sufix-list, $k)} {
+        margin-top: percentage(($i*($times/100))) #{$importantize};
+        margin-bottom: percentage(($i*($times/100))) #{$importantize};
+      }
+    }
+  }
+  @if $percentage == true {
+    .mvp-#{$i*$times} {
+      margin-top: percentage(($i*($times/100))) #{$importantize};
+      margin-bottom: percentage(($i*($times/100))) #{$importantize};
+    }
+  }
+}
+
+@for $i from 0 through 10 {
+  .mh-#{$i*$times} {
+    margin-left: ($i*$times) + px #{$importantize};
+    margin-right: ($i*$times) + px #{$importantize};
+    margin-left: rem($i*$times) #{$importantize};
+    margin-right: rem($i*$times) #{$importantize};
+  }
+  .mh-ch-#{$i*$times} {
+    #{$children-elements} {
+      margin-left: ($i*$times) + px #{$importantize};
+      margin-right: ($i*$times) + px #{$importantize};
+      margin-left: rem($i*$times) #{$importantize};
+      margin-right: rem($i*$times) #{$importantize};
+    }
+  }
+  @for $k from 1 through length($breakpoints-sufix-list) {
+    @media #{nth($media-control-list, $k)} {
+      .mh-#{$i*$times}-#{nth($breakpoints-sufix-list, $k)} {
+        margin-left: ($i*$times) + px #{$importantize};
+        margin-right: ($i*$times) + px #{$importantize};
+        margin-left: rem($i*$times) #{$importantize};
+        margin-right: rem($i*$times) #{$importantize};
+      }
+      .mh-ch-#{$i*$times}-#{nth($breakpoints-sufix-list, $k)} {
+        #{$children-elements} {
+          margin-left: ($i*$times) + px #{$importantize};
+          margin-right: ($i*$times) + px #{$importantize};
+          margin-left: rem($i*$times) #{$importantize};
+          margin-right: rem($i*$times) #{$importantize};
+        }
+      }
+      .mhp-#{$i*$times}-#{nth($breakpoints-sufix-list, $k)} {
+        margin-left: percentage(($i*($times/100))) #{$importantize};
+        margin-right: percentage(($i*($times/100))) #{$importantize};
+      }
+    }
+  }
+  @if $percentage == true {
+    .mhp-#{$i*$times} {
+      margin-left: percentage(($i*($times/100))) #{$importantize};
+      margin-right: percentage(($i*($times/100))) #{$importantize};
+    }
+  }
+}

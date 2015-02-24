@@ -1,0 +1,35 @@
+$separator-width: 28px;
+$separator-height: 4px;
+
+@for $i from 1 through length($brand-colors-sufix-list) {
+	.separator-#{nth($brand-colors-sufix-list, $i)} {
+		border-top: $hr-width $hr-style #{nth($brand-colors-list, $i)} !important;
+		margin: $container-fluid 0;
+		width: $separator-width;
+		width: rem($separator-width);
+		height: $separator-height;
+		height: rem($separator-height);
+		@for $z from 1 through length($breakpoints-sufix-list) {
+			&.separator-#{nth($breakpoints-sufix-list, $z)} {
+				width: $separator-width * $z;
+				width: rem($separator-width * $z);
+			}
+		}
+	}
+}
+@for $i from 1 through length($grayscale-sufix-list) {
+	.separator-#{nth($grayscale-sufix-list, $i)} {
+		border-top: $hr-width $hr-style #{nth($grayscale-list, $i)} !important;
+		margin: $container-fluid 0;
+		width: $separator-width;
+		width: rem($separator-width);
+		height: $separator-height;
+		height: rem($separator-height);
+		@for $z from 1 through length($breakpoints-sufix-list) {
+			&.separator-#{nth($breakpoints-sufix-list, $z)} {
+				width: $separator-width * $z;
+				width: rem($separator-width * $z);
+			}
+		}
+	}
+}

@@ -1,0 +1,95 @@
+// SIZE CONTROL
+	// I assume that the 'md' size is the default size
+	// Control the sizes of elements by using $size-control variables at the top of this file
+.size {
+	&.xs {
+		&.hero-unit {
+			height: $video-bg-height - 280;
+			&.video-bg {
+				height: $video-bg-height - 280;
+			}
+			.overlay {
+				height: $video-bg-height - 280;
+			}
+		}
+		&.user-card {
+			// margin-bottom: $container-fluid - 3;
+			.user-pic {
+				width: $user-card-height - 14;
+				// height: $user-card-height - 14;
+			}
+			.user-info {
+				min-height: $user-card-height - 14;
+			}
+		}
+	}
+	&.sm {
+		&.hero-unit {
+			height: $video-bg-height - 140;
+			&.video-bg {
+				height: $video-bg-height - 140;
+			}
+			.overlay {
+				height: $video-bg-height - 140;
+			}
+		}
+		&.user-card {
+			// margin-bottom: $container-fluid - 2;
+			.user-pic {
+				width: $user-card-height - 7;
+				// height: $user-card-height - 7;		
+			}
+			.user-info {
+				min-height: $user-card-height - 7;
+			}
+		}
+	}
+	&.lg {
+		&.hero-unit {
+			height: $video-bg-height + 140;
+			&.video-bg {
+				height: $video-bg-height + 140;
+			}
+			.overlay {
+				height: $video-bg-height + 140;
+			}
+		}
+		&.user-card {
+			// margin-bottom: $container-fluid + 7;
+			$user-card-width-lg: $user-card-width + 140;
+			// width: $user-card-width-lg;
+			.user-pic {
+				// width: rule-of-three($user-card-width-lg, 140);
+				// height: rule-of-three($user-card-width-lg, 140);
+				width: 180px;
+				// height: $user-card-width-lg;
+			}
+			.user-info {
+				width: 75%;
+				// width: rule-of-three($user-card-width-lg, 210);
+				min-height: $user-card-width - 70;
+			}
+		}
+	}
+	&.xl {
+		&.hero-unit {
+			height: $video-bg-height + 210;
+			&.video-bg {
+				height: $video-bg-height + 210;
+			}
+			.overlay {
+				height: $video-bg-height + 210;
+			}
+		}
+		&.user-card {
+			// margin-bottom: $container-fluid + 14;
+			.user-pic {
+				width: $user-card-height + 21;
+				// height: $user-card-height + 21;
+			}
+			.user-info {
+				min-height: $user-card-height + 21;
+			}
+		}
+	}
+}

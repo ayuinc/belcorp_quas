@@ -1,0 +1,52 @@
+/* EBM Borders */
+// Border Radius
+.border-radius {
+  border-radius: $border-radius-base;
+}
+
+.border-radius-sm {
+	border-radius: $border-radius-small;
+}
+
+.border-radius-lg {
+	border-radius: $border-radius-large;
+}
+
+// No border colors
+.borderless {
+  border: none!important;
+}
+
+// Border colors
+$border-sides-list: 
+	"top",
+	"right",
+	"bottom",
+	"left";
+
+$border-width: 1px;
+$border-style: solid;
+
+@for $z from 1 through length($border-sides-list) {
+	@for $i from 1 to length($brand-colors-sufix-list) {
+		.border-#{nth($border-sides-list, $z)}-#{nth($brand-colors-sufix-list, $i)} {
+			border-#{nth($border-sides-list, $z)}: $border-width $border-style #{nth($brand-colors-list, $i)};
+		}
+	}
+}
+@for $z from 1 through length($border-sides-list) {
+	@for $i from 1 through length($grayscale-sufix-list) {
+		.border-#{nth($border-sides-list, $z)}-#{nth($grayscale-sufix-list, $i)} {
+			border-#{nth($border-sides-list, $z)}: $border-width $border-style #{nth($grayscale-list, $i)};
+		}
+	}
+}
+
+// Border sizes
+@for $z from 2 through length($sizes-list) {
+	@for $i from 1 through length($border-sides-list) {
+		.border-#{nth($border-sides-list, $i)}-#{nth($sizes-list, $z)} {
+			border-#{nth($border-sides-list, $i)}-width: ($border-width + $z) !important;
+		}
+	}
+}

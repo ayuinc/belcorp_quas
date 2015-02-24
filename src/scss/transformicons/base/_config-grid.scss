@@ -1,0 +1,9 @@
+// Grid
+$tcon-grid-color: black !default;
+$tcon-grid-transition: .3s !default;
+$tcon-grid-base: .5rem !default;
+$tcon-grid-space: ($tcon-grid-base / 4) !default;
+
+$tcon-grid-morph: (
+  transform: rotate3d(0, 0, 1, -45deg) scale3d(.8, .8, .8)
+);

@@ -1,0 +1,68 @@
+// Common form controls
+
+// select
+// textarea
+// input[type="text"]
+// input[type="password"]
+// input[type="datetime"]
+// input[type="datetime-local"]
+// input[type="date"]
+// input[type="month"]
+// input[type="time"]
+// input[type="week"]
+// input[type="number"]
+// input[type="email"]
+// input[type="url"]
+// input[type="search"]
+// input[type="tel"]
+// input[type="color"]
+
+$input-type-list: 
+// select,
+// textarea,
+"text",
+"password",
+// "datetime",
+// "datetime-local",
+// "date",
+// "month",
+// "time",
+// "week",
+// "number",
+"email";
+// "url",
+// "search",
+// "tel",
+// "color";
+
+// Form overrides 
+.select-override {
+  @include user-select(none);
+  position: relative;
+  text-indent: 1px;
+  text-overflow: "";
+  &.input-lg {
+    line-height: 28px;
+    // background: white url(/img/arrow-down.svg) no-repeat 98%;
+  }
+}
+
+form {
+	label {
+		color: white;
+		text-transform: uppercase;
+		font-size: $font-size-h5;
+		@include light;
+	}
+	@for $i from 1 through length($input-type-list) {
+		input[type="#{nth($input-type-list, $i)}"] {
+			background-color: transparent;
+			border: 2px solid white;
+		}
+	}
+	select {}
+	textarea.form-control {
+		background-color: transparent;
+		border: 2px solid white;
+	}
+}

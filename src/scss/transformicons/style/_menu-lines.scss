@@ -1,0 +1,27 @@
+.tcon-menu__lines {
+  @include tconMenuLines;
+  position: relative;
+
+  &::before,
+  &::after {
+    @include tconMenuLines;
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transform-origin: ($tcon-size / 14) center;
+  }
+
+  &::before {
+    top: ($tcon-size / 4);
+  }
+
+  &::after {
+    top: -($tcon-size / 4);
+  }
+
+  .#{$tcon-jstransform} & {
+    transform: scale3d(.8, .8, .8);
+  }
+
+}

@@ -1,0 +1,27 @@
+.tcon-vid--play {
+  height: $tcon-vidplay-size;
+  padding-top: 0;
+  padding-bottom: 0;
+  width: $tcon-vidplay-size;
+
+  @each $property, $value in $tcon-vidplay-settings {
+    #{$property} : #{$value};
+  }
+
+  &:after {
+    border-style: solid;
+    border-width: $tcon-vidplay-size/2 0 $tcon-vidplay-size/2 $tcon-vidplay-size/2; // http://triangle.designyourcode.io
+    border-color: transparent transparent transparent $tcon-vidplay-color;
+    content: "";
+    display: block;
+    height: 0;
+    transform: translateX(25%);
+    width: $tcon-vidplay-size;
+  }
+
+  &.#{$tcon-jstransform} {
+    @each $property, $value in $tcon-vidplay-transformation {
+      #{$property} : #{$value};
+    }
+  }
+}

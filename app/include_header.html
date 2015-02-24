@@ -1,0 +1,43 @@
+<!-- 
+
+	This header uses a fallback for browsers that doesn' support flexbox
+
+ -->
+<header class="flex-space-between minh-70 border-bottom-gray-lighter normalize-text ph-14">
+  <div class="left flex-middle">
+    <nav>
+      <a href="#">Link</a>
+      <a href="#">Link 2</a>
+    </nav>
+  </div>
+  <div class="center flex-middle text-center">
+    <h3>Title</h3>
+  </div>
+  <div class="right flex-middle">
+    <nav>
+      <a href="#">Link 3</a>
+      <a href="#">Link 4</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Cleaner header with code on: _header.scss and transformicons
+  Additionaly you can specify the left, center and right column sizes with the B3 grid column sizes and breakpoints
+ -->
+<header class="header">
+  <div class="left">
+    <nav>
+      <a href="#">Link</a>
+      <a href="#">Link 2</a>
+    </nav>
+  </div>
+  <div class="center">
+    <h3>Title</h3>
+  </div>
+  <div class="right">
+    <button type="button" class="tcon tcon-menu--xcross" aria-label="toggle menu">
+      <span class="tcon-menu__lines" aria-hidden="true"></span>
+      <span class="tcon-visuallyhidden">toggle menu</span>
+    </button>
+  </div>
+</header>

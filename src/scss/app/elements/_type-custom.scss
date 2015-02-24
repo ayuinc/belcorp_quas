@@ -1,0 +1,101 @@
+// MAIN TEXT
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+// DISABLE ANCHOR UNDERLINE ON HOVER
+// a {
+//   &:hover,
+//   &:focus,
+//   &:active {
+//     text-decoration: none !important;
+//   }
+// }
+
+// REMOVE DEFAULT MARGINS MIXIN
+@mixin normalize-text {
+  #{$headings-list}, 
+  #{$headings-class-list},
+  #{$text-elements-list} {
+    margin: 0;
+  }
+}
+.normalize-text {
+  @include normalize-text;
+}
+
+// Alignment
+.text-left {
+  text-align: left #{$importantize};
+}
+.text-right {
+  text-align: right #{$importantize};
+}
+// Center on Mobile or Tablet
+
+@for $i from 1 through length($breakpoints-sufix-list) {
+  .text-left-#{nth($breakpoints-sufix-list, $i)} {
+    @media #{nth($media-only-list, $i)} {
+      text-align: left #{$importantize};
+    }
+  }
+}
+
+@for $i from 1 through length($breakpoints-sufix-list) {
+  .text-right-#{nth($breakpoints-sufix-list, $i)} {
+    @media #{nth($media-only-list, $i)} {
+      text-align: right #{$importantize};
+    }
+  }
+}
+
+@for $i from 1 through length($breakpoints-sufix-list) {
+  .text-center-#{nth($breakpoints-sufix-list, $i)} {
+    @media #{nth($media-only-list, $i)} {
+      text-align: center #{$importantize};
+    }
+  }
+}
+
+
+// Text transforms
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: none #{$importantize};
+}
+
+.underline {
+  text-decoration: underline #{$importantize};
+}
+
+a.not-underline {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// TEXT GRADIENTS
+@mixin text-fill-color($color) {
+  @include prefixer(text-fill-color, $color, webkit moz spec);
+}
+
+@mixin background-clip($clip) {
+  @include prefixer(background-clip, $clip, webkit moz spec);
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .text-gradient {
+    @include background(linear-gradient(left, $brand-primary, $brand-info, $brand-success) repeat);
+    @include background-clip(text);
+    @include text-fill-color(transparent);
+  }
+}
+// END:TEXT GRADIENTS
+
+// LINE HEIGHTS
+.lh-sm {line-height: rem(19px);}
+.lh-md {line-height: rem(21px);}
+.lh-lg {line-height: rem(28px);}

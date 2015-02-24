@@ -1,0 +1,26 @@
+header,
+.header {
+	// @include position(absolute, 0 0 null 0);
+	// @include position(fixed, 0 0 null 0);
+	// z-index: 1000;
+	@include flex-space-between;
+	@include normalize-text;
+	width: 100%;
+	padding: 0 $container-fluid;
+	min-height: $header-height-control;
+	.left,
+	.center,
+	.right {
+		min-height: $header-height-control;
+		@include flex-middle;
+	}
+	.left {
+
+	}
+	.center {
+		text-align: center;
+	}
+	.right {
+
+	}
+}

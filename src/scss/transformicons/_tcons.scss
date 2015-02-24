@@ -1,0 +1,35 @@
+// Config
+@import
+	"base/config-globals",
+	"base/config-menu",
+	// "base/config-grid",
+	// "base/config-addrm",
+	// "base/config-video",
+	// "base/config-loaders",
+	// "base/config-mail",
+	"base/config-utilities",
+	"base/global-styles";
+
+
+// Variations
+@import
+	"style/menu-lines";
+	// "style/grid";
+
+
+// Icons
+@import 
+"type/menu-xcross";
+// "type/menu-xbutterfly",
+// "type/menu-arrows",
+// "type/menu-minus",
+// "type/grid-collapse",
+// "type/grid-rearrange",
+// "type/addrm-plus",
+// "type/addrm-plus-check",
+// "type/addrm-plus-minusrotate",
+// "type/addrm-plus-minusfold",
+// "type/addrm-plus-circle",
+// "type/vid-play",
+// "type/loader-spinner360",
+// "type/mail-envelope";

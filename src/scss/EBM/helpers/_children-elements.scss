@@ -1,0 +1,10 @@
+@mixin children-elements {
+	> a, > span, > div, 
+	> li, > p, 
+	> h1, > h2, > h3, > h4, > h5, > h6, 
+	> ul, > ol, > section, > small {
+		@content;
+	}
+}
+
+$children-elements: "> a, > span, > div, > li, > p, > h1, > h2, > h3, > h4, > h5, > h6, > ul, > ol, > section, > small";

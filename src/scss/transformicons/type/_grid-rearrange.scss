@@ -1,0 +1,32 @@
+.tcon-grid--rearrange {
+
+  .tcon-grid__item {
+    box-shadow:
+      -($tcon-grid-base+$tcon-grid-space) 0 -($tcon-grid-base+$tcon-grid-space),
+      0 0 -($tcon-grid-base+$tcon-grid-space),
+      ($tcon-grid-base+$tcon-grid-space) (-($tcon-grid-base + $tcon-grid-space)),
+      -($tcon-grid-base+$tcon-grid-space) 0,
+      $tcon-grid-base+$tcon-grid-space 0,
+      -($tcon-grid-base+$tcon-grid-space) ($tcon-grid-base + $tcon-grid-space),
+      0 ($tcon-grid-base+$tcon-grid-space),
+      ($tcon-grid-base+$tcon-grid-space) ($tcon-grid-base + $tcon-grid-space);
+  }
+
+}
+
+
+.tcon-grid--rearrange.#{$tcon-jstransform}  { 
+
+  .tcon-grid__item {
+      box-shadow:
+        0 0 -$tcon-grid-base,
+        0 0 -$tcon-grid-base*2,
+             $tcon-grid-base 0,
+            -$tcon-grid-base*2 0,
+             $tcon-grid-base*2 0,
+            -$tcon-grid-base 0,
+           0 $tcon-grid-base*2,
+           0 $tcon-grid-base;
+  }
+
+}

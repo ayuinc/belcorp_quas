@@ -1,0 +1,55 @@
+.panel {
+	min-height: 140px;
+	border-radius: $border-radius-base;
+	position: relative;
+	overflow: hidden;
+	.head {
+		border-top-left-radius: $border-radius-base;
+		border-top-right-radius: $border-radius-base;
+		@include clearfix;
+		padding: $container-fluid;
+		border-bottom: 1px solid $gray-lighter;
+		.title {
+			float: left;
+			// @include light;
+			text-transform: uppercase;
+			color: $gray-dark;
+		}
+		.actions {
+			float: right;
+		}
+	}
+	.body {
+		border-bottom-left-radius: $border-radius-base;
+		border-bottom-right-radius: $border-radius-base;
+		@include clearfix;
+		min-height: 140px;
+		.top {
+
+		}
+		.center {
+
+		}
+		.bottom {
+
+		}
+	}
+	.footer {
+		// position: absolute;
+		// bottom: 0;
+		// width: 100%;
+		border-bottom-left-radius: $border-radius-base;
+		border-bottom-right-radius: $border-radius-base;
+		min-height: 28px;
+		border-top: 1px solid $gray-lighter;
+		@include clearfix;
+	}
+	// Panel Tables
+	table.panel-table {
+		
+	}
+	// Utilities
+	&.panel-shadow {
+		@include box-shadow-default;
+	}	
+}

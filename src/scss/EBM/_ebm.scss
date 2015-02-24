@@ -1,0 +1,37 @@
+/* 
+
+  Description: EBM or Easy Box Model allows you to easily edit your UI box model margins and paddings 
+  through the browser inspector "elements" tab and make your elements fit on their parent container without
+  recurring to your CSS too often.
+  
+  Author: @MadeByGus
+  Version: 0.5
+  GitHub: https://github.com/netpoe/EBM.git
+
+*/
+
+// Include and determine box shadows:
+$box-shadows: true;
+
+$x-axis: 0px;
+$y-axis: 3px;
+$blur: 3px;
+$size: 0px;
+$color: #313233;
+$alpha: 0.15;
+
+@import 
+  "helpers/times-range",
+  "helpers/strip-units",
+  "helpers/px-to-rems",
+  "helpers/rule-of-three",
+  "helpers/prefixer",
+  "helpers/clearfix",
+  "helpers/list-unstyled",
+  "helpers/media-queries",
+  "helpers/vertical-align",
+  "helpers/children-elements",
+  
+  "box-shadow",
+  "bg-img-control",
+  "flexbox";

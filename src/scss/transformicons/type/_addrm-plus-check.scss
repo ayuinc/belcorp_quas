@@ -1,0 +1,13 @@
+.tcon-plus--check {
+  &.#{$tcon-jstransform} {
+    &:before {
+      transform: rotate(-135deg) translate(0px, -4px);
+      width: 22px;
+    }
+
+    &:after {
+      transform: rotate(-45deg) translate(4px, 4px); 
+      width:34px;
+    }
+  }
+}

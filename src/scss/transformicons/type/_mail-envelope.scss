@@ -1,0 +1,48 @@
+.tcon-mail--envelope {
+  width: $tcon-envelope-size;
+  height: $tcon-envelope-size/2;
+  background: #3D3F41;
+  position: relative;
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    width: $tcon-envelope-size;
+  }
+
+  &:before {
+    left: 0;
+    border-left: $tcon-envelope-size solid #BCBCBD;
+    border-top: $tcon-envelope-size/2 solid transparent;
+  }
+
+  &:after {
+    right: 0;
+    border-right: $tcon-envelope-size solid #A5ACAE;
+    border-top: $tcon-envelope-size/2 solid transparent;
+  }
+
+  &.tcon-transform .tcon-mail--envelope__flap {
+    transform: rotate3d(360, 0, 0, 180deg);
+    transform-origin: 0 100%;
+  }
+}
+
+
+.tcon-mail--envelope__flap {
+  border-bottom: $tcon-envelope-size/4 solid transparent;
+  border-left: $tcon-envelope-size/2 solid transparent;
+  border-right: $tcon-envelope-size/2 solid transparent;
+  border-color: transparent;
+  border-bottom-color: #AEB3B5;
+  position: absolute;
+  transform: rotate3d(0,0,0,0deg);
+  transform-origin: 0 100%;
+  transition: $tcon-envelope-transition;
+  top: -$tcon-envelope-size/4;
+  left: 0;
+}

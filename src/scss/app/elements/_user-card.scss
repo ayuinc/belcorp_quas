@@ -1,0 +1,39 @@
+/* USER CARD */
+.user-card {
+	position: relative;
+	@include clearfix;
+	@include normalize-text;
+	margin-bottom: $container-fluid / 2;
+	width: 100%;
+	@include flex-row;
+	.user-pic,
+	.user-info {
+		// float: left;
+	}
+	.user-pic {
+		width: $user-card-width;
+		img {
+			width: 100%;
+			height: auto;
+			border-radius: $border-radius-base;
+		}
+	}
+	.user-info {
+		@include flex-middle;
+		min-height: $user-card-height * 2;
+		padding-left: $container-fluid;
+		@include children-elements {
+			display: block;
+		}
+		span {
+			color: $gray;
+		}
+	}
+	&.user-card-round {
+		.user-pic {
+			img {
+				border-radius: 50%;
+			}
+		}
+	}
+}

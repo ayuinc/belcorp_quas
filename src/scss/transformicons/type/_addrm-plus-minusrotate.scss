@@ -1,0 +1,17 @@
+.tcon-plus--minus {
+
+  &.#{$tcon-jstransform} {
+
+    &:before {
+      transform: rotate(180deg) translate(0px, 0);
+      width:19px;
+    }
+
+    &:after {
+      transform: rotate(-180deg) translate(-15px, 0); 
+      width:19px;
+    }
+
+  }
+
+}

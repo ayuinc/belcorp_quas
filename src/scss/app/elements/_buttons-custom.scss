@@ -1,0 +1,76 @@
+// Bootstrap 3 Custom Buttons
+$buttons-custom-border-size: 2px;
+$buttons-custom-border-style: solid;
+$buttons-custom-color-control: 18%;
+
+a.btn,
+button.btn,
+input[type="submit"].btn,
+.btn {
+	// FORM CONTROL
+	&.form-control {
+		height: auto;
+	}
+	&.borderless {
+		border-radius: 0 !important;
+	}
+	&.btn-xl {
+		font-size: $font-size-h3;
+		font-size: rem($font-size-h3);
+		padding: 12px 21px;
+		padding: rem(12px) rem(21px);
+	}
+	&.btn-xxl {
+		font-size: $font-size-h1;
+		font-size: rem($font-size-h1);
+		padding: 14px 24px;
+		padding: rem(14px) rem(24px);
+		// @include light;
+	}
+	&.btn-xs {
+		font-size: 12px !important;
+	}
+	@for $i from 1 through length($social-colors-list) {
+		&.btn-#{nth($social-colors-sufix-list, $i)} {
+			background: #{nth($social-colors-list, $i)};
+			color: white;
+			&:hover {
+				background: #{darken(nth($social-colors-list, $i), 14%)};
+			}
+		}
+	}
+}
+
+a.btn,
+button.btn,
+input[type="submit"].btn,
+.btn {
+	@for $i from 1 through length($brand-colors-sufix-list) {
+		&.btn-#{nth($brand-colors-sufix-list, $i)}.btn-outline {
+			background: none;
+			border: $buttons-custom-border-size $buttons-custom-border-style #{nth($brand-colors-list, $i)};
+			border-radius: $border-radius-base;
+			color: #{nth($brand-colors-list, $i)};
+			&:hover {
+				background: none;
+				border-radius: $border-radius-base;
+				border: $buttons-custom-border-size $buttons-custom-border-style #{darken(nth($brand-colors-list, $i), $buttons-custom-color-control)};
+				color: #{darken(nth($brand-colors-list, $i), $buttons-custom-color-control)};
+			}
+		}
+	}
+	@for $i from 1 through length($grayscale-sufix-list) {
+		&.btn-#{nth($grayscale-sufix-list, $i)}.btn-outline {
+			background: none;
+			border: $buttons-custom-border-size $buttons-custom-border-style #{nth($grayscale-list, $i)};;
+			border-radius: $border-radius-base;
+			color: #{nth($grayscale-list, $i)};
+			&:hover {
+				background: none;
+				border-radius: $border-radius-base;
+				border: $buttons-custom-border-size $buttons-custom-border-style #{darken(nth($grayscale-list, $i), $buttons-custom-color-control)};
+				color: #{darken(nth($grayscale-list, $i), $buttons-custom-color-control)};
+			}
+		}
+	}
+}

@@ -1,0 +1,59 @@
+/* Background image blocks */
+// CONTROL FULL WIDTH BG IMAGES
+@mixin bg-img-control {
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+@mixin bg-img-control-center {
+	@include bg-img-control;
+	background-position: center center;
+}
+@mixin bg-img-control-center-x {
+	@include bg-img-control;
+	background-position-x: center;
+}
+@mixin bg-img-control-center-y {
+	@include bg-img-control;
+	background-position-y: center;
+}
+@mixin bg-img-control-bottom {
+	@include bg-img-control;
+	background-position-y: bottom;
+}
+@mixin bg-img-control-top {
+	@include bg-img-control;
+	background-position-y: top;
+}
+@mixin bg-img-control-left {
+	@include bg-img-control;
+	background-position-x: left;
+}
+@mixin bg-img-control-right {
+	@include bg-img-control;
+	background-position-x: right;
+}
+.bg-img-block {
+	@include bg-img-control;
+	background-position: center center;
+}
+.bg-img-block-center {
+	@include bg-img-control-center;
+}
+.bg-img-block-center-x {
+	@include bg-img-control-center-x;
+}
+.bg-img-block-center-y {
+	@include bg-img-control-center-y;
+}
+.bg-img-block-bottom {
+	@include bg-img-control-bottom;
+}
+.bg-img-block-top {
+	@include bg-img-control-top;
+}
+.bg-img-block-left {
+	@include bg-img-control-left;
+}
+.bg-img-block-right {
+	@include bg-img-control-right;
+}
