@@ -22,19 +22,29 @@ $z-index-control: 30;
 	height: auto;
 	background-color: white;
 	&.homepage-on {
-  	background-color: white;
-  	z-index: $z-index-control - 1;
-  	@media #{$sm-only} {
-  		z-index: 0; 
-  	}
-  	.menu-list {
-  		> li {
-  			border-bottom: 1px solid $gray-lighter;
-  		}
-  	}
-  	.title {
-  		opacity: 1;
-  	}
+		#site-menu {
+	  	background-color: white;
+	  	z-index: $z-index-control - 1;
+	  	@media #{$sm-only} {
+	  		z-index: 0; 
+	  	}
+	  	.menu-list {
+	  		> li {
+	  			border-bottom: 1px solid $gray-lighter;
+	  		}
+	  	}
+	  	.title {
+	  		opacity: 1;
+	  	}
+		}
+		header.header {
+			.left {
+				padding-left: $container-fluid;
+			}
+			.logo {
+				width: $site-menu-width-wide;
+			}
+		}	
   }
 }
 
@@ -150,7 +160,6 @@ $z-index-control: 30;
 		}
 		.header {
 			.left {
-				width: $site-menu-width-wide;
 				padding-left: $container-fluid;
 				@include transition(all 0.7s ease);
 			}
