@@ -1,0 +1,9 @@
+/* IE Control */
+
+html {
+	&.no-js {
+		[class*="minhp-"] {
+			min-height: 990px;
+		}
+	}
+}

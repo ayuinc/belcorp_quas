@@ -9362,6 +9362,10 @@ header.header {
   -moz-transition: all 0.7s ease;
   transition: all 0.7s ease; }
 
+/* IE Control */
+html.no-js [class*="minhp-"] {
+  min-height: 990px; }
+
 footer.footer {
   position: absolute;
   right: 0;
