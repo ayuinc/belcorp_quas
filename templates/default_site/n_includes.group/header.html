@@ -36,6 +36,7 @@
   </head>
   <body class="{if segment_1== '' OR segment_1=='n_content'}overflow-none{/if}">
     <div id="site-wrapper" class="{if segment_1=='n_inicio'}homepage-on{/if}">
+      {if logged_in}
       {embed="n_includes/top-banner"}
       <div id="site-menu"> <!-- MENU-IZQUIERDO -->
         <div class="top">
@@ -206,7 +207,7 @@
         </div>
       </div><!-- END:Menu izquierdo -->
       <div id="site-canvas"> <!-- SITE CANVAS -->
-        
+      {/if}
       <!-- CONTENT -->
 
 
