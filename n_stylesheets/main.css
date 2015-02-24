@@ -9161,6 +9161,14 @@ header.header {
       border-bottom: 1px solid white; }
     #site-wrapper.homepage-on #site-menu .title {
       opacity: 1; }
+  #site-wrapper.homepage-on #site-canvas {
+    padding-left: 248px;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    padding-right: 0; }
   #site-wrapper.homepage-on header.header .left {
     padding-left: 15px; }
   #site-wrapper.homepage-on header.header .logo {

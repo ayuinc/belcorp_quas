@@ -37,6 +37,11 @@ $z-index-control: 30;
 	  		opacity: 1;
 	  	}
 		}
+		#site-canvas {
+			padding-left: $site-menu-width-wide;
+			@include transform(translateX(0));
+			padding-right: 0;
+		}
 		header.header {
 			.left {
 				padding-left: $container-fluid;
