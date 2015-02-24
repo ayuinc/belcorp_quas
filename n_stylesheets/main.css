@@ -9188,6 +9188,7 @@ header.header {
   min-height: 990px;
   padding-top: 70px;
   padding-right: 60px;
+  padding-bottom: 56px;
   -webkit-transition: all 0.7s ease;
   -moz-transition: all 0.7s ease;
   transition: all 0.7s ease;
