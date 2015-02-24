@@ -1,29 +1,30 @@
-		<div id="herramienta_de_certificacion" class="reveal-modal hidden" data-reveal>
-		  <h2>Herramienta de Certificación</h2>
-		  <p>Puede acceder desde el icono en la Tablet de Escuela de Venta o desde este portal con su usuario de red y contraseña de red. Cualquier consulta comuníquese con Mesa de Ayuda opción “Soporte Técnico”.</p>
-		  <a href="http://ffvv.somosbelcorp.com/" class="button small">Acceder FFVV</a>
-		  <a href="http://ev.belcorp.biz/" class="button small">Acceder Portal Administrativos</a>
-		  <a class="close-reveal-modal">×</a>
-		</div>
-
-    <!-- SCRIPTS-->
-    <!--[if !IE]><!--><script src="{site_url}n_js/vendor/jquery.js"></script><!--<![endif]-->
-    <script src="{site_url}n_js/foundation.min.js"></script>
-    <script type="text/javascript" src="{site_url}n_js/vendor/wurfl.js"></script>
-    <script type="text/javascript" src="{site_url}n_js/ayu-off-canvas.js"></script>
-    <script type="text/javascript" src="{site_url}n_js/vendor/jquery.validate.min.js"></script>
-    {if segment_1=='n_noticias'}
-	    <script src="{site_url}n_js/vendor/flickity.pkgd.min.js"></script>
+				<div id="herramienta_de_certificacion" class="reveal-modal hidden" data-reveal>
+				  <h2>Herramienta de Certificación</h2>
+				  <p>Puede acceder desde el icono en la Tablet de Escuela de Venta o desde este portal con su usuario de red y contraseña de red. Cualquier consulta comuníquese con Mesa de Ayuda opción “Soporte Técnico”.</p>
+				  <a href="http://ffvv.somosbelcorp.com/" class="button small">Acceder FFVV</a>
+				  <a href="http://ev.belcorp.biz/" class="button small">Acceder Portal Administrativos</a>
+				  <a class="close-reveal-modal">×</a>
+				</div>
+			</div> <!-- END:Site canvas -->
+	  </div> <!-- END:Site wrapper -->
+		<!-- SCRIPTS-->
+		<!--[if !IE]><!--><script src="{site_url}n_js/vendor/jquery.js"></script><!--<![endif]-->
+		<script src="{site_url}n_js/foundation.min.js"></script>
+		<script type="text/javascript" src="{site_url}n_js/vendor/wurfl.js"></script>
+		<script type="text/javascript" src="{site_url}n_js/ayu-off-canvas.js"></script>
+		<script type="text/javascript" src="{site_url}n_js/vendor/jquery.validate.min.js"></script>
+		{if segment_1=='n_noticias'}
+		  <script src="{site_url}n_js/vendor/flickity.pkgd.min.js"></script>
 			<script src="{site_url}n_js/flexslider/imagesloaded.pkgd.min.js"></script>
 			<script src="{site_url}n_js/flexslider/isotope.pkgd.min.js"></script>
 			<script src="{site_url}n_js/tabs/cbpFWTabs.js"></script>
 			<script src="{site_url}n_js/tabs/layout-control.js"></script>
 			<script src="{site_url}n_js/jquery-ui.min.js"></script>
-    {/if}
+		{/if}
 
-    {if segment_1=='n_escuelas'}
-    	<script src="{site_url}n_js/vendor/isotope.pkgd.min.js"></script>
-    	<script src="{site_url}n_js/vendor/jquery.sticky.js"></script>
+		{if segment_1=='n_escuelas'}
+			<script src="{site_url}n_js/vendor/isotope.pkgd.min.js"></script>
+			<script src="{site_url}n_js/vendor/jquery.sticky.js"></script>
 			<script>
 		    $(document).ready(function(){
 					var $container = $('#isotope-container'),
@@ -48,18 +49,18 @@
 				    }
 				  });
 		    });
-	    </script>
-    {/if}
-		
+		  </script>
+		{/if}
+
 		<script>
-	    $(document).foundation({
+		  $(document).foundation({
 			  dropdown: {
 			    // specify the class used for active dropdowns
 			    active_class: 'open'
 			  }
 			});
 		</script>
-		
+
 
 		<!-- LOGIN VALIDATOR -->
 		<script>
@@ -68,18 +69,18 @@
 
 			// DATA HRTEF0's
 			$('[data-href]').click(function(e) {
-	      var lastPath, locationArr, mainPath, pathObj;
-	      locationArr = window.location.pathname.split('/');
-	      lastPath = locationArr[locationArr.length - 1];
-	      mainPath = locationArr[locationArr.length - 2];
-	      pathObj = {};
-	      pathObj[mainPath] = lastPath;
-	      window.history.pushState(pathObj, '', lastPath);
-	      document.location.replace($(this).data('href'));
-	    });
+		    var lastPath, locationArr, mainPath, pathObj;
+		    locationArr = window.location.pathname.split('/');
+		    lastPath = locationArr[locationArr.length - 1];
+		    mainPath = locationArr[locationArr.length - 2];
+		    pathObj = {};
+		    pathObj[mainPath] = lastPath;
+		    window.history.pushState(pathObj, '', lastPath);
+		    document.location.replace($(this).data('href'));
+		  });
 		});
 		</script>
-		
+
 		<!--CRAZY EGG-->
 		<script type="text/javascript">
 		setTimeout(function(){var a=document.createElement("script");
@@ -88,7 +89,7 @@
 		a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 		</script>		
 		<!--END. CRAZY EGG-->
-		
+
 		<!--GOOGLE ANALYTICS-->
 		<script type="text/javascript">
 		    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -100,7 +101,6 @@
 		            ga('set', 'dimension2', 'Pais');
 		            ga('send', 'pageview' );
 		</script>
-		<!--END. GOOGLE ANALYTICS-->
-		
+			<!--END. GOOGLE ANALYTICS-->
   </body>
 </html>

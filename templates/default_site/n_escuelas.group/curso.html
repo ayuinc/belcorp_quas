@@ -7,27 +7,7 @@
 	{/exp:get_post_vars}
 
 	{if logged_in}
-	
-	<!--FLOAT BUTTONS-->
-	<!--<div class="pin-frame hide-for-small">
-		<div class="pin-content">
-			<div class="pin-menu">
-			</div>
-		</div>
-	</div>-->
-	
-	<div id="site-wrapper">
-		<div id="content-frame">	  
-	    
-		<!--MENU LADO IZQUIERDO-->
-	  {embed="n_includes/menu-izquierdo"}
-
-	  <!--TOP BANNER-->  
-	  {embed="n_includes/top-banner"} 		
-		<div id="site-canvas">
-		
-
-		<!-- CANVAS CONTAINER -->
+	<div class="container">
 		<div class="row">
 			<div class="large-9 medium-9 medium-offset-1 columns">
 		    	{categories show_group="10" show="276|111|272|112|113|114|109|110|257" limit="1"}
@@ -173,21 +153,10 @@
 		    	</div>			  	   
 			</div>
 		</div>
-		<!-- END:CANVAS-CONTAINER -->	
-		
 		{embed="n_includes/footer-nav"}
-			
-		</div>
-	
-	  </div>
 	</div>
-	
 	{if:else}		
-		<div class="row">
-			<div class="small-12 medium-12 large-12 columns">	
-			<h3 class="text-center">Necesita ingresar al sistema. <a href="{site_url}">Regresar al inicio</a></h3>
-			</div>
-		</div>
+		{embed="n_includes/not-logged-in-message"}
 	{/if}		
 
 {/exp:channel:entries}

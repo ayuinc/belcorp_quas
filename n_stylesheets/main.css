@@ -9350,6 +9350,8 @@ header,
         z-index: 0; } }
     #site-menu.homepage-on .menu-list > li {
       border-bottom: 1px solid white; }
+    #site-menu.homepage-on .title {
+      opacity: 1; }
 
 #site-wrapper.show-nav #site-canvas {
   -webkit-transform: translateX(248px);
@@ -9369,21 +9371,12 @@ header,
     #site-wrapper.show-nav #site-menu .list-group .list-group-item:first-child.hovered {
       background: none;
       opacity: 1; }
-  #site-wrapper.show-nav #site-menu .logo img {
-    -webkit-transform: translateX(12px);
-    -moz-transform: translateX(12px);
-    -ms-transform: translateX(12px);
-    -o-transform: translateX(12px);
-    transform: translateX(12px);
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    transition: all 0.3s ease; }
   #site-wrapper.show-nav #site-menu .title {
     opacity: 1;
     -webkit-transition: opacity 0.7s ease;
     -moz-transition: opacity 0.7s ease;
     transition: opacity 0.7s ease; }
-#site-wrapper.show-nav .header .logo {
+#site-wrapper.show-nav .header .left {
   width: 248px;
   padding-left: 15px;
   -webkit-transition: all 0.7s ease;
@@ -12032,68 +12025,6 @@ footer {
     font-weight: 100;
     font-style: normal; }
 
-.login-formulario {
-  min-height: 41rem;
-  background-color: #ecf0f1; }
-  .login-formulario .panel {
-    background-color: transparent;
-    border: none;
-    padding: 3rem; }
-  .login-formulario img {
-    margin: 5rem 0; }
-  .login-formulario h1 {
-    font-family: "museo-sans", Helvetica, Arial, sans-serif !important;
-    font-weight: 100;
-    font-style: normal;
-    color: #FFF;
-    margin-top: 18rem;
-    font-size: 2rem;
-    font-family: "museo-sans", Helvetica, Arial, sans-serif !important;
-    font-weight: 100;
-    font-style: normal;
-    width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 100%;
-    text-transform: uppercase; }
-  .login-formulario p {
-    color: #5a277d;
-    font-family: "museo-sans", Helvetica, Arial, sans-serif !important;
-    font-weight: 100;
-    font-style: normal; }
-  .login-formulario .button.expand {
-    background-color: #5a277d;
-    font-family: "museo-sans", Helvetica, Arial, sans-serif !important;
-    font-weight: 100;
-    font-style: normal;
-    color: #FFF; }
-    .login-formulario .button.expand:hover {
-      background-color: #481F66; }
-  .login-formulario input {
-    box-shadow: none;
-    border: none;
-    font-size: 1rem;
-    font-family: "museo-sans", Helvetica, Arial, sans-serif !important;
-    font-weight: 100;
-    font-style: normal;
-    color: #5a277d;
-    -moz-box-shadow: 0 0 5px #ccc;
-    -webkit-box-shadow: 0 0 5px #ccc;
-    box-shadow: 0 0 5px #ccc;
-    height: 48px;
-    height: 3.42857rem; }
-  .login-formulario .bg-morado {
-    background-color: #5a277d;
-    height: 768px;
-    height: 54.85714rem;
-    background: url(/images/bg-login.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-x: -180px; }
-
-body.overflow-none {
-  overflow: hidden !important; }
-
 .grid-panels a.link-wrapper {
   display: block; }
   .grid-panels a.link-wrapper:hover .panel-heading img {
@@ -12471,10 +12402,6 @@ ul.off-canvas-list .large-2 [class^="icon-"], ul.off-canvas-list .large-2 [class
 
 .nav-tabs li.bv-tab-error > a {
   color: #a94442; }
-
-.canvas-container {
-  margin: 0 auto;
-  min-height: 990px; }
 
 .heading-block {
   font-family: "museo-sans", Helvetica, Arial, sans-serif !important;

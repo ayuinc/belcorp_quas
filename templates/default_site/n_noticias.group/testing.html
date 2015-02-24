@@ -1,240 +1,231 @@
 {embed="n_includes/header"}
 	
 	{if logged_in}
-	
-	<div id="site-wrapper">
-		<div id="content-frame">	  
-	    
-		<!--MENU LADO IZQUIERDO-->
-		  {embed="n_includes/menu-izquierdo"}
-		  {embed="n_includes/top-banner"} 		
-			<div id="site-canvas" class="{if segment_1=='n_inicio'}homepage-on{/if}">
-				<div class="container pb-56">
-					<div class="gallery js-flickity">
-						{exp:channel:entries channel="noticias_portada" limit="5"}
-					  <div class="gallery-cell">
-					  	<div class="wrapper">
-					  		{noticias_portada_imagen}
-					  		<div class="pic" style="background-image: url({image:url})"></div>
-					  		{/noticias_portada_imagen}
-					  		<div class="caption">
-					  			<h3 class="text-gradient light"><a href="{site_url}n_noticias/iframe/{entry_id}">{title}</a></h3>
-					  			<div class="bottom text-right">
-					  				<span class="icon-typ-eye">{view_count_one}</span>
-					  			</div>
-					  		</div>
-					  	</div>
-					  </div>
-					  {/exp:channel:entries}
-					</div>
-				  <div class="text-right mt-14">
-				  	<a href="{site_url}n_noticias/new"  class="pv-7 ph-14 link-edit"><img src="{site_url}n_img/edit3.png" alt=""></a> 
-				  	<a href="{site_url}n_noticias/index" class="pv-7 ph-14 link-config"><img src="{site_url}n_img/configurar3.png" alt=""></a>	
-				  </div>
-				  <h4 class="mt-49 uppercase pl-14">CONTENIDO SEGÚN PREFERENCIAS</h4>
-					<ul class="grid-list grid-list-4 grid-list-1-xs grid-list-3-sm isotope-grid posts-grid">
-						{exp:news:entries_by_preferences parse="inward" limit="4"}
-							{if noticias_titulo==""}
-							<li>
-								{exp:opengraph:query url="{noticias_url}"}
-								<div class="pic" style="background-image: url('{og_image}');">
-									<div class="category-label">
-										<span class="text-uppercase">{noticias_categoria_principal}</span>
-									</div>
+		<div class="container pb-56">
+			<div class="gallery js-flickity">
+				{exp:channel:entries channel="noticias_portada" limit="5"}
+			  <div class="gallery-cell">
+			  	<div class="wrapper">
+			  		{noticias_portada_imagen}
+			  		<div class="pic" style="background-image: url({image:url})"></div>
+			  		{/noticias_portada_imagen}
+			  		<div class="caption">
+			  			<h3 class="text-gradient light"><a href="{site_url}n_noticias/iframe/{entry_id}">{title}</a></h3>
+			  			<div class="bottom text-right">
+			  				<span class="icon-typ-eye">{view_count_one}</span>
+			  			</div>
+			  		</div>
+			  	</div>
+			  </div>
+			  {/exp:channel:entries}
+			</div>
+		  <div class="text-right mt-14">
+		  	<a href="{site_url}n_noticias/new"  class="pv-7 ph-14 link-edit"><img src="{site_url}n_img/edit3.png" alt=""></a> 
+		  	<a href="{site_url}n_noticias/index" class="pv-7 ph-14 link-config"><img src="{site_url}n_img/configurar3.png" alt=""></a>	
+		  </div>
+		  <h4 class="mt-49 uppercase pl-14">CONTENIDO SEGÚN PREFERENCIAS</h4>
+			<ul class="grid-list grid-list-4 grid-list-1-xs grid-list-3-sm isotope-grid posts-grid">
+				{exp:news:entries_by_preferences parse="inward" limit="4"}
+					{if noticias_titulo==""}
+					<li>
+						{exp:opengraph:query url="{noticias_url}"}
+						<div class="pic" style="background-image: url('{og_image}');">
+							<div class="category-label">
+								<span class="text-uppercase">{noticias_categoria_principal}</span>
+							</div>
+						</div>
+						<div class="content">
+							<a href="{site_url}n_noticias/iframe/{noticias_entry_id}">{og_title_resume}</a>
+						</div>
+						<div class="info">
+							<div class="left">
+								<div class="user-card user-card-round size xs">
+			    				<div class="user-pic">			        					
+			    					<img src="{site_url}n_img/user.jpg" alt="">
+			    				</div>
+			    				<div class="user-info">
+			    					<span>{noticias_autor}</span>
+			    				</div>
+			    			</div>
+							</div>
+							<div class="right">
+								<span class="icon-typ-eye">{noticias_vistas}</span>
+							</div>								
+						</div>
+						{/exp:opengraph:query}
+					</li>
+					{if:else}
+						<li>
+							{exp:parse_file_paths}
+							<div class="pic" style="background-image: url('{noticias_imagen}');">
+								<div class="category-label">
+									<span class="text-uppercase">{noticias_categoria_principal}</span>
 								</div>
-								<div class="content">
-									<a href="{site_url}n_noticias/iframe/{noticias_entry_id}">{og_title_resume}</a>
+							</div>
+							{/exp:parse_file_paths}
+							<div class="content">
+								<a href="{site_url}n_noticias/iframe/{noticias_entry_id}">{noticias_contenido}</a>
+							</div>
+							<div class="info">
+								<div class="left">
+									<div class="user-card user-card-round size xs">
+				    				<div class="user-pic">			        					
+				    					<img src="{site_url}n_img/user.jpg" alt="">
+				    				</div>
+				    				<div class="user-info">
+				    					<span>{noticias_autor}</span>
+				    				</div>
+				    			</div>
 								</div>
-								<div class="info">
-									<div class="left">
-										<div class="user-card user-card-round size xs">
-					    				<div class="user-pic">			        					
-					    					<img src="{site_url}n_img/user.jpg" alt="">
-					    				</div>
-					    				<div class="user-info">
-					    					<span>{noticias_autor}</span>
-					    				</div>
-					    			</div>
-									</div>
-									<div class="right">
-										<span class="icon-typ-eye">{noticias_vistas}</span>
-									</div>								
+								<div class="right">
+									<span class="icon-typ-eye">{noticias_vistas}</span>
+								</div>								
+							</div>
+						</li>
+					{/if}
+				{/exp:news:entries_by_preferences}					
+			</ul>
+			<div class="text-right mh-35">
+				<a href="{site_url}n_noticias/preferencias" class="text-primary"> VER TODOS <span class="icon-typ-chevron-right"></span>	</a>
+			</div>
+			<h4 class="mt-49 uppercase pl-14">CONTENIDO RELEVANTE PARA {exp:user:stats}{Vicepresidencia}{/exp:user:stats}</h4>
+			<ul class="grid-list grid-list-4 grid-list-1-xs grid-list-3-sm isotope-grid posts-grid">
+				{exp:news:entries_by_vp parse="inward" limit="4"}
+				
+					{if noticias_titulo==""}
+					<li>
+						{exp:opengraph:query url="{noticias_url}"}
+						<div class="pic" style="background-image: url('{og_image}');">
+							<div class="category-label">
+								<span class="text-uppercase">{noticias_categoria_principal}</span>
+							</div>
+						</div>
+						<div class="content">
+							<a href="{site_url}n_noticias/iframe/{noticias_entry_id}">{og_title_resume}</a>
+						</div>
+						<div class="info">
+							<div class="left">
+								<div class="user-card user-card-round size xs">
+			    				<div class="user-pic">			        					
+			    					<img src="{site_url}n_img/user.jpg" alt="">
+			    				</div>
+			    				<div class="user-info">
+			    					<span>{noticias_autor}</span>
+			    				</div>
+			    			</div>
+							</div>
+							<div class="right">
+								<span class="icon-typ-eye">{noticias_vistas}</span>
+							</div>								
+						</div>
+						{/exp:opengraph:query}
+					</li>
+					{if:else}
+						<li>
+							{exp:parse_file_paths}
+							<div class="pic" style="background-image: url('{noticias_imagen}');">
+								<div class="category-label">
+									<span class="text-uppercase">{noticias_categoria_principal}</span>
 								</div>
-								{/exp:opengraph:query}
-							</li>
-							{if:else}
-								<li>
-									{exp:parse_file_paths}
-									<div class="pic" style="background-image: url('{noticias_imagen}');">
-										<div class="category-label">
-											<span class="text-uppercase">{noticias_categoria_principal}</span>
-										</div>
-									</div>
-									{/exp:parse_file_paths}
-									<div class="content">
-										<a href="{site_url}n_noticias/iframe/{noticias_entry_id}">{noticias_contenido}</a>
-									</div>
-									<div class="info">
-										<div class="left">
-											<div class="user-card user-card-round size xs">
-						    				<div class="user-pic">			        					
-						    					<img src="{site_url}n_img/user.jpg" alt="">
-						    				</div>
-						    				<div class="user-info">
-						    					<span>{noticias_autor}</span>
-						    				</div>
-						    			</div>
-										</div>
-										<div class="right">
-											<span class="icon-typ-eye">{noticias_vistas}</span>
-										</div>								
-									</div>
-								</li>
-							{/if}
-						{/exp:news:entries_by_preferences}					
-					</ul>
-					<div class="text-right mh-35">
-						<a href="{site_url}n_noticias/preferencias" class="text-primary"> VER TODOS <span class="icon-typ-chevron-right"></span>	</a>
-					</div>
-					<h4 class="mt-49 uppercase pl-14">CONTENIDO RELEVANTE PARA {exp:user:stats}{Vicepresidencia}{/exp:user:stats}</h4>
-					<ul class="grid-list grid-list-4 grid-list-1-xs grid-list-3-sm isotope-grid posts-grid">
-						{exp:news:entries_by_vp parse="inward" limit="4"}
-						
-							{if noticias_titulo==""}
-							<li>
-								{exp:opengraph:query url="{noticias_url}"}
-								<div class="pic" style="background-image: url('{og_image}');">
-									<div class="category-label">
-										<span class="text-uppercase">{noticias_categoria_principal}</span>
-									</div>
+							</div>
+							{/exp:parse_file_paths}
+							<div class="content">
+								<a href="{site_url}n_noticias/iframe/{noticias_entry_id}">{noticias_contenido}</a>
+							</div>
+							<div class="info">
+								<div class="left">
+									<div class="user-card user-card-round size xs">
+				    				<div class="user-pic">			        					
+				    					<img src="{site_url}n_img/user.jpg" alt="">
+				    				</div>
+				    				<div class="user-info">
+				    					<span>{noticias_autor}</span>
+				    				</div>
+				    			</div>
 								</div>
-								<div class="content">
-									<a href="{site_url}n_noticias/iframe/{noticias_entry_id}">{og_title_resume}</a>
-								</div>
-								<div class="info">
-									<div class="left">
-										<div class="user-card user-card-round size xs">
-					    				<div class="user-pic">			        					
-					    					<img src="{site_url}n_img/user.jpg" alt="">
-					    				</div>
-					    				<div class="user-info">
-					    					<span>{noticias_autor}</span>
-					    				</div>
-					    			</div>
-									</div>
-									<div class="right">
-										<span class="icon-typ-eye">{noticias_vistas}</span>
-									</div>								
-								</div>
-								{/exp:opengraph:query}
-							</li>
-							{if:else}
-								<li>
-									{exp:parse_file_paths}
-									<div class="pic" style="background-image: url('{noticias_imagen}');">
-										<div class="category-label">
-											<span class="text-uppercase">{noticias_categoria_principal}</span>
-										</div>
-									</div>
-									{/exp:parse_file_paths}
-									<div class="content">
-										<a href="{site_url}n_noticias/iframe/{noticias_entry_id}">{noticias_contenido}</a>
-									</div>
-									<div class="info">
-										<div class="left">
-											<div class="user-card user-card-round size xs">
-						    				<div class="user-pic">			        					
-						    					<img src="{site_url}n_img/user.jpg" alt="">
-						    				</div>
-						    				<div class="user-info">
-						    					<span>{noticias_autor}</span>
-						    				</div>
-						    			</div>
-										</div>
-										<div class="right">
-											<span class="icon-typ-eye">{noticias_vistas}</span>
-										</div>								
-									</div>
-								</li>
-							{/if}
-						
-						{/exp:news:entries_by_vp}
-					</ul>
-					<div class="text-right mh-35">
-						<a href="{site_url}n_noticias/vicepresidencia" class="text-primary"> VER TODOS <span class="icon-typ-chevron-right"></span>	</a>
-					</div>
+								<div class="right">
+									<span class="icon-typ-eye">{noticias_vistas}</span>
+								</div>								
+							</div>
+						</li>
+					{/if}
+				
+				{/exp:news:entries_by_vp}
+			</ul>
+			<div class="text-right mh-35">
+				<a href="{site_url}n_noticias/vicepresidencia" class="text-primary"> VER TODOS <span class="icon-typ-chevron-right"></span>	</a>
+			</div>
 
-					<h4 class="mt-49 uppercase pl-14">OTRO CONTENIDO QUE TE PUEDE INTERESAR</h4>
-					<ul class="grid-list grid-list-4 grid-list-1-xs grid-list-3-sm isotope-grid posts-grid">
-						{exp:news:all_entries parse="inward" limit="4"}
-							
-							{if noticias_titulo==""}
-							<li>
-								{exp:opengraph:query url="{noticias_url}"}
-								<div class="pic" style="background-image: url('{og_image}');">
-									<div class="category-label">
-										<span class="text-uppercase">{noticias_categoria_principal}</span>
-									</div>
+			<h4 class="mt-49 uppercase pl-14">OTRO CONTENIDO QUE TE PUEDE INTERESAR</h4>
+			<ul class="grid-list grid-list-4 grid-list-1-xs grid-list-3-sm isotope-grid posts-grid">
+				{exp:news:all_entries parse="inward" limit="4"}
+					
+					{if noticias_titulo==""}
+					<li>
+						{exp:opengraph:query url="{noticias_url}"}
+						<div class="pic" style="background-image: url('{og_image}');">
+							<div class="category-label">
+								<span class="text-uppercase">{noticias_categoria_principal}</span>
+							</div>
+						</div>
+						<div class="content">
+							<a href="{site_url}n_noticias/iframe/{noticias_entry_id}">{og_title_resume}</a>
+						</div>
+						<div class="info">
+							<div class="left">
+								<div class="user-card user-card-round size xs">
+			    				<div class="user-pic">			        					
+			    					<img src="{site_url}n_img/user.jpg" alt="">
+			    				</div>
+			    				<div class="user-info">
+			    					<span>{noticias_autor}</span>
+			    				</div>
+			    			</div>
+							</div>
+							<div class="right">
+								<span class="icon-typ-eye">{noticias_vistas}</span>
+							</div>								
+						</div>
+						{/exp:opengraph:query}
+					</li>
+					{if:else}
+						<li>
+							{exp:parse_file_paths}
+							<div class="pic" style="background-image: url('{noticias_imagen}');">
+								<div class="category-label">
+									<span class="text-uppercase">{noticias_categoria_principal}</span>
 								</div>
-								<div class="content">
-									<a href="{site_url}n_noticias/iframe/{noticias_entry_id}">{og_title_resume}</a>
+							</div>
+							{/exp:parse_file_paths}
+							<div class="content">
+								<a href="{site_url}n_noticias/iframe/{noticias_entry_id}">{noticias_contenido}</a>
+							</div>
+							<div class="info">
+								<div class="left">
+									<div class="user-card user-card-round size xs">
+				    				<div class="user-pic">			        					
+				    					<img src="{site_url}n_img/user.jpg" alt="">
+				    				</div>
+				    				<div class="user-info">
+				    					<span>{noticias_autor}</span>
+				    				</div>
+				    			</div>
 								</div>
-								<div class="info">
-									<div class="left">
-										<div class="user-card user-card-round size xs">
-					    				<div class="user-pic">			        					
-					    					<img src="{site_url}n_img/user.jpg" alt="">
-					    				</div>
-					    				<div class="user-info">
-					    					<span>{noticias_autor}</span>
-					    				</div>
-					    			</div>
-									</div>
-									<div class="right">
-										<span class="icon-typ-eye">{noticias_vistas}</span>
-									</div>								
-								</div>
-								{/exp:opengraph:query}
-							</li>
-							{if:else}
-								<li>
-									{exp:parse_file_paths}
-									<div class="pic" style="background-image: url('{noticias_imagen}');">
-										<div class="category-label">
-											<span class="text-uppercase">{noticias_categoria_principal}</span>
-										</div>
-									</div>
-									{/exp:parse_file_paths}
-									<div class="content">
-										<a href="{site_url}n_noticias/iframe/{noticias_entry_id}">{noticias_contenido}</a>
-									</div>
-									<div class="info">
-										<div class="left">
-											<div class="user-card user-card-round size xs">
-						    				<div class="user-pic">			        					
-						    					<img src="{site_url}n_img/user.jpg" alt="">
-						    				</div>
-						    				<div class="user-info">
-						    					<span>{noticias_autor}</span>
-						    				</div>
-						    			</div>
-										</div>
-										<div class="right">
-											<span class="icon-typ-eye">{noticias_vistas}</span>
-										</div>								
-									</div>
-								</li>
-							{/if}
-							
-						{/exp:news:all_entries}
-					</ul>
-					<div class="text-right mh-35">
-						<a href="{site_url}n_noticias/otros" class="text-primary"> VER TODOS <span class="icon-typ-chevron-right"></span>	</a>
-					</div>
-				</div>
+								<div class="right">
+									<span class="icon-typ-eye">{noticias_vistas}</span>
+								</div>								
+							</div>
+						</li>
+					{/if}
+					
+				{/exp:news:all_entries}
+			</ul>
+			<div class="text-right mh-35">
+				<a href="{site_url}n_noticias/otros" class="text-primary"> VER TODOS <span class="icon-typ-chevron-right"></span>	</a>
 			</div>
 		</div>
-	</div>
+	{if:else}   
+    {embed="n_includes/not-logged-in-message"}
 	{/if}
 {embed="n_includes/footer"}
 
