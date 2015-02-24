@@ -9290,6 +9290,8 @@ header.header {
         clear: both; }
       #site-menu .menu-list > li:hover {
         color: #e4d1f1; }
+        #site-menu .menu-list > li:hover a:hover, #site-menu .menu-list > li:hover a.active {
+          color: #e4d1f1; }
       #site-menu .menu-list > li .menu-left,
       #site-menu .menu-list > li .menu-right {
         float: left;
