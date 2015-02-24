@@ -120,6 +120,9 @@ $z-index-control: 30;
 			@include clearfix;
 			color: lighten($brand-primary, 42%);
 			border-bottom: 1px solid lighten($brand-primary, 7%);
+			a {
+				color: lighten($brand-primary, 42%);
+			}
 			&:hover {
 				color: lighten($brand-primary, 56%);
 				a {

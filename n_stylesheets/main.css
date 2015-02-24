@@ -9288,6 +9288,8 @@ header.header {
         display: table; }
       #site-menu .menu-list > li:after {
         clear: both; }
+      #site-menu .menu-list > li a {
+        color: #c49be0; }
       #site-menu .menu-list > li:hover {
         color: #e4d1f1; }
         #site-menu .menu-list > li:hover a:hover, #site-menu .menu-list > li:hover a.active {
