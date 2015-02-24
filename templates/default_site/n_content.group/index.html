@@ -5,65 +5,34 @@
 		{redirect='n_inicio' status_code="301"}
 	
 	{if:else}
-    <div class="row login-formulario">
-    	<div class="small-12 medium-12 large-4 columns vh-100">
-    		<div class="panel">
-    			<div class="row">
-    				<div class="small-12 small-centered medium-6 medium-centered large-9 columns text-center">
-    					<img src="{site_url}n_img/logo-header-nuevo.png">
-    				</div>
-    			</div>
-    			<div class="row">
-    				<div class="small-12 medium-6 medium-centered large-12 columns">
-    					{exp:member:login_form return="{site_url}n_inicio/index" form_id="user-login-form"}
-    						<div class="row mb-7">
-    							<div class="small-2 medium-2 large-2 columns icono clearfix">
-    								<div class="icon-container" style=""><i class="icon-typ-user-outline"></i></div>
-    							</div>
-    							<div class="small-10 medium-10 large-10 columns clearfix">
-    								<input style="width: 100%; height: 48px; height: 3.42857rem;" type="text" name="username" value="" minlength="2" placeholder="Usuario de Red" required>
-    							</div>
-    						</div>
-    						<div class="row mb-7">
-    							<div class="small-2 medium-2 large-2 columns icono clearfix">
-    								<div class="icon-container" style=""><i class="icon-typ-key-outline"></i></div>
-    							</div>
-    							<div class="small-10 medium-10 large-10 columns clearfix">
-    								<input style="width: 100%; height: 48px; height: 3.42857rem;" type="password" name="password" value="" minlength="2" placeholder="Documento de Identidad" required>
-    							</div>
-    						</div>
-    						<div class="row">
-    							<div class="small-12 medium-12 large-12 columns clearfix">    						
-										<input type="submit" class="button expand" value="INICIAR SESIÓN ›" name="submit">
-										<input type="hidden" name="auto_login" value="1">
-										<!--<p class="text-center"><a href="{path='member/forgot_password'}">¿Olvidaste tu contraseña?</a></p>-->
-    							</div>
-    						</div>
-    						<div class="row">
-    							<div class="small-12 medium-12 large-12 columns clearfix">
-    								<small class="bg-gray-light">Si por alguna razón estos datos no funcionan llama al 4444 o envía un email a <a href="mailto:soporteucb@belcorp.biz">soporteucb@belcorp.biz</a> para darte una solución inmediatamente.</small>
-    							</div>
-    						</div>
-    					{/exp:member:login_form}
-    				</div>
-    			</div>    					
-    		</div>
-    	</div>
-    	<div class="small-12 medium-8 large-8 columns show-for-large-up">
-    		<div class="row bg-morado">
-    			<div class="small-12 medium-12 large-12 columns">
-	    			<h1 class="text-center">BIENVENIDO A LA UCB, DONDE ENCONTRARÁS TODO LO QUE NECESITAS PARA PODER DESARROLLARTE, CRECER Y CUMPLIR TUS OBJETIVOS</h1>	      				
-						<!--<div class="row mt-7">
-		    			<div class="small-12 medium-10 medium-centered large-10 large-centered columns">
-								<p class="text-center hp-footer">
-								<a href="{site_url}n_seccion/que-hace-la-ucb-por-ti" class="list-group-item">Qué Hace la UCB Por Ti</a> | 
-								<a href="{site_url}n_preguntas_frecuentes" class="list-group-item">Preguntas Frecuentes</a> | <a href="{site_url}n_contactos" class="list-group-item ">Contáctanos</a> | <a href="https://www.facebook.com/aprendeconlaucb" target="_blank" class="list-group-item hover-toggle">Facebook</a> | <a href="https://twitter.com/ubelcorp"  target="_blank" class="list-group-item hover-toggle">Twitter</a>
-								</p>
-		    			</div>
-		    		</div>-->
-    			</div>
-    		</div>	
-    	</div>
-    </div> 
+    <div class="container-fluid minhp-100">
+      <div class="row minhp-100">
+        <div class="col-md-4 minhp-100 flex-middle">
+          <div class="text-center">
+            <img src="{site_url}n_img/logo-header-nuevo.png" style="width: 274px; height: auto;">
+          </div>
+          {exp:member:login_form return="{site_url}n_inicio/index" form_id="user-login-form"}
+            <div class="input-group input-group-lg">
+              <label for="Username" class="sr-only">Username</label>
+              <span class="input-group-addon"><i class="icon-typ-user-outline"></i></span>
+              <input name="username" minlength="2" placeholder="Usuario de Red" required type="text" class="form-control">
+            </div>
+            <div class="input-group input-group-lg">
+              <label for="Username" class="sr-only">Username</label>
+              <span class="input-group-addon"><i class="icon-typ-key-outline"></i></span>
+              <input type="password" name="password" minlength="2" placeholder="Documento de Identidad" required class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary btn-lg form-control" value="INICIAR SESIÓN ›" name="submit">
+              <input type="hidden" name="auto_login" value="1">
+            </div>
+            <small class="bg-gray-light">Si por alguna razón estos datos no funcionan llama al 4444 o envía un email a <a href="mailto:soporteucb@belcorp.biz">soporteucb@belcorp.biz</a> para darte una solución inmediatamente.</small>
+          {/exp:member:login_form}
+        </div>
+        <div class="col-md-8 minhp-100 bg-img-block-center flex-middle-center" style="background-image: url({site_url}images/bg-login.jpg)">
+          <h1 class="text-center">BIENVENIDO A LA UCB, DONDE ENCONTRARÁS TODO LO QUE NECESITAS PARA PODER DESARROLLARTE, CRECER Y CUMPLIR TUS OBJETIVOS</h1>
+        </div>
+      </div>
+    </div>
 	{/if}         
 {embed="n_includes/footer"}    
