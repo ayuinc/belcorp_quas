@@ -1453,20 +1453,60 @@ input[type="search"] {
   input[type="datetime-local"],
   input[type="month"] {
     line-height: 34px; }
-    input[type="date"].input-sm, .input-group-sm input[type="date"],
-    input[type="time"].input-sm, .input-group-sm
+    input[type="date"].input-sm, .input-group-sm > input[type="date"].form-control, form .input-group-sm > input[type="date"][type="text"], form .input-group-sm > input[type="date"][type="password"], form .input-group-sm > input[type="date"][type="email"],
+    .input-group-sm > input[type="date"].input-group-addon,
+    .input-group-sm > .input-group-btn > input[type="date"].btn, .input-group-sm input[type="date"],
+    input[type="time"].input-sm,
+    .input-group-sm > input[type="time"].form-control,
+    form .input-group-sm > input[type="time"][type="text"],
+    form .input-group-sm > input[type="time"][type="password"],
+    form .input-group-sm > input[type="time"][type="email"],
+    .input-group-sm > input[type="time"].input-group-addon,
+    .input-group-sm > .input-group-btn > input[type="time"].btn, .input-group-sm
     input[type="time"],
-    input[type="datetime-local"].input-sm, .input-group-sm
+    input[type="datetime-local"].input-sm,
+    .input-group-sm > input[type="datetime-local"].form-control,
+    form .input-group-sm > input[type="datetime-local"][type="text"],
+    form .input-group-sm > input[type="datetime-local"][type="password"],
+    form .input-group-sm > input[type="datetime-local"][type="email"],
+    .input-group-sm > input[type="datetime-local"].input-group-addon,
+    .input-group-sm > .input-group-btn > input[type="datetime-local"].btn, .input-group-sm
     input[type="datetime-local"],
-    input[type="month"].input-sm, .input-group-sm
+    input[type="month"].input-sm,
+    .input-group-sm > input[type="month"].form-control,
+    form .input-group-sm > input[type="month"][type="text"],
+    form .input-group-sm > input[type="month"][type="password"],
+    form .input-group-sm > input[type="month"][type="email"],
+    .input-group-sm > input[type="month"].input-group-addon,
+    .input-group-sm > .input-group-btn > input[type="month"].btn, .input-group-sm
     input[type="month"] {
       line-height: 30px; }
-    input[type="date"].input-lg, .input-group-lg input[type="date"],
-    input[type="time"].input-lg, .input-group-lg
+    input[type="date"].input-lg, .input-group-lg > input[type="date"].form-control, form .input-group-lg > input[type="date"][type="text"], form .input-group-lg > input[type="date"][type="password"], form .input-group-lg > input[type="date"][type="email"],
+    .input-group-lg > input[type="date"].input-group-addon,
+    .input-group-lg > .input-group-btn > input[type="date"].btn, .input-group-lg input[type="date"],
+    input[type="time"].input-lg,
+    .input-group-lg > input[type="time"].form-control,
+    form .input-group-lg > input[type="time"][type="text"],
+    form .input-group-lg > input[type="time"][type="password"],
+    form .input-group-lg > input[type="time"][type="email"],
+    .input-group-lg > input[type="time"].input-group-addon,
+    .input-group-lg > .input-group-btn > input[type="time"].btn, .input-group-lg
     input[type="time"],
-    input[type="datetime-local"].input-lg, .input-group-lg
+    input[type="datetime-local"].input-lg,
+    .input-group-lg > input[type="datetime-local"].form-control,
+    form .input-group-lg > input[type="datetime-local"][type="text"],
+    form .input-group-lg > input[type="datetime-local"][type="password"],
+    form .input-group-lg > input[type="datetime-local"][type="email"],
+    .input-group-lg > input[type="datetime-local"].input-group-addon,
+    .input-group-lg > .input-group-btn > input[type="datetime-local"].btn, .input-group-lg
     input[type="datetime-local"],
-    input[type="month"].input-lg, .input-group-lg
+    input[type="month"].input-lg,
+    .input-group-lg > input[type="month"].form-control,
+    form .input-group-lg > input[type="month"][type="text"],
+    form .input-group-lg > input[type="month"][type="password"],
+    form .input-group-lg > input[type="month"][type="email"],
+    .input-group-lg > input[type="month"].input-group-addon,
+    .input-group-lg > .input-group-btn > input[type="month"].btn, .input-group-lg
     input[type="month"] {
       line-height: 46px; } }
 .form-group {
@@ -1532,23 +1572,36 @@ input[type="checkbox"] {
   padding-top: 7px;
   padding-bottom: 7px;
   margin-bottom: 0; }
-  .form-control-static.input-lg, .form-control-static.input-sm {
+  .form-control-static.input-lg, .input-group-lg > .form-control-static.form-control, form .input-group-lg > input.form-control-static[type="text"], form .input-group-lg > input.form-control-static[type="password"], form .input-group-lg > input.form-control-static[type="email"], .form-custom .input-group-lg > textarea.form-control-static,
+  .input-group-lg > .form-control-static.input-group-addon,
+  .input-group-lg > .input-group-btn > .form-control-static.btn, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control, form .input-group-sm > input.form-control-static[type="text"], form .input-group-sm > input.form-control-static[type="password"], form .input-group-sm > input.form-control-static[type="email"], .form-custom .input-group-sm > textarea.form-control-static,
+  .input-group-sm > .form-control-static.input-group-addon,
+  .input-group-sm > .input-group-btn > .form-control-static.btn {
     padding-left: 0;
     padding-right: 0; }
 
-.input-sm {
+.input-sm, .input-group-sm > .form-control, form .input-group-sm > input[type="text"], form .input-group-sm > input[type="password"], form .input-group-sm > input[type="email"], .form-custom .input-group-sm > textarea,
+.input-group-sm > .input-group-addon,
+.input-group-sm > .input-group-btn > .btn {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 0px; }
 
-select.input-sm {
+select.input-sm, .input-group-sm > select.form-control,
+.input-group-sm > select.input-group-addon,
+.input-group-sm > .input-group-btn > select.btn {
   height: 30px;
   line-height: 30px; }
 
-textarea.input-sm,
-select[multiple].input-sm {
+textarea.input-sm, .input-group-sm > textarea.form-control, .form-custom .input-group-sm > textarea,
+.input-group-sm > textarea.input-group-addon,
+.input-group-sm > .input-group-btn > textarea.btn,
+select[multiple].input-sm,
+.input-group-sm > select[multiple].form-control,
+.input-group-sm > select[multiple].input-group-addon,
+.input-group-sm > .input-group-btn > select[multiple].btn {
   height: auto; }
 
 .form-group-sm .form-control, .form-group-sm form input[type="text"], form .form-group-sm input[type="text"], .form-group-sm form input[type="password"], form .form-group-sm input[type="password"], .form-group-sm form input[type="email"], form .form-group-sm input[type="email"], .form-group-sm .form-custom textarea, .form-custom .form-group-sm textarea {
@@ -1569,19 +1622,28 @@ select[multiple].input-sm {
   font-size: 12px;
   line-height: 1.5; }
 
-.input-lg {
+.input-lg, .input-group-lg > .form-control, form .input-group-lg > input[type="text"], form .input-group-lg > input[type="password"], form .input-group-lg > input[type="email"], .form-custom .input-group-lg > textarea,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-btn > .btn {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33333;
   border-radius: 0px; }
 
-select.input-lg {
+select.input-lg, .input-group-lg > select.form-control,
+.input-group-lg > select.input-group-addon,
+.input-group-lg > .input-group-btn > select.btn {
   height: 46px;
   line-height: 46px; }
 
-textarea.input-lg,
-select[multiple].input-lg {
+textarea.input-lg, .input-group-lg > textarea.form-control, .form-custom .input-group-lg > textarea,
+.input-group-lg > textarea.input-group-addon,
+.input-group-lg > .input-group-btn > textarea.btn,
+select[multiple].input-lg,
+.input-group-lg > select[multiple].form-control,
+.input-group-lg > select[multiple].input-group-addon,
+.input-group-lg > .input-group-btn > select[multiple].btn {
   height: auto; }
 
 .form-group-lg .form-control, .form-group-lg form input[type="text"], form .form-group-lg input[type="text"], .form-group-lg form input[type="password"], form .form-group-lg input[type="password"], .form-group-lg form input[type="email"], form .form-group-lg input[type="email"], .form-group-lg .form-custom textarea, .form-custom .form-group-lg textarea {
@@ -1619,12 +1681,16 @@ select[multiple].input-lg {
   text-align: center;
   pointer-events: none; }
 
-.input-lg + .form-control-feedback {
+.input-lg + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback, form .input-group-lg > input[type="text"] + .form-control-feedback, form .input-group-lg > input[type="password"] + .form-control-feedback, form .input-group-lg > input[type="email"] + .form-control-feedback, .form-custom .input-group-lg > textarea + .form-control-feedback,
+.input-group-lg > .input-group-addon + .form-control-feedback,
+.input-group-lg > .input-group-btn > .btn + .form-control-feedback {
   width: 46px;
   height: 46px;
   line-height: 46px; }
 
-.input-sm + .form-control-feedback {
+.input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback, form .input-group-sm > input[type="text"] + .form-control-feedback, form .input-group-sm > input[type="password"] + .form-control-feedback, form .input-group-sm > input[type="email"] + .form-control-feedback, .form-custom .input-group-sm > textarea + .form-control-feedback,
+.input-group-sm > .input-group-addon + .form-control-feedback,
+.input-group-sm > .input-group-btn > .btn + .form-control-feedback {
   width: 30px;
   height: 30px;
   line-height: 30px; }
@@ -2006,6 +2072,121 @@ tbody.collapse.in {
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease; }
 
+.input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate; }
+  .input-group[class*="col-"] {
+    float: none;
+    padding-left: 0;
+    padding-right: 0; }
+  .input-group .form-control, .input-group form input[type="text"], form .input-group input[type="text"], .input-group form input[type="password"], form .input-group input[type="password"], .input-group form input[type="email"], form .input-group input[type="email"], .input-group .form-custom textarea, .form-custom .input-group textarea {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0; }
+
+.input-group-addon,
+.input-group-btn,
+.input-group .form-control,
+.input-group form input[type="text"],
+form .input-group input[type="text"],
+.input-group form input[type="password"],
+form .input-group input[type="password"],
+.input-group form input[type="email"],
+form .input-group input[type="email"],
+.input-group .form-custom textarea,
+.form-custom .input-group textarea {
+  display: table-cell; }
+  .input-group-addon:not(:first-child):not(:last-child),
+  .input-group-btn:not(:first-child):not(:last-child),
+  .input-group .form-control:not(:first-child):not(:last-child),
+  .input-group form input[type="text"]:not(:first-child):not(:last-child),
+  form .input-group input[type="text"]:not(:first-child):not(:last-child),
+  .input-group form input[type="password"]:not(:first-child):not(:last-child),
+  form .input-group input[type="password"]:not(:first-child):not(:last-child),
+  .input-group form input[type="email"]:not(:first-child):not(:last-child),
+  form .input-group input[type="email"]:not(:first-child):not(:last-child),
+  .input-group .form-custom textarea:not(:first-child):not(:last-child),
+  .form-custom .input-group textarea:not(:first-child):not(:last-child) {
+    border-radius: 0; }
+
+.input-group-addon,
+.input-group-btn {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle; }
+
+.input-group-addon {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  color: #a8b6bf;
+  text-align: center;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 0px; }
+  .input-group-addon.input-sm, form .input-group-sm > input.input-group-addon[type="text"], form .input-group-sm > input.input-group-addon[type="password"], form .input-group-sm > input.input-group-addon[type="email"], .form-custom .input-group-sm > textarea.input-group-addon,
+  .input-group-sm > .input-group-addon,
+  .input-group-sm > .input-group-btn > .input-group-addon.btn {
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 0px; }
+  .input-group-addon.input-lg, form .input-group-lg > input.input-group-addon[type="text"], form .input-group-lg > input.input-group-addon[type="password"], form .input-group-lg > input.input-group-addon[type="email"], .form-custom .input-group-lg > textarea.input-group-addon,
+  .input-group-lg > .input-group-addon,
+  .input-group-lg > .input-group-btn > .input-group-addon.btn {
+    padding: 10px 16px;
+    font-size: 18px;
+    border-radius: 0px; }
+  .input-group-addon input[type="radio"],
+  .input-group-addon input[type="checkbox"] {
+    margin-top: 0; }
+
+.input-group .form-control:first-child, .input-group form input[type="text"]:first-child, form .input-group input[type="text"]:first-child, .input-group form input[type="password"]:first-child, form .input-group input[type="password"]:first-child, .input-group form input[type="email"]:first-child, form .input-group input[type="email"]:first-child, .input-group .form-custom textarea:first-child, .form-custom .input-group textarea:first-child,
+.input-group-addon:first-child,
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group > .btn,
+.input-group-btn:first-child > .dropdown-toggle,
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0; }
+
+.input-group-addon:first-child {
+  border-right: 0; }
+
+.input-group .form-control:last-child, .input-group form input[type="text"]:last-child, form .input-group input[type="text"]:last-child, .input-group form input[type="password"]:last-child, form .input-group input[type="password"]:last-child, .input-group form input[type="email"]:last-child, form .input-group input[type="email"]:last-child, .input-group .form-custom textarea:last-child, .form-custom .input-group textarea:last-child,
+.input-group-addon:last-child,
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn-group > .btn,
+.input-group-btn:last-child > .dropdown-toggle,
+.input-group-btn:first-child > .btn:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0; }
+
+.input-group-addon:last-child {
+  border-left: 0; }
+
+.input-group-btn {
+  position: relative;
+  font-size: 0;
+  white-space: nowrap; }
+  .input-group-btn > .btn {
+    position: relative; }
+    .input-group-btn > .btn + .btn {
+      margin-left: -1px; }
+    .input-group-btn > .btn:hover, .input-group-btn > .btn:focus, .input-group-btn > .btn:active {
+      z-index: 2; }
+  .input-group-btn:first-child > .btn,
+  .input-group-btn:first-child > .btn-group {
+    margin-right: -1px; }
+  .input-group-btn:last-child > .btn,
+  .input-group-btn:last-child > .btn-group {
+    margin-left: -1px; }
+
 .nav {
   margin-bottom: 0;
   padding-left: 0;
@@ -2129,192 +2310,6 @@ tbody.collapse.in {
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
-.carousel {
-  position: relative; }
-
-.carousel-inner {
-  position: relative;
-  overflow: hidden;
-  width: 100%; }
-  .carousel-inner > .item {
-    display: none;
-    position: relative;
-    -webkit-transition: 0.6s ease-in-out left;
-    -o-transition: 0.6s ease-in-out left;
-    transition: 0.6s ease-in-out left; }
-    .carousel-inner > .item > img,
-    .carousel-inner > .item > a > img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      line-height: 1; }
-    @media all and (transform-3d), (-webkit-transform-3d) {
-      .carousel-inner > .item {
-        -webkit-transition: -webkit-transform 0.6s ease-in-out;
-        -moz-transition: -moz-transform 0.6s ease-in-out;
-        -o-transition: -o-transform 0.6s ease-in-out;
-        transition: transform 0.6s ease-in-out;
-        -webkit-backface-visibility: hidden;
-        -moz-backface-visibility: hidden;
-        backface-visibility: hidden;
-        -webkit-perspective: 1000;
-        -moz-perspective: 1000;
-        perspective: 1000; }
-        .carousel-inner > .item.next, .carousel-inner > .item.active.right {
-          -webkit-transform: translate3d(100%, 0, 0);
-          transform: translate3d(100%, 0, 0);
-          left: 0; }
-        .carousel-inner > .item.prev, .carousel-inner > .item.active.left {
-          -webkit-transform: translate3d(-100%, 0, 0);
-          transform: translate3d(-100%, 0, 0);
-          left: 0; }
-        .carousel-inner > .item.next.left, .carousel-inner > .item.prev.right, .carousel-inner > .item.active {
-          -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-          left: 0; } }
-  .carousel-inner > .active,
-  .carousel-inner > .next,
-  .carousel-inner > .prev {
-    display: block; }
-  .carousel-inner > .active {
-    left: 0; }
-  .carousel-inner > .next,
-  .carousel-inner > .prev {
-    position: absolute;
-    top: 0;
-    width: 100%; }
-  .carousel-inner > .next {
-    left: 100%; }
-  .carousel-inner > .prev {
-    left: -100%; }
-  .carousel-inner > .next.left,
-  .carousel-inner > .prev.right {
-    left: 0; }
-  .carousel-inner > .active.left {
-    left: -100%; }
-  .carousel-inner > .active.right {
-    left: 100%; }
-
-.carousel-control {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 15%;
-  opacity: 0.5;
-  filter: alpha(opacity=50);
-  font-size: 20px;
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
-  .carousel-control.left {
-    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
-    background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1); }
-  .carousel-control.right {
-    left: auto;
-    right: 0;
-    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
-    background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1); }
-  .carousel-control:hover, .carousel-control:focus {
-    outline: 0;
-    color: #fff;
-    text-decoration: none;
-    opacity: 0.9;
-    filter: alpha(opacity=90); }
-  .carousel-control .icon-prev,
-  .carousel-control .icon-next,
-  .carousel-control .glyphicon-chevron-left,
-  .carousel-control .glyphicon-chevron-right {
-    position: absolute;
-    top: 50%;
-    z-index: 5;
-    display: inline-block; }
-  .carousel-control .icon-prev,
-  .carousel-control .glyphicon-chevron-left {
-    left: 50%;
-    margin-left: -10px; }
-  .carousel-control .icon-next,
-  .carousel-control .glyphicon-chevron-right {
-    right: 50%;
-    margin-right: -10px; }
-  .carousel-control .icon-prev,
-  .carousel-control .icon-next {
-    width: 20px;
-    height: 20px;
-    margin-top: -10px;
-    line-height: 1;
-    font-family: serif; }
-  .carousel-control .icon-prev:before {
-    content: '\2039'; }
-  .carousel-control .icon-next:before {
-    content: '\203a'; }
-
-.carousel-indicators {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  z-index: 15;
-  width: 60%;
-  margin-left: -30%;
-  padding-left: 0;
-  list-style: none;
-  text-align: center; }
-  .carousel-indicators li {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 1px;
-    text-indent: -999px;
-    border: 1px solid #fff;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: #000 \9;
-    background-color: transparent; }
-  .carousel-indicators .active {
-    margin: 0;
-    width: 12px;
-    height: 12px;
-    background-color: #fff; }
-
-.carousel-caption {
-  position: absolute;
-  bottom: 20px;
-  z-index: 10;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: rgba(255, 255, 255, 0.8); }
-  .carousel-caption .btn {
-    text-shadow: none; }
-
-@media screen and (min-width: 768px) {
-  .carousel-control .glyphicon-chevron-left,
-  .carousel-control .glyphicon-chevron-right,
-  .carousel-control .icon-prev,
-  .carousel-control .icon-next {
-    width: 30px;
-    height: 30px;
-    margin-top: -15px;
-    font-size: 30px; }
-  .carousel-control .glyphicon-chevron-left,
-  .carousel-control .icon-prev {
-    margin-left: -15px; }
-  .carousel-control .glyphicon-chevron-right,
-  .carousel-control .icon-next {
-    margin-right: -15px; }
-
-  .carousel-caption {
-    left: 8%;
-    right: 65%;
-    padding-bottom: 30px; }
-
-  .carousel-indicators {
-    bottom: 20px; } }
 .clearfix:before, .clearfix:after {
   content: " ";
   display: table; }
@@ -8488,7 +8483,9 @@ input[type="submit"].btn.btn-white.btn-outline {
   position: relative;
   text-indent: 1px;
   text-overflow: ""; }
-  .select-override.input-lg {
+  .select-override.input-lg, .input-group-lg > .select-override.form-control, form .input-group-lg > input.select-override[type="text"], form .input-group-lg > input.select-override[type="password"], form .input-group-lg > input.select-override[type="email"], .form-custom .input-group-lg > textarea.select-override,
+  .input-group-lg > .select-override.input-group-addon,
+  .input-group-lg > .input-group-btn > .select-override.btn {
     line-height: 28px; }
 
 .file_existing {
@@ -9473,7 +9470,9 @@ footer.footer {
   position: relative;
   text-indent: 1px;
   text-overflow: ""; }
-  .select-override.input-lg {
+  .select-override.input-lg, .input-group-lg > .select-override.form-control, form .input-group-lg > input.select-override[type="text"], form .input-group-lg > input.select-override[type="password"], form .input-group-lg > input.select-override[type="email"], .form-custom .input-group-lg > textarea.select-override,
+  .input-group-lg > .select-override.input-group-addon,
+  .input-group-lg > .input-group-btn > .select-override.btn {
     line-height: 28px;
     background: white url(/img/arrow-down.svg) no-repeat 98%; }
 
