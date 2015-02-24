@@ -35,9 +35,9 @@
   	</script>    
   </head>
   <body class="{if segment_1== '' OR segment_1=='n_content'}overflow-none{/if}">
-    <div id="site-wrapper">
+    <div id="site-wrapper" class="{if segment_1=='n_inicio'}homepage-on{/if}">
       {embed="n_includes/top-banner"}
-      <div id="site-menu" class="{if segment_1=='n_inicio'}homepage-on{/if}"> <!-- MENU-IZQUIERDO -->
+      <div id="site-menu"> <!-- MENU-IZQUIERDO -->
         <div class="top">
           <ul class="menu-list">
             {if segment_1!='n_inicio'}

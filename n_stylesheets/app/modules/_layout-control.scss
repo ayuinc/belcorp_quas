@@ -21,6 +21,21 @@ $z-index-control: 30;
 	width: 100%;
 	height: auto;
 	background-color: white;
+	&.homepage-on {
+  	background-color: white;
+  	z-index: $z-index-control - 1;
+  	@media #{$sm-only} {
+  		z-index: 0; 
+  	}
+  	.menu-list {
+  		> li {
+  			border-bottom: 1px solid $gray-lighter;
+  		}
+  	}
+  	.title {
+  		opacity: 1;
+  	}
+  }
 }
 
 #content-frame {
@@ -111,22 +126,6 @@ $z-index-control: 30;
 			}
 		}
 	}
-  // MENU INTERACTION
-  &.homepage-on {
-  	background-color: white;
-  	z-index: $z-index-control - 1;
-  	@media #{$sm-only} {
-  		z-index: 0; 
-  	}
-  	.menu-list {
-  		> li {
-  			border-bottom: 1px solid $gray-lighter;
-  		}
-  	}
-  	.title {
-  		opacity: 1;
-  	}
-  }
 }
 
 #site-wrapper {
@@ -153,6 +152,10 @@ $z-index-control: 30;
 			.left {
 				width: $site-menu-width-wide;
 				padding-left: $container-fluid;
+				@include transition(all 0.7s ease);
+			}
+			.logo {
+				width: $site-menu-width-wide;
 				@include transition(all 0.7s ease);
 			}
 		}
