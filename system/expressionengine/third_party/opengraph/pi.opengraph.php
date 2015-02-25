@@ -81,7 +81,7 @@ class Opengraph
         		}
         		
         		if(isset($rmetas)) {
-	        		if (!empty($rmetas['og:url'])) {
+	        		if (!isset($rmetas['og:url'])) {
 	        			$rmetas['og:url'] = $url;
 	        		}
 	        		
