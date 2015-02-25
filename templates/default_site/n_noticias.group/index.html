@@ -39,27 +39,27 @@
 				{redirect="n_noticias/mis_noticias"}
 			{/if}
 		{/exp:member:custom_profile_data}
-		<script>
-			{exp:user:stats}
-			var tagsArr = '{Preferencias}'.split(',');
-			{/exp:user:stats}
-			tagsArr.forEach(function(tag) {
-				$('input[name="' + tag + '"]').prop('checked', true);
-			});
-			
-			$('#member_form').submit(function() {
-				var checkedItems = $(this).find('input:checked');
-				var checkedValues = [];
-				if(checkedItems.length >= 0) {
-					checkedItems.each(function() {
-						checkedValues.push($(this).attr('name'));
-					});
-					$('#field_tags').val(checkedValues.join(','));
-				}
-				return true;
-			});
-		</script>
 	{if:else}		
 		{embed="n_includes/not-logged-in-message"}
 	{/if}		
 {embed="n_includes/footer"}
+<script>
+	{exp:user:stats}
+	var tagsArr = '{Preferencias}'.split(',');
+	{/exp:user:stats}
+	tagsArr.forEach(function(tag) {
+		$('input[name="' + tag + '"]').prop('checked', true);
+	});
+			
+	$('#member_form').submit(function() {
+		var checkedItems = $(this).find('input:checked');
+		var checkedValues = [];
+		if(checkedItems.length >= 0) {
+			checkedItems.each(function() {
+				checkedValues.push($(this).attr('name'));
+			});
+			$('#field_tags').val(checkedValues.join(','));
+		}
+		return false;
+	});
+</script>
