@@ -80,32 +80,46 @@ class Opengraph
         		    $rmetas[$property] = $content;
         		}
         		
-        		if (!isset($rmetas['og:url'])) {
-        			$rmetas['og:url'] = $url;
+        		var_dump($html);
+        		
+        		if(isset($rmetas)) {
+	        		if (!empty($rmetas['og:url'])) {
+	        			$rmetas['og:url'] = $url;
+	        		}
+	        		
+	        		if (!preg_match("~^(?:f|ht)tps?://~i", $rmetas['og:image'])) {
+	        			$parsedUrl = parse_url($rmetas['og:url']);
+	                	$rmetas['og:image'] = $parsedUrl["scheme"] . "://" . $parsedUrl["host"] . "/" . $rmetas['og:image'];
+	            	}
+	            	
+	            	$title_resume = strlen($rmetas['og:title']) > 50 ? substr($rmetas['og:title'], 0, 50) : $rmetas['og:title'];
+	            	
+	        		$variables[] = array(
+	        	        'og_title' => $rmetas['og:title'] ?: "Título no disponible",
+	        	        'og_title_resume' => $title_resume ?: 'Informacion no disponible',
+	        	        'og_description' => $rmetas['og:description'] ?: 'Descripción no disponible',
+	        	        'og_image' => $rmetas['og:image'] ?: '{site_url}images/imagenes-noticias/imgen-no-disponible.png',
+	        	        'og_url' => $rmetas['og:url'] ?: '#',
+	                    'og_available' => 'yes',
+	        		);
+        		} else {
+	        			$variables[] = array(
+		                    'og_title' => "Título no disponible",
+		                    'og_title_resume' => 'Informacion no disponible',
+		                    'og_description' => 'Descripción no disponible',
+		                    'og_image' => '{site_url}images/imagenes-noticias/imgen-no-disponible.png',
+		                    'og_url' => '#',
+		                    'og_available' => 'no',
+		                );
         		}
         		
-        		if (!preg_match("~^(?:f|ht)tps?://~i", $rmetas['og:image'])) {
-        			$parsedUrl = parse_url($rmetas['og:url']);
-                	$rmetas['og:image'] = $parsedUrl["scheme"] . "://" . $parsedUrl["host"] . "/" . $rmetas['og:image'];
-            	}
-            	
-        		$variables[] = array(
-        	        'og_title' => $rmetas['og:title'],
-        	        'og_title_resume' => substr($rmetas['og:title'], 0, 50) . '...',
-        	        'og_description' => $rmetas['og:description'],
-        	        'og_image' => $rmetas['og:image'],
-        	        'og_url' => $rmetas['og:url'],
-                    'og_available' => 'yes',
-        		);
-        		
         		$tagdata = $this->EE->TMPL->tagdata;
-
-            	return $this->EE->TMPL->parse_variables($tagdata, $variables);
+        		return $this->EE->TMPL->parse_variables($tagdata, $variables);
             }
             else{
                 $variables[] = array(
                     'og_title' => "Título no disponible",
-                    'og_title_resume' => 'Informacion no disponible ...',
+                    'og_title_resume' => 'Informacion no disponible',
                     'og_description' => 'Descripción no disponible',
                     'og_image' => '{site_url}images/imagenes-noticias/imgen-no-disponible.png',
                     'og_url' => '#',
