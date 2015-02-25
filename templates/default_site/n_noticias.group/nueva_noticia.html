@@ -156,7 +156,11 @@
         </div>
       {/exp:channel:form}
     </div>
-    <script type="text/javascript">
+  {if:else}
+    {embed="n_includes/not-logged-in-message"}
+  {/if}   
+{embed="n_includes/footer"}
+<script type="text/javascript">
     	$('#publishForm').get(0).setAttribute('action', window.location.origin);
     	new CBPFWTabs( document.getElementById( 'tabs' ) );
     	
@@ -172,8 +176,4 @@
     			});
     		});
     	});
-    </script>
-  {if:else}
-    {embed="n_includes/not-logged-in-message"}
-  {/if}   
-{embed="n_includes/footer"}
+</script>
