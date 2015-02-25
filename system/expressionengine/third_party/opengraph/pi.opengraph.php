@@ -80,8 +80,6 @@ class Opengraph
         		    $rmetas[$property] = $content;
         		}
         		
-        		var_dump($html);
-        		
         		if(isset($rmetas)) {
 	        		if (!empty($rmetas['og:url'])) {
 	        			$rmetas['og:url'] = $url;
