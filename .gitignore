@@ -3,3 +3,7 @@
 /system/expressionengine/config/database.php
 .htaccess
 .sass-cache
+/images/imagenes-noticias/
+/images/imagenes-noticias-portada/
+.DS_Store
+
