@@ -13,6 +13,11 @@
 			<p>Así se mostrará el contenido, si estás conforme dale click en PUBLICAR</p>
 			<p>Si deseas modificar el título o la imagen, dale clic en EDITAR</p>
 			<div class="preview-box">
+				{if og_available == 'yes'}
+				<div>
+					<span>Esta noticia no tiene información disponible para mostrar, edítala.</span>
+				</div>
+				{/if}
 				<ul class="grid-list grid-list-2 grid-list-1-xs posts-grid">
 					{exp:channel:entries channel="noticias" entry_id="{last_segment}" parse="inward" limit="1"}
 					{if noticias_titulo==""}
@@ -54,9 +59,6 @@
 								</div>
 								{if:elseif og_available == 'no'}
 									<a href="#" class="btn uppercase block btn-lg btn-primary form-control disabled">Publicar</a>
-									</div>
-									<div>
-										<span>"Esta noticia no puede ser publicada, edítala."</span>
 									</div>
 								{/if}
 						{/exp:opengraph:query}
