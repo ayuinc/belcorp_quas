@@ -79,17 +79,21 @@ class Opengraph
         		    $content = $meta->getAttribute('content');
         		    $rmetas[$property] = $content;
         		}
-        		
+        			
         		if(isset($rmetas)) {
 	        		if (!isset($rmetas['og:url'])) {
 	        			$rmetas['og:url'] = $url;
 	        		}
 	        		
-	        		if (!preg_match("~^(?:f|ht)tps?://~i", $rmetas['og:image'])) {
-	        			$parsedUrl = parse_url($rmetas['og:url']);
-	                	$rmetas['og:image'] = $parsedUrl["scheme"] . "://" . $parsedUrl["host"] . "/" . $rmetas['og:image'];
-	            	}
-	            	
+	        		if(!empty($rmetas['og:image'])) {
+		        		if (!preg_match("~^(?:f|ht)tps?://~i", $rmetas['og:image'])) {
+		        			$parsedUrl = parse_url($rmetas['og:url']);
+		                	$rmetas['og:image'] = $parsedUrl["scheme"] . "://" . $parsedUrl["host"] . "/" . $rmetas['og:image'];
+		            	}
+	        		} else {
+		        		$rmetas['og:image'] = NULL;
+	        		}
+
 	            	$title_resume = strlen($rmetas['og:title']) > 50 ? substr($rmetas['og:title'], 0, 50) : $rmetas['og:title'];
 	            	
 	        		$variables[] = array(
