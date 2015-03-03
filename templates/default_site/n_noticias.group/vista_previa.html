@@ -73,7 +73,7 @@
 							</div>
 							{/exp:parse_file_paths}
 							<div class="content">
-								<a href="#">{noticias_contenido}</a>
+								<a href="#">{exp:char_limit total="50" exact="no"}{noticias_contenido}{/exp:char_limit}</a>
 							</div>
 							<div class="info">
 								<div class="left">

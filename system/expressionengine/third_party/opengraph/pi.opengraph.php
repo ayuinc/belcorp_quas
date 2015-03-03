@@ -93,6 +93,10 @@ class Opengraph
 	        		} else {
 		        		$rmetas['og:image'] = NULL;
 	        		}
+	        		
+	        		if(empty($rmetas['og_description'])) {
+		        		$rmetas['og_description'] = '';
+	        		}
 
 	            	$title_resume = strlen($rmetas['og:title']) > 50 ? substr($rmetas['og:title'], 0, 50) : $rmetas['og:title'];
 	            	
