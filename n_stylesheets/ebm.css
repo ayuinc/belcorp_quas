@@ -15353,7 +15353,7 @@ ul.grid-list {
   padding-left: 0;
   list-style: none;
   margin: 0;
-  margin: -15px;
+  margin: 0 -15px;
   padding: 0; }
   ul.grid-list > li,
   ul.grid-list > a {

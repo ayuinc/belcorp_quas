@@ -2,7 +2,7 @@
 $grid-list-item-height: 350px;
 ul.grid-list {
 	@include list-unstyled;
-	margin: 0 -($container-fluid);
+	margin: 0 (-$container-fluid);
 	padding: 0;
 	> li,
 	> a {
