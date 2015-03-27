@@ -117,6 +117,9 @@ $z-index-control: 30;
   }
   .center {
   	.menu-list {
+  		> li {
+  			padding: ($container-fluid - 2) 0;
+  		}
   		&:last-child {
 	  		.menu-left {
 	  			display: none;
