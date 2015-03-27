@@ -7210,14 +7210,14 @@ li {
     font-size: 12px !important;
     font-size: 0.85714rem !important; } }
 @font-face {
-  font-family: 'icomoon-ayu';
-  src: url(../n_fonts/icomoon-ayu.eot);
-  src: url(../n_fonts/icomoon-ayu.eot) format("embedded-opentype"), url(../n_fonts/icomoon-ayu.woff) format("woff"), url(../n_fonts/icomoon-ayu.ttf) format("truetype"), url(../n_fonts/icomoon-ayu.svg]) format("svg");
+  font-family: "icomoon-ayu";
+  src: url("../n_fonts/icomoon-ayu.eot");
+  src: url("../n_fonts/icomoon-ayu.eot#iefix") format("embedded-opentype"), url("../n_fonts/icomoon-ayu.woff") format("woff"), url("../n_fonts/icomoon-ayu.ttf") format("truetype"), url("../n_fonts/icomoon-ayu.svg") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="ayuicon-"]:before, [class*=" ayuicon-"]:before,
 [class^="ayuicon-"]:after, [class*=" ayuicon-"]:after {
-  font-family: 'icomoon-ayu';
+  font-family: "icomoon-ayu";
   speak: none;
   font-style: normal;
   font-weight: normal;
