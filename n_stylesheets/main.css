@@ -9242,6 +9242,9 @@ header.header {
   overflow-y: auto;
   overflow-x: hidden;
   padding-top: 63px; }
+  #site-menu .top .menu-left span {
+    font-size: 28px;
+    font-size: 2rem; }
   #site-menu .top,
   #site-menu .bottom {
     display: -webkit-box;

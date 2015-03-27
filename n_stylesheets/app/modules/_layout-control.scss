@@ -91,6 +91,14 @@ $z-index-control: 30;
   overflow-y: auto;
   overflow-x: hidden;
   padding-top: $header-height-control;
+  .top {
+  	.menu-left {
+  		span {
+  			font-size: 28px;
+  			font-size: rem(28px);
+  		}
+  	}
+  }
   .top,
   .bottom {
   	@include flex-middle;

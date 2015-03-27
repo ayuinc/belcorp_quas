@@ -11,12 +11,29 @@
 						<span>MENÚ</span>
 					</div>
 				</li>
+				<li class="hidden-xs hidden-sm"
+						data-href="<?php echo  $CFG->wwwroot . "/my"; ?>">
+					<div class="menu-left">
+						<span class="toggle-nav-link ayuicon-person"></span>
+					</div>
+					<div class="menu-right">
+						<a href="<?php echo  $CFG->wwwroot . "/my"; ?>">MIS CURSOS</a>
+					</div>
+				</li>
+				<li class="hidden-xs hidden-sm">
+					<div class="menu-left">
+						<span class="toggle-nav-link ayuicon-grid"></span>
+					</div>
+					<div class="menu-right">
+						<span>CATEGORÍAS</span>
+					</div>
+				</li>
 			{/if}
 		</ul>
 	</div>
 	<div class="center">
-		<div class="title"><span>Links de interés</span></div>
-		<ul class="menu-list">
+		<div class="title visible-xs-block"><span>Links de interés</span></div>
+		<ul class="menu-list visible-xs-block">
 			<li 
 				data-href="{site_url}n_escuelas/plan-de-desarrollo-temas" 
 				class="{if segment_2=='plan-de-desarrollo-temas'}active{/if} " 
