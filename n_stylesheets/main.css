@@ -9378,11 +9378,6 @@ header.header {
     -webkit-transition: opacity 0.7s ease;
     -moz-transition: opacity 0.7s ease;
     transition: opacity 0.7s ease; }
-  #site-wrapper.show-nav #site-menu .center .menu-list > li {
-    -webkit-transition: all 0.7s ease;
-    -moz-transition: all 0.7s ease;
-    transition: all 0.7s ease;
-    border-bottom: 1px solid #6e2f98; }
   #site-wrapper.show-nav #site-menu .center .menu-list:last-child .menu-right {
     -webkit-transition: opacity 0.7s ease;
     -moz-transition: opacity 0.7s ease;

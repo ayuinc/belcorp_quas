@@ -200,10 +200,6 @@ $z-index-control: 30;
 	  	}
 	  	.center {
 		  	.menu-list {
-		  		> li {
-		  			@include transition(all 0.7s ease);
-		  			border-bottom: 1px solid lighten($brand-primary, 7%);
-		  		}
 		  		&:last-child {
 			  		.menu-right {
 			  			@include transition(opacity 0.7s ease);
