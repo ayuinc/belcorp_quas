@@ -103,6 +103,11 @@ $z-index-control: 30;
   			padding: ($container-fluid / 2) 0;
   		}
   	}
+  	button {
+  		padding: 0 !important;
+  		background-color: transparent !important;
+  		font-size: $font-size-base !important;
+  	}
   }
   .top,
   .bottom {
@@ -117,9 +122,6 @@ $z-index-control: 30;
   }
   .center {
   	.menu-list {
-  		> li {
-  			padding: ($container-fluid - 2) 0;
-  		}
   		&:last-child {
 	  		.menu-left {
 	  			display: none;
@@ -148,6 +150,8 @@ $z-index-control: 30;
 		> li {
 			@include clearfix;
 			color: lighten($brand-primary, 42%);
+			font-size: 16px;
+			font-size: rem(16px);
 			a {
 				color: lighten($brand-primary, 42%);
 			}
@@ -165,7 +169,7 @@ $z-index-control: 30;
 			.menu-right {
 				float: left;
 				display: block;
-				min-height: $site-menu-width-narrow / 2;
+				min-height: $site-menu-width-narrow - 18;
 				@include flex-middle;
 			}
 			.menu-left {

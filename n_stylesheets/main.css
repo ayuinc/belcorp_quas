@@ -9229,6 +9229,10 @@ header.header {
     font-size: 2rem; }
   #site-menu .top .menu-list > li {
     padding: 7.5px 0; }
+  #site-menu .top button {
+    padding: 0 !important;
+    background-color: transparent !important;
+    font-size: 14px !important; }
   #site-menu .top,
   #site-menu .bottom {
     display: -webkit-box;
@@ -9259,8 +9263,6 @@ header.header {
     #site-menu .top .menu-list > li,
     #site-menu .bottom .menu-list > li {
       border: none; }
-  #site-menu .center .menu-list > li {
-    padding: 13px 0; }
   #site-menu .center .menu-list:last-child .menu-left {
     display: none; }
   #site-menu .center .menu-list:last-child .menu-right {
@@ -9288,7 +9290,9 @@ header.header {
     list-style: none;
     margin: 0; }
     #site-menu .menu-list > li {
-      color: #c49be0; }
+      color: #c49be0;
+      font-size: 16px;
+      font-size: 1.14286rem; }
       #site-menu .menu-list > li:before, #site-menu .menu-list > li:after {
         content: " ";
         display: table; }
@@ -9305,7 +9309,7 @@ header.header {
       #site-menu .menu-list > li .menu-right {
         float: left;
         display: block;
-        min-height: 30px;
+        min-height: 42px;
         display: -webkit-box;
         display: -moz-box;
         display: box;
