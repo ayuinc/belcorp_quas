@@ -1,7 +1,7 @@
 // GRID LISTS
 $grid-list-item-height: 350px;
 ul.grid-list {
-	@include clearfix;
+	@include make-row;
 	padding: 0;
 	margin: 0;
 	@include list-unstyled;
