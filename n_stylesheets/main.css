@@ -7211,8 +7211,8 @@ li {
     font-size: 0.85714rem !important; } }
 @font-face {
   font-family: 'icomoon-typ';
-  src: url(../n_fonts/icomoon-ayu.eot);
-  src: url(../n_fonts/icomoon-ayu.eot) format("embedded-opentype"), url(../n_fonts/icomoon-ayu.woff) format("woff"), url(../n_fonts/icomoon-ayu.ttf) format("truetype"), url(../n_fonts/icomoon-ayu.svg]) format("svg");
+  src: url(../n_fonts/icomoon-ayu.eot?-ql3j90);
+  src: url(../n_fonts/icomoon-ayu.eot?-ql3j90) format("embedded-opentype"), url(../n_fonts/icomoon-ayu.woff?-ql3j90) format("woff"), url(../n_fonts/icomoon-ayu.ttf?-ql3j90) format("truetype"), url(../n_fonts/icomoon-ayu.svg]) format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="ayuicon-"], [class*=" ayuicon-"] {
@@ -9245,6 +9245,8 @@ header.header {
   #site-menu .top .menu-left span {
     font-size: 28px;
     font-size: 2rem; }
+  #site-menu .top .menu-list > li {
+    padding: 7.5px 0; }
   #site-menu .top,
   #site-menu .bottom {
     display: -webkit-box;
@@ -9302,8 +9304,7 @@ header.header {
     list-style: none;
     margin: 0; }
     #site-menu .menu-list > li {
-      color: #c49be0;
-      border-bottom: 1px solid #6e2f98; }
+      color: #c49be0; }
       #site-menu .menu-list > li:before, #site-menu .menu-list > li:after {
         content: " ";
         display: table; }
@@ -9312,6 +9313,7 @@ header.header {
       #site-menu .menu-list > li a {
         color: #c49be0; }
       #site-menu .menu-list > li:hover {
+        background-color: #522371;
         color: #e4d1f1; }
         #site-menu .menu-list > li:hover a:hover, #site-menu .menu-list > li:hover a.active {
           color: #e4d1f1; }
@@ -9376,6 +9378,11 @@ header.header {
     -webkit-transition: opacity 0.7s ease;
     -moz-transition: opacity 0.7s ease;
     transition: opacity 0.7s ease; }
+  #site-wrapper.show-nav #site-menu .center .menu-list > li {
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    border-bottom: 1px solid #6e2f98; }
   #site-wrapper.show-nav #site-menu .center .menu-list:last-child .menu-right {
     -webkit-transition: opacity 0.7s ease;
     -moz-transition: opacity 0.7s ease;

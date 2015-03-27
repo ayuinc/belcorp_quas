@@ -98,6 +98,11 @@ $z-index-control: 30;
   			font-size: rem(28px);
   		}
   	}
+  	.menu-list {
+  		> li {
+  			padding: ($container-fluid / 2) 0;
+  		}
+  	}
   }
   .top,
   .bottom {
@@ -140,11 +145,11 @@ $z-index-control: 30;
 		> li {
 			@include clearfix;
 			color: lighten($brand-primary, 42%);
-			border-bottom: 1px solid lighten($brand-primary, 7%);
 			a {
 				color: lighten($brand-primary, 42%);
 			}
 			&:hover {
+				background-color: darken($brand-primary, 3%);
 				color: lighten($brand-primary, 56%);
 				a {
 					&:hover,
@@ -195,6 +200,10 @@ $z-index-control: 30;
 	  	}
 	  	.center {
 		  	.menu-list {
+		  		> li {
+		  			@include transition(all 0.7s ease);
+		  			border-bottom: 1px solid lighten($brand-primary, 7%);
+		  		}
 		  		&:last-child {
 			  		.menu-right {
 			  			@include transition(opacity 0.7s ease);
