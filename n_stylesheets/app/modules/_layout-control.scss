@@ -111,6 +111,19 @@ $z-index-control: 30;
 		}
   }
   .center {
+  	.menu-list {
+  		&:last-child {
+	  		.menu-left {
+	  			display: none;
+	  		}
+	  		.menu-right {
+	  			opacity: 0;
+	  			@include transition(opacity 0.7s ease);
+	  			width: $site-menu-width-wide;
+	  			padding-left: 18px;
+	  		}
+  		}
+  	}
 	}
   .bottom {
 		@include position(absolute, null 0 0 0);
@@ -180,6 +193,16 @@ $z-index-control: 30;
 				opacity: 1;
 	  		@include transition(opacity 0.7s ease);
 	  	}
+	  	.center {
+		  	.menu-list {
+		  		&:last-child {
+			  		.menu-right {
+			  			@include transition(opacity 0.7s ease);
+			  			opacity: 1;
+			  		}
+		  		}
+		  	}
+			}
 		}
 		.header {
 			.left {
