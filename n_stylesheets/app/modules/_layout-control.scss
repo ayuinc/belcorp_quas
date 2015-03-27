@@ -220,4 +220,17 @@ $z-index-control: 30;
 			}
 		}
 	}
+	&.homepage-on {
+		#site-menu {
+			.center {
+		  	.menu-list {
+		  		&:last-child {
+			  		.menu-right { 
+			  			opacity: 1;
+			  		}
+		  		}
+		  	}
+			}
+		}
+	}
 }

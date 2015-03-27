@@ -9393,6 +9393,8 @@ header.header {
   -webkit-transition: all 0.7s ease;
   -moz-transition: all 0.7s ease;
   transition: all 0.7s ease; }
+#site-wrapper.homepage-on #site-menu .center .menu-list:last-child .menu-right {
+  opacity: 1; }
 
 /* IE Control */
 html.no-js [class*="minhp-"] {
