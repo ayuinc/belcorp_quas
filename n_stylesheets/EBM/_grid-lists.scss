@@ -1,10 +1,9 @@
 // GRID LISTS
 $grid-list-item-height: 350px;
 ul.grid-list {
-	@include make-row;
-	padding: 0;
-	margin: 0;
 	@include list-unstyled;
+	margin: 0 -($container-fluid);
+	padding: 0;
 	> li,
 	> a {
 		float: left;

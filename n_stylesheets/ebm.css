@@ -15350,18 +15350,11 @@ a.bg-hover-linkedin:hover,
     color: #7e94a1; }
 
 ul.grid-list {
-  margin-left: -15px;
-  margin-right: -15px;
-  padding: 0;
-  margin: 0;
   padding-left: 0;
   list-style: none;
-  margin: 0; }
-  ul.grid-list:before, ul.grid-list:after {
-    content: " ";
-    display: table; }
-  ul.grid-list:after {
-    clear: both; }
+  margin: 0;
+  margin: -15px;
+  padding: 0; }
   ul.grid-list > li,
   ul.grid-list > a {
     float: left;
