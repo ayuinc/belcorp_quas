@@ -9853,7 +9853,8 @@ ul.no-bullet li a {
     #filters li input[type="checkbox"] {
       display: none; }
       #filters li input[type="checkbox"]:checked ~ label {
-        background: #fafbfb; }
+        background: #a8b6bf;
+        color: #5a277d; }
         #filters li input[type="checkbox"]:checked ~ label:after {
           margin-left: 14px;
           display: block;
