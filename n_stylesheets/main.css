@@ -9263,6 +9263,8 @@ header.header {
     #site-menu .top .menu-list > li,
     #site-menu .bottom .menu-list > li {
       border: none; }
+  #site-menu .center .menu-list > li {
+    border-bottom: 1px solid #5a277d; }
   #site-menu .center .menu-list:last-child .menu-left {
     display: none; }
   #site-menu .center .menu-list:last-child .menu-right {
@@ -9366,6 +9368,8 @@ header.header {
     -webkit-transition: opacity 0.7s ease;
     -moz-transition: opacity 0.7s ease;
     transition: opacity 0.7s ease; }
+  #site-wrapper.show-nav #site-menu .center .menu-list > li {
+    border-bottom: 1px solid #622b89; }
   #site-wrapper.show-nav #site-menu .center .menu-list:last-child .menu-right {
     -webkit-transition: opacity 0.7s ease;
     -moz-transition: opacity 0.7s ease;
