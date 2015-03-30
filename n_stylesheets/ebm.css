@@ -11334,6 +11334,10 @@
   margin-left: 3px !important;
   margin-left: 0.21429rem !important; }
 
+/*
+  EBM:Ref
+  Min-heights
+*/
 .minh-70 {
   min-height: 70px !important;
   min-height: 5rem !important; }
@@ -11535,158 +11539,205 @@
     min-height: 700px !important;
     min-height: 50rem !important; } }
 .minhp-10 {
-  min-height: 10% !important; }
+  min-height: 10% !important;
+  min-height: 10vh !important; }
 
 @media only screen and (max-width: 480px) {
   .minhp-10-xs {
-    min-height: 10% !important; } }
+    min-height: 10% !important;
+    min-height: 10vh !important; } }
 @media only screen and (min-width: 768px) {
   .minhp-10-sm {
-    min-height: 10% !important; } }
+    min-height: 10% !important;
+    min-height: 10vh !important; } }
 @media only screen and (min-width: 992px) {
   .minhp-10-md {
-    min-height: 10% !important; } }
+    min-height: 10% !important;
+    min-height: 10vh !important; } }
 @media only screen and (min-width: 1200px) {
   .minhp-10-lg {
-    min-height: 10% !important; } }
+    min-height: 10% !important;
+    min-height: 10vh !important; } }
 .minhp-20 {
-  min-height: 20% !important; }
+  min-height: 20% !important;
+  min-height: 20vh !important; }
 
 @media only screen and (max-width: 480px) {
   .minhp-20-xs {
-    min-height: 20% !important; } }
+    min-height: 20% !important;
+    min-height: 20vh !important; } }
 @media only screen and (min-width: 768px) {
   .minhp-20-sm {
-    min-height: 20% !important; } }
+    min-height: 20% !important;
+    min-height: 20vh !important; } }
 @media only screen and (min-width: 992px) {
   .minhp-20-md {
-    min-height: 20% !important; } }
+    min-height: 20% !important;
+    min-height: 20vh !important; } }
 @media only screen and (min-width: 1200px) {
   .minhp-20-lg {
-    min-height: 20% !important; } }
+    min-height: 20% !important;
+    min-height: 20vh !important; } }
 .minhp-30 {
-  min-height: 30.0% !important; }
+  min-height: 30.0% !important;
+  min-height: 30vh !important; }
 
 @media only screen and (max-width: 480px) {
   .minhp-30-xs {
-    min-height: 30.0% !important; } }
+    min-height: 30.0% !important;
+    min-height: 30vh !important; } }
 @media only screen and (min-width: 768px) {
   .minhp-30-sm {
-    min-height: 30.0% !important; } }
+    min-height: 30.0% !important;
+    min-height: 30vh !important; } }
 @media only screen and (min-width: 992px) {
   .minhp-30-md {
-    min-height: 30.0% !important; } }
+    min-height: 30.0% !important;
+    min-height: 30vh !important; } }
 @media only screen and (min-width: 1200px) {
   .minhp-30-lg {
-    min-height: 30.0% !important; } }
+    min-height: 30.0% !important;
+    min-height: 30vh !important; } }
 .minhp-40 {
-  min-height: 40% !important; }
+  min-height: 40% !important;
+  min-height: 40vh !important; }
 
 @media only screen and (max-width: 480px) {
   .minhp-40-xs {
-    min-height: 40% !important; } }
+    min-height: 40% !important;
+    min-height: 40vh !important; } }
 @media only screen and (min-width: 768px) {
   .minhp-40-sm {
-    min-height: 40% !important; } }
+    min-height: 40% !important;
+    min-height: 40vh !important; } }
 @media only screen and (min-width: 992px) {
   .minhp-40-md {
-    min-height: 40% !important; } }
+    min-height: 40% !important;
+    min-height: 40vh !important; } }
 @media only screen and (min-width: 1200px) {
   .minhp-40-lg {
-    min-height: 40% !important; } }
+    min-height: 40% !important;
+    min-height: 40vh !important; } }
 .minhp-50 {
-  min-height: 50% !important; }
+  min-height: 50% !important;
+  min-height: 50vh !important; }
 
 @media only screen and (max-width: 480px) {
   .minhp-50-xs {
-    min-height: 50% !important; } }
+    min-height: 50% !important;
+    min-height: 50vh !important; } }
 @media only screen and (min-width: 768px) {
   .minhp-50-sm {
-    min-height: 50% !important; } }
+    min-height: 50% !important;
+    min-height: 50vh !important; } }
 @media only screen and (min-width: 992px) {
   .minhp-50-md {
-    min-height: 50% !important; } }
+    min-height: 50% !important;
+    min-height: 50vh !important; } }
 @media only screen and (min-width: 1200px) {
   .minhp-50-lg {
-    min-height: 50% !important; } }
+    min-height: 50% !important;
+    min-height: 50vh !important; } }
 .minhp-60 {
-  min-height: 60.0% !important; }
+  min-height: 60.0% !important;
+  min-height: 60vh !important; }
 
 @media only screen and (max-width: 480px) {
   .minhp-60-xs {
-    min-height: 60.0% !important; } }
+    min-height: 60.0% !important;
+    min-height: 60vh !important; } }
 @media only screen and (min-width: 768px) {
   .minhp-60-sm {
-    min-height: 60.0% !important; } }
+    min-height: 60.0% !important;
+    min-height: 60vh !important; } }
 @media only screen and (min-width: 992px) {
   .minhp-60-md {
-    min-height: 60.0% !important; } }
+    min-height: 60.0% !important;
+    min-height: 60vh !important; } }
 @media only screen and (min-width: 1200px) {
   .minhp-60-lg {
-    min-height: 60.0% !important; } }
+    min-height: 60.0% !important;
+    min-height: 60vh !important; } }
 .minhp-70 {
-  min-height: 70% !important; }
+  min-height: 70% !important;
+  min-height: 70vh !important; }
 
 @media only screen and (max-width: 480px) {
   .minhp-70-xs {
-    min-height: 70% !important; } }
+    min-height: 70% !important;
+    min-height: 70vh !important; } }
 @media only screen and (min-width: 768px) {
   .minhp-70-sm {
-    min-height: 70% !important; } }
+    min-height: 70% !important;
+    min-height: 70vh !important; } }
 @media only screen and (min-width: 992px) {
   .minhp-70-md {
-    min-height: 70% !important; } }
+    min-height: 70% !important;
+    min-height: 70vh !important; } }
 @media only screen and (min-width: 1200px) {
   .minhp-70-lg {
-    min-height: 70% !important; } }
+    min-height: 70% !important;
+    min-height: 70vh !important; } }
 .minhp-80 {
-  min-height: 80% !important; }
+  min-height: 80% !important;
+  min-height: 80vh !important; }
 
 @media only screen and (max-width: 480px) {
   .minhp-80-xs {
-    min-height: 80% !important; } }
+    min-height: 80% !important;
+    min-height: 80vh !important; } }
 @media only screen and (min-width: 768px) {
   .minhp-80-sm {
-    min-height: 80% !important; } }
+    min-height: 80% !important;
+    min-height: 80vh !important; } }
 @media only screen and (min-width: 992px) {
   .minhp-80-md {
-    min-height: 80% !important; } }
+    min-height: 80% !important;
+    min-height: 80vh !important; } }
 @media only screen and (min-width: 1200px) {
   .minhp-80-lg {
-    min-height: 80% !important; } }
+    min-height: 80% !important;
+    min-height: 80vh !important; } }
 .minhp-90 {
-  min-height: 90% !important; }
+  min-height: 90% !important;
+  min-height: 90vh !important; }
 
 @media only screen and (max-width: 480px) {
   .minhp-90-xs {
-    min-height: 90% !important; } }
+    min-height: 90% !important;
+    min-height: 90vh !important; } }
 @media only screen and (min-width: 768px) {
   .minhp-90-sm {
-    min-height: 90% !important; } }
+    min-height: 90% !important;
+    min-height: 90vh !important; } }
 @media only screen and (min-width: 992px) {
   .minhp-90-md {
-    min-height: 90% !important; } }
+    min-height: 90% !important;
+    min-height: 90vh !important; } }
 @media only screen and (min-width: 1200px) {
   .minhp-90-lg {
-    min-height: 90% !important; } }
+    min-height: 90% !important;
+    min-height: 90vh !important; } }
 .minhp-100 {
-  min-height: 100% !important; }
+  min-height: 100% !important;
+  min-height: 100vh !important; }
 
 @media only screen and (max-width: 480px) {
   .minhp-100-xs {
-    min-height: 100% !important; } }
+    min-height: 100% !important;
+    min-height: 100vh !important; } }
 @media only screen and (min-width: 768px) {
   .minhp-100-sm {
-    min-height: 100% !important; } }
+    min-height: 100% !important;
+    min-height: 100vh !important; } }
 @media only screen and (min-width: 992px) {
   .minhp-100-md {
-    min-height: 100% !important; } }
+    min-height: 100% !important;
+    min-height: 100vh !important; } }
 @media only screen and (min-width: 1200px) {
   .minhp-100-lg {
-    min-height: 100% !important; } }
-.vh-100 {
-  height: 100vh; }
-
+    min-height: 100% !important;
+    min-height: 100vh !important; } }
 .box-shadow {
   -webkit-box-shadow: 0px 3px 3px 0px rgba(49, 50, 51, 0.15);
   -moz-box-shadow: 0px 3px 3px 0px rgba(49, 50, 51, 0.15);
